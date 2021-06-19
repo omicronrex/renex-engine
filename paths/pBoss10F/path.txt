@@ -1,0 +1,6 @@
+connection=0
+closed=1
+precision=4
+background=
+snap_x=16
+snap_y=16

@@ -1,0 +1,2 @@
+FileMenu,96,160,,0
+MusicPlayer,32,32,39B2AA3C,0

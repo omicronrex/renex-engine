@@ -1,0 +1,4 @@
+instance_deactivate_all(true)
+instance_activate_object(World)
+instance_activate_object(global.screen_manager)
+instance_activate_object(__gm82core_object)

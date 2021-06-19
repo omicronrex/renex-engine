@@ -1,0 +1,7 @@
+sprite=sprNekoronWater
+visible=1
+solid=0
+persistent=0
+depth=-50
+parent=NekoronAir
+mask=

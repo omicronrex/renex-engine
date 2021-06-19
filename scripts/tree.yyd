@@ -1,0 +1,116 @@
+|engine_settings
++lists
+	|list_loop_points
+	|list_avoidance_bullets
+	|list_nonstick
++saving
+	|settings_default
+	|savedata_default
+	|settings
+	|savedata
+	|savedata_select
+	|savedata_load
+	|savedata_save
+	|save_persistent_objects
+	|load_persistent_objects
+	+savefile
+		|savedata_read
+		|savedata_write
+		|settings_read
+		|settings_write
+	+objsave
+		|get_objsave_hash
+		|get_objsave
+		|set_objsave
+		|end_objsave
+		|write_objsave
+		|read_objsave
++system
+	+input
+		|input_init
+		|input_default
+		|input_update
+		|input_consume
+		|input_clear
+	+envelope renderer
+		|envelope_init
+		|envelope_prepare
+		|envelope_compose
+		|update_fullscreen
+	+avoidance
+		|avoid_bullet
+		|wait_time
+		|wait_duration
+		|wait_beat
+		|wait_verse
+		+bullets
+			|bullet_create
+			|bullet_motion
+			|bullet_sprite
+			|bullet_spread
+			|bullet_life
+			|bullet_behavior
+			|bullet_stepcode
+	|format_time
+	|update_caption_deathtime
+	|mmf_animspeed
+	|mmf_speed
+	|is_ingame
+	|good_bounce
+	|key_get_name
+	|has_item
+	|draw_sign_text
+	|draw_text_outline
+	|cement
+	|get_path_speed
+	|rect
+	|texture_reset_interpolation
+	|vsync_a_bit
+	|set_loop_point
+	|once_every
+	|instance_deactivate_all_safe
++events
+	|event_world_create
+	|event_game_start
+	|event_room_start
+	|event_world_earlystep
+	|event_world_step
+	|event_world_endstep
+	|event_world_draw
+	|event_room_end
+	|event_game_end
++player
+	|player_jump
+	|player_shoot
+	|check_crush
+	|kill_player
+	|move_player
+	|sound_play_slomo
++keypick
+	|key_clear
+	|key_add
+	|key_use
+	|key_draw
++bosses
+	|BigCherry_boss
+	|Utah_boss
+	|template_boss
++avoidances
+	+YoYoYo tools
+		|scrMakeCircle
+		|scrMakeShapes
+	|rmAvoid_avoidance
++camera
+	|camera_default
+	|camera_follow
+	|camera_focus
+	|camera_zoom
+	|camera_set
++skins
+	|skin_default
+	|skin_dotkid
+	|skin_shootkid
+	|skin_vvvvvv
++weapons
+	|weapon_default
+	|weapon_shootkid

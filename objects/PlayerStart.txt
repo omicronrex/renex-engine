@@ -1,0 +1,7 @@
+sprite=sprPlayerStart
+visible=0
+solid=0
+persistent=0
+depth=-10
+parent=
+mask=

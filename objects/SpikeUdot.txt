@@ -1,0 +1,7 @@
+sprite=sprSpikeUpBlue
+visible=1
+solid=0
+persistent=0
+depth=10
+parent=DotKiller
+mask=

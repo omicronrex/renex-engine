@@ -1,0 +1,293 @@
+|World
+|Player
++Parents
+	|PlayerKiller
+	|DotKiller
+	|SavePoint
+	|Trigger
+	|Triggered
+	|Button
+	|ButtonShoot
+	|Boss
+	|Trap
+	|TrapSave
+	|Item
+	|GlobalItem
+	|ItemBlock
+	|UnsolidItemBlock
+	|SolidItemBlock
+	|KeyParent
+	|KeyBlockParent
++User Interface
+	|TitleMenu
+	|TitleParticle
+	|FileMenu
+	|OptionsMenu
+	|KeyboardMenu
+	|PauseMenu
++System
+	|BloodEmitter
+	|GibParticle
+	|Blood
+	|Bullet
+	|GameOver
+	|Ortho
+	|DestroyedBlock
+	|FirePart
+	|Camera
+	|DepthBlender
++Saves
+	|savePointMedium
+	|savePointHard
+	|savePointVeryHard
+	|savePointMediumV
+	|savePointHardV
+	|savePointVeryHardV
++Threats
+	|bouncingFruit
+	|minispikeDown
+	|minispikeRight
+	|minispikeLeft
+	|minispikeUp
+	|CherryCircle
++Gimmicks
+	+White Dot
+		|WhiteDotEnable
+		|WhiteDotDisable
+		|SpikeDdot
+		|SpikeLdot
+		|SpikeRdot
+		|SpikeUdot
+		|WhiteDotKiller
+	+Dotkid
+		|DotkidEnable
+		|DotkidDisable
+		|DotkidKiller
+	+Shootkid
+		|ShootkidEnable
+		|ShootkidDisable
+		|ShootKid
+	+Keypick
+		|KeyDraw
+		|KeyWhite
+		|KeyRed
+		|KeyBlockWhite
+		|KeyBlockRed
+	+Walk the Ceiling
+		|SpinFlip
+		|SpinNormal
+		|KidBlockUp
+		|KidBlockDown
+		|WCSpikeSwitcher
+		|WCSwitchSpikeParent
+		|WCSpikeOrange
+		|WCSpikeOrangeL
+		|WCSpikeOrangeR
+		|WCSpikeOrangeU
+		|WCSpikeGreen
+		|WCSpikeGreenL
+		|WCSpikeGreenR
+		|WCSpikeGreenU
+	+NANG
+		|StarSingleJump
+		|StarDoubleJump
+		|StarTripleJump
+	+Pastel
+		|PastelSpikeBlack
+		|PastelSpikeBlackU
+		|PastelSpikeBlue
+		|PastelSpikeBlueL
+		|PastelSpikeBlueR
+		|PastelSpikeBlueU
+		|PastelSpikeGreen
+		|PastelSpikeGreenL
+		|PastelSpikeGreenR
+		|PastelSpikeGreenU
+		|PastelWater
+		|PastelWater2
+		|WaterStopper
+	+Beams
+		|BeamOneJump
+		|BeamHighSpeed
+		|BeamHighGrav
+		|BeamLowGrav
+		|BeamNormal
+	+Vcoin
+		|VCoinGive
+		|VCoinTake
+	|CautionStripL
+	|CautionStripR
+	|CautionFastL
+	|CautionFastR
+	|ShootBlock
+	|ShootBlockBig
+	|LowGravField
+	|HighGravField
+	|HighSpeedField
+	|LowSpeedField
+	|JumpRefresher
+	|GravFlip
+	|GravNormal
+	|Ladder
+	|LadderSide
+	|ClockOn
+	|ClockOff
+	|GuyCouch
+	|ShootRefresherL
+	|ShootRefresherR
++Triggers
+	|Trigger1
+	|SwitchRed
+	|SwitchRedWL
+	|SwitchRedWR
+	|Trigger2
+	|Trigger3
+	|SwitchYellow
+	|SwitchYellowWL
+	|SwitchYellowWR
+	|Trigger4
+	|SwitchGreen
+	|SwitchGreenWL
+	|SwitchGreenWR
+	|Trigger5
+	|Trigger6
+	|Trigger7
+	|Trigger8
+	|Trigger9
+	|Trigger10
+	|Trigger11
+	|Trigger12
+	|TriggerFree
+	|Triggered1
+	|Triggered2
+	|Triggered3
+	|Triggered4
+	|Triggered5
+	|Triggered6
+	|Triggered7
+	|Triggered8
+	|Triggered9
+	|Triggered10
+	|Triggered11
+	|Triggered12
+	|TriggeredFree
++Level
+	|ConveyorLeft
+	|ConveyorRight
+	|JumpBlock
+	|PushBlock
+	|PushBlockSave
+	|LiftBlock
+	|MoveBlock
+	|miniBlock
+	|slipBlock
+	|niseBlock
+	|killBlock
+	|SlopeTL
+	|SlopeTR
+	|SlopeBL
+	|SlopeBR
+	|JumpThrough
+	|GateUp
+	|GateRight
+	|GateLeft
+	|GateDown
+	|ScreenWrap
+	|Water1
+	|Water2
+	|Water3
+	|CatharsisWater
+	|NekoronWater
+	|NekoronAir
+	|PlatformWater
+	|GuyWater
+	|DemoBlock
+	|Signpost
+	|Cloud
+	|DecoStar
++Traps
+	|TrapStop
+	|TrapRedirect
+	|SpikeTrapD
+	|SpikeTrapL
+	|SpikeTrapR
+	|SpikeTrapU
+	|FruitTrap
+	|FakeBlock
+	|BreakBlock
+	|YokuBlock
+	|CloudSetOnFire
+	|CloudBolt
+	|Bolt
+	|ExampleSavingTrap
+	|ExampleRotatingTrap
++Items
+	|GameClear
+	|Item1
+	|Item2
+	|Item3
+	|Item4
+	|Item5
+	|Item6
+	|Item7
+	|Item8
+	|ItemBlockItem1
+	|ItemBlockItem2
+	|ItemBlockItem3
+	|ItemBlockItem4
+	|ItemBlockItem5
+	|ItemBlockItem6
+	|ItemBlockItem7
+	|ItemBlockItem8
+	|SolidItemBlockItem1
+	|SolidItemBlockItem2
+	|SolidItemBlockItem3
+	|SolidItemBlockItem4
+	|SolidItemBlockItem5
+	|SolidItemBlockItem6
+	|SolidItemBlockItem7
+	|SolidItemBlockItem8
+	|GlobalItem1
+	|GlobalItem2
+	|GlobalItem3
+	|GlobalItem4
+	|ItemBlockGlobalItem1
+	|ItemBlockGlobalItem2
+	|ItemBlockGlobalItem3
+	|ItemBlockGlobalItem4
+	|SolidItemBlockGlobalItem1
+	|SolidItemBlockGlobalItem2
+	|SolidItemBlockGlobalItem3
+	|SolidItemBlockGlobalItem4
++Bosses
+	+Big Cherry
+		|BigCherry
+		|BigCherryHealthbar
+		|BigCherryBlue2
+		|BigCherrySmall2
+	+Utah
+		|Utah
+		|FireDemo
+		|GlassShard
+		|TouhouDeath
+	|BossIntroduction
++Avoidance
+	|Avoidance
+	|AvoidBullet
+|PlayerStart
+|Block
+|Platform
+|Upform
+|WallJumpL
+|WallJumpR
+|DeathFruit
+|SpikeD
+|SpikeL
+|SpikeR
+|SpikeU
+|Warp
+|BossWarp
+|WarpToHub
+|Teleporter
+|MusicPlayer
+|TextDraw

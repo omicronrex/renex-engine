@@ -31,4 +31,6 @@ global.bullet_map=ds_map_create()
 oneframe=(1000000/display_get_frequency())*0.95
 oldtime=hrt_time_now()
 
+orderTest=2
+
 globalvar view_xcenter,view_ycenter;

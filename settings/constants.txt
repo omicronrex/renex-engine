@@ -1,4 +1,5 @@
 re_version="renex engine v0.9 beta 1"
+lf=chr(13)+chr(10)
 key_left=0
 key_right=1
 key_up=2

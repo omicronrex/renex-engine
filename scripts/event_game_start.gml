@@ -1,5 +1,15 @@
 //engine initialization
 
+if (orderTest==2) {
+    show_error(
+        "Creation code order needs to be reversed for this engine to work."+lf+
+        "Please enable the option in GGS->Code Options."+lf+lf+
+        "If you're using 8.1 and don't see this option, move the included winspool.drv file into your Game Maker folder and reopen it.",
+        true
+    )
+    exit
+}
+
 engine_settings()
 global.optimize_solids=median(0,global.optimize_solids,8)
 

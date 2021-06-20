@@ -237,8 +237,8 @@ if (!frozen) {
         h=input_h
         //align adjust keys
         if (global.a_d_trick) {
-            if (keyboard_check_pressed(ord("A"))) if (place_free(x-1,floor(y))) {x-=1 xprevious-=1}
-            if (keyboard_check_pressed(ord("D"))) if (place_free(x+1,floor(y))) {x+=1 xprevious+=1}
+            if (keyboard_check_pressed(ord("A"))) move_player(x-1,y,1)
+            if (keyboard_check_pressed(ord("D"))) move_player(x+1,y,1)
         }
     }
 

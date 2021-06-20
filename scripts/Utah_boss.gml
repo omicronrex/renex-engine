@@ -9,10 +9,6 @@ if (event="create") {
     //teapot stuff
     model=d3d_model_create()
     d3d_model_load(model,"data\teapot.g3d")
-    d3d_light_define_ambient($606060)
-    d3d_light_define_direction(0,-1,-1,1,$a0a0a0)
-    d3d_light_enable(0,1)
-    d3d_light_enable(1,1)
 
     lightf=0
     scale=0
@@ -28,6 +24,11 @@ if (event="draw") {
 
     d3d_start()
     d3d_set_lighting(1)
+    d3d_light_define_ambient($606060)
+    d3d_light_define_direction(0,-1,-1,1,$a0a0a0)
+    d3d_light_define_direction(1,0,1,0,merge_color(0,$ff,lightf))
+    d3d_light_enable(0,1)
+    d3d_light_enable(1,1)
 
     per=0.3 //perspective factor
     d3d_set_projection_ext(400,304,400/per,400,304,0,0,-1,0,90*per,800/608,max(1,400/per-512),400/per+512)
@@ -100,7 +101,6 @@ if (state="begin") {
 //update draw properties
 image_xscale=scale*4
 image_yscale=scale*4
-d3d_light_define_direction(1,0,1,0,merge_color(0,$ff,lightf))
 r1-=angle_difference(angle,r1)*(dt/2)
 r2-=angle_difference(angle2,r2)*(dt/6)
 

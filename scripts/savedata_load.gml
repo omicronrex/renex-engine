@@ -14,6 +14,9 @@ if (savedata("saved")) {
     i.facing=savedata("facing")
     i.vflip=savedata("vflip")
 
+    i.skin=savedata("skin")
+    i.weapon=savedata("weapon")
+
     //gimmicks
     i.slomo=savedata("slomo")
     i.dot_hitbox=savedata("whitedot")

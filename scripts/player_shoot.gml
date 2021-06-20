@@ -8,4 +8,4 @@ if (!global.contact_saves) {
     }
 }
 
-script_execute(global.player_weapon)
+script_execute(weapon)

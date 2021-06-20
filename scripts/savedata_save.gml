@@ -12,6 +12,9 @@ if (savedata("diff")!=3 || argument0) with (Player) {
     savedata("viewangle",view_angle)
     savedata("saved",1)
 
+    savedata("skin",skin)
+    savedata("weapon",weapon)
+
     //gimmicks
     savedata("slomo",slomo)
     savedata("whitedot",dot_hitbox)

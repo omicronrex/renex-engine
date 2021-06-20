@@ -26,6 +26,9 @@ applies_to=self
 ///initialize variables
 //you usually don't need to touch any of these
 
+skin=global.player_skin
+weapon=global.player_weapon
+
 djump=1
 ladder=false
 onPlatform=false
@@ -537,7 +540,7 @@ action_id=603
 applies_to=self
 */
 ///skin
-script_execute(global.player_skin,"step")
+script_execute(skin,"step")
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=424
@@ -778,7 +781,7 @@ action_id=603
 applies_to=self
 */
 ///skin
-script_execute(global.player_skin,"draw")
+script_execute(skin,"draw")
 
 if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
 if (global.debug_jump) draw_sprite_ext(sprBow,2,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)

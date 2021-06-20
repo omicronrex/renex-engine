@@ -20,6 +20,7 @@ if (is_ingame()) {
     with (PushBlock) grav=Player.vflip
 
     if (global.gameover_music_pause) sound_kind_resume(1)
+    event_world_endstep()
 } else {
     room_caption=global.game_title
     sound_kind_pitch(0,1)
@@ -32,12 +33,12 @@ load_persistent_objects()
 
 if (global.optimize_solids) {
     //now let's glue blocks to reduce instance count, but being mindful of green pastel spikes
-    with (Block) with (PastelSpikeGreen) if (x=other.x || y=other.y) {
-        other.x=pog other.y=pog
+    with (PastelSpikeGreen) with (Block) if (x=other.x || y=other.y) {
+        instance_change(Cementer,0)
     }
     cement(Block)
-    with (Block) if (x==pog && y==pog) {
-        x=xstart y=ystart
+    with (Cementer) {
+        instance_change(Block,0)
     }
 }
 

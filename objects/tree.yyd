@@ -93,6 +93,10 @@
 		|StarSingleJump
 		|StarDoubleJump
 		|StarTripleJump
+		|LowGravField
+		|HighGravField
+		|LowSpeedField
+		|HighSpeedField
 	+Pastel
 		|PastelSpikeBlack
 		|PastelSpikeBlackU
@@ -122,10 +126,6 @@
 	|CautionFastR
 	|ShootBlock
 	|ShootBlockBig
-	|LowGravField
-	|HighGravField
-	|HighSpeedField
-	|LowSpeedField
 	|JumpRefresher
 	|GravFlip
 	|GravNormal

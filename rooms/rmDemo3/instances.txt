@@ -1,3 +1,4 @@
+ObjHueShiftExample,32,64,,0
 ExampleRotatingTrap,288,224,01DE70C8,0
 ConveyorRight,480,96,,0
 ConveyorRight,512,96,,0

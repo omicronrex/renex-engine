@@ -79,6 +79,7 @@ for (i=room_first;i!=-1;i=room_next(i)) {
 //uhhhh break cherry sprites i guess
 if (!global.use_original_cherries) {
     sprite_assign(sprCherry,sprCherryOld)
+    sprite_assign(sprCherryRainbow,sprCherryRainbowOld)
     sprite_assign(sprCherryPink,sprCherryPinkOld)
     sprite_assign(sprCherryOrange,sprCherryOrangeOld)
     sprite_assign(sprCherryMagenta,sprCherryMagentaOld)

@@ -40,7 +40,9 @@
 		|sprCherryGrayOld
 		|sprCherryWhiteOld
 		|sprCherryBlackOld
+		|sprCherryRainbowOld
 	|sprCherry
+	|sprCherryRainbow
 	|sprCherryOrange
 	|sprCherryYellow
 	|sprCherryChartreuse

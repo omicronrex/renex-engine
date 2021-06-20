@@ -17,7 +17,7 @@ option[2]="Screen Mode"
 option[3]="VSync"
 option[4]="Fullscreen Filter"
 option[5]="Sprite Filter"
-option[6]="Body Particles"
+option[6]="Blood Effect"
 option[7]="Left+Right Mode"
 option[8]="Change Controls"
 option_max=9
@@ -106,7 +106,7 @@ if (global.key_pressed[key_shoot]) {
     if (sel==6) {
         sound_stop("sndDeath")
         sound_play("sndDeath")
-        settings("gore",!settings("gore"))
+        settings("gore",(settings("gore")+1) mod 4)
         dead=1
         instance_destroy_id(BloodEmitter)
         instance_destroy_id(Blood)
@@ -140,7 +140,7 @@ optext[2]=pick(settings("fullscreen"),"Window","Fullscreen")
 optext[3]=pick(!!World.monitorspeed,pick(settings("vsync")+1,"Failed","Off","On"),"Testing...")
 optext[4]=pick(settings("filter"),"Off","Bilinear","Area")
 optext[5]=pick(settings("interpolation"),"Off","On")
-optext[6]=pick(settings("gore"),"Off","On")
+optext[6]=pick(settings("gore"),"Off","Low","Medium","High")
 optext[7]=pick(global.leftright_moonwalk,pick(settings("l+r behavior"),"Flip","Stay","Stop","Left","Right"),"Moonwalk")
 optext[8]=""
 

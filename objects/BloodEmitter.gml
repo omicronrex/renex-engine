@@ -4,10 +4,41 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+stepcount=0
+updating=0
+slomo=1
+
+image_speed=0
+gore=settings("gore")
+if (!gore) {
+    bleeding=0
+    alarm[1]=room_speed/2
+    if (instance_exists(Player)) {
+        sprite_index=Player.sprite_index
+        image_index=Player.image_index
+        image_xscale=Player.image_xscale
+        image_yscale=Player.vflip
+        image_angle=Player.drawangle
+        image_blend=Player.image_blend
+        image_alpha=Player.image_alpha
+        if (Player.bow) {
+            i=instance_create(x,y,GibParticle) i.sprite_index=sprBow i.gravity=(0.1+random(0.2))*sign(Player.gravity)
+        }
+    } else {
+        if (room=rmOptions) {
+            sprite_index=sprPlayerIdle
+            image_index=floor(image_index)
+            x=OptionsMenu.xdraw-18
+            y=OptionsMenu.ycursor
+        }
+    }
+    exit
+}
+
 slomo=1
 gravity=0.4*dt*dt
 bleeding=1
-alarm[0]=20
+alarm[0]=10*gore
 
 if (instance_exists(Player)) {
     hspeed=Player.hspeed/2
@@ -19,7 +50,7 @@ if (instance_exists(Player)) {
     }
 }
 
-if (settings("gore")) {
+if (gore==3) {
     i=instance_create(x,y-15,GibParticle) i.sprite_index=sprGibsHead
     i=instance_create(x,y-10,GibParticle) i.sprite_index=sprGibsBody
     i=instance_create(x,y-10,GibParticle) i.sprite_index=sprGibsArm
@@ -31,7 +62,6 @@ if (settings("gore")) {
 grav=sign(gravity)
 
 with (GibParticle) {
-    image_speed=0
     if (sprite_index!=sprBow) {
         image_index=irandom(image_number-1)
     }
@@ -45,9 +75,6 @@ with (GibParticle) {
 }
 
 gravity*=0.5
-
-stepcount=0
-updating=0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -55,13 +82,20 @@ action_id=603
 applies_to=self
 */
 bleeding=0
+#define Alarm_1
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+instance_destroy()
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-if (bleeding) repeat (30) {
+if (bleeding) repeat (10*gore) {
     i=instance_create(x,y,Blood)
     i.direction=irandom(35)*10
     i.speed=random(8)*dt
@@ -85,6 +119,8 @@ if (stepcount>=1) {
     stepcount=stepcount mod 1
     updating=1
 }
+
+if (alarm[1]) visible=(alarm[1] mod 5)<3
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1

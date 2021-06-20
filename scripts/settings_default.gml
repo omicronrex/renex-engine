@@ -5,7 +5,7 @@ settings("sfxvol",0.5)
 
 settings("l+r behavior",lr_last)
 
-settings("gore",true)
+settings("gore",2)
 settings("interpolation",false)
 settings("filter",true)
 

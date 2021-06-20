@@ -284,12 +284,6 @@ if (!frozen) {
         }
     }
 
-    if (dotkid) {
-        image_xscale=1
-    } else if (walljumpboost==0) {
-        image_xscale=abs(image_xscale)*facing
-    }
-
     if (onPlatform) {
         if (!place_meeting(x,y+4*vflip,Platform) && !place_meeting(x,y+vflip,Block)) {
             onPlatform=false
@@ -458,6 +452,12 @@ applies_to=self
 */
 ///solid collision
 var land;
+
+if (dotkid) {
+    image_xscale=1
+} else if (walljumpboost==0) {
+    image_xscale=abs(image_xscale)*facing
+}
 
 //we add gravity because this is supposed to happen after movement update
 vspeed+=gravity

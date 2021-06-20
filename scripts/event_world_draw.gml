@@ -48,8 +48,8 @@ if (!global.pause) {
             drawAlign = Player.x mod 3;
         }
 
-        str="X: "+string(drawX)+"#"
-           +"Y: "+string(drawY)+" (align "+string(drawAlign)+")#"
+        str="X: "+string(drawX)+" (align "+string(drawAlign)+")#"
+           +"Y: "+string(drawY)+"#"
            +"Room: "+room_get_name(room)+" ("+string(room)+")#"
            +"FPS: "+string(fps)+" ("+string(fps_real)+") / "+string(room_speed)+"#"
            +string_repeat("God mode",global.debug_god)+"#"

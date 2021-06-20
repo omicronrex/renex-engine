@@ -223,6 +223,8 @@
 	|sprBeamBlue
 	|sprBeamRed
 	|sprBeamGreen
+	|sprToggleBlockOn
+	|sprToggleBlockOff
 +Triggers
 	|sprTrigger1
 	|sprTrigger2

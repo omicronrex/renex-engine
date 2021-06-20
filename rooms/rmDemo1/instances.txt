@@ -1052,6 +1052,10 @@ Triggered4,96,800,,0
 TrapStop,32,736,,0
 TrapStop,64,736,,0
 TrapStop,96,736,,0
+ToggleBlockOff,416,1664,,0
+ToggleBlockOff,416,1536,,0
+ToggleBlockOn,480,1600,,0
+ToggleBlockOn,352,1600,,0
 PlayerStart,896,800,,0
 KeyDraw,128,32,,0
 CatharsisWater,1120,1280,,0

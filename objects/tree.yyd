@@ -133,6 +133,8 @@
 	|LadderSide
 	|ClockOn
 	|ClockOff
+	|ToggleBlockOn
+	|ToggleBlockOff
 	|GuyCouch
 	|ShootRefresherL
 	|ShootRefresherR

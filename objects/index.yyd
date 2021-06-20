@@ -270,3 +270,5 @@ SwitchYellowWR
 SwitchGreenWL
 SwitchGreenWR
 Cementer
+ToggleBlockOn
+ToggleBlockOff

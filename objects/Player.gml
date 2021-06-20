@@ -116,7 +116,7 @@ applies_to=self
     and finally, a globalvar called "dt" is provided that gives you a
     factor between the selected game speed and 50hz, so you can multiply
     animation speeds or object speeds by dt to keep them consistent
-    across different room speeds. an example is provided on DeathFruit.
+    across different room speeds. an example is provided on Cherry.
 
 */
 

@@ -148,7 +148,7 @@ if (state="spray") {
     if (once_every(5)) {
         if (angle>90 && angle<270) effect_create_below(ef_smokeup,tx+random_range(-8,8),ty+random_range(-8,0),choose(0,1),choose($b0b0b0,$c0c0c0,$d0d0d0))
         else effect_create_above(ef_smokeup,tx+random_range(-8,8),ty+random_range(-8,0),choose(0,1),choose($b0b0b0,$c0c0c0,$d0d0d0))
-        o=instance_create(tx,ty,DeathFruit)
+        o=instance_create(tx,ty,Cherry)
         o.hspeed=random_range(-4,4)*dt
         o.vspeed=random_range(-6,-8)*dt
         o.gravity=0.3*dt*dt
@@ -167,7 +167,7 @@ if (state="spray2") {
     if (once_every(5)) {
         if (angle>90 && angle<270) effect_create_below(ef_smokeup,tx+random_range(-8,8),ty+random_range(-8,0),choose(0,1),choose($b0b0b0,$c0c0c0,$d0d0d0))
         else effect_create_above(ef_smokeup,tx+random_range(-8,8),ty+random_range(-8,0),choose(0,1),choose($b0b0b0,$c0c0c0,$d0d0d0))
-        o=instance_create(tx,ty,DeathFruit)
+        o=instance_create(tx,ty,Cherry)
         o.hspeed=random_range(-4,4)*dt
         o.vspeed=random_range(-6,-8)*dt
         o.gravity=0.3*dt*dt
@@ -182,7 +182,7 @@ if (state="spray2") {
             //else effect_create_above(ef_explosion,tx+random_range(-8,8),ty+random_range(-8,8),0,choose($b0b0b0,$c0c0c0,$d0d0d0))
             if (angle>90 && angle<270) effect_create_below(ef_firework,tx+random_range(-8,8),ty+random_range(-8,8),0,choose($b0b0b0,$c0c0c0,$d0d0d0))
             else effect_create_above(ef_firework,tx+random_range(-8,8),ty+random_range(-8,8),0,choose($b0b0b0,$c0c0c0,$d0d0d0))
-            o=instance_create(tx,ty,DeathFruit)
+            o=instance_create(tx,ty,Cherry)
             o.direction=i
             o.speed=6*dt
             o.depth=depth+tz

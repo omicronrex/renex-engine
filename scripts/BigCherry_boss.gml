@@ -79,7 +79,7 @@ if (flash) {
 //attack!
 if (state="active") {
     if (once_every(90)) {
-        o=instance_create(x,y,DeathFruit)
+        o=instance_create(x,y,Cherry)
         o.speed=5*dt
         o.direction=point_direction(x,y,Player.x,Player.y)
     }
@@ -88,7 +88,7 @@ if (state="active") {
 //pinch mode
 if (state="pinch") {
     if (once_every(90)) {
-        o=instance_create(x,y,DeathFruit)
+        o=instance_create(x,y,Cherry)
         o.speed=5*dt
         o.direction=point_direction(x,y,Player.x,Player.y)
         o=instance_create(x,y,BigCherryBlue2)

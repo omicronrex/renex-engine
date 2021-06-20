@@ -59,7 +59,7 @@ applies_to=self
 var i;
 
 for (i=0;i<num_cherries;i+=1) {
-    o[i]=instance_create(x,y,DeathFruit)
+    o[i]=instance_create(x,y,Cherry)
     o[i].sprite_index=sprite_index
     o[i].depth=depth
 }

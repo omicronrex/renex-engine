@@ -782,7 +782,6 @@ savePointVeryHard,1472,448,,0
 savePointMediumV,672,896,,0
 JumpRefresher,384,736,,0
 JumpRefresher,352,800,,0
-DeathFruit,1024,736,,0
 Triggered1,992,1152,,0
 Triggered1,1024,1152,,0
 Triggered1,1056,1152,,0
@@ -946,9 +945,9 @@ savePointMedium,192,128,,0
 KeyBlockRed,128,256,,0
 ShootkidEnable,896,1760,,0
 ShootkidDisable,832,1760,,0
-DeathFruit,958,1664,,0
-DeathFruit,960,1728,,0
-DeathFruit,962,1783,,0
+Cherry,958,1664,,0
+Cherry,960,1728,,0
+Cherry,962,1783,,0
 KidBlockDown,1088,384,,0
 KidBlockDown,1120,384,,0
 KidBlockUp,1152,384,,0
@@ -1010,7 +1009,7 @@ ScreenWrap,1600,1728,,0
 ScreenWrap,1600,1760,,0
 PushBlockSave,480,1760,,0
 savePointMedium,320,1760,,0
-DeathFruit,961,1755,,0
+Cherry,961,1755,,0
 TrapStop,256,1120,,0
 Trigger10,1248,1024,,0
 Triggered10,1248,1152,,0

@@ -31,7 +31,7 @@ if (other.solid) {
 
     instance_destroy()
 }
-#define Collision_DeathFruit
+#define Collision_Cherry
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

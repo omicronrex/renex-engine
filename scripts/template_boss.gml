@@ -69,7 +69,7 @@ if (flash) {
 //attack!
 if (state="active") {
     if (once_every(90)) {
-        o=instance_create(x,y,DeathFruit)
+        o=instance_create(x,y,Cherry)
         o.speed=3
         o.direction=point_direction(x,y,Player.x,Player.y)
     }

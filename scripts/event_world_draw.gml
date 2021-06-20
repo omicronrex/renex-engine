@@ -49,14 +49,11 @@ if (!global.pause) {
         }
 
         str="X: "+string(drawX)+"#"
-           +"Y: "+string(drawY)+"#"
-           +"Align: "+string(drawAlign)+"#"
-           +"Room name: "+room_get_name(room)+"#"
-           +"Room number: "+string(room)+"#"
-           +"God mode: "+string(global.debug_god)+"#"
-           +"Infinite jump: "+string(global.debug_jump)+"#"
-           +"FPS: "+string(fps)+"#"
-           +"Real FPS: "+string(fps_real)
+           +"Y: "+string(drawY)+" (align "+string(drawAlign)+")#"
+           +"Room: "+room_get_name(room)+" ("+string(room)+")#"
+           +"FPS: "+string(fps)+" ("+string(fps_real)+") / "+string(room_speed)+"#"
+           +string_repeat("God mode",global.debug_god)+"#"
+           +string_repeat("Infinite jump",global.debug_jump)
         draw_text_outline(20,40,str,$ffff)
     }
 

@@ -3,8 +3,8 @@
 if (orderTest==2) {
     show_error(
         "Creation code order needs to be reversed for this engine to work."+lf+
-        "Please enable the option in GGS->Code Options."+lf+lf+
-        "If you're using 8.1 and don't see this option, move the included winspool.drv file into your Game Maker folder and reopen it.",
+        "Please enable the option in GGS->Code Options in GM 8.2."+lf+lf+
+        "If you're using GM 8.1, move the included winspool.drv file into your Game Maker folder and reopen it.",
         true
     )
     exit

@@ -10,14 +10,14 @@ rot=argument5
 hue=((argument6/255)*360) mod 360
 
 r[0]=clamp(1-abs(angle_difference(hue,0)/120),0,1)
-b[0]=clamp(1-abs(angle_difference(hue+120,120)/120),0,1)
-g[0]=clamp(1-abs(angle_difference(hue+240,240)/120),0,1)
+g[0]=clamp(1-abs(angle_difference(hue+120,120)/120),0,1)
+b[0]=clamp(1-abs(angle_difference(hue+240,240)/120),0,1)
 r[1]=clamp(1-abs(angle_difference(hue+120,0)/120),0,1)
-b[1]=clamp(1-abs(angle_difference(hue+240,120)/120),0,1)
-g[1]=clamp(1-abs(angle_difference(hue,240)/120),0,1)
+g[1]=clamp(1-abs(angle_difference(hue+240,120)/120),0,1)
+b[1]=clamp(1-abs(angle_difference(hue,240)/120),0,1)
 r[2]=clamp(1-abs(angle_difference(hue+240,0)/120),0,1)
-b[2]=clamp(1-abs(angle_difference(hue,120)/120),0,1)
-g[2]=clamp(1-abs(angle_difference(hue+120,240)/120),0,1)
+g[2]=clamp(1-abs(angle_difference(hue,120)/120),0,1)
+b[2]=clamp(1-abs(angle_difference(hue+120,240)/120),0,1)
 
 draw_sprite_ext(spr,0,dx,dy,xs,ys,rot,0,1)
 draw_set_blend_mode(bm_add)

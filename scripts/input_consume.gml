@@ -28,9 +28,9 @@ if (!cutscene) {
             case lr_last: {
                 if (input_h== 1 || key_pressed[key_right]) input_h= 1
                 if (input_h==-1 || key_pressed[key_left ]) input_h=-1
-                if (!global.leftright_moonwalk) facing=input_h
+                if (!global.leftright_moonwalk) facing=esign(input_h,facing)
             }break
-            case lr_stop : {input_h= 0 facing= 0}break
+            case lr_stop : {input_h= 0}break
             case lr_left : {input_h=-1 facing=-1}break
             case lr_right: {input_h= 1 facing= 1}break
         }

@@ -780,8 +780,8 @@ ClockOn,1248,544,,0
 savePointVeryHard,1056,512,,0
 savePointVeryHard,1472,448,,0
 savePointMediumV,672,896,,0
-JumpRefresher,384,736,,0
-JumpRefresher,352,800,,0
+JumpRefresher,401,723,,0
+JumpRefresher,347,805,,0
 Triggered1,992,1152,,0
 Triggered1,1024,1152,,0
 Triggered1,1056,1152,,0
@@ -1043,7 +1043,6 @@ Block,1120,704,,0
 Block,1152,704,,0
 Block,1184,704,,0
 Upform,672,992,,0
-SwitchRed,256,768,,0
 SwitchGreenWL,32,704,,0
 Triggered4,32,800,,0
 Triggered4,64,800,,0
@@ -1055,6 +1054,12 @@ ToggleBlockOff,416,1664,,0
 ToggleBlockOff,416,1536,,0
 ToggleBlockOn,480,1600,,0
 ToggleBlockOn,352,1600,,0
+CherryRainbow,1024,736,,0
+Trigger1,256,640,,0
+Trigger1,256,672,,0
+Trigger1,256,704,,0
+Trigger1,256,736,,0
+Trigger1,256,768,,0
 PlayerStart,896,800,,0
 KeyDraw,128,32,,0
 CatharsisWater,1120,1280,,0

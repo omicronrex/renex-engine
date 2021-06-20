@@ -138,13 +138,13 @@ optext[0]=string(round(settings("musvol")*100))+"%"
 optext[1]=string(round(settings("sfxvol")*100))+"%"
 optext[2]=pick(settings("fullscreen"),"Window","Fullscreen")
 optext[3]=pick(!!World.monitorspeed,pick(settings("vsync")+1,"Failed","Off","On"),"Testing...")
-optext[4]=pick(settings("filter"),"Off","2x","3x")
+optext[4]=pick(settings("filter"),"Off","Bilinear","Area")
 optext[5]=pick(settings("interpolation"),"Off","On")
 optext[6]=pick(settings("gore"),"Off","On")
 optext[7]=pick(global.leftright_moonwalk,pick(settings("l+r behavior"),"Flip","Stay","Stop","Left","Right"),"Moonwalk")
 optext[8]=""
 
-if (sel=4) background_visible[0]=1
+if (sel=4 && settings("fullscreen")) background_visible[0]=1
 else background_visible[0]=0
 if (sel=5) angle+=1
 else angle=0

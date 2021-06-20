@@ -19,7 +19,6 @@ window_set_exclusive_fullscreen(settings("fullscreen"))
 if (application_surface!=noone) surface_free(application_surface) application_surface=noone
 if (dequanto_surface!=noone) surface_free(dequanto_surface) dequanto_surface=noone
 
-if (settings("filter")) window_resize_buffer(global.rw,global.rh)
-else window_resize_buffer(global.width,global.height)
+window_resize_buffer(global.rw,global.rh)
 
 vsync_a_bit()

@@ -6,7 +6,7 @@ if (vvvvvv) {
         y+=4*vflip
         if vflip=-1 {sound_play_slomo("sndVFlip1")} else { sound_play_slomo("sndVFlip2")}
     }
-} else {
+} else if (!hang) {
     if (place_meeting(x,y+1*vflip,Block) || onPlatform || place_meeting(x,y+1*vflip,Water1) || place_meeting(x,y+1*vflip,PlatformWater) || place_meeting(x,y+1*vflip,GuyWater) || ladderjump) {
         //floor jump
         vspeed=-jump*vflip

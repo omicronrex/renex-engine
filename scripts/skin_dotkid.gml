@@ -1,3 +1,11 @@
+if (argument0=="mask") {
+    if (vflip==-1) {
+        mask_index=sprDotKidFlip
+    } else {
+        mask_index=sprDotKid
+    }
+}
+
 if (argument0=="step") {}
 
 if (argument0=="draw") {

@@ -1,3 +1,13 @@
+if (argument0=="mask") {
+    if (vflip==-1) {
+        if (global.use_original_mask) mask_index=sprMaskPlayerFlip
+        else mask_index=sprMaskNeedleFlip
+    } else {
+        if (global.use_original_mask) mask_index=sprMaskPlayer
+        else mask_index=sprMaskNeedle
+    }
+}
+
 if (argument0=="step") {
     if (ladder) {
         if (hspeed!=0) {

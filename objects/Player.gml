@@ -189,17 +189,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///mask
-
-if (vflip==-1) {
-    if (dotkid) mask_index=sprDotKidFlip
-    else if (global.use_original_mask) mask_index=sprMaskPlayerFlip
-    else mask_index=sprMaskNeedleFlip
-} else {
-    if (dotkid) mask_index=sprDotKid
-    else if (global.use_original_mask) mask_index=sprMaskPlayer
-    else mask_index=sprMaskNeedle
-}
+///skin mask
+script_execute(skin,"mask")
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -539,7 +530,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///skin
+///skin step
 script_execute(skin,"step")
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -780,7 +771,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///skin
+///skin draw
 script_execute(skin,"draw")
 
 if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)

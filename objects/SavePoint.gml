@@ -23,7 +23,7 @@ applies_to=self
 //we save on begin step to make sure the player isn't stuck somewhere
 if (save) if (instance_exists(Player)) {
     save=0
-    savedata_save(false)
+    savedata_save(false,string(room)+"."+string(x)+"."+string(y))
 }
 #define Step_2
 /*"/*'/**//* YYD ACTION

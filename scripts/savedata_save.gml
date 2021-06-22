@@ -1,6 +1,16 @@
 ///savedata_save(force)
+///savedata_save(force,hash)
+var hash;
 
 if (savedata("diff")!=3 || argument0) with (Player) {
+    if (argument_count==2) hash=argument1
+    else hash=""
+
+    if (hash!=string(savedata("hash"))) {
+        savedata("backup",true)
+        savedata("hash",hash)
+    }
+
     savedata("x",x)
     savedata("y",y)
     savedata("width",image_xscale)

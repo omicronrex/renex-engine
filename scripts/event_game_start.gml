@@ -53,6 +53,7 @@ sound_global_volume(global.gain)
 exe_name=filename_change_ext(filename_name(parameter_string(0)),"")
 global.setfile=exe_name+".cfg"
 global.savefile=exe_name+".sav"
+global.backfile=exe_name+".sav.bak"
 global.setmap=ds_map_create()
 global.savemap=ds_map_create()
 settings_read()

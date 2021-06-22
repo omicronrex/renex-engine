@@ -1,5 +1,6 @@
 *.cfg
 *.sav
+*.sav.bak
 *.exe
 stuff
 extensions

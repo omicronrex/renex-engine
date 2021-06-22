@@ -46,7 +46,9 @@
 //extra stuff
     //set to a valid room id to use a hub room system
     global.hub_room=rmHub
-    //password for encrypting saves
+    //password for encrypting saves.
+    //if you don't want a password, use "".
+    //also, if you change it, make sure to delete your save files
     global.encrypt_save_password="renex"
     global.esc_always_quits=false
     //enables automatic management of an application surface.

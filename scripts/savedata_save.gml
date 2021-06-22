@@ -3,7 +3,7 @@
 var hash;
 
 if (savedata("diff")!=3 || argument0) with (Player) {
-    if (argument_count==2) hash=argument1
+    if (argument_count==2) hash=argument[1]
     else hash=""
 
     if (hash!=string(savedata("hash"))) {

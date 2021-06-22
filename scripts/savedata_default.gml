@@ -9,6 +9,7 @@ while (is_string(key)) {
 }
 
 //set defaults
+savedata("exists",true)
 savedata("width",1)
 savedata("height",1)
 savedata("obj",Player)

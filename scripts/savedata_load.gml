@@ -2,6 +2,25 @@ var i;
 
 instance_destroy_id(Player)
 
+if (!savedata("exists")) {
+    if (file_exists(global.backfile)) {
+        if (show_question("Your savedata file seems to be corrupt.##Would you like to restore a backup?")) {
+            file_delete(global.savefile)
+            file_copy(global.backfile,global.savefile)
+            sleep(100)
+            savedata_read()
+        } else {
+            show_message("In order to protect your data, the game will now close.")
+            event_game_end()
+            exit
+        }
+    } else {
+        show_message("Your savedata file seems to be corrupt.##Unfortunately, a backup is not available.#In order to protect your data, the game will now close.")
+        event_game_end()
+        exit
+    }
+}
+
 if (savedata("diff")==3) {
     savedata_default()
     savedata("diff",3)

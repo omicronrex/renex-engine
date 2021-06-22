@@ -98,3 +98,4 @@ skin_vvvvvv
 skin_dotkid
 instance_deactivate_all_safe
 draw_sprite_hueshift
+inside_view

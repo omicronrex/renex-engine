@@ -1,12 +1,13 @@
-var s;
+var s,full;
 
-if (settings("fullscreen")) {
+full=settings("fullscreen")
+
+if (full) {
     window_set_cursor(cr_none)
     window_set_region_scale(-1,1)
     s=min(global.dw/global.width,global.dh/global.height)
     global.rw=round(global.width*s)
     global.rh=round(global.height*s)
-
 } else {
     window_set_cursor(cr_default)
     window_set_region_scale(settings("winscale"),1)
@@ -14,7 +15,7 @@ if (settings("fullscreen")) {
     global.rh=global.height
 }
 
-window_set_exclusive_fullscreen(settings("fullscreen"))
+window_set_fullscreen(full)
 
 if (application_surface!=noone) surface_free(application_surface) application_surface=noone
 if (dequanto_surface!=noone) surface_free(dequanto_surface) dequanto_surface=noone

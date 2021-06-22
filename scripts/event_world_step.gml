@@ -105,9 +105,10 @@ if (keyboard_check_pressed(vk_f4) && keyboard_check(vk_alt)) {
 }
 
 //fullscreen toggle
-if (keyboard_check_pressed(vk_f11)) {
+if ((keyboard_check(vk_alt) && keyboard_check_pressed(vk_return)) || keyboard_check_pressed(vk_f11) || (keyboard_check_pressed(vk_f4) && !keyboard_check(vk_alt))) {
     settings("fullscreen",!settings("fullscreen"))
     update_fullscreen()
+    input_clear()
 }
 
 //die key

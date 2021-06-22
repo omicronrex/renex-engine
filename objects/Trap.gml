@@ -16,6 +16,7 @@ path=noone
 path_speed=0
 path_endaction=path_action_stop
 path_absolute=true
+path_scaling=1
 sound=""
 
 scaleh=0
@@ -96,6 +97,16 @@ action_id=603
 applies_to=self
 */
 instance_destroy()
+#define Other_8
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (path_endaction=path_action_reverse) {
+    path_start(path,-path_speed,path_endaction,path_absolute)
+    path_scale=path_scaling
+}
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -108,6 +119,7 @@ if (sound!="") sound_play(sound)
 
 if (path!=noone) {
     path_start(path,path_speed,path_endaction,path_absolute)
+    path_scale=path_scaling
 } else {
     hspeed=hsp
     vspeed=vsp

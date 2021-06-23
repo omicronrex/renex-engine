@@ -36,8 +36,8 @@ if (is_ingame()) {
     ny=median(0,floor(median(cam_t,vcy-global.height/2*f,cam_b-global.height*f)),room_height-global.height*f)
 
     if (global.camera_easing && camera_initialised) {
-        view_xview=inch((view_xview*2+nx)/3,nx,8)
-        view_yview=inch((view_yview*2+ny)/3,ny,8)
+        view_xview=inch((view_xview*5+nx)/6,nx,1)
+        view_yview=inch((view_yview*5+ny)/6,ny,1)
     } else {
         view_xview=nx
         view_yview=ny

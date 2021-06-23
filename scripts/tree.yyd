@@ -6,11 +6,11 @@
 +saving
 	|settings_default
 	|savedata_default
-	|settings
-	|savedata
 	|savedata_select
 	|savedata_load
 	|savedata_save
+	|settings
+	|savedata
 	|save_persistent_objects
 	|load_persistent_objects
 	+savefile
@@ -26,17 +26,25 @@
 		|write_objsave
 		|read_objsave
 +system
+	+util
+		|format_time
+		|mmf_animspeed
+		|mmf_speed
+		|key_get_name
+		|get_path_speed
+		|inside_view
 	+input
 		|input_init
 		|input_default
 		|input_update
 		|input_consume
 		|input_clear
-	+envelope renderer
+	+rendering
 		|envelope_init
 		|envelope_prepare
 		|envelope_compose
 		|update_fullscreen
+		|vsync_a_bit
 	+avoidance
 		|avoid_bullet
 		|wait_time
@@ -51,25 +59,18 @@
 			|bullet_life
 			|bullet_behavior
 			|bullet_stepcode
-	|format_time
+	+drawing
+		|rect
+		|draw_sign_text
+		|draw_text_outline
+		|texture_reset_interpolation
+		|draw_sprite_hueshift
 	|update_caption_deathtime
-	|mmf_animspeed
-	|mmf_speed
-	|is_ingame
-	|good_bounce
-	|key_get_name
-	|has_item
-	|draw_sign_text
-	|draw_text_outline
 	|cement
-	|get_path_speed
-	|rect
-	|texture_reset_interpolation
-	|vsync_a_bit
-	|once_every
+	|good_bounce
+	|is_ingame
+	|has_item
 	|instance_deactivate_all_safe
-	|draw_sprite_hueshift
-	|inside_view
 +events
 	|event_world_create
 	|event_game_start
@@ -92,6 +93,7 @@
 	|key_use
 	|key_draw
 +bosses
+	|once_every
 	|BigCherry_boss
 	|Utah_boss
 	|template_boss

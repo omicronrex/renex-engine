@@ -8,7 +8,9 @@ for (i=0;i<key_sizeof;i+=1) {
     global.key_pressed[i]=keyboard_check_pressed(global.keycode[i])
     global.key_released[i]=keyboard_check_released(global.keycode[i])
     global.key[i]=((keyboard_check_direct(global.keycode[i]) && global.infocus) || global.key_pressed[i]) && !global.key_released[i]
+}
 
+for (i=0;i<key_sizeof;i+=1) {
     //store a copy of it for the player
     //this is necessary because the player might be running slower than the game
     //this allows the player to do 1fs more accurately

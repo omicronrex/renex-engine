@@ -45,3 +45,6 @@ if (global.optimize_solids) {
 camera_default()
 
 key_clear()
+
+instance_deactivate_region(view_xview-20, view_yview-20, view_wview+20, view_hview+20, false, true);
+instance_activate_all_safe();

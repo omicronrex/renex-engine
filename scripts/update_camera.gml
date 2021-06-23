@@ -48,4 +48,8 @@ if (is_ingame()) {
 
     view_xcenter=view_xview+(global.width/2)/(global.scale*vcz)
     view_ycenter=view_yview+(global.height/2)/(global.scale*vcz)
+
+    instance_activate_region(view_xview-20, view_yview-20, view_wview+20, view_hview+20, true);
+    instance_deactivate_region(view_xview-20, view_yview-20, view_wview+20, view_hview+20, false, true);
+    instance_activate_all_safe();
 }

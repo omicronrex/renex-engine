@@ -14,6 +14,7 @@
     global.default_camera_h=608
     global.default_camera_follow=Player
     global.camera_smoothing=true
+    global.transition_smoothing=true
 
 
 //player settings

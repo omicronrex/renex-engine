@@ -66,7 +66,6 @@
 	|rect
 	|texture_reset_interpolation
 	|vsync_a_bit
-	|set_loop_point
 	|once_every
 	|instance_deactivate_all_safe
 	|draw_sprite_hueshift
@@ -87,7 +86,6 @@
 	|check_crush
 	|kill_player
 	|move_player
-	|sound_play_slomo
 +keypick
 	|key_clear
 	|key_add
@@ -103,6 +101,7 @@
 		|scrMakeShapes
 	|rmAvoid_avoidance
 +camera
+	|update_camera
 	|camera_default
 	|camera_follow
 	|camera_focus
@@ -116,3 +115,6 @@
 +weapons
 	|weapon_default
 	|weapon_shootkid
++sound
+	|sound_play_slomo
+	|set_loop_point

@@ -27,4 +27,8 @@ with (World) {
     vcx=newcamx
     vcy=newcamy
     vcz=camera_z
+
+    camera_initialised=false
+
+    update_camera()
 }

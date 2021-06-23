@@ -49,19 +49,19 @@ if (is_ingame()) {
     view_xcenter=view_xview+(global.width/2)/(global.scale*vcz)
     view_ycenter=view_yview+(global.height/2)/(global.scale*vcz)
 
-    instance_deactivate_region(view_xview-global.camera_deactivate_buffer,
-            view_yview-global.camera_deactivate_buffer,
-            view_wview+global.camera_deactivate_buffer,
-            view_hview+global.camera_deactivate_buffer,
-            false,
-            true);
-    instance_activate_all_safe();
-    instance_activate_region(view_xview-global.camera_deactivate_buffer,
-            view_yview-global.camera_deactivate_buffer,
-            (view_wview*global.camera_deactivate_margin_w)+global.camera_deactivate_buffer,
-            (view_hview*global.camera_deactivate_margin_h)+global.camera_deactivate_buffer,
-            true);
-    if (instance_exists(Player)) {
-        instance_activate_region(Player.x - 64, Player.y - 64, 128, 128, true);
+    if (global.camera_deactivate==true) {
+        instance_deactivate_region(view_xview-global.camera_deactivate_buffer,
+                view_yview-global.camera_deactivate_buffer,
+                view_wview+global.camera_deactivate_buffer,
+                view_hview+global.camera_deactivate_buffer, false, true);
+        instance_activate_all_safe();
+        instance_activate_region(view_xview-global.camera_deactivate_buffer,
+                view_yview-global.camera_deactivate_buffer,
+                (view_wview*global.camera_deactivate_margin_w)+global.camera_deactivate_buffer,
+                (view_hview*global.camera_deactivate_margin_h)+global.camera_deactivate_buffer,
+                true);
+        if (instance_exists(Player)) {
+            instance_activate_region(Player.x - 64, Player.y - 64, 128, 128, true);
+        }
     }
 }

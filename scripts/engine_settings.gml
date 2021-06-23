@@ -21,6 +21,7 @@
     global.camera_deactivate_margin_w=2;
     global.camera_deactivate_margin_h=1;
     global.camera_deactivate_buffer=20;
+    global.camera_deactivate=true;
 
 
 //player settings

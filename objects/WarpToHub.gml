@@ -12,6 +12,8 @@ color=$ffffff
 active=0
 
 if (!room_exists(global.hub_room)) instance_destroy()
+
+event_step()
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

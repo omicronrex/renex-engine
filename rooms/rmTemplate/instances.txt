@@ -1,4 +1,4 @@
-WarpToHub,32,544,,0
+WarpToHub,64,544,,0
 MusicPlayer,32,32,15E04C49,0
 Block,0,0,,0
 Block,0,32,,0
@@ -84,5 +84,5 @@ Block,128,0,,0
 Block,96,0,,0
 Block,64,0,,0
 Block,32,0,,0
-savePointMedium,64,544,,0
-PlayerStart,32,544,,0
+savePointVeryHard,96,544,,0
+PlayerStart,64,544,,0

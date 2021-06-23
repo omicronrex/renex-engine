@@ -1,9 +1,12 @@
 ///sound_play_slomo(sound)
+///sound_play_slomo(sound,pitch)
 //plays a sound at the speed of the slomo gimmick
 var snd,spd;
 
 spd=1
 with (Player) spd=slomo
+
+if (argument_count==2) spd*=argument[1]
 
 if (spd<1) {
     snd=sound_play_paused(argument0)

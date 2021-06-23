@@ -111,7 +111,7 @@ TrapStop,480,320,,0
 TrapStop,160,192,,0
 Trigger9,352,544,,0
 Triggered9,288,256,,0
-VCoinGive,672,384,,0
+VCoinGive,704,96,,0
 VCoinTake,64,64,,0
 BeamOneJump,96,480,,0
 BeamHighSpeed,160,480,,0
@@ -133,6 +133,7 @@ SwitchRed,576,544,,0
 Trigger5,96,544,,0
 Triggered1,736,448,,0
 Triggered5,384,320,,0
+Block,416,448,,0
 PlayerStart,32,544,,0
 WaterSurface,448,480,,0
 Water1,448,480,,0

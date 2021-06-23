@@ -37,6 +37,7 @@
 	|Camera
 	|DepthBlender
 	|Cementer
+	|ObjHueShiftExample
 +Saves
 	|savePointMedium
 	|savePointHard
@@ -46,11 +47,12 @@
 	|savePointVeryHardV
 +Threats
 	|bouncingFruit
+	|CherryCircle
+	|CherryRainbow
 	|minispikeDown
 	|minispikeRight
 	|minispikeLeft
 	|minispikeUp
-	|CherryCircle
 +Gimmicks
 	+White Dot
 		|WhiteDotEnable
@@ -285,7 +287,6 @@
 |WallJumpL
 |WallJumpR
 |Cherry
-|CherryRainbow
 |SpikeD
 |SpikeL
 |SpikeR
@@ -296,4 +297,3 @@
 |Teleporter
 |MusicPlayer
 |TextDraw
-|ObjHueShiftExample

@@ -91,9 +91,9 @@ bg_hspeed7=0
 bg_vspeed7=0
 bg_stretch7=0
 
-views_enabled=1
-view_visible0=1
-view_xview0=800
+views_enabled=0
+view_visible0=0
+view_xview0=0
 view_yview0=0
 view_wview0=800
 view_hview0=600

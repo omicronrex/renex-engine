@@ -13,8 +13,10 @@
     global.default_camera_w=800
     global.default_camera_h=608
     global.default_camera_follow=Player
+    //camera will follow target smoothly when zoomed in
     global.camera_smoothing=true
-    global.transition_smoothing=true
+    //camera will switch screens smoothly
+    global.camera_easing=true
 
 
 //player settings

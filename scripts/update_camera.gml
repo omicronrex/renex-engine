@@ -35,7 +35,7 @@ if (is_ingame()) {
     nx=median(0,floor(median(cam_l,vcx-global.width /2*f,cam_r-global.width *f)),room_width -global.width *f)
     ny=median(0,floor(median(cam_t,vcy-global.height/2*f,cam_b-global.height*f)),room_height-global.height*f)
 
-    if (global.transition_smoothing && camera_initialised) {
+    if (global.camera_easing && camera_initialised) {
         view_xview=inch((view_xview*2+nx)/3,nx,8)
         view_yview=inch((view_yview*2+ny)/3,ny,8)
     } else {

@@ -15,7 +15,7 @@ applies_to=self
 if (go) {
     f=min(1,f+0.02*dt)
     view_angle=cosine(180,360,f)
-    if (view_angle>270) PushBlock.grav=1
+    if (view_angle>270) Player.vflip=1
 
     if (f==1) {
         go=0
@@ -30,7 +30,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-with (other) {
+with (other) if (!frozen) {
     if (vflip==-1 || view_angle==180) {
         speed=0
         djump=1
@@ -38,9 +38,8 @@ with (other) {
         if (view_angle!=0) {
             frozen=true
             other.go=1
-        } else PushBlock.grav=1
+        } else vflip=1
     }
-    vflip=1
 }
 #define Other_0
 /*"/*'/**//* YYD ACTION

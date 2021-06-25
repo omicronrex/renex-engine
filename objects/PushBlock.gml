@@ -14,6 +14,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+with (Player) other.grav=vflip
+
 if (place_free(x,y+fall_speed*grav)) {
     vspeed=fall_speed*grav
     hspeed=0

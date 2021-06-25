@@ -10,7 +10,6 @@ with (other) {
         djump=1
     }
     vflip=1
-    with (PushBlock) grav=1
 }
 #define Other_0
 /*"/*'/**//* YYD ACTION

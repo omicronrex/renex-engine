@@ -13,6 +13,13 @@ image_xscale=Player.image_xscale
 image_yscale=Player.image_yscale
 
 hspeed=image_xscale*4
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (!inside_view()) instance_destroy()
 #define Collision_Block
 /*"/*'/**//* YYD ACTION
 lib_id=1

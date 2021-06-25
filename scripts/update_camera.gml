@@ -26,14 +26,14 @@ if (is_ingame()) {
 
     f=1/(global.scale*vcz)
 
-    cam_l=floorto(vcx,camera_w)
-    cam_t=floorto(vcy,camera_h)
+    camera_l=floorto(vcx,camera_w)
+    camera_t=floorto(vcy,camera_h)
 
-    cam_r=cam_l+camera_w
-    cam_b=cam_t+camera_h
+    camera_r=camera_l+camera_w
+    camera_b=camera_t+camera_h
 
-    nx=median(0,floor(median(cam_l,vcx-global.width /2*f,cam_r-global.width *f)),room_width -global.width *f)
-    ny=median(0,floor(median(cam_t,vcy-global.height/2*f,cam_b-global.height*f)),room_height-global.height*f)
+    nx=median(0,floor(median(camera_l,vcx-global.width /2*f,camera_r-global.width *f)),room_width -global.width *f)
+    ny=median(0,floor(median(camera_t,vcy-global.height/2*f,camera_b-global.height*f)),room_height-global.height*f)
 
     if (global.camera_easing && camera_initialised) {
         view_xview=inch((view_xview*5+nx)/6,nx,1)

@@ -17,10 +17,10 @@ if (!image_index) {
     image_index=1
     sound_play("sndButton")
 
-    l=World.cam_l
-    r=World.cam_r
-    t=World.cam_t
-    b=World.cam_b
+    l=World.camera_l
+    r=World.camera_r
+    t=World.camera_t
+    b=World.camera_b
 
     with (mytrig) if (x>=l && x<r && y>=t && y<b) instance_destroy()
 }

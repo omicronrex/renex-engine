@@ -16,9 +16,6 @@ if (is_ingame()) {
     }
     view_angle=savedata("viewangle")
 
-    //update pushblock gravity
-    with (PushBlock) grav=Player.vflip
-
     if (global.gameover_music_pause) sound_kind_resume(1)
     event_world_endstep()
 } else {
@@ -45,11 +42,3 @@ if (global.optimize_solids) {
 camera_default()
 
 key_clear()
-
-if (global.camera_deactivate==true) {
-    instance_deactivate_region(view_xview-global.camera_deactivate_buffer,
-            view_yview-global.camera_deactivate_buffer,
-            view_wview+global.camera_deactivate_buffer,
-            view_hview+global.camera_deactivate_buffer, false, true);
-    instance_activate_all_safe();
-}

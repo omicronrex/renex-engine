@@ -100,4 +100,5 @@ instance_deactivate_all_safe
 draw_sprite_hueshift
 inside_view
 update_camera
-instance_activate_all_safe
+list_instance_activation
+update_activation

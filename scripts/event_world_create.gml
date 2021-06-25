@@ -35,5 +35,7 @@ orderTest=2
 
 camera_l=0
 camera_t=0
+memcaml=-1
+memcamt=-1
 
 globalvar view_xcenter,view_ycenter;

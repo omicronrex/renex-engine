@@ -8,4 +8,5 @@ instance_destroy()
 
 sound_play("sndBlockChange")
 
+instance_activate_object(WCSwitchSpikeParent)
 with (WCSwitchSpikeParent) killer=!killer

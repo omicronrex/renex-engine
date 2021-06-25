@@ -11,3 +11,6 @@ sound_kind_volume(1,settings("musvol"))
 
 cutscene=false
 frozen=false
+
+memcaml=-1
+memcamt=-1

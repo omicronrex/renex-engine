@@ -3,6 +3,7 @@
 	|list_loop_points
 	|list_avoidance_bullets
 	|list_nonstick
+	|list_instance_activation
 +saving
 	|settings_default
 	|savedata_default
@@ -71,7 +72,7 @@
 	|is_ingame
 	|has_item
 	|instance_deactivate_all_safe
-	|instance_activate_all_safe
+	|update_activation
 +events
 	|event_world_create
 	|event_game_start

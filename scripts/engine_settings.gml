@@ -18,10 +18,11 @@
     //camera will switch screens smoothly
     global.camera_easing=true
     //deactivate margin for rooms
-    global.camera_deactivate_margin_w=2;
-    global.camera_deactivate_margin_h=1;
-    global.camera_deactivate_buffer=20;
-    global.camera_deactivate=true;
+    global.instance_deactivation=true
+    //default dimensions are a 3x3 group of screens, with 20 pixels of margin.
+    global.instance_activate_screens_w=1
+    global.instance_activate_screens_h=1
+    global.instance_activate_margin_px=20
 
 
 //player settings

@@ -15,6 +15,7 @@ settings(itemid,1)
 sound_play("sndItem")
 instance_destroy()
 
+instance_activate_object(ItemBlock)
 with (ItemBlock) event_user(0)
 #define Other_4
 /*"/*'/**//* YYD ACTION

@@ -12,6 +12,7 @@ if (orderTest==2) {
 
 engine_settings()
 global.optimize_solids=median(0,global.optimize_solids,8)
+global.break_sfx=pick(global.break_sound_effect,"sndBlockBreak","sndBlockBreakYuuutu","sndBlockBreakYosniper")
 
 set_application_title(global.game_title)
 draw_set_color($ffffff)

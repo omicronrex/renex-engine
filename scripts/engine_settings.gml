@@ -50,6 +50,8 @@
     //use time stretch to keep avoidance songs in sync
     //uses a bit more cpu than just pitch shifting
     global.avoidance_stretch=false
+    //0 for clean break sound effect, 1 for yuuutu engine, 2 for yosniper
+    global.break_sound_effect=0
 
 
 //extra stuff

@@ -35,10 +35,10 @@
 	|Ortho
 	|DestroyedBlock
 	|FirePart
-	|Camera
 	|DepthBlender
 	|Cementer
 	|ObjHueShiftExample
+	|BossIntroduction
 +Saves
 	|savePointMedium
 	|savePointHard
@@ -146,6 +146,7 @@
 	|GuyCouch
 	|ShootRefresherL
 	|ShootRefresherR
+	|Teleporter
 +Triggers
 	|Trigger1
 	|SwitchRed
@@ -282,7 +283,7 @@
 		|FireDemo
 		|GlassShard
 		|TouhouDeath
-	|BossIntroduction
+	|BossWarp
 +Avoidance
 	|Avoidance
 	|AvoidBullet
@@ -298,8 +299,8 @@
 |SpikeR
 |SpikeU
 |Warp
-|BossWarp
 |WarpToHub
-|Teleporter
+|Camera
 |MusicPlayer
+|MusicPlayerSection
 |TextDraw

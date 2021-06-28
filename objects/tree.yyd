@@ -24,6 +24,7 @@
 	|FileMenu
 	|OptionsMenu
 	|KeyboardMenu
+	|JoystickMenu
 	|PauseMenu
 +System
 	|BloodEmitter

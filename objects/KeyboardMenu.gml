@@ -4,12 +4,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-select=0
+sel=0
 
 xdraw=120
 ydraw=80
 xsep=560
 ysep=40
+
+ycursor=ydraw+(ysep*sel)+18
 
 setting=false
 
@@ -46,15 +48,17 @@ applies_to=self
 if (!setting) {
     if (global.key_pressed[key_up] || global.key_pressed[key_down]) {
         sound_play("sndJump")
-        select=modwrap(select+global.input_v,0,key_sizeof+1)
+        sel=modwrap(sel+global.input_v,0,key_sizeof+1)
     } else if (global.key_pressed[key_shoot]) {
         input_clear()
-        instance_create(x,y,OptionsMenu)
+        i=instance_create(x,y,OptionsMenu)
+        i.sel=8
+        i.ycursor=i.ydraw+(i.ysep*i.sel)+18
         instance_destroy()
     } else if (global.key_pressed[key_jump]) {
-        if (select!=key_sizeof) {
+        if (sel!=key_sizeof) {
             setting=true
-            keytext[select]="Press new key..."
+            keytext[sel]="Press new key..."
         } else {
             input_default()
             keytext[key_sizeof]="Reset!"
@@ -65,13 +69,15 @@ if (!setting) {
     if (keyboard_check_pressed(vk_anykey)) {
         key=keyboard_key
         if (key==160 || key==161) key=16 //shift
-        global.keycode[select]=key
+        global.keycode[sel]=key
         setting=false
     }
 }
 
 if (!setting) for (i=0;i<key_sizeof;i+=1)
     keytext[i]=key_get_name(global.keycode[i])
+
+ycursor=inch(ycursor,ydraw+sel*ysep+52,16*dt)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -89,7 +95,7 @@ for (i=0;i<=key_sizeof;i+=1) {
     draw_text(xdraw+xsep,ydraw+i*ysep+32,keytext[i])
 }
 
-draw_sprite(sprPlayerIdle,floor(image_index),xdraw-20,ydraw+select*ysep+52)
+draw_sprite(sprPlayerIdle,floor(image_index),xdraw-20,ycursor)
 
 //button info
 draw_set_font(fntFileSmall)

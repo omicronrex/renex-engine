@@ -37,9 +37,11 @@
 	+input
 		|input_init
 		|input_default
+		|input_anykey
 		|input_update
 		|input_consume
 		|input_clear
+		|joystick_default
 	+rendering
 		|envelope_init
 		|envelope_prepare

@@ -102,3 +102,5 @@ inside_view
 update_camera
 list_instance_activation
 update_activation
+joystick_default
+input_anykey

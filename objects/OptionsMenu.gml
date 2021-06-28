@@ -19,8 +19,9 @@ option[4]="Fullscreen Filter"
 option[5]="Sprite Filter"
 option[6]="Blood Effect"
 option[7]="Left+Right Mode"
-option[8]="Change Controls"
-option_max=9
+option[8]="Keyboard Setup"
+option[9]="Joystick Setup"
+option_max=10
 
 image_speed=0.2*dt
 ycursor=ydraw+(ysep*sel)+18
@@ -123,6 +124,12 @@ if (global.key_pressed[key_shoot]) {
         instance_create(x,y,KeyboardMenu)
         instance_destroy()
     }
+    if (sel==9) {
+        sound_play("sndDJump")
+        input_clear()
+        instance_create(x,y,JoystickMenu)
+        instance_destroy()
+    }
 } else if (global.input_h!=0) {
     if (sel==0) {
         settings("musvol",median(0,settings("musvol")+global.input_h*0.01,1))
@@ -143,6 +150,7 @@ optext[5]=pick(settings("interpolation"),"Off","On")
 optext[6]=pick(settings("gore"),"Off","Low","Medium","High")
 optext[7]=pick(global.leftright_moonwalk,pick(settings("l+r behavior"),"Flip","Stay","Stop","Left","Right"),"Moonwalk")
 optext[8]=""
+optext[9]=pick(!!joystick_count(),"no joys",string(joystick_count())+" joys")
 
 if (sel=4 && settings("fullscreen")) background_visible[0]=1
 else background_visible[0]=0

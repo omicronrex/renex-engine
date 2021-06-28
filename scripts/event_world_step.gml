@@ -38,6 +38,7 @@ if (monitorspeed) {
 }
 
 if (message) message-=1
+if (message2) message2-=1
 
 //music fade
 if (fading) {

@@ -15,6 +15,9 @@ monitorresult=""
 message=0
 messagetext=""
 
+message2=0
+message2text=""
+
 input_init()
 
 global.viewangle=0

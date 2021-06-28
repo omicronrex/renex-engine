@@ -38,6 +38,7 @@
     global.bow_lag=true
     global.angle_slopes=true
     global.explode_gore=true
+    global.coyote_time=3
 
 
 //sound options

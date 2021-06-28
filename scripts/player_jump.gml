@@ -21,6 +21,7 @@ if (vvvvvv) {
         with (SingleJumpSwitchBlockOff) event_user(0)
         with (DoubleJumpSwitchBlock) event_user(0)
         with (DoubleJumpSwitchBlockOff) event_user(0)
+        coyoteTime=0
     } else if (global.debug_jump || (djump<maxjumps || place_meeting(x,y+1*vflip,Water2)) && !(beamstate&beam_onejump)) {
         //double jump
         vspeed=-jump2*vflip
@@ -29,6 +30,7 @@ if (vvvvvv) {
         image_index=0
         with (DoubleJumpSwitchBlock) event_user(0)
         with (DoubleJumpSwitchBlockOff) event_user(0)
+        coyoteTime=0
     }
 
     ladderjump=false

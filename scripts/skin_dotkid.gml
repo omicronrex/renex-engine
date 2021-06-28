@@ -13,6 +13,6 @@ if (argument0=="draw") {
     draw_circle_color(floor(x),floor(y),48,0,$ff,1)
 
     if (bow) {
-        draw_sprite_ext(sprBow,0,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
+        draw_sprite_ext(sprBow,0,floor(bowx),floor(bowy+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
     }
 }

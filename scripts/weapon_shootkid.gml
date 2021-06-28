@@ -8,5 +8,6 @@ if (!global.contact_saves) {
 
 if (!instance_exists(ShootKid)) {
     sound_play_slomo("sndShootkid")
-    instance_create(x,y,ShootKid)
+    i=instance_create(x,y,ShootKid)
+    i.direction+=sprite_angle
 }

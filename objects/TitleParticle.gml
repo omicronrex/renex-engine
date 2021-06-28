@@ -7,6 +7,8 @@ applies_to=self
 direction=random(360)
 size=1
 f=random_range(0.1,1)
+
+event_step()
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -17,6 +17,7 @@
 	|spr1x2
 	|sprCamera
 	|sprMusic
+	|sprMusicSection
 	|sprDrawText
 	|sprPlayerStart
 	|sprFirePart

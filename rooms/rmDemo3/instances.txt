@@ -134,6 +134,16 @@ Trigger5,96,544,,0
 Triggered1,736,448,,0
 Triggered5,384,320,,0
 Block,416,448,,0
+SingleJumpSwitchBlock,64,448,,0
+SingleJumpSwitchBlock,64,384,,0
+DoubleJumpSwitchBlock,128,256,,0
+DoubleJumpSwitchBlock,128,384,,0
+DoubleJumpSwitchBlock,128,416,,0
+DoubleJumpSwitchBlock,128,352,,0
+DoubleJumpSwitchBlock,128,320,,0
+DoubleJumpSwitchBlock,128,288,,0
+DoubleJumpSwitchBlockOff,160,416,,0
+SingleJumpSwitchBlockOff,64,416,,0
 PlayerStart,32,544,,0
 WaterSurface,448,480,,0
 Water1,448,480,,0

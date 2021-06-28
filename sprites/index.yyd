@@ -259,3 +259,7 @@ sprToggleBlockOff
 sprCherryRainbow
 sprCherryRainbowOld
 sprPencils
+sprDJumpBlock
+sprSJumpBlock
+sprSJumpBlockOff
+sprDJumpBlockOff

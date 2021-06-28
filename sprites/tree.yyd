@@ -227,6 +227,10 @@
 	|sprBeamGreen
 	|sprToggleBlockOn
 	|sprToggleBlockOff
+	|sprSJumpBlock
+	|sprSJumpBlockOff
+	|sprDJumpBlock
+	|sprDJumpBlockOff
 +Triggers
 	|sprTrigger1
 	|sprTrigger2

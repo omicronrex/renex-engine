@@ -275,3 +275,7 @@ ToggleBlockOff
 CherryRainbow
 ObjHueShiftExample
 WaterSurface
+SingleJumpSwitchBlock
+DoubleJumpSwitchBlockOff
+SingleJumpSwitchBlockOff
+DoubleJumpSwitchBlock

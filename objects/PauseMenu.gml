@@ -11,7 +11,7 @@ if (((global.rw!=global.width || global.rh!=global.height) && settings("filter")
 }
 
 global.pause=true
-instance_deactivate_all_safe()
+instance_deactivate_all_safe(false)
 memspd=room_speed
 room_speed=10
 

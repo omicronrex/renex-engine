@@ -40,6 +40,8 @@ shootkid=false
 onfire=false
 vvvvvv=false
 
+coyoteTime=0
+
 beamstate=beam_normal
 
 vflip=1
@@ -255,7 +257,7 @@ if (!frozen) {
             }
             vspeed+=0.1
             if (abs(hspeed)<4) walljumpboost=0
-        } else vspeed-=gravity
+        } else if (coyoteTime <= 0) vspeed-=gravity
     } else {
         if (h!=0) {
             if (!hang) {
@@ -278,14 +280,19 @@ if (!frozen) {
         }
     }
 
-    if (onPlatform) {
+    if (onPlatform) or (coyoteTime > 0) {
         if (!place_meeting(x,y+4*vflip,Platform) && !place_meeting(x,y+vflip,Block)) {
-            onPlatform=false
+            if (coyoteTime <= 0) {
+                onPlatform=false;
+            }
+            coyoteTime -= 1;
         }
+    } else if (onPlatform) and (coyoteTime <= 0) {
+        //coyoteTime = global.coyote_time;
     }
 
-    if (vflip==-1) vspeed=max(-maxVspeed,vspeed)
-    else vspeed=min(vspeed,maxVspeed)
+    if (vflip==-1) and (coyoteTime <= 0) vspeed=max(-maxVspeed,vspeed)
+    else if (vflip==1) and (coyoteTime <= 0) vspeed=min(vspeed,maxVspeed)
 
     if (!cutscene) {
         afkk=(afkk+1) mod 4
@@ -437,6 +444,7 @@ if (vspeed*vflip>=0) {
         onPlatform=true
         walljumpboost=0
         djump=1
+        coyoteTime=global.coyote_time
     }
 }
 /*"/*'/**//* YYD ACTION
@@ -454,7 +462,7 @@ if (dotkid) {
 }
 
 //we add gravity because this is supposed to happen after movement update
-vspeed+=gravity
+if (coyoteTime <= 0) vspeed+=gravity
 
 if (!place_free(x+hspeed,y+vspeed)) {
     if (!place_free(x+hspeed,y)) {
@@ -487,7 +495,7 @@ if (!place_free(x+hspeed,y+vspeed)) {
             }
         }
         if (land) {
-            if (!place_free(x,y+vspeed)) {vspeed=0 onPlatform=true djump=1}
+            if (!place_free(x,y+vspeed)) {vspeed=0 onPlatform=true coyoteTime=global.coyote_time djump=1}
         }
 
         repeat (a) {
@@ -510,6 +518,7 @@ if (!place_free(x+hspeed,y+vspeed)) {
                     onPlatform=true
                     walljumpboost=0
                     djump=1
+                    coyoteTime=global.coyote_time
                 }
                 break
             }

@@ -41,6 +41,7 @@ onfire=false
 vvvvvv=false
 
 coyoteTime=0
+jump_timer=0
 
 beamstate=beam_normal
 
@@ -237,6 +238,8 @@ if (!frozen) {
             if (keyboard_check_pressed(ord("D"))) move_player(x+1,y,1)
         }
     }
+
+    if (jump_timer) jump_timer-=1
 
     if (walljumpboost) {
         h=walljumpdir
@@ -495,7 +498,7 @@ if (!place_free(x+hspeed,y+vspeed)) {
             }
         }
         if (land) {
-            if (!place_free(x,y+vspeed)) {vspeed=0 onPlatform=true coyoteTime=global.coyote_time djump=1}
+            if (!place_free(x,y+vspeed)) {vspeed=0 player_land()}
         }
 
         repeat (a) {
@@ -510,20 +513,18 @@ if (!place_free(x+hspeed,y+vspeed)) {
         a=ceil(abs(vspeed))
         s=sign(vspeed)
 
+        vspeed=0
+
         repeat (a) {
             y+=s
             if (!place_free(x,y)) {
                 y-=s
                 if (s==vflip) {
-                    onPlatform=true
-                    walljumpboost=0
-                    djump=1
-                    coyoteTime=global.coyote_time
+                    player_land()
                 }
                 break
             }
         }
-        vspeed=0
     }
     if (!place_free(x+hspeed,y+vspeed)) {
         hspeed=0

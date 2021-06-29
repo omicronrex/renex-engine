@@ -38,7 +38,12 @@
     global.bow_lag=true
     global.angle_slopes=true
     global.explode_gore=true
-    global.coyote_time=3
+    //time in frames to allow jumping after leaving a surface
+    //turn this off for a precision needle game
+    global.coyote_time=1
+    //time in frames to allow jumping when the button is pressed too early in the air
+    //makes 4.5s easier but does not remove valign lottery entirely
+    global.jump_buffering=1
 
 
 //sound options

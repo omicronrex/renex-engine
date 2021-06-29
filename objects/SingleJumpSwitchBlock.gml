@@ -6,6 +6,7 @@ applies_to=self
 */
 ready=0
 alarm[0]=5
+check_crush()
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

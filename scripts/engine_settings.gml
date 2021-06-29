@@ -38,7 +38,7 @@
     global.bow_lag=true
     global.angle_slopes=true
     global.explode_gore=true
-    //time in frames to allow jumping after leaving a surface
+    //time in frames to allow single jumping after leaving a surface
     //turn this off for a precision needle game
     global.coyote_time=1
     //time in frames to allow jumping when the button is pressed too early in the air
@@ -53,8 +53,9 @@
     global.gameover_music_stop=false
     global.gameover_music_pause=false
     global.gameover_music_fade=true
-    //use time stretch to keep avoidance songs in sync
-    //uses a bit more cpu than just pitch shifting
+    //use 'time stretch' effect to keep avoidance songs in sync if the game lags
+    //when false, game uses pitch shifting
+    //uses a lot more cpu!
     global.avoidance_stretch=false
     //0 for clean break sound effect, 1 for yuuutu engine, 2 for yosniper
     global.break_sound_effect=0

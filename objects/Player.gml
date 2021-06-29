@@ -534,6 +534,8 @@ if (!place_free(x+hspeed,y+vspeed)) {
 if (!onPlatform) angle=0
 
 vsplatform=0
+//we subtract gravity because we added it before
+//collision shenanigans, just trust me on this one
 vspeed-=gravity
 /*"/*'/**//* YYD ACTION
 lib_id=1

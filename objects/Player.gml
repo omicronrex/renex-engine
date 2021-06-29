@@ -294,8 +294,8 @@ if (!frozen) {
         //coyoteTime = global.coyote_time;
     }
 
-    if (vflip==-1) and (coyoteTime <= 0) vspeed=max(-maxVspeed,vspeed)
-    else if (vflip==1) and (coyoteTime <= 0) vspeed=min(vspeed,maxVspeed)
+    if (vflip==-1) vspeed=max(-maxVspeed,vspeed)
+    else if (vflip==1) vspeed=min(vspeed,maxVspeed)
 
     if (!cutscene) {
         afkk=(afkk+1) mod 4
@@ -465,7 +465,7 @@ if (dotkid) {
 }
 
 //we add gravity because this is supposed to happen after movement update
-if (coyoteTime <= 0) vspeed+=gravity
+vspeed+=gravity
 
 if (!place_free(x+hspeed,y+vspeed)) {
     if (!place_free(x+hspeed,y)) {

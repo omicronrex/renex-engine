@@ -26,8 +26,8 @@ if (is_ingame()) {
 
     f=1/(global.scale*vcz)
 
-    camera_l=floorto(vcx,camera_w)
-    camera_t=floorto(vcy,camera_h)
+    camera_l=median(0,floorto(vcx,camera_w),room_width-camera_w)
+    camera_t=median(0,floorto(vcy,camera_h),room_height-camera_h)
 
     camera_r=camera_l+camera_w
     camera_b=camera_t+camera_h

@@ -20,8 +20,8 @@
     //deactivate margin for rooms
     global.instance_deactivation=true
     //default dimensions are a 3x3 group of screens, with 20 pixels of margin.
-    global.instance_activate_screens_w=3
-    global.instance_activate_screens_h=3
+    global.instance_activate_screens_w=1
+    global.instance_activate_screens_h=1
     global.instance_activate_margin_px=20
 
 
@@ -37,7 +37,6 @@
     global.a_d_trick=false
     global.bow_lag=true
     global.angle_slopes=true
-    global.explode_gore=true
     //time in frames to allow single jumping after leaving a surface
     //turn this off for a precision needle game
     global.coyote_time=1

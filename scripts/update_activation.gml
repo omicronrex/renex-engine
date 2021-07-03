@@ -7,7 +7,5 @@ if (global.instance_deactivation) with (World) {
         camera_h*global.instance_activate_screens_h+global.instance_activate_margin_px*2,
         true
     )
-    with (Player) {
-        instance_activate_region(x-64,y-64,128,128,true)
-    }
+    instance_activate_around_player()
 }

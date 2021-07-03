@@ -754,10 +754,10 @@ marginh=bbox_right-bbox_left+2
 marginv=bbox_bottom-bbox_top+2
 
 if (place_meeting(x,y,ScreenWrap)) {
-    if (hspeed>0 && x>room_width) x-=room_width+marginh
-    if (vspeed>0 && y>room_height) y-=room_height+marginv
-    if (hspeed<0 && x<0) x+=room_width+marginh
-    if (vspeed<0 && y<0) y+=room_height+marginv
+    if (hspeed>0 && x>room_width)  {if (!move_player(x-room_width+marginh,y ,1)) x-=hspeed}
+    if (vspeed>0 && y>room_height) {if (!move_player(x,y-room_height+marginv,1)) y-=vspeed}
+    if (hspeed<0 && x<0)           {if (!move_player(x+room_width+marginh,y ,1)) x-=hspeed}
+    if (vspeed<0 && y<0)           {if (!move_player(x,y+room_height+marginv,1)) y-=vspeed}
 } else {
     if (global.die_outside_room) kill_player()
 }

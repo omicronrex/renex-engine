@@ -105,3 +105,4 @@ update_activation
 joystick_default
 input_anykey
 player_land
+instance_activate_around_player

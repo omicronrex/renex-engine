@@ -265,8 +265,8 @@ Block,320,128,,0
 Block,32,576,,0
 Block,64,576,,0
 Block,96,576,,0
-savePointHard,32,64,,0
-savePointMedium,672,512,,0
+SavePointHard,32,64,,0
+SavePointMedium,672,512,,0
 Platform,704,448,96B026F4,0
 Platform,640,64,BD9D7537,0
 BreakBlock,320,288,,0

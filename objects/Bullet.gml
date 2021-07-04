@@ -22,6 +22,7 @@ applies_to=self
 ///stretch bullet mask
 image_angle=direction+180
 image_xscale=speed
+image_yscale=2
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -35,6 +36,7 @@ if (a) {
 }
 
 image_xscale=1
+image_yscale=1
 image_angle=0
 #define Collision_niseBlock
 /*"/*'/**//* YYD ACTION

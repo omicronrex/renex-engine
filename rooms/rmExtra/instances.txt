@@ -58,7 +58,7 @@ Block,800,480,,0
 Block,800,512,,0
 Block,800,544,,0
 Block,800,576,,0
-savePointVeryHard,48,240,,0
+SavePointVeryHard,48,240,,0
 MusicPlayer,0,0,1264D4E4,0
 WarpToHub,32,288,,0
 Warp,736,512,C7FEA2BE,0

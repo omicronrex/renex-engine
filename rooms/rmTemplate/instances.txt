@@ -84,5 +84,5 @@ Block,128,0,,0
 Block,96,0,,0
 Block,64,0,,0
 Block,32,0,,0
-savePointVeryHard,96,544,,0
+SavePointVeryHard,96,544,,0
 PlayerStart,64,544,,0

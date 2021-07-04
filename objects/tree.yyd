@@ -40,12 +40,12 @@
 	|ObjHueShiftExample
 	|BossIntroduction
 +Saves
-	|savePointMedium
-	|savePointHard
-	|savePointVeryHard
-	|savePointMediumV
-	|savePointHardV
-	|savePointVeryHardV
+	|SavePointMedium
+	|SavePointHard
+	|SavePointVeryHard
+	|SavePointMediumV
+	|SavePointHardV
+	|SavePointVeryHardV
 +Threats
 	|bouncingFruit
 	|CherryCircle

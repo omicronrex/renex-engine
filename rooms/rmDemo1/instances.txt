@@ -729,8 +729,8 @@ Block,1600,1792,,0
 Block,1600,1696,,0
 Block,1120,1680,,0
 Block,864,1680,,0
-savePointHard,832,800,,0
-savePointVeryHard,832,1056,,0
+SavePointHard,832,800,,0
+SavePointVeryHard,832,1056,,0
 YokuBlock,736,864,,0
 FakeBlock,1088,896,,0
 FakeBlock,1184,896,,0
@@ -781,9 +781,9 @@ LowSpeedField,512,896,,0
 LowSpeedField,512,928,,0
 ClockOff,1408,544,,0
 ClockOn,1312,512,,0
-savePointVeryHard,1056,512,,0
-savePointVeryHard,1472,448,,0
-savePointMediumV,672,896,,0
+SavePointVeryHard,1056,512,,0
+SavePointVeryHard,1472,448,,0
+SavePointMediumV,672,896,,0
 JumpRefresher,401,723,,0
 JumpRefresher,347,805,,0
 Triggered1,992,1152,,0
@@ -883,7 +883,7 @@ SlopeBL,96,192,,0
 ClockOn,384,352,,0
 WhiteDotDisable,1056,64,,0
 WhiteDotEnable,864,224,,0
-savePointMedium,928,288,,0
+SavePointMedium,928,288,,0
 WhiteDotKiller,832,256,,0
 WhiteDotKiller,1088,32,,0
 WhiteDotKiller,1088,64,,0
@@ -941,11 +941,11 @@ Platform,128,1600,,0
 Platform,128,1728,,0
 Platform,160,1600,,0
 Platform,160,1728,,0
-savePointMedium,160,768,,0
+SavePointMedium,160,768,,0
 KeyWhite,160,256,,0
 KeyBlockWhite,256,256,,0
 KeyRed,224,256,,0
-savePointMedium,192,128,,0
+SavePointMedium,192,128,,0
 KeyBlockRed,128,256,,0
 ShootkidEnable,896,1760,,0
 ShootkidDisable,832,1760,,0
@@ -959,7 +959,7 @@ KidBlockUp,1184,384,,0
 StarSingleJump,1344,1568,,0
 StarDoubleJump,1408,1568,,0
 StarTripleJump,1472,1568,,0
-savePointMedium,1280,1600,,0
+SavePointMedium,1280,1600,,0
 ShootkidEnable,1088,1760,,0
 ShootkidDisable,1152,1760,,0
 WCSpikeOrange,992,1472,,0
@@ -981,7 +981,7 @@ PastelSpikeBlueR,1312,1376,,0
 PastelSpikeBlueU,1440,1376,,0
 GuyCouch,64,1760,,0
 ShootRefresherL,1248,1632,,0
-savePointMedium,160,1056,,0
+SavePointMedium,160,1056,,0
 Trigger2,224,1088,,0
 Trigger2,224,1056,,0
 Triggered2,256,960,,0
@@ -1012,7 +1012,7 @@ ScreenWrap,-32,1760,,0
 ScreenWrap,1600,1728,,0
 ScreenWrap,1600,1760,,0
 PushBlockSave,480,1760,,0
-savePointMedium,320,1760,,0
+SavePointMedium,320,1760,,0
 Cherry,961,1755,,0
 TrapStop,256,1120,,0
 Trigger10,1248,1024,,0
@@ -1024,7 +1024,7 @@ Triggered2,1248,224,,0
 TrapStop,1248,64,,0
 PastelSpikeGreenL,544,1376,,0
 PastelSpikeGreenR,416,1376,,0
-savePointHardV,1504,32,,0
+SavePointHardV,1504,32,,0
 JumpThrough,832,832,,0
 JumpThrough,864,832,,0
 JumpThrough,896,832,,0

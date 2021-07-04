@@ -18,6 +18,15 @@ maxVspeed=9
 slomo=1
 
 bow=(savedata("diff")==0)
+
+
+//variables for optional player momentum system
+//check engine_settings() for more information
+
+mm_ground_fric=0.2
+mm_air_fric=0
+mm_ground_accel=0.3
+mm_air_accel=0.2
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -258,7 +267,7 @@ if (!frozen) {
                 hspeed-=sign(hspeed)
                 altj=0
             }
-            vspeed+=0.1
+            vspeed+=0.5-gravity
             if (abs(hspeed)<4) walljumpboost=0
         } else if (coyoteTime <= 0) vspeed-=gravity
     } else {
@@ -270,7 +279,13 @@ if (!frozen) {
                     if (slipper) {
                         hspeed=inch(hspeed,maxSpeed*h,slipper.slip)
                     } else {
-                        hspeed=maxSpeed*h
+                        if (global.use_momentum_values && !ladder) {
+                            if (onPlatform) hspeed+=h*mm_ground_accel
+                            else hspeed+=h*mm_air_accel
+                            hspeed=median(-maxSpeed,hspeed,maxSpeed)
+                        } else {
+                            hspeed=maxSpeed*h
+                        }
                     }
                 }
             }
@@ -278,20 +293,23 @@ if (!frozen) {
             if (slipper) {
                 hspeed=inch(hspeed,0,slipper.slip)
             } else {
-                hspeed=0
+                if (global.use_momentum_values && !ladder) {
+                    if (onPlatform) hspeed=inch(hspeed,0,mm_ground_fric)
+                    else hspeed=inch(hspeed,0,mm_air_fric)
+                } else {
+                    hspeed=0
+                }
             }
         }
     }
 
-    if (onPlatform) or (coyoteTime > 0) {
+    if (onPlatform || coyoteTime>0) {
         if (!place_meeting(x,y+4*vflip,Platform) && !place_meeting(x,y+vflip,Block)) {
-            if (coyoteTime <= 0) {
-                onPlatform=false;
+            if (coyoteTime<=0) {
+                onPlatform=false
             }
-            coyoteTime -= 1;
+            coyoteTime-=1
         }
-    } else if (onPlatform) and (coyoteTime <= 0) {
-        //coyoteTime = global.coyote_time;
     }
 
     if (vflip==-1) vspeed=max(-maxVspeed,vspeed)
@@ -374,7 +392,7 @@ conveyor=instance_place(x,y+4*vflip,ConveyorLeft) if (conveyor) hspeed+=conveyor
 conveyor=instance_place(x,y+4*vflip,ConveyorRight) if (conveyor) hspeed+=conveyor.spd
 
 //push blocks
-with (PushBlock) if (vspeed=0) if (place_meeting(x-other.hspeed,y,other.id)) {
+with (PushBlock) if (vspeed=0) if (place_meeting(x-sign(other.hspeed),y,other.id)) {
     solid=0
     if (place_free(x+sign(other.hspeed)*push_speed,y)) {
         hspeed=sign(other.hspeed)*push_speed
@@ -456,7 +474,7 @@ action_id=603
 applies_to=self
 */
 ///solid collision
-var land;
+var land,a,s;
 
 if (dotkid) {
     image_xscale=1
@@ -474,24 +492,24 @@ if (!place_free(x+hspeed,y+vspeed)) {
 
         land=0
         if (hspeed>0) {
-            o=instance_place(x+hspeed,y,SlopeBR)
+            o=instance_place(x+a,y,SlopeBR)
             if (o) {
                 repeat (a) {x+=s if (place_meeting(x,y,SlopeBR)) {y-=1 if (!place_free(x,y)) {x-=s y+=1 break}}}
                 if (vspeed>=0 && vflip==1) land=1 else a=0
             }
-            o=instance_place(x+hspeed,y,SlopeTR)
+            o=instance_place(x+a,y,SlopeTR)
             if (o) {
                 repeat (a) {x+=s if (place_meeting(x,y,SlopeTR)) {y+=1 if (!place_free(x,y)) {x-=s y-=1 break}}}
                 if (vspeed<=0 && vflip==-1) land=1 else a=0
             }
         }
         if (hspeed<0) {
-            o=instance_place(x+hspeed,y,SlopeBL)
+            o=instance_place(x-a,y,SlopeBL)
             if (o) {
                 repeat (a) {x+=s if (place_meeting(x,y,SlopeBL)) {y-=1 if (!place_free(x,y)) {x-=s y+=1 break}}}
                 if (vspeed>=0 && vflip==1) land=1 else a=0
             }
-            o=instance_place(x+hspeed,y,SlopeTL)
+            o=instance_place(x-a,y,SlopeTL)
             if (o) {
                 repeat (a) {x+=s if (place_meeting(x,y,SlopeTL)) {y+=1 if (!place_free(x,y)) {x-=s y-=1 break}}}
                 if (vspeed<=0 && vflip==-1) land=1 else a=0

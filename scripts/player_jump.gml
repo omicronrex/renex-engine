@@ -11,9 +11,12 @@ if (vvvvvv) {
         with (DoubleJumpSwitchBlockOff) event_user(0)
     }
 } else if (!hang) {
-    if (place_meeting(x,y+1*vflip,Block) || onPlatform || place_meeting(x,y+1*vflip,Water1) || place_meeting(x,y+1*vflip,PlatformWater) || place_meeting(x,y+1*vflip,GuyWater) || ladderjump) {
+    if (place_meeting(x,y+vflip,Block) || onPlatform || place_meeting(x,y+vflip,Water1) || place_meeting(x,y+vflip,PlatformWater) || place_meeting(x,y+vflip,GuyWater) || ladderjump) {
         //floor jump
         vspeed=-jump*vflip
+        if (global.use_momentum_values) {
+            with (instance_place(x,y+vflip,Platform)) other.hspeed+=hspeed
+        }
         sound_play_slomo("sndJump")
         djump=1
         image_index=0

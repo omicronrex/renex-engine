@@ -44,6 +44,10 @@
     //time in frames to allow jumping when the button is pressed too early in the air
     //makes 4.5s easier but does not remove valign lottery entirely
     global.jump_buffering=1
+    //traditional platforming momentum system
+    //player behaves more like i.e. mario
+    //you can find more settings in player's create
+    global.use_momentum_values=false
 
 
 //sound options

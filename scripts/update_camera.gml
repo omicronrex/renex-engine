@@ -1,4 +1,4 @@
-if (is_ingame()) {
+if (is_ingame() && !global.pause) {
     //update camera system
     if (instance_exists(camera_f)) {
         if (camera_f.object_index==Player) {

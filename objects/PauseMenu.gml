@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (((global.rw!=global.width || global.rh!=global.height) && settings("filter")) || global.use_application_surface) {
+if ((((global.rw!=global.width || global.rh!=global.height) && settings("filter")) || global.use_application_surface) && surface_exists(application_surface)) {
     bg=background_create_from_surface(application_surface,0,0,view_wview,view_hview,0,0)
 } else {
     bg=background_create_from_screen(0,0,view_wview,view_hview,0,0)

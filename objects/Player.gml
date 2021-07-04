@@ -441,13 +441,15 @@ var land;
 angle=0
 
 if (vspeed*vflip>=0) {
-    if (vflip==1) {
-        if (place_meeting(x-2,y,SlopeBL)) angle-=45
-        if (place_meeting(x+2,y,SlopeBR)) angle+=45
-    }
-    if (vflip==-1) {
-        if (place_meeting(x-2,y,SlopeTL)) angle+=45
-        if (place_meeting(x+2,y,SlopeTR)) angle-=45
+    if (global.angle_slopes) {
+        if (vflip==1) {
+            if (place_meeting(x-2,y,SlopeBL)) angle-=45
+            if (place_meeting(x+2,y,SlopeBR)) angle+=45
+        }
+        if (vflip==-1) {
+            if (place_meeting(x-2,y,SlopeTL)) angle+=45
+            if (place_meeting(x+2,y,SlopeTR)) angle-=45
+        }
     }
 
     land=0

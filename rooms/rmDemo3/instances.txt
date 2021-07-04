@@ -12,6 +12,10 @@ ConveyorLeft,640,192,,0
 ConveyorLeft,608,192,,0
 ConveyorLeft,576,192,,0
 SpikeTrapL,736,464,6E200AFC,0
+FruitTrap,400,336,ADE228EB,0
+FruitTrap,496,240,1D240847,0
+FruitTrap,592,336,054787FD,0
+FruitTrap,496,432,DA97AE1E,0
 Block,0,576,,0
 Block,32,576,,0
 Block,64,576,,0
@@ -103,10 +107,6 @@ Trigger4,288,544,,0
 Triggered2,480,224,,0
 Triggered3,480,416,,0
 Triggered4,576,320,,0
-FruitTrap,400,336,ADE228EB,0
-FruitTrap,496,240,1D240847,0
-FruitTrap,592,336,054787FD,0
-FruitTrap,496,432,DA97AE1E,0
 TrapStop,480,320,,0
 TrapStop,160,192,,0
 Trigger9,352,544,,0
@@ -131,7 +131,7 @@ Block,416,512,,0
 Block,416,544,,0
 SwitchRed,576,544,,0
 Trigger5,96,544,,0
-Triggered1,736,448,,0
+Triggered1,736,464,,0
 Triggered5,384,320,,0
 Block,416,448,,0
 SingleJumpSwitchBlock,64,448,,0
@@ -145,7 +145,6 @@ DoubleJumpSwitchBlock,128,288,,0
 DoubleJumpSwitchBlockOff,160,416,,0
 SingleJumpSwitchBlockOff,64,416,,0
 PlayerStart,32,544,,0
-WaterSurface,448,480,,0
 Water1,448,480,,0
 Water1,480,544,,0
 Water1,512,544,,0
@@ -176,3 +175,4 @@ Water1,544,480,,0
 Water1,576,480,,0
 Water1,576,512,,0
 Water1,576,544,,0
+WaterSurface,448,480,,0

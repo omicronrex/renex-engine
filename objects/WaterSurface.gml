@@ -1,6 +1,12 @@
 #define Create_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
+action_id=605
+invert=0
+arg0=use only one per water body
+*/
+/*"/*'/**//* YYD ACTION
+lib_id=1
 action_id=603
 applies_to=self
 */

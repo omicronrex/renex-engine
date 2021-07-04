@@ -36,6 +36,7 @@
     global.vine_jumps=false
     global.a_d_trick=false
     global.bow_lag=true
+    //angle the player sprite on slopes
     global.angle_slopes=true
     //time in frames to allow single jumping after leaving a surface
     //turn this off for a precision needle game
@@ -46,9 +47,11 @@
 
 
 //sound options
+    //master volume multiplier
     //we do not recommend gain above 0.7 as it can cause clipping
     global.gain=0.7
     global.restarting_music=false
+    //pick just one of the following
     global.gameover_music_stop=false
     global.gameover_music_pause=false
     global.gameover_music_fade=true
@@ -67,11 +70,14 @@
     //if you don't want a password, use "".
     //also, if you change it, make sure to delete your save files
     global.encrypt_save_password="renex"
+    //don't go back to the menu - quit the game instead when pressing esc
     global.esc_always_quits=false
     //enables automatic management of an application surface.
     //you always get one in fullscreen, but this tells the engine you plan to
-    //use it yourself so it'll also update it in windowed mode
+    //use it yourself so it'll also update it in windowed mode.
+    //you can do post processing effects in envelope_compose().
     global.use_application_surface=false
+    //automatically updates the window caption with deathtime
     global.show_deathtime=true
     global.closing_animation=true
     //the ability to fight bosses more than once per savefile
@@ -79,7 +85,7 @@
     global.autosave_items=true
     global.contact_saves=false
     global.press_s_saves=false
-    //make saves rotate with you so you can save anywhere
+    //make saves rotate with the view so you can save anywhere
     global.flip_saves=false
     //(0-8) reduces lag during gameplay, but causes small hiccup on room start.
     //each pass reduces instance count by almost half so with 2 passes we should

@@ -7,7 +7,7 @@ if (gameclosing) {
     closingk=!closingk
     if (closingk) {
         window_set_region_scale(1,1)
-        window_set_region_size(800,ceil(608*sqr(closingvol)),1)
+        window_set_region_size(global.width,ceil(global.height*sqr(closingvol)),1)
         window_center()
     }
 

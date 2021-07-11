@@ -4,6 +4,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///instructions
+
+//this warp can be used to return to the hub room configured in the engine settings
+
 msg="UP to return"
 
 font=fntSignpost

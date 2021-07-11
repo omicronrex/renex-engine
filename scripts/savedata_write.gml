@@ -1,5 +1,4 @@
-//update savedata file
-
+//writes memory savedata to disk
 var b;
 
 if (savedata("exists")) {

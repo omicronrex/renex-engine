@@ -1,4 +1,4 @@
-//load settings from file and apply
+//load settings from file and apply them
 
 if (file_exists(global.setfile)) {
     b=buffer_create()

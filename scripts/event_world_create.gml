@@ -21,7 +21,7 @@ message2text=""
 input_init()
 
 global.viewangle=0
-global.pause=0
+global.pause=false
 global.music=""
 global.perform_autosave=false
 

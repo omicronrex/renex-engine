@@ -1,4 +1,4 @@
-//read save data from file
+//reads save data back from file
 var b;
 
 if (file_exists(global.savefile)) {

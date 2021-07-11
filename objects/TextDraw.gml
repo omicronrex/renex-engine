@@ -4,6 +4,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///instructions
+//change these parameters in room creation code:
+
 text="TextDraw"
 font=fntSignpost
 color=$ffffff

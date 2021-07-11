@@ -1,3 +1,6 @@
+//loads the game from memory
+//the game works in memory during gameplay, occasionally writing to disk.
+//if you need to reload from disk for whatever reason, look up savedata_read().
 var i;
 
 instance_destroy_id(Player)

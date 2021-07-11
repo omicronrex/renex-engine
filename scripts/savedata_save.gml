@@ -1,9 +1,22 @@
 ///savedata_save(force)
 ///savedata_save(force,hash)
+//saves the game to memory
+
+/*
+
+    -> "force" flag will override impopssible difficulty locks
+    -> "hash" is a string that can be used to identify different save points (this is used for automatic save backups)
+
+    note this will only work if a player exists, and for this reason,
+    you should call autosave_asap() instead for more reliability.
+
+    also of note is the fact the savegame works in memory - save files are written to disk on occasion.
+*/
+
 var hash;
 
 if (savedata("diff")!=3 || argument0) with (Player) {
-    if (argument_count==2) hash=argument[1]
+    if (argument_count==2) hash=string(argument[1])
     else hash=""
 
     if (hash!=string(savedata("hash"))) {

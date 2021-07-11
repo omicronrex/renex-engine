@@ -10,6 +10,9 @@ applies_to=self
 text="TextDraw"
 font=fntSignpost
 color=$ffffff
+xscale=1.0
+yscale=1.0
+angle=0
 halign=0
 valign=0
 #define Draw_0
@@ -22,7 +25,7 @@ draw_set_font(font)
 draw_set_color(color)
 draw_set_halign(halign)
 draw_set_valign(valign)
-draw_text(x,y,text)
+draw_text_transformed(x,y,text,xscale,yscale,angle)
 draw_set_color($ffffff)
 draw_set_halign(0)
 draw_set_valign(0)

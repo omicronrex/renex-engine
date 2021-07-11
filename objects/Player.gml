@@ -256,7 +256,7 @@ if (!frozen) {
     }
 
     //ice
-    slipper=instance_place(x,y+4*vflip,slipBlock)
+    slipper=instance_place(x,y+4*vflip,SlipBlock)
 
     //move horizontally
     if (walljumpboost<0) {

@@ -28,7 +28,7 @@ if (path_index!=-1 && path_speed!=0) {
         move_player(x+other.hspeed,y+other.vspeed,1)
     }
 }
-#define Collision_niseBlock
+#define Collision_NiseBlock
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=113

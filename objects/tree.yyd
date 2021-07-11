@@ -47,13 +47,13 @@
 	|SavePointHardV
 	|SavePointVeryHardV
 +Threats
-	|bouncingFruit
+	|BouncingFruit
 	|CherryCircle
 	|CherryRainbow
-	|minispikeDown
-	|minispikeRight
-	|minispikeLeft
-	|minispikeUp
+	|MiniSpikeDown
+	|MiniSpikeRight
+	|MiniSpikeLeft
+	|MiniSpikeUp
 +Gimmicks
 	+White Dot
 		|WhiteDotEnable
@@ -191,10 +191,10 @@
 	|PushBlockSave
 	|LiftBlock
 	|MoveBlock
-	|miniBlock
-	|slipBlock
-	|niseBlock
-	|killBlock
+	|MiniBlock
+	|SlipBlock
+	|NiseBlock
+	|KillBlock
 	|SlopeTL
 	|SlopeTR
 	|SlopeBL

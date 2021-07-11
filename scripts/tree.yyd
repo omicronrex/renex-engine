@@ -10,6 +10,7 @@
 	|savedata_select
 	|savedata_load
 	|savedata_save
+	|autosave_asap
 	|settings
 	|savedata
 	|save_persistent_objects
@@ -19,6 +20,7 @@
 		|savedata_write
 		|settings_read
 		|settings_write
+		|autosave_do
 	+objsave
 		|get_objsave_hash
 		|get_objsave

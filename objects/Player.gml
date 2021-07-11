@@ -98,6 +98,13 @@ lrtype=settings("l+r behavior")
 if (global.leftright_moonwalk) lrtype=lr_last
 
 input_clear()
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///check autosave
+autosave_do()
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -591,6 +598,13 @@ speed+=friction
 lib_id=1
 action_id=424
 */
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///check autosave
+autosave_do()
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -722,6 +736,13 @@ drawangle=lerp(oldangle,newangle,framefac)
 
 bowx=lerp(oldbowx,newbowx,framefac)
 bowy=lerp(oldbowy,newbowy,framefac)
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///check autosave
+autosave_do()
 #define Collision_Platform
 /*"/*'/**//* YYD ACTION
 lib_id=1

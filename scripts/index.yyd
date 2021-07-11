@@ -106,3 +106,5 @@ joystick_default
 input_anykey
 player_land
 instance_activate_around_player
+autosave_asap
+autosave_do

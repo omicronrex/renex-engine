@@ -23,6 +23,7 @@ input_init()
 global.viewangle=0
 global.pause=0
 global.music=""
+global.perform_autosave=false
 
 global.keylist=ds_map_create()
 

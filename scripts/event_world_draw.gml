@@ -54,7 +54,7 @@ if (!global.pause) {
            +"FPS: "+string(fps)+" ("+string(fps_real)+") / "+string(room_speed)+"#"
            +string_repeat("God mode",global.debug_god)+"#"
            +string_repeat("Infinite jump",global.debug_jump)
-        draw_text_outline(20,40,str,$ffff)
+        draw_text_outline(40,40,str,$ffff)
     }
 
     if (message) {

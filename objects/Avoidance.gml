@@ -91,6 +91,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+draw_set_font(fntFileSmall)
 draw_line(x,y-20,x,y)
 draw_line(x+200,y-20,x+200,y)
 draw_line(x+100,y-10,x+100,y)

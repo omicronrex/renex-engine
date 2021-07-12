@@ -117,6 +117,7 @@
 	|camera_focus
 	|camera_zoom
 	|camera_set
+	|camera_shake
 +skins
 	|skin_default
 	|skin_dotkid

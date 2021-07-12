@@ -1,3 +1,5 @@
+var k,f,l;
+
 if (is_ingame() && !global.pause) {
     //update camera system
     if (instance_exists(camera_f)) {
@@ -36,13 +38,28 @@ if (is_ingame() && !global.pause) {
     ny=median(0,floor(median(camera_t,vcy-global.height/2*f,camera_b-global.height*f)),room_height-global.height*f)
 
     if (global.camera_easing && camera_initialised) {
-        view_xview=inch((view_xview*5+nx)/6,nx,1)
-        view_yview=inch((view_yview*5+ny)/6,ny,1)
+        view_x=inch((view_x*5+nx)/6,nx,1)
+        view_y=inch((view_y*5+ny)/6,ny,1)
     } else {
-        view_xview=nx
-        view_yview=ny
+        view_x=nx
+        view_y=ny
     }
+
     camera_initialised=true
+
+    //screenshake
+    if (camera_shaketime) {
+        camera_shaketime-=1
+        l=(camera_shaketime/camera_shakelen)
+        k=camera_shaketime mod 4
+        if (k==1 || k==3) camera_shakex=-camera_shakex*l
+        if (k==0 || k==2) camera_shakey=-camera_shakey*l
+        view_x+=camera_shakex
+        view_y+=camera_shakey
+    }
+
+    view_xview=view_x
+    view_yview=view_y
     view_wview=global.width*f
     view_hview=global.height*f
 

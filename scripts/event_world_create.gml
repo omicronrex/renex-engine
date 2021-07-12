@@ -43,4 +43,8 @@ camera_t=0
 memcaml=-1
 memcamt=-1
 
+camera_shaketime=0
+camera_shakex=0
+camera_shakey=0
+
 globalvar view_xcenter,view_ycenter;

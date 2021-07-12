@@ -108,3 +108,4 @@ player_land
 instance_activate_around_player
 autosave_asap
 autosave_do
+camera_shake

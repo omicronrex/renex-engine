@@ -48,7 +48,10 @@ var t,timeText;
 d3d_set_projection_ortho(0,0,view_wview,view_hview,0)
 draw_clear_alpha(0,1)
 
+//fix weird alpha on nvidia
+draw_enable_alphablend(false)
 draw_background_ext(bg,0,0,1,1,0,$707070,1)
+draw_enable_alphablend(true)
 
 draw_set_font(fntFileBig)
 draw_set_halign(1)

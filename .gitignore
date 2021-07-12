@@ -2,6 +2,7 @@
 *.sav
 *.sav.bak
 *.exe
+*.gm81
 stuff
 extensions
 changelog.txt

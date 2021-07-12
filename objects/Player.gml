@@ -401,7 +401,7 @@ conveyor=instance_place(x,y+4*vflip,ConveyorLeft) if (conveyor) hspeed+=conveyor
 conveyor=instance_place(x,y+4*vflip,ConveyorRight) if (conveyor) hspeed+=conveyor.spd
 
 //push blocks
-with (PushBlock) if (vspeed=0) if (place_meeting(x-sign(other.hspeed),y,other.id)) {
+with (PushBlock) if (vspeed=0) if (place_meeting(x-sign(other.hspeed)*2,y,other.id)) {
     solid=0
     if (place_free(x+sign(other.hspeed)*push_speed,y)) {
         hspeed=sign(other.hspeed)*push_speed

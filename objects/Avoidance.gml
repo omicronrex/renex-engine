@@ -19,6 +19,7 @@ beat=0
 verse=0
 sig=1
 warn=0
+framecount=0
 
 script_execute(script)
 
@@ -44,12 +45,17 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-newtime=hrt_time_now()
-if (time) pfps=(pfps*9+1000000/(newtime-time))/10
-time=newtime
+framecount+=1
+if (framecount>=5) {
+    framecount=0
+    newtime=hrt_time_now()
+    if (time) pfps=(pfps*2+5000000/(newtime-time))/3
+    time=newtime
+}
 
 if (keyboard_check(vk_space)) pfps=40
 
+//if 1% off of regular speed, pitch shift and warn
 if (abs(1-pfps/room_speed)>0.01) {
     warn=1
     sound_pitch(inst,pfps/room_speed)
@@ -93,4 +99,4 @@ draw_line(x+150,y-5,x+150,y)
 draw_healthbar(x,y,x+200,y+10,beat*100,0,$ff00,$ff00,0,0,0)
 draw_text(x,y+20,"verse "+string(floor(verse))+", "+string(floor(frac(verse)*100))+"%")
 
-draw_text(x,y+60,string(pfps)+pick(warn,""," URGH"))
+draw_text(x,y+60,"speed: "+string(pfps)+" ("+string((pfps/room_speed)*100)+"%)"+pick(warn,""," lagging!"))

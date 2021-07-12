@@ -38,8 +38,6 @@ action_id=603
 applies_to=self
 */
 if (room=rmTitle) {
-    draw_set_font(fntFileBig)
-    draw_text(x,y,"RENEX ENGINE")
     draw_set_font(fntFileSmall)
     draw_set_valign(2)
     draw_text(40,608-40+2,re_version)

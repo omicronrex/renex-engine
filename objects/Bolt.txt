@@ -2,6 +2,6 @@ sprite=sprBolt
 visible=0
 solid=0
 persistent=0
-depth=0
+depth=1
 parent=Trap
 mask=

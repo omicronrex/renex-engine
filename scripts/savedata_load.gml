@@ -47,6 +47,8 @@ if (savedata("saved")) {
     i.maxjumps=savedata("numjumps")
     i.vvvvvv=savedata("vvvvvv")
     i.beamstate=savedata("beamstate")
+
+    difficulty=savedata("diff")
 }
 
 room_goto(savedata("room"))

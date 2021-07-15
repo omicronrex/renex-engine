@@ -5,6 +5,6 @@ action_id=603
 applies_to=self
 */
 event_inherited()
-if (savedata("diff")>1) {
+if (difficulty>1) {
     instance_destroy()
 }

@@ -32,6 +32,9 @@ globalvar bullet_table;
 bullet_table[0]=0
 global.bullet_map=ds_map_create()
 
+globalvar difficulty;
+difficulty=0
+
 //one screen frame, in microseconds, with a 5% margin for error
 oneframe=(1000000/display_get_frequency())*0.95
 oldtime=hrt_time_now()

@@ -70,6 +70,7 @@
 		|draw_text_outline
 		|texture_reset_interpolation
 		|draw_sprite_hueshift
+	|add_difficulty
 	|update_caption_deathtime
 	|cement
 	|good_bounce

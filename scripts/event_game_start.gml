@@ -10,7 +10,10 @@ if (orderTest==2) {
     exit
 }
 
+global.num_difficulties=0
+
 engine_settings()
+
 global.optimize_solids=median(0,global.optimize_solids,8)
 global.break_sfx=pick(global.break_sound_effect,"sndBlockBreak","sndBlockBreakYuuutu","sndBlockBreakYosniper")
 

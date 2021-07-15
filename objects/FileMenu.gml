@@ -84,7 +84,8 @@ if (state="new file") {
     if (global.key_pressed[key_left] || global.key_pressed[key_right]) {
         sound_play("sndJump")
         savedata_select(select)
-        savedata("diff",modwrap(savedata("diff")+global.input_h,0,4))
+        savedata("diff",modwrap(savedata("diff")+global.input_h,0,global.num_difficulties))
+        difficulty=savedata("diff")
     }
     if (global.key_pressed[key_jump]) {
         instance_destroy_id(TitleParticle)
@@ -132,7 +133,7 @@ for (i=0;i<3;i+=1) {
         if (state="continue" && select=i) {
             if (!asksel) draw_text(x+i*240+64,y+32,">Continue<#Erase Game")
             else draw_text(x+i*240+64,y+32,"Continue#>"+string_repeat("XX",askcount)+string_copy("Erase Game",1+askcount*2,10-askcount*2)+"<")
-        } else draw_text(x+i*240+64,y+48,pick(savedata("diff"),"Medium","Hard","Very Hard","Impossible"))
+        } else draw_text(x+i*240+64,y+48,global.name_difficulties[difficulty])
 
         draw_set_font(fntFileBig)
         if (savedata("clear")) draw_text(x+i*240+64,y+152,"Clear!")
@@ -148,7 +149,7 @@ for (i=0;i<3;i+=1) {
         if (has_item("Item8")) draw_sprite(sprItem8,0,x+i*240+96,y+224)
     } else {
         draw_set_halign(1)
-        if (state="new file" && select=i) draw_text(x+i*240+64,y+32,"Difficulty:#"+pick(savedata("diff"),"<Medium>","<Hard>","<Very Hard>","<Impossible>"))
+        if (state="new file" && select=i) draw_text(x+i*240+64,y+32,"Difficulty:#<"+global.name_difficulties[difficulty]+">")
         else draw_text(x+i*240+64,y+48,"No Data")
     }
 }

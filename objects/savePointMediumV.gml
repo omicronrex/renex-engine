@@ -6,7 +6,7 @@ applies_to=self
 */
 event_inherited()
 vflip=-1
-if (savedata("diff")>0) {
+if (difficulty>0) {
     instance_destroy()
 }
 

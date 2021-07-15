@@ -109,3 +109,5 @@ instance_activate_around_player
 autosave_asap
 autosave_do
 camera_shake
+add_difficulty
+

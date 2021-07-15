@@ -9,6 +9,13 @@
     global.first_room=rmDemo1
 
 
+//difficulties
+    add_difficulty("Medium")
+    add_difficulty("Hard")
+    add_difficulty("Very Hard")
+    add_difficulty("Impossible")
+
+
 //default camera values
     global.default_camera_w=800
     global.default_camera_h=608

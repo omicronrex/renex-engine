@@ -6,6 +6,6 @@ applies_to=self
 */
 event_inherited()
 sprite_index=sprSaveVeryHard
-if (savedata("diff")>2) {
+if (difficulty>2) {
     instance_destroy()
 }

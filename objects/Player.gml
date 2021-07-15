@@ -17,7 +17,7 @@ maxVspeed=9
 
 slomo=1
 
-bow=(savedata("diff")==0)
+bow=(difficulty==0)
 
 
 //variables for optional player momentum system

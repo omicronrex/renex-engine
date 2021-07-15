@@ -10,4 +10,4 @@ if (savedata("diff")>0) {
     instance_destroy()
 }
 
-if (global.flip_saves) instance_change(savePointMedium,1)
+if (global.flip_saves) instance_change(SavePointMedium,1)

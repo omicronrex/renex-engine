@@ -9,4 +9,4 @@ vflip=-1
 if (savedata("diff")>1) {
     instance_destroy()
 }
-if (global.flip_saves) instance_change(savePointHard,1)
+if (global.flip_saves) instance_change(SavePointHard,1)

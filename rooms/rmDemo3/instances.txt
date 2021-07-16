@@ -144,6 +144,14 @@ DoubleJumpSwitchBlock,128,320,,0
 DoubleJumpSwitchBlock,128,288,,0
 DoubleJumpSwitchBlockOff,160,416,,0
 SingleJumpSwitchBlockOff,64,416,,0
+PatBall,208,304,,0
+PatBall,240,304,,0
+PatBall,224,336,,0
+PatBall,256,336,,0
+PatBall,208,368,,0
+PatBall,240,368,,0
+PatBall,224,400,,0
+PatBall,256,400,,0
 PlayerStart,32,544,,0
 Water1,448,480,,0
 Water1,480,544,,0

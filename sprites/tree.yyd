@@ -233,6 +233,7 @@
 	|sprSJumpBlockOff
 	|sprDJumpBlock
 	|sprDJumpBlockOff
+	|sprPatBall
 +Triggers
 	|sprTrigger1
 	|sprTrigger2

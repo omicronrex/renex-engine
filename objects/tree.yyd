@@ -147,6 +147,7 @@
 	|ShootRefresherL
 	|ShootRefresherR
 	|Teleporter
+	|PatBall
 +Triggers
 	|Trigger1
 	|SwitchRed

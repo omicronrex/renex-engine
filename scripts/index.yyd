@@ -85,7 +85,6 @@ camera_default
 camera_follow
 camera_zoom
 camera_focus
-
 wait_duration
 bullet_behavior
 draw_text_outline
@@ -110,4 +109,3 @@ autosave_asap
 autosave_do
 camera_shake
 add_difficulty
-

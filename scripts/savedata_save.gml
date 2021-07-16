@@ -3,7 +3,6 @@
 //saves the game to memory
 
 /*
-
     -> "force" flag will override impopssible difficulty locks
     -> "hash" is a string that can be used to identify different save points (this is used for automatic save backups)
 

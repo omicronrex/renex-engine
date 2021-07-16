@@ -256,7 +256,6 @@ MusicPlayer
 TextDraw
 DepthBlender
 Upform
-
 GameClear
 SwitchYellow
 SwitchGreen
@@ -279,7 +278,6 @@ SingleJumpSwitchBlock
 DoubleJumpSwitchBlockOff
 SingleJumpSwitchBlockOff
 DoubleJumpSwitchBlock
-
 JoystickMenu
 MusicPlayerSection
 AutoSaver

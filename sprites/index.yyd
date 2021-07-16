@@ -182,7 +182,6 @@ sprWhiteUndotter
 sprTeleporter
 sprGuyCouch
 sprJumpRefresher
-
 sprJumpRefresherL
 sprShootRefresherR
 sprKeyWhite
@@ -247,7 +246,6 @@ spr1x2
 sprUpPlatform
 sprPlayerRunningOld
 sprGameClear
-
 sprSwitchYellowWL
 sprSwitchYellowWR
 sprSwitchGreenWL

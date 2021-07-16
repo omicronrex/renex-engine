@@ -9,7 +9,7 @@ image_speed=0
 sprite_index=Player.sprite_index
 mask_index=Player.mask_index
 image_index=Player.image_index
-image_xscale=esign(Player.facing,Player.image_xscale)
+image_xscale=Player.facing
 vflip=Player.vflip
 drawangle=Player.drawangle
 
@@ -22,7 +22,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!inside_view()) instance_destroy()
+if (!inside_view() || !instance_exists(Player)) instance_destroy()
 #define Collision_Block
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -63,5 +63,5 @@ action_id=603
 applies_to=self
 */
 d3d_set_fog(1,$ffffff,0,0)
-draw_sprite_ext(sprite_index,image_index,floor(x),floor(y+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1)),image_xscale,vflip,drawangle,image_blend,image_alpha)
+draw_sprite_ext(sprite_index,floor(image_index),floor(x),floor(y+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1)),image_xscale,vflip,drawangle,image_blend,image_alpha)
 d3d_set_fog(0,0,0,0)

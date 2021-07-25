@@ -6,7 +6,7 @@ applies_to=self
 */
 instance_destroy()
 
-sound_play("sndBlockChange")
+sound_play("sndSpikeSwitch")
 
 instance_activate_object(WCSwitchSpikeParent)
 with (WCSwitchSpikeParent) killer=!killer

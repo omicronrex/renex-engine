@@ -281,20 +281,18 @@ if (!frozen) {
         } else if (coyoteTime <= 0) vspeed-=gravity
     } else {
         if (h!=0) {
-            if (!hang) {
-                if (walljumpboost!=0) {
-                    hspeed=(maxSpeed+1)*h
+            if (walljumpboost!=0) {
+                hspeed=(maxSpeed+1)*h
+            } else {
+                if (slipper) {
+                    hspeed=inch(hspeed,maxSpeed*h,slipper.slip)
                 } else {
-                    if (slipper) {
-                        hspeed=inch(hspeed,maxSpeed*h,slipper.slip)
+                    if (global.use_momentum_values && !ladder) {
+                        if (onPlatform) hspeed+=h*mm_ground_accel
+                        else hspeed+=h*mm_air_accel
+                        hspeed=median(-maxSpeed,hspeed,maxSpeed)
                     } else {
-                        if (global.use_momentum_values && !ladder) {
-                            if (onPlatform) hspeed+=h*mm_ground_accel
-                            else hspeed+=h*mm_air_accel
-                            hspeed=median(-maxSpeed,hspeed,maxSpeed)
-                        } else {
-                            hspeed=maxSpeed*h
-                        }
+                        hspeed=maxSpeed*h
                     }
                 }
             }
@@ -351,43 +349,44 @@ hang=false
 if (!vvvvvv) if (place_free(x,y+1*vflip)) {
     //vines
     if (distance_to_object(WallJumpL)<2) {
-        hang=true vspeed=2*vflip facing=1
+        hang=true facing=1
         if (key_pressed[key_right] || (key_pressed[key_jump] && global.vine_jumps)) {
             hang=false if (key[key_jump]) {vspeed=-9*vflip hspeed=15 walljump=2} else {hspeed=3}
         }
     }
     if (distance_to_object(WallJumpR)<2) {
-        hang=true vspeed=2*vflip facing=-1
+        hang=true facing=-1
         if (key_pressed[key_left] || (key_pressed[key_jump] && global.vine_jumps)) {
             hang=false if (key[key_jump]) {vspeed=-9*vflip hspeed=-15 walljump=2} else {hspeed=-3}
         }
     }
     //caution strips
     if (distance_to_object(CautionStripL)<2) {
-        hang=true vspeed=2*vflip facing=1
+        hang=true facing=1
         if (key_pressed[key_right] || (key_pressed[key_jump] && global.vine_jumps)) {
             hang=false if (key[key_jump]) {vspeed=-9*vflip hspeed=15 walljumpboost=24 walljumpdir=1 walljump=2} else {hspeed=3}
         }
     }
     if (distance_to_object(CautionStripR)<2) {
-        hang=true vspeed=2*vflip facing=-1
+        hang=true facing=-1
         if (key_pressed[key_left] || (key_pressed[key_jump] && global.vine_jumps)) {
             hang=false if (key[key_jump]) {vspeed=-9*vflip hspeed=-15 walljumpboost=24 walljumpdir=-1 walljump=2} else {hspeed=-3}
         }
     }
     //fast caution strips
     if (distance_to_object(CautionFastL)<2) {
-        hang=true vspeed=2*vflip facing=1
+        hang=true facing=1
         if (key_pressed[key_right] || (key_pressed[key_jump] && global.vine_jumps)) {
             hang=false if (key[key_jump]) {vspeed=-10*vflip hspeed=10 altj=2 walljumpboost=-1 walljump=2} else {hspeed=3}
         }
     }
     if (distance_to_object(CautionFastR)<2) {
-        hang=true vspeed=2*vflip facing=-1
+        hang=true facing=-1
         if (key_pressed[key_left] || (key_pressed[key_jump] && global.vine_jumps)) {
             hang=false if (key[key_jump]) {vspeed=-10*vflip hspeed=-10 altj=2 walljumpboost=-1 walljump=2} else {hspeed=-3}
         }
     }
+    if (hang) vspeed=2*vflip
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1

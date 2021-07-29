@@ -7,6 +7,7 @@ applies_to=self
 image_speed=0
 ready=false
 alarm[0]=5
+killcheck=true
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -25,4 +26,14 @@ if (global.key_pressed[key_shoot] && ready) {
     i.sprite_index=sprite_index
     i.image_index=(sprite_index==sprToggleBlockOn)
     instance_destroy()
+}
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (killcheck) {
+    with (Player) if (place_meeting(x,y,other.id)) kill_player()
+    killcheck=false
 }

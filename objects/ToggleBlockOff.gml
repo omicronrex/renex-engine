@@ -21,7 +21,6 @@ action_id=603
 applies_to=self
 */
 if (global.key_pressed[key_shoot] && ready) {
-    with (Player) if (place_meeting(x,y,other.id)) kill_player()
     i=instance_create(x,y,ToggleBlockOn)
     i.sprite_index=sprite_index
     i.image_index=(sprite_index==sprToggleBlockOff)

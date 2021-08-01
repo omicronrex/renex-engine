@@ -21,10 +21,18 @@ sig=1
 warn=0
 framecount=0
 
+starttime=0
+
 script_execute(script)
 
 length=sound_get_length(song)
-inst=sound_loop(song)
+
+if (starttime>0) {
+    inst=sound_loop_paused(song)
+    sound_set_pos(inst,starttime/length)
+    sound_resume(inst)
+} else inst=sound_loop(song)
+
 bps=(60*8)/bpm
 
 vsl=bps*round(frac(sig)*10)

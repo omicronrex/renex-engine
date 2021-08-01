@@ -3,6 +3,7 @@ song="ddptruelastboss"
 bpm=100
 sig=4.1
 
+starttime=0
 
 if (wait_verse(3)) {
     if (wait_beat(0.0) || wait_beat(0.5)) {

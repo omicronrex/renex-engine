@@ -14,3 +14,5 @@ frozen=false
 
 memcaml=-1
 memcamt=-1
+
+global.room_started=false

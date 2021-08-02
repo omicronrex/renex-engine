@@ -25,6 +25,8 @@ global.pause=false
 global.music=""
 global.perform_autosave=false
 
+global.room_started=false
+
 global.keylist=ds_map_create()
 
 globalvar bullet_table;

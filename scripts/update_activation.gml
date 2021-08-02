@@ -1,4 +1,4 @@
-if (global.instance_deactivation && !global.pause) with (World) {
+if (global.instance_deactivation && !global.pause && global.room_started) with (World) {
     instance_deactivate_all_safe(true)
     instance_activate_region(
         camera_l-(global.instance_activate_screens_w-1)*0.5*camera_w-global.instance_activate_margin_px,

@@ -69,6 +69,14 @@ if (!setting) {
     if (keyboard_check_pressed(vk_anykey)) {
         key=keyboard_key
         if (key==160 || key==161) key=16 //shift
+
+        for (i=0;i<key_sizeof;i+=1) {
+            //if a key is already set to that, swap them
+            if (global.keycode[i]=key) {
+                global.keycode[i]=global.keycode[sel]
+            }
+        }
+
         global.keycode[sel]=key
         setting=false
     }

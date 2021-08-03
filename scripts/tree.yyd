@@ -96,6 +96,7 @@
 	|check_crush
 	|kill_player
 	|move_player
+	|flip_player
 +keypick
 	|key_clear
 	|key_add

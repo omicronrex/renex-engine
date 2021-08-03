@@ -1064,6 +1064,14 @@ Trigger1,256,672,,0
 Trigger1,256,704,,0
 Trigger1,256,736,,0
 Trigger1,256,768,,0
+CoinNormal,1280,1664,,0
+CoinNormal,1312,1664,,0
+CoinNormal,1344,1664,,0
+CoinFlip,1280,1760,,0
+CoinFlip,1312,1760,,0
+CoinFlip,1344,1760,,0
+GravFlip,1472,1760,,0
+GravNormal,1472,1664,,0
 PlayerStart,896,800,,0
 KeyDraw,128,32,,0
 CatharsisWater,1120,1280,,0

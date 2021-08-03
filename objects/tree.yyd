@@ -137,6 +137,8 @@
 	|JumpRefresher
 	|GravFlip
 	|GravNormal
+	|CoinFlip
+	|CoinNormal
 	|Ladder
 	|LadderSide
 	|ClockOn

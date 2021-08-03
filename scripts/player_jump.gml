@@ -4,7 +4,8 @@ if (vvvvvv) {
         vflip*=-1
         vspeed=0
         y+=4*vflip
-        if vflip=-1 {sound_play_slomo("sndVFlip1")} else { sound_play_slomo("sndVFlip2")}
+        if (vflip==-1) {sound_play_slomo("sndVFlip1")}
+        else { sound_play_slomo("sndVFlip2")}
         with (SingleJumpSwitchBlock) event_user(0)
         with (SingleJumpSwitchBlockOff) event_user(0)
         with (DoubleJumpSwitchBlock) event_user(0)

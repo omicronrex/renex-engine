@@ -15,7 +15,7 @@ applies_to=self
 if (go) {
     f=min(1,f+0.02*dt)
     view_angle=cosine(180,360,f)
-    if (view_angle>270) Player.vflip=1
+    if (view_angle>270) flip_player(1)
 
     if (f==1) {
         go=0
@@ -38,7 +38,7 @@ with (other) if (!frozen) {
         if (view_angle!=0) {
             frozen=true
             other.go=1
-        } else vflip=1
+        } else flip_player(1)
     }
 }
 #define Other_0

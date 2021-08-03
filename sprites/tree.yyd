@@ -172,6 +172,8 @@
 +Gimmicks
 	|sprGravFlip
 	|sprGravNormal
+	|sprGravityCoinFlip
+	|sprGravityCoinNormal
 	|sprGravSpin
 	|sprGravSpinBack
 	|sprConveyorLeft

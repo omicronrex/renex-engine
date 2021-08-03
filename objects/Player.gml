@@ -590,6 +590,10 @@ action_id=603
 applies_to=self
 */
 ///chill
+
+//consume inputs while frozen so that you don't cancel when it's over
+if (frozen) input_consume()
+
 image_index-=image_speed
 x-=hspeed
 y-=vspeed

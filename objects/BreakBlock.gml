@@ -21,13 +21,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-i=instance_create(x+16,y+16,DestroyedBlock)
-i.bg=tile_get_background(tile)
-i.l=tile_get_left(tile)
-i.t=tile_get_top(tile)
-i.hspeed=hspeed+random(hspeed)
-i.vspeed=vspeed+random(vspeed)
-tile_delete(tile)
+if (tile) {
+    i=instance_create(x+16,y+16,DestroyedBlock)
+    i.bg=tile_get_background(tile)
+    i.l=tile_get_left(tile)
+    i.t=tile_get_top(tile)
+    i.hspeed=hspeed+random(hspeed)
+    i.vspeed=vspeed+random(vspeed)
+    tile_delete(tile)
+}
 
 with (instance_place(x,y,WallJumpR)) instance_destroy()
 with (instance_place(x,y,WallJumpL)) instance_destroy()

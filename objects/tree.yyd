@@ -150,6 +150,7 @@
 	|ShootRefresherR
 	|Teleporter
 	|PatBall
+	|RenBoll
 +Triggers
 	|Trigger1
 	|SwitchRed

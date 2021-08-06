@@ -52,4 +52,6 @@ camera_shaketime=0
 camera_shakex=0
 camera_shakey=0
 
+activation_timer=0
+
 globalvar view_xcenter,view_ycenter;

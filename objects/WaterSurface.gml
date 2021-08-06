@@ -113,8 +113,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+ow=(other.bbox_right+1)-other.bbox_left
 for (i=max(0,other.bbox_left-x);i<=min(w,other.bbox_right-x);i+=1) {
-    m[i]+=(other.y-other.yprevious)-abs(other.x-other.xprevious)/2
+    m[i]+=((other.y-other.yprevious)-abs(other.x-other.xprevious))*((ow-abs((i+x)-other.x))/ow)*0.5
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

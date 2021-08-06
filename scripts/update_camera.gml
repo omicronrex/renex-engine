@@ -66,8 +66,10 @@ if (is_ingame() && !global.pause) {
     view_xcenter=view_xview+(global.width/2)/(global.scale*vcz)
     view_ycenter=view_yview+(global.height/2)/(global.scale*vcz)
 
-    if (camera_l!=memcaml || camera_t!=memcamt) {
+    activation_timer+=1
+    if (camera_l!=memcaml || camera_t!=memcamt || activation_timer>=room_speed*0.25) {
         //update activation on camera movement
+        activation_timer=0
         update_activation()
     }
     memcaml=camera_l

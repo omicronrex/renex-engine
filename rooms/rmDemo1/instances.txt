@@ -1080,3 +1080,4 @@ Water2,992,1280,,0
 Water3,1056,1280,,0
 NekoronWater,864,1280,,0
 PlatformWater,1184,1280,,0
+RenBoll,64,144,,0

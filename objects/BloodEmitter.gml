@@ -46,7 +46,7 @@ if (instance_exists(Player)) {
     gravity=Player.gravity*dt*dt
     slomo=Player.slomo
     if (Player.bow) {
-        i=instance_create(x,y,GibParticle) i.sprite_index=sprBow
+        i=instance_create(x,y,GibParticle) i.sprite_index=sprBow i.image_xscale=Player.facing
     }
 }
 

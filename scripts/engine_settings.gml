@@ -21,7 +21,7 @@
 
 //template for classic games
 //if you want the classic game maker engine experience, uncomment the following line.
-engine_template_classic() exit
+//engine_template_classic() exit
 
 
 //difficulties

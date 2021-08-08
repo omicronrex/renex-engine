@@ -7,6 +7,21 @@
     global.height=608
     global.scale=1.0
     global.first_room=rmDemo1
+    //set to a valid room id to use a hub room system
+    global.hub_room=rmHub
+    //password for encrypting saves.
+    //if you don't want a password, use "".
+    global.encrypt_save_password="renex"
+
+
+//template for needle games
+//if you're making a needle game and need precise physics and no frills, uncomment the following line.
+//engine_template_needle() exit
+
+
+//template for classic games
+//if you want the classic game maker engine experience, uncomment the following line.
+engine_template_classic() exit
 
 
 //difficulties
@@ -14,6 +29,9 @@
     add_difficulty("Hard")
     add_difficulty("Very Hard")
     add_difficulty("Impossible")
+    //you can replace these with bow/no bow for example, or even add more.
+    //there is a globalvar called "difficulty" that's automatically set for you.
+    //example: if (difficulty==0) {code for Medium difficulty}
 
 
 //default camera values
@@ -26,7 +44,8 @@
     global.camera_easing=true
     //deactivate margin for rooms
     global.instance_deactivation=true
-    //default dimensions are a 3x3 group of screens, with 20 pixels of margin.
+    //default dimensions are a single screens, with 20 pixels of margin.
+    //you can, for example, set this to 3 and 3 for a 3x3 active game area.
     global.instance_activate_screens_w=1
     global.instance_activate_screens_h=1
     global.instance_activate_margin_px=20
@@ -63,6 +82,7 @@
     global.gain=0.7
     global.restarting_music=false
     //pick just one of the following
+    global.gameover_music_play=false
     global.gameover_music_stop=false
     global.gameover_music_pause=false
     global.gameover_music_fade=true
@@ -75,12 +95,6 @@
 
 
 //extra stuff
-    //set to a valid room id to use a hub room system
-    global.hub_room=rmHub
-    //password for encrypting saves.
-    //if you don't want a password, use "".
-    //also, if you change it, make sure to delete your save files
-    global.encrypt_save_password="renex"
     //don't go back to the menu - quit the game instead when pressing esc
     global.esc_always_quits=false
     //enables automatic management of an application surface.

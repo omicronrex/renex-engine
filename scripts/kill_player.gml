@@ -1,4 +1,8 @@
 if (!global.debug_god) with (Player) {
+    if (global.gameover_music_play) {
+        sound_kind_stop(1)
+        sound_play("m-r-tight")
+    }
     if (global.gameover_music_stop) {
         sound_kind_stop(1)
     } else if (global.gameover_music_pause) {

@@ -70,6 +70,8 @@
 		|draw_text_outline
 		|texture_reset_interpolation
 		|draw_sprite_hueshift
+	|engine_template_needle
+	|engine_template_classic
 	|add_difficulty
 	|update_caption_deathtime
 	|cement

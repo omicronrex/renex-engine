@@ -44,9 +44,3 @@ lib_id=1
 action_id=500
 invert=0
 */
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-if (active) draw_sign_text(x+16,y-10,font,color,msg,true)

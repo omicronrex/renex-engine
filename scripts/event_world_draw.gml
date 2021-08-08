@@ -1,4 +1,7 @@
 if (!global.pause) {
+    with (WarpToHub) if (active) draw_sign_text(x+16,y-10,font,color,msg,true)
+    with (Signpost) if (active) {active-=dt draw_sign_text(x+16,y-10,font,color,msg,true)}
+
     //draw slow motion effect
     with (Player) if (slomo<1) {
         draw_set_alpha(0.025+0.025*sin(current_time/30))

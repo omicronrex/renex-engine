@@ -1,7 +1,9 @@
 # renex engine
 
 This is a fork of 'i wanna be the engine yuuutu edition ver2.17' with various
-improvements and new features. Designed with and for Game Maker 8.2. 
+improvements and new features. Designed with and for Game Maker 8.2.
+
+[Discord server](http://discord.gg/aWh9rFDHDA)
 
 ## Extensions
 

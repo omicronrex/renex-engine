@@ -812,7 +812,23 @@ if (place_meeting(x,y,ScreenWrap)) {
     if (hspeed<0 && x<0)           {if (!move_player(x+room_width+marginh,y ,1)) x-=hspeed}
     if (vspeed<0 && y<0)           {if (!move_player(x,y+room_height+marginv,1)) y-=vspeed}
 } else {
-    if (global.die_outside_room) kill_player()
+    coll=instance_place(x,y,OutsideWarp)
+    if (coll) {
+        with (coll) {
+            if (warpX==noone && warpY==noone && roomTo=room) {
+                instance_destroy()
+            } else {
+                if (warpX==noone && warpY==noone) {
+                    instance_destroy_id(Player)
+                } else {
+                    move_player(warpX,warpY,0)
+                }
+                if (roomTo!=room) {input_clear() room_goto(roomTo)}
+            }
+        }
+    } else {
+        if (global.die_outside_room) kill_player()
+    }
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION

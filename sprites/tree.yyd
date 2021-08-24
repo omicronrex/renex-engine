@@ -25,6 +25,7 @@
 	|sprAvoidance
 	|sprFraps
 	|sprAutoSaver
+	|sprOutsideWarp
 +Cherries
 	+engine ver.
 		|sprCherryOld

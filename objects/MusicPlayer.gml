@@ -19,7 +19,7 @@ applies_to=self
 if (BGM="") {
     sound_kind_stop(1)
 } else {
-    if (!sound_isplaying(BGM) || global.restarting_music) {
+    if (global.music!=BGM || global.restarting_music) {
         sound_loop(BGM)
         global.music=BGM
     }

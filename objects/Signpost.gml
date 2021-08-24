@@ -19,9 +19,3 @@ applies_to=self
 if (global.key_pressed[key_up]) {
     active=5*room_speed
 }
-#define Draw_0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=500
-invert=0
-*/

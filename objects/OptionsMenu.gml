@@ -33,6 +33,10 @@ alarm[0]=30*dt
 
 background_hspeed[0]=0.5
 background_vspeed[0]=0.5
+    
+volumeDelay = 50; // Delay to change volume precisely.
+fpi = 4; // Frames per volume change, this value is ignored after the volume delay.
+volumeTimer = 0;
 
 event_step()
 #define Alarm_0
@@ -132,13 +136,21 @@ if (global.key_pressed[key_shoot]) {
     }
 } else if (global.input_h!=0) {
     if (sel==0) {
-        settings("musvol",median(0,settings("musvol")+global.input_h*0.01,1))
+        volumeTimer += 1;
+        if(volumeTimer<volumeDelay) {
+            if(volumeTimer mod fpi == 0) settings("musvol",median(0,settings("musvol")+global.input_h*0.01,1))
+        } else settings("musvol",median(0,settings("musvol")+global.input_h*0.01,1))
         sound_kind_volume(1,settings("musvol"))
     }
     if (sel==1) {
-        settings("sfxvol",median(0,settings("sfxvol")+global.input_h*0.01,1))
+        volumeTimer += 1;
+        if(volumeTimer<volumeDelay) {
+            if(volumeTimer mod fpi == 0) settings("sfxvol",median(0,settings("sfxvol")+global.input_h*0.01,1))
+        } else settings("sfxvol",median(0,settings("sfxvol")+global.input_h*0.01,1))
         sound_kind_volume(0,settings("sfxvol"))
     }
+} else {
+    volumeTimer = 0;
 }
 
 optext[0]=string(round(settings("musvol")*100))+"%"

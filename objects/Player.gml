@@ -269,6 +269,7 @@ if (!frozen) {
 
     //move horizontally
     if (walljumpboost<0) {
+        facing=walljumpdir
         if (!walljump) {
             //fortress & cart walljumps have different physics from yutu!
             altj+=1
@@ -377,13 +378,13 @@ if (!vvvvvv) if (place_free(x,y+1*vflip)) {
     if (distance_to_object(CautionFastL)<2) {
         hang=true facing=1
         if (key_pressed[key_right] || (key_pressed[key_jump] && global.vine_jumps)) {
-            hang=false if (key[key_jump]) {vspeed=-10*vflip hspeed=10 altj=2 walljumpboost=-1 walljump=2} else {hspeed=3}
+            hang=false if (key[key_jump]) {vspeed=-10*vflip hspeed=10 altj=2 walljumpboost=-1 walljumpdir=1 walljump=2} else {hspeed=3}
         }
     }
     if (distance_to_object(CautionFastR)<2) {
         hang=true facing=-1
         if (key_pressed[key_left] || (key_pressed[key_jump] && global.vine_jumps)) {
-            hang=false if (key[key_jump]) {vspeed=-10*vflip hspeed=-10 altj=2 walljumpboost=-1 walljump=2} else {hspeed=-3}
+            hang=false if (key[key_jump]) {vspeed=-10*vflip hspeed=-10 altj=2 walljumpboost=-1 walljumpdir=-1 walljump=2} else {hspeed=-3}
         }
     }
     if (hang) vspeed=2*vflip
@@ -488,7 +489,7 @@ var land,a,s;
 
 if (dotkid) {
     image_xscale=1
-} else if (walljumpboost==0) {
+} else if (walljumpboost<=0) {
     image_xscale=abs(image_xscale)*facing
 }
 

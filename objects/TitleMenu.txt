@@ -1,5 +1,5 @@
 sprite=sprController
-visible=1
+visible=0
 solid=0
 persistent=1
 depth=0

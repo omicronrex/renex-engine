@@ -35,6 +35,13 @@ room_speed=memspd
 
 World.pause_delay=room_speed
 instance_activate_all()
+#define Other_5
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+instance_destroy()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

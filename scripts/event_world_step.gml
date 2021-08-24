@@ -147,11 +147,13 @@ if (global.test_run) {
         if (keyboard_check_pressed(vk_end)) {
             global.debug_jump=!global.debug_jump
         }
-        if (keyboard_check_pressed(vk_pageup) && room != room_last) {
+        if (keyboard_check_pressed(vk_pageup) && room!=room_last) {
+            instance_activate_all()
             instance_destroy_id(Player)
             room_goto_next()
         }
-        if (keyboard_check_pressed(vk_pagedown) && room != global.first_room) {
+        if (keyboard_check_pressed(vk_pagedown) && room!=global.first_room) {
+            instance_activate_all()
             instance_destroy_id(Player)
             room_goto_previous()
         }
@@ -168,6 +170,7 @@ if (global.test_run) {
                 if (goto) {
                     r=global.first_room
                     repeat (goto-1) r=room_next(r)
+                    instance_activate_all()
                     instance_destroy_id(Player)
                     room_goto(r)
                 }

@@ -40,6 +40,7 @@ if (hspeed!=0 || vspeed!=0) {
             //riding
             if (place_meeting(x,y-2*Player.vflip,Player.id)) {
                 move_player(Player.x,Player.y+vspeed,1)
+                check_crush()
             }
         }
     }

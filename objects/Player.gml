@@ -761,9 +761,11 @@ if (other.object_index=LiftBlock || object_is_ancestor(other.object_index,LiftBl
     if (place_meeting(x+hspeed,y,other.id)) {
         repeat (floor(abs(hspeed))) {if (place_meeting(x+sign(hspeed),y,other.id)) break x+=sign(hspeed)}
         hspeed=0
+        y+=vspeed
+        break
     } else x+=hspeed
 
-    if (vspeed<other.vspeed) {if (place_meeting(x,y+vspeed,other.id)) {
+    if (vspeed<=other.vspeed) {if (place_meeting(x,y+vspeed,other.id)) {
         repeat (floor(abs(vspeed))) {if (place_meeting(x,y+sign(vspeed),other.id)) break y+=sign(vspeed)}
         vspeed=max(vspeed,other.vspeed)
     } else y+=vspeed} else y+=vspeed
@@ -771,18 +773,22 @@ if (other.object_index=LiftBlock || object_is_ancestor(other.object_index,LiftBl
 
 if (vflip==1) {
     if (y-vspeed/2-8*dotkid<=other.y) {
-        y=other.y-9+8*dotkid
+        if (other.snap || vspeed-other.vspeed>=0) {
+            y=other.y-9+8*dotkid
+            vspeed=max(0,other.vspeed/dt/slomo)
+        }
         vsplatform=max(0,other.vspeed)
-        if (other.snap || vspeed>0) vspeed=max(0,other.vspeed/dt/slomo)
         onPlatform=true
         walljumpboost=0
         djump=true
     }
 } else {
     if (y-vspeed/2+7*dotkid>=other.bbox_bottom+1) {
-        y=other.bbox_bottom+1+8-7*dotkid
+        if (other.snap || vspeed-other.vspeed<=0) {
+            y=other.bbox_bottom+1+8-7*dotkid
+            vspeed=min(0,other.vspeed/dt/slomo)
+        }
         vsplatform=min(0,other.vspeed)
-        if (other.snap || vspeed<0) vspeed=min(0,other.vspeed/dt/slomo)
         onPlatform=true
         walljumpboost=0
         djump=true

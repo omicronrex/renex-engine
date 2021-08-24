@@ -29,6 +29,7 @@ if (vvvvvv) {
         with (DoubleJumpSwitchBlockOff) event_user(0)
         coyoteTime=0
         jump_timer=0
+        if (place_meeting(x,y+1,GuyWater)) onfire=false
     } else if (global.debug_jump || (djump<maxjumps || place_meeting(x,y+1*vflip,Water2)) && !(beamstate&beam_onejump)) {
         //double jump
         vspeed=-jump2*vflip

@@ -12,10 +12,8 @@ action_id=603
 applies_to=self
 */
 with (other) if (object_index=Block) {
-    xstart=x
-    ystart=y
-    x=pog
-    y=pog
+    storesprite=sprite_index
+    sprite_index=-1
     alarm[0]=1
 }
 #define Other_0

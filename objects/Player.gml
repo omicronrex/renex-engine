@@ -291,7 +291,6 @@ if (!frozen) {
                     if (global.use_momentum_values && !ladder) {
                         if (onPlatform) hspeed+=h*mm_ground_accel
                         else hspeed+=h*mm_air_accel
-                        hspeed=median(-maxSpeed,hspeed,maxSpeed)
                     } else {
                         hspeed=maxSpeed*h
                     }
@@ -309,6 +308,7 @@ if (!frozen) {
                 }
             }
         }
+        hspeed=median(-maxSpeed,hspeed,maxSpeed)
     }
 
     if (onPlatform || coyoteTime>0) {

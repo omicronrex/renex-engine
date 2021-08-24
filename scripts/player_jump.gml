@@ -10,6 +10,8 @@ if (vvvvvv) {
         with (SingleJumpSwitchBlockOff) event_user(0)
         with (DoubleJumpSwitchBlock) event_user(0)
         with (DoubleJumpSwitchBlockOff) event_user(0)
+        coyoteTime=0
+        jump_timer=0
     }
 } else if (!hang) {
     if (place_meeting(x,y+vflip,Block) || onPlatform || place_meeting(x,y+vflip,Water1) || place_meeting(x,y+vflip,PlatformWater) || place_meeting(x,y+vflip,GuyWater) || ladderjump) {

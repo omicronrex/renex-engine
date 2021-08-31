@@ -35,6 +35,9 @@ if (vvvvvv) {
         vspeed=-jump2*vflip
         sound_play_slomo("sndDJump")
         if (djump<maxjumps) djump+=1
+        if (djump>2) {
+            repeat (5) instance_create(random_range(x-5,x+5),random_range(y+4,y+4),TripleJumpStar)
+        }
         image_index=0
         with (DoubleJumpSwitchBlock) event_user(0)
         with (DoubleJumpSwitchBlockOff) event_user(0)

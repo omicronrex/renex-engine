@@ -96,6 +96,7 @@
 		|StarSingleJump
 		|StarDoubleJump
 		|StarTripleJump
+		|TripleJumpStar
 		|LowGravField
 		|HighGravField
 		|LowSpeedField

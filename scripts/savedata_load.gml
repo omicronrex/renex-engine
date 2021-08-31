@@ -12,13 +12,18 @@ if (!savedata("exists")) {
             file_copy(global.backfile,global.savefile)
             sleep(100)
             savedata_read()
+            if (!savedata("exists")) {
+                show_message("Your savedata backup file also seems to be corrupt.##This probably means that it is a save file from a different game, or the developer changed the encryption salt.##In order to protect your data, the game will now close.")
+                event_game_end()
+                exit
+            }
         } else {
             show_message("In order to protect your data, the game will now close.")
             event_game_end()
             exit
         }
     } else {
-        show_message("Your savedata file seems to be corrupt.##Unfortunately, a backup is not available.#In order to protect your data, the game will now close.")
+        show_message("Your savedata file seems to be corrupt.##Unfortunately, a backup is not available.##In order to protect your data, the game will now close.")
         event_game_end()
         exit
     }

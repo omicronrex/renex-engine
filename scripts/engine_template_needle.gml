@@ -22,7 +22,7 @@ global.die_outside_room=true
 global.vine_jumps=false
 global.a_d_trick=false
 global.bow_lag=true
-
+global.accurate_shootkid=true
 global.angle_slopes=false
 global.coyote_time=0
 global.jump_buffering=0

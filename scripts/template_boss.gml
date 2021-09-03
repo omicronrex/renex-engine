@@ -39,7 +39,7 @@ if (state="begin") {
     if (once_every(60)) {
         cutscene=false
         vulnerable=true
-        sound_loop("ddpboss")
+        play_bg_music("ddpboss")
         t=0
         state="active"
     }

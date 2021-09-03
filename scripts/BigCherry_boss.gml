@@ -41,7 +41,7 @@ if (hp<=0) {
 if (state="begin") {
     if (once_every(60)) {
         cutscene=false
-        sound_loop("ddplastboss")
+        play_bg_music("ddplastboss")
         path_start(pBoss10F,2*dt,path_action_restart,true)
         t=0
         state="active"

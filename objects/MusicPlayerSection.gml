@@ -17,12 +17,5 @@ action_id=603
 applies_to=self
 */
 if (global.music!=BGM) if (inside_view()) {
-    if (BGM="") {
-        sound_kind_stop(1)
-    } else {
-        if (!sound_isplaying(BGM) || global.restarting_music) {
-            sound_loop(BGM)
-            global.music=BGM
-        }
-    }
+    play_bg_music(BGM)
 }

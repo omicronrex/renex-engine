@@ -29,16 +29,8 @@ window_set_caption(room_caption)
 load_persistent_objects()
 
 if (global.optimize_solids) {
-    //now let's glue blocks to reduce instance count, but being mindful of green pastel spikes
-    with (PastelSpikeGreen) with (Block) if (object_index=Block && (x=other.x || y=other.y)) {
-        instance_change(Cementer,0)
-    }
+    //now let's glue blocks to reduce instance count
     cement(Block)
-    with (Cementer) {
-        instance_change(Block,0)
-    }
 }
 
 camera_default()
-
-key_clear()

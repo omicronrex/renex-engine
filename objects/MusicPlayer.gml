@@ -16,11 +16,4 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (BGM="") {
-    sound_kind_stop(1)
-} else {
-    if (global.music!=BGM || global.restarting_music) {
-        sound_loop(BGM)
-        global.music=BGM
-    }
-}
+play_bg_music(BGM)

@@ -4,12 +4,6 @@
 |rmOptions
 |rmTemplate
 +Demo
-	|rmHub
-	|rmDemo1
-	|rmDemo2
-	|rmDemo3
-	|rmBoss1
-	|rmAvoid
-	|rmExtra
-	|rmExBoss
+	|rmDemo
+	|rmBoss
 	|rmClear

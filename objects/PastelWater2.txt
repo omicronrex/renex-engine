@@ -1,7 +1,0 @@
-sprite=sprPastelWater2
-visible=1
-solid=0
-persistent=0
-depth=0
-parent=
-mask=

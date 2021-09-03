@@ -23,7 +23,6 @@ global.die_outside_room=true
 global.vine_jumps=false
 global.a_d_trick=false
 global.bow_lag=true
-global.accurate_shootkid=true
 global.angle_slopes=true
 global.coyote_time=0
 global.jump_buffering=0
@@ -35,7 +34,6 @@ global.gameover_music_play=true
 global.gameover_music_stop=false
 global.gameover_music_pause=false
 global.gameover_music_fade=false
-global.avoidance_stretch=false
 global.break_sound_effect=2
 
 global.esc_always_quits=true

@@ -78,10 +78,6 @@
 	|sprSlopeTR
 	|sprSlopeBL
 	|sprSlopeBR
-	|sprGateUp
-	|sprGateRight
-	|sprGateLeft
-	|sprGateDown
 	|sprWater1
 	|sprWater2
 	|sprWater3
@@ -91,7 +87,6 @@
 	|sprPlatformWater
 	|sprIWBTGWater
 	|sprPastelWater2
-	|sprKumo
 	|sprWallJUmpLEditor
 	|sprWallJumpL
 	|sprWallJumpREditor
@@ -104,7 +99,6 @@
 	|sprCautionFastL
 	|sprCautionFastREditor
 	|sprCautionFastR
-	|sprDecoStar
 	|sprTrapStop
 	|sprTrapRedirect
 	|sprFakeBlock
@@ -142,103 +136,22 @@
 	|sprSpikeLeftTrap
 	|sprSpikeRightTrap
 	|sprSpikeUpTrap
-	|sprSpikeBlue
-	|sprSpikeLeftBlue
-	|sprSpikeRightBlue
-	|sprSpikeUpBlue
-	|sprSpikeOrange
-	|sprSpikeLeftOrange
-	|sprSpikeRightOrange
-	|sprSpikeUpOrange
-	|sprSpikeGreen
-	|sprSpikeLeftGreen
-	|sprSpikeRightGreen
-	|sprSpikeUpGreen
-	|sprPastelSpikeBlack
-	|sprPastelSpikeBlackU
-	|sprPastelSpikeBlue
-	|sprPastelSpikeBlueL
-	|sprPastelSpikeBlueR
-	|sprPastelSpikeBlueU
-	|sprPastelSpikeGreen
-	|sprPastelSpikeGreenL
-	|sprPastelSpikeGreenR
-	|sprPastelSpikeGreenU
 	|sprMiniSpikeUp
 	|sprMiniSpikeLeft
 	|sprMiniSpikeRight
 	|sprMiniSpikeDown
-	|sprBolt
-	|sprPiston
 +Gimmicks
 	|sprGravFlip
 	|sprGravNormal
-	|sprGravityCoinFlip
-	|sprGravityCoinNormal
-	|sprGravSpin
-	|sprGravSpinBack
 	|sprConveyorLeft
 	|sprConveyorRight
 	|sprJumpBlock
-	|sprShootBlock
-	|sprShootBlockBig
 	|sprHashigo_tate
 	|sprHashigo_yoko
 	|sprKanban
-	|sprSwitchYellow
-	|sprSwitchYellowWL
-	|sprSwitchYellowWR
-	|sprSwitchGreen
-	|sprSwitchGreenWL
-	|sprSwitchGreenWR
-	|sprSwitchRed
-	|sprSwitchRedWL
-	|sprSwitchRedWR
-	|sprHighSpeedField
-	|sprJetRight
-	|sprHighGravField
-	|sprLowGravField
-	|sprClock
-	|sprClockOff
-	|sprDotter
-	|sprShootkidEnabler
-	|sprShootkidDisabler
-	|sprUndotter
-	|sprWhiteDotter
-	|sprWhiteUndotter
-	|sprTeleporter
-	|sprGuyCouch
 	|sprJumpRefresher
-	|sprJumpRefresherL
-	|sprShootRefresherR
-	|sprKeyWhite
-	|sprKeyRed
-	|sprKeyBlockWhite
-	|sprKeyBlockRed
-	|sprKidBlockUp
-	|sprKidBlockDown
-	|sprStarSingleJump
-	|sprStarDoubleJump
-	|sprStarTripleJump
-	|sprSpikeSwitch
 	|sprPushBlockSave
 	|sprWrap
-	|sprVCoinA
-	|sprVCoinB
-	|sprBeamPurple
-	|sprBeamYellow
-	|sprBeamBlue
-	|sprBeamRed
-	|sprBeamGreen
-	|sprToggleBlockOn
-	|sprToggleBlockOff
-	|sprSJumpBlock
-	|sprSJumpBlockOff
-	|sprDJumpBlock
-	|sprDJumpBlockOff
-	|sprPatBall
-	|sprRenBoll
-	|sprNangTJumpParticle
 +Triggers
 	|sprTrigger1
 	|sprTrigger2
@@ -280,5 +193,3 @@
 	|sprGlobalItem3
 	|sprGlobalItem4
 	|sprGameClear
-+Hue Shift
-	|sprPencils

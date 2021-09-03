@@ -1,14 +1,14 @@
 //game properties
-    global.game_title="renex engine"
+    global.game_title="renex engine lite"
     //intended room speed
     //note: player always runs at 50hz! look in player step for an explanation.
     global.game_speed=60
     global.width=800
     global.height=608
     global.scale=1.0
-    global.first_room=rmDemo1
+    global.first_room=rmDemo
     //set to a valid room id to use a hub room system
-    global.hub_room=rmHub
+    global.hub_room=noone
     //password for encrypting saves.
     //if you don't want a password, use "".
     global.encrypt_save_password="renex"
@@ -62,8 +62,6 @@
     global.vine_jumps=false
     global.a_d_trick=false
     global.bow_lag=true
-    //prevents shootkid from working if too close to a wall
-    global.accurate_shootkid=true
     //angle the player sprite on slopes
     global.angle_slopes=true
     //time in frames to allow single jumping after leaving a surface
@@ -88,10 +86,6 @@
     global.gameover_music_stop=false
     global.gameover_music_pause=false
     global.gameover_music_fade=true
-    //use 'time stretch' effect to keep avoidance songs in sync if the game lags
-    //when false, game uses pitch shifting
-    //uses a lot more cpu!
-    global.avoidance_stretch=false
     //0 for clean break sound effect, 1 for yuuutu engine, 2 for yosniper
     global.break_sound_effect=0
 

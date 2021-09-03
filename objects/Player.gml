@@ -43,16 +43,9 @@ ladder=false
 onPlatform=false
 ladderjump=false
 hang=false
-dot_hitbox=false
-dotkid=false
-shootkid=false
-onfire=false
-vvvvvv=false
 
 coyoteTime=0
 jump_timer=0
-
-beamstate=beam_normal
 
 vflip=1
 facing=1
@@ -182,27 +175,6 @@ applies_to=self
 ///read controls
 
 input_consume()
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-///speed fields or beams
-
-maxSpeed = 3
-baseGrav = 0.4
-
-if (place_meeting(x,y,LowSpeedField)) {
-    maxSpeed = 1
-} else if (place_meeting(x,y,HighSpeedField) || beamstate&beam_highspeed) {
-    maxSpeed = 6
-}
-
-if (place_meeting(x,y,HighGravField) || beamstate&beam_highgrav) {
-    baseGrav = 0.7
-} else if (place_meeting(x,y,LowGravField) || beamstate&beam_lowgrav) {
-    baseGrav = 0.2
-}
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -347,7 +319,7 @@ applies_to=self
 ///walljumps
 
 hang=false
-if (!vvvvvv) if (place_free(x,y+1*vflip)) {
+if (place_free(x,y+1*vflip)) {
     //vines
     if (distance_to_object(WallJumpL)<2) {
         hang=true facing=1
@@ -410,34 +382,12 @@ with (PushBlock) if (vspeed=0) if (place_meeting(x-sign(other.hspeed)*2,y,other.
 }
 
 //various water types
-if (place_meeting(x,y,GuyWater)) {
-    if (vspeed*vflip>gravity) vspeed=gravity*vflip
-    djump=maxjumps
-    onfire=false
-}
 if (place_meeting(x,y,Water1) || place_meeting(x,y,Water3)) {
     if (vspeed*vflip>2) vspeed=2*vflip
     djump=1
 }
-if (place_meeting(x,y,Water2) || place_meeting(x,y,NekoronWater) || place_meeting(x,y,CatharsisWater)) {
+if (place_meeting(x,y,Water2) || place_meeting(x,y,CatharsisWater)) {
     if (vspeed*vflip>2) vspeed=2*vflip
-}
-
-//one way gates
-
-if (hspeed>0) {coll=instance_place(x+hspeed,y,GateLeft) if (coll) if (bbox_right+1-hspeed<=coll.bbox_left+2) hspeed=coll.bbox_left-(bbox_right+1)}
-if (hspeed<0) {coll=instance_place(x+hspeed,y,GateRight) if (coll) if (bbox_left-hspeed>=coll.bbox_right-2) hspeed=coll.bbox_right-(bbox_left)}
-if (vspeed>0) {coll=instance_place(x,y+vspeed,GateUp) if (coll) if (bbox_bottom+1-vspeed<=coll.bbox_top+2) {y+=coll.bbox_top-(bbox_bottom+1)-gravity vspeed=0}}
-if (vspeed<0) {coll=instance_place(x,y+vspeed,GateDown) if (coll) if (bbox_top-vspeed>=coll.bbox_bottom-2) {y+=coll.bbox_bottom-(bbox_top)+1-gravity vspeed=0}}
-
-//fire
-if (onfire) {
-    instance_create(x,y,FirePart)
-}
-
-if (vvvvvv) {
-    if (vflip== 1 && vspeed!=0) vspeed= maxVspeed
-    if (vflip==-1 && vspeed!=0) vspeed=-maxVspeed
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -487,9 +437,7 @@ applies_to=self
 ///solid collision
 var land,a,s;
 
-if (dotkid) {
-    image_xscale=1
-} else if (walljumpboost<=0) {
+if (walljumpboost<=0) {
     image_xscale=abs(image_xscale)*facing
 }
 
@@ -630,41 +578,12 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///nekoron water bug
-
-if (key_pressed[key_jump]) if (place_meeting(x,y+1*vflip,NekoronAir)) {
-    vspeed=-jump2*vflip
-    repeat (choose(1,2,3)) sound_play_slomo("sndDJump")
-    djump=false
-    image_index=0
-}
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
 ///killer detection
 //must be done after collision to ensure fairness
 
 if (place_meeting(x,y,PlayerKiller)) {
     kill_player()
 }
-if (dot_hitbox) if (place_meeting(x,y,WhiteDotKiller)) {
-    kill_player()
-}
-if (dotkid) if (place_meeting(x,y,DotkidKiller)) {
-    kill_player()
-}
-if (place_meeting(x,y,DotKiller)) {
-    if (dot_hitbox) {
-        tmp=mask_index
-        mask_index=sprWhiteDot
-        if (place_meeting(x,y,DotKiller)) kill_player()
-        mask_index=tmp
-    } else kill_player()
-}
-
-if (onfire && onPlatform) kill_player()
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -773,9 +692,9 @@ if (other.object_index=LiftBlock || object_is_ancestor(other.object_index,LiftBl
 }
 
 if (vflip==1) {
-    if (y-vspeed/2-8*dotkid<=other.y) {
+    if (y-vspeed/2<=other.y) {
         if (other.snap || vspeed-other.vspeed>=0) {
-            y=other.y-9+8*dotkid
+            y=other.y-9
             vspeed=max(0,other.vspeed/dt/slomo)
         }
         vsplatform=max(0,other.vspeed)
@@ -784,9 +703,9 @@ if (vflip==1) {
         djump=true
     }
 } else {
-    if (y-vspeed/2+7*dotkid>=other.bbox_bottom+1) {
+    if (y-vspeed/2>=other.bbox_bottom+1) {
         if (other.snap || vspeed-other.vspeed<=0) {
-            y=other.bbox_bottom+1+8-7*dotkid
+            y=other.bbox_bottom+1+8
             vspeed=min(0,other.vspeed/dt/slomo)
         }
         vsplatform=min(0,other.vspeed)
@@ -837,15 +756,6 @@ action_id=603
 applies_to=self
 */
 if (!is_ingame()) instance_destroy()
-
-//fix dotkid sprite on first frame when reloading
-if (dotkid) {
-    sprite_index=sprDotKid
-    mask_index=-1
-
-    oldspr=sprite_index
-    newspr=oldspr
-}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -1,6 +1,6 @@
 connection=0
 closed=0
 precision=4
-background=rmDemo1
+background=
 snap_x=16
 snap_y=16

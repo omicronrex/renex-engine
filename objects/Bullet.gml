@@ -32,7 +32,6 @@ applies_to=self
 a=instance_place(x,y,Block)
 if (a) {
     if (a.solid) instance_destroy()
-    if (a.object_index=ShootBlock || a.object_index=ShootBlockBig) instance_destroy_id(a)
 }
 
 image_xscale=1

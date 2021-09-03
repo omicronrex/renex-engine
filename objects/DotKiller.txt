@@ -1,4 +1,4 @@
-sprite=sprSpikeBlue
+sprite=
 visible=0
 solid=0
 persistent=0

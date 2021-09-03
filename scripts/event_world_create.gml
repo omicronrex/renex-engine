@@ -27,13 +27,6 @@ global.perform_autosave=false
 
 global.room_started=false
 
-global.keylist=ds_map_create()
-
-globalvar bullet_table;
-
-bullet_table[0]=0
-global.bullet_map=ds_map_create()
-
 globalvar difficulty;
 difficulty=0
 

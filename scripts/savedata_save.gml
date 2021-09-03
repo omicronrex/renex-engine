@@ -39,12 +39,7 @@ if (difficulty!=3 || argument0) with (Player) {
 
     //gimmicks
     savedata("slomo",slomo)
-    savedata("whitedot",dot_hitbox)
-    savedata("dotkid",dotkid)
-    savedata("shootkid",shootkid)
     savedata("numjumps",maxjumps)
-    savedata("vvvvvv",vvvvvv)
-    savedata("beamstate",beamstate)
 
     save_persistent_objects()
 }

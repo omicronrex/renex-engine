@@ -101,7 +101,5 @@ if (!global.use_original_cherries) {
     sprite_assign(sprCherryBlack,sprCherryBlackOld)
 }
 
-list_avoidance_bullets()
-
 //let's go away
 room_goto_next()

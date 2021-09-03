@@ -1,7 +1,6 @@
 |engine_settings
 +lists
 	|list_loop_points
-	|list_avoidance_bullets
 	|list_nonstick
 	|list_instance_activation
 +saving
@@ -50,20 +49,6 @@
 		|envelope_compose
 		|update_fullscreen
 		|vsync_a_bit
-	+avoidance
-		|avoid_bullet
-		|wait_time
-		|wait_duration
-		|wait_beat
-		|wait_verse
-		+bullets
-			|bullet_create
-			|bullet_motion
-			|bullet_sprite
-			|bullet_spread
-			|bullet_life
-			|bullet_behavior
-			|bullet_stepcode
 	+drawing
 		|rect
 		|draw_sign_text
@@ -99,21 +84,10 @@
 	|kill_player
 	|move_player
 	|flip_player
-+keypick
-	|key_clear
-	|key_add
-	|key_use
-	|key_draw
 +bosses
 	|once_every
 	|BigCherry_boss
-	|Utah_boss
 	|template_boss
-+avoidances
-	+YoYoYo tools
-		|scrMakeCircle
-		|scrMakeShapes
-	|rmAvoid_avoidance
 +camera
 	|update_camera
 	|camera_default
@@ -124,12 +98,9 @@
 	|camera_shake
 +skins
 	|skin_default
-	|skin_dotkid
-	|skin_shootkid
-	|skin_vvvvvv
 +weapons
 	|weapon_default
-	|weapon_shootkid
 +sound
+	|play_bg_music
 	|sound_play_slomo
 	|set_loop_point

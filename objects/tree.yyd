@@ -16,8 +16,6 @@
 	|ItemBlock
 	|UnsolidItemBlock
 	|SolidItemBlock
-	|KeyParent
-	|KeyBlockParent
 +User Interface
 	|TitleMenu
 	|TitleParticle
@@ -36,8 +34,6 @@
 	|DestroyedBlock
 	|FirePart
 	|DepthBlender
-	|Cementer
-	|ObjHueShiftExample
 	|BossIntroduction
 +Saves
 	|SavePointMedium
@@ -47,125 +43,25 @@
 	|SavePointHardV
 	|SavePointVeryHardV
 +Threats
-	|BouncingFruit
-	|CherryCircle
-	|CherryRainbow
 	|MiniSpikeDown
 	|MiniSpikeRight
 	|MiniSpikeLeft
 	|MiniSpikeUp
 +Gimmicks
-	+White Dot
-		|WhiteDotEnable
-		|WhiteDotDisable
-		|SpikeDdot
-		|SpikeLdot
-		|SpikeRdot
-		|SpikeUdot
-		|WhiteDotKiller
-	+Dotkid
-		|DotkidEnable
-		|DotkidDisable
-		|DotkidKiller
-	+Shootkid
-		|ShootkidEnable
-		|ShootkidDisable
-		|ShootKid
-	+Keypick
-		|KeyDraw
-		|KeyWhite
-		|KeyRed
-		|KeyBlockWhite
-		|KeyBlockRed
-	+Walk the Ceiling
-		|SpinFlip
-		|SpinNormal
-		|KidBlockUp
-		|KidBlockDown
-		|WCSpikeSwitcher
-		|WCSwitchSpikeParent
-		|WCSpikeOrange
-		|WCSpikeOrangeL
-		|WCSpikeOrangeR
-		|WCSpikeOrangeU
-		|WCSpikeGreen
-		|WCSpikeGreenL
-		|WCSpikeGreenR
-		|WCSpikeGreenU
-	+NANG
-		|StarSingleJump
-		|StarDoubleJump
-		|StarTripleJump
-		|TripleJumpStar
-		|LowGravField
-		|HighGravField
-		|LowSpeedField
-		|HighSpeedField
-	+Pastel
-		|PastelSpikeBlack
-		|PastelSpikeBlackU
-		|PastelSpikeBlue
-		|PastelSpikeBlueL
-		|PastelSpikeBlueR
-		|PastelSpikeBlueU
-		|PastelSpikeGreen
-		|PastelSpikeGreenL
-		|PastelSpikeGreenR
-		|PastelSpikeGreenU
-		|PastelWater
-		|PastelWater2
-		|WaterStopper
-	+Beams
-		|BeamOneJump
-		|BeamHighSpeed
-		|BeamHighGrav
-		|BeamLowGrav
-		|BeamNormal
-	+Vcoin
-		|VCoinGive
-		|VCoinTake
-	+KTG
-		|SingleJumpSwitchBlock
-		|SingleJumpSwitchBlockOff
-		|DoubleJumpSwitchBlock
-		|DoubleJumpSwitchBlockOff
 	|CautionStripL
 	|CautionStripR
 	|CautionFastL
 	|CautionFastR
-	|ShootBlock
-	|ShootBlockBig
 	|JumpRefresher
 	|GravFlip
 	|GravNormal
-	|CoinFlip
-	|CoinNormal
 	|Ladder
 	|LadderSide
-	|ClockOn
-	|ClockOff
-	|ToggleBlockOn
-	|ToggleBlockOff
-	|GuyCouch
-	|ShootRefresherL
-	|ShootRefresherR
-	|Teleporter
-	|PatBall
-	|RenBoll
 +Triggers
 	|Trigger1
-	|SwitchRed
-	|SwitchRedWL
-	|SwitchRedWR
 	|Trigger2
 	|Trigger3
-	|SwitchYellow
-	|SwitchYellowWL
-	|SwitchYellowWR
 	|Trigger4
-	|SwitchGreen
-	|SwitchGreenWL
-	|SwitchGreenWR
 	|Trigger5
 	|Trigger6
 	|Trigger7
@@ -205,25 +101,14 @@
 	|SlopeBL
 	|SlopeBR
 	|JumpThrough
-	|GateUp
-	|GateRight
-	|GateLeft
-	|GateDown
 	|ScreenWrap
 	|Water1
 	|Water2
 	|Water3
 	|CatharsisWater
-	|NekoronWater
-	|NekoronAir
 	|PlatformWater
-	|GuyWater
 	|DemoBlock
 	|Signpost
-	|AutoSign
-	|Cloud
-	|DecoStar
-	|WaterSurface
 +Traps
 	|TrapStop
 	|TrapRedirect
@@ -235,11 +120,6 @@
 	|FakeBlock
 	|BreakBlock
 	|YokuBlock
-	|CloudSetOnFire
-	|CloudBolt
-	|Bolt
-	|ExampleSavingTrap
-	|ExampleRotatingTrap
 +Items
 	|GameClear
 	|Item1
@@ -284,15 +164,7 @@
 		|BigCherryHealthbar
 		|BigCherryBlue2
 		|BigCherrySmall2
-	+Utah
-		|Utah
-		|FireDemo
-		|GlassShard
-		|TouhouDeath
 	|BossWarp
-+Avoidance
-	|Avoidance
-	|AvoidBullet
 |PlayerStart
 |Block
 |Platform

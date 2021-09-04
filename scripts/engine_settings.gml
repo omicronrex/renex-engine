@@ -86,8 +86,9 @@
     //pick just one of the following
     global.gameover_music_play=false
     global.gameover_music_stop=false
-    global.gameover_music_pause=false
     global.gameover_music_fade=true
+    //pause on death (or after fading if fading is used)
+    global.gameover_music_pause=true
     //use 'time stretch' effect to keep avoidance songs in sync if the game lags
     //when false, game uses pitch shifting
     //uses a lot more cpu!

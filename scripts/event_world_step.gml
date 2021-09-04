@@ -46,6 +46,10 @@ if (fading) {
     sound_kind_volume(1,settings("musvol")*fadefrom)
     if (fadefrom<=0) {
         fading=0
+        //pause when it's done fading if pause is on
+        if (global.gameover_music_pause) {
+            sound_kind_pause(1)
+        }
     }
 }
 

@@ -5,10 +5,10 @@ if (!global.debug_god) with (Player) {
     }
     if (global.gameover_music_stop) {
         sound_kind_stop(1)
-    } else if (global.gameover_music_pause) {
-        sound_kind_pause(1)
     } else if (global.gameover_music_fade) {
         World.fading=1
+    } else if (global.gameover_music_pause) {
+        sound_kind_pause(1)
     }
 
     sound_play_slomo("sndDeath")

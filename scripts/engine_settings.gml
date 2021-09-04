@@ -84,8 +84,9 @@
     //pick just one of the following
     global.gameover_music_play=false
     global.gameover_music_stop=false
-    global.gameover_music_pause=false
     global.gameover_music_fade=true
+    //pause on death (or after fading if fading is used)
+    global.gameover_music_pause=true
     //0 for clean break sound effect, 1 for yuuutu engine, 2 for yosniper
     global.break_sound_effect=0
 

@@ -113,3 +113,5 @@ flip_player
 engine_template_needle
 engine_template_classic
 play_bg_music
+lock_controls
+unlock_controls

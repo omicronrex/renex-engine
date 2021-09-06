@@ -182,6 +182,12 @@ applies_to=self
 ///read controls
 
 input_consume()
+
+//align adjust keys
+if (global.a_d_trick) {
+    if (keyboard_check_pressed(ord("A"))) move_player(x-1,y,1)
+    if (keyboard_check_pressed(ord("D"))) move_player(x+1,y,1)
+}
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -248,19 +254,10 @@ applies_to=self
 if (!frozen) {
     if (!inside_view()) instance_activate_around_player()
 
-    if (!cutscene) {
-        h=input_h
-        //align adjust keys
-        if (global.a_d_trick) {
-            if (keyboard_check_pressed(ord("A"))) move_player(x-1,y,1)
-            if (keyboard_check_pressed(ord("D"))) move_player(x+1,y,1)
-        }
-    }
-
     if (jump_timer) jump_timer-=1
 
     if (walljumpboost) {
-        h=walljumpdir
+        input_h=walljumpdir
         walljumpboost-=1
     }
 
@@ -281,18 +278,18 @@ if (!frozen) {
             if (abs(hspeed)<4) walljumpboost=0
         } else if (coyoteTime <= 0) vspeed-=gravity
     } else {
-        if (h!=0) {
+        if (input_h!=0) {
             if (walljumpboost!=0) {
-                hspeed=(maxSpeed+1)*h
+                hspeed=(maxSpeed+1)*input_h
             } else {
                 if (slipper) {
-                    hspeed=inch(hspeed,maxSpeed*h,slipper.slip)
+                    hspeed=inch(hspeed,maxSpeed*input_h,slipper.slip)
                 } else {
                     if (global.use_momentum_values && !ladder) {
-                        if (onPlatform) hspeed+=h*mm_ground_accel
-                        else hspeed+=h*mm_air_accel
+                        if (onPlatform) hspeed+=input_h*mm_ground_accel
+                        else hspeed+=input_h*mm_air_accel
                     } else {
-                        hspeed=maxSpeed*h
+                        hspeed=maxSpeed*input_h
                     }
                 }
             }

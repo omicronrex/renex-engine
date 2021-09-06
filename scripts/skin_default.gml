@@ -35,7 +35,7 @@ if (argument0=="step") {
             sprite_index=sprPlayerFall
             image_speed=0.5
         }
-    } else if (h!=0) {
+    } else if (input_h!=0) {
         if (global.use_original_animations) {
             sprite_index=sprPlayerRunning
             image_speed=mmf_animspeed(70,80)

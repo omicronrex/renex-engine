@@ -743,7 +743,7 @@ if (place_meeting(x,y,ScreenWrap)) {
             }
         }
     } else {
-        if (global.die_outside_room) kill_player()
+        if (global.die_outside_room || place_meeting(x,y,DieOutside)) kill_player()
     }
 }
 #define Other_4

@@ -74,6 +74,7 @@
 	|sprNiseBlock
 	|sprMiniBlock
 	|sprKillBlock
+	|sprDieOutside
 	|sprSlopeTL
 	|sprSlopeTR
 	|sprSlopeBL

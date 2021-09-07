@@ -200,6 +200,7 @@
 	|SlipBlock
 	|NiseBlock
 	|KillBlock
+	|DieOutside
 	|SlopeTL
 	|SlopeTR
 	|SlopeBL

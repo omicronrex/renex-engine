@@ -128,7 +128,7 @@ if (global.key_pressed[key_shoot]) {
         instance_create(x,y,KeyboardMenu)
         instance_destroy()
     }
-    if (sel==9) {
+    if (sel==9 && joystick_count()) {
         sound_play("sndDJump")
         input_clear()
         instance_create(x,y,JoystickMenu)

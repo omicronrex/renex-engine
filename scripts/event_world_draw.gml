@@ -25,7 +25,7 @@ if (!global.pause) {
     //gui
     d3d_set_projection_ortho(0,0,global.width,global.height,0)
 
-    if (keyboard_check(vk_tab) || debug_mode || fps_real<global.game_speed*0.95) fpsa=min(1.5,fpsa+0.05)
+    if ((keyboard_check(vk_tab) || debug_mode || fps_real<global.game_speed*0.95) && is_ingame()) fpsa=min(1.5,fpsa+0.05)
     else fpsa=max(0,fpsa-0.05)
     if (fpsa>0.5) {
         str=string(round(fps))

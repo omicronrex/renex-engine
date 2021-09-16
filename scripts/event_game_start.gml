@@ -20,6 +20,8 @@ global.break_sfx=pick(global.break_sound_effect,"sndBlockBreak","sndBlockBreakYu
 set_application_title(global.game_title)
 draw_set_color($ffffff)
 
+joystick_set_deadzone(0.5)
+
 global.infocus=true
 
 //you can multiply things by dt to get the correct 50hz animation speed

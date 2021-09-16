@@ -49,6 +49,7 @@ sound_add_directory("data\sounds\",".ogg",3,1)
 
 //music (compressed,streamed)
 sound_add_directory("data\music\",".ogg",1,1)
+sound_add_directory("data\music\",".mp3",1,1)
 sound_add_directory("data\music\",".mod",1,1)
 sound_add_directory("data\music\",".s3m",1,1)
 

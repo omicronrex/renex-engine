@@ -9,6 +9,10 @@ fading=0
 fadefrom=1
 sound_kind_volume(1,settings("musvol"))
 
+//stop looping sound effects...
+sound_kind_stop(0)
+sound_kind_stop(3)
+
 cutscene=false
 frozen=false
 

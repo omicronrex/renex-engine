@@ -1,4 +1,4 @@
-sprite=sprController
+sprite=sprTrigger9
 visible=0
 solid=0
 persistent=0

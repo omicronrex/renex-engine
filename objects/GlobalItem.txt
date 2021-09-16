@@ -1,4 +1,4 @@
-sprite=sprController
+sprite=sprGlobalItem2
 visible=1
 solid=0
 persistent=0

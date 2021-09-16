@@ -270,6 +270,7 @@ sprGravityCoinNormal
 sprOutsideWarp
 sprNangTJumpParticle
 sprDieOutside
+sprGizmo
 sprLock1
 sprLock2
 sprLock3

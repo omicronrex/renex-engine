@@ -103,5 +103,11 @@ if (!global.use_original_cherries) {
 
 list_avoidance_bullets()
 
+globalvar gizmos,gizmolist;
+gizmos=0
+gizmolist=0
+add_gizmo(Trap)
+list_gizmos()
+
 //let's go away
 room_goto_next()

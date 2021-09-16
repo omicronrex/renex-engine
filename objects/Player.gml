@@ -49,6 +49,8 @@ shootkid=false
 onfire=false
 vvvvvv=false
 
+oldslomo=slomo
+
 coyoteTime=0
 jump_timer=0
 
@@ -143,7 +145,9 @@ applies_to=self
 */
 
 //slow down music
-sound_kind_pitch(1,slomo)
+if (slomo!=oldslomo)
+    sound_kind_pitch(1,slomo)
+oldslomo=slomo
 
 updating=0
 if (!frozen) {

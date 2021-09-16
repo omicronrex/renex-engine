@@ -1,0 +1,7 @@
+sprite=sprLock8
+visible=0
+solid=0
+persistent=0
+depth=-1
+parent=TriggerLock
+mask=

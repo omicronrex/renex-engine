@@ -180,6 +180,18 @@
 	|sprTriggered11
 	|sprTriggered12
 	|sprTriggeredFree
+	|sprLock1
+	|sprLock2
+	|sprLock3
+	|sprLock4
+	|sprLock5
+	|sprLock6
+	|sprLock7
+	|sprLock8
+	|sprLock9
+	|sprLock10
+	|sprLock11
+	|sprLock12
 +Items
 	|sprItem1
 	|sprItem2

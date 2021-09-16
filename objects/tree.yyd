@@ -6,6 +6,7 @@
 	|SavePoint
 	|Trigger
 	|Triggered
+	|TriggerLock
 	|Button
 	|ButtonShoot
 	|Boss
@@ -188,6 +189,18 @@
 	|Triggered11
 	|Triggered12
 	|TriggeredFree
+	|LockedTrigger1
+	|LockedTrigger2
+	|LockedTrigger3
+	|LockedTrigger4
+	|LockedTrigger5
+	|LockedTrigger6
+	|LockedTrigger7
+	|LockedTrigger8
+	|LockedTrigger9
+	|LockedTrigger10
+	|LockedTrigger11
+	|LockedTrigger12
 +Level
 	|ConveyorLeft
 	|ConveyorRight

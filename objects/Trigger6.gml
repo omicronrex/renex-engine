@@ -5,3 +5,4 @@ action_id=603
 applies_to=self
 */
 mytrig=Triggered6
+mylock=LockedTrigger6

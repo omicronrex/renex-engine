@@ -116,6 +116,7 @@
 	|SlopeBL
 	|SlopeBR
 	|JumpThrough
+    |Upform
 	|ScreenWrap
 	|Water1
 	|Water2
@@ -193,10 +194,18 @@
 		|BigCherryBlue2
 		|BigCherrySmall2
 	|BossWarp
++Tools
+	|AutoSaver
+	|Camera
+	|OutsideWarp
+	|TimerFreeze
+	|MusicPlayer
+	|MusicPlayerSection
+	|TextDraw
+	|WarpToHub
 |PlayerStart
 |Block
 |Platform
-|Upform
 |WallJumpL
 |WallJumpR
 |Cherry
@@ -205,11 +214,3 @@
 |SpikeR
 |SpikeU
 |Warp
-|WarpToHub
-|OutsideWarp
-|AutoSaver
-|TimerFreeze
-|Camera
-|MusicPlayer
-|MusicPlayerSection
-|TextDraw

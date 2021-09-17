@@ -308,6 +308,8 @@
 +Avoidance
 	|Avoidance
 	|AvoidBullet
++Tools
+	|TimerFreeze
 |PlayerStart
 |Block
 |Platform

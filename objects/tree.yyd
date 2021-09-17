@@ -222,6 +222,7 @@
 	|SlopeBL
 	|SlopeBR
 	|JumpThrough
+	|Upform
 	|GateUp
 	|GateRight
 	|GateLeft
@@ -324,11 +325,17 @@
 	|Avoidance
 	|AvoidBullet
 +Tools
+	|AutoSaver
+	|Camera
+	|OutsideWarp
 	|TimerFreeze
+	|MusicPlayer
+	|MusicPlayerSection
+	|TextDraw
+	|WarpToHub
 |PlayerStart
 |Block
 |Platform
-|Upform
 |WallJumpL
 |WallJumpR
 |Cherry
@@ -337,10 +344,3 @@
 |SpikeR
 |SpikeU
 |Warp
-|WarpToHub
-|OutsideWarp
-|AutoSaver
-|Camera
-|MusicPlayer
-|MusicPlayerSection
-|TextDraw

@@ -7,6 +7,7 @@ applies_to=self
 ///instructions
 
 //this warp can be used to return to the hub room configured in the engine settings
+//if a hub room isn't configured, it'll disappear
 
 msg="UP to return"
 

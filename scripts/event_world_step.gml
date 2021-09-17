@@ -55,7 +55,7 @@ if (fading) {
 
 if (is_ingame()) {
     //advance game time
-    if (instance_exists(Player)) {
+    if (instance_exists(Player) && !instance_exists(TimerFreeze)) {
         time=savedata("time")+50/room_speed
         savedata("time",time)
     }

@@ -9,7 +9,7 @@ applies_to=self
 //this warp can be used to return to the hub room configured in the engine settings
 //if a hub room isn't configured, it'll disappear
 
-msg="UP to return"
+msg=lang("warptohub")
 
 font=fntSignpost
 color=$ffffff

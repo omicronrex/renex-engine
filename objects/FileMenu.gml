@@ -66,7 +66,7 @@ if (state="continue") {
                 sound_play("sndDeath")
                 savedata_default(select)
                 state=""
-                World.messagetext="Press Ctrl-Z to Undo"
+                World.messagetext=lang("fileundo")
                 World.message=200
             } else sound_play("sndShoot")
         } else {
@@ -115,28 +115,28 @@ var i;
 
 draw_set_halign(1)
 draw_set_font(fntFileBig)
-draw_text(400,64,"- Select Your Saved Game -")
+draw_text(400,64,lang("filemenu"))
 
 
 for (i=0;i<3;i+=1) {
     savedata_select(i)
     draw_set_halign(1)
     draw_set_font(fntFileBig)
-    draw_text(x+i*240+64,y,"Game "+string(i+1))
+    draw_text(x+i*240+64,y,lang("filegame")+string(i+1))
     draw_set_font(fntFileSmall)
 
     if (savedata("saved")) {
         draw_set_halign(0)
-        draw_text(x+i*240+10,y+70,"Deaths:#  "+string(savedata("deaths"))+"#Time:#  "+format_time(savedata("time")))
+        draw_text(x+i*240+10,y+70,lang("deaths")+":#  "+string(savedata("deaths"))+"#"+lang("time")+":#  "+format_time(savedata("time")))
 
         draw_set_halign(1)
         if (state="continue" && select=i) {
-            if (!asksel) draw_text(x+i*240+64,y+32,">Continue<#Erase Game")
-            else draw_text(x+i*240+64,y+32,"Continue#>"+string_repeat("XX",askcount)+string_copy("Erase Game",1+askcount*2,10-askcount*2)+"<")
+            if (!asksel) draw_text(x+i*240+64,y+32,">"+lang("filecontinue")+"<#"+lang("fileerase"))
+            else draw_text(x+i*240+64,y+32,lang("filecontinue")+"#>"+string_repeat("XX",askcount)+string_copy(lang("fileerase"),1+askcount*2,10-askcount*2)+"<")
         } else draw_text(x+i*240+64,y+48,global.name_difficulties[difficulty])
 
         draw_set_font(fntFileBig)
-        if (savedata("clear")) draw_text(x+i*240+64,y+152,"Clear!")
+        if (savedata("clear")) draw_text(x+i*240+64,y+152,lang("fileclear"))
         draw_set_halign(0)
 
         if (has_item("Item1")) draw_sprite(sprItem1,0,x+i*240+0,y+192)
@@ -149,8 +149,8 @@ for (i=0;i<3;i+=1) {
         if (has_item("Item8")) draw_sprite(sprItem8,0,x+i*240+96,y+224)
     } else {
         draw_set_halign(1)
-        if (state="new file" && select=i) draw_text(x+i*240+64,y+32,"Difficulty:#<"+global.name_difficulties[difficulty]+">")
-        else draw_text(x+i*240+64,y+48,"No Data")
+        if (state="new file" && select=i) draw_text(x+i*240+64,y+32,lang("filediff")+"#<"+global.name_difficulties[difficulty]+">")
+        else draw_text(x+i*240+64,y+48,lang("filenodata"))
     }
 }
 draw_set_halign(0)
@@ -168,7 +168,7 @@ if (has_item("GlobalItem4")) draw_sprite(sprGlobalItem4,0,400+32,608-96)
 
 //option info
 draw_set_font(fntFileSmall)
-draw_set_halign(0) draw_text( 34,556,"["+key_get_name(global.keycode[key_shoot])+"] Back"   )
-draw_set_halign(2) draw_text(766,556,"["+key_get_name(global.keycode[key_jump ])+"] Accept" )
-draw_set_halign(1) draw_text(400,556,"["+key_get_name(global.keycode[key_menu ])+"] Options")
+draw_set_halign(0) draw_text( 34,556,"["+key_get_name(global.keycode[key_shoot])+"] "+lang("menuback"))
+draw_set_halign(2) draw_text(766,556,"["+key_get_name(global.keycode[key_jump ])+"] "+lang("menuoptions"))
+draw_set_halign(1) draw_text(400,556,"["+key_get_name(global.keycode[key_menu ])+"] "+lang("menuaccept"))
 draw_set_halign(0)

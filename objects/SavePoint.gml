@@ -13,7 +13,7 @@ angle=0
 notice=0
 font=fntSignpost
 color=$ffffff
-msg=key_get_name(global.keycode[key_shoot])+" to Save"
+msg=key_get_name(global.keycode[key_shoot])+lang("presstosave")
 #define Step_1
 /*"/*'/**//* YYD ACTION
 lib_id=1

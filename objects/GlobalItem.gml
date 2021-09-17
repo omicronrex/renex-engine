@@ -10,6 +10,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+event_inherited()
 itemid="globalitem"+object_get_name(object_index)
 #define Collision_Player
 /*"/*'/**//* YYD ACTION

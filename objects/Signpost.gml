@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-msg="Poggers"
+msg=lang("signpost")
 
 font=fntSignpost
 color=$ffffff

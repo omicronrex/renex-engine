@@ -53,6 +53,9 @@ sound_add_directory("data\music\",".mp3",1,1)
 sound_add_directory("data\music\",".mod",1,1)
 sound_add_directory("data\music\",".s3m",1,1)
 
+global.langmap=ds_map_create()
+list_strings()
+
 list_loop_points()
 sound_global_volume(global.gain)
 

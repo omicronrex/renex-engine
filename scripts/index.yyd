@@ -117,3 +117,6 @@ lock_controls
 unlock_controls
 list_gizmos
 add_gizmo
+list_strings
+add_string
+lang

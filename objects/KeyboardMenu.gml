@@ -15,20 +15,11 @@ ycursor=ydraw+(ysep*sel)+18
 
 setting=false
 
-keyname[key_left   ]="Left"
-keyname[key_right  ]="Right"
-keyname[key_up     ]="Up"
-keyname[key_down   ]="Down"
-keyname[key_jump   ]="Jump"
-keyname[key_shoot  ]="Shoot"
-keyname[key_restart]="Restart"
-keyname[key_skip   ]="Skip"
-keyname[key_die    ]="Die"
-keyname[key_menu   ]="Menu"
-keyname[key_sizeof ]="Reset Controls"
-
-for (i=0;i<key_sizeof;i+=1)
+for (i=0;i<key_sizeof;i+=1) {
+    keyname[i]=lang("keyname"+string(i))
     keytext[i]=key_get_name(global.keycode[i])
+}
+keyname[key_sizeof]=lang("keyresetkeys")
 keytext[key_sizeof]=""
 
 image_speed=0.2*dt
@@ -58,10 +49,10 @@ if (!setting) {
     } else if (global.key_pressed[key_jump]) {
         if (sel!=key_sizeof) {
             setting=true
-            keytext[sel]="Press new key..."
+            keytext[sel]=lang("keynewkey")
         } else {
             input_default()
-            keytext[key_sizeof]="Reset!"
+            keytext[key_sizeof]=lang("keykeysreset")
             alarm[0]=60*dt
         }
     }
@@ -94,7 +85,7 @@ applies_to=self
 */
 draw_set_halign(1)
 draw_set_font(fntFileBig)
-draw_text(400,64,"- Control Setup -")
+draw_text(400,64,lang("keymenu"))
 
 for (i=0;i<=key_sizeof;i+=1) {
     draw_set_halign(0)
@@ -108,7 +99,7 @@ draw_sprite(sprPlayerIdle,floor(image_index),xdraw-20,ycursor)
 //button info
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
-draw_text(34,556,"["+key_get_name(global.keycode[key_shoot])+"] Back")
+draw_text(34,556,"["+key_get_name(global.keycode[key_shoot])+"] "+lang("menuback"))
 draw_set_halign(2)
-draw_text(766,556,"["+key_get_name(global.keycode[key_jump])+"] Accept")
+draw_text(766,556,"["+key_get_name(global.keycode[key_jump])+"] "+lang("menuaccept"))
 draw_set_halign(0)

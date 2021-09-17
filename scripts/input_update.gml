@@ -22,11 +22,11 @@ if (joystick_found() || global.joysupdated) {
     if (joystick_count()>0) {
         message2=300
         if (joystick_count()==1) {
-            message2text="Joystick found:#"+joystick_name(0)+"#Set it up in the options"
+            message2text=lang("joyfound")+"#"+joystick_name(0)+"#"+lang("joyset1up")
         } else {
-            message2text=string(joystick_count())+" joysticks found:#"
+            message2text=string(joystick_count())+lang("joysfound")+"#"
             for (i=0;i<joystick_count();i+=1) message2text+=joystick_name(i)+"#"
-            message2text+="Set them up in the options"
+            message2text+=lang("joyset2up")
         }
     }
 

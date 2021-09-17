@@ -11,17 +11,8 @@ ydraw=132
 xsep=550
 ysep=40
 
-option[0]="Music Volume"
-option[1]="Sound Volume"
-option[2]="Screen Mode"
-option[3]="VSync"
-option[4]="Fullscreen Filter"
-option[5]="Sprite Filter"
-option[6]="Blood Effect"
-option[7]="Left+Right Mode"
-option[8]="Keyboard Setup"
-option[9]="Joystick Setup"
 option_max=10
+for (i=0;i<option_max;i+=1) option[i]=lang("optionsitem"+string(i+1))
 
 image_speed=0.2*dt
 ycursor=ydraw+(ysep*sel)+18
@@ -155,14 +146,14 @@ if (global.key_pressed[key_shoot]) {
 
 optext[0]=string(round(settings("musvol")*100))+"%"
 optext[1]=string(round(settings("sfxvol")*100))+"%"
-optext[2]=pick(settings("fullscreen"),"Window","Fullscreen")
-optext[3]=pick(!!World.monitorspeed,pick(settings("vsync")+1,"Failed","Off","On"),"Testing...")
-optext[4]=pick(settings("filter"),"Off","Bilinear","Area")
-optext[5]=pick(settings("interpolation"),"Off","On")
-optext[6]=pick(settings("gore"),"Off","Low","Medium","High")
-optext[7]=pick(global.leftright_moonwalk,pick(settings("l+r behavior"),"Flip","Stay","Stop","Left","Right"),"Moonwalk")
+optext[2]=lang("optionswindow"+string(settings("fullscreen")))
+optext[3]=pick(!!World.monitorspeed,lang("optionsvsync"+string(settings("vsync")+1)),lang("optionsvsynctest"))
+optext[4]=lang("optionsvsync"+string(settings("filter")))
+optext[5]=lang("optionssmooth"+string(settings("interpolation")))
+optext[6]=lang("optionsblood"+string(settings("gore")))
+optext[7]=pick(global.leftright_moonwalk,lang("optionsflip"+string(settings("l+r behavior"))),lang("optionsmooonwalk"))
 optext[8]=""
-optext[9]=pick(!!joystick_count(),"no joys",string(joystick_count())+" joys")
+optext[9]=pick(!!joystick_count(),lang("optionsnojoys"),string(joystick_count())+lang("optionsjoys"))
 
 if (sel=4 && settings("fullscreen")) background_visible[0]=1
 else background_visible[0]=0
@@ -186,7 +177,7 @@ applies_to=self
 */
 draw_set_halign(1)
 draw_set_font(fntFileBig)
-draw_text(400,64,"- Options -")
+draw_text(400,64,lang("optionsmenu"))
 
 draw_set_halign(0) for (i=0;i<option_max;i+=1) draw_text(xdraw     ,ydraw+(ysep*i),option[i])
 draw_set_halign(2) for (i=0;i<option_max;i+=1) draw_text(xdraw+xsep,ydraw+(ysep*i),optext[i])
@@ -196,9 +187,9 @@ if (!dead) draw_sprite_ext(sprPlayerIdle,floor(image_index),xdraw-18,ycursor,1,1
 //button info
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
-draw_text(34,556,"["+key_get_name(global.keycode[key_shoot])+"] Back")
+draw_text(34,556,"["+key_get_name(global.keycode[key_shoot])+"] "+lang("menuback"))
 draw_set_halign(1)
 draw_text(400,556,re_version)
 draw_set_halign(2)
-draw_text(766,556,"["+key_get_name(global.keycode[key_jump])+"] Accept")
+draw_text(766,556,"["+key_get_name(global.keycode[key_jump])+"] "+lang("menuaccept"))
 draw_set_halign(0)

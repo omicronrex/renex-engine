@@ -62,10 +62,10 @@ draw_enable_alphablend(true)
 
 draw_set_font(fntFileBig)
 draw_set_halign(1)
-    draw_text(view_wview/2,view_hview/2-24,"PAUSE");
+    draw_text(view_wview/2,view_hview/2-24,lang("pausemenu"));
 draw_set_halign(0)
 
 draw_set_font(fntFileSmall)
 draw_set_valign(2)
-    draw_text(20,view_hview-16,"Deaths: "+string(savedata("deaths"))+"#Time: "+format_time(savedata("time")))
+    draw_text(20,view_hview-16,lang("deaths")+": "+string(savedata("deaths"))+"#"+lang("time")+": "+format_time(savedata("time")))
 draw_set_valign(0)

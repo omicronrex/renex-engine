@@ -154,6 +154,7 @@
 	|sprJumpRefresher
 	|sprPushBlockSave
 	|sprWrap
+	|sprClockOff
 +Triggers
 	|sprTrigger1
 	|sprTrigger2

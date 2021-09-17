@@ -247,7 +247,15 @@ if (point_distance(xc,yc,x,y)<=radius+0.4) {
         yc=lengthdir_y(speed,180-direction+d)
         yc=max(0,abs(yc)-dampfrc)*sign(yc)
         speed=point_distance(0,0,xc,yc)
+        b=direction
         direction=point_direction(0,0,xc,yc)+d
+
+        vol=min(1,abs(angle_difference(b,direction))/180*speed)
+        if (vol>0.2) {
+            snd=sound_play_paused("sndBall")
+            sound_volume(snd,vol)
+            sound_resume(snd)
+        }
 
         rotsp=mean(rotsp,radtodeg(-yc/radius))
     }

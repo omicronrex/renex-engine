@@ -58,6 +58,7 @@
 	|GravNormal
 	|Ladder
 	|LadderSide
+	|ExampleGizmo
 +Triggers
 	|Trigger1
 	|Trigger2

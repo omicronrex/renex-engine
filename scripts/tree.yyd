@@ -3,6 +3,7 @@
 	|list_loop_points
 	|list_nonstick
 	|list_instance_activation
+	|list_gizmos
 +saving
 	|settings_default
 	|savedata_default
@@ -60,6 +61,7 @@
 	|engine_template_needle
 	|engine_template_classic
 	|add_difficulty
+	|add_gizmo
 	|update_caption_deathtime
 	|cement
 	|good_bounce

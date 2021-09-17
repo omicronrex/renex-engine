@@ -4,4 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-with (Trap) if (place_meeting(x,y,other.id)) event_user(0)
+for (i=0;i<gizmos;i+=1)
+    with (gizmolist[i])
+        if (place_meeting(x,y,other.id))
+            event_user(0)

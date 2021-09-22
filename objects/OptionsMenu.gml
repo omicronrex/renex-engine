@@ -139,6 +139,7 @@ if (global.key_pressed[key_shoot]) {
         }
         volumetimer+=1
         sound_kind_volume(0,settings("sfxvol"))
+        sound_kind_volume(3,settings("sfxvol"))
     }
 } else {
     volumetimer=0

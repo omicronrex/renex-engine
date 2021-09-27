@@ -282,6 +282,7 @@ if (!frozen) {
             }
         }
         hspeed=median(-maxSpeed,hspeed,maxSpeed)
+        if (hspeed=0) x=round(x)
     }
 
     if (onPlatform || coyoteTime>0) {
@@ -396,39 +397,44 @@ action_id=603
 applies_to=self
 */
 ///slopes
-var land;
+var land,rx,a;
 
 angle=0
 
 if (vspeed*vflip>=0) {
+    rx=floor(x)
+    a=3+ceil(abs(hspeed))
     if (global.angle_slopes) {
         if (vflip==1) {
-            if (place_meeting(x-2,y,SlopeBL)) angle-=45
-            if (place_meeting(x+2,y,SlopeBR)) angle+=45
+            if (place_meeting(rx-a,y,SlopeBL)) angle-=45
+            if (place_meeting(rx+a,y,SlopeBR)) angle+=45
         }
         if (vflip==-1) {
-            if (place_meeting(x-2,y,SlopeTL)) angle+=45
-            if (place_meeting(x+2,y,SlopeTR)) angle-=45
+            if (place_meeting(rx-a,y,SlopeTL)) angle+=45
+            if (place_meeting(rx+a,y,SlopeTR)) angle-=45
         }
     }
 
     land=0
     if (hspeed>0) {
-        if (vflip==1) if (place_meeting(x,y+hspeed+2,SlopeBL)) {y=floor(y) land=1}
-        if (vflip==-1) if (place_meeting(x,y-hspeed-2,SlopeTL)) {y=ceil(y) land=1}
+        if (vflip==1) if (place_meeting(rx,y+hspeed+a,SlopeBL)) {y=floor(y) land=1}
+        if (vflip==-1) if (place_meeting(rx,y-hspeed-a,SlopeTL)) {y=ceil(y) land=1}
     }
     if (hspeed<0) {
-        if (vflip==1) if (place_meeting(x,y-hspeed+2,SlopeBR)) {y=floor(y) land=1}
-        if (vflip==-1) if (place_meeting(x,y+hspeed-2,SlopeTR)) {y=ceil(y) land=1}
+        if (vflip==1) if (place_meeting(rx,y-hspeed+a,SlopeBR)) {y=floor(y) land=1}
+        if (vflip==-1) if (place_meeting(rx,y+hspeed-a,SlopeTR)) {y=ceil(y) land=1}
     }
     if (land) {
-        move_contact_solid(180+90*vflip,abs(hspeed))
-        vspeed=abs(hspeed)*vflip-gravity
+        x+=hspeed
+        move_contact_solid(180+90*vflip,ceil(abs(hspeed))+1)
+        x-=hspeed
+        vspeed=ceil(abs(hspeed))*vflip-gravity
         onPlatform=true
         walljumpboost=0
         djump=1
         coyoteTime=global.coyote_time
     }
+    global.test=land
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -483,7 +489,7 @@ if (!place_free(x+hspeed,y+vspeed)) {
             x+=s
             if (!place_free(x,y)) {x-=s break}
         }
-        hspeed=0
+        x-=hspeed
         walljumpboost=0
     }
 

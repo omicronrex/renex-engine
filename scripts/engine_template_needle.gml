@@ -40,6 +40,7 @@ global.use_application_surface=false
 global.show_deathtime=true
 global.closing_animation=false
 global.refight_bosses=true
+global.jump_refresher_timer=100
 global.autosave_items=true
 global.contact_saves=false
 global.press_s_saves=true

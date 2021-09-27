@@ -104,6 +104,8 @@
     global.closing_animation=true
     //the ability to fight bosses more than once per savefile
     global.refight_bosses=true
+    //jump refreshers respawn time - if set to zero, it respawns when you land
+    global.jump_refresher_timer=0
     global.autosave_items=true
     global.contact_saves=false
     global.press_s_saves=false

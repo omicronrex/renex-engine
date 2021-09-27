@@ -4,7 +4,7 @@ if (event="create") {
 
     hp=40
 
-    play_bg_music("ddpboss")
+    play_bg_music("ddpboss",1)
 
     //teapot stuff
     model=d3d_model_create()

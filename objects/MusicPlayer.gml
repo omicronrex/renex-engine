@@ -16,4 +16,4 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-play_bg_music(BGM)
+play_bg_music(BGM,1)

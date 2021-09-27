@@ -11,6 +11,8 @@ if (!global.debug_god) with (Player) {
         sound_kind_pause(1)
     }
 
+    drop_items()
+
     sound_play_slomo("sndDeath")
 
     instance_create(x,y,BloodEmitter)

@@ -23,6 +23,8 @@ if (difficulty!=3 || argument0) with (Player) {
         savedata("hash",hash)
     }
 
+    collect_items()
+
     savedata("x",x)
     savedata("y",y)
     savedata("width",image_xscale)

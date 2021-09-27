@@ -120,3 +120,5 @@ add_gizmo
 list_strings
 add_string
 lang
+collect_items
+drop_items

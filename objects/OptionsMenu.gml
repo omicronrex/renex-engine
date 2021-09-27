@@ -25,8 +25,9 @@ alarm[0]=30*dt
 background_hspeed[0]=0.5
 background_vspeed[0]=0.5
 
-volumedelay=25  //delay to change volume precisely
-volumefpi=5     //frames per volume change, this value is ignored after the volume delay
+//precise volume control
+volumedelay=25
+volumefpi=5
 volumetimer=0
 
 event_step()

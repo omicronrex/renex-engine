@@ -8,6 +8,7 @@ if (is_ingame()) {
 fading=0
 fadefrom=1
 sound_kind_volume(1,settings("musvol"))
+sound_kind_resume(1)
 
 //stop looping sound effects...
 sound_kind_stop(0)

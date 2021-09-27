@@ -38,6 +38,7 @@ if (global.iwbtg_sound_mode) {
     global.gain=1
     sound_effect_options(sound_kind_effect(0,se_gargle),0,0.5)
     sound_effect_options(sound_kind_effect(1,se_gargle),0,0.5)
+    sound_effect_options(sound_kind_effect(3,se_gargle),0,0.5)
 }
 
 //load external sound assets

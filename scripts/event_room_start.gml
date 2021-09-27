@@ -22,6 +22,7 @@ if (is_ingame()) {
     room_caption=global.game_title
     sound_kind_pitch(0,1)
     sound_kind_pitch(1,1)
+    sound_kind_pitch(3,1)
 }
 
 window_set_caption(room_caption)

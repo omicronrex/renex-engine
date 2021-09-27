@@ -17,6 +17,7 @@ if (warpX==noone && warpY==noone && roomTo=room) {
     sound_play("sndBlockChange")
     instance_destroy()
 } else {
+    collect_items()
     if (warpX==noone && warpY==noone) {
         instance_destroy_id(Player)
     } else {

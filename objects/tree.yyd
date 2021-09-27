@@ -201,6 +201,7 @@
 	|TimerFreeze
 	|MusicPlayer
 	|MusicPlayerSection
+	|MusicPlayerOnce
 	|TextDraw
 	|WarpToHub
 |PlayerStart

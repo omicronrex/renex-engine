@@ -6,16 +6,14 @@ applies_to=self
 */
 ///instructions
 /*
-    you can put this in a section of the room and it'll play music when it's onscreen
+    this will play music without looping.
 */
 
 BGM=""
-#define Step_0
+#define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-if (global.music!=BGM) if (inside_view()) {
-    play_bg_music(BGM,1)
-}
+play_bg_music(BGM,0)

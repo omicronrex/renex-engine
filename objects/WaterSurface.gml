@@ -138,13 +138,17 @@ applies_to=self
 draw_set_alpha(0.5)
 draw_set_color($ff8000)
 if (global.debug_hitbox && sleeping) draw_set_color($ffff00)
-draw_primitive_begin(pr_trianglestrip)
-draw_vertex(x,y+s[0])
-draw_vertex(x,y+h)
-for (i=4;i<=w;i+=4) {
-    draw_vertex(x+i,y+(s[i-3]+s[i-2]+s[i-1]+s[i])/4)
-    draw_vertex(x+i,y+h)
+if (sleeping) {
+    draw_rectangle(x,y,x+w-1,y+h-1,0)
+} else {
+    draw_primitive_begin(pr_trianglestrip)
+    draw_vertex(x,y+s[0])
+    draw_vertex(x,y+h)
+    for (i=4;i<=w;i+=4) {
+        draw_vertex(x+i,y+(s[i-3]+s[i-2]+s[i-1]+s[i])/4)
+        draw_vertex(x+i,y+h)
+    }
+    draw_primitive_end()
 }
-draw_primitive_end()
 draw_set_alpha(1)
 draw_set_color($ffffff)

@@ -28,6 +28,8 @@
 	|sprAutoSaver
 	|sprOutsideWarp
 	|sprGizmo
+	|sprCapButtons
+	|sprAeroArrow
 +Cherries
 	+engine ver.
 		|sprCherryOld

@@ -19,6 +19,17 @@ if (difficulty!=3 || argument0) with (Player) {
     else hash=""
 
     if (hash!=string(savedata("hash"))) {
+        //update statistics if this is a different save
+        global.statgridh+=1
+        ds_grid_resize(global.statgrid,3,global.statgridh)
+        ds_grid_set(global.statgrid,0,global.statgridh-1,string_replace_all(savedata("hash")+" -> "+hash,",",";"))
+        ds_grid_set(global.statgrid,1,global.statgridh-1,savedata("deaths")-savedata("deathstamp"))
+        ds_grid_set(global.statgrid,2,global.statgridh-1,savedata("time")-savedata("timestamp"))
+
+        //update death/timestamp
+        savedata("deathstamp",savedata("deaths"))
+        savedata("timestamp",savedata("time"))
+
         savedata("backup",true)
         savedata("hash",hash)
     }

@@ -140,7 +140,7 @@ if (global.test_run) {
             Player.speed=0
         }
         if (keyboard_check_pressed(vk_insert)) {
-            savedata_save(true,"debug")
+            savedata_save(true,"debug save")
         }
         if (keyboard_check_pressed(vk_delete)) {
             global.debug_hitbox=!global.debug_hitbox

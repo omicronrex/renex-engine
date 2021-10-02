@@ -12,7 +12,7 @@ if (is_ingame()) {
         instance_create(x+17,y+23,savedata("obj"))
     }
     if (!savedata("saved")) {
-        savedata_save(true)
+        savedata_save(true,"new file@"+room_get_name(room))
     }
     view_angle=savedata("viewangle")
 

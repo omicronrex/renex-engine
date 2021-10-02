@@ -9,6 +9,8 @@ vflip=1
 save=0
 angle=0
 
+name=room_get_name(room)+"@"+string(round(x))+"x"+string(round(y))
+
 //used when global.press_s_saves
 notice=0
 font=fntSignpost
@@ -23,7 +25,7 @@ applies_to=self
 //we save on begin step to make sure the player isn't stuck somewhere
 if (save) if (instance_exists(Player)) {
     save=0
-    savedata_save(false,string(room)+"."+string(x)+"."+string(y))
+    savedata_save(false,name)
 }
 #define Step_2
 /*"/*'/**//* YYD ACTION

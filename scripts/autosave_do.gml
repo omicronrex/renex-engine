@@ -3,5 +3,5 @@
 
 if (global.perform_autosave) {
     global.perform_autosave=false
-    savedata_save(0,"autosave")
+    savedata_save(0,"autosave@"+room_get_name(room))
 }

@@ -1,6 +1,7 @@
 *.cfg
 *.sav
 *.sav.bak
+*.csv
 *.exe
 *.gm81
 stuff

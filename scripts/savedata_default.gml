@@ -15,3 +15,6 @@ savedata("height",1)
 savedata("obj",Player)
 savedata("room",global.first_room)
 savedata("hash","new file")
+
+ds_grid_resize(global.statgrid,3,1)
+global.statgridh=1

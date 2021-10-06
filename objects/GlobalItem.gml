@@ -18,12 +18,13 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-settings(itemid,1)
-sound_play("sndItem")
-instance_destroy()
-
-instance_activate_object(ItemBlock)
-with (ItemBlock) event_user(0)
+if (!gottem) {
+    gottem=1
+    settings(itemid,1)
+    sound_play("sndItem")
+    instance_activate_object(ItemBlock)
+    with (ItemBlock) event_user(0)
+}
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

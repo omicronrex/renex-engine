@@ -6,7 +6,7 @@ applies_to=self
 */
 sel=0
 
-xdraw=124
+xdraw=global.width/2-276
 ydraw=132
 xsep=550
 ysep=40
@@ -179,7 +179,7 @@ applies_to=self
 */
 draw_set_halign(1)
 draw_set_font(fntFileBig)
-draw_text(400,64,lang("optionsmenu"))
+draw_text(global.width/2,64,lang("optionsmenu"))
 
 draw_set_halign(0) for (i=0;i<option_max;i+=1) draw_text(xdraw     ,ydraw+(ysep*i),option[i])
 draw_set_halign(2) for (i=0;i<option_max;i+=1) draw_text(xdraw+xsep,ydraw+(ysep*i),optext[i])
@@ -189,9 +189,9 @@ if (!dead) draw_sprite_ext(sprPlayerIdle,floor(image_index),xdraw-18,ycursor,1,1
 //button info
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
-draw_text(34,556,"["+key_get_name(global.keycode[key_shoot])+"] "+lang("menuback"))
+draw_text(34,global.height-52,"["+key_get_name(global.keycode[key_shoot])+"] "+lang("menuback"))
 draw_set_halign(1)
-draw_text(400,556,re_version)
+draw_text(global.width/2,global.height-52,re_version)
 draw_set_halign(2)
-draw_text(766,556,"["+key_get_name(global.keycode[key_jump])+"] "+lang("menuaccept"))
+draw_text(global.width-34,global.height-52,"["+key_get_name(global.keycode[key_jump])+"] "+lang("menuaccept"))
 draw_set_halign(0)

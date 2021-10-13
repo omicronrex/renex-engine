@@ -21,7 +21,7 @@ message2text=""
 minalpha=0
 minclick=0
 mincolor1=window_get_caption_color()
-if (color_get_value(mincolor1)>128) mincolor2=0
+if (color_get_luminance(mincolor1)>128) mincolor2=0
 else mincolor2=$ffffff
 
 input_init()

@@ -10,14 +10,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-itemid="globalitemItem"+string_digits(object_get_name(object_index))
+itemid="globalitem"+string_replace(object_get_name(object_index),"Display","")
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-if (!savedata(itemid)) {
+if (!settings(itemid)) {
+    if (room=rmMenu) instance_destroy()
     image_blend=0
     image_alpha=0.5
 }

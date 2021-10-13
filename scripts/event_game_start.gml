@@ -93,6 +93,12 @@ for (i=room_first;i!=-1;i=room_next(i)) {
     room_set_view_enabled(i,1)
     room_set_view(i,0,1,0,0,global.width,global.height,0,0,global.width,global.height,0,0,0,0,noone)
 }
+room_set_width(rmTitle,global.width)
+room_set_width(rmMenu,global.width)
+room_set_width(rmOptions,global.width)
+room_set_height(rmTitle,global.height)
+room_set_height(rmMenu,global.height)
+room_set_height(rmOptions,global.height)
 
 //uhhhh break cherry sprites i guess
 if (!global.use_original_cherries) {

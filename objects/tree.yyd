@@ -25,6 +25,7 @@
 	|KeyboardMenu
 	|JoystickMenu
 	|PauseMenu
+	|DefaultMenuBorderMaker
 +System
 	|BloodEmitter
 	|GibParticle

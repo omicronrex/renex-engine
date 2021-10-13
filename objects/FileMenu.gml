@@ -119,7 +119,7 @@ var i;
 
 draw_set_halign(1)
 draw_set_font(fntFileBig)
-draw_text(400,64,lang("filemenu"))
+draw_text(global.width/2,64,lang("filemenu"))
 
 
 for (i=0;i<3;i+=1) {
@@ -165,14 +165,12 @@ texture_reset_interpolation()
 draw_sprite(sprite_index,-1,dx,y+310)
 draw_sprite(sprDynamicPlatform,0,dx-17,y+319)
 
-if (has_item("GlobalItem1")) draw_sprite(sprGlobalItem1,0,400-64,608-96)
-if (has_item("GlobalItem2")) draw_sprite(sprGlobalItem2,0,400-32,608-96)
-if (has_item("GlobalItem3")) draw_sprite(sprGlobalItem3,0,400,608-96)
-if (has_item("GlobalItem4")) draw_sprite(sprGlobalItem4,0,400+32,608-96)
-
 //option info
 draw_set_font(fntFileSmall)
-draw_set_halign(0) draw_text( 34,556,"["+key_get_name(global.keycode[key_shoot])+"] "+lang("menuback"))
-draw_set_halign(2) draw_text(766,556,"["+key_get_name(global.keycode[key_jump ])+"] "+lang("menuoptions"))
-draw_set_halign(1) draw_text(400,556,"["+key_get_name(global.keycode[key_menu ])+"] "+lang("menuaccept"))
+draw_set_halign(0)
+draw_text(34,global.height-52,"["+key_get_name(global.keycode[key_shoot])+"] "+lang("menuback"))
+draw_set_halign(1)
+draw_text(global.width/2,global.height-52,"["+key_get_name(global.keycode[key_menu ])+"] "+lang("menuaccept"))
+draw_set_halign(2)
+draw_text(global.width-34,global.height-52,"["+key_get_name(global.keycode[key_jump ])+"] "+lang("menuoptions"))
 draw_set_halign(0)

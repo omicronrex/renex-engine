@@ -6,6 +6,7 @@
 	|list_instance_activation
 	|list_gizmos
 +saving
+	|savedata_init
 	|settings_default
 	|savedata_default
 	|savedata_select
@@ -37,6 +38,7 @@
 		|key_get_name
 		|get_path_speed
 		|inside_view
+		|filename_valid
 	+input
 		|input_init
 		|input_default

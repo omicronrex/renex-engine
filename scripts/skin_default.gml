@@ -1,9 +1,9 @@
 if (argument0=="mask") {
     if (vflip==-1) {
-        if (global.use_original_mask) mask_index=sprMaskPlayerFlip
+        if (global.use_original_mask || (global.valign05_vdiet && frac(y)==0.5)) mask_index=sprMaskPlayerFlip
         else mask_index=sprMaskNeedleFlip
     } else {
-        if (global.use_original_mask) mask_index=sprMaskPlayer
+        if (global.use_original_mask || (global.valign05_vdiet && frac(y)==0.5)) mask_index=sprMaskPlayer
         else mask_index=sprMaskNeedle
     }
 }

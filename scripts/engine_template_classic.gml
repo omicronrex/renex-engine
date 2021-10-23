@@ -16,6 +16,7 @@ global.instance_activate_screens_h=1
 global.instance_activate_margin_px=20
 
 global.smooth_position=false
+global.valign05_vdiet=false
 global.player_skin=skin_default
 global.player_weapon=weapon_default
 global.leftright_moonwalk=false

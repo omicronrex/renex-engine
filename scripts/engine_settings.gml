@@ -55,6 +55,8 @@
     //smooth player sprite position for less stuttery movement
     //(only relevant if game speed isn't 50)
     global.smooth_position=true
+    //enable simulated studio 1.4.9999 vdiet (shorter hitbox when y ends in .50)
+    global.valign05_vdiet=false
     global.player_skin=skin_default
     global.player_weapon=weapon_default
     global.leftright_moonwalk=false

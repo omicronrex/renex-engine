@@ -10,18 +10,18 @@
     //set to a valid room id to use a hub room system
     global.hub_room=noone
     //password for encrypting saves.
-    //if you don't want a password, use "".
+    //if you don't want a password, use "" and the save files will be unencrypted dsmaps.
     global.encrypt_save_password="renex"
 
 
 //template for needle games
-//if you're making a needle game and need precise physics and no frills, uncomment the following line.
-//engine_template_needle() exit
+    //if you're making a needle game and need precise physics and no frills, uncomment the following line.
+    //engine_template_needle() exit
 
 
 //template for classic games
-//if you want the classic game maker engine experience, uncomment the following line.
-//engine_template_classic() exit
+    //if you want the classic game maker engine experience, uncomment the following line.
+    //engine_template_classic() exit
 
 
 //difficulties

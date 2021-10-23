@@ -12,6 +12,7 @@
     //password for encrypting saves.
     //if you don't want a password, use "" and the save files will be unencrypted dsmaps.
     global.encrypt_save_password="renex"
+    global.use_appdata=false
 
 
 //template for needle games

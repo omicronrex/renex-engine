@@ -60,21 +60,7 @@ list_strings()
 list_loop_points()
 sound_global_volume(global.gain)
 
-//init and load settings and savedata
-exe_name=filename_change_ext(filename_name(parameter_string(0)),"")
-global.setfile=exe_name+".cfg"
-global.savefile=exe_name+".sav"
-global.backfile=exe_name+".sav.bak"
-global.statfile=exe_name+"_stats_"
-global.setmap=ds_map_create()
-global.savemap=ds_map_create()
-global.statgridh=1
-global.statgrid=ds_grid_create(3,1)
-ds_grid_set(global.statgrid,0,0,"Save:")
-ds_grid_set(global.statgrid,1,0,"Deaths:")
-ds_grid_set(global.statgrid,2,0,"Time:")
-settings_read()
-savedata_read()
+savedata_init()
 
 global.test_run=!!string_pos("gm_ttt",parameter_string(0))
 global.debug_overlay=false

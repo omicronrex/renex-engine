@@ -122,3 +122,5 @@ add_string
 lang
 collect_items
 drop_items
+savedata_init
+filename_valid

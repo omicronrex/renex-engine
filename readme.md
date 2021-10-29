@@ -3,6 +3,8 @@
 This is a fork of 'i wanna be the engine yuuutu edition ver2.17' with various
 improvements and new features. Designed with and for Game Maker 8.2.
 
+[Download link](https://github.com/omicronrex/renex-engine/releases/latest)
+
 [Discord server](http://discord.gg/aWh9rFDHDA)
 
 ## Extensions

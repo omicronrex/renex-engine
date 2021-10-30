@@ -76,6 +76,11 @@
 		|draw_text_outline
 		|texture_reset_interpolation
 		|draw_sprite_hueshift
+	+GUI
+		|display_set_gui_size
+		|display_set_gui_maximise
+		|display_get_gui_width
+		|display_get_gui_height
 	|engine_template_needle
 	|engine_template_classic
 	|add_difficulty
@@ -100,6 +105,7 @@
 	|event_world_step
 	|event_world_endstep
 	|event_world_draw
+	|event_world_drawGUI
 	|event_room_end
 	|event_game_end
 +player

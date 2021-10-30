@@ -1,16 +1,4 @@
-//minimize button
-if (minalpha>0) {
-    if (minclick=3) draw_sprite_ext(sprCapButtons,0,global.width-90,0,1,1,0,merge_color(mincolor1,$ffffff,0.25),minalpha)
-    else draw_sprite_ext(sprCapButtons,0,global.width-90,0,1,1,0,pick(minhover=3,mincolor1,merge_color(mincolor1,$ffffff,0.125)),minalpha)
-    draw_sprite_ext(sprCapButtons,1,global.width-90,0,1,1,0,mincolor2,minalpha)
-    if (minclick=2) draw_sprite_ext(sprCapButtons,0,global.width-45,0,1,1,0,merge_color(mincolor1,$ffffff,0.25),minalpha)
-    else draw_sprite_ext(sprCapButtons,0,global.width-45,0,1,1,0,pick(minhover=2,mincolor1,merge_color(mincolor1,$ffffff,0.125)),minalpha)
-    draw_sprite_ext(sprCapButtons,3+settings("fullscreen"),global.width-45,0,1,1,0,mincolor2,minalpha)
-    if (minclick=1) draw_sprite_ext(sprCapButtons,0,global.width,0,1,1,0,merge_color(mincolor1,$2311e8,0.5),minalpha)
-    else draw_sprite_ext(sprCapButtons,0,global.width,0,1,1,0,pick(minhover=1,mincolor1,$2311e8),minalpha)
-    draw_sprite_ext(sprCapButtons,2,global.width,0,1,1,0,mincolor2,minalpha)
-    if (settings("fullscreen")) draw_sprite_ext(sprAeroArrow,0,mousex,mousey,1,1,0,$ffffff,minalpha)
-}
+var dw;dw=display_get_gui_width()
 
 if (!global.pause) {
     if ((keyboard_check(vk_tab) || debug_mode || fps_real<global.game_speed*0.95) && is_ingame()) fpsa=min(1.5,fpsa+0.05)
@@ -59,7 +47,7 @@ if (message2) {
     draw_set_font(fntFileSmall)
     draw_set_halign(2)
     draw_set_alpha(min(1,message2/100))
-    draw_text_outline(global.width-40,40,message2text,$ffff)
+    draw_text_outline(dw-40,40,message2text,$ffff)
     draw_set_halign(0)
     draw_set_alpha(1)
 }

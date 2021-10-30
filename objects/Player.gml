@@ -93,6 +93,7 @@ lrtype=settings("l+r behavior")
 if (global.leftright_moonwalk) lrtype=lr_last
 
 input_clear()
+input_consume()
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

@@ -72,3 +72,10 @@ action_id=603
 applies_to=self
 */
 event_world_earlystep()
+#define Trigger_Draw GUI
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+event_world_drawGUI()

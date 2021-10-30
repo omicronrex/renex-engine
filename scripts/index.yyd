@@ -124,3 +124,8 @@ collect_items
 drop_items
 savedata_init
 filename_valid
+event_world_drawGUI
+display_set_gui_size
+display_set_gui_maximise
+display_get_gui_width
+display_get_gui_height

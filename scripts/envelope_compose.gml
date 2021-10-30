@@ -15,6 +15,11 @@ if (((global.rw!=global.width || global.rh!=global.height)) || global.use_applic
         dequanto_surface=surface_engage(dequanto_surface,global.width*2,global.width*2)
         texture_set_interpolation(1)
         draw_surface_stretched(application_surface,0,0,global.width*2,global.width*2)
+
+        //draw GUI event
+        d3d_set_projection_ortho(-global.GUIxoff,-global.GUIyoff,global.GUIwidth,global.GUIheight,0)
+        with (all) event_perform(ev_trigger,ev_draw_gui)
+
         surface_reset_target()
         d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
         draw_surface_stretched(dequanto_surface,0,0,global.rw,global.rh)
@@ -24,7 +29,15 @@ if (((global.rw!=global.width || global.rh!=global.height)) || global.use_applic
         d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
         texture_set_interpolation(settings("filter"))
         draw_surface_stretched(application_surface,0,0,global.rw,global.rh)
+
+        //draw GUI event
+        d3d_set_projection_ortho(-global.GUIxoff,-global.GUIyoff,global.GUIwidth,global.GUIheight,0)
+        with (all) event_perform(ev_trigger,ev_draw_gui)
     }
 
     texture_reset_interpolation()
+} else {
+    //draw GUI event
+    d3d_set_projection_ortho(-global.GUIxoff,-global.GUIyoff,global.GUIwidth,global.GUIheight,0)
+    with (all) event_perform(ev_trigger,ev_draw_gui)
 }

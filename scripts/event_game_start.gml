@@ -62,8 +62,29 @@ sound_global_volume(global.gain)
 
 savedata_init()
 
-global.test_run=!!string_pos("gm_ttt",parameter_string(0))
-global.debug_overlay=false
+//detect that this is being ran from game maker and set the test run variable
+global.test_run=false
+if (program_directory!=working_directory && string_pos("\AppData\Local\Temp\gm_ttt_",program_directory)) {
+    var key;key="SOFTWARE\Game Maker\Version 8.2\Preferences\"
+    var name;name=filename_change_ext(filename_name(parameter_string(0)),"")
+    if (registry_read_dword(key+"MakerRunning",0)) {
+        for (i=0;i<4;i+=1) if (string_pos(name,registry_read_string_ext(key,"Recent"+string(i)))) {
+            global.test_run=true
+            break
+        }
+    }
+    if (!global.test_run) {
+        key="SOFTWARE\Game Maker\Version 8.1\Preferences\"
+        if (registry_read_dword(key+"MakerRunning",0)) {
+            for (i=0;i<4;i+=1) if (string_pos(name,registry_read_string_ext(key,"Recent"+string(i)))) {
+                global.test_run=true
+                break
+            }
+        }
+    }
+}
+
+global.debug_overlay=(global.test_run && debug_mode)
 global.debug_god=false
 global.debug_jump=false
 global.debug_hitbox=false

@@ -850,10 +850,12 @@ if (!is_ingame()) instance_destroy()
 if (dotkid) {
     sprite_index=sprDotKid
     mask_index=-1
-
-    oldspr=sprite_index
-    newspr=oldspr
 }
+
+//fix sprite for first frame
+script_execute(skin,"step")
+oldspr=sprite_index
+newspr=oldspr
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

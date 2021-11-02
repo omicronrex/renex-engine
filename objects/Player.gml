@@ -764,6 +764,11 @@ action_id=603
 applies_to=self
 */
 if (!is_ingame()) instance_destroy()
+
+//fix sprite for first frame
+script_execute(skin,"step")
+oldspr=sprite_index
+newspr=oldspr
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -35,14 +35,14 @@ if (savedata("diff")==3) {
 }
 
 if (savedata("saved")) {
+    global.player_skin=savedata("skin")
+    global.player_weapon=savedata("weapon")
+
     i=instance_create(savedata("x"),savedata("y"),savedata("obj"))
     i.image_xscale=savedata("width")
     i.image_yscale=savedata("height")
     i.facing=savedata("facing")
     i.vflip=savedata("vflip")
-
-    i.skin=savedata("skin")
-    i.weapon=savedata("weapon")
 
     //gimmicks
     i.slomo=savedata("slomo")

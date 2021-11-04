@@ -17,7 +17,7 @@ global.rh=global.height
 //always execute last, which prevents "mystery issues".
 o=object_add()
 object_event_add(o,ev_step,ev_step_end,"with ("+string(World)+") "+script_get_name(envelope_prepare)+"()")
-object_event_add(o,ev_draw,0,"with ("+string(World)+") "+script_get_name(envelope_compose)+"()")
+object_event_add(o,ev_other,ev_animation_end,"with ("+string(World)+") "+script_get_name(envelope_compose)+"()")
 object_set_persistent(o,1)
 object_set_depth(o,-10000000)
 instance_create(0,0,o)

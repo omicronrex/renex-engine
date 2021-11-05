@@ -14,13 +14,11 @@ if (!gameclosing) {
 }
 
 //caption buttons
-mousex=window_mouse_get_x()
-mousey=window_mouse_get_y()
-if (settings("fullscreen")) {
-    s=min(global.width/window_get_width(),global.height/window_get_height())
-    mousex=floor(mousex*s)
-    mousey=floor(mousey*s)
-}
+ox=mousex
+oy=mousey
+mousex=(mouse_x-view_xview)
+mousey=(mouse_y-view_yview)
+
 if (mousex>global.width-250 && mousey<100 && mousex<global.width+100 && mousey>-100) {
     minalpha=min(1,minalpha+0.075*50/room_speed)
 } else {
@@ -29,6 +27,10 @@ if (mousex>global.width-250 && mousey<100 && mousex<global.width+100 && mousey>-
 if (mouse_check_button_pressed(mb_left)) {
     if (mousex>=global.width-135 && mousey<25 && mousex<global.width && mousey>=0) minclick=1
 }
+if (settings("fullscreen")) {
+    if (mousex!=ox || mousey!=oy || global.fullscreen_cursor_visible) curalpha=5
+    else curalpha=max(minalpha,curalpha-0.05*dt)
+} else curalpha=0
 
 if (mousex>=global.width-135 && mousey<25 && mousex<global.width && mousey>=0) minhover=ceil((global.width-mousex)/45)
 else minhover=0

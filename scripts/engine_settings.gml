@@ -6,6 +6,7 @@
     global.width=800
     global.height=608
     global.scale=1.0
+    global.fullscreen_cursor_visible=false
     global.first_room=rmDemo
     //set to a valid room id to use a hub room system
     global.hub_room=noone

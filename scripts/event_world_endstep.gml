@@ -16,8 +16,13 @@ if (!gameclosing) {
 //caption buttons
 ox=mousex
 oy=mousey
-mousex=(mouse_x-view_xview)
-mousey=(mouse_y-view_yview)
+
+var ww,wh,sf;
+ww=window_get_width()
+wh=window_get_height()
+sf=min(ww/global.width,wh/global.height)
+mousex=(window_mouse_get_x()-(ww-global.width*sf)/2)/sf
+mousey=(window_mouse_get_y()-(wh-global.height*sf)/2)/sf
 
 if (mousex>global.width-250 && mousey<100 && mousex<global.width+100 && mousey>-100) {
     minalpha=min(1,minalpha+0.075*50/room_speed)

@@ -4,3 +4,5 @@
 
 if (argument_count) World.camera_z=argument[0]
 else return World.vcz
+
+World.camera_raw=false

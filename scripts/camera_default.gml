@@ -7,6 +7,7 @@ with (World) {
     camera_f=global.default_camera_follow
     camera_z=1.0
     camera_s=global.camera_smoothing
+    camera_raw=false
 
     with (Camera) {
         other.camera_w=camera_w
@@ -27,6 +28,9 @@ with (World) {
     vcx=newcamx
     vcy=newcamy
     vcz=camera_z
+
+    proj_x=0
+    proj_y=0
 
     camera_initialised=false
 

@@ -28,16 +28,26 @@ if (is_ingame() && !global.pause) {
 
     f=1/(global.scale*vcz)
 
-    camera_l=median(0,floorto(vcx,camera_w),room_width-camera_w)
-    camera_t=median(0,floorto(vcy,camera_h),room_height-camera_h)
+    if (camera_raw) {
+        camera_l=vcx-global.width*f*0.5
+        camera_t=vcy-global.height*f*0.5
+    } else {
+        camera_l=median(0,floorto(vcx,camera_w),room_width-camera_w)
+        camera_t=median(0,floorto(vcy,camera_h),room_height-camera_h)
+    }
 
     camera_r=camera_l+camera_w
     camera_b=camera_t+camera_h
 
-    nx=median(0,(median(camera_l,vcx-global.width /2*f,camera_r-global.width *f)),room_width -global.width *f)
-    ny=median(0,(median(camera_t,vcy-global.height/2*f,camera_b-global.height*f)),room_height-global.height*f)
+    nx=median(camera_l,vcx-global.width /2*f,camera_r-global.width *f)
+    ny=median(camera_t,vcy-global.height/2*f,camera_b-global.height*f)
 
-    if (global.camera_easing && camera_initialised) {
+    if (!camera_raw) {
+        nx=median(0,nx,room_width -global.width *f)
+        ny=median(0,ny,room_height-global.height*f)
+    }
+
+    if (global.camera_easing && camera_initialised && !camera_raw) {
         view_x=inch((view_x*5+nx)/6,nx,1)
         view_y=inch((view_y*5+ny)/6,ny,1)
     } else {
@@ -45,21 +55,22 @@ if (is_ingame() && !global.pause) {
         view_y=ny
     }
 
+    proj_x=view_x
+    proj_y=view_y
+
     camera_initialised=true
 
     //screenshake
     if (camera_shaketime) {
+        l=camera_shakelength*(camera_shaketime/camera_shakelen)
+        d=random(360)
+        proj_x+=lengthdir_x(l,d)
+        proj_y+=lengthdir_y(l,d)
         camera_shaketime-=1
-        l=(camera_shaketime/camera_shakelen)
-        k=camera_shaketime mod 4
-        if (k==1 || k==3) camera_shakex=-camera_shakex*l
-        if (k==0 || k==2) camera_shakey=-camera_shakey*l
-        view_x+=camera_shakex
-        view_y+=camera_shakey
     }
 
-    view_xview=view_x
-    view_yview=view_y
+    view_xview=proj_x
+    view_yview=proj_y
     view_wview=global.width*f
     view_hview=global.height*f
 

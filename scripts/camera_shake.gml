@@ -1,8 +1,8 @@
-///camera_shake(xshake,yshake,frames)
+///camera_shake(intensity,[duration])
 
 with (World) {
-    camera_shakex=argument0
-    camera_shakey=argument1
-    camera_shaketime=argument2
+    camera_shakelength=argument[0]
+    if (argument_count>1) camera_shaketime=argument[1]
+    else camera_shaketime=camera_shakelength
     camera_shakelen=camera_shaketime
 }

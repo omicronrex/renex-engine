@@ -32,3 +32,9 @@ invert=0
 arg0=101000101
 arg1=2
 */
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+camera_shake(16,room_speed)

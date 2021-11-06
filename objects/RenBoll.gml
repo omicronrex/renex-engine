@@ -21,6 +21,8 @@ radius=16
 
 colrad=16+radius
 
+sound="sndBall"
+
 mask_index=spr2x2
 image_xscale=radius+2
 image_yscale=radius+2
@@ -80,6 +82,12 @@ if (dist<=radius+5) {
     med=rotsp
     rotsp=(rotsp*4+med)/5
 
+    if (sound!="") {
+        snd=sound_play_paused(sound)
+        sound_pitch(snd,random_range(0.95,1.05))
+        sound_resume(snd)
+    }
+
     event_user(1)
 }
 #define Collision_Bullet
@@ -88,7 +96,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (bul!=other.id) motion_add(point_direction(other.x,other.y,x,y),8)
+if (bul!=other.id) {
+    motion_add(point_direction(other.x,other.y,x,y),8)
+    if (sound!="") {
+        snd=sound_play_paused(sound)
+        sound_pitch(snd,random_range(0.95,1.05))
+        sound_resume(snd)
+    }
+}
 bul=other.id
 #define Collision_Water1
 /*"/*'/**//* YYD ACTION
@@ -219,8 +234,8 @@ if (dist<=radius+other.radius) {
     other.vspeed+=lengthdir_y((mytowmodule+histowmodule)*dampmul,mydir)
 
     med=rotsp-other.rotsp
-    rotsp=(rotsp*4+med)/5
-    other.rotsp=(other.rotsp*4+med)/5
+    rotsp=(rotsp*4+med)/5*(1-dampfrc)
+    other.rotsp=(other.rotsp*4+med)/5*(1-dampfrc)
 
     event_user(1)
 }
@@ -231,13 +246,15 @@ action_id=603
 applies_to=self
 */
 ///collision
-var d;
+var d,dist;
 
-if (point_distance(xc,yc,x,y)<=radius+0.4) {
+dist=point_distance(xc,yc,x,y)
+
+if (dist<=radius+0.4) {
     d=point_direction(xc,yc,x,y)
 
     //check if the ball is actually moving towards the surface normal
-    if (abs(((((direction - d+180) mod 360) + 540) mod 360) - 180)<90) {
+    if (abs(((((direction - d+180) mod 360) + 540) mod 360) - 180)<90 || dist<radius*0.9) {
         //expulse
         x=xc+lengthdir_x(radius,d)
         y=yc+lengthdir_y(radius,d)
@@ -250,11 +267,14 @@ if (point_distance(xc,yc,x,y)<=radius+0.4) {
         b=direction
         direction=point_direction(0,0,xc,yc)+d
 
-        vol=min(1,abs(angle_difference(b,direction))/180*speed)
-        if (vol>0.2) {
-            snd=sound_play_paused("sndBall")
-            sound_volume(snd,vol)
-            sound_resume(snd)
+        if (sound!="") {
+            vol=min(1,abs(angle_difference(b,direction))/180*speed)
+            if (vol>0.2) {
+                snd=sound_play_paused(sound)
+                sound_volume(snd,vol)
+                sound_pitch(snd,random_range(0.95,1.05))
+                sound_resume(snd)
+            }
         }
 
         rotsp=mean(rotsp,radtodeg(-yc/radius))
@@ -310,10 +330,18 @@ with (Block) if (solid) if (place_meeting(x,y,other.id)) {
             if (y=median(cy+16,y,cy+colrad)) {xc=x yc=cy+16 event_user(0)}
         }
     }} else with (other) {
-        if (y>=other.bbox_top && y<=other.bbox_bottom+1) {//x wall
-            xc=median(other.bbox_left,x,other.bbox_right+1) yc=y event_user(0)
+        xc=(other.bbox_left+other.bbox_right+1)/2
+        yc=(other.bbox_top+other.bbox_bottom+1)/2
+        if (point_in_rectangle(x,y,other.bbox_left,other.bbox_top,other.bbox_right+1,other.bbox_bottom+1)) {
+            xc=mean(xc,x)
+            yc=mean(yc,y)
+            event_user(0)
+        } else if (y>=other.bbox_top && y<=other.bbox_bottom+1) {//x wall
+            if (x<xc) xc=other.bbox_left else xc=other.bbox_right+1
+            yc=y event_user(0)
         } else if (x>=other.bbox_left && x<=other.bbox_right+1) {//y wall
-            xc=x yc=median(other.bbox_top,y,other.bbox_bottom+1) event_user(0)
+            if (y<yc) yc=other.bbox_top else yc=other.bbox_bottom+1
+            xc=x event_user(0)
         }
     }
 } else memcoll=0

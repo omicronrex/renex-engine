@@ -122,10 +122,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+var ow,ww,dy,i;
+
 if (abs(other.x-other.xprevious)>0 || abs(other.y-other.yprevious)>0) {
     ow=(other.bbox_right+1)-other.bbox_left
-    for (i=max(0,other.bbox_left-x);i<=min(w,other.bbox_right-x);i+=1) {
-        m[i]+=((other.y-other.yprevious)-abs(other.x-other.xprevious))*((ow-abs((i+x)-other.x))/ow)*0.5
+    ww=min(w,other.bbox_right-x)
+    dy=(other.y-other.yprevious)
+    for (i=max(0,other.bbox_left-x);i<=ww;i+=1) {
+        m[i]+=(dy-abs(other.x-other.xprevious))*((ow-abs((i+x)-other.x))/ow)*0.5
     }
     sleeping=0
 }
@@ -144,8 +148,8 @@ if (sleeping) {
     draw_primitive_begin(pr_trianglestrip)
     draw_vertex(x,y+s[0])
     draw_vertex(x,y+h)
-    for (i=4;i<=w;i+=4) {
-        draw_vertex(x+i,y+(s[i-3]+s[i-2]+s[i-1]+s[i])/4)
+   for (i=8;i<=w;i+=8) {
+        draw_vertex(x+i,y+s[i-4])
         draw_vertex(x+i,y+h)
     }
     draw_primitive_end()

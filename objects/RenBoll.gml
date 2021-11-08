@@ -10,6 +10,7 @@ tx=0 ty=0 tz=-1
 xd=x yd=y
 xp=xd yp=yd
 xdb=x ydb=y
+xold=x yold=y
 rotsp=0
 rot=0
 bul=noone
@@ -21,36 +22,50 @@ radius=16
 
 colrad=16+radius
 
-sound="sndBall"
+sleeping=0
 
 mask_index=spr2x2
 image_xscale=radius+2
 image_yscale=radius+2
+
+sound="sndBall"
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-if (abs(rotsp)<0.05) rotsp=0
+if (!sleeping) {
+    if (abs(rotsp)<0.05) rotsp=0
 
-vspeed+=0.2
-rotsp=max(0,abs(rotsp*0.99-0.02))*sign(rotsp)
-rot+=rotsp
-speed=min(speed,radius-0.5)
+    vspeed+=0.2
+    rotsp=max(0,abs(rotsp*0.99-0.02))*sign(rotsp)
+    rot+=rotsp
+    speed=min(speed,radius-0.5)
 
-event_user(1)
-
-if (speed<0.05) speed=0
+    if (speed<0.05) speed=0
+}
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-xp=xd yp=yd
-xd=(xd+x)/2
-yd=(yd+y)/2
+if (!sleeping) {
+    event_user(1)
+
+    xp=xd yp=yd
+    xd=(xd+x)/2
+    yd=(yd+y)/2
+
+    if (point_distance(xd,yd,xold,yold)<1) sleeping-=1
+    else {xold=xd yold=yd sleeping=0}
+
+    if (sleeping<-20) {
+        sleeping=1
+        speed=0
+    }
+}
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -59,6 +74,7 @@ applies_to=self
 */
 var mydir, mytowmodule, histowmodule, midx, midy, dist,med;
 
+sleeping=0
 dist=point_distance(x,y,other.x,other.y)
 
 if (dist<=radius+5) {
@@ -96,6 +112,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+sleeping=0
+
 if (bul!=other.id) {
     motion_add(point_direction(other.x,other.y,x,y),8)
     if (sound!="") {
@@ -115,6 +133,7 @@ if (y>other.bbox_top) {
     vspeed-=0.3
     speed*=0.98
     rotsp*=0.98
+    sleeping=0
 }
 #define Collision_Water2
 /*"/*'/**//* YYD ACTION
@@ -126,6 +145,7 @@ if (y>other.bbox_top) {
     vspeed-=0.3
     speed*=0.98
     rotsp*=0.98
+    sleeping=0
 }
 #define Collision_Platform
 /*"/*'/**//* YYD ACTION
@@ -135,6 +155,7 @@ applies_to=self
 */
 var mydir, mytowmodule, histowmodule, midx, midy, dist,med;
 
+sleeping=0
 dist=point_distance(x,y,other.x,other.y)
 
 if (dist<=radius+8) {
@@ -168,6 +189,7 @@ applies_to=self
 */
 var mydir, mytowmodule, histowmodule, midx, midy, dist,med;
 
+sleeping=0
 dist=point_distance(x,y,other.x,other.y)
 
 if (dist<=radius+16) {
@@ -210,7 +232,10 @@ if (id>other.id) exit
 
 dist=point_distance(x,y,other.x,other.y)
 
-if (dist<=radius+other.radius) {
+if (dist<=radius+other.radius-0.5) {
+    if (sleeping) sleeping=0
+    if (other.sleeping) other.sleeping=0
+
     mydir=point_direction(x,y,other.x,other.y)
     hisdir=mydir+180
 
@@ -236,8 +261,6 @@ if (dist<=radius+other.radius) {
     med=rotsp-other.rotsp
     rotsp=(rotsp*4+med)/5*(1-dampfrc)
     other.rotsp=(other.rotsp*4+med)/5*(1-dampfrc)
-
-    event_user(1)
 }
 #define Other_10
 /*"/*'/**//* YYD ACTION

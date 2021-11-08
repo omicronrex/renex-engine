@@ -1,10 +1,14 @@
 var dw;dw=display_get_gui_width()
 
 if (!global.pause) {
-    if ((keyboard_check(vk_tab) || debug_mode || fps_real<global.game_speed*0.95) && is_ingame()) fpsa=min(1.5,fpsa+0.05)
-    else fpsa=max(0,fpsa-0.05)
-    if (fpsa>0.5) {
+    if ((keyboard_check(vk_tab) || debug_mode || fps_real<global.game_speed*0.95) && is_ingame()) {
         str=string(round(fps))
+        fpsa=min(1.5,fpsa+0.05)
+    } else {
+        str=string(global.game_speed)
+        fpsa=max(0,fpsa-0.05)
+    }
+    if (fpsa>0.5) {
         for (i=0;i<string_length(str);i+=1)
             draw_sprite_ext(sprFraps,string_pos(string_char_at(str,i+1),"0123456789")-1,32+4+20*i,32+4,1,1,0,$ffffff,fpsa-0.5)
     }

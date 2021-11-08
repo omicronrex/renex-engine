@@ -133,3 +133,4 @@ camera_set
 camera_set_raw
 camera_shake
 camera_apply
+savedata_newgame

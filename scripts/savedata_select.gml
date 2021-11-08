@@ -26,7 +26,4 @@ if (savedata("saved")) {
         }
         file_text_close(f)
     }
-} else {
-    global.statgridh=1
-    savedata_default()
 }

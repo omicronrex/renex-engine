@@ -91,8 +91,7 @@ if (state="new file") {
         instance_destroy_id(TitleParticle)
         instance_destroy_id(TitleMenu)
         input_clear()
-        savedata_select(select)
-        savedata_load()
+        savedata_newgame(select)
     }
 }
 

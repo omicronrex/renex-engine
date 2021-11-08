@@ -11,6 +11,7 @@
 	|settings_default
 	|savedata_default
 	|savedata_select
+	|savedata_newgame
 	|savedata_load
 	|savedata_save
 	|autosave_asap

@@ -30,6 +30,7 @@
 	|sprGizmo
 	|sprCapButtons
 	|sprAeroArrow
+	|sprBackground
 +Cherries
 	+engine ver.
 		|sprCherryOld

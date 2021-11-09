@@ -7,7 +7,7 @@ isometric=0
 roomspeed=60
 roompersistent=0
 bg_color=15520377
-clear_screen=1
+clear_screen=0
 clear_view=1
 
 bg_visible0=0

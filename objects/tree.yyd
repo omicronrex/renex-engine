@@ -335,6 +335,7 @@
 	|MusicPlayerOnce
 	|TextDraw
 	|WarpToHub
+	|SkyGradient2Colors
 |PlayerStart
 |Block
 |Platform

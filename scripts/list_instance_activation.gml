@@ -11,4 +11,5 @@ if (argument0) {
     //instances that should only activate during gameplay
     instance_activate_object(Player)
     instance_activate_object(Bullet)
+    instance_activate_object(SkyGradient2Colors)
 }

@@ -50,3 +50,18 @@ applies_to=self
 if (path!=noone) {
     path_start(path,speed,path_action,!path_relative)
 }
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (sprite_index=sprDynamicPlatform && image_xscale!=1 && image_angle==0) {
+    //i feel like renex has better things to do with their time than make an auto platform script that only like, 2 people will use for practical uses
+    draw_sprite_part(sprite_index,0,0,0,10,16,x,y)
+    for (i=x+10;i<bbox_right-9-12;i+=12) {
+        draw_sprite_part(sprite_index,0,10,0,12,16,i,y)
+    }
+    draw_sprite_part(sprite_index,0,10,0,bbox_right-8-i,16,i,y)
+    draw_sprite_part(sprite_index,0,22,0,10,16,bbox_right-8,y)
+} else draw_self()

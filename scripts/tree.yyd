@@ -40,6 +40,7 @@
 		|get_path_speed
 		|inside_view
 		|filename_valid
+		|current_date_filename
 	+input
 		|input_init
 		|input_default
@@ -50,6 +51,7 @@
 		|joystick_default
 		|lock_controls
 		|unlock_controls
+		|system_hotkeys
 	+rendering
 		|envelope_init
 		|envelope_prepare

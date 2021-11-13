@@ -134,3 +134,5 @@ camera_set_raw
 camera_shake
 camera_apply
 savedata_newgame
+current_date_filename
+system_hotkeys

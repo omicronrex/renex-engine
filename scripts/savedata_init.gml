@@ -18,6 +18,7 @@ global.setfile=savefolder+exe_name+".cfg"
 global.savefile=savefolder+exe_name+".sav"
 global.backfile=savefolder+exe_name+".sav.bak"
 global.statfile=savefolder+exe_name+"_stats_"
+global.shotfolder=savefolder+"screenshots\"
 
 global.setmap=ds_map_create()
 global.savemap=ds_map_create()

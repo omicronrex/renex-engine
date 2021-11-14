@@ -488,7 +488,7 @@ if (!place_free(x+hspeed,y+vspeed)) {
 
         repeat (a) {
             x+=s
-            if (!place_free(x,y)) {x-=s break}
+            if (!place_free(x,y)) {x-=s hspeed=0 break}
         }
         x-=hspeed
         walljumpboost=0
@@ -704,6 +704,7 @@ if (vflip==1) {
         if (other.snap || vspeed-other.vspeed>=0) {
             y=other.y-9
             vspeed=max(0,other.vspeed/dt/slomo)
+            check_crush()
         }
         vsplatform=max(0,other.vspeed)
         onPlatform=true
@@ -714,6 +715,7 @@ if (vflip==1) {
     if (y-vspeed/2>=other.bbox_bottom+1) {
         if (other.snap || vspeed-other.vspeed<=0) {
             y=other.bbox_bottom+1+8
+            check_crush()
             vspeed=min(0,other.vspeed/dt/slomo)
         }
         vsplatform=min(0,other.vspeed)

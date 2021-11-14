@@ -107,6 +107,7 @@
 	|PushBlockSave
 	|LiftBlock
 	|MoveBlock
+	|CrushBlock
 	|MiniBlock
 	|SlipBlock
 	|NiseBlock

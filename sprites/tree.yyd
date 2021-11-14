@@ -75,6 +75,7 @@
 	|sprUpPlatform
 	|sprJumpThrough
 	|sprBlock
+	|sprBlockCrush
 	|sprSlipBlock
 	|sprNiseBlock
 	|sprMiniBlock

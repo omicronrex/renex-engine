@@ -858,6 +858,10 @@ if (dotkid) {
 script_execute(skin,"step")
 oldspr=sprite_index
 newspr=oldspr
+
+//debug stuff
+deathlist=0
+flashing=0
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -865,6 +869,20 @@ action_id=603
 applies_to=self
 */
 ///skin draw
+
+if (global.debug_god) {
+    i=1
+    repeat (deathlist[0]) {
+        draw_sprite_ext(mask_index,0,deathlist[i],deathlist[i+1],1,1,0,$ff,0.5)
+        i+=2
+    }
+}
+
+if (flashing) {
+    flashing-=1
+    if (flashing mod 5 > 2) exit
+}
+
 script_execute(skin,"draw")
 
 if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)

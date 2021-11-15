@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+realtime=current_time
 time=0
 count=0
 __pc=0
@@ -73,6 +74,13 @@ if (abs(1-pfps/room_speed)>0.01) {
     sound_pitch(inst,1)
     if (global.avoidance_stretch) sound_effect_options(effect,0,1)
 }
+
+if (current_time>realtime+100) {
+    //did we just have a massive lag spike? let's rewind our track
+    warn=1
+    sound_set_pos(inst,(sound_get_pos(inst)*length-(current_time-realtime)/1000)/length)
+}
+realtime=current_time
 
 __pl=0
 __pco=__pc

@@ -288,3 +288,5 @@ sprCapButtons
 sprAeroArrow
 sprBackground
 sprBlockCrush
+sprHitCount
+sprHPMode

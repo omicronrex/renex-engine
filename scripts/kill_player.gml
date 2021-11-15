@@ -8,27 +8,45 @@ with (Player) {
             deathlist[0]+=1
         }
     } else {
-        if (global.gameover_music_play) {
-            sound_kind_stop(1)
-            sound_play("m-r-tight")
-        }
-        if (global.gameover_music_stop) {
-            sound_kind_stop(1)
-        } else if (global.gameover_music_fade) {
-            World.fading=1
-        } else if (global.gameover_music_pause) {
-            sound_kind_pause(1)
+        if (instance_exists(HPMode)) {
+            if (!flashing) {
+                HPMode.hp-=1
+                flashing=HPMode.iframes
+                sound_play(HPMode.sound)
+                emit_blood(10*settings("gore"))
+            }
+            if (HPMode.hp>0) exit
         }
 
-        drop_items()
+        if (instance_exists(HitCount)) {
+            if (!flashing) {
+                HitCount.hits+=1
+                flashing=HitCount.iframes
+                sound_play(HitCount.sound)
+            }
+        } else {
+            if (global.gameover_music_play) {
+                sound_kind_stop(1)
+                sound_play("m-r-tight")
+            }
+            if (global.gameover_music_stop) {
+                sound_kind_stop(1)
+            } else if (global.gameover_music_fade) {
+                World.fading=1
+            } else if (global.gameover_music_pause) {
+                sound_kind_pause(1)
+            }
 
-        sound_play_slomo("sndDeath")
+            drop_items()
 
-        instance_create(x,y,BloodEmitter)
-        instance_create(view_xcenter,view_ycenter,GameOver)
+            sound_play_slomo("sndDeath")
 
-        instance_destroy_id(Player)
+            instance_create(x,y,BloodEmitter)
+            instance_create(view_xcenter,view_ycenter,GameOver)
 
-        savedata("deaths",savedata("deaths")+1)
+            instance_destroy_id(Player)
+
+            savedata("deaths",savedata("deaths")+1)
+        }
     }
 }

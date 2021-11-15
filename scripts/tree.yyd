@@ -119,6 +119,7 @@
 	|kill_player
 	|move_player
 	|flip_player
+	|emit_blood
 +keypick
 	|key_clear
 	|key_add

@@ -141,3 +141,4 @@ camera_apply
 savedata_newgame
 current_date_filename
 system_hotkeys
+emit_blood

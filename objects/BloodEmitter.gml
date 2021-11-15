@@ -95,15 +95,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (bleeding) repeat (10*gore) {
-    i=instance_create(x,y,Blood)
-    i.direction=irandom(35)*10
-    i.speed=random(8)*dt
-    i.gravity=(0.2+random(0.2))*grav*dt*dt
-    if (irandom(1)) {
-        i.hspeed+=hspeed
-        i.vspeed+=vspeed
-    }
+if (bleeding) {
+    emit_blood(10*gore)
 }
 
 if (!place_free(x,y)) {

@@ -22,20 +22,15 @@ if (global.debug_overlay) {
     draw_set_halign(fa_left)
     draw_set_font(fntFileSmall)
 
-    drawX = 0;
-    drawY = 0;
-    drawAlign = 0;
-    if (instance_exists(Player))
-    {
-        drawX = Player.x;
-        drawY = Player.y;
-        drawAlign = Player.x mod 3;
+    str=""
+    if (instance_exists(Player)) {
+        str="X: "+string(Player.x)+" (align "+string(Player.x mod 3)+")#"
+           +"Y: "+string(Player.y)+"#"
+
     }
 
-    str="X: "+string(drawX)+" (align "+string(drawAlign)+")#"
-       +"Y: "+string(drawY)+"#"
-       +"Room: "+room_get_name(room)+" ("+string(room)+")#"
-       +"FPS: "+string(fps)+" ("+string(fps_real)+") / "+string(room_speed)+"#"
+    str+="Room: "+room_get_name(room)+" ("+string(room)+")#"
+       +"FPS: "+string(fps)+"/"+string(room_speed)+" (real "+string(fps_real)+")#"
        +string_repeat("God mode",global.debug_god)+"#"
        +string_repeat("Infinite jump",global.debug_jump)
     draw_text_outline(40,40,str,$ffff)

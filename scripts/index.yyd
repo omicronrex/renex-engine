@@ -137,3 +137,9 @@ savedata_newgame
 current_date_filename
 system_hotkeys
 emit_blood
+
+joy_deadzone
+joy_snap
+joy_compare
+
+joy_get_map

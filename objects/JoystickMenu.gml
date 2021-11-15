@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 joy=0
-sel=key_jump
+sel=key_sizeof
 
 xdraw=120
 ydraw=80
@@ -16,16 +16,24 @@ ycursor=ydraw+(sel-key_jump)*ysep+52
 
 setting=false
 
-keyname[key_jump   ]="Jump"
-keyname[key_shoot  ]="Shoot"
-keyname[key_restart]="Restart"
-keyname[key_skip   ]="Skip"
-keyname[key_die    ]="Die"
-keyname[key_menu   ]="Menu"
-keyname[key_sizeof ]="Reset Controls"
+for (i=0;i<key_sizeof;i+=1) {
+    keyname[i]=lang("keyname"+string(i))
+}
+keyname[key_sizeof ]="Set Controls"
+keytext[key_sizeof]=""
+
+World.message=300
+World.messagetext=lang("joytokey")
+
+World.message2=300
+World.message2text=lang("joypushtosel")
+
+
+lit=0
+locked=0
 
 event_user(0)
-keytext[key_sizeof]=""
+
 
 image_speed=0.2*dt
 #define Alarm_0
@@ -41,54 +49,84 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (global.lastjoystick!=noone && joy!=global.lastjoystick) {
-    joy=global.lastjoystick
-    event_user(0)
-}
-
 if (joystick_found()) {
     joy=0
     setting=false
+    event_user(0)
 }
 
 //you need to be able to back out if your joystick isn't working
-if (global.key_pressed[key_shoot] && (global.lastjoystick=noone || !setting)) {
-    input_clear()
-    i=instance_create(x,y,OptionsMenu)
-    i.sel=9
-    i.ycursor=i.ydraw+(i.ysep*i.sel)+18
-    instance_destroy()
-} else if (!setting) {
-    if (global.key_pressed[key_up] || global.key_pressed[key_down]) {
-        sound_play("sndJump")
-        sel=modwrap(sel+global.input_v,key_jump,key_sizeof+1)
-    } else if (global.key_pressed[key_jump]) {
-        if (sel!=key_sizeof) {
-            setting=true
-            keytext[sel]="Press new button..."
+if (global.key_pressed[key_shoot]) {
+    if (global.lastjoystick==noone) {
+        if (setting) {
+            setting=false
+            keytext[key_sizeof]=""
+            event_user(0)
         } else {
-            joystick_default(joy)
-            keytext[key_sizeof]="Reset!"
-            alarm[0]=60*dt
+            input_clear()
+            i=instance_create(x,y,OptionsMenu)
+            i.sel=9
+            i.ycursor=i.ydraw+(i.ysep*i.sel)+18
+            instance_destroy()
+        }
+    } else {
+        World.message2=300
+        World.message2text=lang("joyusekey")
+    }
+} else if (!setting) {
+    lit=0
+    for (i=0;i<joystick_count();i+=1) {
+        for (j=0;j<16;j+=1) {
+            if (joystick_check_button(i,j)) {
+                joy=i
+                lit=1
+            }
+        }
+    }
+
+    sel=key_sizeof
+    if (global.key_pressed[key_jump]) {
+        if (global.lastjoystick==noone) {
+            setting=true
+            keytext[key_sizeof]="["+key_get_name(global.keycode[key_shoot])+"] to cancel"
+            sel=0
+            joy_snap(joy)
+        } else {
+            World.message2=300
+            World.message2text=lang("joyusekey")
         }
     }
 } else {
-    for (b=0;b<16;b+=1) {
-        if (joystick_check_button_pressed(joy,b)) {
-            name=joystick_name(joy)
-            settings("joymap_"+name+"_"+string(sel),b+1)
-            joy_button[joy,sel]=b
-            setting=false
-            global.joysupdated=true
+    keytext[sel]="Press new button..."
+
+    new=joy_compare(joy)
+
+    if (new!="") {
+        if (!locked) {
+            locked=1
+            joy_button[joy,sel]=new
+            keytext[sel]=new
+            sel+=1
+            if (sel=key_sizeof) {
+                for (i=0;i<key_sizeof;i+=1) {
+                    settings("joymap_"+name+"_"+string(i),joy_button[joy,i])
+                }
+                settings("joymap_"+name+"_set",1)
+                setting=false
+                global.joysupdated=true
+                keytext[key_sizeof]="All set!"
+                alarm[0]=room_speed*2
+            }
         }
-    }
+    } else locked=0
 }
 
-if (!setting) for (b=key_jump;b<key_sizeof;b+=1) {
-    keytext[b]=joy_button[joy,b]+1
+if (!setting) for (b=0;b<key_sizeof;b+=1) {
+    keytext[b]=joy_button[joy,b]
+    if (string(keytext[b])="0") keytext[b]="Unset"
 }
 
-ycursor=inch(ycursor,ydraw+(sel-key_jump)*ysep+52,16*dt)
+ycursor=inch(ycursor,ydraw+sel*ysep+52,16*dt)
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -97,9 +135,8 @@ applies_to=self
 */
 for (j=0;j<joystick_count();j+=1) {
     name=joystick_name(j)
-    for (b=key_jump;b<key_sizeof;b+=1) {
-        joy_button[j,b]=settings("joymap_"+name+"_"+string(b))-1
-        if (joy_button[j,b]=-1) joy_button[j,b]=b-key_jump
+    for (b=0;b<key_sizeof;b+=1) {
+        joy_button[j,b]=settings("joymap_"+name+"_"+string(b))
     }
 }
 #define Draw_0
@@ -110,13 +147,14 @@ applies_to=self
 */
 draw_set_halign(1)
 draw_set_font(fntFileBig)
-draw_text(400,64,"- "+joystick_name(joy)+" -")
+if (lit) draw_text(400,64,"> ("+string(joy+1)+") "+joystick_name(joy)+" <")
+else draw_text(400,64,"- ("+string(joy+1)+") "+joystick_name(joy)+" -")
 
-for (i=key_jump;i<=key_sizeof;i+=1) {
+for (i=0;i<=key_sizeof;i+=1) {
     draw_set_halign(0)
-    draw_text(xdraw,ydraw+(i-key_jump)*ysep+32,keyname[i])
+    draw_text(xdraw,ydraw+(i)*ysep+32,keyname[i])
     draw_set_halign(2)
-    draw_text(xdraw+xsep,ydraw+(i-key_jump)*ysep+32,keytext[i])
+    draw_text(xdraw+xsep,ydraw+(i)*ysep+32,keytext[i])
 }
 
 draw_sprite(sprPlayerIdle,floor(image_index),xdraw-20,ycursor)

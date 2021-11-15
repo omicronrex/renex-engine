@@ -19,70 +19,58 @@ for (i=0;i<key_sizeof;i+=1) {
 if (joystick_found() || global.joysupdated) {
     //joysticks added or removed, let's set up some memory variables
     //they're used to tell where the stick is going
+
     if (joystick_count()>0) {
-        message2=300
-        if (joystick_count()==1) {
-            message2text=lang("joyfound")+"#"+joystick_name(0)+"#"+lang("joyset1up")
-        } else {
-            message2text=string(joystick_count())+lang("joysfound")+"#"
-            for (i=0;i<joystick_count();i+=1) message2text+=joystick_name(i)+"#"
-            message2text+=lang("joyset2up")
+        //check for unknown joysticks
+
+        var count;count=0
+        message2text=""
+        for (i=0;i<joystick_count();i+=1) {
+            name=joystick_name(i)
+            if (!settings("joymap_"+name+"_set")) {
+                message2text+=joystick_name(i)+"#"
+                count+=1
+            }
+        }
+        if (count) {
+            message2=300
+            if (count==1) {
+                message2text=lang("joyfound")+"#"+message2text+lang("joyset1up")
+            } else {
+                message2text=string(count)+lang("joysfound")+"#"+message2text+lang("joyset2up")
+            }
         }
     }
 
     global.joysupdated=false
     for (i=0;i<joystick_count();i+=1) {
-        joy_pos[i,0]=0
-        joy_pos[i,1]=0
         name=joystick_name(i)
-        for (b=key_jump;b<key_sizeof;b+=1) {
-            joy_button[i,b]=settings("joymap_"+name+"_"+string(b))-1
-            if (joy_button[i,b]=-1) joy_button[i,b]=b-key_jump
-        }
+        if (settings("joymap_"+name+"_set")) {
+            //this joystick has been configured, get it ready for use
+            joy_set[i]=true
+            for (b=0;b<key_sizeof;b+=1) {
+                joy_button[i,b]=settings("joymap_"+name+"_"+string(b))
+                joy_lock[i,b]=0
+            }
+        } else joy_set[i]=false
     }
 }
 
 global.lastjoystick=noone
 
-if (global.infocus) for (i=0;i<joystick_count();i+=1) {
-    h=joystick_xpos(i)+joystick_pov_x(i)
-    if (h>0.2) {
-        if (joy_pos[i,0]<=0.1) global.key_pressed[key_right]=1
-        global.key[key_right]=1
-        global.lastjoystick=i
-    } else {
-        if (joy_pos[i,0]>0.1) global.key_released[key_right]=1
-    }
-    if (h<-0.2) {
-        if (joy_pos[i,0]>=-0.1) global.key_pressed[key_left]=1
-        global.key[key_left]=1
-        global.lastjoystick=i
-    } else {
-         if (joy_pos[i,0]<-0.1) global.key_released[key_left]=1
-    }
-    joy_pos[i,0]=h
-
-    h=joystick_ypos(i)+joystick_pov_y(i)
-    if (h>0.2) {
-        if (joy_pos[i,1]<=0.1) global.key_pressed[key_down]=1
-        global.key[key_down]=1
-        global.lastjoystick=i
-    } else {
-        if (joy_pos[i,1]>0.1) global.key_released[key_down]=1
-    }
-    if (h<-0.2) {
-        if (joy_pos[i,1]>=-0.1) global.key_pressed[key_up]=1
-        global.key[key_up]=1
-        global.lastjoystick=i
-    } else {
-         if (joy_pos[i,1]<-0.1) global.key_released[key_up]=1
-    }
-    joy_pos[i,1]=h
-
-    for (b=key_jump;b<key_sizeof;b+=1) {
-        if (joystick_check_button_pressed(i,joy_button[i,b])) global.key_pressed[b]=1
-        if (joystick_check_button_released(i,joy_button[i,b])) global.key_released[b]=1
-        if (joystick_check_button(i,joy_button[i,b])) {global.key[b]=1 global.lastjoystick=i}
+if (global.infocus) for (j=0;j<joystick_count();j+=1) if (joy_set[j]) {
+    for (i=0;i<key_sizeof;i+=1) {
+        pressed=joy_get_map(j,i)
+        global.key[i]=global.key[i] || pressed
+        if (pressed && !joy_lock[j,i]) {
+            global.key_pressed[i]=1
+            global.lastjoystick=j
+            joy_lock[j,i]=1
+        }
+        if (!pressed && joy_lock[j,i]) {
+            global.key_released[i]=1
+            joy_lock[j,i]=0
+        }
     }
 }
 

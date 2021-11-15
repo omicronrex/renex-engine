@@ -62,6 +62,6 @@ if (sprite_index=sprDynamicPlatform && image_xscale!=1 && image_angle==0) {
     for (i=x+10;i<bbox_right-9-12;i+=12) {
         draw_sprite_part(sprite_index,0,10,0,12,16,i,y)
     }
-    draw_sprite_part(sprite_index,0,10,0,bbox_right-8-i,16,i,y)
-    draw_sprite_part(sprite_index,0,22,0,10,16,bbox_right-8,y)
+    draw_sprite_part(sprite_index,0,10,0,bbox_right-9-i,16,i,y)
+    draw_sprite_part(sprite_index,0,22,0,10,16,bbox_right-9,y)
 } else draw_self()

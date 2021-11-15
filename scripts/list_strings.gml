@@ -9,6 +9,7 @@ add_string("warptohub","UP to return")
 add_string("pausemenu","PAUSE")
 add_string("presstosave"," to Save")
 add_string("signpost","Poggers")
+add_string("hitcount","Hits taken: ")
 
 //menus
 add_string("menuback","Back")

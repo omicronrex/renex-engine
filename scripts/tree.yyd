@@ -104,6 +104,7 @@
 	|kill_player
 	|move_player
 	|flip_player
+    |emit_blood
 +bosses
 	|once_every
 	|BigCherry_boss

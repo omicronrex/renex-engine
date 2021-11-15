@@ -31,6 +31,8 @@
 	|sprCapButtons
 	|sprAeroArrow
 	|sprBackground
+	|sprHitCount
+	|sprHPMode
 +Cherries
 	+engine ver.
 		|sprCherryOld

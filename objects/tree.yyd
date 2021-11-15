@@ -207,6 +207,8 @@
 	|TextDraw
 	|WarpToHub
 	|SkyGradient2Colors
+	|HitCount
+	|HPMode
 |PlayerStart
 |Block
 |Platform

@@ -88,6 +88,9 @@ afkk=0
 
 memplat=noone
 
+deathlist=0
+flashing=0
+
 input_h=0 input_v=0
 lrtype=settings("l+r behavior")
 if (global.leftright_moonwalk) lrtype=lr_last

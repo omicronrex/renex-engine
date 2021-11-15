@@ -6,7 +6,7 @@ update_camera()
 
 if (!gameclosing) {
     //frame skip if game speed is much larger than screen refresh rate
-    t=hrt_time_now()
+    t=get_timer()
     if (t>oldtime) {
         oldtime=t+oneframe
         set_automatic_draw(1)

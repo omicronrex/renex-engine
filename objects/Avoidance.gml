@@ -57,7 +57,7 @@ applies_to=self
 framecount+=1
 if (framecount>=5) {
     framecount=0
-    newtime=hrt_time_now()
+    newtime=get_timer()
     if (time) pfps=(pfps*2+5000000/(newtime-time))/3
     time=newtime
 }

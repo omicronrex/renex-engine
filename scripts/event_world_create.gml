@@ -45,7 +45,7 @@ difficulty=0
 
 //one screen frame, in microseconds, with a 5% margin for error
 oneframe=(1000000/display_get_frequency())*0.95
-oldtime=hrt_time_now()
+oldtime=get_timer()
 
 orderTest=2
 

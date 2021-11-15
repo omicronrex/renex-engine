@@ -43,6 +43,11 @@
 		|filename_valid
 		|current_date_filename
 	+input
+		+joysticks
+			|joy_deadzone
+			|joy_get_map
+			|joy_snap
+			|joy_compare
 		|input_init
 		|input_default
 		|input_anykey

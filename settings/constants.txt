@@ -1,4 +1,4 @@
-re_version="renex engine v1.2.2 lite 17 sep 2021"
+re_version="renex engine v1.3.0 lite 15 nov 2021"
 lf=chr(13)+chr(10)
 key_left=0
 key_right=1

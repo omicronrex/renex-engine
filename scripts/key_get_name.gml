@@ -68,5 +68,5 @@ switch (global.keycode[argument0]) {
     case 221: return "]";
     case 222: return "'";
     //other characters
-    default: return chr(argument0);
+    default: return chr(global.keycode[argument0]);
 }

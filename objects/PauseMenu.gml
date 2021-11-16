@@ -35,6 +35,17 @@ room_speed=memspd
 
 World.pause_delay=room_speed
 instance_activate_all()
+#define Step_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+h=(global.key[key_up] || global.key_pressed[key_up])-(global.key[key_down] || global.key_pressed[key_down])
+if (h!=0) {
+    settings("musvol",median(0,settings("musvol")+h*0.05,1))
+    sound_kind_volume(1,settings("musvol"))
+}
 #define Other_5
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -67,5 +78,5 @@ draw_set_halign(0)
 
 draw_set_font(fntFileSmall)
 draw_set_valign(2)
-    draw_text(20,view_hview-16,lang("deaths")+": "+string(savedata("deaths"))+"#"+lang("time")+": "+format_time(savedata("time")))
+    draw_text(20,view_hview-16,lang("optionsitem1")+": "+string(round(settings("musvol")*100))+"%#"+lang("deaths")+": "+string(savedata("deaths"))+"#"+lang("time")+": "+format_time(savedata("time")))
 draw_set_valign(0)

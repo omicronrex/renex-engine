@@ -87,4 +87,6 @@ if (keyboard_check_pressed(vk_f9)) {
     } else {
         screen_save(fn)
     }
+    message=300
+    messagetext=lang("screenshot")
 }

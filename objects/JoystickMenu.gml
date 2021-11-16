@@ -115,6 +115,7 @@ if (global.key_pressed[key_shoot]) {
 
     if (global.key_pressed[key_jump]) {
         keytext[sel]=joy_button[joy,sel]
+        if (string(keytext[sel])="0") keytext[sel]="Unset"
         sel+=1
     }
 

@@ -43,8 +43,9 @@ add_string("joysfound"," new joysticks found:")
 add_string("joyset1up","Go to Options to set it up")
 add_string("joyset2up","Go to Options to set them up")
 add_string("joyusekey","Please use your keyboard here")
-add_string("joypushtosel","Push a button to select joystick")
-add_string("joytokey","Please disable JoyToKey and#Steam Generic Controller support")
+add_string("joypushtosel","Push buttons to select joystick")
+add_string("joytokey","Please disable JoyToKey and Steam Generic Controller support")
+add_string("joyskipkey"," to skip a button")
 
 
 //options menu

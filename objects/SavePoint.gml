@@ -15,7 +15,7 @@ name=room_get_name(room)+"@"+string(round(x))+"x"+string(round(y))
 notice=0
 font=fntSignpost
 color=$ffffff
-msg=key_get_name(global.keycode[key_shoot])+lang("presstosave")
+msg=key_get_name(key_shoot)+lang("presstosave")
 #define Step_1
 /*"/*'/**//* YYD ACTION
 lib_id=1

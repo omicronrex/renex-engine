@@ -17,7 +17,7 @@ setting=false
 
 for (i=0;i<key_sizeof;i+=1) {
     keyname[i]=lang("keyname"+string(i))
-    keytext[i]=key_get_name(global.keycode[i])
+    keytext[i]=key_get_name(i)
 }
 keyname[key_sizeof]=lang("keyresetkeys")
 keytext[key_sizeof]=""
@@ -74,7 +74,7 @@ if (!setting) {
 }
 
 if (!setting) for (i=0;i<key_sizeof;i+=1)
-    keytext[i]=key_get_name(global.keycode[i])
+    keytext[i]=key_get_name(i)
 
 ycursor=inch(ycursor,ydraw+sel*ysep+52,16*dt)
 #define Draw_0
@@ -99,7 +99,7 @@ draw_sprite(sprPlayerIdle,floor(image_index),xdraw-20,ycursor)
 //button info
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
-draw_text(34,556,"["+key_get_name(global.keycode[key_shoot])+"] "+lang("menuback"))
+draw_text(34,556,"["+key_get_name(key_shoot)+"] "+lang("menuback"))
 draw_set_halign(2)
-draw_text(766,556,"["+key_get_name(global.keycode[key_jump])+"] "+lang("menuaccept"))
+draw_text(766,556,"["+key_get_name(key_jump)+"] "+lang("menuaccept"))
 draw_set_halign(0)

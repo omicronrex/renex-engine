@@ -11,6 +11,7 @@ view_hport=global.height
 view_visible=1
 view_enabled=1
 window_set_size(global.width,global.height)
+window_set_region_size(global.width,global.height,1)
 window_resize_buffer(global.width,global.height)
 window_center()
 room_speed=global.game_speed
@@ -30,6 +31,7 @@ applies_to=self
 */
 alarm[0]=room_speed
 sound_play("sndShoot")
+effect_create_above(ef_ring,global.width/2,global.height/2,2,$808080)
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -62,6 +64,13 @@ if (fade) {
     alpha=min(1.5,alpha+1/room_speed)
     if (alpha=1.5) room_goto_next()
 }
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+room_caption=re_version
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -38,7 +38,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-h=keyboard_check(global.keycode[key_up])-keyboard_check(global.keycode[key_down])
+h=global.key[key_up]-global.key[key_down]
 
 if (h!=0) {
     if (volumetimer>volumedelay || !(volumetimer mod volumefpi)) {
@@ -50,7 +50,7 @@ if (h!=0) {
 
 sound_kind_volume(0,settings("sfxvol"))
 
-if (keyboard_check_pressed(global.keycode[key_jump])) {
+if (global.key_pressed[key_jump]) {
     settings("volcheck",true)
     sound_play("sndDJump")
     settings("musvol",settings("sfxvol"))

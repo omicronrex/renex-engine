@@ -16,6 +16,7 @@ add_string("pausemenu","PAUSE")
 add_string("presstosave"," to Save")
 add_string("signpost","Poggers")
 add_string("hitcount","Hits taken: ")
+add_string("screenshot","Screenshot saved")
 
 //menus
 add_string("menuback","Back")
@@ -46,7 +47,6 @@ add_string("joyusekey","Please use your keyboard here")
 add_string("joypushtosel","Push buttons to select joystick")
 add_string("joytokey","Please disable JoyToKey and Steam Generic Controller support")
 add_string("joyskipkey"," to skip a button")
-
 
 //options menu
 add_string("optionsmenu","- Options -")

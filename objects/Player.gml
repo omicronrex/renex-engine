@@ -44,7 +44,7 @@ onPlatform=false
 ladderjump=false
 hang=false
 
-oldslomo=slomo
+oldslomo=-1
 
 coyoteTime=0
 jump_timer=0
@@ -768,7 +768,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!is_ingame()) instance_destroy()
+if (!is_ingame()) {
+    sound_kind_pitch(1,1)
+    instance_destroy()
+}
 
 //fix sprite for first frame
 script_execute(skin,"step")

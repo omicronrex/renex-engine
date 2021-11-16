@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-joy=0
+joy=-1
 sel=key_sizeof
 
 xdraw=120
@@ -24,10 +24,6 @@ keytext[key_sizeof]=""
 
 World.message=300
 World.messagetext=lang("joytokey")
-
-World.message2=300
-World.message2text=lang("joypushtosel")
-
 
 lit=0
 locked=0
@@ -87,10 +83,17 @@ if (global.key_pressed[key_shoot]) {
     sel=key_sizeof
     if (global.key_pressed[key_jump]) {
         if (global.lastjoystick==noone) {
-            setting=true
-            keytext[key_sizeof]="["+key_get_name(key_shoot)+"] to cancel"
-            sel=0
-            joy_snap(joy)
+            if (joy!=-1) {
+                setting=true
+                keytext[key_sizeof]="["+key_get_name(key_shoot)+"] to cancel"
+                sel=0
+                World.message2=300
+                World.message2text="["+key_get_name(key_jump)+"]"+lang("joyskipkey")
+                joy_snap(joy)
+            } else {
+                World.message2=300
+                World.message2text=lang("joypushtosel")
+            }
         } else {
             World.message2=300
             World.message2text=lang("joyusekey")
@@ -107,23 +110,37 @@ if (global.key_pressed[key_shoot]) {
             joy_button[joy,sel]=new
             keytext[sel]=new
             sel+=1
-            if (sel=key_sizeof) {
-                for (i=0;i<key_sizeof;i+=1) {
-                    settings("joymap_"+name+"_"+string(i),joy_button[joy,i])
-                }
-                settings("joymap_"+name+"_set",1)
-                setting=false
-                global.joysupdated=true
-                keytext[key_sizeof]="All set!"
-                alarm[0]=room_speed*2
-            }
         }
     } else locked=0
+
+    if (global.key_pressed[key_jump]) {
+        keytext[sel]=joy_button[joy,sel]
+        sel+=1
+    }
+
+    if (sel=key_sizeof) {
+        for (i=0;i<key_sizeof;i+=1) {
+            settings("joymap_"+name+"_"+string(i),joy_button[joy,i])
+        }
+        settings("joymap_"+name+"_set",1)
+        setting=false
+        global.joysupdated=true
+        keytext[key_sizeof]="All set!"
+        alarm[0]=room_speed*2
+    }
 }
 
-if (!setting) for (b=0;b<key_sizeof;b+=1) {
-    keytext[b]=joy_button[joy,b]
-    if (string(keytext[b])="0") keytext[b]="Unset"
+if (!setting) {
+    if (joy==-1) {
+        for (b=0;b<key_sizeof;b+=1) {
+            keytext[b]="-"
+        }
+    } else {
+        for (b=0;b<key_sizeof;b+=1) {
+            keytext[b]=joy_button[joy,b]
+            if (string(keytext[b])="0") keytext[b]="Unset"
+        }
+    }
 }
 
 ycursor=inch(ycursor,ydraw+sel*ysep+52,16*dt)
@@ -147,8 +164,12 @@ applies_to=self
 */
 draw_set_halign(1)
 draw_set_font(fntFileBig)
-if (lit) draw_text(400,64,"> ("+string(joy+1)+") "+joystick_name(joy)+" <")
-else draw_text(400,64,"- ("+string(joy+1)+") "+joystick_name(joy)+" -")
+if (joy==-1) {
+    draw_text(400,64,"- "+lang("joypushtosel")+" -")
+} else {
+    if (lit) draw_text(400,64,"> ("+string(joy+1)+") "+joystick_name(joy)+" <")
+    else draw_text(400,64,"- ("+string(joy+1)+") "+joystick_name(joy)+" -")
+}
 
 for (i=0;i<=key_sizeof;i+=1) {
     draw_set_halign(0)

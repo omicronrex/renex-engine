@@ -22,6 +22,7 @@
 	|KeyParent
 	|KeyBlockParent
 +User Interface
+	|VolCheck
 	|TitleMenu
 	|TitleParticle
 	|FileMenu

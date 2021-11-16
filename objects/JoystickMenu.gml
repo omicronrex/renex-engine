@@ -88,7 +88,7 @@ if (global.key_pressed[key_shoot]) {
     if (global.key_pressed[key_jump]) {
         if (global.lastjoystick==noone) {
             setting=true
-            keytext[key_sizeof]="["+key_get_name(global.keycode[key_shoot])+"] to cancel"
+            keytext[key_sizeof]="["+key_get_name(key_shoot)+"] to cancel"
             sel=0
             joy_snap(joy)
         } else {
@@ -162,7 +162,7 @@ draw_sprite(sprPlayerIdle,floor(image_index),xdraw-20,ycursor)
 //button info
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
-draw_text(34,556,"["+key_get_name(global.keycode[key_shoot])+"] Back")
+draw_text(34,556,"["+key_get_name(key_shoot)+"] Back")
 draw_set_halign(2)
-draw_text(766,556,"["+key_get_name(global.keycode[key_jump])+"] Accept")
+draw_text(766,556,"["+key_get_name(key_jump)+"] Accept")
 draw_set_halign(0)

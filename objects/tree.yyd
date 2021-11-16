@@ -18,6 +18,7 @@
 	|UnsolidItemBlock
 	|SolidItemBlock
 +User Interface
+	|VolCheck
 	|TitleMenu
 	|TitleParticle
 	|FileMenu

@@ -1,7 +1,7 @@
 //envelope renderer
 //version 4
 //renex 2021
-//depends on: gm82core v1.2.3+
+//depends on: gm82core v1.3.4
 
 globalvar application_surface,dequanto_surface;
 application_surface=noone

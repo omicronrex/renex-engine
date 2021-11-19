@@ -7,6 +7,6 @@ settings("l+r behavior",lr_last)
 
 settings("gore",2)
 settings("interpolation",false)
-settings("filter",true)
+settings("filter",1)
 
 input_default()

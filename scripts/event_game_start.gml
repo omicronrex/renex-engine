@@ -10,6 +10,12 @@ if (orderTest==2) {
     exit
 }
 
+if (__gm82core_version<134) show_error(
+    "Please update your Game Maker 8.2 Core extension to at least version 1.3.4."+lf+
+    "Recent changes to time counting and surface handling are necessary for proper working of the engine.",
+    true
+)
+
 global.num_difficulties=0
 
 engine_settings()

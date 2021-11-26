@@ -40,20 +40,28 @@ if (!setting) {
     if (global.key_pressed[key_up] || global.key_pressed[key_down]) {
         sound_play("sndJump")
         sel=modwrap(sel+global.input_v,0,key_sizeof+1)
+        if(sel!=key_sizeof) keytext[key_sizeof]=""
     } else if (global.key_pressed[key_shoot]) {
-        input_clear()
-        i=instance_create(x,y,OptionsMenu)
-        i.sel=8
-        i.ycursor=i.ydraw+(i.ysep*i.sel)+18
-        instance_destroy()
+        if(sel==key_sizeof && keytext[key_sizeof]==lang("resetconfirm")) keytext[key_sizeof]=""
+        else {
+            input_clear()
+            i=instance_create(x,y,OptionsMenu)
+            i.sel=8
+            i.ycursor=i.ydraw+(i.ysep*i.sel)+18
+            instance_destroy()
+        }
     } else if (global.key_pressed[key_jump]) {
         if (sel!=key_sizeof) {
             setting=true
             keytext[sel]=lang("keynewkey")
         } else {
-            input_default()
-            keytext[key_sizeof]=lang("keykeysreset")
-            alarm[0]=60*dt
+            if (keytext[key_sizeof]==lang("resetconfirm")) {
+                input_default()
+                keytext[key_sizeof]=lang("keykeysreset")
+                alarm[0]=60*dt
+            } else {
+                keytext[key_sizeof]=lang("resetconfirm")
+            }
         }
     }
 } else {

@@ -16,5 +16,8 @@ savedata("obj",Player)
 savedata("room",global.first_room)
 savedata("hash","new file")
 
+global.player_skin=skin_default
+global.player_weapon=weapon_default
+
 ds_grid_resize(global.statgrid,3,1)
 global.statgridh=1

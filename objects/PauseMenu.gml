@@ -5,9 +5,9 @@ action_id=603
 applies_to=self
 */
 if ((((global.rw!=global.width || global.rh!=global.height) && settings("filter")) || global.use_application_surface) && surface_exists(application_surface)) {
-    bg=background_create_from_surface(application_surface,0,0,view_wview,view_hview,0,0)
+    bg=background_create_from_surface(application_surface,0,0,global.width,global.height,0,0)
 } else {
-    bg=background_create_from_screen(0,0,view_wview,view_hview,0,0)
+    bg=background_create_from_screen(0,0,global.width,global.height,0,0)
 }
 
 global.pause=true
@@ -63,7 +63,7 @@ applies_to=self
 
 var t,timeText;
 
-d3d_set_projection_ortho(0,0,view_wview,view_hview,0)
+d3d_set_projection_ortho(0,0,global.width,global.height,0)
 draw_clear_alpha(0,1)
 
 //fix weird alpha on nvidia
@@ -73,10 +73,10 @@ draw_enable_alphablend(true)
 
 draw_set_font(fntFileBig)
 draw_set_halign(1)
-    draw_text(view_wview/2,view_hview/2-24,lang("pausemenu"));
+    draw_text(global.width/2,global.height/2-24,lang("pausemenu"));
 draw_set_halign(0)
 
 draw_set_font(fntFileSmall)
 draw_set_valign(2)
-    draw_text(20,view_hview-16,lang("optionsitem1")+": "+string(round(settings("musvol")*100))+"%#"+lang("deaths")+": "+string(savedata("deaths"))+"#"+lang("time")+": "+format_time(savedata("time")))
+    draw_text(20,global.height-16,lang("optionsitem1")+": "+string(round(settings("musvol")*100))+"%#"+lang("deaths")+": "+string(savedata("deaths"))+"#"+lang("time")+": "+format_time(savedata("time")))
 draw_set_valign(0)

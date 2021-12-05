@@ -125,8 +125,10 @@
 	|camera_shake
 	|camera_apply
 +skins
+	|change_skin
 	|skin_default
 +weapons
+	|change_weapon
 	|weapon_default
 +sound
 	|play_bg_music

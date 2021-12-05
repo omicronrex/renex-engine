@@ -47,8 +47,8 @@ if (difficulty!=3 || argument0) with (Player) {
     savedata("viewangle",view_angle)
     savedata("saved",1)
 
-    savedata("skin",skin)
-    savedata("weapon",weapon)
+    savedata("skin",global.player_skin)
+    savedata("weapon",global.player_weapon)
 
     //gimmicks
     savedata("slomo",slomo)

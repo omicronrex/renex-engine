@@ -35,9 +35,6 @@ applies_to=self
 ///initialize variables
 //you usually don't need to touch any of these
 
-skin=global.player_skin
-weapon=global.player_weapon
-
 djump=1
 ladder=false
 onPlatform=false
@@ -195,7 +192,7 @@ action_id=603
 applies_to=self
 */
 ///skin mask
-script_execute(skin,"mask")
+script_execute(global.player_skin,"mask")
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -531,7 +528,7 @@ action_id=603
 applies_to=self
 */
 ///skin step
-script_execute(skin,"step")
+script_execute(global.player_skin,"step")
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=424
@@ -774,7 +771,7 @@ if (!is_ingame()) {
 }
 
 //fix sprite for first frame
-script_execute(skin,"step")
+script_execute(global.player_skin,"step")
 oldspr=sprite_index
 newspr=oldspr
 
@@ -802,7 +799,7 @@ if (flashing) {
     if (flashing mod 5 > 2) exit
 }
 
-script_execute(skin,"draw")
+script_execute(global.player_skin,"draw")
 
 if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
 if (global.debug_jump) draw_sprite_ext(sprBow,2,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)

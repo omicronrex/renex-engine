@@ -14,6 +14,6 @@ applies_to=self
 if (!other.shootkid && !other.dotkid && !other.vvvvvv) {
     sound_play_slomo("sndVCoin")
     other.vvvvvv=true
-    other.skin=skin_vvvvvv
+    change_skin(skin_vvvvvv)
     instance_destroy()
 }

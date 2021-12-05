@@ -151,11 +151,13 @@
 	|camera_shake
 	|camera_apply
 +skins
+	|change_skin
 	|skin_default
 	|skin_dotkid
 	|skin_shootkid
 	|skin_vvvvvv
 +weapons
+	|change_weapon
 	|weapon_default
 	|weapon_shootkid
 +sound

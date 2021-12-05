@@ -148,3 +148,5 @@ joy_snap
 joy_compare
 
 joy_get_map
+change_weapon
+change_skin

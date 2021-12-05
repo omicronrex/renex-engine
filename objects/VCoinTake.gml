@@ -14,6 +14,6 @@ applies_to=self
 if (other.vvvvvv) {
     sound_play_slomo("sndVCoin")
     other.vvvvvv=false
-    other.skin=skin_default
+    change_skin(skin_default)
     instance_destroy()
 }

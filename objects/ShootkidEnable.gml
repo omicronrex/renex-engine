@@ -7,6 +7,6 @@ applies_to=self
 if (!other.shootkid && !other.dotkid && !other.vvvvvv) {
     sound_play_slomo("sndGrow")
     other.shootkid=true
-    other.skin=skin_shootkid
-    other.weapon=weapon_shootkid
+    change_skin(skin_shootkid)
+    change_weapon(weapon_shootkid)
 }

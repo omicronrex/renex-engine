@@ -83,7 +83,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_sprite_ext(sprite_index,floor(image_index),x+16-lengthdir_x(16,angle)-lengthdir_x(16,angle-90),y+16-lengthdir_y(16,angle)-lengthdir_y(16,angle-90),1,1,angle,$ffffff,1)
+draw_sprite_ext(sprite_index,floor(image_index),x+16-lengthdir_x(16,angle)-lengthdir_x(16,angle-90),y+16-lengthdir_y(16,angle)-lengthdir_y(16,angle-90),1,1,angle,image_blend,image_alpha)
 
 if (notice) {
     draw_sign_text(x+16,y-10,font,color,msg,false)

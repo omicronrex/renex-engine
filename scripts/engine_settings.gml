@@ -13,6 +13,7 @@
     //password for encrypting saves.
     //if you don't want a password, use "" and the save files will be unencrypted dsmaps.
     global.encrypt_save_password="renex"
+    //save game to appdata instead of a /save folder
     global.use_appdata=false
 
 
@@ -72,7 +73,7 @@
     //turn this off for a precision needle game
     global.coyote_time=1
     //time in frames to allow jumping when the button is pressed too early in the air
-    //makes 4.5s easier but does not remove valign lottery entirely
+    //makes 4.5s easier but does not remove valign lottery
     global.jump_buffering=1
     //traditional platforming momentum system
     //player behaves more like i.e. mario
@@ -91,25 +92,27 @@
     global.gameover_music_fade=true
     //pause on death (or after fading if fading is used)
     global.gameover_music_pause=true
-    //0 for clean break sound effect, 1 for yuuutu engine, 2 for yosniper
+    //block break: 0 for remastered sound effect, 1 for yuuutu engine, 2 for yosniper
     global.break_sound_effect=0
 
 
 //extra stuff
-    //don't go back to the menu - quit the game instead when pressing esc
+    //don't go back to the menu - quit the game immediately when pressing esc
     global.esc_always_quits=false
     //enables automatic management of an application surface.
     //you always get one in fullscreen, but this tells the engine you plan to
     //use it yourself so it'll also update it in windowed mode.
     //you can do post processing effects in envelope_compose().
+    //always envelope_prepare() when resetting surface target in draw events!
     global.use_application_surface=false
     //automatically updates the window caption with deathtime
     global.show_deathtime=true
     global.closing_animation=true
-    //the ability to fight bosses more than once per savefile
+    //the ability to fight engine-bosses more than once per savefile
     global.refight_bosses=true
     //jump refreshers respawn time - if set to zero, it respawns when you land
     global.jump_refresher_timer=0
+    //if false, items are only collected upon saving normally
     global.autosave_items=true
     global.contact_saves=false
     global.press_s_saves=false
@@ -117,7 +120,8 @@
     global.flip_saves=false
     //(0-8) reduces lag during gameplay, but causes small hiccup on room start.
     //each pass reduces instance count by almost half so with 2 passes we should
-    //have around 30% of block instances. increase this value if your game lags.
+    //have around 30% of block instances. increase this value if your game lags on large rooms.
+    //if you're using autotilers, turn this off.
     global.optimize_solids=2
 
 

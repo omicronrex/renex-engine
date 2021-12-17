@@ -29,6 +29,7 @@ image_xscale=radius+2
 image_yscale=radius+2
 
 sound="sndBall"
+mypitch=random_range(0.95,1.05)
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -100,7 +101,7 @@ if (dist<=radius+5) {
 
     if (sound!="") {
         snd=sound_play_paused(sound)
-        sound_pitch(snd,random_range(0.95,1.05))
+        sound_pitch(snd,mypitch)
         sound_resume(snd)
     }
 
@@ -118,7 +119,7 @@ if (bul!=other.id) {
     motion_add(point_direction(other.x,other.y,x,y),8)
     if (sound!="") {
         snd=sound_play_paused(sound)
-        sound_pitch(snd,random_range(0.95,1.05))
+        sound_pitch(snd,mypitch)
         sound_resume(snd)
     }
 }
@@ -295,7 +296,7 @@ if (dist<=radius+0.4) {
             if (vol>0.2) {
                 snd=sound_play_paused(sound)
                 sound_volume(snd,vol)
-                sound_pitch(snd,random_range(0.95,1.05))
+                sound_pitch(snd,mypitch)
                 sound_resume(snd)
             }
         }

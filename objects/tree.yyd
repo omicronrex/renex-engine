@@ -22,6 +22,7 @@
 	|TitleMenu
 	|TitleParticle
 	|FileMenu
+	|OptionsGridCheck
 	|OptionsMenu
 	|KeyboardMenu
 	|JoystickMenu

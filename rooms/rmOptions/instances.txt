@@ -1,3 +1,4 @@
+OptionsGridCheck,96,32,,0,1,1,4294967295,0
 OptionsMenu,256,192,,0,1,1,4294967295,0
 MusicPlayer,32,32,C56BBB80,0,1,1,4294967295,0
 DefaultMenuBorderMaker,64,32,,0,1,1,4294967295,0

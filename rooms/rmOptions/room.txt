@@ -12,7 +12,7 @@ clear_view=1
 
 bg_visible0=0
 bg_is_foreground0=0
-bg_source0=bgTestGrid
+bg_source0=
 bg_xoffset0=0
 bg_yoffset0=0
 bg_tile_h0=1

@@ -22,9 +22,6 @@ dead=0
 
 alarm[0]=30*dt
 
-background_hspeed[0]=0.5
-background_vspeed[0]=0.5
-
 //precise volume control
 volumedelay=25
 volumefpi=5
@@ -157,8 +154,8 @@ optext[7]=pick(global.leftright_moonwalk,lang("optionsflip"+string(settings("l+r
 optext[8]=""
 optext[9]=pick(!!joystick_count(),lang("optionsnojoys"),string(joystick_count())+lang("optionsjoys"))
 
-if (sel=4 && settings("fullscreen")) background_visible[0]=1
-else background_visible[0]=0
+if (sel=4 && settings("fullscreen")) OptionsGridCheck.visible=1
+else OptionsGridCheck.visible=0
 if (sel=5) angle+=1
 else angle=0
 

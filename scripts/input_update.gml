@@ -8,14 +8,19 @@ for (i=0;i<key_sizeof;i+=1) {
     //this fixes the input lag inherent to it
     //https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getasynckeystate#return-value
     keyboard_check_direct(global.keycode[i])
+    check=keyboard_check_direct(global.keycode[i])
 
     //update globals
-    global.key_pressed[i]=keyboard_check_pressed(global.keycode[i]) || (keyboard_check(global.keycode[i]) && !global.key[i])
-    global.key_released[i]=keyboard_check_released(global.keycode[i]) || (!keyboard_check(global.keycode[i]) && global.key[i])
-    global.key[i]=((keyboard_check_direct(global.keycode[i]) && global.infocus) || global.key_pressed[i]) && !global.key_released[i]
+    if (!global.input_cleared) {
+        global.key_pressed[i]=keyboard_check_pressed(global.keycode[i]) || (check && !global.key[i])
+        global.key_released[i]=keyboard_check_released(global.keycode[i]) || (!check && global.key[i])
+    }
+    global.key[i]=((check && global.infocus) || global.key_pressed[i]) && !global.key_released[i]
 
     if (global.key[i]) keyboard=true
 }
+
+global.input_cleared=false
 
 if (joystick_found() || global.joysupdated) {
     //joysticks added or removed, let's set up some memory variables

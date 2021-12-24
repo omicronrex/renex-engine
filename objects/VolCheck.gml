@@ -83,7 +83,7 @@ draw_set_valign(2)
 draw_set_halign(2)
 draw_text(global.width-16,global.height-16,lang("volcheck")+"["+key_get_name(key_jump)+"]"+lang("volcheck2"))
 draw_set_halign(0)
-draw_text(16,global.height-16,lang("optionsitem2")+": "+string(round(settings("sfxvol")*100))+"%#"+lang("volcheck3")+"["+key_get_name(key_up)+"]"+lang("volcheck4")+"["+key_get_name(key_down)+"]")
+draw_text(16,global.height-16,lang("volcheckvol")+": "+string(round(settings("sfxvol")*100))+"%#"+lang("volcheck3")+"["+key_get_name(key_up)+"]"+lang("volcheck4")+"["+key_get_name(key_down)+"]")
 draw_set_valign(0)
 
 if (fade) rect(0,0,global.width,global.height,background_color,alpha)

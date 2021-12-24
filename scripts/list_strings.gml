@@ -6,6 +6,7 @@ add_string("time","Time")
 
 //volume check
 add_string("volcheck","Volume Check#")
+add_string("volcheckvol","Sound Volume")
 add_string("volcheck2"," to confirm")
 add_string("volcheck3","Use ")
 add_string("volcheck4"," and ")

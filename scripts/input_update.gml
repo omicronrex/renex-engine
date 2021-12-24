@@ -1,4 +1,4 @@
-var i,h,keyboard;
+var i,h,keyboard,check;
 
 keyboard=false
 
@@ -8,14 +8,14 @@ for (i=0;i<key_sizeof;i+=1) {
     //this fixes the input lag inherent to it
     //https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getasynckeystate#return-value
     keyboard_check_direct(global.keycode[i])
-    check=keyboard_check_direct(global.keycode[i])
+    check=keyboard_check_direct(global.keycode[i]) && global.infocus
 
     //update globals
     if (!global.input_cleared) {
         global.key_pressed[i]=keyboard_check_pressed(global.keycode[i]) || (check && !global.key[i])
         global.key_released[i]=keyboard_check_released(global.keycode[i]) || (!check && global.key[i])
     }
-    global.key[i]=((check && global.infocus) || global.key_pressed[i]) && !global.key_released[i]
+    global.key[i]=(check || global.key_pressed[i]) && !global.key_released[i]
 
     if (global.key[i]) keyboard=true
 }

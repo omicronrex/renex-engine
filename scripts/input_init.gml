@@ -8,6 +8,7 @@ for (i=0;i<key_sizeof;i+=1) {
     storekey_released[i]=0
 }
 
+global.input_cleared=true
 global.joysupdated=false
 
 global.lastjoystick=noone

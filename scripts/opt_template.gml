@@ -1,10 +1,10 @@
 //template for option snap-ins
 //you can duplicate this to add your own options to the engine
-//remember to add it to list_options() (it's in the lists folder)
+//remember to add it to list_options() (it's in the engine lists folder)
 
 switch (argument0) {
     case opt_begin:{
-
+        //called on create
     }break
     case opt_step:{
         if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {
@@ -19,9 +19,9 @@ switch (argument0) {
         return "Example option"
     }break
     case opt_value: {
-        return "1"
+        return "100%"
     }break
     case opt_end:{
-
+        //called when the option is deselected
     }break
 }

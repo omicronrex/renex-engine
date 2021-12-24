@@ -1,4 +1,5 @@
 //list of all the game options
+//you can copy the template and add your own options
 
 add_option(opt_music_volume)
 add_option(opt_sound_volume)

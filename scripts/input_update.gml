@@ -6,11 +6,12 @@ keyboard=false
 for (i=0;i<key_sizeof;i+=1) {
     //we check the key direct twice because of how windows handles it
     //this fixes the input lag inherent to it
+    //https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getasynckeystate#return-value
     keyboard_check_direct(global.keycode[i])
 
     //update globals
-    global.key_pressed[i]=keyboard_check_pressed(global.keycode[i])
-    global.key_released[i]=keyboard_check_released(global.keycode[i])
+    global.key_pressed[i]=keyboard_check_pressed(global.keycode[i]) || (keyboard_check(global.keycode[i]) && !global.key[i])
+    global.key_released[i]=keyboard_check_released(global.keycode[i]) || (!keyboard_check(global.keycode[i]) && global.key[i])
     global.key[i]=((keyboard_check_direct(global.keycode[i]) && global.infocus) || global.key_pressed[i]) && !global.key_released[i]
 
     if (global.key[i]) keyboard=true

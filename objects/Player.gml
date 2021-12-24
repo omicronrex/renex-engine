@@ -765,6 +765,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+//room start
 if (!is_ingame()) {
     sound_kind_pitch(1,1)
     instance_destroy()

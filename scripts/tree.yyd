@@ -112,6 +112,7 @@
 	|move_player
 	|flip_player
 	|emit_blood
+	|on_ground
 +bosses
 	|once_every
 	|BigCherry_boss

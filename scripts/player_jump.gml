@@ -1,5 +1,5 @@
 if (!hang) {
-    if (place_meeting(x,y+vflip,Block) || onPlatform || place_meeting(x,y+vflip,Water1) || place_meeting(x,y+vflip,PlatformWater) || ladderjump) {
+    if (on_ground() || place_meeting(x,y+vflip,Water1) || place_meeting(x,y+vflip,PlatformWater) || ladderjump) {
         //floor jump
         vspeed=-jump*vflip
         if (global.use_momentum_values) {

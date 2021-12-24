@@ -1,5 +1,5 @@
 if (vvvvvv) {
-    if (place_meeting(x,y+vflip,Block) || onPlatform) {
+    if (on_ground()) {
         //vvvvvv flipping
         vflip*=-1
         vspeed=0
@@ -14,7 +14,7 @@ if (vvvvvv) {
         jump_timer=0
     }
 } else if (!hang) {
-    if (place_meeting(x,y+vflip,Block) || onPlatform || place_meeting(x,y+vflip,Water1) || place_meeting(x,y+vflip,PlatformWater) || place_meeting(x,y+vflip,GuyWater) || ladderjump) {
+    if (on_ground() || place_meeting(x,y+vflip,Water1) || place_meeting(x,y+vflip,PlatformWater) || place_meeting(x,y+vflip,GuyWater) || ladderjump) {
         //floor jump
         vspeed=-jump*vflip
         if (global.use_momentum_values) {

@@ -127,6 +127,7 @@
 	|move_player
 	|flip_player
 	|emit_blood
+	|on_ground
 +keypick
 	|key_clear
 	|key_add

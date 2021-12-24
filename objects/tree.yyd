@@ -24,7 +24,6 @@
 +User Interface
 	|VolCheck
 	|TitleMenu
-	|TitleParticle
 	|FileMenu
 	|OptionsGridCheck
 	|OptionsMenu
@@ -32,6 +31,8 @@
 	|JoystickMenu
 	|PauseMenu
 	|DefaultMenuBorderMaker
+	|RenexStarParticles
+	|TitleParticle
 +System
 	|BloodEmitter
 	|GibParticle

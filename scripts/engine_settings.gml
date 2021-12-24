@@ -15,6 +15,8 @@
     global.encrypt_save_password="renex"
     //save game to appdata instead of a /save folder
     global.use_appdata=false
+    //user interface text color
+    global.text_color=$ffffff
 
 
 //template for needle games
@@ -101,7 +103,7 @@
     global.break_sound_effect=0
 
 
-//extra stuff
+//game behavior
     //don't go back to the menu - quit the game immediately when pressing esc
     global.esc_always_quits=false
     //enables automatic management of an application surface.

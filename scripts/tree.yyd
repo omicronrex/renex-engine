@@ -1,7 +1,8 @@
 |engine_settings
-+lists
++engine lists
 	|list_strings
-	|list_loop_points
+	|list_options
+	|list_music_properties
 	|list_avoidance_bullets
 	|list_nonstick
 	|list_instance_activation
@@ -105,6 +106,7 @@
 	|lang
 	|collect_items
 	|drop_items
+	|add_option
 +events
 	|event_world_create
 	|event_game_start
@@ -164,3 +166,15 @@
 	|play_bg_music
 	|sound_play_slomo
 	|set_loop_point
++game options
+	|opt_template
+	|opt_music_volume
+	|opt_sound_volume
+	|opt_screen_mode
+	|opt_vsync
+	|opt_fullscreen_filter
+	|opt_interpolation
+	|opt_blood_amount
+	|opt_left_right
+	|opt_rebind_keyboard
+	|opt_rebind_joystick

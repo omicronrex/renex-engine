@@ -63,8 +63,11 @@ sound_add_directory("data\music\",".s3m",1,1)
 global.langmap=ds_map_create()
 list_strings()
 
-list_loop_points()
+global.optlist=ds_list_create()
+list_options()
+
 sound_global_volume(global.gain)
+list_music_properties()
 
 savedata_init()
 

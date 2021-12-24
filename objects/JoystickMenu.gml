@@ -10,9 +10,9 @@ sel=key_sizeof
 xdraw=120
 ydraw=80
 xsep=560
-ysep=40
+ysep=32
 
-ycursor=ydraw+(sel-key_jump)*ysep+52
+ycursor=ydraw+sel*ysep+52
 
 setting=false
 
@@ -45,7 +45,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (joystick_found()) {
+if (joystick_count()!=joycount) {
     joy=0
     setting=false
     event_user(0)
@@ -61,7 +61,7 @@ if (global.key_pressed[key_shoot]) {
         } else {
             input_clear()
             i=instance_create(x,y,OptionsMenu)
-            i.sel=9
+            i.sel=mempos
             i.ycursor=i.ydraw+(i.ysep*i.sel)+18
             instance_destroy()
         }
@@ -151,11 +151,21 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-for (j=0;j<joystick_count();j+=1) {
+joycount=joystick_count()
+
+for (j=0;j<joycount;j+=1) {
     name=joystick_name(j)
     for (b=0;b<key_sizeof;b+=1) {
         joy_button[j,b]=settings("joymap_"+name+"_"+string(b))
     }
+}
+
+if (joycount==0) {
+    input_clear()
+    i=instance_create(x,y,OptionsMenu)
+    i.sel=mempos
+    i.ycursor=i.ydraw+(i.ysep*i.sel)+18
+    instance_destroy()
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION
@@ -163,6 +173,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+draw_set_color(global.text_color)
+
 draw_set_halign(1)
 draw_set_font(fntFileBig)
 if (joy==-1) {
@@ -188,3 +200,5 @@ draw_text(34,556,"["+key_get_name(key_shoot)+"] Back")
 draw_set_halign(2)
 draw_text(766,556,"["+key_get_name(key_jump)+"] Accept")
 draw_set_halign(0)
+
+draw_set_color($ffffff)

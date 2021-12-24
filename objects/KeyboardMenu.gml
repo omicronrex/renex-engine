@@ -9,9 +9,9 @@ sel=0
 xdraw=120
 ydraw=80
 xsep=560
-ysep=40
+ysep=32
 
-ycursor=ydraw+(ysep*sel)+18
+ycursor=ydraw+sel*ysep+52
 
 setting=false
 
@@ -46,7 +46,7 @@ if (!setting) {
         else {
             input_clear()
             i=instance_create(x,y,OptionsMenu)
-            i.sel=8
+            i.sel=mempos
             i.ycursor=i.ydraw+(i.ysep*i.sel)+18
             instance_destroy()
         }
@@ -91,6 +91,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+draw_set_color(global.text_color)
+
 draw_set_halign(1)
 draw_set_font(fntFileBig)
 draw_text(400,64,lang("keymenu"))
@@ -111,3 +113,5 @@ draw_text(34,556,"["+key_get_name(key_shoot)+"] "+lang("menuback"))
 draw_set_halign(2)
 draw_text(766,556,"["+key_get_name(key_jump)+"] "+lang("menuaccept"))
 draw_set_halign(0)
+
+draw_set_color($ffffff)

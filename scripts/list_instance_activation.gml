@@ -4,7 +4,7 @@
 //instances that should always be active
 instance_activate_object(World)
 instance_activate_object(global.screen_manager)
-instance_activate_object(__gm82core_object)
+instance_activate_object(core)
 instance_activate_object(Ortho)
 
 if (argument0) {

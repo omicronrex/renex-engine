@@ -1,6 +1,5 @@
 engine_settings
-list_loop_points
-
+list_music_properties
 list_nonstick
 settings_default
 savedata_default
@@ -145,3 +144,16 @@ joy_compare
 joy_get_map
 change_weapon
 change_skin
+opt_music_volume
+opt_template
+list_options
+add_option
+opt_sound_volume
+opt_screen_mode
+opt_vsync
+opt_fullscreen_filter
+opt_interpolation
+opt_blood_amount
+opt_left_right
+opt_rebind_keyboard
+opt_rebind_joystick

@@ -5,3 +5,4 @@ DisplayGlobalItem1,336,512,,0,1,1,4294967295,0
 DisplayGlobalItem2,368,512,,0,1,1,4294967295,0
 DisplayGlobalItem3,400,512,,0,1,1,4294967295,0
 DisplayGlobalItem4,432,512,,0,1,1,4294967295,0
+RenexStarParticles,96,32,,0,1,1,4294967295,0

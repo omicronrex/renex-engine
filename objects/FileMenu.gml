@@ -71,8 +71,6 @@ if (state="continue") {
                 World.message=200
             } else sound_play("sndShoot")
         } else {
-            instance_destroy_id(TitleParticle)
-            instance_destroy_id(TitleMenu)
             input_clear()
             savedata_select(select)
             savedata_load()
@@ -117,10 +115,11 @@ applies_to=self
 */
 var i;
 
+draw_set_color(global.text_color)
 draw_set_halign(1)
 draw_set_font(fntFileBig)
 draw_text(global.width/2,64,lang("filemenu"))
-
+draw_set_color($ffffff)
 
 for (i=0;i<3;i+=1) {
     savedata_select(i)
@@ -166,6 +165,7 @@ draw_sprite(sprite_index,-1,dx,y+310)
 draw_sprite(sprDynamicPlatform,0,dx-17,y+319)
 
 //option info
+draw_set_color(global.text_color)
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
 draw_text(34,global.height-52,"["+key_get_name(key_shoot)+"] "+lang("menuback"))
@@ -174,3 +174,4 @@ draw_text(global.width/2,global.height-52,"["+key_get_name(key_menu)+"] "+lang("
 draw_set_halign(2)
 draw_text(global.width-34,global.height-52,"["+key_get_name(key_jump)+"] "+lang("menuaccept"))
 draw_set_halign(0)
+draw_set_color($ffffff)

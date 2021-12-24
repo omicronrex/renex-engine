@@ -22,6 +22,7 @@ if ((keyboard_check_pressed(ord("Z")) && keyboard_check(vk_control)) || keyboard
     sound_play("sndItem")
     savedata_read()
     state=""
+    input_clear()
     exit
 }
 

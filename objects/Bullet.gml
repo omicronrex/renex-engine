@@ -6,6 +6,7 @@ applies_to=self
 */
 if (instance_exists(Player)) alarm[0]=40/(Player.slomo*dt)
 else alarm[0]=40/dt
+dead=0
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -29,15 +30,13 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-a=instance_place(x,y,Block)
-if (a) {
-    if (a.solid) instance_destroy()
-    if (a.object_index=ShootBlock || a.object_index=ShootBlockBig) instance_destroy_id(a)
-}
-
+//reset bullet mask
 image_xscale=1
 image_yscale=1
 image_angle=0
+
+//we schedule bullet destroy to make sure it hits things on the frame it hits a wall
+if (dead) instance_destroy()
 #define Collision_NiseBlock
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -45,6 +44,14 @@ action_id=203
 applies_to=self
 invert=0
 */
+#define Collision_Block
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (other.object_index=ShootBlock || other.object_index=ShootBlockBig) instance_destroy_id(other)
+if (other.solid) dead=1
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

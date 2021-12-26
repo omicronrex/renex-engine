@@ -12,4 +12,5 @@ if (argument0) {
     instance_activate_object(Player)
     instance_activate_object(Bullet)
     instance_activate_object(SkyGradient2Colors)
+    instance_activate_object(Teleporter)
 }

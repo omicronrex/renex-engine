@@ -2,7 +2,7 @@ var dw;dw=display_get_gui_width()
 
 if (!global.pause) {
     if ((keyboard_check(vk_tab) || debug_mode || fps_real<global.game_speed*0.95) && is_ingame()) {
-        str=string(round(fps))
+        str=string(fps_fast)
         fpsa=min(1.5,fpsa+0.05)
     } else {
         str=string(global.game_speed)
@@ -29,7 +29,7 @@ if (global.debug_overlay) {
     }
 
     str+="Room: "+room_get_name(room)+" ("+string(room)+")#"
-       +"FPS: "+string(fps)+"/"+string(room_speed)+" (real "+string(fps_real)+")#"
+       +"FPS: "+string(fps_fast)+"/"+string(room_speed)+" (real "+string(fps_real)+")#"
        +string_repeat("God mode",global.debug_god)+"#"
        +string_repeat("Infinite jump",global.debug_jump)
     draw_text_outline(40,40,str,$ffff)

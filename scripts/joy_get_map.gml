@@ -1,6 +1,6 @@
 ///joy_get_map(joy,input)
 //gets joystick input based on previously unpacked mappings
-var map,reading,expected;
+var map,reading,expected,button;
 
 map=joy_button[argument0,argument1]
 
@@ -11,8 +11,17 @@ if (string_pos("axis",map)) {
 }
 if (string_pos("button",map)) {
     expected=1-!!string_pos("-",map)
-    reading=joystick_check_button(argument0,real(string_digits(map)))
-    return reading==expected
+    button=real(string_digits(map))
+    if (expected) {
+        reading=joystick_check_button(argument0,button)
+        reading_pressed=joystick_check_button_pressed(argument0,button)
+        reading_released=joystick_check_button_released(argument0,button)
+    } else {
+        reading=!joystick_check_button(argument0,button)
+        reading_pressed=joystick_check_button_released(argument0,button)
+        reading_released=joystick_check_button_pressed(argument0,button)
+    }
+    return reading
 }
 if (string_pos("hat",map)) {
     expected=real(string_digits(map))

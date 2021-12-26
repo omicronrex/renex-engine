@@ -34,7 +34,7 @@ sound_resume_all()
 room_speed=memspd
 
 World.pause_delay=room_speed
-instance_activate_all()
+update_activation()
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

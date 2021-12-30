@@ -155,6 +155,7 @@
 	|sprConveyorLeft
 	|sprConveyorRight
 	|sprJumpBlock
+	|sprJumpCherry
 	|sprHashigo_tate
 	|sprHashigo_yoko
 	|sprKanban

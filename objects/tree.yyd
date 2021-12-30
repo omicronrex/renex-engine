@@ -106,6 +106,7 @@
 	|ConveyorLeft
 	|ConveyorRight
 	|JumpBlock
+	|JumpCherry
 	|PushBlock
 	|PushBlockSave
 	|LiftBlock

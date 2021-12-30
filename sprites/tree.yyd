@@ -189,6 +189,7 @@
 	|sprConveyorLeft
 	|sprConveyorRight
 	|sprJumpBlock
+	|sprJumpCherry
 	|sprShootBlock
 	|sprShootBlockBig
 	|sprHashigo_tate

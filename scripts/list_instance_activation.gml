@@ -13,4 +13,6 @@ if (argument0) {
     instance_activate_object(Bullet)
     instance_activate_object(SkyGradient2Colors)
     instance_activate_object(Teleporter)
+    instance_activate_object(HPMode)
+    instance_activate_object(HitCount)
 }

@@ -105,9 +105,9 @@ applies_to=self
 settings("lastfile",select)
 savedata_write()
 
-if (World.messagetext==lang("fileundo")) {
-    World.message=-1
-}
+//disable any system messages when leaving the menu
+World.message=-1
+World.message2=-1
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -2,11 +2,6 @@ var i,h,keyboard;
 
 keyboard=false
 
-//store old key state
-for (i=0;i<key_sizeof;i+=1) {
-    global.prevkey[i]=global.key[i]
-}
-
 //check keyboard
 if (global.infocus) for (i=0;i<key_sizeof;i+=1) {
     //we check the key directly twice because of how windows handles it
@@ -17,12 +12,30 @@ if (global.infocus) for (i=0;i<key_sizeof;i+=1) {
     global.key[i]=keyboard_check_direct(global.keycode[i])
 
     //process pressed and released states
-    if (!global.input_cleared) {
-        global.key_pressed[i]=keyboard_check_pressed(global.keycode[i])
+    if (!global.input_cleared) {                                           //filter out keyboard-repeat "presses" inbetween rooms
+        global.key_pressed[i]=keyboard_check_pressed(global.keycode[i]) && global.prevkey[i]!=0
         global.key_released[i]=keyboard_check_released(global.keycode[i])
     }
 
     if (global.key[i]) keyboard=true
+}
+
+//window trick checker
+for (i=0;i<key_sizeof;i+=1) {
+    if (global.key_pressed[i]) {
+        //remember there's been a press at most 3 frames ago
+        global.prevkey[i]=-2
+    }
+    if (global.prevkey[i]) {
+        if (global.key[i]) global.prevkey[i]+=1
+        else global.prevkey[i]=1
+        //has there not been a press in 3 frames or earlier? window trick, generate press
+        if (global.prevkey[i]==4) global.key_pressed[i]=1
+    } else {
+        //slowly forget old presses
+        if (global.key[i]) global.prevkey[i]=min(0,global.prevkey[i]+1)
+        else global.prevkey[i]=1
+    }
 }
 
 //process joysticks added or removed
@@ -76,22 +89,15 @@ if (global.infocus) for (j=0;j<joystick_count();j+=1) if (joy_set[j]) {
         if (get) global.lastjoystick=j
         global.key[i]=global.key[i] || get
         if (!global.input_cleared) {
-            global.key_pressed[i]=global.key_pressed[i] || reading_pressed// || (global.key[i] && !global.prevkey[i])
-            global.key_released[i]=global.key_released[i] || reading_released// || (!global.key[i] && global.prevkey[i])
+            global.key_pressed[i]=global.key_pressed[i] || reading_pressed
+            global.key_released[i]=global.key_released[i] || reading_released
         }
 
     }
 }
 
-//check for window trick and update player
+//store a copy of it for the player
 for (i=0;i<key_sizeof;i+=1) {
-    //window trick / joystick fixer
-    if (!global.input_cleared) {
-        if (global.key[i] && !global.prevkey[i]) global.key_pressed[i]=1
-        if (!global.key[i] && global.prevkey[i]) global.key_released[i]=1
-    }
-
-    //store a copy of it for the player
     //this is necessary because the player might be running slower than the game
     //this allows the player to do 1fs more accurately
     if (global.key_pressed[i] && storekey_released[i]) {storekey_released_early[i]=1 storekey_released[i]=0}

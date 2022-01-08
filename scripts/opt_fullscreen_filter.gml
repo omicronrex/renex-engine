@@ -21,7 +21,7 @@ switch (argument0) {
         return "Fullscreen Filter"
     }break
     case opt_value: {
-        return pick(settings("filter"),"Off","Bilinear","Area x2")
+        return pick(settings("filter"),"Off","Bilinear","Trilinear")
     }break
     case opt_end:{
         OptionsGridCheck.visible=0

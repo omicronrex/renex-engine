@@ -19,7 +19,7 @@ if (!global.pause) {
         draw_rectangle_color(view_xview-(len-view_wview/2),view_yview,view_xview,view_yview+view_hview,$ffffff,0,0,$ffffff,0)
         draw_rectangle_color(view_xview+view_wview,view_yview,view_xview+view_wview+(len-view_wview/2),view_yview+view_hview,0,$ffffff,$ffffff,0,0)
 
-        draw_make_opaque()
+        dx8_make_opaque()
     }
 }
 

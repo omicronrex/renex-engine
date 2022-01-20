@@ -291,3 +291,4 @@ sprBlockCrush
 sprHitCount
 sprHPMode
 sprJumpCherry
+sprAntiSoftlock

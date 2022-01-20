@@ -26,6 +26,7 @@
 	|sprAvoidance
 	|sprFraps
 	|sprAutoSaver
+	|sprAntiSoftlock
 	|sprOutsideWarp
 	|sprGizmo
 	|sprCapButtons

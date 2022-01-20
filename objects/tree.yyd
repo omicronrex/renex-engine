@@ -54,6 +54,7 @@
 	|SavePointMediumV
 	|SavePointHardV
 	|SavePointVeryHardV
+	|AntiSoftlockBlock
 +Threats
 	|BouncingFruit
 	|CherryCircle

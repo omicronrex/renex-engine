@@ -12,11 +12,8 @@ fpsa=0
 monitorspeed=0
 monitorresult=""
 
-message=0
-messagetext=""
-
-message2=0
-message2text=""
+message=0 messagetext=""
+message2=0 message2text=""
 
 minalpha=0
 minclick=0

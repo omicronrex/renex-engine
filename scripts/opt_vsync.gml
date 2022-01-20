@@ -16,7 +16,7 @@ switch (argument0) {
                     World.fpssum=0
                 } else {
                     World.monitorspeed=0
-                    World.message=0
+                    show_message_left()
                 }
             }
             set_synchronization(settings("vsync"))

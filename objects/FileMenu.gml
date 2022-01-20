@@ -68,8 +68,7 @@ if (state="continue") {
                 sound_play("sndDeath")
                 savedata_default(select)
                 state=""
-                World.messagetext=lang("fileundo")
-                World.message=200
+                show_message_left(lang("fileundo"))
             } else sound_play("sndShoot")
         } else {
             input_clear()
@@ -106,8 +105,7 @@ settings("lastfile",select)
 savedata_write()
 
 //disable any system messages when leaving the menu
-World.message=-1
-World.message2=-1
+show_message_left()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

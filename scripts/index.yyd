@@ -164,3 +164,5 @@ opt_left_right
 opt_rebind_keyboard
 opt_rebind_joystick
 on_ground
+show_message_left
+show_message_right

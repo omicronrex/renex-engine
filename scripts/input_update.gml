@@ -56,11 +56,10 @@ if (joystick_found() || global.joysupdated) {
             }
         }
         if (count) {
-            message2=300
             if (count==1) {
-                message2text=lang("joyfound")+"#"+message2text+lang("joyset1up")
+                show_message_right(lang("joyfound")+"#"+message2text+lang("joyset1up"),300)
             } else {
-                message2text=string(count)+lang("joysfound")+"#"+message2text+lang("joyset2up")
+                show_message_right(string(count)+lang("joysfound")+"#"+message2text+lang("joyset2up"),300)
             }
         }
     }

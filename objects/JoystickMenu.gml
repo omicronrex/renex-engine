@@ -22,8 +22,7 @@ for (i=0;i<key_sizeof;i+=1) {
 keyname[key_sizeof ]="Set Controls"
 keytext[key_sizeof]=""
 
-World.message=300
-World.messagetext=lang("joytokey")
+show_message_left(lang("joytokey"),300)
 
 lit=0
 locked=0
@@ -66,8 +65,7 @@ if (global.key_pressed[key_shoot]) {
             instance_destroy()
         }
     } else {
-        World.message2=300
-        World.message2text=lang("joyusekey")
+        show_message_right(lang("joyusekey"),300)
     }
 } else if (!setting) {
     lit=0
@@ -87,16 +85,13 @@ if (global.key_pressed[key_shoot]) {
                 setting=true
                 keytext[key_sizeof]="["+key_get_name(key_shoot)+"] to cancel"
                 sel=0
-                World.message2=300
-                World.message2text="["+key_get_name(key_jump)+"]"+lang("joyskipkey")
+                show_message_right("["+key_get_name(key_jump)+"]"+lang("joyskipkey"),300)
                 joy_snap(joy)
             } else {
-                World.message2=300
-                World.message2text=lang("joypushtosel")
+                show_message_right(lang("joypushtosel"),300)
             }
         } else {
-            World.message2=300
-            World.message2text=lang("joyusekey")
+            show_message_right(lang("joyusekey"),300)
         }
     }
 } else {

@@ -6,7 +6,7 @@ what you CAN do:
 
 - you can redistribute my work under the same license or stricter
 - you can use it to make games under your own name
-- you can sell the games you make with it
+- you can sell the games you make with it (provided you have an FMOD license)
 - credit is appreciated, but not required <3
 
 what you CANNOT do:

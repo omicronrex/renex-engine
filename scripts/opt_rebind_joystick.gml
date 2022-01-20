@@ -1,8 +1,8 @@
 //snap-in for keyboard submenu
 
 switch (argument0) {
-    case opt_begin:{
-
+    case opt_inpause: {
+        return false
     }break
     case opt_step:{
         if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {
@@ -21,8 +21,5 @@ switch (argument0) {
     case opt_value: {
         if (joystick_count()) return string(joystick_count())+" joys"
         else return "no joys"
-    }break
-    case opt_end:{
-
     }break
 }

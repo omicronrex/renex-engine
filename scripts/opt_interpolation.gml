@@ -2,8 +2,8 @@
 //i won't judge, some people like their pixels smeared all over the wall.
 
 switch (argument0) {
-    case opt_begin:{
-
+    case opt_inpause: {
+        return true
     }break
     case opt_step:{
         if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {

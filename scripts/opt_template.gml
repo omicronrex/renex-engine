@@ -3,8 +3,12 @@
 //remember to add it to list_options() (it's in the engine lists folder)
 
 switch (argument0) {
+    case opt_inpause: {
+        //whether this option snap-in is available in the pause menu
+        return true
+    }break
     case opt_begin:{
-        //called on create
+        //called on create of the menu object
     }break
     case opt_step:{
         if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {

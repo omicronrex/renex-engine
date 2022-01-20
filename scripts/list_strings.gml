@@ -14,6 +14,7 @@ add_string("volcheck4"," and ")
 //ingame text
 add_string("warptohub","UP to return")
 add_string("pausemenu","PAUSE")
+add_string("pauseoptions","Press [%] for options")
 add_string("presstosave"," to Save")
 add_string("signpost","Poggers")
 add_string("hitcount","Hits taken: ")

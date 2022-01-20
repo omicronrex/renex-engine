@@ -1,8 +1,8 @@
 //snap-in for left+right input options
 
 switch (argument0) {
-    case opt_begin:{
-
+    case opt_inpause: {
+        return true
     }break
     case opt_step:{
         if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {
@@ -19,8 +19,5 @@ switch (argument0) {
     case opt_value: {
         if (global.leftright_moonwalk) return "Moonwalk"
         else return pick(settings("l+r behavior"),"Flip","Stay","Stop","Left","Right")
-    }break
-    case opt_end:{
-
     }break
 }

@@ -1,6 +1,9 @@
 //snap-in for music volume
 
 switch (argument0) {
+    case opt_inpause: {
+        return true
+    }break
     case opt_begin:{
         volumetimer=0
     }break

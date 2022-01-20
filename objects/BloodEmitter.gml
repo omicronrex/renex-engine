@@ -25,12 +25,8 @@ if (!gore) {
             i=instance_create(x,y,GibParticle) i.sprite_index=sprBow i.gravity=(0.1+random(0.2))*sign(Player.gravity)
         }
     } else {
-        if (room=rmOptions) {
-            sprite_index=sprPlayerIdle
-            image_index=floor(image_index)
-            x=OptionsMenu.xdraw-18
-            y=OptionsMenu.ycursor
-        }
+        sprite_index=sprPlayerIdle
+        image_index=floor(image_index)
     }
     exit
 }

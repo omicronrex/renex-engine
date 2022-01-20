@@ -1,6 +1,9 @@
 //snap-in for sound volume
 
 switch (argument0) {
+    case opt_inpause: {
+        return true
+    }break
     case opt_begin:{
         volumetimer=0
         shoottimer=0
@@ -14,7 +17,7 @@ switch (argument0) {
             sound_kind_volume(0,settings("sfxvol"))
             sound_kind_volume(3,settings("sfxvol"))
         } else volumetimer=0
-        shoottimer-=1
+        if (object_index!=PauseMenu) shoottimer-=1
         if (shoottimer<0) {
             shoottimer=30/dt
             instance_create_moving(xdraw-18,ycursor-2,Bullet,16*dt,0)

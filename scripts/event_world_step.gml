@@ -65,8 +65,17 @@ if (is_ingame()) {
 
 system_hotkeys()
 
+if (fps_real) cpu_usage=ceil(min(1,room_speed/fps_real)*100)
+
 //debug keys
 if (global.test_run) {
+    if (keyboard_check_pressed(vk_f3)) {
+        if (instance_exists(Profiler)) {
+            instance_destroy_id(Profiler)
+        } else {
+            instance_create(0,0,Profiler)
+        }
+    }
     if (keyboard_check_pressed(vk_backspace)) {
         global.debug_overlay=!global.debug_overlay
     }

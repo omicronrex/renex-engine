@@ -6,6 +6,7 @@ instance_activate_object(World)
 instance_activate_object(global.screen_manager)
 instance_activate_object(core)
 instance_activate_object(Ortho)
+instance_activate_object(Profiler)
 
 if (argument0) {
     //instances that should only activate during gameplay

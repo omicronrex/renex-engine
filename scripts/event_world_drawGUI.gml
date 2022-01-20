@@ -29,9 +29,15 @@ if (global.debug_overlay) {
     }
 
     str+="Room: "+room_get_name(room)+" ("+string(room)+")#"
-       +"FPS: "+string(fps_fast)+"/"+string(room_speed)+" (real "+string(fps_real)+")#"
-       +string_repeat("God mode",global.debug_god)+"#"
-       +string_repeat("Infinite jump",global.debug_jump)
+
+    if (!instance_exists(Profiler)) {
+        str+="FPS: "+string(fps_fast)+"/"+string(room_speed)+" (real "+string(fps_real)+")#"
+            +"CPU: "+string(cpu_usage)+"%#"
+    }
+
+    str+=string_repeat("God mode",global.debug_god)+"#"
+        +string_repeat("Infinite jump",global.debug_jump)
+
     draw_text_outline(40,40,str,$ffff)
 }
 

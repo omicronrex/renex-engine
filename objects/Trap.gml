@@ -107,7 +107,7 @@ if (path_endaction=path_action_reverse) {
     path_start(path,-path_speed,path_endaction,path_absolute)
     path_scale=path_scaling
 }
-#define Other_10
+#define Trigger_Trap is Triggered
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

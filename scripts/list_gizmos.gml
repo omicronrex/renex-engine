@@ -1,4 +1,4 @@
 //this is a list of all the objects in your game that should
-//receive a user 0 event when activated by triggers
+//receive a Trap is Triggered event when activated by engine triggers
 
 add_gizmo(ExampleGizmo)

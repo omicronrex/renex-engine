@@ -13,7 +13,7 @@ action_id=605
 invert=0
 arg0=do nothing
 */
-#define Other_10
+#define Trigger_Trap is Triggered
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

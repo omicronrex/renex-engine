@@ -17,3 +17,7 @@ if (good_bounce()) {
     hspeed=median(-6,hspeed,6)
     speed=max(0,speed/2-0.5)
 }
+if (!place_free(x,y)) {
+    hspeed=0
+    vspeed=-gravity
+}

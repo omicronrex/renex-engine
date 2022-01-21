@@ -43,6 +43,16 @@ with (ConveyorRight)
                 hspeed=max(hspeed,other.spd)
             else
                 move_contact_solid(90-90*sign(other.spd),other.spd)
+
+if (hspeed!=0) {
+    if (instance_exists(Player)) {
+        //pushed
+        if (place_meeting(x+hspeed,y,Player)) {
+            move_player(Player.x+hspeed,Player.y,0)
+            check_crush()
+        }
+    }
+}
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1

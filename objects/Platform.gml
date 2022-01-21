@@ -10,22 +10,32 @@ path_action=path_action_reverse
 path_relative=true
 
 snap=true
+
+hdeficit=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
+var moveplayer;moveplayer=0
+
 if (path_index!=-1 && path_speed!=0) {
     get_path_speed()
-    with (Player) if (place_meeting(x,y+2*vflip,other.id)) {
-        move_player(x+other.hspeed,y+other.vspeed,1)
-    }
+    moveplayer=1
 } else if (hspeed!=0 || vspeed!=0) {
     if (hspeed!=0) if (!place_free(x+hspeed,y)) hspeed=-hspeed
     if (vspeed!=0) if (!place_free(x,y+vspeed)) vspeed=-vspeed
+    moveplayer=1
+}
+
+if (moveplayer) {
+    //due to player's rounding, it's impossible to move the player only part of a pixel
+    //so we store and make use of deficit counters
+    hspeed+=hdeficit
+    hdeficit=hspeed-round(hspeed)
     with (Player) if (place_meeting(x,y+2*vflip,other.id)) {
-        move_player(x+other.hspeed,y+other.vspeed,1)
+        move_player(x+round(other.hspeed),y+other.vspeed,1)
     }
 }
 #define Collision_NiseBlock

@@ -62,6 +62,12 @@
     global.smooth_position=true
     //enable simulated studio 1.4.9999 vdiet (shorter hitbox when y ends in .50)
     global.valign05_vdiet=false
+    //platform crush behavior
+    //0: leave the player stuck in the wall
+    //1: kill the player when pushed into a wall
+    //2: drop the player through the platform
+    global.platform_crush_behavior=2
+    //default skin and weapon for a new file
     global.player_skin=skin_default
     global.player_weapon=weapon_default
     global.leftright_moonwalk=false

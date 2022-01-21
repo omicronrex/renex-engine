@@ -785,7 +785,10 @@ if (vflip==1) {
         if (other.snap || vspeed-other.vspeed>=0) {
             y=other.y-9+8*dotkid
             vspeed=max(0,other.vspeed/dt/slomo)
-            check_crush()
+            if (!place_free(x,y)) {
+                if (global.platform_crush_behavior==1) check_crush()
+                if (global.platform_crush_behavior==2) move_outside_solid(270,20)
+            }
         }
         vsplatform=max(0,other.vspeed)
         onPlatform=true
@@ -797,7 +800,10 @@ if (vflip==1) {
         if (other.snap || vspeed-other.vspeed<=0) {
             y=other.bbox_bottom+1+8-7*dotkid
             vspeed=min(0,other.vspeed/dt/slomo)
-            check_crush()
+            if (!place_free(x,y)) {
+                if (global.platform_crush_behavior==1) check_crush()
+                if (global.platform_crush_behavior==2) move_outside_solid(90,20)
+            }
         }
         vsplatform=min(0,other.vspeed)
         onPlatform=true

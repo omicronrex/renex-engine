@@ -1,13 +1,16 @@
 //check if the player needs to die from getting pushed inside a wall
+//returns whether the player was killed
 
-if (object_index==Player) if (place_meeting(x,y,CrushBlock) && distance_to_object(other.id)<4) {
-    kill_player()
-    return 1
-}
-
-with (Player) if (place_meeting(x,y,CrushBlock) && distance_to_object(other.id)<4) {
-    kill_player()
-    return 1
+if (object_index==Player) {
+    if (distance_to_object(other.id)<4) if (!place_free(x,y))  {
+        kill_player()
+        return 1
+    }
+} else {
+    with (Player) if (distance_to_object(other.id)<4) if (!place_free(x,y)) {
+        kill_player()
+        return 1
+    }
 }
 
 return 0

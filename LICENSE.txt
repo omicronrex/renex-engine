@@ -1,11 +1,11 @@
-renex engine is copyright (c) 2021 renex
+renex engine is copyright (c) 2022 renex
 
 with "it" being renex engine, "you" being, well, you, and "me" being renex
 
 what you CAN do:
 
-- you can redistribute my work under the same license or stricter
-- you can use it to make games under your own name
+- you can use it to make closed-source games if you want
+- you can release the source for your game under the same license or stricter
 - you can sell the games you make with it (provided you have an FMOD license)
 - credit is appreciated, but not required <3
 
@@ -14,3 +14,4 @@ what you CANNOT do:
 - do not claim you made this or any part of it
 - do not sell an unmodified engine or pieces of it
 - do not blame me for issues arising from your use of it
+- do not use the engine to create or promote any NFT or crypto related items

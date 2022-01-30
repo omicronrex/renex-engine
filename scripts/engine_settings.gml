@@ -108,6 +108,8 @@
     global.avoidance_stretch=false
     //block break: 0 for remastered sound effect, 1 for yuuutu engine, 2 for yosniper
     global.break_sound_effect=0
+    //pause all audio on pause
+    global.mute_on_pause=true
 
 
 //game behavior

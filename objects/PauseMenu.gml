@@ -15,7 +15,7 @@ instance_deactivate_all_safe(false)
 memspd=room_speed
 alarm[0]=room_speed
 
-sound_pause_all()
+if (global.mute_on_pause) sound_pause_all()
 
 //options
 xdraw=60

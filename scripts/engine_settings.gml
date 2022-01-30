@@ -7,6 +7,7 @@
     global.height=608
     global.scale=1.0
     global.fullscreen_cursor_visible=false
+    global.fullscreen_caption_visible=true
     global.first_room=rmDemo1
     //set to a valid room id to use a hub room system
     global.hub_room=rmHub

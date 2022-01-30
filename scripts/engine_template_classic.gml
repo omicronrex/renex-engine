@@ -39,6 +39,7 @@ global.gameover_music_pause=false
 global.gameover_music_fade=false
 global.avoidance_stretch=false
 global.break_sound_effect=2
+global.mute_on_pause=false
 
 global.esc_always_quits=true
 global.use_application_surface=false

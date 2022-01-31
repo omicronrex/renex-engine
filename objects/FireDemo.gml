@@ -20,6 +20,9 @@ time=0
 
 bg=bgFire
 
+w=background_get_width(bg)
+h=background_get_height(bg)
+
 alpha=1
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -71,9 +74,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-w=background_get_width(bg)
-h=background_get_height(bg)
-
 event_step()
 #define Other_5
 /*"/*'/**//* YYD ACTION

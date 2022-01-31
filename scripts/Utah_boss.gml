@@ -34,12 +34,13 @@ if (event="draw") {
     d3d_set_projection_ext(400,304,400/per,400,304,0,0,-1,0,90*per,800/608,max(1,400/per-512),400/per+512)
 
     //fix teapot scale
-    d3d_transform_add_scaling(scale*0.75,scale,scale*0.75)
+    d3d_transform_add_translation(0,0,55)
+    d3d_transform_add_scaling(scale*0.75,scale*0.75,scale)
 
     //adjust angle
-    d3d_transform_add_rotation_x(-sin(angle/10)*5)
+    d3d_transform_add_rotation_x(90-sin(angle/10)*5)
     d3d_transform_add_rotation_z(cos(angle/10)*5)
-    d3d_transform_add_rotation_y(-r1)
+    d3d_transform_add_rotation_y(-90-r1)
     d3d_transform_add_rotation_x(-r2)
 
     //move to position

@@ -5,6 +5,7 @@
 *.exe
 *.gm81
 stuff
+save
 extensions
 cache
 changelog.txt

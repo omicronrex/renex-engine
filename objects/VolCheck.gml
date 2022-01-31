@@ -50,7 +50,7 @@ if (h!=0) {
 
 sound_kind_volume(0,settings("sfxvol"))
 
-if (global.key_pressed[key_jump]) {
+if (global.key_pressed[key_jump] && !fade) {
     settings("volcheck",true)
     sound_play("sndDJump")
     settings("musvol",settings("sfxvol"))

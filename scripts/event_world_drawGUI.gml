@@ -14,8 +14,14 @@ if (!global.pause) {
     }
 }
 
-//draw debug overlay
-var drawX,drawY,drawAlign;
+//draw debug overlays
+
+if (global.test_run && !is_ingame()) {
+    draw_set_halign(1)
+    draw_set_font(fntFileSmall)
+    draw_text_outline(global.width/2,40,"TEST MODE",$ff)
+    draw_set_halign(0)
+}
 
 if (global.debug_overlay) {
     draw_set_color(c_black)
@@ -36,7 +42,7 @@ if (global.debug_overlay) {
     }
 
     str+=string_repeat("God mode",global.debug_god)+"#"
-        +string_repeat("Infinite jump",global.debug_jump)
+        +string_repeat("Inf jump",global.debug_jump)
 
     draw_text_outline(40,40,str,$ffff)
 }

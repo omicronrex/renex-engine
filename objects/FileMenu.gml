@@ -102,7 +102,7 @@ action_id=603
 applies_to=self
 */
 settings("lastfile",select)
-savedata_write()
+settings_write()
 
 //disable any system messages when leaving the menu
 show_message_left()

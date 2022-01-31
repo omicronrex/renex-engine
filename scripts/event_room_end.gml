@@ -20,4 +20,6 @@ frozen=false
 memcaml=-1
 memcamt=-1
 
+camera_shake(0)
+
 global.room_started=false

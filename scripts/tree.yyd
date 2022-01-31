@@ -65,6 +65,7 @@
 		|envelope_compose
 		|update_fullscreen
 		|vsync_a_bit
+		|take_screenshot
 	+avoidance
 		|avoid_bullet
 		|wait_time

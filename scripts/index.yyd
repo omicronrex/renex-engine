@@ -166,3 +166,4 @@ opt_rebind_joystick
 on_ground
 show_message_left
 show_message_right
+take_screenshot

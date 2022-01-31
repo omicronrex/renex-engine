@@ -70,22 +70,5 @@ if ((keyboard_check(vk_alt) && keyboard_check_pressed(vk_return)) || keyboard_ch
 
 //take a screenshot
 if (keyboard_check_pressed(vk_f9)) {
-    directory_create(global.shotfolder)
-    var fn,i;
-    fn=global.shotfolder+current_date_filename()+".png"
-    i=1
-    while (file_exists(fn)) {
-        i+=1
-        fn=global.shotfolder+current_date_filename()+" ("+string(i)+").png"
-    }
-    if (((global.rw!=global.width || global.rh!=global.height)) || global.use_application_surface) {
-        if (surface_exists(application_surface)) {
-            surface_save(application_surface,fn)
-        } else {
-            screen_save(fn)
-        }
-    } else {
-        screen_save(fn)
-    }
-    show_message_left(lang("screenshot"))
+    take_screenshot()
 }

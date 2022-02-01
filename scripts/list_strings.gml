@@ -35,11 +35,6 @@ add_string("filecontinue","Continue")
 add_string("fileerase","Erase Game")
 add_string("fileundo","Press Ctrl-Z to Undo")
 
-//vsync ui
-add_string("vsynctest","vSync testing")
-add_string("vsynctestfail","vSync test failed!")
-add_string("vsynctestok","vSync OK!")
-
 //joystick ui
 add_string("joyfound","New joystick found:")
 add_string("joysfound"," new joysticks found:")

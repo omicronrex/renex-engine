@@ -5,13 +5,6 @@ action_id=603
 applies_to=self
 */
 event_world_create()
-#define Alarm_0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-set_synchronization(0)
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
 lib_id=1

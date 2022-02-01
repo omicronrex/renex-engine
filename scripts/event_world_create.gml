@@ -9,8 +9,6 @@ stepcount=0
 pause_delay=0
 
 fpsa=0
-monitorspeed=0
-monitorresult=""
 
 message=0 messagetext=""
 message2=0 message2text=""

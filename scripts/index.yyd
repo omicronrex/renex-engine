@@ -53,7 +53,7 @@ get_path_speed
 update_fullscreen
 rect
 texture_reset_interpolation
-vsync_a_bit
+
 set_loop_point
 once_every
 event_world_create
@@ -156,7 +156,7 @@ list_options
 add_option
 opt_sound_volume
 opt_screen_mode
-opt_vsync
+
 opt_fullscreen_filter
 opt_interpolation
 opt_blood_amount

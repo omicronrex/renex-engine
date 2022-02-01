@@ -46,7 +46,7 @@ action_id=603
 applies_to=self
 */
 repeat 10 instance_create(Player.x+random(1),Player.y+random(1),RenBoll)
-#define Other_7
+#define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

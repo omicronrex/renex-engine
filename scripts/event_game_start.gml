@@ -104,8 +104,6 @@ global.debug_autofire=false
 //graphics setup
 envelope_init()
 display_set_gui_maximise(-1,-1)
-doVsync=!(global.dz mod 60 == 0)
-set_synchronization(settings("vsync"))
 update_fullscreen()
 instance_create(0,0,Ortho)
 for (i=room_first;i!=-1;i=room_next(i)) {

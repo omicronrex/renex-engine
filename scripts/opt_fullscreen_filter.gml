@@ -11,7 +11,6 @@ switch (argument0) {
             var h; if (global.key_pressed[key_jump]) h=1
             else h=global.key_pressed[key_right]-global.key_pressed[key_left]
             settings("filter",modwrap(settings("filter")+h,0,3))
-            vsync_a_bit()
             update_fullscreen()
         }
         if (settings("fullscreen")) OptionsGridCheck.visible=1

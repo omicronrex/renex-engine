@@ -64,7 +64,6 @@
 		|envelope_prepare
 		|envelope_compose
 		|update_fullscreen
-		|vsync_a_bit
 		|take_screenshot
 	+avoidance
 		|avoid_bullet
@@ -175,7 +174,6 @@
 	|opt_music_volume
 	|opt_sound_volume
 	|opt_screen_mode
-	|opt_vsync
 	|opt_fullscreen_filter
 	|opt_interpolation
 	|opt_blood_amount

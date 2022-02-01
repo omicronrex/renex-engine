@@ -2,8 +2,6 @@
 
 room_speed=global.game_speed
 
-vsync_a_bit()
-
 if (is_ingame()) {
     update_caption_deathtime()
 

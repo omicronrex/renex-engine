@@ -20,22 +20,6 @@ if (gameclosing) {
 
 global.infocus=window_has_focus()
 
-//vsync test
-if (monitorspeed) {
-    show_message_left(lang("vsynctest")+string_repeat(".",floor(((300-monitorspeed)/12) mod 4)))
-    monitorspeed-=1
-    if (monitorspeed<200) {
-        fpssum+=fps_real
-        if (monitorspeed<=0) {
-            if (fpssum/200<global.game_speed*0.95) {
-                settings("vsync",-1)
-                set_synchronization(0)
-                show_message_left(lang("vsynctestfail"))
-            } else show_message_left(lang("vsynctestok"))
-        }
-    }
-}
-
 if (message) message-=1
 if (message2) message2-=1
 

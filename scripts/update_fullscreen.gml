@@ -21,5 +21,3 @@ if (application_surface!=noone) surface_free(application_surface) application_su
 if (dequanto_surface!=noone) surface_free(dequanto_surface) dequanto_surface=noone
 
 dx8_resize_buffer(global.rw,global.rh)
-
-vsync_a_bit()

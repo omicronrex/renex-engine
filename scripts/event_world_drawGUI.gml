@@ -62,4 +62,7 @@ if (message2) {
     draw_set_alpha(1)
 }
 
-if(settings("fullscreen") && global.fullscreen_caption_visible && is_ingame()) {draw_set_font(fntSignpost) draw_text_outline(8,8,room_caption,$ffff)}
+if(settings("fullscreen") && !global.pause && global.fullscreen_caption_visible && is_ingame()) {
+    draw_set_font(fntSignpost)
+    draw_text_outline(8,8,room_caption,$ffff)
+}

@@ -21,6 +21,7 @@
 	|SolidItemBlock
 	|KeyParent
 	|KeyBlockParent
+	|SlopeParent
 +User Interface
 	|VolCheck
 	|TitleMenu
@@ -228,6 +229,7 @@
 	|SlopeTR
 	|SlopeBL
 	|SlopeBR
+	|SlopeWobbly
 	|JumpThrough
 	|Upform
 	|GateUp

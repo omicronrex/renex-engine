@@ -1,5 +1,5 @@
-sprite=sprSlopeTR
-visible=0
+sprite=sprSlopeWobbly
+visible=1
 solid=1
 persistent=0
 depth=0

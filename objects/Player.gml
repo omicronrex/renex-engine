@@ -448,44 +448,51 @@ action_id=603
 applies_to=self
 */
 ///slopes
-var land,rx,a;
+var land,store_y,was_on_slope,is_going_into_slope,grav_step;
 
 angle=0
+land=0
+was_on_slope=0
+is_going_into_slope=0
+grav_step=gravity
+if (gravity==0) grav_step=0.5
 
-if (vspeed*vflip>=0) {
-    rx=floor(x)
-    a=3+ceil(abs(hspeed))
-    if (global.angle_slopes) {
-        if (vflip==1) {
-            if (place_meeting(rx-a,y,SlopeBL)) angle-=45
-            if (place_meeting(rx+a,y,SlopeBR)) angle+=45
-        }
-        if (vflip==-1) {
-            if (place_meeting(rx-a,y,SlopeTL)) angle+=45
-            if (place_meeting(rx+a,y,SlopeTR)) angle-=45
-        }
-    }
-
-    land=0
-    if (hspeed>0) {
-        if (vflip==1) if (place_meeting(rx,y+hspeed+a,SlopeBL)) {y=floor(y) land=1}
-        if (vflip==-1) if (place_meeting(rx,y-hspeed-a,SlopeTL)) {y=ceil(y) land=1}
-    }
-    if (hspeed<0) {
-        if (vflip==1) if (place_meeting(rx,y-hspeed+a,SlopeBR)) {y=floor(y) land=1}
-        if (vflip==-1) if (place_meeting(rx,y+hspeed-a,SlopeTR)) {y=ceil(y) land=1}
-    }
-    if (land) {
+if (esign(vspeed+gravity,vflip)==vflip) {
+    was_on_slope=place_meeting(x,y+2*vflip,SlopeParent)
+    //optimization: short circuit
+    if (!was_on_slope) is_going_into_slope=place_meeting(x+hspeed,y+2*vflip,SlopeParent)
+    if (was_on_slope || is_going_into_slope) {
         x+=hspeed
-        move_contact_solid(180+90*vflip,ceil(abs(hspeed))+1)
+        if (place_free(x,y)) {
+            if (was_on_slope) if (place_meeting(x,y+8*vflip,Block)) {
+                //land on slope or blocks moving down
+                move_contact_solid(180+90*vflip,8*vflip)
+                //optimization: only check collision once it crosses pixel boundary
+                while (place_free(x,y+grav_step)) {store_y=round(y) do y+=grav_step until round(y)!=store_y} y-=grav_step
+                land=1
+            }
+        } else {
+            //move up out of ground when walking up slope
+            store_y=y
+            move_outside_solid(180-90*vflip,6)
+            if (!place_free(x,y)) {
+                //couldn't move out, so it's probably a wall
+                //move back down
+                y=store_y
+            } else {
+                //land on slope or blocks moving up
+                y-=grav_step
+                land=1
+            }
+        }
         x-=hspeed
-        vspeed=ceil(abs(hspeed))*vflip-gravity
-        onPlatform=true
-        walljumpboost=0
-        djump=1
-        coyoteTime=global.coyote_time
     }
-    global.test=land
+}
+
+if (land) {
+    //figure out surface angle later
+    player_land()
+    vspeed=0
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -508,36 +515,6 @@ if (!place_free(x+hspeed,y+vspeed)) {
     if (!place_free(x+hspeed,y)) {
         a=ceil(abs(hspeed))
         s=sign(hspeed)
-
-        land=0
-        if (hspeed>0) {
-            o=instance_place(x+a,y,SlopeBR)
-            if (o) {
-                repeat (a) {x+=s if (place_meeting(x,y,SlopeBR)) {y-=1 if (!place_free(x,y)) {x-=s y+=1 break}}}
-                if (vspeed>=0 && vflip==1) land=1 else a=0
-            }
-            o=instance_place(x+a,y,SlopeTR)
-            if (o) {
-                repeat (a) {x+=s if (place_meeting(x,y,SlopeTR)) {y+=1 if (!place_free(x,y)) {x-=s y-=1 break}}}
-                if (vspeed<=0 && vflip==-1) land=1 else a=0
-            }
-        }
-        if (hspeed<0) {
-            o=instance_place(x-a,y,SlopeBL)
-            if (o) {
-                repeat (a) {x+=s if (place_meeting(x,y,SlopeBL)) {y-=1 if (!place_free(x,y)) {x-=s y+=1 break}}}
-                if (vspeed>=0 && vflip==1) land=1 else a=0
-            }
-            o=instance_place(x-a,y,SlopeTL)
-            if (o) {
-                repeat (a) {x+=s if (place_meeting(x,y,SlopeTL)) {y+=1 if (!place_free(x,y)) {x-=s y-=1 break}}}
-                if (vspeed<=0 && vflip==-1) land=1 else a=0
-            }
-        }
-        if (land) {
-            if (!place_free(x,y+vspeed)) {vspeed=0 player_land()}
-        }
-
         repeat (a) {
             x+=s
             if (!place_free(x,y)) {x-=s hspeed=0 break}

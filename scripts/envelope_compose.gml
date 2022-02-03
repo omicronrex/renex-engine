@@ -35,7 +35,7 @@ if (((global.rw!=global.width || global.rh!=global.height)) || global.use_applic
         with (all) event_perform(ev_trigger,ev_draw_gui)
     }
 
-    texture_reset_interpolation()
+    texture_set_interpolation(0)
 } else {
     //draw GUI event
     d3d_set_projection_ortho(-global.GUIxoff,-global.GUIyoff,global.GUIwidth,global.GUIheight,0)
@@ -60,4 +60,4 @@ if (minalpha>0) {
 
 //cursor
 if (curalpha>0) draw_sprite_ext(sprAeroArrow,0,mousex,mousey,1,1,0,$ffffff,curalpha)
-texture_reset_interpolation()
+texture_set_interpolation(0)

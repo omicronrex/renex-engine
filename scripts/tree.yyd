@@ -83,7 +83,6 @@
 		|rect
 		|draw_sign_text
 		|draw_text_outline
-		|texture_reset_interpolation
 		|draw_sprite_hueshift
 	+GUI
 		|display_set_gui_size
@@ -175,7 +174,6 @@
 	|opt_sound_volume
 	|opt_screen_mode
 	|opt_fullscreen_filter
-	|opt_interpolation
 	|opt_blood_amount
 	|opt_left_right
 	|opt_rebind_keyboard

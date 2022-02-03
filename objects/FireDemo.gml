@@ -62,7 +62,7 @@ draw_set_blend_mode(0)
 
 dx8_surface_disengage()
 
-texture_reset_interpolation()
+texture_set_interpolation(0)
 
 if (!instance_exists(Boss)) {
     alpha-=0.01
@@ -92,4 +92,4 @@ applies_to=self
 */
 texture_set_interpolation(1)
 draw_surface_ext(s3,0,0,1,1,0,$ffffff,alpha)
-texture_reset_interpolation()
+texture_set_interpolation(0)

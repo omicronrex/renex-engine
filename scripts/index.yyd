@@ -52,7 +52,7 @@ cement
 get_path_speed
 update_fullscreen
 rect
-texture_reset_interpolation
+
 
 set_loop_point
 once_every
@@ -158,7 +158,7 @@ opt_sound_volume
 opt_screen_mode
 
 opt_fullscreen_filter
-opt_interpolation
+
 opt_blood_amount
 opt_left_right
 opt_rebind_keyboard

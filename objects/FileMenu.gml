@@ -157,9 +157,7 @@ for (i=0;i<3;i+=1) {
 }
 draw_set_halign(0)
 
-texture_set_interpolation(0)
 draw_sprite_ext(sprFileBorder,0,x+select*240,y,32,32,0,$ffffff,1)
-texture_reset_interpolation()
 draw_sprite(sprite_index,-1,dx,y+310)
 draw_sprite(sprDynamicPlatform,0,dx-17,y+319)
 

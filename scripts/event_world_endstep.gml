@@ -1,7 +1,5 @@
 var t,s,mx,my;
 
-texture_reset_interpolation()
-
 update_camera()
 
 if (!gameclosing) {

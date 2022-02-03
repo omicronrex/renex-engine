@@ -1,5 +1,13 @@
 //engine initialization
 
+show_error(
+    "We're sorry, but lite edition is now deprecated."+lf+lf+
+    "Please switch to the Standard branch to continue development."+lf+lf+
+    "We're making adjustments to compensate for lite users."
+    ,1
+)
+exit
+
 if (orderTest==2) {
     show_error(
         "Creation code order needs to be reversed for this engine to work."+lf+

@@ -91,13 +91,13 @@ if (ready) {
     var time;time=get_timer()
     draw_set_font(fntFileSmall)
     draw_set_valign(2)
-    draw_text(40,global.height-40,str)
+    draw_text(40,global.GUIheight-40,str)
 
-    j=global.height-40
+    j=global.GUIheight-40
     draw_set_color($ff)
     draw_primitive_begin(pr_linelist)
     i=0 repeat (len) {
-        k=global.width-40-len+i
+        k=global.GUIwidth-40-len+i
         draw_vertex(k,j)
         draw_vertex(k,j-cpu[i])
         i+=1
@@ -106,7 +106,7 @@ if (ready) {
     draw_set_color($ff0000)
     draw_primitive_begin(pr_linelist)
     i=0 repeat (len) {
-        k=global.width-40-len*2+i
+        k=global.GUIwidth-40-len*2+i
         draw_vertex(k,j)
         draw_vertex(k,j-fpsf[i])
         i+=1
@@ -114,8 +114,8 @@ if (ready) {
     draw_primitive_end()
 
     draw_set_color($ffff)
-    draw_text(global.width-40-len*2+10,j-10,"fps: "+string(fps_fast)+"#real: "+string(fps_real))
-    draw_text(global.width-40-len+10,j-10,"cpu: "+string(cpu_usage)+"%")
+    draw_text(global.GUIwidth-40-len*2+10,j-10,"fps: "+string(fps_fast)+"#real: "+string(fps_real))
+    draw_text(global.GUIwidth-40-len+10,j-10,"cpu: "+string(cpu_usage)+"%")
     draw_set_color($ffffff)
 
     draw_set_valign(0)

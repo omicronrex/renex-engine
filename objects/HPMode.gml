@@ -39,5 +39,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (mode==1) draw_healthbar(8,8,global.width-8,24,(hp/maxhp)*100,0,$ff00,$ff00,0,1,1)
+if (mode==1) draw_healthbar(8,8,global.GUIwidth-8,24,(hp/maxhp)*100,0,$ff00,$ff00,0,1,1)
 if (mode==2) with (Player) draw_healthbar(drawx-24,drawy-24,drawx+24,drawy-20,(other.hp/other.maxhp)*100,0,$ff00,$ff00,0,1,1)

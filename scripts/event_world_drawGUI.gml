@@ -19,7 +19,7 @@ if (!global.pause) {
 if (global.test_run && !is_ingame()) {
     draw_set_halign(1)
     draw_set_font(fntFileSmall)
-    draw_text_outline(global.width/2,40,"TEST MODE",$ff)
+    draw_text_outline(dw/2,40,"TEST MODE",$ff)
     draw_set_halign(0)
 }
 

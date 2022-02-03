@@ -37,9 +37,7 @@ if (((global.rw!=global.width || global.rh!=global.height)) || global.use_applic
 
     texture_set_interpolation(0)
 } else {
-    //draw GUI event
-    d3d_set_projection_ortho(-global.GUIxoff,-global.GUIyoff,global.GUIwidth,global.GUIheight,0)
-    with (all) event_perform(ev_trigger,ev_draw_gui)
+    event_draw_gui()
 }
 
 //minimize button

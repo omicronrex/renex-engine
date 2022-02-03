@@ -167,3 +167,4 @@ on_ground
 show_message_left
 show_message_right
 take_screenshot
+event_draw_gui

@@ -117,6 +117,7 @@
 	|event_world_endstep
 	|event_world_draw
 	|event_world_drawGUI
+	|event_draw_gui
 	|event_room_end
 	|event_game_end
 +player

@@ -333,3 +333,6 @@ Profiler
 AntiSoftlockBlock
 SlopeWobbly
 SlopeParent
+SlopeCircle
+SlopeCrescent
+SlopeBeam

@@ -225,11 +225,6 @@
 	|NiseBlock
 	|KillBlock
 	|DieOutside
-	|SlopeTL
-	|SlopeTR
-	|SlopeBL
-	|SlopeBR
-	|SlopeWobbly
 	|JumpThrough
 	|Upform
 	|GateUp
@@ -251,6 +246,15 @@
 	|Cloud
 	|DecoStar
 	|WaterSurface
++Slopes
+	|SlopeTL
+	|SlopeTR
+	|SlopeBL
+	|SlopeBR
+	|SlopeWobbly
+	|SlopeCircle
+	|SlopeCrescent
+	|SlopeBeam
 +Traps
 	|TrapStop
 	|TrapRedirect

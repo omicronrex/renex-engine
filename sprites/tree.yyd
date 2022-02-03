@@ -87,6 +87,9 @@
 	|sprSlopeTR
 	|sprSlopeBL
 	|sprSlopeBR
+	|sprSlopeQuarter
+	|sprSlopeCrescent
+	|sprSlopeBeam
 	|sprGateUp
 	|sprGateRight
 	|sprGateLeft
@@ -302,6 +305,6 @@
 	|sprGlobalItem3
 	|sprGlobalItem4
 	|sprGameClear
-+Hue Shift
++Example (safe to delete)
+	|sprSlopeWobbly
 	|sprPencils
-|sprSlopeWobbly

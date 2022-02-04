@@ -121,6 +121,7 @@
 	|sprTrapStop
 	|sprTrapRedirect
 	|sprFakeBlock
+	|sprDingBlock
 +Player
 	|sprMaskPlayer
 	|sprMaskPlayerFlip

@@ -266,6 +266,7 @@
 	|FakeBlock
 	|BreakBlock
 	|YokuBlock
+	|DingBlock
 	|CloudSetOnFire
 	|CloudBolt
 	|Bolt

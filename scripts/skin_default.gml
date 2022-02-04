@@ -48,7 +48,7 @@ if (argument0=="step") {
         image_speed=0.2
     }
 
-    sprite_angle=inch(sprite_angle,angle,9)
+    if (global.angle_slopes) sprite_angle+=angle_difference(sprite_angle,slope_angle)*0.4
 
     if (dot_hitbox) image_blend=$808080
     else image_blend=$ffffff

@@ -58,7 +58,7 @@ facing=1
 
 h=0
 
-angle=0
+slope_angle=0
 sprite_angle=0
 
 image_speed=0.2
@@ -450,7 +450,6 @@ applies_to=self
 ///slopes
 var land,store_y,was_on_slope,is_going_into_slope,grav_step;
 
-angle=0
 land=0
 was_on_slope=0
 is_going_into_slope=0
@@ -490,10 +489,21 @@ if (esign(vspeed+gravity,vflip)==vflip) {
 }
 
 if (land) {
-    //figure out surface angle later
     player_land()
     vspeed=0
-}
+    //discover surface angle using two binary search seekers
+    var ly,ry,len,fl,fr;
+    fl=0 fr=0
+    ly=y+16*vflip
+    ry=ly
+    len=8*vflip
+    repeat (4) {
+        if (collision_line(bbox_left,y,bbox_left,ly,Block,1,0)) {ly-=len fl=1} else ly+=len
+        if (collision_line(bbox_right,y,bbox_right,ry,Block,1,0)) {ry-=len fr=1} else ry+=len
+        len/=2
+    }
+    if (fl && fr) slope_angle=angle_difference(0,point_direction(bbox_left,ly,bbox_right,ry))
+} else slope_angle=0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -544,8 +554,6 @@ if (!place_free(x+hspeed,y+vspeed)) {
         hspeed=0
     }
 }
-
-if (!onPlatform) angle=0
 
 vsplatform=0
 //we subtract gravity because we added it before

@@ -250,7 +250,6 @@
 	|sprDJumpBlock
 	|sprDJumpBlockOff
 	|sprPatBall
-	|sprRenBoll
 	|sprNangTJumpParticle
 +Triggers
 	|sprTrigger1

@@ -109,13 +109,6 @@ action_id=603
 applies_to=self
 */
 event_user(0)
-#define Collision_RenBoll
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-event_user(0)
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1

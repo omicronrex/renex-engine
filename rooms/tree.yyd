@@ -4,12 +4,13 @@
 |rmOptions
 +Demo
 	|rmHub
-	|rmDemo1
-	|rmDemo2
-	|rmDemo3
-	|rmBoss1
-	|rmAvoid
-	|rmExtra
-	|rmExBoss
-	|rmClear
+	+Example (safe to delete)
+		|rmDemo1
+		|rmDemo2
+		|rmDemo3
+		|rmBoss1
+		|rmAvoid
+		|rmExtra
+		|rmExBoss
+		|rmClear
 |rmTemplate

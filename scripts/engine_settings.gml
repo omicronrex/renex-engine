@@ -8,8 +8,8 @@
     global.scale=1.0
     global.fullscreen_cursor_visible=false
     global.fullscreen_caption_visible=true
-    global.first_room=rmDemo1
-    //set to a valid room id to use a hub room system
+    global.first_room=rmHub
+    //room to return to when using WarpToHub object
     global.hub_room=rmHub
     //password for encrypting saves.
     //if you don't want a password, use "" and the save files will be unencrypted dsmaps.

@@ -1,20 +1,22 @@
 //during end step, compose the window and update the internal buffer.
 
-if (((global.rw!=global.width || global.rh!=global.height)) || global.use_application_surface) {
+if (((global.rw!=global.APPwidth || global.rh!=global.APPheight)) || global.use_application_surface) {
     dx8_make_opaque()
     d3d_set_depth(0)
-    application_surface=dx8_surface_engage(application_surface,global.width,global.height)
+    application_surface=dx8_surface_engage(application_surface,global.APPwidth,global.APPheight)
 
     /*
         this place is where you can add any post-processing effects using the application surface.
         remember to set the engine option to always use an application surface, when using this.
     */
 
-    if ((global.rw!=global.width || global.rh!=global.height) && settings("filter")==2) {
+    var filter; filter=global.APPfilter || (global.APPwidth!=global.width || global.APPheight!=global.height)
+
+    if ((global.rw!=global.APPwidth || global.rh!=global.APPheight) && settings("filter")==2) {
         //fullscreen area filter
-        dequanto_surface=dx8_surface_engage(dequanto_surface,global.width*2,global.width*2)
-        texture_set_interpolation(1)
-        draw_surface_stretched(application_surface,0,0,global.width*2,global.width*2)
+        dequanto_surface=dx8_surface_engage(dequanto_surface,global.APPwidth*2,global.APPheight*2)
+        texture_set_interpolation(filter)
+        draw_surface_stretched(application_surface,0,0,global.APPwidth*2,global.APPheight*2)
 
         //draw GUI event
         d3d_set_projection_ortho(-global.GUIxoff,-global.GUIyoff,global.GUIwidth,global.GUIheight,0)
@@ -27,7 +29,7 @@ if (((global.rw!=global.width || global.rh!=global.height)) || global.use_applic
         //regular screen filtering
         surface_reset_target()
         d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
-        texture_set_interpolation(settings("filter"))
+        texture_set_interpolation(!!settings("filter") && filter)
         draw_surface_stretched(application_surface,0,0,global.rw,global.rh)
 
         //draw GUI event

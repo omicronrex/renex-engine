@@ -168,3 +168,4 @@ show_message_left
 show_message_right
 take_screenshot
 event_draw_gui
+window_set_resolution

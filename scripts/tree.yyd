@@ -65,6 +65,7 @@
 		|envelope_compose
 		|update_fullscreen
 		|take_screenshot
+		|window_set_resolution
 	+avoidance
 		|avoid_bullet
 		|wait_time

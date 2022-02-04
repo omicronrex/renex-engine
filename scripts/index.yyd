@@ -1,6 +1,6 @@
 engine_settings
 list_music_properties
-list_avoidance_bullets
+
 list_nonstick
 settings_default
 savedata_default
@@ -29,16 +29,16 @@ input_clear
 envelope_init
 envelope_prepare
 envelope_compose
-avoid_bullet
+
 scrMakeCircle
 scrMakeShapes
-wait_time
-bullet_create
-bullet_motion
-bullet_sprite
-bullet_spread
-bullet_life
-bullet_stepcode
+
+
+
+
+
+
+
 format_time
 update_caption_deathtime
 mmf_animspeed
@@ -78,15 +78,15 @@ key_draw
 BigCherry_boss
 Utah_boss
 template_boss
-rmAvoid_avoidance
-wait_beat
-wait_verse
 
 
 
 
-wait_duration
-bullet_behavior
+
+
+
+
+
 draw_text_outline
 
 skin_default
@@ -110,7 +110,7 @@ autosave_do
 
 add_difficulty
 flip_player
-engine_template_needle
+
 engine_template_classic
 play_bg_music
 lock_controls

@@ -20,13 +20,8 @@
     global.text_color=$ffffff
 
 
-//template for needle games
-    //if you're making a needle game and need precise physics and no frills, uncomment the following line.
-    //engine_template_needle() exit
-
-
 //template for classic games
-    //if you want the classic game maker engine experience, uncomment the following line.
+    //if you just want the classic gm8 engine experience, simply uncomment the following line.
     //engine_template_classic() exit
 
 
@@ -103,9 +98,6 @@
     global.gameover_music_fade=true
     //pause on death (or after fading if fading is used)
     global.gameover_music_pause=true
-    //use 'time stretch' effect to keep avoidance songs in sync if the game lags
-    //when false, game uses pitch shifting
-    global.avoidance_stretch=false
     //block break: 0 for remastered sound effect, 1 for yuuutu engine, 2 for yosniper
     global.break_sound_effect=0
     //pause all audio on pause

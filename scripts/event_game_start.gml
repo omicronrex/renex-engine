@@ -137,8 +137,6 @@ if (!global.use_original_cherries) {
     sprite_assign(sprCherryBlack,sprCherryBlackOld)
 }
 
-list_avoidance_bullets()
-
 globalvar gizmos,gizmolist;
 gizmos=0
 gizmolist=0

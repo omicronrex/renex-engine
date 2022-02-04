@@ -7,6 +7,18 @@ arg0=use only one per water body
 */
 /*"/*'/**//* YYD ACTION
 lib_id=1
+action_id=605
+invert=0
+arg0=place it at the top left
+*/
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=605
+invert=0
+arg0=look at rmDemo3 for an example
+*/
+/*"/*'/**//* YYD ACTION
+lib_id=1
 action_id=603
 applies_to=self
 */

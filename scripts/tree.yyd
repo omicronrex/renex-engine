@@ -3,7 +3,6 @@
 	|list_strings
 	|list_options
 	|list_music_properties
-	|list_avoidance_bullets
 	|list_nonstick
 	|list_instance_activation
 	|list_gizmos
@@ -66,20 +65,6 @@
 		|update_fullscreen
 		|take_screenshot
 		|window_set_resolution
-	+avoidance
-		|avoid_bullet
-		|wait_time
-		|wait_duration
-		|wait_beat
-		|wait_verse
-		+bullets
-			|bullet_create
-			|bullet_motion
-			|bullet_sprite
-			|bullet_spread
-			|bullet_life
-			|bullet_behavior
-			|bullet_stepcode
 	+drawing
 		|rect
 		|draw_sign_text
@@ -90,7 +75,6 @@
 		|display_set_gui_maximise
 		|display_get_gui_width
 		|display_get_gui_height
-	|engine_template_needle
 	|engine_template_classic
 	|add_difficulty
 	|add_gizmo
@@ -145,7 +129,6 @@
 	+YoYoYo tools
 		|scrMakeCircle
 		|scrMakeShapes
-	|rmAvoid_avoidance
 +camera
 	|update_camera
 	|camera_default

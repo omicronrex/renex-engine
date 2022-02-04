@@ -236,8 +236,8 @@ FireDemo
 GlassShard
 TouhouDeath
 BossIntroduction
-Avoidance
-AvoidBullet
+MusicSync
+
 PlayerStart
 Block
 Platform
@@ -338,3 +338,4 @@ SlopeCrescent
 SlopeBeam
 SlopeBlock
 DingBlock
+MusicSpeedSlider

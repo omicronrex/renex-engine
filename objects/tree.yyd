@@ -163,6 +163,8 @@
 	|PatBall
 	|ExampleGizmo
 +Triggers
+	|TrapStop
+	|TrapRedirect
 	|Trigger1
 	|SwitchRed
 	|SwitchRedWL
@@ -219,9 +221,14 @@
 	|PushBlockSave
 	|LiftBlock
 	|MoveBlock
+	|YokuBlock
+	|DingBlock
 	|MiniBlock
 	|SlipBlock
 	|NiseBlock
+	|FakeBlock
+	|BreakBlock
+	|DemoBlock
 	|KillBlock
 	|DieOutside
 	|JumpThrough
@@ -239,12 +246,10 @@
 	|NekoronAir
 	|PlatformWater
 	|GuyWater
-	|DemoBlock
 	|Signpost
 	|AutoSign
 	|Cloud
 	|DecoStar
-	|WaterSurface
 +Slopes
 	|SlopeTL
 	|SlopeTR
@@ -256,22 +261,11 @@
 	|SlopeCrescent
 	|SlopeBeam
 +Traps
-	|TrapStop
-	|TrapRedirect
 	|SpikeTrapD
 	|SpikeTrapL
 	|SpikeTrapR
 	|SpikeTrapU
 	|FruitTrap
-	|FakeBlock
-	|BreakBlock
-	|YokuBlock
-	|DingBlock
-	|CloudSetOnFire
-	|CloudBolt
-	|Bolt
-	|ExampleSavingTrap
-	|ExampleRotatingTrap
 +Items
 	+Display (trophies)
 		|DisplayItem1
@@ -335,22 +329,28 @@
 		|GlassShard
 		|TouhouDeath
 	|BossWarp
-+Avoidance
-	|Avoidance
-	|AvoidBullet
 +Tools
 	|AutoSaver
+	|SkyGradient2Colors
 	|Camera
 	|OutsideWarp
 	|TimerFreeze
 	|MusicPlayer
+	|MusicSync
 	|MusicPlayerSection
 	|MusicPlayerOnce
+	|WaterSurface
 	|TextDraw
 	|WarpToHub
-	|SkyGradient2Colors
 	|HitCount
 	|HPMode
++Example (safe to delete)
+	|ExampleSavingTrap
+	|ExampleRotatingTrap
+	|CloudSetOnFire
+	|CloudBolt
+	|Bolt
+	|MusicSpeedSlider
 |PlayerStart
 |Block
 |Platform

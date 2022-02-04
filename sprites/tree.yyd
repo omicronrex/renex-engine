@@ -87,9 +87,10 @@
 	|sprSlopeTR
 	|sprSlopeBL
 	|sprSlopeBR
-	|sprSlopeQuarter
+	|sprSlopeEighth
 	|sprSlopeCrescent
 	|sprSlopeBeam
+	|sprSlopeBlock
 	|sprGateUp
 	|sprGateRight
 	|sprGateLeft

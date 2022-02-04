@@ -293,6 +293,7 @@ sprHPMode
 sprJumpCherry
 sprAntiSoftlock
 sprSlopeWobbly
-sprSlopeQuarter
+sprSlopeEighth
 sprSlopeCrescent
 sprSlopeBeam
+sprSlopeBlock

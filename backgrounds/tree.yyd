@@ -2,11 +2,11 @@
 |tile_Colors
 |tile_Rainbow
 |bgGameMakerBlock
+|bgMegaman
+|bgFortress
+|bgTree
+|bgTree2
+|bgTree3
 |bgTestGrid
 +Example (safe to delete)
 	|bgFire
-	|bgTree
-	|bgTree3
-	|bgTree2
-	|bgMegaman
-	|bgFortress

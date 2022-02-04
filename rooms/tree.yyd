@@ -2,7 +2,6 @@
 |rmTitle
 |rmMenu
 |rmOptions
-|rmTemplate
 +Demo
 	|rmHub
 	|rmDemo1
@@ -13,3 +12,4 @@
 	|rmExtra
 	|rmExBoss
 	|rmClear
+|rmTemplate

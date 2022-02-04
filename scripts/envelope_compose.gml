@@ -10,12 +10,10 @@ if (((global.rw!=global.APPwidth || global.rh!=global.APPheight)) || global.use_
         remember to set the engine option to always use an application surface, when using this.
     */
 
-    var filter; filter=global.APPfilter || (global.APPwidth!=global.width || global.APPheight!=global.height)
-
     if ((global.rw!=global.APPwidth || global.rh!=global.APPheight) && settings("filter")==2) {
         //fullscreen area filter
         dequanto_surface=dx8_surface_engage(dequanto_surface,global.APPwidth*2,global.APPheight*2)
-        texture_set_interpolation(filter)
+        texture_set_interpolation(global.APPfilter)
         draw_surface_stretched(application_surface,0,0,global.APPwidth*2,global.APPheight*2)
 
         //draw GUI event
@@ -29,7 +27,7 @@ if (((global.rw!=global.APPwidth || global.rh!=global.APPheight)) || global.use_
         //regular screen filtering
         surface_reset_target()
         d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
-        texture_set_interpolation(!!settings("filter") && filter)
+        texture_set_interpolation(!!settings("filter") && global.APPfilter)
         draw_surface_stretched(application_surface,0,0,global.rw,global.rh)
 
         //draw GUI event

@@ -8,7 +8,7 @@ if (event="create") {
 
     //teapot stuff
     model=d3d_model_create()
-    d3d_model_load(model,"data\teapot.g3d")
+    d3d_model_load(model,"data\Example (safe to delete)\teapot.g3d")
 
     lightf=0
     scale=0

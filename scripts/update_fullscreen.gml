@@ -3,7 +3,6 @@ var s,full;
 full=settings("fullscreen")
 
 if (full) {
-    window_set_cursor(cr_none)
     window_set_region_scale(-1,1)
     s=min(global.dw/global.width,global.dh/global.height)
     global.rw=round(global.width*s)

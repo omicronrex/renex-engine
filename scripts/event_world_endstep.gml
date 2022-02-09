@@ -33,10 +33,9 @@ if (mouse_check_button_pressed(mb_left)) {
 if (settings("fullscreen")) {
     if (mousex!=ox || mousey!=oy || global.fullscreen_cursor_visible) curalpha=3
     else curalpha=max(minalpha,curalpha-0.05*dt)
+    if (curalpha>0) window_set_cursor(cr_default)
+    else window_set_cursor(cr_none)
 } else curalpha=1
-
-if (curalpha>0) window_set_cursor(cr_default)
-else window_set_cursor(cr_none)
 
 if (mousex>=global.width-135 && mousey<25 && mousex<global.width && mousey>=0) minhover=ceil((global.width-mousex)/45)
 else minhover=0

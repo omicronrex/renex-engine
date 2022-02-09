@@ -153,6 +153,7 @@
 	|play_bg_music
 	|sound_play_slomo
 	|set_loop_point
+	|sound_play_option
 +game options
 	|opt_template
 	|opt_music_volume

@@ -7,7 +7,7 @@ switch (argument0) {
     case opt_step:{
         if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {
             //option ticked/changed
-            sound_play("sndDJump")
+            sound_play_option("sndDJump")
             var h; if (global.key_pressed[key_jump]) h=1
             else h=global.key_pressed[key_right]-global.key_pressed[key_left]
             settings("l+r behavior",modwrap(settings("l+r behavior")+h,0,5))

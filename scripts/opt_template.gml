@@ -13,7 +13,7 @@ switch (argument0) {
     case opt_step:{
         if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {
             //option ticked/changed
-            sound_play("sndDJump")
+            sound_play_option("sndDJump")
         }
         if (global.input_h!=0) {
             //constant left/right input

@@ -10,7 +10,7 @@ switch (argument0) {
             var h; if (global.key_pressed[key_jump]) h=1
             else h=global.key_pressed[key_right]-global.key_pressed[key_left]
             sound_stop("sndDeath")
-            sound_play("sndDeath")
+            sound_play_option("sndDeath")
             settings("gore",modwrap(settings("gore")+h,0,4))
             dead=1
             instance_destroy_id(BloodEmitter)

@@ -21,7 +21,7 @@ switch (argument0) {
         if (shoottimer<0) {
             shoottimer=30/dt
             instance_create_moving(xdraw-18,ycursor-2,Bullet,16*dt,0)
-            sound_play("sndShoot")
+            sound_play_option("sndShoot")
         }
     }break
     case opt_text: {

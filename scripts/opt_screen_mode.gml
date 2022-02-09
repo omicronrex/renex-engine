@@ -6,7 +6,7 @@ switch (argument0) {
     }break
     case opt_step:{
         if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {
-            sound_play("sndDJump")
+            sound_play_option("sndDJump")
             settings("fullscreen",!settings("fullscreen"))
             update_fullscreen()
         }

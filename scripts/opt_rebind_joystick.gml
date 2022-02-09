@@ -8,7 +8,7 @@ switch (argument0) {
         if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {
             //option ticked/changed
             if (joystick_count()) {
-                sound_play("sndDJump")
+                sound_play_option("sndDJump")
                 input_clear()
                 (instance_create(x,y,JoystickMenu)).mempos=sel
                 instance_destroy()

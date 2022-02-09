@@ -132,7 +132,9 @@ draw_clear_alpha(0,1)
 
 //fix weird alpha on nvidia
 dx8_set_alphablend(false)
+texture_set_interpolation(global.APPfilter)
 draw_background_stretched_ext(bg,0,0,pausew,pauseh,$707070,1)
+texture_set_interpolation(0)
 dx8_set_alphablend(true)
 
 d3d_set_projection_ortho(0,0,global.width,global.height,0)

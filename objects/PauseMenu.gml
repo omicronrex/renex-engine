@@ -5,9 +5,13 @@ action_id=603
 applies_to=self
 */
 if ((((global.rw!=global.width || global.rh!=global.height) && settings("filter")) || global.use_application_surface) && surface_exists(application_surface)) {
-    bg=background_create_from_surface(application_surface,0,0,global.width,global.height,0,0)
+    pausew=global.width
+    pauseh=global.height
+    bg=background_create_from_surface(application_surface,0,0,pausew,pauseh,0,0)
 } else {
-    bg=background_create_from_screen(0,0,global.width,global.height,0,0)
+    pausew=global.rw
+    pauseh=global.rh
+    bg=background_create_from_screen(0,0,pausew,pauseh,0,0)
 }
 
 global.pause=true
@@ -123,13 +127,15 @@ applies_to=self
 
 var t,timeText;
 
-d3d_set_projection_ortho(0,0,global.width,global.height,0)
+d3d_set_projection_ortho(0,0,pausew,pauseh,0)
 draw_clear_alpha(0,1)
 
 //fix weird alpha on nvidia
 dx8_set_alphablend(false)
 draw_background_ext(bg,0,0,1,1,0,$707070,1)
 dx8_set_alphablend(true)
+
+d3d_set_projection_ortho(0,0,global.width,global.height,0)
 
 draw_set_font(fntFileBig)
 draw_text(40,36,lang("pausemenu"));

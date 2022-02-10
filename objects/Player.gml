@@ -628,7 +628,6 @@ applies_to=self
 if (key_pressed[key_jump]) if (place_meeting(x,y+1*vflip,NekoronAir) && !onPlatform) {
     vspeed=-jump2*vflip
     repeat (choose(1,2,3)) sound_play_slomo("sndDJump")
-    djump=false
     image_index=0
 }
 /*"/*'/**//* YYD ACTION

@@ -1,5 +1,5 @@
 sprite=sprSlopeCrescent
-visible=1
+visible=0
 solid=1
 persistent=0
 depth=0

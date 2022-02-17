@@ -16,7 +16,7 @@ message2=0 message2text=""
 minalpha=0
 minclick=0
 
-if (windows_version()==5) {
+if (windows_version==5) {
     mincolor1=$e55500
     mincolor2=$ffffff
 } else {

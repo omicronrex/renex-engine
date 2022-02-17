@@ -551,7 +551,8 @@ if (!place_free(x+hspeed,y+vspeed)) {
         }
     }
     if (!place_free(x+hspeed,y+vspeed)) {
-        hspeed=0
+        if (onPlatform) vspeed=0
+        else hspeed=0
     }
 }
 

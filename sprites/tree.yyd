@@ -23,7 +23,6 @@
 	|sprPlayerStart
 	|sprFirePart
 	|sprMaskCircle
-	|sprAvoidance
 	|sprFraps
 	|sprAutoSaver
 	|sprAntiSoftlock
@@ -181,8 +180,6 @@
 	|sprMiniSpikeLeft
 	|sprMiniSpikeRight
 	|sprMiniSpikeDown
-	|sprBolt
-	|sprPiston
 +Gimmicks
 	|sprGravFlip
 	|sprGravNormal
@@ -306,5 +303,7 @@
 	|sprGlobalItem4
 	|sprGameClear
 +Example (safe to delete)
+	|sprBolt
+	|sprPiston
 	|sprSlopeWobbly
 	|sprPencils

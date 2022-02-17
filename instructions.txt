@@ -1,0 +1,93 @@
+--------------------------------------------------------------------------------
+
+    RENEX ENGINE
+    ============
+    version 1.4.0
+    17 feb 2022
+  
+  Made by renex with vast contributions from
+  the following people at the time of release:
+
+  - Floogle
+  - Starz0r
+  - roaming97
+  - Verve
+  - Duncan
+
+
+--------------------------------------------------------------------------------
+
+  FOREWORD
+  --------
+   ___
+    |
+   _|_ originally created this engine out of a sense of preservation. GM8-based
+  engines were all but obsolete when I arrived, and making Guy Remastered was a
+  painful process where we refurbished a 9-year-old engine. I wasn't satisfied
+  with the state of Studio engines either, and greatly due to Studio's problems,
+  they were missing that simplicity of opening the source and getting to work in
+  a matter of seconds.
+
+    And so, using Guy Remastered as a base, I set off to create an engine that
+  would satisfy my own standards for what an engine should aim to do for you.
+  Not as much as to throw the maker out the window, but enough so that you don't
+  need to spend so much time just fiddling with internals to get things to
+  cooperate. Making a game should be a creative process, not a laborious one.
+  
+    I dedicate this engine to my good friend Natsu, who's been running his game
+  ideas through me since we met in 2012, and my good friend Floogle, who drives
+  me to complete great things. Great times were had and will continue to be.
+  
+
+--------------------------------------------------------------------------------
+
+  SOURCE
+  ------
+
+  You can find the most recent engine source and updates here:
+
+  - https://github.com/omicronrex/renex-engine
+
+  Feel free to contribute any fixes or new features! I'm also hosting a
+  Discord server where you can get help if you run into issues:
+
+  - https://discord.gg/aWh9rFDHDA
+
+
+--------------------------------------------------------------------------------
+
+  Game Maker 8.2?
+  ---------------
+
+  We highly recommend using GM 8.2 for developing games with this engine.
+  You can find 8.2 and related resources in the gm82dev server:
+
+  - https://discord.gg/b4QxacKumN
+
+  However, it's still possible to use it with regular Game Maker 8.1 as well.
+
+
+--------------------------------------------------------------------------------
+
+  Using Game Maker 8.1
+  --------------------
+  
+  First, place the included files in the same folder where 8.1's
+  Game_Maker.exe file is:
+  
+  - winspool.drv
+  - rundata
+
+  Next, install the following extensions from the extension folder:
+
+  - Game Maker 8.2 Core
+  - Game Maker 8.2 DirectX8
+  - Game Maker 8.2 Joystick
+  - Game Maker 8.2 Network
+  - Game Maker 8.2 Sound
+
+  The engine should load and run properly with those changes. If there's an
+  error about creation code order, make sure "Software vertex processing" is
+  enabled in Global Game Settings.
+
+--------------------------------------------------------------------------------

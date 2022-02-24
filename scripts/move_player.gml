@@ -20,6 +20,8 @@ with (Player) {
         newx+=dx newy+=dy
         oldbowx+=dx oldbowy+=dy
         newbowx+=dx newbowy+=dy
+        drawx+=dx drawy+=dy
+        bowx+=dx bowy+=dy
         x+=dx y+=dy
         return 1
     }

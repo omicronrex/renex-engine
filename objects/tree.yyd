@@ -333,6 +333,7 @@
 	|AutoSaver
 	|SkyGradient2Colors
 	|Camera
+	|CameraFull
 	|OutsideWarp
 	|TimerFreeze
 	|MusicPlayer

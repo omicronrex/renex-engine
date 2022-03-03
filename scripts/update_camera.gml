@@ -69,6 +69,13 @@ if (is_ingame() && !global.pause) {
         camera_shaketime-=1
     }
 
+    //if the zoom factor is an integer, we round the view coords
+    //to appease the nvidia texture fetcher gods
+    if (frac(1/f)==0) {
+        proj_x=round(proj_x)
+        proj_y=round(proj_y)
+    }
+
     view_xview=proj_x
     view_yview=proj_y
     view_wview=global.width*f

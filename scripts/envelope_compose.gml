@@ -15,27 +15,22 @@ if (((global.rw!=global.APPwidth || global.rh!=global.APPheight)) || global.use_
         dequanto_surface=dx8_surface_engage(dequanto_surface,global.APPwidth*2,global.APPheight*2)
         texture_set_interpolation(global.APPfilter)
         draw_surface_stretched(application_surface,0,0,global.APPwidth*2,global.APPheight*2)
-
-        //draw GUI event
-        d3d_set_projection_ortho(-global.GUIxoff,-global.GUIyoff,global.GUIwidth,global.GUIheight,0)
-        with (all) event_perform(ev_trigger,ev_draw_gui)
-
+        texture_set_interpolation(0)
+        event_draw_gui()
         surface_reset_target()
         d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
+        texture_set_interpolation(1)
         draw_surface_stretched(dequanto_surface,0,0,global.rw,global.rh)
+        texture_set_interpolation(0)
     } else {
         //regular screen filtering
         surface_reset_target()
         d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
         texture_set_interpolation(!!settings("filter") && global.APPfilter)
         draw_surface_stretched(application_surface,0,0,global.rw,global.rh)
-
-        //draw GUI event
-        d3d_set_projection_ortho(-global.GUIxoff,-global.GUIyoff,global.GUIwidth,global.GUIheight,0)
-        with (all) event_perform(ev_trigger,ev_draw_gui)
+        texture_set_interpolation(0)
+        event_draw_gui()
     }
-
-    texture_set_interpolation(0)
 } else {
     event_draw_gui()
 }

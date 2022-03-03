@@ -11,4 +11,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+//reset the background offset
+d3d_transform_set_identity()
 camera_apply()

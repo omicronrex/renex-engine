@@ -65,6 +65,7 @@
 		|update_fullscreen
 		|take_screenshot
 		|window_set_resolution
+		|fix_background_offset
 	+drawing
 		|rect
 		|draw_sign_text

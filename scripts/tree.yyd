@@ -165,3 +165,5 @@
 	|opt_left_right
 	|opt_rebind_keyboard
 	|opt_rebind_joystick
++bonus
+	|draw_cherry

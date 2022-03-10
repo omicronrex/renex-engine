@@ -77,7 +77,7 @@
     global.angle_slopes=true
     //time in frames to allow single jumping after leaving a surface
     //turn this off for a precision needle game
-    global.coyote_time=1
+    global.coyote_time=0
     //time in frames to allow jumping when the button is pressed too early in the air
     //makes 4.5s easier but does not remove valign lottery
     global.jump_buffering=1

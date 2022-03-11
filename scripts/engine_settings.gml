@@ -80,7 +80,7 @@
     global.coyote_time=0
     //time in frames to allow jumping when the button is pressed too early in the air
     //makes 4.5s easier but does not remove valign lottery
-    global.jump_buffering=1
+    global.jump_buffering=0
     //traditional platforming momentum system
     //player behaves more like i.e. mario
     //you can find more settings in player's create

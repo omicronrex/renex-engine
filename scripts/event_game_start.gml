@@ -105,6 +105,7 @@ global.debug_autofire=false
 envelope_init()
 display_set_gui_maximise(-1,-1)
 update_fullscreen()
+global.caption_opacity=1
 instance_create(0,0,Ortho)
 for (i=room_first;i!=-1;i=room_next(i)) {
     room_set_view_enabled(i,1)

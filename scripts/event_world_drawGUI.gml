@@ -63,6 +63,14 @@ if (message2) {
 }
 
 if(settings("fullscreen") && !global.pause && global.fullscreen_caption_visible && is_ingame()) {
+    if(global.fullscreen_caption_fade&&instance_exists(Player)) {
+        if(abs(Player.y-view_yview)<global.caption_fade_margin)
+            global.caption_opacity=inch(global.caption_opacity,global.caption_min_alpha,(1/8)*dt)
+        else
+            global.caption_opacity=inch(global.caption_opacity,1,(1/8)*dt)
+        draw_set_alpha(global.caption_opacity)
+    }
     draw_set_font(fntSignpost)
     draw_text_outline(8,8,room_caption,$ffff)
+    draw_set_alpha(1)
 }

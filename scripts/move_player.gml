@@ -16,13 +16,22 @@ with (Player) {
     }
     else a=1
     if (a) {
-        oldx+=dx oldy+=dy
-        newx+=dx newy+=dy
-        oldbowx+=dx oldbowy+=dy
-        newbowx+=dx newbowy+=dy
-        drawx+=dx drawy+=dy
-        bowx+=dx bowy+=dy
-        x+=dx y+=dy
+        if (frozen) {
+            //if the player isn't simulating, just move directly to position
+            x=argument0
+            y=argument1
+            oldx=x oldy=y
+            newx=x newy=y
+            oldbowx=x oldbowy=y
+            newbowx=x newbowy=y
+        } else {
+            //move by delta to keep animations smooth
+            oldx+=dx oldy+=dy
+            newx+=dx newy+=dy
+            oldbowx+=dx oldbowy+=dy
+            newbowx+=dx newbowy+=dy
+            x+=dx y+=dy
+        }
         return 1
     }
 }

@@ -43,9 +43,9 @@
     global.camera_smoothing=true
     //camera will switch screens smoothly
     global.camera_easing=true
-    //deactivate margin for rooms
+    //deactivate instances outside of the view
     global.instance_deactivation=true
-    //default dimensions are a single screens, with 20 pixels of margin.
+    //default dimensions are single screens, with 20 pixels of margin.
     //you can, for example, set this to 3 and 3 for a 3x3 active game area.
     global.instance_activate_screens_w=1
     global.instance_activate_screens_h=1

@@ -2,6 +2,15 @@ var t,s,mx,my;
 
 update_camera()
 
+activation_timer+=1
+if (camera_l!=memcaml || camera_t!=memcamt || activation_timer>=room_speed*0.5) {
+    //update activation on camera movement
+    activation_timer=0
+    update_activation()
+}
+memcaml=camera_l
+memcamt=camera_t
+
 if (!gameclosing) {
     //frame skip if game speed is much larger than screen refresh rate
     t=get_timer()

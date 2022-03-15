@@ -20,6 +20,7 @@ if (is_ingame()) {
 }
 
 window_set_caption(room_caption)
+global.caption_opacity=1
 
 load_persistent_objects()
 

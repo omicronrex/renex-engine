@@ -140,6 +140,7 @@
 	|camera_set_raw
 	|camera_shake
 	|camera_apply
+	|camera_reinit
 +skins
 	|change_skin
 	|skin_default

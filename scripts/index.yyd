@@ -172,3 +172,4 @@ window_set_resolution
 sound_play_option
 fix_background_offset
 draw_cherry
+camera_reinit

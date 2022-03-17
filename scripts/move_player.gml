@@ -24,6 +24,7 @@ with (Player) {
             newx=x newy=y
             oldbowx=x oldbowy=y
             newbowx=x newbowy=y
+            drawx=x drawy=y
         } else {
             //move by delta to keep animations smooth
             oldx+=dx oldy+=dy
@@ -31,6 +32,7 @@ with (Player) {
             oldbowx+=dx oldbowy+=dy
             newbowx+=dx newbowy+=dy
             x+=dx y+=dy
+            drawx+=dx drawy+=dy
         }
         return 1
     }

@@ -55,6 +55,7 @@ sound_add_directory("data\sounds\",".wav",0,1)
 
 //streamed sfx (compressed, multi instance)
 sound_add_directory("data\sounds\",".ogg",3,1)
+sound_add_directory("data\sounds\",".mp3",3,1)
 
 //music (compressed,streamed)
 sound_add_directory("data\music\",".ogg",1,1)

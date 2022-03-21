@@ -28,7 +28,7 @@ if (argument0=="step") {
             sprite_index=sprPlayerJump
             image_speed=0
             image_index+=0.5
-            if (!global.use_original_animations) image_index=max(2,image_index)
+            if (!settings("anim")) image_index=max(2,image_index)
             if (image_index>=4) image_index-=2
         }
         if (vspeed*vflip>0.05) {
@@ -36,7 +36,7 @@ if (argument0=="step") {
             image_speed=0.5
         }
     } else if (input_h!=0) {
-        if (global.use_original_animations) {
+        if (settings("anim")) {
             sprite_index=sprPlayerRunning
             image_speed=mmf_animspeed(70,80)
         } else {

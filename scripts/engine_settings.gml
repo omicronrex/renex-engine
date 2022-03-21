@@ -142,8 +142,6 @@
 //bonus / funny stuff
     //original iwbtg player mask
     global.use_original_mask=false
-    //original iwbtg walking and jump animations
-    global.use_original_animations=true
     //original iwbtg cherry aligns
     global.use_original_cherries=false
     //original iwbtg sound balance

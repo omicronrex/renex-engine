@@ -7,5 +7,6 @@ settings("l+r behavior",lr_last)
 
 settings("gore",2)
 settings("filter",1)
+settings("anim",1)
 
 input_default()

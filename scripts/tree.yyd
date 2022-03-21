@@ -163,6 +163,7 @@
 	|opt_screen_mode
 	|opt_fullscreen_filter
 	|opt_blood_amount
+	|opt_animation
 	|opt_left_right
 	|opt_rebind_keyboard
 	|opt_rebind_joystick

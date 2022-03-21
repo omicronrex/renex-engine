@@ -173,3 +173,4 @@ sound_play_option
 fix_background_offset
 draw_cherry
 camera_reinit
+opt_animation

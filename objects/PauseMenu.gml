@@ -7,7 +7,7 @@ applies_to=self
 if ((((global.rw!=global.width || global.rh!=global.height) && settings("filter")) || global.use_application_surface) && surface_exists(application_surface)) {
     pausew=global.width
     pauseh=global.height
-    bg=background_create_from_surface(application_surface,0,0,pausew,pauseh,0,0)
+    bg=background_create_from_surface(application_surface,0,0,global.APPwidth,global.APPheight,0,0)
 } else {
     pausew=global.rw
     pauseh=global.rh

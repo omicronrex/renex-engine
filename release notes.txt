@@ -1,0 +1,200 @@
+renex engine v1.4.0 build 17 feb 2022
+
+Another very large update that brings stability fixes and some new features.
+
+New features:
+
+- added ding block
+- completely rewritten slope engine and more useful slope shapes
+- options menu has been completely rewritten to be easily modifiable
+- options have also been added to the pause menu
+- added a code profiler for performance testing
+- added new fullscreen room caption from catch the clown
+- better skin and weapon changing systems
+- added a player on_ground() helper for scripting
+- improved reliability of the input manager
+- improved joystick input manager to allow 0 frame taps
+- added helper scripts to display those yellow system messages
+- added anti-softlock blocks from guy remaster
+- new Trigger event system for traps
+- new option to pause all sound when the game is paused
+- updated to latest extensions and added warning about outdated extensions
+
+Bugs fixed:
+
+- fixed weird crash when exiting out of the menu during first run
+- disable power save lol
+- correct music speed when leaving rooms w/ slomo
+- fix projection issue in PauseMenu
+- fix projection when preparing envelope
+- fixed rare crash regarding the current music instance
+- clear screen warp should account for no hub room
+- actually execute player room start on save start
+- fixed some bullet collision bugs
+- fix some bizarre input issues
+- fix weird deactivation issues after unpausing
+- fix jump block, add jump cherry
+- fix double inputs & drop key-repeat presses
+- fix interpolation issues
+- make sure skin and weapon are reset between files
+- save points properly draw with blend color and alpha value
+- fix language mistake in VolCheck
+- always activate teleporter objects
+- always activate hpmode & hitcount tools
+- fix platforms with fract hspeed carrying player incorrectly
+- make pushblocks behave better near conveyors
+- make gibs stop moving through terrain
+- can't confirm VolCheck more than once
+- camera_shake fix from catch the clown
+- fixes to gui scaling, positioning and projections
+- fix mistake in appsurf scaling & add res option
+- fix instance activation if deactivation disabled
+- fix pause menu proj when fullscreen filter is off
+- make screenshots capture gui layer
+
+Minor changes:
+
+- added indication of test mode
+- clarified a lot of code comments throughout the codebase
+- removed unused assets
+- added guy remastered bow bobbing to default medium bow
+- ask for confirmation when resetting keyboard controls
+- don't use background0 for the options grid check
+- disable any system messages when leaving the menu
+- reworded some default options
+- use correct window button colors in windows xp
+- remove CrushBlock and add engine crush options
+- remove unicode from filenames
+- lower resolution teapot assets to save space
+- remove vsync option as it's not needed with builtin vpatch
+- removed RenBoll because it's incompatible with new slope engine
+- use sytem cursor instead of aero sprite
+- tweaked nekoron water to be more accurate
+
+--------------------------------------------------------------------------------
+renex engine v1.3.0 build 15 nov 2021
+
+This update fixes a lot of problems found by the community and adds a bunch of requested features.
+
+Just like last time, the Lite edition contains less builtin objects and examples.
+
+New features
+
+- added Draw GUI event system
+- entirely new joystick system that allows for much better options
+- added lock_controls() and unlock_controls() for simple cutscenes
+- added TimerFreeze tool to stop counting ingame time in a room
+- new trigger lock system to allow for easy backtrack traps
+- added system to allow maker to replace engine text more easily
+- added MusicPlayerOnce tool that doesn't loop the music
+- better jump refresher behavior + options for it
+- added custom window title buttons to minimize, maximize and close the game
+- new csv game statistics system to help makers balance their games
+- added emulation of studio 9999 vdiet
+- gizmo system to allow using the trigger system with non-killers
+- added new SkyGradient2Colors tool
+- improved screenshake effect & new script camera_set_raw() for view-like options
+- added screenshot functionality
+- added item display trophies
+- added new tools HitCount and HPMode
+- added volume check screen on first game startup
+- added music volume to pause menu
+
+Bugfixes
+
+- updated extensions to fix problems and improve engine reliability
+- fixed collision masks and depth ordering of several objects
+- new object to kill player when exiting the room area from a specific location
+- fix to properly write modified key config to disk
+- player bullets do not deactivate outside the view
+- fix certain crashes when mishandling menus
+- improved collision detection and fixed several edge cases
+- fixed interaction between slopes and momentum physics
+- fixed surface mixup bug when the system enters sleep mode
+- fixed glitchy bullet sprite on specific aligns
+- fixed incorrect player sprites on first frame after a restart
+- fullscreen scaling now properly applies to foreground layers
+- fixed a very specific sequence of menu inputs which could cause the engine to erase a save file
+
+Minor changes
+
+- the default pause key is now P due to public demand
+- lots of code cleanup and new documentation for engine internals
+- added better item behavior for when item autosave is off
+- optimized some costly objects such as water surface and text draw
+- better window caption text
+- default engine menus now adapt to custom game sizes
+- move game saves to its own folder + maker option to use appdata
+- reduced camera jitter when changing zoom values slowly
+- certain game options can now properly combine
+- lots of small quality of life changes to improve player experience
+- improve feel of joysticks when playing with analog sticks
+- minor improvements to sound system
+- minor updates to some builtin engine objects
+- default platforms now elegantly scale their sprites
+- improvements to debug tools such as godmode and hitboxes
+
+--------------------------------------------------------------------------------
+renex engine v1.2.1 build 2 sep 2021
+
+Lite edition is now available. Changes in Lite edition:
+
+- no unnecessary gimmick objects and code
+- less included data files
+- minimal demo assets
+
+Other fixes:
+
+- improvements to background music handling
+
+--------------------------------------------------------------------------------
+renex engine v1.2.0 build 31 aug 2021
+
+- moved blocks behind vines for easier room editing
+- more precise volume control
+- fix liftblock and platform snapping problems
+- fix frame perfect sprite facing issue with fast vines
+- fixed two frame perfect issues with onfire gimmick
+- fixed weird interactions between coyote time and vvvvvv
+- fixed bugs when leaving rooms while paused
+- fixed weird interaction between conveyors and momentum system
+- adjusted behavior of signpost and added an automatic variant
+- reimplemented pastel water gimmick to work better with instance deactivation
+- added outside room warp object
+- fixed music bug when quickly warping between rooms
+- handle gracefully when save backups are also corrupted
+- moved music and sounds to separate directories
+- added missing triple jump particle effect
+
+--------------------------------------------------------------------------------
+renex engine v1.1.0 build 15 jul 2021
+
+- added engine templates for needle and classic engine
+- fix crash with flip saves
+- fix layering of some effects
+- added classic game over music option
+- fix debug crash when breakblocks don't have a tile
+- fix unwanted cancels during gravity spin animation
+- added gravity coins
+- fix sprite origins
+- fix multiple instance deactivation bugs
+- swap keys if you try to assign them to multiple things
+- avoidance start time parameter
+- fix some collision bugs with vines and toggleblocks
+- added patballs and renbolls
+- fixed bugs related to shootkid
+- simpler difficulty system
+- many small fixes and improvements
+
+--------------------------------------------------------------------------------
+renex engine v1.0.1 build 12 jul 2021
+
+- fixed weird transparency in pause menu
+- update to gm82snd v1.1.7 S fixes unicode paths
+
+--------------------------------------------------------------------------------
+renex engine v1.0.0 build 11 jul 2021
+
+- initial release
+
+--------------------------------------------------------------------------------

@@ -20,11 +20,12 @@ action_id=603
 applies_to=self
 */
 if (diff=-1) {
+    savedata_select(settings("lastfile"))
     savedata_load()
 } else {
     difficulty=diff
+    savedata_newgame(settings("lastfile"),difficulty)
     instance_destroy_id(Player)
-    autosave_asap()
     room_goto(global.first_room)
 }
 #define Draw_0

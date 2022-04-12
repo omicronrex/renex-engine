@@ -1,15 +1,17 @@
 //most engine hotkeys are handled here
 
-//die key
-if (global.key_pressed[key_die]) {
-    kill_player()
-}
+if (room!=global.difficulty_room) {
+    //die key
+    if (global.key_pressed[key_die]) {
+        kill_player()
+    }
 
-//restart
-if (global.key_pressed[key_restart]) {
-    if (is_ingame() && !global.pause) {
-        sound_kind_stop(0)
-        savedata_load()
+    //restart
+    if (global.key_pressed[key_restart]) {
+        if (is_ingame() && !global.pause) {
+            sound_kind_stop(0)
+            savedata_load()
+        }
     }
 }
 

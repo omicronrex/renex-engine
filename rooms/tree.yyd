@@ -3,6 +3,7 @@
 |rmMenu
 |rmOptions
 +Demo
+	|rmDifficulty
 	|rmHub
 	+Example (safe to delete)
 		|rmDemo1

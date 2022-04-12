@@ -36,6 +36,8 @@ if (difficulty!=3 || argument0) with (Player) {
 
     collect_items()
 
+    savedata("diff",difficulty)
+
     savedata("x",x)
     savedata("y",y)
     savedata("width",image_xscale)

@@ -1,4 +1,4 @@
-if (global.show_deathtime) {
+if (global.show_deathtime && room!=global.difficulty_room) {
     room_caption=strong(
         global.game_title,
         " - "+global.name_difficulties[difficulty],
@@ -7,4 +7,4 @@ if (global.show_deathtime) {
         pick(global.lastjoyname!="",""," - "+global.lastjoyname),
         pick(savedata("clear"),""," - "+lang("fileclear"))
     )
-}
+} else room_caption=global.game_title

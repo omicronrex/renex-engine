@@ -34,6 +34,7 @@
 	|DefaultMenuBorderMaker
 	|RenexStarParticles
 	|TitleParticle
+	|DifficultyRoomSpike
 +System
 	|BloodEmitter
 	|GibParticle
@@ -334,6 +335,7 @@
 		|TouhouDeath
 	|BossWarp
 +Tools
+	|DifficultyWarp
 	|AutoSaver
 	|SkyGradient2Colors
 	|Camera

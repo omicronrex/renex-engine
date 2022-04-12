@@ -45,10 +45,15 @@ if (state="") {
         sound_play("sndDJump")
         savedata_select(select)
         asksel=0
-        if (savedata("saved")) {
-            state="continue"
+        if (global.difficulty_room!=noone) {
+            difficulty=3
+            room_goto(global.difficulty_room)
         } else {
-            state="new file"
+            if (savedata("saved")) {
+                state="continue"
+            } else {
+                state="new file"
+            }
         }
         input_clear()
     }

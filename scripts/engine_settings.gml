@@ -14,6 +14,9 @@
     global.caption_min_alpha=0.1
     //how close the player has to be to the room caption in order for it to start fading
     global.caption_fade_margin=64
+    //set this to a room with difficulty warps in order to use a difficulty selection room
+    global.difficulty_room=noone//rmDifficulty
+    //first room that's actually part of the game
     global.first_room=rmHub
     //room to return to when using WarpToHub object
     global.hub_room=rmHub

@@ -38,3 +38,16 @@ if (global.optimize_solids) {
 camera_default()
 
 key_clear()
+
+//initialize difficulty selector warps
+var count;count=-1
+with (DifficultyWarp) {
+    if (count<global.num_difficulties) {
+        if (count=-1) name=lang("filecontinue")
+        else name=global.name_difficulties[count]
+        diff=count
+        count+=1
+    } else {
+        instance_destroy()
+    }
+}

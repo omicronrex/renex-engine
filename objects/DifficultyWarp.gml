@@ -24,6 +24,7 @@ if (diff=-1) {
 } else {
     difficulty=diff
     instance_destroy_id(Player)
+    autosave_asap()
     room_goto(global.first_room)
 }
 #define Draw_0

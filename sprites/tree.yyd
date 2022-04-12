@@ -185,6 +185,10 @@
 	|sprLeekLeft
 	|sprLeekRight
 	|sprLeekDown
+	|sprSpikeDownCrimson
+	|sprSpikeLeftCrimson
+	|sprSpikeRightCrimson
+	|sprSpikeUpCrimson
 +Gimmicks
 	|sprGravFlip
 	|sprGravNormal

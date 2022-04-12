@@ -303,3 +303,7 @@ sprLeekUp
 sprLeekLeft
 sprLeekRight
 sprLeekDown
+sprSpikeUpCrimson
+sprSpikeLeftCrimson
+sprSpikeRightCrimson
+sprSpikeDownCrimson

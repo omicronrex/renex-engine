@@ -349,6 +349,7 @@
 	|WarpToHub
 	|HitCount
 	|HPMode
+	|Skinner
 +Example (safe to delete)
 	|ExampleSavingTrap
 	|ExampleRotatingTrap

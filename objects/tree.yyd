@@ -64,6 +64,10 @@
 	|MiniSpikeRight
 	|MiniSpikeLeft
 	|MiniSpikeUp
+	|LeekUp
+	|LeekRight
+	|LeekLeft
+	|LeekDown
 +Gimmicks
 	+White Dot
 		|WhiteDotEnable

@@ -299,3 +299,7 @@ sprSlopeBeam
 sprSlopeBlock
 sprDingBlock
 sprCameraFull
+sprLeekUp
+sprLeekLeft
+sprLeekRight
+sprLeekDown

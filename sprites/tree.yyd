@@ -181,6 +181,10 @@
 	|sprMiniSpikeLeft
 	|sprMiniSpikeRight
 	|sprMiniSpikeDown
+	|sprLeekUp
+	|sprLeekLeft
+	|sprLeekRight
+	|sprLeekDown
 +Gimmicks
 	|sprGravFlip
 	|sprGravNormal

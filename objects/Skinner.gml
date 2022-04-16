@@ -53,11 +53,13 @@ if (tile!=-1) {
     tile_delete(tile)
 
     with (Block) {
-        for (v=bbox_top;v<bbox_bottom;v+=32) for (u=bbox_left;u<bbox_right;u+=32) {
-            tile=tile_add(bg,l,t,w,h,u,v,td)
-            tile_set_scale(tile,xs,ys)
-            tile_set_blend(tile,tb)
-            tile_set_alpha(tile,ta)
+        if (object_index==Block) {
+            for (v=bbox_top;v<bbox_bottom;v+=32) for (u=bbox_left;u<bbox_right;u+=32) {
+                tile=tile_add(bg,l,t,w,h,u,v,td)
+                tile_set_scale(tile,xs,ys)
+                tile_set_blend(tile,tb)
+                tile_set_alpha(tile,ta)
+            }
         }
     }
 }

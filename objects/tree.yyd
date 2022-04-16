@@ -352,6 +352,7 @@
 	|HitCount
 	|HPMode
 	|Skinner
+	|CameraBlock
 +Example (safe to delete)
 	|ExampleSavingTrap
 	|ExampleRotatingTrap

@@ -1,4 +1,4 @@
 with (World) {
     camera_initialised=0
-    update_camera()
+    event_camera_update()
 }

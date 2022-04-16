@@ -34,5 +34,5 @@ with (World) {
 
     camera_initialised=false
 
-    update_camera()
+    event_camera_update()
 }

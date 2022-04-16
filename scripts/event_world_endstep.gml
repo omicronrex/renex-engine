@@ -1,6 +1,6 @@
 var t,s,mx,my;
 
-update_camera()
+event_camera_update()
 
 activation_timer+=1
 if (camera_l!=memcaml || camera_t!=memcamt || activation_timer>=room_speed*0.5) {

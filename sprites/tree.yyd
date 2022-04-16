@@ -33,6 +33,7 @@
 	|sprBackground
 	|sprHitCount
 	|sprHPMode
+	|sprCameraBlock
 +Cherries
 	+engine ver.
 		|sprCherryOld

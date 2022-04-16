@@ -106,6 +106,7 @@
 	|event_draw_gui
 	|event_room_end
 	|event_game_end
+	|event_camera_update
 +player
 	|player_jump
 	|player_shoot
@@ -131,12 +132,12 @@
 		|scrMakeCircle
 		|scrMakeShapes
 +camera
-	|update_camera
 	|camera_default
 	|camera_follow
 	|camera_focus
 	|camera_zoom
 	|camera_set
+	|camera_set_size
 	|camera_set_raw
 	|camera_shake
 	|camera_apply

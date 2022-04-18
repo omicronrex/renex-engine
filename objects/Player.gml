@@ -770,6 +770,7 @@ if (vflip==1) {
         if (other.snap || vspeed-other.vspeed>=0) {
             y=other.y-9+8*dotkid
             vspeed=max(0,other.vspeed/dt/slomo)
+            player_land()
             if (!place_free(x,y)) {
                 if (global.platform_crush_behavior==1) check_crush()
                 if (global.platform_crush_behavior==2) move_outside_solid(270,20)
@@ -785,6 +786,7 @@ if (vflip==1) {
         if (other.snap || vspeed-other.vspeed<=0) {
             y=other.bbox_bottom+1+8-7*dotkid
             vspeed=min(0,other.vspeed/dt/slomo)
+            player_land()
             if (!place_free(x,y)) {
                 if (global.platform_crush_behavior==1) check_crush()
                 if (global.platform_crush_behavior==2) move_outside_solid(90,20)

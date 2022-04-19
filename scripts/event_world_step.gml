@@ -72,6 +72,11 @@ if (global.test_run) {
         }
         if (keyboard_check_pressed(vk_delete)) {
             global.debug_hitbox=!global.debug_hitbox
+            if (!global.debug_hitbox) {
+                with (all) {
+                    visible=object_get_visible(object_index)
+                }
+            }
         }
         if (keyboard_check_pressed(vk_home)) {
             global.debug_god=!global.debug_god

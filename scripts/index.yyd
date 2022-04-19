@@ -175,3 +175,4 @@ draw_cherry
 camera_reinit
 opt_animation
 camera_set_size
+ds_map_add_copy

@@ -29,3 +29,37 @@ ds_grid_set(global.statgrid,1,0,"Deaths:")
 ds_grid_set(global.statgrid,2,0,"Time:")
 settings_read()
 savedata_read()
+
+savedata_select(0)
+if (!savedata("exists")) {
+    if (file_exists(global.backfile)) {
+        if (show_question("Your save file seems to be corrupted.##Would you like to restore a backup?")) {
+            file_delete(global.savefile)
+            file_copy(global.backfile,global.savefile)
+            //always sleep after file i/o!
+            sleep(100)
+            savedata_read()
+            if (!savedata("exists")) {
+                if (show_question("Your save backup file also seems to be corrupt.##This probably means that it is a save file from a different game, or the developer changed the key.##Would you like to discard the corrupted save file?")) {
+                    savedata_default()
+                } else {
+                    show_message("In order to protect your data, the game will now close.")
+                    event_game_end()
+                    exit
+                }
+            }
+        } else {
+            show_message("In order to protect your data, the game will now close.")
+            event_game_end()
+            exit
+        }
+    } else {
+        if (show_question("Your save file seems to be corrupted.##Unfortunately, a backup is not available.##Would you like to discard the corrupted save file?")) {
+            savedata_default()
+        } else {
+            show_message("In order to protect your data, the game will now close.")
+            event_game_end()
+            exit
+        }
+    }
+}

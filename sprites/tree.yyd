@@ -260,6 +260,7 @@
 	|sprPatBall
 	|sprNangTJumpParticle
 +Triggers
+	|sprTriggerGroup
 	|sprTrigger1
 	|sprTrigger2
 	|sprTrigger3

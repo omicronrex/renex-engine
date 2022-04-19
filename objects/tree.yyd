@@ -167,6 +167,7 @@
 	|PatBall
 	|ExampleGizmo
 +Triggers
+	|TriggerGroup
 	|TrapStop
 	|TrapRedirect
 	|TriggerFree

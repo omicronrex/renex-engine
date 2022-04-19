@@ -169,6 +169,8 @@
 +Triggers
 	|TrapStop
 	|TrapRedirect
+	|TriggerFree
+	|TriggeredFree
 	|Trigger1
 	|SwitchRed
 	|SwitchRedWL
@@ -190,7 +192,6 @@
 	|Trigger10
 	|Trigger11
 	|Trigger12
-	|TriggerFree
 	|Triggered1
 	|Triggered2
 	|Triggered3
@@ -203,7 +204,6 @@
 	|Triggered10
 	|Triggered11
 	|Triggered12
-	|TriggeredFree
 	|LockedTrigger1
 	|LockedTrigger2
 	|LockedTrigger3

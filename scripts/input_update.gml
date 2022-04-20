@@ -11,9 +11,9 @@ if (global.infocus) for (i=0;i<key_sizeof;i+=1) {
     keyboard_check_direct(global.keycode[i])
     global.key[i]=keyboard_check_direct(global.keycode[i])
 
-    //process pressed and released states
-    if (!global.input_cleared) {                                           //filter out keyboard-repeat "presses" inbetween rooms
-        global.key_pressed[i]=keyboard_check_pressed(global.keycode[i]) && global.prevkey[i]!=0
+    //process pressed and released states                                  //filter out keyboard-repeat "presses" inbetween rooms
+    if (!global.input_cleared) {                                           //but ignore shift while doing that
+        global.key_pressed[i]=keyboard_check_pressed(global.keycode[i]) && (global.prevkey[i]!=0 || global.keycode[i]=vk_shift)
         global.key_released[i]=keyboard_check_released(global.keycode[i])
     }
 

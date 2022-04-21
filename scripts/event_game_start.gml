@@ -119,24 +119,24 @@ room_set_height(rmTitle,global.height)
 room_set_height(rmMenu,global.height)
 room_set_height(rmOptions,global.height)
 
-//uhhhh break cherry sprites i guess
-if (!global.use_original_cherries) {
-    sprite_assign(sprCherry,sprCherryOld)
-    sprite_assign(sprCherryRainbow,sprCherryRainbowOld)
-    sprite_assign(sprCherryPink,sprCherryPinkOld)
-    sprite_assign(sprCherryOrange,sprCherryOrangeOld)
-    sprite_assign(sprCherryMagenta,sprCherryMagentaOld)
-    sprite_assign(sprCherryViolet,sprCherryVioletOld)
-    sprite_assign(sprCherryBlue,sprCherryBlueOld)
-    sprite_assign(sprCherryAzure,sprCherryAzureOld)
-    sprite_assign(sprCherryCyan,sprCherryCyanOld)
-    sprite_assign(sprCherryEmerald,sprCherryEmeraldOld)
-    sprite_assign(sprCherryGreen,sprCherryGreenOld)
-    sprite_assign(sprCherryChartreuse,sprCherryChartreuseOld)
-    sprite_assign(sprCherryYellow,sprCherryYellowOld)
-    sprite_assign(sprCherryGray,sprCherryGrayOld)
-    sprite_assign(sprCherryWhite,sprCherryWhiteOld)
-    sprite_assign(sprCherryBlack,sprCherryBlackOld)
+//fix cherry sprites if the option is enabled
+if (global.use_original_cherries) {
+    sprite_assign(sprCherry,sprCherryNew)
+    sprite_assign(sprCherryRainbow,sprCherryRainbowNew)
+    sprite_assign(sprCherryPink,sprCherryPinkNew)
+    sprite_assign(sprCherryOrange,sprCherryOrangeNew)
+    sprite_assign(sprCherryMagenta,sprCherryMagentaNew)
+    sprite_assign(sprCherryViolet,sprCherryVioletNew)
+    sprite_assign(sprCherryBlue,sprCherryBlueNew)
+    sprite_assign(sprCherryAzure,sprCherryAzureNew)
+    sprite_assign(sprCherryCyan,sprCherryCyanNew)
+    sprite_assign(sprCherryEmerald,sprCherryEmeraldNew)
+    sprite_assign(sprCherryGreen,sprCherryGreenNew)
+    sprite_assign(sprCherryChartreuse,sprCherryChartreuseNew)
+    sprite_assign(sprCherryYellow,sprCherryYellowNew)
+    sprite_assign(sprCherryGray,sprCherryGrayNew)
+    sprite_assign(sprCherryWhite,sprCherryWhiteNew)
+    sprite_assign(sprCherryBlack,sprCherryBlackNew)
 }
 
 globalvar gizmos,gizmolist;

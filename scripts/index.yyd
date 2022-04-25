@@ -176,4 +176,5 @@ camera_reinit
 opt_animation
 camera_set_size
 ds_map_add_copy
+move_player_object
 debug_keys

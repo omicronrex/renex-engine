@@ -94,6 +94,7 @@ memplat=noone
 
 deathlist=0
 flashing=0
+iframes=0
 
 input_h=0 input_v=0
 lrtype=settings("l+r behavior")
@@ -639,25 +640,30 @@ applies_to=self
 ///killer detection
 //must be done after collision to ensure fairness
 
-if (place_meeting(x,y,PlayerKiller)) {
-    kill_player()
-}
-if (dot_hitbox) if (place_meeting(x,y,WhiteDotKiller)) {
-    kill_player()
-}
-if (dotkid) if (place_meeting(x,y,DotkidKiller)) {
-    kill_player()
-}
-if (place_meeting(x,y,DotKiller)) {
-    if (dot_hitbox) {
-        tmp=mask_index
-        mask_index=sprWhiteDot
-        if (place_meeting(x,y,DotKiller)) kill_player()
-        mask_index=tmp
-    } else kill_player()
-}
+if (iframes) {
+    flashing=iframes
+    iframes-=1
+} else {
+    if (place_meeting(x,y,PlayerKiller)) {
+        kill_player()
+    }
+    if (dot_hitbox) if (place_meeting(x,y,WhiteDotKiller)) {
+        kill_player()
+    }
+    if (dotkid) if (place_meeting(x,y,DotkidKiller)) {
+        kill_player()
+    }
+    if (place_meeting(x,y,DotKiller)) {
+        if (dot_hitbox) {
+            tmp=mask_index
+            mask_index=sprWhiteDot
+            if (place_meeting(x,y,DotKiller)) kill_player()
+            mask_index=tmp
+        } else kill_player()
+    }
 
-if (onfire && onPlatform) kill_player()
+    if (onfire && onPlatform) kill_player()
+}
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

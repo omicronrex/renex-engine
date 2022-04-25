@@ -309,3 +309,12 @@ sprSpikeRightCrimson
 sprSpikeDownCrimson
 sprCameraBlock
 sprTriggerGroup
+sprYoshiWait
+sprYoshiMask
+sprYoshiDead
+sprYoshiLost
+sprYoshiStand
+sprYoshiRunning
+sprYoshiJump
+sprMuncher
+sprSmwSaw

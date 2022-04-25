@@ -78,6 +78,9 @@
 		|display_set_gui_maximise
 		|display_get_gui_width
 		|display_get_gui_height
+	+vehicle
+		|vehicle_mount
+		|vehicle_dismount
 	|engine_template_classic
 	|add_difficulty
 	|add_gizmo

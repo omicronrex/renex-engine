@@ -22,6 +22,7 @@
 	|KeyParent
 	|KeyBlockParent
 	|SlopeParent
+	|SuperVehicle
 +User Interface
 	|VolCheck
 	|TitleMenu
@@ -143,6 +144,10 @@
 		|SingleJumpSwitchBlockOff
 		|DoubleJumpSwitchBlock
 		|DoubleJumpSwitchBlockOff
+	+WTW
+		|Yoshi
+		|SmwSaw
+		|Muncher
 	|CautionStripL
 	|CautionStripR
 	|CautionFastL

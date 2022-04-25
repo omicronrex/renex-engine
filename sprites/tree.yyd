@@ -191,6 +191,16 @@
 	|sprSpikeRightCrimson
 	|sprSpikeUpCrimson
 +Gimmicks
+	+Yoshi
+		|sprYoshiMask
+		|sprYoshiWait
+		|sprYoshiDead
+		|sprYoshiLost
+		|sprYoshiStand
+		|sprYoshiRunning
+		|sprYoshiJump
+		|sprMuncher
+		|sprSmwSaw
 	|sprGravFlip
 	|sprGravNormal
 	|sprGravityCoinFlip

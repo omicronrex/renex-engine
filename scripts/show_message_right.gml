@@ -6,10 +6,10 @@
 //show_message_right(text,300) - show message for 6 seconds
 
 if (argument_count==0) {
-    World.messagetext2=""
+    World.message2text=""
     World.message2=0
 } else {
-    World.messagetext2=argument[0]
+    World.message2text=argument[0]
     if (argument_count>1) World.message2=argument[1]
     else World.message2=200
 }

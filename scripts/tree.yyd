@@ -59,6 +59,7 @@
 		|lock_controls
 		|unlock_controls
 		|system_hotkeys
+		|debug_keys
 	+rendering
 		|envelope_init
 		|envelope_prepare

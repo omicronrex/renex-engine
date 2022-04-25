@@ -4,10 +4,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-stepcount=0
-updating=0
-slomo=1
-
 image_speed=0
 gore=settings("gore")
 if (!gore) {
@@ -31,7 +27,6 @@ if (!gore) {
     exit
 }
 
-slomo=1
 gravity=0.4*dt*dt
 bleeding=1
 alarm[0]=10*gore
@@ -40,7 +35,6 @@ if (instance_exists(Player)) {
     hspeed=Player.hspeed/2
     vspeed=Player.vspeed/3
     gravity=Player.gravity*dt*dt
-    slomo=Player.slomo
     if (Player.bow) {
         i=instance_create(x,y,GibParticle) i.sprite_index=sprBow i.image_xscale=Player.facing
     }
@@ -102,21 +96,7 @@ if (!place_free(x,y)) {
     gravity=0
 }
 
-stepcount+=50/room_speed*slomo
-
-if (stepcount>=1) {
-    stepcount=stepcount mod 1
-    updating=1
-}
-
 if (alarm[1]) visible=(alarm[1] mod 5)<3
-#define Step_2
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-if (updating) with (Blood) event_user(0)
 #define Collision_PlayerKiller
 /*"/*'/**//* YYD ACTION
 lib_id=1

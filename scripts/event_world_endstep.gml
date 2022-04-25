@@ -11,6 +11,13 @@ if (camera_l!=memcaml || camera_t!=memcamt || activation_timer>=room_speed*0.5) 
 memcaml=camera_l
 memcamt=camera_t
 
+//blood updates
+stepcount+=50/room_speed
+if (stepcount>=1) {
+    stepcount=stepcount mod 1
+    with (Blood) event_user(0)
+}
+
 if (!gameclosing) {
     //frame skip if game speed is much larger than screen refresh rate
     t=get_timer()

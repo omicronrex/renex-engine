@@ -22,6 +22,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///blood step
+
 if (attach) {
     if (!instance_exists(attach)) {
         attach=noone

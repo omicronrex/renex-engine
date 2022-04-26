@@ -71,7 +71,9 @@ if (global.pause_sound_on_game_pause) sound_resume_all()
 room_speed=memspd
 
 World.pause_delay=room_speed
-update_activation()
+
+if (global.instance_deactivation) update_activation()
+else instance_activate_all()
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -17,4 +17,4 @@ if (global.instance_deactivation) {
         )
         instance_activate_around_player()
     }
-} else instance_activate_all()
+}

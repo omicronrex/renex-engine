@@ -10,7 +10,7 @@ with (Player) {
             move_player(x,y+4*vflip,0)
         }
     } else {
-        vflip=!vflip
+        vflip=-vflip
         speed=0
         djump=1
         move_player(x,y+4*vflip,0)

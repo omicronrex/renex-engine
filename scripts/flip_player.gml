@@ -3,8 +3,8 @@
 
 with (Player) {
     if (argument_count) {
-        if (vflip!=argument0) {
-            vflip=argument0
+        if (vflip!=argument[0]) {
+            vflip=argument[0]
             speed=0
             djump=1
             move_player(x,y+4*vflip,0)

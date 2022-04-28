@@ -41,7 +41,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+//field BGM: string
+
 song=play_bg_music(BGM,1)
+
+if (BGM="") {
+    instance_destroy()
+    exit
+}
 
 length=sound_get_length(BGM)
 

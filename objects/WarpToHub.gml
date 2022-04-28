@@ -39,6 +39,15 @@ if (global.key_pressed[key_up]) {
     instance_destroy_id(Player)
     room_goto(global.hub_room)
 }
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field msg
+//field font: font
+//field color: color
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

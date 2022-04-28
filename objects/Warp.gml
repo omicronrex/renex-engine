@@ -4,8 +4,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-warpX=noone
-warpY=noone
+warpCoord[0]=noone
+warpCoord[1]=noone
 roomTo=room
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
@@ -25,3 +25,14 @@ if (warpX==noone && warpY==noone && roomTo=room) {
     }
     if (roomTo!=room) {input_clear() room_goto(roomTo)}
 }
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field roomTo: room
+//field warpCoord: xy
+
+warpX=warpCoord[0]
+warpY=warpCoord[1]

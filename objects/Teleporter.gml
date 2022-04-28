@@ -4,8 +4,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-warpX=noone
-warpY=noone
+warpCoord[0]=x+16
+warpCoord[1]=y+16
 
 image_speed=0
 #define Collision_Player
@@ -15,9 +15,22 @@ action_id=603
 applies_to=self
 */
 if (warpX!=noone && warpY!=noone) {
-    move_player(warpX+17,warpY+23,0)
+    move_player(warpX,warpY,0)
     sound_play_slomo("sndTeleport")
 }
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///Game Maker 8.2 field declarations
+//use the new room editor to gain access to this feature
+
+//field warpCoord: xy
+
+warpX=warpCoord[0]
+warpY=warpCoord[1]
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -29,4 +42,4 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_sprite(sprite_index,1,warpX,warpY)
+draw_sprite(sprite_index,1,warpX-16,warpY-16)

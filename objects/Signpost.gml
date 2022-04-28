@@ -27,3 +27,12 @@ if (global.key_pressed[key_up]) {
     active=5*room_speed
 }
 alarm[0]=2
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field msg: string
+//field font: font
+//field color: color

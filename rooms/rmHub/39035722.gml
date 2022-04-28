@@ -1,4 +1,5 @@
 //gm82 fields begin
-text="Demo Room 1"
+text="Music Test"
+halign=fa_right
 valign=fa_middle
 //gm82 fields end

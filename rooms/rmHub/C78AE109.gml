@@ -1,4 +1,4 @@
 //gm82 fields begin
-path=pPlatform2
-speed=2
+text="Boss 1"
+valign=fa_middle
 //gm82 fields end

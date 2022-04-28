@@ -38,7 +38,12 @@ applies_to=self
 */
 var tile,l,t,w,h,xs,ys,tb,ta,td,bg,u,v;
 
-tile=tile_find(x+16,y+16,0)
+//field spike: string
+//field fruit: sprite
+//field blend: color
+//field alpha
+
+tile=tile_find_anywhere(x,y)
 if (tile!=-1) {
     l=tile_get_left(tile)
     t=tile_get_top(tile)

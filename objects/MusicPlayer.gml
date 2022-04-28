@@ -10,10 +10,14 @@ applies_to=self
 */
 
 BGM=""
+loop=1
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-play_bg_music(BGM,1)
+//field BGM: string
+//field loop: bool
+
+play_bg_music(BGM,loop)

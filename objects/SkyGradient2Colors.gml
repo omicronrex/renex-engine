@@ -6,6 +6,14 @@ applies_to=self
 */
 top=$ff8000
 bottom=$ffffff
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field top: color
+//field bottom: color
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

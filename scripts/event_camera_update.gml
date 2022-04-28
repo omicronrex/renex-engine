@@ -76,9 +76,10 @@ if (is_ingame() && !global.pause) {
     //screenshake
     if (camera_shaketime) {
         l=camera_shakelength*(camera_shaketime/camera_shakelen)
-        d=random(360)
-        proj_x+=lengthdir_x(l,d)
-        proj_y+=lengthdir_y(l,d)
+        //this is nice, thanks Plasma
+        camera_shakedir+=random_range(90,270)
+        proj_x+=lengthdir_x(l,camera_shakedir)
+        proj_y+=lengthdir_y(l,camera_shakedir)
         camera_shaketime-=1
     }
 

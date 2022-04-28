@@ -6,4 +6,5 @@ with (World) {
     if (argument_count>1) camera_shaketime=argument[1]
     else camera_shaketime=camera_shakelength
     camera_shakelen=camera_shaketime
+    camera_shakedir=random(360)
 }

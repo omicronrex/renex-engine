@@ -8,8 +8,8 @@ applies_to=self
 
 /*
     gizmos are objects that will react to triggers the same way as traps,
-    but don't necessarily kill the player. they will receive a user 0
-    event whenever a triggerbomb detonates on them.
+    but don't necessarily kill the player. they will receive a Trap
+    Triggered event whenever a triggerbomb detonates on them.
 
     look in scripts/lists/list_gizmos for more information.
 */

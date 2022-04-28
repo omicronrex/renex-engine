@@ -27,19 +27,19 @@ for (i=0;i<num_cherries;i+=1) {
     a=ct*360
 
     switch (motion_type) {
-        case 1: {
+        case "circle": {
             r=radius
             a=ct*360
         }break
-        case 2: {
+        case "figure8": {
             r=radius*sin(time*pi*4)
             a=ct*360
         }break
-        case 3: {
+        case "stutter": {
             r=radius
             a=360*dsin(a)
         }break
-        case 4: {
+        case "chaotic": {
             r=radius
             a=ct*360+30*dsin(a*num_cherries)
         }break
@@ -56,6 +56,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+//field num_cherries
+//field cycle_length
+//field motion_type: enum("circle","figure8","stutter","chaotic")
+//field radius
+
 var i;
 
 for (i=0;i<num_cherries;i+=1) {

@@ -74,7 +74,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (sprite_index=sprDynamicPlatform && image_xscale!=1 && image_angle==0) {
+if (sprite_index=sprDynamicPlatform && image_xscale!=1 && image_yscale==1 && image_angle==0) {
     //i feel like renex has better things to do with their time than make an auto platform script that only like, 2 people will use for practical uses
     draw_sprite_part(sprite_index,0,0,0,10,16,x,y)
     for (i=x+10;i<bbox_right-9-12;i+=12) {

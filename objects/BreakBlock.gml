@@ -10,9 +10,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-tile=tile_layer_find(1000,x,y)
+tile=tile_find_anywhere(x,y)
 if (!tile) {
-    show_error("BreakBlock at "+string(x)+","+string(y)+" doesn't have a tile",0)
+    show_error("BreakBlock at "+string(x)+","+string(y)+" doesn't have a tile to destroy",0)
     instance_destroy()
 }
 #define Destroy_0

@@ -234,7 +234,7 @@ if (input_v!=0 && !ladder) if (place_meeting(x,y,Ladder)) {
 }
 
 if (ladder) {
-    if (!place_meeting(x,y,Ladder)) {
+    if (!place_meeting(x,y,Ladder) || (on_ground() && key[key_down])) {
         ladder=false
     } else {
         if (input_v!=0) {if (place_free(x,y+maxSpeed*input_v)) {

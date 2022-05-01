@@ -82,4 +82,4 @@ if (sprite_index=sprDynamicPlatform && image_xscale!=1 && image_yscale==1 && ima
     }
     draw_sprite_part(sprite_index,0,10,0,bbox_right-9-i,16,i,y)
     draw_sprite_part(sprite_index,0,22,0,10,16,bbox_right-9,y)
-} else draw_self()
+} else if (sprite_index!=-1) draw_self()

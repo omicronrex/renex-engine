@@ -12,7 +12,7 @@ if (global.use_appdata) {
     directory_create(savefolder)
 }
 
-var exe_name;exe_name=filename_change_ext(filename_name(parameter_string(0)),"")
+var exe_name;exe_name=filename_valid(global.game_title)
 
 global.setfile=savefolder+exe_name+".cfg"
 global.savefile=savefolder+exe_name+".sav"

@@ -54,3 +54,13 @@ if (fps_real) cpu_usage=ceil(min(1,room_speed/fps_real)*100)
 if (global.test_run) {
     debug_keys()
 }
+
+if (global.debug_overlay) {
+    if (!instance_exists(Profiler)) {
+        ram_timer+=1
+        if (ram_timer>room_speed) {
+            ram_timer=0
+            ram_usage=get_ram_usage()
+        }
+    }
+}

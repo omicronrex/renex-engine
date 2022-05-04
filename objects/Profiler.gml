@@ -7,7 +7,7 @@ applies_to=self
 str=""
 len=150
 
-i=0 repeat (len) {cpu[i]=0 fpsf[i]=0 i+=1}
+i=0 repeat (len) {cpu[i]=0 ram[i]=0 fpsf[i]=0 i+=1}
 
 timedraw=0
 ready=0
@@ -68,10 +68,13 @@ if (ready) {
             "drawing:    "+string_repeat(a,(time9-time8-timedraw)/total)
 
     if (fps_real) {
+        ram_usage=get_ram_usage()
+
         cpu[len]=cpu_usage
+        ram[len]=ram_usage/1024/1024/35.84 //3.5GB ceiling
         fpsf[len]=fps_fast
 
-        i=0 repeat (len) {cpu[i]=cpu[i+1] fpsf[i]=fpsf[i+1] i+=1}
+        i=0 repeat (len) {cpu[i]=cpu[i+1] ram[i]=ram[i+1] fpsf[i]=fpsf[i+1] i+=1}
     }
 }
 #define Trigger_Draw GUI
@@ -84,7 +87,7 @@ if (ready) {
     var time;time=get_timer()
     draw_set_font(fntFileSmall)
     draw_set_valign(2)
-    draw_text(40,global.GUIheight-40,str)
+    draw_text_outline(40,global.GUIheight-40,str,$ffff)
 
     j=global.GUIheight-40
     draw_set_color($ff)
@@ -96,6 +99,7 @@ if (ready) {
         i+=1
     }
     draw_primitive_end()
+
     draw_set_color($ff0000)
     draw_primitive_begin(pr_linelist)
     i=0 repeat (len) {
@@ -106,9 +110,20 @@ if (ready) {
     }
     draw_primitive_end()
 
+    draw_set_color($ff00)
+    draw_primitive_begin(pr_linelist)
+    i=0 repeat (len) {
+        k=global.GUIwidth-40-len+i
+        draw_vertex(k,j-110)
+        draw_vertex(k,j-110-ram[i])
+        i+=1
+    }
+    draw_primitive_end()
+
     draw_set_color($ffff)
     draw_text(global.GUIwidth-40-len*2+10,j-10,"fps: "+string(fps_fast)+"#real: "+string(fps_real))
     draw_text(global.GUIwidth-40-len+10,j-10,"cpu: "+string(cpu_usage)+"%")
+    draw_text(global.GUIwidth-40-len+10,j-120,"ram: "+string(ram_usage/1024/1024)+"MB")
     draw_set_color($ffffff)
 
     draw_set_valign(0)

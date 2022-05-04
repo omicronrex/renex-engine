@@ -66,4 +66,6 @@ mousey=0
 activation_timer=0
 
 globalvar view_xcenter,view_ycenter;
-globalvar cpu_usage;
+globalvar cpu_usage,ram_usage;
+
+ram_timer=0

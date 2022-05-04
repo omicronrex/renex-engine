@@ -39,6 +39,7 @@ if (global.debug_overlay) {
     if (!instance_exists(Profiler)) {
         str+="FPS: "+string(fps_fast)+"/"+string(room_speed)+" (real "+string(fps_real)+")#"
             +"CPU: "+string(cpu_usage)+"%#"
+            +"RAM: "+string(ram_usage/1024/1024)+"MB"
     }
 
     str+=string_repeat("God mode",global.debug_god)+"#"

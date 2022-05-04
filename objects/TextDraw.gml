@@ -95,6 +95,9 @@ if (halign=2 && valign=1) {
     image_yscale=h/2
     image_angle=180
 }
+
+draw_set_halign(0)
+draw_set_valign(0)
 #define Other_40
 /*"/*'/**//* YYD ACTION
 lib_id=1

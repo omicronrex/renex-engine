@@ -69,3 +69,4 @@ globalvar view_xcenter,view_ycenter;
 globalvar cpu_usage,ram_usage;
 
 ram_timer=0
+current_speed=room_speed

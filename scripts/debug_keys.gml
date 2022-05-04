@@ -10,6 +10,14 @@ if (keyboard_check_pressed(vk_backspace)) {
     global.debug_overlay=!global.debug_overlay
 }
 
+room_speed=global.game_speed*(1+9*keyboard_check(ord("F"))-0.8*keyboard_check(ord("G")))
+if (room_speed!=current_speed) {
+    current_speed=room_speed
+    sound_kind_pitch(0,room_speed/global.game_speed)
+    sound_kind_pitch(1,room_speed/global.game_speed)
+    sound_kind_pitch(3,room_speed/global.game_speed)
+}
+
 if (is_ingame()) {
     if (keyboard_check(vk_tab)) {
         move_player(mouse_x,mouse_y,0)

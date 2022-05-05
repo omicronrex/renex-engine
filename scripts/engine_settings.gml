@@ -14,8 +14,6 @@
     global.caption_min_alpha=0.1
     //how close the player has to be to the room caption in order for it to start fading
     global.caption_fade_margin=64
-    //set this to a room with difficulty warps in order to use a difficulty selection room
-    global.difficulty_room=noone//rmDifficulty
     //first room that's actually part of the game
     global.first_room=rmHub
     //room to return to when using WarpToHub object
@@ -35,6 +33,11 @@
 
 
 //difficulties
+    //set this to a room with difficulty warps in order to use a difficulty selection room
+    //a template is provided here -----v
+    global.difficulty_room=noone//rmDifficulty
+    //if that is unset, use the difficulty list below:
+
     add_difficulty("Medium")
     add_difficulty("Hard")
     add_difficulty("Very Hard")
@@ -42,6 +45,12 @@
     //you can replace these with bow/no bow for example, or even add more.
     //there is a globalvar called "difficulty" that's automatically set for you.
     //example: if (difficulty==0) {code for Medium difficulty}
+    //         if (difficulty>=1) {code for Hard and above}
+    //just remember that difficulty 3 (Impossible) prevents saving!
+
+    //if only one difficulty is provided, this chooses the difficulty's value:
+    //(can be used to turn off bow or make it always impossible)
+    global.single_difficulty=1
 
 
 //default camera values

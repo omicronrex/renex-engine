@@ -1,5 +1,7 @@
 global.game_speed=50
 
+global.difficulty_room=noone
+
 add_difficulty("Medium")
 add_difficulty("Hard")
 add_difficulty("Very Hard")

@@ -22,6 +22,11 @@ global.num_difficulties=0
 
 engine_settings()
 
+if (global.num_difficulties==1) {
+    //only one difficulty, copy it to the single difficulty used
+    global.name_difficulties[global.single_difficulty]=global.name_difficulties[0]
+}
+
 global.optimize_solids=median(0,global.optimize_solids,8)
 global.break_sfx=pick(global.break_sound_effect,"sndBlockBreak","sndBlockBreakYuuutu","sndBlockBreakYosniper")
 

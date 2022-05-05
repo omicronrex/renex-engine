@@ -45,15 +45,10 @@ if (state="") {
         sound_play("sndDJump")
         savedata_select(select)
         asksel=0
-        if (global.difficulty_room!=noone) {
-            difficulty=3
-            room_goto(global.difficulty_room)
+        if (savedata("saved")) {
+            state="continue"
         } else {
-            if (savedata("saved")) {
-                state="continue"
-            } else {
-                state="new file"
-            }
+            state="new file"
         }
         input_clear()
     }
@@ -85,17 +80,30 @@ if (state="continue") {
 
 //new file
 if (state="new file") {
-    if (global.key_pressed[key_left] || global.key_pressed[key_right]) {
-        sound_play("sndJump")
-        savedata_select(select)
-        savedata("diff",modwrap(savedata("diff")+global.input_h,0,global.num_difficulties))
-        difficulty=savedata("diff")
-    }
-    if (global.key_pressed[key_jump]) {
+    if (global.num_difficulties==1) {
         instance_destroy_id(TitleParticle)
         instance_destroy_id(TitleMenu)
         input_clear()
-        savedata_newgame(select)
+        savedata_newgame(select,global.single_difficulty)
+    } else if (global.difficulty_room!=noone) {
+        difficulty=3
+        instance_destroy_id(TitleParticle)
+        instance_destroy_id(TitleMenu)
+        input_clear()
+        room_goto(global.difficulty_room)
+    } else {
+        if (global.key_pressed[key_left] || global.key_pressed[key_right]) {
+            sound_play("sndJump")
+            savedata_select(select)
+            savedata("diff",modwrap(savedata("diff")+global.input_h,0,global.num_difficulties))
+            difficulty=savedata("diff")
+        }
+        if (global.key_pressed[key_jump]) {
+            instance_destroy_id(TitleParticle)
+            instance_destroy_id(TitleMenu)
+            input_clear()
+            savedata_newgame(select)
+        }
     }
 }
 

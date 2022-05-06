@@ -23,6 +23,7 @@ object_event_add(o,ev_other,ev_animation_end,"with ("+string(World)+") "+script_
 object_event_add(o,ev_other,ev_room_start,"set_automatic_draw(false) alarm[0]=1")
 object_event_add(o,ev_alarm,0,"set_automatic_draw(true)")
 object_set_persistent(o,1)
+object_set_parent(o,ActiveParent)
 object_set_depth(o,-10000000)
 instance_create(0,0,o)
 

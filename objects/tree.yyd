@@ -4,6 +4,7 @@
 	|PlayerKiller
 	|DotKiller
 	|ActiveParent
+	|ActiveIngame
 	|SavePoint
 	|Trigger
 	|Triggered
@@ -47,7 +48,6 @@
 	|DestroyedBlock
 	|FirePart
 	|Cementer
-	|BossIntroduction
 +Saves
 	|SavePointMedium
 	|SavePointHard
@@ -337,6 +337,7 @@
 		|FireDemo
 		|GlassShard
 		|TouhouDeath
+	|BossIntroduction
 	|BossWarp
 +Tools
 	|DifficultyWarp

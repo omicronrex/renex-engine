@@ -46,7 +46,6 @@
 	|Ortho
 	|DestroyedBlock
 	|FirePart
-	|DepthBlender
 	|Cementer
 	|BossIntroduction
 	|Profiler
@@ -344,6 +343,7 @@
 	|DifficultyWarp
 	|AutoSaver
 	|SkyGradient2Colors
+	|DepthBlender
 	|Camera
 	|CameraFull
 	|OutsideWarp

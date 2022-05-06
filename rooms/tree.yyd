@@ -6,9 +6,8 @@
 	|rmDifficulty
 	|rmHub
 	+Example (safe to delete)
-		|rmDemo1
+		|rmDemo
 		|rmDemo2
-		|rmDemo3
 		|rmBoss1
 		|rmMusicSync
 		|rmExtra

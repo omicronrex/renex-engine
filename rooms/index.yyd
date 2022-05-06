@@ -3,9 +3,9 @@ rmTitle
 rmMenu
 rmOptions
 rmHub
-rmDemo1
+
 rmDemo2
-rmDemo3
+
 rmBoss1
 rmMusicSync
 rmExtra
@@ -13,3 +13,4 @@ rmExBoss
 rmClear
 rmTemplate
 rmDifficulty
+rmDemo

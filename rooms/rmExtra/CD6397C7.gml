@@ -1,4 +1,0 @@
-spike_u=sprSpikeUpCrimson
-spike_d=sprSpikeDownCrimson
-spike_l=sprSpikeLeftCrimson
-spike_r=sprSpikeRightCrimson

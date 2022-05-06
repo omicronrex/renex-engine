@@ -3,6 +3,7 @@
 +Parents
 	|PlayerKiller
 	|DotKiller
+	|ActiveParent
 	|SavePoint
 	|Trigger
 	|Triggered

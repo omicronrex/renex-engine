@@ -170,6 +170,8 @@
 	|Teleporter
 	|PatBall
 	|ExampleGizmo
+	|ActualYokuBlock
+	|YokuGroup
 +Triggers
 	|TriggerGroup
 	|TrapStop

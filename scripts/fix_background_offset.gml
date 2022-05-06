@@ -15,3 +15,8 @@ if (view_enabled) with (World) if (camera_initialised) {
         0
     )
 }
+
+//we also make sure all system objects responsible for screen composition are in the right place
+with (World) depth=-10000000
+with (global.screen_manager) depth=-10000000
+with (Ortho) depth=10000000

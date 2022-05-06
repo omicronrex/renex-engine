@@ -13,20 +13,11 @@ applies_to=self
     otherwise, it is not necessary to put a camera in every room.
 */
 
-//width of a "screen"
-camera_w=global.default_camera_w
-
-//height of a "screen"
-camera_h=global.default_camera_h
-
-//object to follow
-camera_f=global.default_camera_follow
-
-//zoom value
-camera_z=1.0
-
-//smooth movement
-camera_s=global.camera_smoothing
+screen_width=global.default_camera_w
+screen_height=global.default_camera_h
+zoom_factor=global.default_camera_follow
+following=1.0
+smooth=global.camera_smoothing
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -1,8 +1,8 @@
 if (keyboard_check_pressed(vk_f3)) {
-    if (instance_exists(Profiler)) {
-        instance_destroy_id(Profiler)
+    if (instance_exists(global.profiler_manager)) {
+        instance_destroy_id(global.profiler_manager)
     } else {
-        instance_create(0,0,Profiler)
+        instance_create(0,0,global.profiler_manager)
     }
 }
 

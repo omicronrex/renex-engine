@@ -100,6 +100,7 @@
 	|show_message_left
 	|show_message_right
 	|move_player_object
+	|profiler_setup
 +events
 	|event_world_create
 	|event_game_start

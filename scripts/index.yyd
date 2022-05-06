@@ -180,3 +180,4 @@ vehicle_mount
 vehicle_dismount
 move_player_object
 debug_keys
+profiler_setup

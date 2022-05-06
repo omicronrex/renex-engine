@@ -56,7 +56,7 @@ if (global.test_run) {
 }
 
 if (global.debug_overlay) {
-    if (!instance_exists(Profiler)) {
+    if (!instance_exists(global.profiler_manager)) {
         ram_timer+=1
         if (ram_timer>room_speed) {
             ram_timer=0

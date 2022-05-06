@@ -35,7 +35,7 @@ if (global.debug_overlay) {
 
     str+="Room: "+room_get_name(room)+" ("+string(room)+")#"
 
-    if (!instance_exists(Profiler)) {
+    if (!instance_exists(global.profiler_manager)) {
         str+="FPS: "+string(fps_fast)+"/"+string(room_speed)+" (real "+string(fps_real)+")#"
             +"CPU: "+string(cpu_usage)+"%#"
             +"RAM: "+string(ram_usage/1024/1024)+"MB"

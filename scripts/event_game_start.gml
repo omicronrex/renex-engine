@@ -107,6 +107,8 @@ global.debug_jump=false
 global.debug_hitbox=false
 global.debug_autofire=false
 
+profiler_setup()
+
 //graphics setup
 envelope_init()
 display_set_gui_maximise(-1,-1)

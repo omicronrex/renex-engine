@@ -350,7 +350,6 @@
 	|MusicPlayer
 	|MusicSync
 	|MusicPlayerSection
-	|MusicPlayerOnce
 	|WaterSurface
 	|TextDraw
 	|WarpToHub

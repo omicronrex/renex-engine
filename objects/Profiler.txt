@@ -1,7 +1,0 @@
-sprite=sprController
-visible=1
-solid=0
-persistent=1
-depth=-99999999
-parent=ActiveParent
-mask=

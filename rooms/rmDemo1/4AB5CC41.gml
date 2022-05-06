@@ -1,1 +1,0 @@
-msg="Beware of trap"

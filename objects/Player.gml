@@ -771,9 +771,9 @@ if (other.object_index=LiftBlock || object_is_ancestor(other.object_index,LiftBl
 }
 
 if (vflip==1) {
-    if (y-vspeed/2-8*dotkid<=other.y) {
+    if (y-vspeed/2-8*dotkid<=other.bbox_top) {
         if (other.snap || vspeed-other.vspeed>=0) {
-            y=other.y-9+8*dotkid
+            y=other.bbox_top-9+8*dotkid
             vspeed=max(0,other.vspeed/dt/slomo)
             player_land()
             if (!place_free(x,y)) {
@@ -787,9 +787,9 @@ if (vflip==1) {
         djump=true
     }
 } else {
-    if (y-vspeed/2+7*dotkid>=other.bbox_bottom+1) {
+    if (y-vspeed/2+7*dotkid>=other.bbox_bottom+1.5) {
         if (other.snap || vspeed-other.vspeed<=0) {
-            y=other.bbox_bottom+1+8-7*dotkid
+            y=other.bbox_bottom+1.5+8-7*dotkid
             vspeed=min(0,other.vspeed/dt/slomo)
             player_land()
             if (!place_free(x,y)) {

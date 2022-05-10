@@ -158,8 +158,6 @@
 	|GravNormal
 	|CoinFlip
 	|CoinNormal
-	|Ladder
-	|LadderSide
 	|ClockOn
 	|ClockOff
 	|ToggleBlockOn
@@ -242,6 +240,8 @@
 	|DemoBlock
 	|KillBlock
 	|DieOutside
+	|Ladder
+	|LadderSide
 	|JumpThrough
 	|Upform
 	|GateUp

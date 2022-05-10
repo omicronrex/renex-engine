@@ -158,3 +158,5 @@
     global.use_original_cherries=false
     //original iwbtg sound balance
     global.iwbtg_sound_mode=false
+    //use nicely tiled long platforms instead of stretched
+    global.platform_9slice=true

@@ -428,10 +428,10 @@ if (place_meeting(x,y,Water2) || place_meeting(x,y,NekoronWater) || place_meetin
 
 //one way gates
 
-if (hspeed>0) {coll=instance_place(x+hspeed,y,GateLeft) if (coll) if (bbox_right+1-hspeed<=coll.bbox_left+2) hspeed=coll.bbox_left-(bbox_right+1)}
-if (hspeed<0) {coll=instance_place(x+hspeed,y,GateRight) if (coll) if (bbox_left-hspeed>=coll.bbox_right-2) hspeed=coll.bbox_right-(bbox_left)}
-if (vspeed>0) {coll=instance_place(x,y+vspeed,GateUp) if (coll) if (bbox_bottom+1-vspeed<=coll.bbox_top+2) {y+=coll.bbox_top-(bbox_bottom+1)-gravity vspeed=0}}
-if (vspeed<0) {coll=instance_place(x,y+vspeed,GateDown) if (coll) if (bbox_top-vspeed>=coll.bbox_bottom-2) {y+=coll.bbox_bottom-(bbox_top)+1-gravity vspeed=0}}
+if (hspeed>=0) {coll=instance_place(x+hspeed,y,GateLeft) if (coll) if (bbox_right+1-hspeed<=coll.bbox_left+2) hspeed=coll.bbox_left-(bbox_right+1)}
+if (hspeed<=0) {coll=instance_place(x+hspeed,y,GateRight) if (coll) if (bbox_left-hspeed>=coll.bbox_right-2) hspeed=coll.bbox_right-(bbox_left)}
+if (vspeed>=0) {coll=instance_place(x,y+vspeed,GateUp) if (coll) if (bbox_bottom+1-vspeed<=coll.bbox_top+2) {y+=coll.bbox_top-(bbox_bottom+1)-gravity vspeed=0}}
+if (vspeed<=0) {coll=instance_place(x,y+vspeed,GateDown) if (coll) if (bbox_top-vspeed>=coll.bbox_bottom-2) {y+=coll.bbox_bottom-(bbox_top)+1-gravity vspeed=0}}
 
 //fire
 if (onfire) {

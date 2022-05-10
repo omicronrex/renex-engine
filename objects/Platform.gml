@@ -10,6 +10,7 @@ path_action=path_action_reverse
 path_relative=true
 
 snap=true
+phase=false
 
 hdeficit=0
 #define Step_0
@@ -24,8 +25,10 @@ if (path_index!=-1 && path_speed!=0) {
     get_path_speed()
     moveplayer=1
 } else if (hspeed!=0 || vspeed!=0) {
-    if (hspeed!=0) if (!place_free(x+hspeed,y)) hspeed=-hspeed
-    if (vspeed!=0) if (!place_free(x,y+vspeed)) vspeed=-vspeed
+    if (!phase) {
+        if (hspeed!=0) if (!place_free(x+hspeed,y)) hspeed=-hspeed
+        if (vspeed!=0) if (!place_free(x,y+vspeed)) vspeed=-vspeed
+    }
     moveplayer=1
 }
 
@@ -62,6 +65,7 @@ applies_to=self
 //field path_action: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
 //field path_relative: bool
 //field snap: bool
+//field phase: bool
 //field hspeed
 //field vspeed
 

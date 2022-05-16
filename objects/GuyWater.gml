@@ -22,5 +22,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-image_index=!place_meeting(x,y-32,object_index)
+image_index=!instance_place(x,y-32,object_index)
 image_speed=0

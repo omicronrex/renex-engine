@@ -203,15 +203,15 @@ applies_to=self
 maxSpeed = 3
 baseGrav = 0.4
 
-if (place_meeting(x,y,LowSpeedField)) {
+if (instance_place(x,y,LowSpeedField)) {
     maxSpeed = 1
-} else if (place_meeting(x,y,HighSpeedField) || beamstate&beam_highspeed) {
+} else if (instance_place(x,y,HighSpeedField) || beamstate&beam_highspeed) {
     maxSpeed = 6
 }
 
-if (place_meeting(x,y,HighGravField) || beamstate&beam_highgrav) {
+if (instance_place(x,y,HighGravField) || beamstate&beam_highgrav) {
     baseGrav = 0.7
-} else if (place_meeting(x,y,LowGravField) || beamstate&beam_lowgrav) {
+} else if (instance_place(x,y,LowGravField) || beamstate&beam_lowgrav) {
     baseGrav = 0.2
 }
 /*"/*'/**//* YYD ACTION
@@ -228,13 +228,13 @@ applies_to=self
 */
 ///ladders
 
-if (input_v!=0 && !ladder) if (place_meeting(x,y,Ladder)) {
+if (input_v!=0 && !ladder) if (instance_place(x,y,Ladder)) {
     ladder=true
     djump=1
 }
 
 if (ladder) {
-    if (!place_meeting(x,y,Ladder) || (on_ground() && key[key_down])) {
+    if (!instance_place(x,y,Ladder) || (on_ground() && key[key_down])) {
         ladder=false
     } else {
         if (input_v!=0) {if (place_free(x,y+maxSpeed*input_v)) {
@@ -315,7 +315,7 @@ if (!frozen) {
     }
 
     if (onPlatform || coyoteTime>0) {
-        if (!place_meeting(x,y+4*vflip,Platform) && !place_meeting(x,y+vflip,Block)) {
+        if (!instance_place(x,y+4*vflip,Platform) && !instance_place(x,y+vflip,Block)) {
             if (coyoteTime<=0) {
                 onPlatform=false
             }
@@ -404,7 +404,7 @@ conveyor=instance_place(x,y+4*vflip,ConveyorLeft) if (conveyor) hspeed+=conveyor
 conveyor=instance_place(x,y+4*vflip,ConveyorRight) if (conveyor) hspeed+=conveyor.spd
 
 //push blocks
-with (PushBlock) if (vspeed=0) if (place_meeting(x-sign(other.hspeed)*2,y,other.id)) {
+with (PushBlock) if (vspeed=0) if (instance_place(x-sign(other.hspeed)*2,y,other.id)) {
     solid=0
     if (place_free(x+sign(other.hspeed)*push_speed,y)) {
         hspeed=sign(other.hspeed)*push_speed
@@ -413,16 +413,16 @@ with (PushBlock) if (vspeed=0) if (place_meeting(x-sign(other.hspeed)*2,y,other.
 }
 
 //various water types
-if (place_meeting(x,y,GuyWater)) {
+if (instance_place(x,y,GuyWater)) {
     if (vspeed*vflip>gravity) vspeed=gravity*vflip
     djump=maxjumps
     onfire=false
 }
-if (place_meeting(x,y,Water1) || place_meeting(x,y,Water3)) {
+if (instance_place(x,y,Water1) || instance_place(x,y,Water3)) {
     if (vspeed*vflip>2) vspeed=2*vflip
     djump=1
 }
-if (place_meeting(x,y,Water2) || place_meeting(x,y,NekoronWater) || place_meeting(x,y,CatharsisWater)) {
+if (instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_place(x,y,CatharsisWater)) {
     if (vspeed*vflip>2) vspeed=2*vflip
 }
 
@@ -457,13 +457,13 @@ grav_step=gravity
 if (gravity==0) grav_step=0.5
 
 if (esign(vspeed+gravity,vflip)==vflip) {
-    was_on_slope=place_meeting(x,y+2*vflip,SlopeParent)
+    was_on_slope=instance_place(x,y+2*vflip,SlopeParent)
     //optimization: short circuit
-    if (!was_on_slope) is_going_into_slope=place_meeting(x+hspeed,y+2*vflip,SlopeParent)
+    if (!was_on_slope) is_going_into_slope=instance_place(x+hspeed,y+2*vflip,SlopeParent)
     if (was_on_slope || is_going_into_slope) {
         x+=hspeed
         if (place_free(x,y)) {
-            if (was_on_slope) if (place_meeting(x,y+8*vflip,Block)) {
+            if (was_on_slope) if (instance_place(x,y+8*vflip,Block)) {
                 //land on slope or blocks moving down
                 move_contact_solid(180+90*vflip,8*vflip)
                 //optimization: only check collision once it crosses pixel boundary
@@ -626,7 +626,7 @@ applies_to=self
 */
 ///nekoron water bug
 
-if (key_pressed[key_jump]) if (place_meeting(x,y+1*vflip,NekoronAir) && !onPlatform) {
+if (key_pressed[key_jump]) if (instance_place(x,y+1*vflip,NekoronAir) && !onPlatform) {
     vspeed=-jump2*vflip
     repeat (choose(1,2,3)) sound_play_slomo("sndDJump")
     image_index=0
@@ -643,20 +643,20 @@ if (iframes) {
     flashing=iframes
     iframes-=1
 } else {
-    if (place_meeting(x,y,PlayerKiller)) {
+    if (instance_place(x,y,PlayerKiller)) {
         kill_player()
     }
-    if (dot_hitbox) if (place_meeting(x,y,WhiteDotKiller)) {
+    if (dot_hitbox) if (instance_place(x,y,WhiteDotKiller)) {
         kill_player()
     }
-    if (dotkid) if (place_meeting(x,y,DotkidKiller)) {
+    if (dotkid) if (instance_place(x,y,DotkidKiller)) {
         kill_player()
     }
-    if (place_meeting(x,y,DotKiller)) {
+    if (instance_place(x,y,DotKiller)) {
         if (dot_hitbox) {
             tmp=mask_index
             mask_index=sprWhiteDot
-            if (place_meeting(x,y,DotKiller)) kill_player()
+            if (instance_place(x,y,DotKiller)) kill_player()
             mask_index=tmp
         } else kill_player()
     }
@@ -757,15 +757,15 @@ if (other.object_index=LiftBlock || object_is_ancestor(other.object_index,LiftBl
     x-=hspeed
     y-=vspeed
 
-    if (place_meeting(x+hspeed,y,other.id)) {
-        repeat (floor(abs(hspeed))) {if (place_meeting(x+sign(hspeed),y,other.id)) break x+=sign(hspeed)}
+    if (instance_place(x+hspeed,y,other.id)) {
+        repeat (floor(abs(hspeed))) {if (instance_place(x+sign(hspeed),y,other.id)) break x+=sign(hspeed)}
         hspeed=0
         y+=vspeed
         break
     } else x+=hspeed
 
-    if (vspeed<=other.vspeed) {if (place_meeting(x,y+vspeed,other.id)) {
-        repeat (floor(abs(vspeed))) {if (place_meeting(x,y+sign(vspeed),other.id)) break y+=sign(vspeed)}
+    if (vspeed<=other.vspeed) {if (instance_place(x,y+vspeed,other.id)) {
+        repeat (floor(abs(vspeed))) {if (instance_place(x,y+sign(vspeed),other.id)) break y+=sign(vspeed)}
         vspeed=max(vspeed,other.vspeed)
     } else y+=vspeed} else y+=vspeed
 }
@@ -814,7 +814,7 @@ applies_to=self
 marginh=bbox_right-bbox_left+2
 marginv=bbox_bottom-bbox_top+2
 
-if (place_meeting(x,y,ScreenWrap)) {
+if (instance_place(x,y,ScreenWrap)) {
     if (hspeed>0 && x>room_width)  {if (!move_player(x-room_width-marginh,y ,1)) x-=hspeed}
     if (vspeed>0 && y>room_height) {if (!move_player(x,y-room_height-marginv,1)) y-=vspeed}
     if (hspeed<0 && x<0)           {if (!move_player(x+room_width+marginh,y ,1)) x-=hspeed}
@@ -835,7 +835,7 @@ if (place_meeting(x,y,ScreenWrap)) {
             }
         }
     } else {
-        if (global.die_outside_room || place_meeting(x,y,DieOutside)) kill_player()
+        if (global.die_outside_room || instance_place(x,y,DieOutside)) kill_player()
     }
 }
 #define Other_4

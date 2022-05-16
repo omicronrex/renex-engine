@@ -13,7 +13,7 @@ applies_to=self
 */
 var l,t,r,b,group;
 
-if (place_meeting(x,y,TriggerLock)) exit
+if (instance_place(x,y,TriggerLock)) exit
 
 group=instance_place(x,y,TriggerGroup)
 
@@ -40,11 +40,11 @@ with (mylock)
 with (mytrig)
     if (group==instance_place(x,y,TriggerGroup))
         if (x>=l && x<r && y>=t && y<b)
-            if (!place_meeting(x,y,TriggerLock))
+            if (!instance_place(x,y,TriggerLock))
                 instance_destroy()
 
 //don't destroy button triggers!
 if (!object_is_ancestor(object_index,Button))
     with (object_index) if (group==instance_place(x,y,TriggerGroup))
         if (x>=l && x<r && y>=t && y<b)
-            if (!place_meeting(x,y,TriggerLock)) instance_destroy()
+            if (!instance_place(x,y,TriggerLock)) instance_destroy()

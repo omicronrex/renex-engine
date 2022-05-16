@@ -22,23 +22,23 @@ if (hspeed!=0 || vspeed!=0) {
     if (instance_exists(Player)) {
         if (hspeed!=0) {
             //pushed
-            if (place_meeting(x+hspeed,y,Player)) {
+            if (instance_place(x+hspeed,y,Player)) {
                 move_player(Player.x+hspeed,Player.y,0)
                 check_crush()
             } else
             //riding
-            if (place_meeting(x+hspeed,y-2*Player.vflip,Player.id)) {
+            if (instance_place(x+hspeed,y-2*Player.vflip,Player.id)) {
                 move_player(Player.x+hspeed,Player.y,1)
             }
         }
         if (vspeed!=0) {
             //pushed
-            if (place_meeting(x,y+vspeed,Player)) {
+            if (instance_place(x,y+vspeed,Player)) {
                 move_player(Player.x,Player.y+vspeed,0)
                 check_crush()
             } else
             //riding
-            if (place_meeting(x,y-2*Player.vflip,Player.id)) {
+            if (instance_place(x,y-2*Player.vflip,Player.id)) {
                 move_player(Player.x,Player.y+vspeed,1)
                 check_crush()
             }

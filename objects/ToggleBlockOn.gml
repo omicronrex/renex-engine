@@ -34,6 +34,6 @@ action_id=603
 applies_to=self
 */
 if (killcheck) {
-    with (Player) if (place_meeting(x,y,other.id)) kill_player()
+    with (Player) if (instance_place(x,y,other.id)) kill_player()
     killcheck=false
 }

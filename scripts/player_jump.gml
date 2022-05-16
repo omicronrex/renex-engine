@@ -14,7 +14,7 @@ if (vvvvvv) {
         jump_timer=0
     }
 } else if (!hang) {
-    if (on_ground() || place_meeting(x,y+vflip,Water1) || place_meeting(x,y+vflip,PlatformWater) || place_meeting(x,y+vflip,GuyWater) || ladderjump) {
+    if (on_ground() || instance_place(x,y+vflip,Water1) || instance_place(x,y+vflip,PlatformWater) || instance_place(x,y+vflip,GuyWater) || ladderjump) {
         //floor jump
         vspeed=-jump*vflip
         if (global.use_momentum_values) {
@@ -29,8 +29,8 @@ if (vvvvvv) {
         with (DoubleJumpSwitchBlockOff) event_user(0)
         coyoteTime=0
         jump_timer=0
-        if (place_meeting(x,y+1,GuyWater)) onfire=false
-    } else if (global.debug_jump || (djump<maxjumps || place_meeting(x,y+1*vflip,Water2)) && !(beamstate&beam_onejump)) {
+        if (instance_place(x,y+1,GuyWater)) onfire=false
+    } else if (global.debug_jump || (djump<maxjumps || instance_place(x,y+1*vflip,Water2)) && !(beamstate&beam_onejump)) {
         //double jump
         vspeed=-jump2*vflip
         sound_play_slomo("sndDJump")

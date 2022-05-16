@@ -11,7 +11,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (place_meeting(x,y,PushBlock)) event_user(0)
+if (instance_place(x,y,PushBlock)) event_user(0)
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1

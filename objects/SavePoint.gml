@@ -70,7 +70,7 @@ action_id=603
 applies_to=self
 */
 if (image_index==0) if (instance_exists(Player)) {
-    with (Player) if (place_meeting(x,y,AntiSoftlockBlock)) exit
+    with (Player) if (instance_place(x,y,AntiSoftlockBlock)) exit
     if (Player.vflip==vflip || global.flip_saves) {
         image_index=1
         image_speed=1/room_speed

@@ -37,7 +37,7 @@ if (moveplayer) {
     //so we store and make use of deficit counters
     hspeed+=hdeficit
     hdeficit=hspeed-round(hspeed)
-    with (Player) if (place_meeting(x,y+2*vflip,other.id)) {
+    with (Player) if (instance_place(x,y+2*vflip,other.id)) {
         move_player(x+round(other.hspeed),y+other.vspeed,1)
     }
 }

@@ -51,10 +51,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!place_meeting(x,y,other.id)) break}
-if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!place_meeting(x,y,other.id)) break}
-if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!place_meeting(x,y,other.id)) break}
-if (vspeed<0) repeat (ceil(-vspeed)) {y+=1 if (!place_meeting(x,y,other.id)) break}
+if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,other.id)) break}
+if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,other.id)) break}
+if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,other.id)) break}
+if (vspeed<0) repeat (ceil(-vspeed)) {y+=1 if (!instance_place(x,y,other.id)) break}
 
 speed=0
 
@@ -62,10 +62,10 @@ if (scaling) {
     sw=sprite_get_width(sprite_index)
     sh=sprite_get_height(sprite_index)
 
-    if (scaleh>0) repeat (ceil( scaleh)) {x-=1*(  sprite_xoffset/sw/image_xscale) image_xscale-=1/sw if (!place_meeting(x,y,other.id)) break}
-    if (scalev>0) repeat (ceil( scalev)) {y-=1*(  sprite_yoffset/sh/image_yscale) image_yscale-=1/sh if (!place_meeting(x,y,other.id)) break}
-    if (scaleh<0) repeat (ceil(-scaleh)) {x-=-1*(1-sprite_xoffset/sw/image_xscale) image_xscale-=1/sw if (!place_meeting(x,y,other.id)) break}
-    if (scalev<0) repeat (ceil(-scalev)) {y-=-1*(1-sprite_yoffset/sh/image_yscale) image_yscale-=1/sh if (!place_meeting(x,y,other.id)) break}
+    if (scaleh>0) repeat (ceil( scaleh)) {x-=1*(  sprite_xoffset/sw/image_xscale) image_xscale-=1/sw if (!instance_place(x,y,other.id)) break}
+    if (scalev>0) repeat (ceil( scalev)) {y-=1*(  sprite_yoffset/sh/image_yscale) image_yscale-=1/sh if (!instance_place(x,y,other.id)) break}
+    if (scaleh<0) repeat (ceil(-scaleh)) {x-=-1*(1-sprite_xoffset/sw/image_xscale) image_xscale-=1/sw if (!instance_place(x,y,other.id)) break}
+    if (scalev<0) repeat (ceil(-scalev)) {y-=-1*(1-sprite_yoffset/sh/image_yscale) image_yscale-=1/sh if (!instance_place(x,y,other.id)) break}
 
     scaling=false
 }

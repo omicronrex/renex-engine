@@ -8,7 +8,7 @@ applies_to=self
 
 //this object will save the game on contact with the player
 
-if (place_meeting(x,y,Player)) {
+if (instance_place(x,y,Player)) {
     autosave_asap()
     instance_destroy()
 }

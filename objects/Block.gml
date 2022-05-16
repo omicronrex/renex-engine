@@ -6,7 +6,7 @@ applies_to=self
 */
 ///pastel green water gimmick
 sprite_index=storesprite
-if (place_meeting(xstart,ystart,PastelWater2)) {
+if (instance_place(xstart,ystart,PastelWater2)) {
     sprite_index=-1
     alarm[0]=1
 }

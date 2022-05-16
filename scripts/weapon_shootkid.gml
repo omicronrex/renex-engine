@@ -1,6 +1,6 @@
 if (!global.contact_saves) {
     with (SavePoint) {
-        if (place_meeting(x,y,other.id)) {
+        if (instance_place(x,y,other.id)) {
             exit
         }
     }

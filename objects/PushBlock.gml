@@ -29,7 +29,7 @@ if (vspeed!=0) {
 vspeed=0
 
 with (ConveyorLeft)
-    if (place_meeting(x,y-other.grav*2,other.id))
+    if (instance_place(x,y-other.grav*2,other.id))
         with (other)
             if (place_free(x+other.spd,y))
                 hspeed=min(hspeed,other.spd)
@@ -37,7 +37,7 @@ with (ConveyorLeft)
                 move_contact_solid(90-90*sign(other.spd),other.spd)
 
 with (ConveyorRight)
-    if (place_meeting(x,y-other.grav*2,other.id))
+    if (instance_place(x,y-other.grav*2,other.id))
         with (other)
             if (place_free(x+other.spd,y))
                 hspeed=max(hspeed,other.spd)
@@ -47,7 +47,7 @@ with (ConveyorRight)
 if (hspeed!=0) {
     if (instance_exists(Player)) {
         //pushed
-        if (place_meeting(x+hspeed,y,Player)) {
+        if (instance_place(x+hspeed,y,Player)) {
             move_player(Player.x+hspeed,Player.y,0)
             check_crush()
         }

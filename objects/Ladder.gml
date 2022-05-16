@@ -11,15 +11,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-var yes;
+var yes;yes=0
 
 vflip=1
 if (instance_exists(Player)) {
     vflip=Player.vflip
 
-    yes=!place_meeting(x,y-vflip,object_index)
+    yes=!instance_place(x,y-vflip,object_index)
 
-    if (yes) with (Player) if (key[pick(!vflip,key_down,key_up)] || ladder || place_meeting(x,y-vflip,other.object_index)) yes=0
+    if (yes) with (Player) if (key[pick(!vflip,key_down,key_up)] || ladder || instance_place(x,y-vflip,other.object_index)) yes=0
 }
 
 if (yes) plat.sprite_index=sprite_index

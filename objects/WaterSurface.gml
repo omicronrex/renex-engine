@@ -22,14 +22,14 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-do {x+=32} until (!place_meeting(x,y,Water1) && !place_meeting(x,y,Water2)) w=x-xstart x=xstart
-do {y+=32} until (!place_meeting(x,y,Water1) && !place_meeting(x,y,Water2)) h=y-ystart y=ystart
+do {x+=32} until (!instance_place(x,y,Water1) && !instance_place(x,y,Water2)) w=x-xstart x=xstart
+do {y+=32} until (!instance_place(x,y,Water1) && !instance_place(x,y,Water2)) h=y-ystart y=ystart
 
 image_xscale=w/32
 image_yscale=h/32
 
-with (Water1) if (place_meeting(x,y,other.id)) visible=0
-with (Water2) if (place_meeting(x,y,other.id)) visible=0
+with (Water1) if (instance_place(x,y,other.id)) visible=0
+with (Water2) if (instance_place(x,y,other.id)) visible=0
 
 image_yscale=0.25
 
@@ -44,8 +44,8 @@ applies_to=self
 var sum,i;
 
 if (inside_view()) {
-    with (PushBlock) if (place_meeting(x,y,other.id)) with (other) event_user(0)
-    with (PushBlockSave) if (place_meeting(x,y,other.id)) with (other) event_user(0)
+    with (PushBlock) if (instance_place(x,y,other.id)) with (other) event_user(0)
+    with (PushBlockSave) if (instance_place(x,y,other.id)) with (other) event_user(0)
 
     if (!sleeping) {
         sum=0

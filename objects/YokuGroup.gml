@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 if (first) {
-    if (place_meeting(x,y,Player)) {
+    if (instance_place(x,y,Player)) {
         if (!active) {
             with (first) go=1
         }
@@ -31,7 +31,7 @@ var count,last;
 
 first=noone
 
-with (ActualYokuBlock) if (place_meeting(x,y,other.id)) {
+with (ActualYokuBlock) if (instance_place(x,y,other.id)) {
     if (first) other.first=id
     if (next==noone) next=other.first
     image_index=6.5

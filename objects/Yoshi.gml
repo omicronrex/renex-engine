@@ -105,13 +105,13 @@ if (lost) {
     if (gravity==0) grav_step=0.5
 
     if (esign(vspeed+gravity,vflip)==vflip) {
-        was_on_slope=place_meeting(x,y+2*vflip,SlopeParent)
+        was_on_slope=instance_place(x,y+2*vflip,SlopeParent)
         //optimization: short circuit
-        if (!was_on_slope) is_going_into_slope=place_meeting(x+hspeed,y+2*vflip,SlopeParent)
+        if (!was_on_slope) is_going_into_slope=instance_place(x+hspeed,y+2*vflip,SlopeParent)
         if (was_on_slope || is_going_into_slope) {
             x+=hspeed
             if (place_free(x,y)) {
-                if (was_on_slope) if (place_meeting(x,y+8*vflip,Block)) {
+                if (was_on_slope) if (instance_place(x,y+8*vflip,Block)) {
                     //land on slope or blocks moving down
                     move_contact_solid(180+90*vflip,8*vflip)
                     //optimization: only check collision once it crosses pixel boundary
@@ -178,7 +178,7 @@ if (lost) {
     sprite_index=sprYoshiWait
     image_speed=1/25
     //idle yoshi routine
-    if (place_meeting(x,y+vspeed,Block)) {
+    if (instance_place(x,y+vspeed,Block)) {
         move_contact_solid(point_direction(0,0,0,gravity),abs(vspeed))
         vspeed=-1.5*vflip
     }

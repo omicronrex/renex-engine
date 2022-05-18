@@ -776,6 +776,7 @@ if (vflip==1) {
             y=other.bbox_top-9+8*dotkid
             vspeed=max(0,other.vspeed/dt/slomo)
             player_land()
+            djump=true
             if (!place_free(x,y)) {
                 if (global.platform_crush_behavior==1) check_crush()
                 if (global.platform_crush_behavior==2) move_outside_solid(270,20)
@@ -784,7 +785,6 @@ if (vflip==1) {
         vsplatform=max(0,other.vspeed)
         onPlatform=true
         walljumpboost=0
-        djump=true
     }
 } else {
     if (y-vspeed/2+7*dotkid>=other.bbox_bottom+1.5) {
@@ -792,6 +792,7 @@ if (vflip==1) {
             y=other.bbox_bottom+1.5+8-7*dotkid
             vspeed=min(0,other.vspeed/dt/slomo)
             player_land()
+            djump=true
             if (!place_free(x,y)) {
                 if (global.platform_crush_behavior==1) check_crush()
                 if (global.platform_crush_behavior==2) move_outside_solid(90,20)
@@ -800,7 +801,6 @@ if (vflip==1) {
         vsplatform=min(0,other.vspeed)
         onPlatform=true
         walljumpboost=0
-        djump=true
     }
 }
 #define Other_0

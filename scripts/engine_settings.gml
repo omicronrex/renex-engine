@@ -2,7 +2,7 @@
     global.game_title="renex engine"
     //intended room speed
     //note: player always runs at 50hz! look in player step for an explanation.
-    global.game_speed=60
+    global.game_speed=50
     global.width=800
     global.height=608
     global.scale=1.0

@@ -776,6 +776,7 @@ if (vflip==1) {
             y=other.bbox_top-9+8*dotkid
             vspeed=max(0,other.vspeed/dt/slomo)
             player_land()
+            onPlatform=true
             djump=true
             if (!place_free(x,y)) {
                 if (global.platform_crush_behavior==1) check_crush()
@@ -783,7 +784,6 @@ if (vflip==1) {
             }
         }
         vsplatform=max(0,other.vspeed)
-        onPlatform=true
         walljumpboost=0
     }
 } else {
@@ -792,6 +792,7 @@ if (vflip==1) {
             y=other.bbox_bottom+1.5+8-7*dotkid
             vspeed=min(0,other.vspeed/dt/slomo)
             player_land()
+            onPlatform=true
             djump=true
             if (!place_free(x,y)) {
                 if (global.platform_crush_behavior==1) check_crush()
@@ -799,7 +800,6 @@ if (vflip==1) {
             }
         }
         vsplatform=min(0,other.vspeed)
-        onPlatform=true
         walljumpboost=0
     }
 }

@@ -1,0 +1,20 @@
+oldbowx=newbowx
+oldbowy=newbowy
+if (global.bow_lag) {
+    newbowx=newx
+    newbowy=newy
+} else {
+    newbowx=x
+    newbowy=y
+}
+
+oldx=newx
+oldy=newy
+oldspr=newspr
+oldfr=newfr
+oldangle=newangle
+newx=floor(x)
+newy=floor(y)
+newspr=sprite_index
+newfr=image_index
+newangle=image_angle+sprite_angle

@@ -149,6 +149,7 @@
 	|camera_shake
 	|camera_apply
 	|camera_reinit
+	|move_parallax
 +skins
 	|change_skin
 	|skin_default

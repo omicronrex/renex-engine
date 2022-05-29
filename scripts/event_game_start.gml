@@ -3,8 +3,7 @@
 if (orderTest==2) {
     show_error(
         "Creation code order needs to be reversed for this engine to work."+lf+
-        "Please enable the option in GGS->Code Options in GM 8.2."+lf+lf+
-        "If you're using GM 8.1, move the included winspool.drv file into your Game Maker folder and reopen it.",
+        "Please enable the option in GGS->Code Options in GM 8.2.",
         true
     )
     exit
@@ -85,7 +84,7 @@ if (program_directory!=working_directory && string_pos("\AppData\Local\Temp\gm_t
     var key;key="SOFTWARE\Game Maker\Version 8.2\Preferences\"
     var name;name=filename_change_ext(filename_name(parameter_string(0)),"")
     if (registry_read_dword(key+"MakerRunning",0)) {
-        for (i=0;i<4;i+=1) if (string_pos(name,registry_read_string_ext(key,"Recent"+string(i)))) {
+        for (i=0;i<8;i+=1) if (string_pos(name,registry_read_string_ext(key,"Recent"+string(i)))) {
             global.test_run=true
             break
         }
@@ -93,7 +92,7 @@ if (program_directory!=working_directory && string_pos("\AppData\Local\Temp\gm_t
     if (!global.test_run) {
         key="SOFTWARE\Game Maker\Version 8.1\Preferences\"
         if (registry_read_dword(key+"MakerRunning",0)) {
-            for (i=0;i<4;i+=1) if (string_pos(name,registry_read_string_ext(key,"Recent"+string(i)))) {
+            for (i=0;i<8;i+=1) if (string_pos(name,registry_read_string_ext(key,"Recent"+string(i)))) {
                 global.test_run=true
                 break
             }

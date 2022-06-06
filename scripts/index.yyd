@@ -185,3 +185,4 @@ move_parallax
 player_update_sprite
 player_hitwall
 player_hitceiling
+random_cherry_color

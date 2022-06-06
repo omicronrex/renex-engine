@@ -42,6 +42,7 @@
 		|filename_valid
 		|current_date_filename
 		|ds_map_add_copy
+		|random_cherry_color
 	+input
 		+joysticks
 			|joy_deadzone

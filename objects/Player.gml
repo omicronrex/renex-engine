@@ -454,7 +454,7 @@ land=0
 was_on_slope=0
 is_going_into_slope=0
 grav_step=gravity
-if (gravity==0) grav_step=0.5
+if (gravity==0) grav_step=0.5*vflip
 
 if (esign(vspeed+gravity,vflip)==vflip) {
     was_on_slope=instance_place(x,y+2*vflip,SlopeParent)
@@ -465,9 +465,8 @@ if (esign(vspeed+gravity,vflip)==vflip) {
         if (place_free(x,y)) {
             if (was_on_slope) if (instance_place(x,y+8*vflip,Block)) {
                 //land on slope or blocks moving down
-                move_contact_solid(180+90*vflip,8*vflip)
                 //optimization: only check collision once it crosses pixel boundary
-                while (place_free(x,y+grav_step)) {store_y=round(y) do y+=grav_step until round(y)!=store_y} y-=grav_step
+                while (!instance_place(x,y+grav_step,Block)) {store_y=round(y) do y+=grav_step until round(y)!=store_y} y-=grav_step
                 land=1
             }
         } else {
@@ -510,7 +509,7 @@ action_id=603
 applies_to=self
 */
 ///solid collision
-var land,a,s;
+var land,a,s,rx;
 
 if (dotkid) {
     image_xscale=1
@@ -518,41 +517,53 @@ if (dotkid) {
     image_xscale=abs(image_xscale)*facing
 }
 
+///solid collision
+var land,a,s,rx,yes;
+
+if (hspeed>=0) {rx=floor(x) rxnext=floor(x+hspeed)}
+else {rx=ceil(x) rxnext=ceil(x+hspeed)}
+
 //we add gravity because this is supposed to happen after movement update
 vspeed+=gravity
 
-if (!place_free(x+hspeed,y+vspeed)) {
-    if (!place_free(x+hspeed,y)) {
+if (!place_free(rxnext,y+vspeed)) {
+    if (!place_free(rxnext,y)) {
+        x=rx
         a=ceil(abs(hspeed))
         s=sign(hspeed)
-        repeat (a) {
+        repeat (a+1) {
             x+=s
-            if (!place_free(x,y)) {x-=s hspeed=0 break}
+            if (!place_free(x,y)) {x-=s player_hitwall() hspeed=0 break}
         }
         x-=hspeed
         walljumpboost=0
     }
 
-    if (!place_free(x,y+vspeed)) {
+    if (!place_free(rx,y+vspeed)) {
         a=ceil(abs(vspeed))
         s=sign(vspeed)
 
-        vspeed=0
-
-        repeat (a) {
+        repeat (a+1) {
             y+=s
-            if (!place_free(x,y)) {
+            if (!place_free(rx,y)) {
                 y-=s
                 if (s==vflip) {
                     player_land()
+                } else {
+                    player_hitceiling()
                 }
                 break
             }
         }
+
+        vspeed=0
     }
-    if (!place_free(x+hspeed,y+vspeed)) {
-        if (onPlatform) vspeed=0
-        else hspeed=0
+
+    if (hspeed>=0) {rxnext=floor(x+hspeed)}
+    else {rxnext=ceil(x+hspeed)}
+
+    if (!place_free(rxnext,y+vspeed)) {
+        hspeed=0
     }
 }
 

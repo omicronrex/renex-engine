@@ -51,7 +51,7 @@ if (is_ingame() && !global.pause) {
             d=point_direction(
                 0,0,
                 (nx+w/2)-(bbox_left+bbox_right+1)/2,
-                ((ny+h/2)-(bbox_top+bbox_bottom+1)/2)*global.width/global.height
+                ((ny+h/2)-(bbox_top+bbox_bottom+1)/2)*sprite_width/sprite_height
             )
             if (d>315 || d<=45) nx=max(nx,bbox_right+1)
             if (d>45 && d<=135) ny=min(ny,bbox_top-h)

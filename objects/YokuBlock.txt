@@ -4,4 +4,4 @@ solid=1
 persistent=0
 depth=0
 parent=Block
-mask=
+mask=sprEngineBlock

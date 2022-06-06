@@ -183,3 +183,4 @@ debug_keys
 profiler_setup
 move_parallax
 player_update_sprite
+random_cherry_color

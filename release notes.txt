@@ -1,3 +1,69 @@
+renex engine v1.5.0 build xx xxx 2022
+
+New features:
+
+- added full support for new 8.2 room editor Fields feature
+- added new test rooms that explain all available engine objects
+- added Yoshi gimmick from WtW with muncher and sawblade
+- added new ingame option for kid walking animation type
+- added support for mp3 sound effects by default
+- added leek obstacles from Churatch (with the color scheme from LoveTrap)
+- added new tool for easily skinning blocks and spikes
+- added actual yoku blocks
+- added optional difficulty select room
+- added CameraFull tool as a shortcut for free camera in a room
+- added camera_set_size(), and CameraBlock tools
+- added new TriggerGroup tool for grouping triggers in large rooms
+- added move_player_object() if you ever needed to move a specific player object
+- added player iframes system
+- added debug keys F and G to control testing speed
+- added new Vehicle parent system
+- added a few bonus tilesets
+- added Mega Cherry bonus object
+
+Bugs fixed:
+
+- fixed a bunch of issues with instance deactivation (including pause bugs)
+- fixed a potential issue with the screen when using zoom as antialiasing
+- fixed draw gui and room background projections for zoomed in camera
+- fixed tile/texture seams and jitter on nvidia
+- fixed interpolation for draw gui event
+- fixed pause menu option for left+right only taking effect after a restart
+- fixed player sprite desync and camera reset when player is teleported
+- fixed sprite coordinates when moving a frozen player
+- fixed profiler crash when pressing space :)
+- fixed a bug with the pause menu screenshot scaling
+- fixed platforms on relative paths launching the player into the void
+- fixed the profiler mixing up event weights over time
+- fixed landing on platforms not calling player_land()
+- fixed shift cancelling with different shift keys
+- fixed camera_set_raw() being offset when zoom isn't 1
+- fixed typo that broke right-side toast messages
+- fixed a problem where changing the depth of system objects caused glitches
+
+Minor changes:
+
+- instance activation lists are now taken care of by two grouping parents
+- if there's only one difficulty, it doesn't ask you on new file
+- profiler will now display ram usage as well
+- ladders have top collision, and you can climb down from them onto the floor
+- flip_player() will now just flip the player if the direction isn't passed
+- improved screenshake formula (thanks Plasma)
+- fixed many typos and improved code comments in some places
+- disabled coyote time and jump buffer by default following community feedback
+- fullscreen caption fades a bit when the player goes underneath it
+- improved savedata corruption handling and user experience
+- TriggerFree no longer performs view boundary checks
+- moved blood updates to world object
+- the engine lists for music properties and nonstick have been documented
+- DepthBlender tool has been documented and improved
+- moved debug keys to their own script, and gave them toast messages
+- small improvements to hitbox view debug tool
+- swapped the cherry sprites around to make more sense
+- removed pencils background as it took up a lot of space
+- removed support for vanilla 8.1 as that became unsustainable
+
+--------------------------------------------------------------------------------
 renex engine v1.4.0 build 17 feb 2022
 
 Another very large update that brings stability fixes and some new features.

@@ -100,6 +100,11 @@ if (program_directory!=working_directory && string_pos("\AppData\Local\Temp\gm_t
     }
 }
 
+if (global.test_run) {
+    live_roomeditor_start()
+    live_roomeditor_add_obj_exclusion(PlayerStart)
+}
+
 global.debug_overlay=(global.test_run && debug_mode)
 global.debug_god=false
 global.debug_jump=false

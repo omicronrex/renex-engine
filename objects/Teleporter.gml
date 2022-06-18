@@ -24,9 +24,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///Game Maker 8.2 field declarations
-//use the new room editor to gain access to this feature
-
 //field warpCoord: xy
 
 warpX=warpCoord[0]

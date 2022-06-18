@@ -12,5 +12,5 @@ applies_to=self
 
 event_inherited()
 
-camera_w=room_width
-camera_h=room_height
+screen_width=room_width
+screen_height=room_height

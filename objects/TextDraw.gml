@@ -25,21 +25,18 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///Game Maker 8.2 field declarations
-//use the new room editor to gain access to this feature
-
+/*desc
+Draws text at a fixed position in the room.
+Rotation, scale and blend are applied to the text.
+*/
 //field text: string
 //field font: font
 //field halign: enum(fa_left,fa_center,fa_right)
 //field valign: enum(fa_top,fa_middle,fa_bottom)
-//field xscale
-//field yscale
-//field color: color
-//field alpha
 
 angle=image_angle
-image_blend=color
-image_alpha=alpha
+xscale=image_xscale
+yscale=image_yscale
 
 draw_set_font(font)
 draw_set_halign(halign)

@@ -27,6 +27,12 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+/*desc
+This object is used to group a selection of Yoku Blocks.
+Placing it in a room will activate any blocks inside of it,
+when the Player object of the engine enters it.
+*/
+
 var count,last;
 
 first=noone

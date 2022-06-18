@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 num_cherries=3
-cycle_length=4 //seconds
+cycle_length=4
 motion_type=1
 radius=80
 
@@ -56,10 +56,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//field num_cherries
-//field cycle_length
+//field num_cherries: number
+//field cycle_length: number - in seconds
 //field motion_type: enum("circle","figure8","stutter","chaotic")
-//field radius
+//field radius: radius
+//field shit: angle
 
 var i;
 

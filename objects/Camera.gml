@@ -4,19 +4,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///instructions
-/*
-    by default, the game's camera system will use the properties
-    you provide in engine settings as a game screen size. you can put
-    this object in a room to override those values for that room.
-
-    otherwise, it is not necessary to put a camera in every room.
-*/
-
 screen_width=global.default_camera_w
 screen_height=global.default_camera_h
-zoom_factor=global.default_camera_follow
-following=1.0
+zoom_factor=1
+following=global.default_camera_follow
 smooth=global.camera_smoothing
 #define Other_4
 /*"/*'/**//* YYD ACTION
@@ -24,9 +15,17 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//field screen_width
-//field screen_height
-//field zoom_factor
+/*desc
+By default, the game's camera system will use the properties
+you provide in engine settings as a game screen size.
+
+You can put this object in a room to override those values.
+Otherwise, it is not necessary to put a camera in every room.
+*/
+
+//field screen_width: number
+//field screen_height: number
+//field zoom_factor: number
 //field following: instance
 //field smooth: bool
 

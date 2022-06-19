@@ -46,7 +46,8 @@ if (global.debug_overlay) {
 
     var c;c=0
     for (i=0;i<100;i+=1) if (surface_exists(i)) c+=1
-    str+=strong(c," surface",string_repeat("s",c!=1),"#")
+    if (c==100) str+="ALERT: too many surfaces!"
+    else str+=strong(c," surface",string_repeat("s",c!=1),"#")
 
     draw_text_outline(40,40,str,$ffff)
 }

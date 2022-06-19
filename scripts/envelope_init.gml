@@ -13,7 +13,9 @@ global.dz=display_get_frequency()
 global.rw=global.width
 global.rh=global.height
 
-window_set_resolution(global.width,global.height,true)
+global.APPwidth=global.width
+global.APPheight=global.height
+global.APPfilter=true
 
 //we create this at runtime to make sure that its events will
 //always execute last, which prevents "mystery issues".

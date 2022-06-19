@@ -3,4 +3,4 @@
 with (SuperVehicle) if (active) exit
 
 passenger=other.id
-event_perform(ev_trigger,ev_mount)
+event_trigger(ev_mount)

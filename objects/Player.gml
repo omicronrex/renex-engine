@@ -745,7 +745,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (other.object_index=LiftBlock || object_is_ancestor(other.object_index,LiftBlock)) {
+if (object_other_is_child_of(LiftBlock)) {
     x-=hspeed
     y-=vspeed
 

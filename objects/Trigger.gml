@@ -44,7 +44,7 @@ with (mytrig)
                 instance_destroy()
 
 //don't destroy button triggers!
-if (!object_is_ancestor(object_index,Button))
+if (!object_is_child_of(Button))
     with (object_index) if (group==instance_place(x,y,TriggerGroup))
         if (x>=l && x<r && y>=t && y<b)
             if (!instance_place(x,y,TriggerLock)) instance_destroy()

@@ -38,11 +38,15 @@ if (global.debug_overlay) {
     if (!instance_exists(global.profiler_manager)) {
         str+="FPS: "+string(fps_fast)+"/"+string(room_speed)+" (real "+string(fps_real)+")#"
             +"CPU: "+string(cpu_usage)+"%#"
-            +"RAM: "+string(ram_usage/1024/1024)+"MB"
+            +"RAM: "+string(ram_usage/1024/1024)+"MB#"
     }
 
-    str+=string_repeat("God mode",global.debug_god)+"#"
-        +string_repeat("Inf jump",global.debug_jump)
+    str+=string_repeat("God mode#",global.debug_god)
+        +string_repeat("Inf jump#",global.debug_jump)
+
+    var c;c=0
+    for (i=0;i<100;i+=1) if (surface_exists(i)) c+=1
+    str+=strong(c," surface",string_repeat("s",c!=1),"#")
 
     draw_text_outline(40,40,str,$ffff)
 }

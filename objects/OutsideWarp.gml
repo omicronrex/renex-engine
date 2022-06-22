@@ -12,5 +12,6 @@ action_id=603
 applies_to=self
 */
 //field roomTo: room
-//field warpX
-//field warpY
+//field warpCoord: xy
+
+event_inherited()

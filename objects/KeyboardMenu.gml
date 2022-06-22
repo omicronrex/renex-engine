@@ -11,7 +11,7 @@ ydraw=80
 xsep=560
 ysep=32
 
-ycursor=ydraw+sel*ysep+52
+ycursor=0
 
 setting=false
 
@@ -47,7 +47,7 @@ if (!setting) {
             input_clear()
             i=instance_create(x,y,OptionsMenu)
             i.sel=mempos
-            i.ycursor=i.ydraw+(i.ysep*i.sel)+18
+            i.ycursor=ycursor
             instance_destroy()
         }
     } else if (global.key_pressed[key_jump]) {

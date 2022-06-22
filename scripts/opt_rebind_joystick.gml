@@ -10,7 +10,9 @@ switch (argument0) {
             if (joystick_count()) {
                 sound_play_option("sndDJump")
                 input_clear()
-                (instance_create(x,y,JoystickMenu)).mempos=sel
+                i=instance_create(x,y,JoystickMenu)
+                i.mempos=sel
+                i.ycursor=ycursor
                 instance_destroy()
             } else sound_play("sndBossHit")
         }

@@ -9,7 +9,9 @@ switch (argument0) {
             //option ticked/changed
             sound_play_option("sndDJump")
             input_clear()
-            (instance_create(x,y,KeyboardMenu)).mempos=sel
+            i=instance_create(x,y,KeyboardMenu)
+            i.mempos=sel
+            i.ycursor=ycursor
             instance_destroy()
         }
     }break

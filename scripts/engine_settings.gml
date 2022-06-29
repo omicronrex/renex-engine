@@ -142,7 +142,7 @@
     global.autosave_items=true
     global.contact_saves=false
     global.press_s_saves=false
-    //make saves rotate with the view so you can save anywhere
+    //let all saves work even while flipped the wrong way
     global.flip_saves=false
     //(0-8) reduces lag during gameplay, but causes small hiccup on room start.
     //each pass reduces instance count by almost half so with 2 passes we should

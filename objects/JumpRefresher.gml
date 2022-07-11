@@ -26,7 +26,7 @@ action_id=603
 applies_to=self
 */
 if (visible) {
-    other.djump=min(other.djump,other.maxjumps-1)
+    other.djump=max(1,other.djump-1)
     visible=false
     alarm[0]=refreshTime
 }

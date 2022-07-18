@@ -18,4 +18,4 @@ if (hspeed==0) {
     hspeed=2*sign(other.hspeed)
 }
 
-instance_destroy_id(other)
+instance_destroy_other()

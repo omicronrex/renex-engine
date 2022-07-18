@@ -54,7 +54,7 @@ with (instance_place(x,y,Bullet)) with (other) {
         sound_play("sndBossHit")
         hp-=1
     }
-    instance_destroy_id(other)
+    instance_destroy_other()
 }
 
 //flashing

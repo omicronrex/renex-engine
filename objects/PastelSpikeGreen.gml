@@ -12,7 +12,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-instance_destroy_id(other)
+instance_destroy_other()
 
 a=instance_create(x,y,PastelWater2)
 a.vspeed=waterSpeed

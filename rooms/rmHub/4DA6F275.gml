@@ -1,1 +1,1 @@
-roomTo=rmDemo2
+roomTo=room_find("rmDemo2")

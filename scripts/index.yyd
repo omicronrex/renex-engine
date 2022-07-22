@@ -186,3 +186,4 @@ player_update_sprite
 player_hitwall
 player_hitceiling
 random_cherry_color
+room_find

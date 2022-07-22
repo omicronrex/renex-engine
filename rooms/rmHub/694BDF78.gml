@@ -1,1 +1,1 @@
-roomTo=rmMusicSync
+roomTo=room_find("rmMusicSync")

@@ -102,6 +102,7 @@
 	|move_player_object
 	|profiler_setup
 	|activate_objects
+	|room_find
 +events
 	|event_world_create
 	|event_game_start

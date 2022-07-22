@@ -19,6 +19,7 @@ for (i=0;i<numoptions;i+=1) {
 image_speed=0.2*dt
 xcursor=xdraw-18
 ycursor=ydraw+(ysep*sel)+18
+sprite=sprPlayerIdle
 
 angle=0
 dead=0
@@ -71,7 +72,7 @@ for (i=0;i<numoptions;i+=1) {
     draw_text(xdraw+xsep,ydraw+(ysep*i),script_execute(ds_list_find_value(global.optlist,i),opt_value))
 }
 
-if (!dead) draw_sprite_ext(sprPlayerIdle,floor(image_index),xcursor,ycursor,1,1,angle,$ffffff,1)
+if (!dead) draw_sprite_ext(sprite,floor(image_index),xcursor,ycursor,1,1,angle,$ffffff,1)
 
 //button info
 draw_set_font(fntFileSmall)

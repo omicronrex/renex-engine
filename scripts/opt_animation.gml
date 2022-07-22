@@ -12,6 +12,9 @@ switch (argument0) {
             sound_play_option("sndDJump")
             settings("anim",!settings("anim"))
         }
+        if (settings("anim")) sprite=sprPlayerRunning
+        else sprite=sprPlayerRunningOld
+        image_speed=0.5
     }break
     case opt_text: {
         return "Animations"
@@ -20,6 +23,7 @@ switch (argument0) {
         return pick(settings("anim"),"Fangames","Original")
     }break
     case opt_end:{
-
+        sprite=sprPlayerIdle
+        image_speed=0.2
     }break
 }

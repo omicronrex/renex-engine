@@ -5,9 +5,6 @@ action_id=603
 applies_to=self
 */
 ///instructions
-/*
-    you can put this in a section of the room and it'll play music when it's onscreen
-*/
 
 BGM=""
 loop=1
@@ -26,7 +23,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+/*desc
+you can put this in a section of the room and it'll play music when it's onscreen
+*/
+
 //field BGM: string
 //field loop: bool
-
-play_bg_music(BGM,loop)

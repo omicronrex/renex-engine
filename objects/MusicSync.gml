@@ -4,13 +4,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///instructions
-/*
-    this will play when the room is entered, and will try to keep it synced to the game speed
-    so if the game slows down, it will also slow down the music
-*/
-
 BGM=""
+loop=1
 
 realtime=current_time
 #define Step_0
@@ -41,9 +36,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//field BGM: string
+/*desc
+    this will play when the room is entered, and will try to keep it synced to the game speed
+    so if the game slows down, it will also slow down the music
+*/
 
-song=play_bg_music(BGM,1)
+//field BGM: string
+//field loop: bool
+
+song=play_bg_music(BGM,loop)
 
 if (BGM="") {
     instance_destroy()

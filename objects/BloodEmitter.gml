@@ -5,8 +5,8 @@ action_id=603
 applies_to=self
 */
 image_speed=0
-gore=settings("gore")
-if (!gore) {
+blood=settings("blood")
+if (!blood) {
     bleeding=0
     alarm[1]=room_speed/2
     if (instance_exists(Player)) {
@@ -29,7 +29,7 @@ if (!gore) {
 
 gravity=0.4*dt*dt
 bleeding=1
-alarm[0]=10*gore
+alarm[0]=10*blood
 
 if (instance_exists(Player)) {
     hspeed=Player.hspeed/2
@@ -40,7 +40,7 @@ if (instance_exists(Player)) {
     }
 }
 
-if (gore==3) {
+if (blood==3) {
     i=instance_create(x,y-15,GibParticle) i.sprite_index=sprGibsHead
     i=instance_create(x,y-10,GibParticle) i.sprite_index=sprGibsBody
     i=instance_create(x,y-10,GibParticle) i.sprite_index=sprGibsArm
@@ -86,7 +86,7 @@ action_id=603
 applies_to=self
 */
 if (bleeding) {
-    emit_blood(10*gore)
+    emit_blood(10*blood)
 }
 
 if (!place_free(x,y)) {

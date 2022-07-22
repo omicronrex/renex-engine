@@ -11,7 +11,7 @@ switch (argument0) {
             else h=global.key_pressed[key_right]-global.key_pressed[key_left]
             sound_stop("sndDeath")
             sound_play_option("sndDeath")
-            settings("gore",modwrap(settings("gore")+h,0,4))
+            settings("blood",modwrap(settings("blood")+h,0,4))
             dead=1
             instance_destroy_id(BloodEmitter)
             instance_destroy_id(Blood)
@@ -30,7 +30,7 @@ switch (argument0) {
         return "Blood Amount"
     }break
     case opt_value: {
-        return pick(settings("gore"),"Off","Low","Normal","High")
+        return pick(settings("blood"),"Off","Low","Normal","High")
     }break
     case opt_end:{
         dead=0

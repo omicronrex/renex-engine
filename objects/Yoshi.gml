@@ -44,7 +44,7 @@ if (lost) {
         bleeding-=1
         y-=40
         x+=10*image_xscale
-        emit_blood(10*settings("gore"))
+        emit_blood(10*settings("blood"))
         y+=40
         x-=10*image_xscale
     }
@@ -93,7 +93,7 @@ if (lost) {
         vspeed=0
 
         dead=1
-        bleeding=10*settings("gore")
+        bleeding=10*settings("blood")
     }
 
     var land,store_y,was_on_slope,is_going_into_slope,grav_step;

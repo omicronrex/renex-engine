@@ -9,6 +9,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+sprite_index=sprCherryRainbow
+timer=0
 event_step()
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -16,7 +18,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-image_blend=make_color_hsv(current_time/16,255,255)
+timer=(timer+2*dt) mod 256
+image_blend=make_color_hsv(timer,255,255)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

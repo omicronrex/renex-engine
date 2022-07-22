@@ -53,7 +53,6 @@
 	|sprCherryRainbow
 	+Guy Cherries
 		|sprCherryNew
-		|sprCherryRainbowNew
 		|sprCherryOrangeNew
 		|sprCherryYellowNew
 		|sprCherryChartreuseNew
@@ -68,6 +67,7 @@
 		|sprCherryWhiteNew
 		|sprCherryGrayNew
 		|sprCherryBlackNew
+		|sprCherryRainbowNew
 +Level
 	|sprEngineBlock
 	|sprYoku

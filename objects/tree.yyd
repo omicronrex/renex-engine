@@ -48,6 +48,7 @@
 	|DestroyedBlock
 	|FirePart
 	|Cementer
+	|BackgroundDaemon
 +Saves
 	|SavePointMedium
 	|SavePointHard

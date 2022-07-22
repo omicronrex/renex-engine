@@ -31,4 +31,6 @@ instance_create(0,0,o)
 
 global.screen_manager=o
 
+instance_create(0,0,BackgroundDaemon)
+
 envelope_prepare()

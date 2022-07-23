@@ -4,30 +4,13 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///instructions
+spike_down = noone
+spike_right = noone
+spike_left = noone
+spike_up = noone
 
-/*
-    This object can skin blocks and killers in a room.
-
-    Creation code parameters (defaults are used for any omitted parameters)
-
-    spike = name to append to spike sprites
-    fruit = cherry sprite to use
-    blend = blend color for spikes
-    alpha = alpha transparency for spikes
-
-    Place the desired tile underneath this object, and
-    it'll be automatically copied to all Block objects.
-
-    An example is provided in rmExtra.
-*/
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-spike = ""
 fruit = noone
+
 blend = $ffffff
 alpha = 1
 #define Other_4
@@ -36,12 +19,32 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+/*desc
+This object can skin blocks and killers in a room.
+
+Creation code parameters (defaults are used for any omitted parameters)
+
+spike_x = spike sprites to use
+fruit = cherry sprite to use
+blend = blend color
+alpha = alpha transparency
+
+Place one of the desired block tiles underneath this object, and
+it'll be automatically copied to all Block objects in the room.
+
+An example is provided in rmExtra.
+*/
+
+
 var tile,l,t,w,h,xs,ys,tb,ta,td,bg,u,v;
 
-//field spike: string
+//field spike_down: sprite
+//field spike_right: sprite
+//field spike_left: sprite
+//field spike_up: sprite
 //field fruit: sprite
 //field blend: color
-//field alpha
+//field alpha: number(0,1)
 
 tile=tile_find_anywhere(x,y)
 if (tile!=-1) {
@@ -69,20 +72,9 @@ if (tile!=-1) {
     }
 }
 
-if (spike!="") {
-    execute_string("
-        s_d=sprSpikeDown"+spike+"
-        s_l=sprSpikeLeft"+spike+"
-        s_r=sprSpikeRight"+spike+"
-        s_u=sprSpikeUp"+spike+"
-    ")
+if (spike_down!=noone) with (SpikeD) {sprite_index=other.spike_down image_blend=other.blend image_alpha=other.alpha}
+if (spike_left!=noone) with (SpikeL) {sprite_index=other.spike_left image_blend=other.blend image_alpha=other.alpha}
+if (spike_right!=noone) with (SpikeR) {sprite_index=other.spike_right image_blend=other.blend image_alpha=other.alpha}
+if (spike_up!=noone) with (SpikeU) {sprite_index=other.spike_up image_blend=other.blend image_alpha=other.alpha}
 
-    with (SpikeD) {sprite_index=other.s_d image_blend=other.blend image_alpha=other.alpha}
-    with (SpikeL) {sprite_index=other.s_l image_blend=other.blend image_alpha=other.alpha}
-    with (SpikeR) {sprite_index=other.s_r image_blend=other.blend image_alpha=other.alpha}
-    with (SpikeU) {sprite_index=other.s_u image_blend=other.blend image_alpha=other.alpha}
-}
-
-if (fruit!=noone) {
-    with (Cherry) sprite_index=other.fruit
-}
+if (fruit!=noone) with (Cherry) {sprite_index=other.fruit image_blend=other.blend image_alpha=other.alpha}

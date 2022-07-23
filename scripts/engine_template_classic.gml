@@ -44,7 +44,6 @@ global.break_sound_effect=1
 global.pause_sound_on_game_pause=false
 
 global.esc_always_quits=true
-global.use_application_surface=false
 global.show_deathtime=true
 global.closing_animation=false
 global.refight_bosses=true

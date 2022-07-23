@@ -10,19 +10,16 @@ switch (argument0) {
             sound_play_option("sndDJump")
             var h; if (global.key_pressed[key_jump]) h=1
             else h=global.key_pressed[key_right]-global.key_pressed[key_left]
-            settings("filter",modwrap(settings("filter")+h,0,3))
+            settings("filter",!settings("filter"))
             update_fullscreen()
         }
-        if (settings("fullscreen")) OptionsGridCheck.visible=1
-        else OptionsGridCheck.visible=0
     }break
     case opt_text: {
         return "Fullscreen Filter"
     }break
     case opt_value: {
-        return pick(settings("filter"),"Off","Bilinear","Trilinear")
+        return pick(settings("filter"),"Nearest","Trilinear")
     }break
     case opt_end:{
-        OptionsGridCheck.visible=0
     }break
 }

@@ -125,12 +125,6 @@
 //game behavior
     //don't go back to the menu - quit the game immediately when pressing esc
     global.esc_always_quits=false
-    //enables automatic management of an application surface.
-    //you always get one in fullscreen, but this tells the engine you plan to
-    //use it yourself so it'll also update it in windowed mode.
-    //you can do post processing effects in envelope_compose().
-    //always envelope_prepare() when resetting surface target in draw events!
-    global.use_application_surface=false
     //automatically updates the window caption with deathtime
     global.show_deathtime=true
     global.closing_animation=true

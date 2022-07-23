@@ -1,37 +1,34 @@
-//during end step, compose the window and update the internal buffer.
+//build the game window.
 
-if (((global.rw!=global.APPwidth || global.rh!=global.APPheight)) || global.use_application_surface) {
-    dx8_make_opaque()
-    d3d_set_depth(0)
-    application_surface=dx8_surface_engage(application_surface,global.APPwidth,global.APPheight)
+dx8_make_opaque()
+d3d_set_depth(0)
 
-    /*
-        this place is where you can add any post-processing effects using the application surface.
-        remember to set the engine option to always use an application surface, when using this.
-    */
+generate_save_thumbnail(0)
 
-    if ((global.rw!=global.APPwidth || global.rh!=global.APPheight) && settings("filter")==2) {
-        //fullscreen area filter
-        dequanto_surface=dx8_surface_engage(dequanto_surface,global.APPwidth*2,global.APPheight*2)
-        texture_set_interpolation(global.APPfilter)
-        draw_surface_stretched(application_surface,0,0,global.APPwidth*2,global.APPheight*2)
-        texture_set_interpolation(0)
-        event_draw_gui()
-        surface_reset_target()
-        d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
-        texture_set_interpolation(1)
-        draw_surface_stretched(dequanto_surface,0,0,global.rw,global.rh)
-        texture_set_interpolation(0)
-    } else {
-        //regular screen filtering
-        surface_reset_target()
-        d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
-        texture_set_interpolation(!!settings("filter") && global.APPfilter)
-        draw_surface_stretched(application_surface,0,0,global.rw,global.rh)
-        texture_set_interpolation(0)
-        event_draw_gui()
-    }
+application_surface=dx8_surface_engage(application_surface,global.APPwidth,global.APPheight)
+
+//this place is where you can add any post-processing effects using the application surface.
+//the blocks below draw the application surface to the screen.
+
+if ((global.rw!=global.APPwidth || global.rh!=global.APPheight) && settings("filter")==2) {
+    //fullscreen area filter
+    dequanto_surface=dx8_surface_engage(dequanto_surface,global.APPwidth*global.deq_fac,global.APPheight*global.deq_fac)
+    texture_set_interpolation(global.APPfilter)
+    draw_surface_stretched(application_surface,0,0,global.APPwidth*global.deq_fac,global.APPheight*global.deq_fac)
+    texture_set_interpolation(0)
+    event_draw_gui()
+    surface_reset_target()
+    d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
+    texture_set_interpolation(1)
+    draw_surface_stretched(dequanto_surface,0,0,global.rw,global.rh)
+    texture_set_interpolation(0)
 } else {
+    //regular screen filtering
+    surface_reset_target()
+    d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
+    texture_set_interpolation(!!settings("filter") && global.APPfilter)
+    draw_surface_stretched(application_surface,0,0,global.rw,global.rh)
+    texture_set_interpolation(0)
     event_draw_gui()
 }
 

@@ -16,7 +16,7 @@ if (view_enabled) with (World) {
         view_yview-0.5+lengthdir_y(l,-view_angle)+lengthdir_y(l,-view_angle-90),
         view_wview,view_hview,view_angle
     )
-}
+} else dx8_reset_projection()
 
 //debug see whole room mode
 if (global.test_run && keyboard_check(vk_f8)) d3d_set_projection_ortho(0,0,room_width,room_height,0)

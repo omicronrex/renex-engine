@@ -13,6 +13,13 @@ global.dz=display_get_frequency()
 global.rw=global.width
 global.rh=global.height
 
+global.deq_fac=2
+if (global.dw/800>3 || global.dh/608>3) {
+    //on a 4k monitor, we use a 3x trilinear filter instead of 2x
+    //normally, 2x is enough for crisp pixels in fullscreen
+    global.deq_fac=3
+}
+
 global.APPwidth=global.width
 global.APPheight=global.height
 global.APPfilter=true

@@ -7,7 +7,7 @@ effort.
 - [Download latest version](https://github.com/omicronrex/renex-engine/archive/refs/heads/standard.zip)
 - [Release notes for latest version](changelog.txt)
 - [Discord server](http://discord.gg/aWh9rFDHDA)
-- [Readme document](readme.txt)
+- [Readme document](README.txt)
 
 ## Game Maker 8.2?
 

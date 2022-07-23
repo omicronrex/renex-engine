@@ -28,8 +28,10 @@ if (global.debug_overlay) {
     draw_set_font(fntFileSmall)
 
     str=""
-    str="X: "+string(Player.x)+" (align "+string(Player.x mod 3)+")#"
-       +"Y: "+string(Player.y)+"#"
+    if (instance_exists(Player)) {
+        str="X: "+string(Player.x)+" (align "+string(Player.x mod 3)+")#"
+           +"Y: "+string(Player.y)+"#"
+    }
 
 
     str+="Room: "+room_get_name(room)+" ("+string(room)+")#"

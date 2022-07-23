@@ -165,8 +165,8 @@ if (!frozen) {
     framefac=stepcount+0.5
 }
 
-//don't smooth if it's turned off or the room speed is 50
-if (!global.smooth_position || room_speed==50) framefac=1
+//don't smooth if the room speed is 50
+if (room_speed==50) framefac=1
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=612
@@ -725,19 +725,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///update sprite coordinates
-
-drawx=lerp(oldx,newx,framefac)
-drawy=lerp(oldy,newy,framefac)
-drawangle=lerp(oldangle,newangle,framefac)
-
-bowx=lerp(oldbowx,newbowx,framefac)
-bowy=lerp(oldbowy,newbowy,framefac)
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
 ///check autosave
 autosave_do()
 #define Collision_Platform
@@ -858,6 +845,26 @@ newspr=oldspr
 deathlist=0
 flashing=0
 #define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///update sprite coordinates
+
+if (framefac==1) {
+    //immediate mode for 50hz
+    drawx=floor(x)
+    drawy=floor(y)
+    drawangle=image_angle+sprite_angle
+} else {
+    drawx=lerp(oldx,newx,framefac)
+    drawy=lerp(oldy,newy,framefac)
+    drawangle=lerp(oldangle,newangle,framefac)
+}
+
+bowx=lerp(oldbowx,newbowx,framefac)
+bowy=lerp(oldbowy,newbowy,framefac)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

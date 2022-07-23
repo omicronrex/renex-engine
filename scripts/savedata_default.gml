@@ -21,8 +21,11 @@ else
 
 savedata("hash","new file")
 
-global.player_skin=skin_default
-global.player_weapon=weapon_default
+global.player_skin=global.player_default_skin
+global.player_weapon=global.player_default_weapon
+
+savedata("skin",global.player_skin)
+savedata("weapon",global.player_weapon)
 
 ds_grid_resize(global.statgrid,3,1)
 global.statgridh=1

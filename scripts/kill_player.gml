@@ -25,15 +25,12 @@ with (Player) {
                 sound_play(HitCount.sound)
             }
         } else {
-            if (global.gameover_music_stop) {
-                sound_kind_stop(1)
-            } else if (global.gameover_music_fade) {
-                World.fading=1
-            } else if (global.gameover_music_pause) {
-                sound_kind_pause(1)
-            }
-            if (global.gameover_music_play) {
+            if (global.gameover_music==0) {
                 sound_play("m-r-tight")
+            } else if (global.gameover_music==1) {
+                World.fading=1
+            } else if (global.gameover_music==2) {
+                sound_kind_pause(1)
             }
 
             drop_items()

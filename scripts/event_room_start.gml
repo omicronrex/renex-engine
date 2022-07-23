@@ -11,7 +11,7 @@ if (is_ingame()) {
     }
     view_angle=savedata("viewangle")
 
-    if (global.gameover_music_pause) sound_kind_resume(1)
+    if (global.gameover_music==2) sound_kind_resume(1)
     event_world_endstep()
 } else {
     room_caption=global.game_title

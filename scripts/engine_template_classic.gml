@@ -18,11 +18,10 @@ global.instance_activate_screens_w=1
 global.instance_activate_screens_h=1
 global.instance_activate_margin_px=20
 
-global.smooth_position=false
 global.valign05_vdiet=true
 global.platform_crush_behavior=0
-global.player_skin=skin_default
-global.player_weapon=weapon_default
+global.player_default_skin=skin_default
+global.player_default_weapon=weapon_default
 global.leftright_moonwalk=false
 global.die_outside_room=true
 global.vine_jumps=false
@@ -36,10 +35,7 @@ global.use_momentum_values=false
 
 global.gain=1.0
 global.restarting_music=true
-global.gameover_music_play=true
-global.gameover_music_stop=false
-global.gameover_music_pause=false
-global.gameover_music_fade=false
+global.gameover_music=0
 global.break_sound_effect=1
 global.pause_sound_on_game_pause=false
 

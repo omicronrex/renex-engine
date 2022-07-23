@@ -55,6 +55,8 @@ global.perform_autosave=false
 global.room_started=false
 global.gen_thumb=false
 
+global.warp_id=""
+
 global.increment=0
 
 global.keylist=ds_map_create()

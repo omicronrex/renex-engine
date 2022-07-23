@@ -823,6 +823,7 @@ if (instance_place(x,y,ScreenWrap)) {
                 } else {
                     warp_to(roomTo,warpX,warpY)
                 }
+                global.warp_id=warpid
             }
         }
     } else {

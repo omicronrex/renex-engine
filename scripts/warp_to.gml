@@ -5,4 +5,5 @@ if (argument_count>=2 && !Player.dead) {
 } else instance_destroy_id(Player)
 
 input_clear()
+global.warp_id=""
 room_goto(argument[0])

@@ -13,5 +13,6 @@ applies_to=self
 */
 //field roomTo: room
 //field warpCoord: xy
+//field warpid: string
 
 event_inherited()

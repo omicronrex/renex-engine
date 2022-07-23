@@ -24,6 +24,7 @@ if (warpX==noone && warpY==noone && roomTo=room) {
         } else {
             warp_to(roomTo,warpX,warpY)
         }
+        global.warp_id=warpid
     }
 }
 #define Other_4
@@ -34,6 +35,7 @@ applies_to=self
 */
 //field roomTo: room
 //field warpCoord: xy
+//field warpid: string
 
 warpX=warpCoord[0]
 warpY=warpCoord[1]

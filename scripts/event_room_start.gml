@@ -12,6 +12,16 @@ if (is_ingame()) {
     view_angle=savedata("viewangle")
 
     if (global.gameover_music==2) sound_kind_resume(1)
+
+    if (global.warp_id!="") with (PlayerStart) {
+        if (warpid=global.warp_id) {
+            with (savedata("obj")) {
+                move_player(other.x+17*other.image_xscale,other.y+23,0)
+                facing=other.image_xscale
+            }
+        }
+    }
+
     event_world_endstep()
 } else {
     room_caption=global.game_title

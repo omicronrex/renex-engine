@@ -32,4 +32,5 @@ if (savedata("saved")) {
     difficulty=savedata("diff")
 }
 
+global.warp_id=""
 room_goto(savedata("room"))

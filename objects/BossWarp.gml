@@ -21,3 +21,4 @@ applies_to=self
 //field roomTo: room
 //field warpX
 //field warpY
+//field warpid: string

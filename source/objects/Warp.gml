@@ -6,6 +6,7 @@ applies_to=self
 */
 warpCoord[0]=noone
 warpCoord[1]=noone
+warpid=""
 roomTo=room
 #define Collision_Player
 /*"/*'/**//* YYD ACTION

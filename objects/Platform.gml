@@ -7,7 +7,7 @@ applies_to=self
 //you can set those in creation code
 path=noone
 path_action=path_action_reverse
-path_relative=true
+path_absolute=false
 
 snap=true
 phase=false
@@ -63,14 +63,14 @@ applies_to=self
 //field path: path
 //field speed
 //field path_action: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
-//field path_relative: bool
+//field path_absolute: bool
 //field snap: bool
 //field phase: bool
 //field hspeed
 //field vspeed
 
 if (path!=noone) {
-    path_start(path,speed,path_action,!path_relative)
+    path_start(path,speed,path_action,path_absolute)
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

@@ -15,7 +15,7 @@ vsp=0
 path=noone
 path_speed=0
 path_endaction=path_action_stop
-path_relative=false
+path_absolute=true
 path_scaling=1
 sound=""
 
@@ -104,7 +104,7 @@ action_id=603
 applies_to=self
 */
 if (path_endaction=path_action_reverse) {
-    path_start(path,-path_speed,path_endaction,!path_relative)
+    path_start(path,-path_speed,path_endaction,path_absolute)
     path_scale=path_scaling
 }
 #define Trigger_Trap is Triggered
@@ -118,7 +118,7 @@ applies_to=self
 if (sound!="") sound_play(sound)
 
 if (path!=noone) {
-    path_start(path,path_speed,path_endaction,!path_relative)
+    path_start(path,path_speed,path_endaction,path_absolute)
     path_scale=path_scaling
 } else {
     hspeed=hsp

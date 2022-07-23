@@ -13,7 +13,7 @@ with (Player) {
                 HPMode.hp-=1
                 flashing=HPMode.iframes
                 sound_play(HPMode.sound)
-                emit_blood(10*settings("gore"))
+                emit_blood(10*settings("blood"))
             }
             if (HPMode.hp>0) exit
         }

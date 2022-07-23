@@ -15,6 +15,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+/*desc
+you can just delete this to get rid of the starfield on the title screens
+*/
+
 c=0
 
 if (instance_number(TitleParticle)==0) repeat (80/dt) {

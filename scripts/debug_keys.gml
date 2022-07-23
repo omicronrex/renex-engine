@@ -10,7 +10,15 @@ if (keyboard_check_pressed(vk_backspace)) {
     global.debug_overlay=!global.debug_overlay
 }
 
-room_speed=global.game_speed*(1+9*keyboard_check(ord("F"))-0.8*keyboard_check(ord("G")))
+room_speed=global.game_speed*(1-0.8*keyboard_check(ord("G")))
+if (keyboard_check(ord("F"))) {
+    room_speed=500
+    dx8_set_vsync(false)
+} else {
+    global.game_speed=50
+    dx8_set_vsync(true)
+}
+
 if (room_speed!=current_speed) {
     current_speed=room_speed
     sound_kind_pitch(0,room_speed/global.game_speed)
@@ -43,7 +51,11 @@ if (is_ingame()) {
     if (keyboard_check_pressed(vk_home)) {
         global.debug_god=!global.debug_god
         if (global.debug_god) show_message_right("god mode on")
-        else show_message_right("god mode off")
+        else {
+            show_message_right("god mode off")
+            //clear up death list
+            with (Player) deathlist[0]=0
+        }
     }
 
     if (keyboard_check_pressed(vk_end)) {
@@ -66,7 +78,7 @@ if (is_ingame()) {
         room_goto_previous()
     }
 
-    if (instance_exists(Player) && mouse_check_button_pressed(mb_right)) {
+    if (mouse_check_button_pressed(mb_right)) {
         func=show_menu("Debug Menu|-|Go to...|Infinite Jump|Godmode|Hitboxes|Autofire|Save Here",0)
         if (func=1) {
             s="Select room:|-"

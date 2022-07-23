@@ -43,6 +43,8 @@ numoptions=ds_list_size(optlist)
 
 xcursor=xdraw-18
 ycursor=ydraw+9
+sprite=sprPlayerIdle
+image_speed=0.2
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -73,6 +75,8 @@ World.pause_delay=room_speed
 
 if (global.instance_deactivation) update_activation()
 else instance_activate_all()
+
+window_set_resolution(storew,storeh,storef)
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -133,7 +137,7 @@ draw_clear_alpha(0,1)
 
 //fix weird alpha on nvidia
 dx8_set_alphablend(false)
-texture_set_interpolation(global.APPfilter)
+texture_set_interpolation(storef)
 draw_background_stretched_ext(bg,0,0,pausew,pauseh,$707070,1)
 texture_set_interpolation(0)
 dx8_set_alphablend(true)
@@ -155,7 +159,7 @@ if (sel==-1) {
         draw_text(xdraw+xsep,ydraw+(ysep*i),script_execute(option,opt_value))
     }
     draw_set_halign(0)
-    if (!dead) draw_sprite_ext(sprPlayerIdle,floor(image_index),xcursor,ycursor,1,1,angle,$ffffff,1)
+    if (!dead) draw_sprite_ext(sprite,floor(image_index),xcursor,ycursor,1,1,angle,$ffffff,1)
 }
 
 draw_set_valign(2)

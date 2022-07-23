@@ -31,6 +31,16 @@ if ((keyboard_check_pressed(ord("Z")) && keyboard_check(vk_control)) || keyboard
     savedata_read()
     state=""
     input_clear()
+
+    i=0 repeat (3) {
+        savedata_select(i)
+        fn=global.savefolder+global.savesig+".png"
+        if (thumb[i]!=noone) background_delete(thumb[i])
+        if (file_exists(fn)) thumb[i]=background_add(fn,0,0)
+        else thumb[i]=noone
+        i+=1
+    }
+
     exit
 }
 
@@ -76,6 +86,10 @@ if (state="continue") {
                 sound_play("sndDeath")
                 savedata_default(select)
                 state=""
+                if (thumb[select]!=noone) {
+                    background_delete(thumb[select])
+                    thumb[select]=noone
+                }
                 show_message_left(lang("fileundo"))
             } else sound_play("sndShoot")
         } else {
@@ -127,9 +141,11 @@ settings_write()
 
 //disable any system messages when leaving the menu
 show_message_left()
+show_message_right()
 
 i=0 repeat (3) {
     if (thumb[i]!=noone) background_delete(thumb[i])
+    i+=1
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

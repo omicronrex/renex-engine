@@ -8,6 +8,7 @@ if (is_ingame()) {
     if (!savedata("saved")) {
         savedata_save(true,"new file@"+room_get_name(room))
         show_message_left()
+        show_message_right()
     }
     view_angle=savedata("viewangle")
 

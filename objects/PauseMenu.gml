@@ -6,12 +6,11 @@ applies_to=self
 */
 pausew=global.width
 pauseh=global.height
-bg=background_create_from_surface(application_surface,0,0,global.APPwidth,global.APPheight,0,0)
-
 storew=global.APPwidth
 storeh=global.APPheight
 storef=global.APPfilter
-window_set_resolution(global.width,global.height,1)
+
+bg=background_create_from_surface(application_surface,0,0,storew,storeh,0,0)
 
 global.pause=true
 instance_deactivate_all_safe(false)
@@ -75,8 +74,6 @@ World.pause_delay=room_speed
 
 if (global.instance_deactivation) update_activation()
 else instance_activate_all()
-
-window_set_resolution(storew,storeh,storef)
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -122,7 +119,7 @@ action_id=603
 applies_to=self
 */
 instance_destroy()
-#define Draw_0
+#define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -132,13 +129,13 @@ applies_to=self
 
 var t,timeText;
 
-d3d_set_projection_ortho(0,0,pausew,pauseh,0)
+d3d_set_projection_ortho(0,0,storew,storeh,0)
 draw_clear_alpha(0,1)
 
 //fix weird alpha on nvidia
 dx8_set_alphablend(false)
 texture_set_interpolation(storef)
-draw_background_stretched_ext(bg,0,0,pausew,pauseh,$707070,1)
+draw_background_stretched_ext(bg,0,0,storew,storeh,$707070,1)
 texture_set_interpolation(0)
 dx8_set_alphablend(true)
 

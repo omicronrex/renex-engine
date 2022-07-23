@@ -56,7 +56,7 @@ rect
 
 set_loop_point
 once_every
-event_world_create
+
 event_game_start
 event_room_start
 event_world_earlystep
@@ -124,7 +124,7 @@ collect_items
 drop_items
 savedata_init
 filename_valid
-event_world_drawGUI
+event_debug_gui
 display_set_gui_size
 display_set_gui_maximise
 display_get_gui_width
@@ -186,4 +186,7 @@ player_update_sprite
 player_hitwall
 player_hitceiling
 random_cherry_color
+
+custom_init
+load_sounds
 room_find

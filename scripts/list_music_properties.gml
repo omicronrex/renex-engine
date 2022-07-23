@@ -1,5 +1,7 @@
 //put your loop point/volume balancing data here
 
+//these are examples; the existence checks are here to prevent errors when those files are deleted.
+
 if (sound_exists("ddpboss")) {
     //the loop points are in seconds
     set_loop_point("ddpboss",0.121,70.517)

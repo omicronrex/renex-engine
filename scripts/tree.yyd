@@ -1,4 +1,5 @@
 |engine_settings
+|custom_init
 +engine lists
 	|list_strings
 	|list_options
@@ -104,14 +105,13 @@
 	|activate_objects
 	|room_find
 +events
-	|event_world_create
 	|event_game_start
 	|event_room_start
 	|event_world_earlystep
 	|event_world_step
 	|event_world_endstep
 	|event_world_draw
-	|event_world_drawGUI
+	|event_debug_gui
 	|event_draw_gui
 	|event_room_end
 	|event_game_end
@@ -166,6 +166,7 @@
 	|weapon_default
 	|weapon_shootkid
 +sound
+	|load_sounds
 	|play_bg_music
 	|sound_play_slomo
 	|set_loop_point

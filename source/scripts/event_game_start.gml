@@ -17,6 +17,16 @@ if (__gm82core_version<140) {
     exit
 }
 
+if (!directory_exists("data")) {
+    set_working_directory(directory_previous(working_directory))
+    if (!directory_exists("data")) {
+        show_error(
+            "Data folder not found.",
+            true
+        )
+    }
+}
+
 gameclosing=0
 closingvol=1
 closingk=0

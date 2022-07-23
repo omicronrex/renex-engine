@@ -1,12 +1,6 @@
-*.cfg
-*.sav
-*.sav.bak
-*.csv
 *.exe
 *.gm81
 desktop.ini
 stuff
 save
-extensions
 cache
-changelog.txt

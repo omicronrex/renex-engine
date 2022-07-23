@@ -71,6 +71,7 @@ Minor changes:
 - some player options defaults have changed
 - improved documentation of certain engine objects
 - "gore" variable was renamed to "blood"
+- toggling godmode now clears the visual death list
 - some sound effects have been compressed to save space
 - instance activation lists are now taken care of by two grouping parents
 - you can flip the playerstart to start the player facing left

@@ -270,6 +270,7 @@
 	|sprDJumpBlockOff
 	|sprPatBall
 	|sprNangTJumpParticle
+	|sprAligner
 +Triggers
 	|sprTriggerGroup
 	|sprTrigger1

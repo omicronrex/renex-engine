@@ -168,6 +168,7 @@
 	|ExampleGizmo
 	|ActualYokuBlock
 	|YokuGroup
+	|AlignIndicator
 +Triggers
 	|TriggerGroup
 	|TrapStop

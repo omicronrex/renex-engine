@@ -23,7 +23,7 @@ action_id=603
 applies_to=self
 */
 //we save on begin step to make sure the player isn't stuck somewhere
-if (save) if (instance_exists(Player)) {
+if (save) {
     save=0
     savedata_save(false,name)
 }
@@ -59,7 +59,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (image_index==0) if (instance_exists(Player)) {
+if (image_index==0) {
     with (Player) if (instance_place(x,y,AntiSoftlockBlock)) exit
     if ((Player.vflip==1 && (image_angle<45 || image_angle>315)) || (Player.vflip==-1 && abs(image_angle-180)<45) || global.flip_saves) {
         image_index=1

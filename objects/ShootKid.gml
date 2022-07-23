@@ -22,7 +22,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!inside_view() || !instance_exists(Player)) instance_destroy()
+if (!inside_view() || Player.dead) instance_destroy()
 #define Collision_Block
 /*"/*'/**//* YYD ACTION
 lib_id=1

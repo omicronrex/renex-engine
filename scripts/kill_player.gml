@@ -1,4 +1,4 @@
-with (Player) {
+with (Player) if (!dead) {
     if (global.debug_god) {
         if (!flashing) {
             flashing=room_speed
@@ -40,7 +40,7 @@ with (Player) {
             instance_create(x,y,BloodEmitter)
             instance_create(view_xcenter,view_ycenter,GameOver)
 
-            instance_destroy_id(Player)
+            Player.dead=true
 
             savedata("deaths",savedata("deaths")+1)
         }

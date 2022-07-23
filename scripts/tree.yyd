@@ -131,6 +131,7 @@
 	|emit_blood
 	|on_ground
 	|player_update_sprite
+	|warp_to
 +keypick
 	|key_clear
 	|key_add

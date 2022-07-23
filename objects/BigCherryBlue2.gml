@@ -14,9 +14,7 @@ applies_to=self
 */
 var a,i,dir;
 
-dir=random(360)
-if (instance_exists(Player))
-    dir=point_direction(x,y,Player.x,Player.y)
+dir=point_direction(x,y,Player.x,Player.y)
 
 for (i=1;i<=8;i+=1;) {
     a=instance_create(x,y,BigCherrySmall2)

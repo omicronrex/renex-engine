@@ -25,8 +25,7 @@ if (diff=-1) {
 } else {
     difficulty=diff
     savedata_newgame(settings("lastfile"),difficulty)
-    instance_destroy_id(Player)
-    room_goto(global.first_room)
+    warp_to(global.first_room)
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

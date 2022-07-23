@@ -36,8 +36,7 @@ applies_to=self
 active=1
 
 if (global.key_pressed[key_up]) {
-    instance_destroy_id(Player)
-    room_goto(global.hub_room)
+    warp_to(global.hub_room)
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION

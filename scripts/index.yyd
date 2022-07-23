@@ -192,3 +192,4 @@ generate_save_thumbnail
 list_obstructions
 load_sounds
 room_find
+warp_to

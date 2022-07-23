@@ -18,12 +18,13 @@ if (warpX==noone && warpY==noone && roomTo=room) {
     instance_destroy()
 } else {
     collect_items()
-    if (warpX==noone && warpY==noone) {
-        instance_destroy_id(Player)
-    } else {
-        move_player(warpX,warpY,0)
+    if (roomTo!=room) {
+        if (warpX==noone && warpY==noone) {
+            warp_to(roomTo)
+        } else {
+            warp_to(roomTo,warpX,warpY)
+        }
     }
-    if (roomTo!=room) {input_clear() room_goto(roomTo)}
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION

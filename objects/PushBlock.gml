@@ -45,12 +45,10 @@ with (ConveyorRight)
                 move_contact_solid(90-90*sign(other.spd),other.spd)
 
 if (hspeed!=0) {
-    if (instance_exists(Player)) {
-        //pushed
-        if (instance_place(x+hspeed,y,Player)) {
-            move_player(Player.x+hspeed,Player.y,0)
-            check_crush()
-        }
+    //pushed
+    if (instance_place(x+hspeed,y,Player)) {
+        move_player(Player.x+hspeed,Player.y,0)
+        check_crush()
     }
 }
 #define Step_2

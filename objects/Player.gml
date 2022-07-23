@@ -46,6 +46,9 @@ shootkid=false
 onfire=false
 vvvvvv=false
 
+dead=false
+activated=true
+
 oldslomo=-1
 
 coyoteTime=0
@@ -166,7 +169,10 @@ if (!frozen) {
 }
 
 //don't smooth if the room speed is 50
-if (room_speed==50) framefac=1
+if (room_speed==50 && slomo==1) framefac=1
+
+//don't update while dead
+if (dead || !activated) updating=0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=612
@@ -428,11 +434,10 @@ if (instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_p
 }
 
 //one way gates
-
-if (hspeed>=0) {coll=instance_place(x+hspeed,y,GateLeft) if (coll) if (bbox_right+1-hspeed<=coll.bbox_left+2) hspeed=coll.bbox_left-(bbox_right+1)}
-if (hspeed<=0) {coll=instance_place(x+hspeed,y,GateRight) if (coll) if (bbox_left-hspeed>=coll.bbox_right-2) hspeed=coll.bbox_right-(bbox_left)}
-if (vspeed>=0) {coll=instance_place(x,y+vspeed,GateUp) if (coll) if (bbox_bottom+1-vspeed<=coll.bbox_top+2) {y+=coll.bbox_top-(bbox_bottom+1)-gravity vspeed=0}}
-if (vspeed<=0) {coll=instance_place(x,y+vspeed,GateDown) if (coll) if (bbox_top-vspeed>=coll.bbox_bottom-2) {y+=coll.bbox_bottom-(bbox_top)+1-gravity vspeed=0}}
+coll=instance_place(x+hspeed,y,GateLeft) if (coll) if (x+1-hspeed<=coll.bbox_left+2) {move_player(x+coll.bbox_left-(bbox_right+1),y,1) hspeed=0}
+coll=instance_place(x+hspeed,y,GateRight) if (coll) if (x-hspeed>=coll.bbox_right-2) {move_player(x+coll.bbox_right-(bbox_left),y,1) hspeed=0}
+coll=instance_place(x,y+vspeed,GateUp) if (coll) if (y+1-vspeed<=coll.bbox_top+2) {move_player(x,y+coll.bbox_top-(bbox_bottom+1)-gravity,1) vspeed=0}
+coll=instance_place(x,y+vspeed,GateDown) if (coll) if (vspeed-coll.vspeed<0 && y-vspeed>=coll.bbox_bottom-2) {move_player(x,y+coll.bbox_bottom-(bbox_top)+1-gravity,1) vspeed=max(coll.vspeed,vspeed)}
 
 //fire
 if (onfire) {
@@ -489,7 +494,7 @@ if (esign(vspeed+gravity,vflip)==vflip) {
 }
 
 if (land) {
-    player_land()
+    player_land(vspeed)
     vspeed=0
     //discover surface angle using two binary search seekers
     var ly,ry,len,fl,fr;
@@ -510,7 +515,7 @@ action_id=603
 applies_to=self
 */
 ///solid collision
-var land,a,s,rx;
+var land,a,s,rx,oldvsp;
 
 if (dotkid) {
     image_xscale=1
@@ -519,10 +524,12 @@ if (dotkid) {
 }
 
 ///solid collision
-var land,a,s,rx,yes;
+var land,a,s,rx,yes,oldvsp;
 
 if (hspeed>=0) {rx=floor(x) rxnext=floor(x+hspeed)}
 else {rx=ceil(x) rxnext=ceil(x+hspeed)}
+
+oldvsp=vspeed
 
 //we add gravity because this is supposed to happen after movement update
 vspeed+=gravity
@@ -534,7 +541,7 @@ if (!place_free(rxnext,y+vspeed)) {
         s=sign(hspeed)
         repeat (a+1) {
             x+=s
-            if (!place_free(x,y)) {x-=s player_hitwall() hspeed=0 break}
+            if (!place_free(x,y)) {x-=s player_hitwall(hspeed) hspeed=0 break}
         }
         x-=hspeed
         walljumpboost=0
@@ -548,16 +555,15 @@ if (!place_free(rxnext,y+vspeed)) {
             y+=s
             if (!place_free(rx,y)) {
                 y-=s
+                vspeed=0
                 if (s==vflip) {
-                    player_land()
+                    player_land(oldvsp)
                 } else {
-                    player_hitceiling()
+                    player_hitceiling(oldvsp)
                 }
                 break
             }
         }
-
-        vspeed=0
     }
 
     if (hspeed>=0) {rxnext=floor(x+hspeed)}
@@ -655,7 +661,7 @@ if (iframes) {
     flashing=iframes
     iframes-=1
 } else {
-    if (instance_place(x,y,PlayerKiller)) {
+    with (instance_place(x,y,PlayerKiller)) {
         kill_player()
     }
     if (dot_hitbox) if (instance_place(x,y,WhiteDotKiller)) {
@@ -733,54 +739,58 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (object_other_is_child_of(LiftBlock)) {
-    x-=hspeed
-    y-=vspeed
+if (!dead) {
+    if (object_other_is_child_of(LiftBlock)) {
+        x-=hspeed
+        y-=vspeed
 
-    if (instance_place(x+hspeed,y,other.id)) {
-        repeat (floor(abs(hspeed))) {if (instance_place(x+sign(hspeed),y,other.id)) break x+=sign(hspeed)}
-        hspeed=0
-        y+=vspeed
-        break
-    } else x+=hspeed
+        if (instance_place(x+hspeed,y,other.id)) {
+            repeat (floor(abs(hspeed))) {if (instance_place(x+sign(hspeed),y,other.id)) break x+=sign(hspeed)}
+            hspeed=0
+            y+=vspeed
+            break
+        } else x+=hspeed
 
-    if (vspeed<=other.vspeed) {if (instance_place(x,y+vspeed,other.id)) {
-        repeat (floor(abs(vspeed))) {if (instance_place(x,y+sign(vspeed),other.id)) break y+=sign(vspeed)}
-        vspeed=max(vspeed,other.vspeed)
-    } else y+=vspeed} else y+=vspeed
-}
-
-if (vflip==1) {
-    if (y-vspeed/2-8*dotkid<=other.bbox_top) {
-        if (other.snap || vspeed-other.vspeed>=0) {
-            y=other.bbox_top-9+8*dotkid
-            vspeed=max(0,other.vspeed/dt/slomo)
-            player_land()
-            onPlatform=true
-            djump=true
-            if (!place_free(x,y)) {
-                if (global.platform_crush_behavior==1) check_crush()
-                if (global.platform_crush_behavior==2) move_outside_solid(270,20)
-            }
-        }
-        vsplatform=max(0,other.vspeed)
-        walljumpboost=0
+        if (vspeed<=other.vspeed) {if (instance_place(x,y+vspeed,other.id)) {
+            repeat (floor(abs(vspeed))) {if (instance_place(x,y+sign(vspeed),other.id)) break y+=sign(vspeed)}
+            vspeed=max(vspeed,other.vspeed)
+        } else y+=vspeed} else y+=vspeed
     }
-} else {
-    if (y-vspeed/2+7*dotkid>=other.bbox_bottom+1.5) {
-        if (other.snap || vspeed-other.vspeed<=0) {
-            y=other.bbox_bottom+1.5+8-7*dotkid
-            vspeed=min(0,other.vspeed/dt/slomo)
-            player_land()
-            onPlatform=true
-            djump=true
-            if (!place_free(x,y)) {
-                if (global.platform_crush_behavior==1) check_crush()
-                if (global.platform_crush_behavior==2) move_outside_solid(90,20)
+
+    if (vflip==1) {
+        if (y-vspeed/2-8*dotkid<=other.bbox_top) {
+            if (other.snap || vspeed-other.vspeed>=0) {
+                y=other.bbox_top-9+8*dotkid
+                vspeed=max(0,other.vspeed/dt/slomo)
+                player_land(vspeed)
+                with (other) event_trigger(tr_platland)
+                onPlatform=true
+                djump=true
+                if (!place_free(x,y)) {
+                    if (global.platform_crush_behavior==1) check_crush()
+                    if (global.platform_crush_behavior==2) move_outside_solid(270,20)
+                }
             }
+            vsplatform=max(0,other.vspeed)
+            walljumpboost=0
         }
-        vsplatform=min(0,other.vspeed)
-        walljumpboost=0
+    } else {
+        if (y-vspeed/2+7*dotkid>=other.bbox_bottom+1.5) {
+            if (other.snap || vspeed-other.vspeed<=0) {
+                y=other.bbox_bottom+1.5+8-7*dotkid
+                vspeed=min(0,other.vspeed/dt/slomo)
+                player_land(vspeed)
+                with (other) event_trigger(tr_platland)
+                onPlatform=true
+                djump=true
+                if (!place_free(x,y)) {
+                    if (global.platform_crush_behavior==1) check_crush()
+                    if (global.platform_crush_behavior==2) move_outside_solid(90,20)
+                }
+            }
+            vsplatform=min(0,other.vspeed)
+            walljumpboost=0
+        }
     }
 }
 #define Other_0
@@ -805,13 +815,14 @@ if (instance_place(x,y,ScreenWrap)) {
         with (coll) {
             if (warpX==noone && warpY==noone && roomTo=room) {
                 instance_destroy()
-            } else {
+            } else if (roomTo!=room) {
+                input_clear()
+                if (autosave) autosave_asap()
                 if (warpX==noone && warpY==noone) {
-                    instance_destroy_id(Player)
+                    warp_to(roomTo)
                 } else {
-                    move_player(warpX,warpY,0)
+                    warp_to(roomTo,warpX,warpY)
                 }
-                if (roomTo!=room) {input_clear() room_goto(roomTo)}
             }
         }
     } else {
@@ -844,6 +855,13 @@ newspr=oldspr
 //debug stuff
 deathlist=0
 flashing=0
+#define Other_5
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (dead) instance_destroy()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -872,24 +890,27 @@ applies_to=self
 */
 ///skin draw
 
-if (global.debug_god) {
-    i=1
-    repeat (deathlist[0]) {
-        draw_sprite_ext(mask_index,0,deathlist[i],deathlist[i+1],1,1,0,$ff,0.5)
-        i+=2
+if (!dead) {
+    if (global.debug_god) {
+        i=1
+        //death list for godmode
+        repeat (deathlist[0]) {
+            draw_sprite_ext(mask_index,0,deathlist[i],deathlist[i+1],1,1,0,$ff,0.5)
+            i+=2
+        }
     }
-}
 
-if (flashing) {
-    flashing-=1
-    if (flashing mod 5 > 2) exit
-}
+    if (flashing) {
+        flashing-=1
+        if (flashing mod 5 > 2) exit
+    }
 
-script_execute(global.player_skin,"draw")
+    script_execute(global.player_skin,"draw")
 
-if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
-if (global.debug_jump) draw_sprite_ext(sprBow,2,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
+    if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
+    if (global.debug_jump) draw_sprite_ext(sprBow,2,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
 
-if (global.debug_hitbox) {
-    draw_sprite_ext(mask_index,0,round(x),round(y),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+    if (global.debug_hitbox) {
+        draw_sprite_ext(mask_index,0,round(x),round(y),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+    }
 }

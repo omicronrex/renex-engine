@@ -183,9 +183,7 @@ if (lost) {
         vspeed=-1.5*vflip
     }
 
-    if (instance_exists(Player)) {
-        image_xscale=esign(Player.x-x,image_xscale)
-    }
+    image_xscale=esign(Player.x-x,image_xscale)
 }
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
@@ -217,6 +215,8 @@ if (active) {
     }
 
     sound_play("sndYoshi2")
+
+    passenger.vspeed=vspeed
 
     lost=1
     vspeed=-8*vflip

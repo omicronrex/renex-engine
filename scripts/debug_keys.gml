@@ -66,16 +66,14 @@ if (is_ingame()) {
 
     if (keyboard_check_pressed(vk_pageup) && room!=room_last) {
         instance_activate_all()
-        instance_destroy_id(Player)
         show_message_right("next room")
-        room_goto_next()
+        warp_to(room_next(room))
     }
 
     if (keyboard_check_pressed(vk_pagedown) && room!=global.first_room) {
         instance_activate_all()
-        instance_destroy_id(Player)
         show_message_right("previous room")
-        room_goto_previous()
+        warp_to(room_previous(room))
     }
 
     if (mouse_check_button_pressed(mb_right)) {
@@ -92,8 +90,7 @@ if (is_ingame()) {
                 r=global.first_room
                 repeat (goto-1) r=room_next(r)
                 instance_activate_all()
-                instance_destroy_id(Player)
-                room_goto(r)
+                warp_to(r)
             }
         }
         if (func=2) {global.debug_jump=!global.debug_jump}

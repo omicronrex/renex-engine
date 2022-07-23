@@ -28,10 +28,9 @@ if (global.debug_overlay) {
     draw_set_font(fntFileSmall)
 
     str=""
-    if (instance_exists(Player)) {
-        str="X: "+string(Player.x)+" (align "+string(Player.x mod 3)+")#"
-           +"Y: "+string(Player.y)+"#"
-    }
+    str="X: "+string(Player.x)+" (align "+string(Player.x mod 3)+")#"
+       +"Y: "+string(Player.y)+"#"
+
 
     str+="Room: "+room_get_name(room)+" ("+string(room)+")#"
     str+="Inst: "+string(instance_count)+"#"
@@ -69,11 +68,10 @@ if (message2) {
 }
 
 if (settings("fullscreen") && !global.pause && is_ingame()) {
-    if (instance_exists(Player)) {
-        if (abs(Player.y-view_yview)<48) caption_opacity=max(1/8,caption_opacity-(1/8)*dt)
-        else caption_opacity=min(1,caption_opacity+(1/8)*dt)
-        draw_set_alpha(caption_opacity)
-    }
+    if (abs(Player.y-view_yview)<48 && !Player.dead) caption_opacity=max(1/8,caption_opacity-(1/8)*dt)
+    else caption_opacity=min(1,caption_opacity+(1/8)*dt)
+    draw_set_alpha(caption_opacity)
+
     draw_set_font(fntSignpost)
     draw_text_outline(8,8,room_caption,$ffff)
     draw_set_alpha(1)

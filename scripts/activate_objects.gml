@@ -6,5 +6,6 @@ instance_activate_object(ActiveParent)
 
 if (argument0) {
     //instances that should only activate during active gameplay
+    Player.activated=true
     instance_activate_object(ActiveIngame)
 }

@@ -41,7 +41,6 @@ if (keyboard_check_pressed(vk_escape)) {
             instance_activate_all()
             if (global.gen_thumb) generate_save_thumbnail(1)
             savedata_write()
-            instance_destroy_id(Player)
             room_goto(rmTitle)
         }
     } else {
@@ -61,7 +60,6 @@ if (keyboard_check_pressed(vk_f2)) {
     if (is_ingame()) {
         instance_destroy_id(PauseMenu)
         savedata_write()
-        instance_destroy_id(Player)
         room_goto(rmTitle)
     } else room_goto(rmTitle)
 }

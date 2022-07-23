@@ -58,12 +58,12 @@
 	|CherryCircle
 	|CherryRainbow
 	|MiniSpikeDown
-	|MiniSpikeRight
 	|MiniSpikeLeft
+	|MiniSpikeRight
 	|MiniSpikeUp
 	|LeekUp
-	|LeekRight
 	|LeekLeft
+	|LeekRight
 	|LeekDown
 +Gimmicks
 	+White Dot
@@ -348,8 +348,8 @@
 	|OutsideWarp
 	|TimerFreeze
 	|MusicPlayer
-	|MusicSync
 	|MusicPlayerSection
+	|MusicSync
 	|WaterSurface
 	|TextDraw
 	|WarpToHub

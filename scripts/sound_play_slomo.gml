@@ -1,6 +1,6 @@
 ///sound_play_slomo(sound)
 ///sound_play_slomo(sound,pitch)
-//plays a sound at the speed of the slomo gimmick
+//plays a sound with pitch to match the game speed
 var snd,spd;
 
 spd=1

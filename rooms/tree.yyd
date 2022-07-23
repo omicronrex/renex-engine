@@ -2,7 +2,7 @@
 |rmTitle
 |rmMenu
 |rmOptions
-+Demo
++Game
 	|rmDifficulty
 	|rmHub
 	+Example (safe to delete)
@@ -13,4 +13,4 @@
 		|rmExtra
 		|rmExBoss
 		|rmClear
-|rmTemplate
+	|rmTemplate

@@ -1,3 +1,4 @@
+///player_update_sprite()
 oldbowx=newbowx
 oldbowy=newbowy
 if (global.bow_lag) {

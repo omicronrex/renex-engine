@@ -1,3 +1,3 @@
 //gm82 fields begin
-BGM="wtrlvl"
+vsp=-5
 //gm82 fields end

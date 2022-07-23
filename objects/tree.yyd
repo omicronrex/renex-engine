@@ -29,7 +29,6 @@
 	|VolCheck
 	|TitleMenu
 	|FileMenu
-	|OptionsGridCheck
 	|OptionsMenu
 	|KeyboardMenu
 	|JoystickMenu

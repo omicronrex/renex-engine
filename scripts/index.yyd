@@ -188,5 +188,7 @@ player_hitceiling
 random_cherry_color
 
 custom_init
+generate_save_thumbnail
+list_obstructions
 load_sounds
 room_find

@@ -11,3 +11,6 @@
 |bgTree3
 +Example (safe to delete)
 	|bgFire
+|bgThumbDefault
+|bgThumbClear
+|bgThumbBroken

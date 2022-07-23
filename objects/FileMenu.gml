@@ -12,6 +12,14 @@ dx=x+240*select+65
 asksel=0
 
 state=""
+
+i=0 repeat (3) {
+    savedata_select(i)
+    fn=global.savefolder+global.savesig+".png"
+    if (file_exists(fn)) thumb[i]=background_add(fn,0,0)
+    else thumb[i]=noone
+    i+=1
+}
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -119,6 +127,10 @@ settings_write()
 
 //disable any system messages when leaving the menu
 show_message_left()
+
+i=0 repeat (3) {
+    if (thumb[i]!=noone) background_delete(thumb[i])
+}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -137,42 +149,52 @@ for (i=0;i<3;i+=1) {
     savedata_select(i)
     draw_set_halign(1)
     draw_set_font(fntFileBig)
-    draw_text(x+i*240+64,y,lang("filegame")+string(i+1))
+    draw_text(x+i*240+64,y+96,lang("filegame")+string(i+1))
     draw_set_font(fntFileSmall)
+
+    draw_background_stretched(bgThumbDefault,x+i*240,y,128,96)
 
     if (savedata("saved")) {
         draw_set_halign(0)
-        draw_text(x+i*240+10,y+70,lang("deaths")+":#  "+string(savedata("deaths"))+"#"+lang("time")+":#  "+format_time(savedata("time")))
+        draw_text(x+i*240+10,y+70+96,lang("deaths")+":#  "+string(savedata("deaths"))+"#"+lang("time")+":#  "+format_time(savedata("time")))
 
         draw_set_halign(1)
         if (state="continue" && select=i) {
-            if (!asksel) draw_text(x+i*240+64,y+32,">"+lang("filecontinue")+"<#"+lang("fileerase"))
-            else draw_text(x+i*240+64,y+32,lang("filecontinue")+"#>"+string_repeat("XX",askcount)+string_copy(lang("fileerase"),1+askcount*2,10-askcount*2)+"<")
-        } else draw_text(x+i*240+64,y+48,global.name_difficulties[difficulty])
+            if (!asksel) draw_text(x+i*240+64,y+32+96,">"+lang("filecontinue")+"<#"+lang("fileerase"))
+            else draw_text(x+i*240+64,y+32+96,lang("filecontinue")+"#>"+string_repeat("XX",askcount)+string_copy(lang("fileerase"),1+askcount*2,10-askcount*2)+"<")
+        } else draw_text(x+i*240+64,y+48+96,global.name_difficulties[difficulty])
 
         draw_set_font(fntFileBig)
-        if (savedata("clear")) draw_text(x+i*240+64,y+152,lang("fileclear"))
+        if (savedata("clear")) {
+            draw_background(bgThumbClear,x+i*240,y)
+        } else {
+            if (thumb[i]!=noone) {
+                texture_set_interpolation(1)
+                draw_background_stretched(thumb[i],x+i*240,y,128,96)
+                texture_set_interpolation(0)
+            } else draw_background(bgThumbBroken,x+i*240,y)
+        }
         draw_set_halign(0)
 
-        if (has_item("Item1")) draw_sprite(sprItem1,0,x+i*240+0,y+192)
-        if (has_item("Item2")) draw_sprite(sprItem2,0,x+i*240+32,y+192)
-        if (has_item("Item3")) draw_sprite(sprItem3,0,x+i*240+64,y+192)
-        if (has_item("Item4")) draw_sprite(sprItem4,0,x+i*240+96,y+192)
-        if (has_item("Item5")) draw_sprite(sprItem5,0,x+i*240+0,y+224)
-        if (has_item("Item6")) draw_sprite(sprItem6,0,x+i*240+32,y+224)
-        if (has_item("Item7")) draw_sprite(sprItem7,0,x+i*240+64,y+224)
-        if (has_item("Item8")) draw_sprite(sprItem8,0,x+i*240+96,y+224)
+        if (has_item("Item1")) draw_sprite(sprItem1,0,x+i*240+0,y+256)
+        if (has_item("Item2")) draw_sprite(sprItem2,0,x+i*240+32,y+256)
+        if (has_item("Item3")) draw_sprite(sprItem3,0,x+i*240+64,y+256)
+        if (has_item("Item4")) draw_sprite(sprItem4,0,x+i*240+96,y+256)
+        if (has_item("Item5")) draw_sprite(sprItem5,0,x+i*240+0,y+288)
+        if (has_item("Item6")) draw_sprite(sprItem6,0,x+i*240+32,y+288)
+        if (has_item("Item7")) draw_sprite(sprItem7,0,x+i*240+64,y+288)
+        if (has_item("Item8")) draw_sprite(sprItem8,0,x+i*240+96,y+288)
     } else {
         draw_set_halign(1)
-        if (state="new file" && select=i) draw_text(x+i*240+64,y+32,lang("filediff")+"#<"+global.name_difficulties[difficulty]+">")
-        else draw_text(x+i*240+64,y+48,lang("filenodata"))
+        if (state="new file" && select=i) draw_text(x+i*240+64,y+32+96,lang("filediff")+"#<"+global.name_difficulties[difficulty]+">")
+        else draw_text(x+i*240+64,y+96+48,lang("filenodata"))
     }
 }
 draw_set_halign(0)
 
 draw_sprite_ext(sprFileBorder,0,x+select*240,y,32,32,0,$ffffff,1)
-draw_sprite(sprite_index,-1,dx,y+310)
-draw_sprite(sprDynamicPlatform,0,dx-17,y+319)
+draw_sprite(sprite_index,-1,dx,y+310+64)
+draw_sprite(sprDynamicPlatform,0,dx-17,y+319+64)
 
 //option info
 draw_set_color(global.text_color)

@@ -62,4 +62,6 @@ if (difficulty!=3 || argument0) with (Player) {
     savedata("beamstate",beamstate)
 
     save_persistent_objects()
+
+    global.gen_thumb=1
 }

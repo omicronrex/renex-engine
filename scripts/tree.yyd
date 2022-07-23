@@ -6,6 +6,7 @@
 	|list_music_properties
 	|list_nonstick
 	|list_gizmos
+	|list_obstructions
 +saving
 	|savedata_init
 	|settings_default
@@ -32,6 +33,7 @@
 		|end_objsave
 		|write_objsave
 		|read_objsave
+	|generate_save_thumbnail
 +system
 	+util
 		|format_time

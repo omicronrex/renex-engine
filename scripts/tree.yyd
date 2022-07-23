@@ -59,6 +59,8 @@
 		|input_update
 		|input_consume
 		|input_clear
+		|input_disable
+		|input_enable
 		|lock_controls
 		|unlock_controls
 		|system_hotkeys

@@ -3,10 +3,10 @@ var tmp,l,r;
 
 //consume stored key state
 for (i=0;i<key_sizeof;i+=1) {
-    key[i]=World.storekey[i]
-    key_pressed[i]       =World.storekey_pressed[i]        World.storekey_pressed[i]       =0
-    key_released_early[i]=World.storekey_released_early[i] World.storekey_released_early[i]=0
-    key_released[i]      =World.storekey_released[i]       World.storekey_released[i]      =0
+    key[i]=World.storekey[i] && !global.diskey[i]
+    key_pressed[i]       =World.storekey_pressed[i]        && !global.diskey[i] World.storekey_pressed[i]       =0
+    key_released_early[i]=World.storekey_released_early[i] && !global.diskey[i] World.storekey_released_early[i]=0
+    key_released[i]      =World.storekey_released[i]       && !global.diskey[i] World.storekey_released[i]      =0
 }
 
 //if the view is upside down, rotate inputs 180

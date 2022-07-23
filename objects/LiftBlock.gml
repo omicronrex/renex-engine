@@ -20,7 +20,7 @@ applies_to=self
 */
 if (path_index!=-1 && path_speed!=0) {
     get_path_speed()
-} else if (hspeed!=0 || vspeed!=0) {
+} else {
     if (hspeed!=0) if (!place_free(x+hspeed,y)) hspeed=-hspeed
     if (vspeed!=0) if (!place_free(x,y+vspeed)) vspeed=-vspeed
 }

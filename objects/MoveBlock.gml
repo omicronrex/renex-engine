@@ -27,8 +27,11 @@ if (!active) if (distance_to_object(Player)<2) {
     hspeed=hsp
     vspeed=vsp
 }
-
-event_inherited()
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=604
+invert=0
+*/
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

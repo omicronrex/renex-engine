@@ -2,7 +2,7 @@
     RENEX ENGINE
     ============
     version 1.5.0
-    28 April 2022
+    23 July 2022
   
   A modern fork of various GM8 I Wanna Be The Guy fangame engines with hundreds
   of improvements and new features.

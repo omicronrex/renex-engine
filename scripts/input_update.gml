@@ -4,6 +4,9 @@ keyboard=false
 
 //check keyboard
 if (global.infocus) for (i=0;i<key_sizeof;i+=1) {
+    //store old directions for joystick system
+    global.oldkey[i]=global.key[i]
+
     //we check the key directly twice because of how windows handles it
     //this fixes the input lag inherent to it
     //https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getasynckeystate#return-value
@@ -84,6 +87,7 @@ if (global.infocus) for (j=0;j<joystick_count();j+=1) if (joy_set[j]) {
     for (i=0;i<key_sizeof;i+=1) {
         reading_pressed=0
         reading_released=0
+        reading_old=global.oldkey[i]
         get=joy_get_map(j,i)
         if (get) global.lastjoystick=j
         global.key[i]=global.key[i] || get

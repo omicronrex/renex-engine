@@ -6,6 +6,7 @@ were discovered during the production of WannaFest'22.
 New features:
 
 - added full support for new 8.2 room editor Fields feature
+- added support for live room editing from within the new room editor
 - added moving solids for things like lifts and pushblocks
 - added savefile thumbnails
 - added new test rooms that explain all available engine objects

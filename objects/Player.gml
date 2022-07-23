@@ -463,7 +463,7 @@ if (gravity==0) grav_step=0.5*vflip
 if (esign(vspeed+gravity,vflip)==vflip) {
     was_on_slope=instance_place(x,y+2*vflip,SlopeParent)
     //optimization: short circuit
-    if (!was_on_slope) is_going_into_slope=instance_place(x+hspeed,y+2*vflip,SlopeParent)
+    if (!was_on_slope) is_going_into_slope=instance_place(x+hspeed,y+2*vflip*!dotkid,SlopeParent)
     if (was_on_slope || is_going_into_slope) {
         x+=hspeed
         if (place_free(x,y)) {

@@ -4,7 +4,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-event_world_create()
+//test event order to make sure the gm82 option is checked
+order_test=2
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -65,10 +66,3 @@ action_id=603
 applies_to=self
 */
 event_world_earlystep()
-#define Trigger_Draw GUI
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-event_world_drawGUI()

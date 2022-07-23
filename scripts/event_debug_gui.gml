@@ -34,6 +34,7 @@ if (global.debug_overlay) {
     }
 
     str+="Room: "+room_get_name(room)+" ("+string(room)+")#"
+    str+="Inst: "+string(instance_count)+"#"
 
     if (!instance_exists(global.profiler_manager)) {
         str+="FPS: "+string(fps_fast)+"/"+string(room_speed)+" (real "+string(fps_real)+")#"
@@ -67,13 +68,11 @@ if (message2) {
     draw_set_alpha(1)
 }
 
-if(settings("fullscreen") && !global.pause && global.fullscreen_caption_visible && is_ingame()) {
-    if(global.fullscreen_caption_fade&&instance_exists(Player)) {
-        if(abs(Player.y-view_yview)<global.caption_fade_margin)
-            global.caption_opacity=inch(global.caption_opacity,global.caption_min_alpha,(1/8)*dt)
-        else
-            global.caption_opacity=inch(global.caption_opacity,1,(1/8)*dt)
-        draw_set_alpha(global.caption_opacity)
+if (settings("fullscreen") && !global.pause && is_ingame()) {
+    if (instance_exists(Player)) {
+        if (abs(Player.y-view_yview)<48) caption_opacity=max(1/8,caption_opacity-(1/8)*dt)
+        else caption_opacity=min(1,caption_opacity+(1/8)*dt)
+        draw_set_alpha(caption_opacity)
     }
     draw_set_font(fntSignpost)
     draw_text_outline(8,8,room_caption,$ffff)

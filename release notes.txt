@@ -1,32 +1,49 @@
-renex engine v1.5.0 build xx xxx 2022
+renex engine v1.5.0 build 23 jul 2022
 
 New features:
 
 - added full support for new 8.2 room editor Fields feature
+- added moving solids for things like lifts and pushblocks
+- added savefile thumbnails
 - added new test rooms that explain all available engine objects
 - added Yoshi gimmick from WtW with muncher and sawblade
 - added new ingame option for kid walking animation type
 - added support for mp3 sound effects by default
 - added leek obstacles from Churatch (with the color scheme from LoveTrap)
+- added align grab indicator gimmick object
 - added new tool for easily skinning blocks and spikes
 - added actual yoku blocks
+- added warp id system + multiple playerstart support using Fields
+- added Platform Stepped trigger event
 - added optional difficulty select room
+- added facilities to disable specific controls in the player
 - added CameraFull tool as a shortcut for free camera in a room
 - added camera_set_size(), and CameraBlock tools
 - added new TriggerGroup tool for grouping triggers in large rooms
 - added move_player_object() if you ever needed to move a specific player object
 - added player iframes system
 - added debug keys F and G to control testing speed
+- added a surface count to the debug overlay, and Ctrl-S to preview surfaces
 - added new Vehicle parent system
 - added a few bonus tilesets
+- added a new background daemon that should make them look smooth when zoomed in
 - added Mega Cherry bonus object
 
 Bugs fixed:
 
+- fixed a surface leak
+- fixed many issues with the pause menu
+- fixed joystick axes and dpads not generating direction key presses/releases
+- fixed dotkid not being able to walk onto slopes from solid ground
+- fixed a few shenanigans involving the room speed
+- fixed the pause menu and game GUI looking crusty in fullscreen
+- fixed jump refreshers working backwards when you have more than 2 jumps
+- fixed being unable to stop the screen shake by passing 0 to the function
 - fixed a bunch of issues with instance deactivation (including pause bugs)
 - fixed a potential issue with the screen when using zoom as antialiasing
 - fixed draw gui and room background projections for zoomed in camera
 - fixed tile/texture seams and jitter on nvidia
+- fixed rainbow cherry's alpha blend
 - fixed interpolation for draw gui event
 - fixed pause menu option for left+right only taking effect after a restart
 - fixed player sprite desync and camera reset when player is teleported
@@ -39,11 +56,25 @@ Bugs fixed:
 - fixed shift cancelling with different shift keys
 - fixed camera_set_raw() being offset when zoom isn't 1
 - fixed typo that broke right-side toast messages
+- fixed crashes when the demo rooms are deleted
 - fixed a problem where changing the depth of system objects caused glitches
 
 Minor changes:
 
+- global input now correctly responds to the chosen left+right option
+- the player object is never destroyed, so you don't have to check if it exists
+- some old and pointless engine options were removed for cleaner code
+- the player's sprite now updates immediately when the game speed is 50
+- removed the annoying grid that used to draw in the fullscreen filter option
+- the application surface is now always enabled to simplify a lot of logic
+- the player walking animation option snap-in will now preview the animation
+- some player options defaults have changed
+- improved documentation of certain engine objects
+- "gore" variable was renamed to "blood"
+- some sound effects have been compressed to save space
 - instance activation lists are now taken care of by two grouping parents
+- you can flip the playerstart to start the player facing left
+- saves and bullets will no longer reset their own scaling and blending
 - if there's only one difficulty, it doesn't ask you on new file
 - profiler will now display ram usage as well
 - ladders have top collision, and you can climb down from them onto the floor

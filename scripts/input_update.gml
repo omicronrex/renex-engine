@@ -106,8 +106,8 @@ for (i=0;i<key_sizeof;i+=1) {
 }
 
 //convenience
-global.input_h=global.key[key_right]-global.key[key_left]
-global.input_v=global.key[key_down ]-global.key[key_up  ]
+global.input_h=input_leftright(global.key[key_left],global.key[key_right],global.key_pressed[key_left],global.key_pressed[key_right],global.key_released[key_left],global.key_released[key_right],global.input_h)
+global.input_v=global.key[key_down]-global.key[key_up]
 
 //input display
 if (global.lastjoystick!=noone) {

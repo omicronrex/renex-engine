@@ -21,23 +21,9 @@ if (view_angle>90 && view_angle<270) {
 
 if (!cutscene) {
     //solve horizontal input and left+right depending on player choice
-    l=(key[key_left ] || key_pressed[key_left ]) && !key_released[key_left]
-    r=(key[key_right] || key_pressed[key_right]) && !key_released[key_right]
-    if (l && r) {
-        switch (lrtype) {
-            case lr_last: {
-                if (input_h== 1 || key_pressed[key_right]) input_h= 1
-                if (input_h==-1 || key_pressed[key_left ]) input_h=-1
-                if (!global.leftright_moonwalk) facing=esign(input_h,facing)
-            }break
-            case lr_stop : {input_h= 0}break
-            case lr_left : {input_h=-1 facing=-1}break
-            case lr_right: {input_h= 1 facing= 1}break
-        }
-    } else {
-        input_h=r-l
-        facing=esign(input_h,facing)
-    }
+    input_h=input_leftright(key[key_left],key[key_right],key_pressed[key_left],key_pressed[key_right],key_released[key_left],key_released[key_right],input_h)
+
+    facing=esign(input_h,facing)
 
     //solve vertical input (always resolved as type lr_last)
     l=key[key_up   ] || key_pressed[key_up   ]

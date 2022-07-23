@@ -193,3 +193,4 @@ list_obstructions
 load_sounds
 room_find
 warp_to
+input_leftright

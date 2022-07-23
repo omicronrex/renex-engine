@@ -14,3 +14,6 @@ global.joysupdated=false
 
 global.lastjoystick=noone
 global.lastjoyname=""
+
+global.input_h=0
+global.input_v=0

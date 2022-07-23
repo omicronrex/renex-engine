@@ -17,7 +17,6 @@ switch (argument0) {
         return "Left+Right Mode"
     }break
     case opt_value: {
-        if (global.leftright_moonwalk) return "Moonwalk"
-        else return pick(settings("l+r behavior"),"Flip","Stay","Stop","Left","Right")
+        return pick(settings("l+r behavior"),"Flip","Stay","Stop","Left","Right")
     }break
 }

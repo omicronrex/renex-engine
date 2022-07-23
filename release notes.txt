@@ -1,5 +1,8 @@
 renex engine v1.5.0 build 23 jul 2022
 
+This is a massive update that brings in all of the fixes and improvements that
+were discovered during the production of WannaFest'22.
+
 New features:
 
 - added full support for new 8.2 room editor Fields feature
@@ -9,6 +12,7 @@ New features:
 - added Yoshi gimmick from WtW with muncher and sawblade
 - added new ingame option for kid walking animation type
 - added support for mp3 sound effects by default
+- added support for 1 layer of subfolders in the sounds and music folder
 - added leek obstacles from Churatch (with the color scheme from LoveTrap)
 - added align grab indicator gimmick object
 - added new tool for easily skinning blocks and spikes
@@ -20,11 +24,11 @@ New features:
 - added CameraFull tool as a shortcut for free camera in a room
 - added camera_set_size(), and CameraBlock tools
 - added new TriggerGroup tool for grouping triggers in large rooms
-- added move_player_object() if you ever needed to move a specific player object
 - added player iframes system
 - added debug keys F and G to control testing speed
 - added a surface count to the debug overlay, and Ctrl-S to preview surfaces
-- added new Vehicle parent system
+- added instance count to the debug overlay
+- added new Vehicle system
 - added a few bonus tilesets
 - added a new background daemon that should make them look smooth when zoomed in
 - added Mega Cherry bonus object
@@ -61,6 +65,7 @@ Bugs fixed:
 
 Minor changes:
 
+- the engine source can now be placed in a subfolder
 - global input now correctly responds to the chosen left+right option
 - the player object is never destroyed, so you don't have to check if it exists
 - some old and pointless engine options were removed for cleaner code

@@ -24,6 +24,7 @@
 	|KeyParent
 	|KeyBlockParent
 	|SlopeParent
+	|MovingSolid
 	|SuperVehicle
 +User Interface
 	|VolCheck

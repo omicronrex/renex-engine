@@ -7,10 +7,14 @@ arg0=will move when stood on
 */
 /*"/*'/**//* YYD ACTION
 lib_id=1
+action_id=604
+invert=0
+*/
+/*"/*'/**//* YYD ACTION
+lib_id=1
 action_id=603
 applies_to=self
 */
-event_inherited()
 active=false
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -38,6 +42,8 @@ applies_to=self
 //field snap: bool
 //field hspeed
 //field vspeed
+
+event_inherited()
 
 hsp=hspeed
 vsp=vspeed

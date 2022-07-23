@@ -43,7 +43,7 @@ numoptions=ds_list_size(optlist)
 xcursor=xdraw-18
 ycursor=ydraw+9
 sprite=sprPlayerIdle
-image_speed=0.2
+image_speed=0.2*50/room_speed
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -52,6 +52,7 @@ applies_to=self
 */
 if (input_anykey()) {
     room_speed=memspd
+    image_speed=0.2
     alarm[0]=room_speed
 }
 
@@ -81,6 +82,7 @@ action_id=603
 applies_to=self
 */
 room_speed=10
+image_speed=0.2*50/room_speed
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -90,6 +92,7 @@ applies_to=self
 for (i=0;i<key_sizeof;i+=1) {
     if (global.key[i]) {
         room_speed=memspd
+        image_speed=0.2*50/room_speed
         alarm[0]=room_speed*3
         break
     }

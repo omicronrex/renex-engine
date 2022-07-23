@@ -14,7 +14,7 @@ switch (argument0) {
         }
         if (settings("anim")) sprite=sprPlayerRunning
         else sprite=sprPlayerRunningOld
-        image_speed=0.5
+        image_speed=0.5*50/room_speed
     }break
     case opt_text: {
         return "Animations"

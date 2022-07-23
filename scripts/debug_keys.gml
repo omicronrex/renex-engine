@@ -10,17 +10,20 @@ if (keyboard_check_pressed(vk_backspace)) {
     global.debug_overlay=!global.debug_overlay
 }
 
-room_speed=global.game_speed*(1-0.8*keyboard_check(ord("G")))
-if (keyboard_check(ord("F"))) {
-    room_speed=500
+target_speed=global.game_speed
+dx8_set_vsync(true)
+
+if (keyboard_check(ord("G"))) {
+    target_speed=global.game_speed/5
     dx8_set_vsync(false)
-} else {
-    global.game_speed=50
-    dx8_set_vsync(true)
+} else if (keyboard_check(ord("F"))) {
+    target_speed=global.game_speed*5
+    dx8_set_vsync(false)
 }
 
-if (room_speed!=current_speed) {
-    current_speed=room_speed
+if (current_speed!=target_speed) {
+    current_speed=target_speed
+    room_speed=target_speed
     sound_kind_pitch(0,room_speed/global.game_speed)
     sound_kind_pitch(1,room_speed/global.game_speed)
     sound_kind_pitch(3,room_speed/global.game_speed)

@@ -36,7 +36,7 @@ if (fading) {
 
 if (is_ingame() && room!=global.difficulty_room) {
     //advance game time
-    if (!Player.dead && !instance_exists(TimerFreeze)) {
+    if (!Player.dead && !global.pause && !instance_exists(TimerFreeze)) {
         time=savedata("time")+50/room_speed
         savedata("time",time)
     }

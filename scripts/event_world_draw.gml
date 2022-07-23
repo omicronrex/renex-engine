@@ -22,9 +22,3 @@ if (!global.pause) {
         dx8_make_opaque()
     }
 }
-
-if (global.debug_hitbox) {
-    draw_set_color($ff00ff)
-    with (all) draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1)
-    draw_set_color($ffffff)
-}

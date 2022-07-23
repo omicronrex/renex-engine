@@ -41,18 +41,18 @@ object_event_add(o,ev_draw,0,"
     }
 ")
 
-object_event_add(o,ev_trigger,ev_draw_gui,"
+object_event_add(o,ev_other,ev_user0,"
     if (ready) {
         var time;time=get_timer()
         draw_set_font(fntFileSmall)
         draw_set_valign(2)
-        draw_text_outline(40,global.GUIheight-40,str,$ffff)
+        draw_text_outline(40,global.height-40,str,$ffff)
 
-        j=global.GUIheight-40
+        j=global.height-40
         draw_set_color($ff)
         draw_primitive_begin(pr_linelist)
         i=0 repeat (len) {
-            k=global.GUIwidth-40-len+i
+            k=global.width-40-len+i
             draw_vertex(k,j)
             draw_vertex(k,j-cpu[i])
             i+=1
@@ -62,7 +62,7 @@ object_event_add(o,ev_trigger,ev_draw_gui,"
         draw_set_color($ff0000)
         draw_primitive_begin(pr_linelist)
         i=0 repeat (len) {
-            k=global.GUIwidth-40-len*2+i
+            k=global.width-40-len*2+i
             draw_vertex(k,j)
             draw_vertex(k,j-fpsf[i])
             i+=1
@@ -72,7 +72,7 @@ object_event_add(o,ev_trigger,ev_draw_gui,"
         draw_set_color($ff00)
         draw_primitive_begin(pr_linelist)
         i=0 repeat (len) {
-            k=global.GUIwidth-40-len+i
+            k=global.width-40-len+i
             draw_vertex(k,j-110)
             draw_vertex(k,j-110-ram[i])
             i+=1
@@ -80,9 +80,9 @@ object_event_add(o,ev_trigger,ev_draw_gui,"
         draw_primitive_end()
 
         draw_set_color($ffff)
-        draw_text(global.GUIwidth-40-len*2+10,j-10,'fps: '+string(fps_fast)+'#real: '+string(fps_real))
-        draw_text(global.GUIwidth-40-len+10,j-10,'cpu: '+string(cpu_usage)+'%')
-        draw_text(global.GUIwidth-40-len+10,j-120,'ram: '+string(ram_usage/1024/1024)+'MB')
+        draw_text(global.width-40-len*2+10,j-10,'fps: '+string(fps_fast)+'#real: '+string(fps_real))
+        draw_text(global.width-40-len+10,j-10,'cpu: '+string(cpu_usage)+'%')
+        draw_text(global.width-40-len+10,j-120,'ram: '+string(ram_usage/1024/1024)+'MB')
         draw_set_color($ffffff)
 
         draw_set_valign(0)

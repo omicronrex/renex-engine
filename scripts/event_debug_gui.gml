@@ -78,3 +78,37 @@ if (settings("fullscreen") && !global.pause && is_ingame()) {
     draw_text_outline(8,8,room_caption,$ffff)
     draw_set_alpha(1)
 }
+
+
+with (global.profiler_manager) event_user(0)
+
+if (global.test_run) if (keyboard_check(vk_control) && keyboard_check(ord("S"))) {
+    //surface debugger
+    var wx,wy,i,dx,dy;
+    wx=window_mouse_get_x()
+    wy=window_mouse_get_y()
+    i=0 dx=0 dy=0 repeat (100) {
+        if (surface_exists(i) && i!=application_surface) {
+            if (wx>dx && wx<dx+64 && wy>dy && wy<dy+64) {
+                draw_surface_stretched(i,dx,dy,256,256)
+                dx+=256
+            } else {
+                draw_surface_stretched(i,dx,dy,64,64)
+                dx+=64
+            }
+            if (dx>800-64) {
+                dx-=64 dy+=64
+            }
+
+        }
+        i+=1
+    }
+}
+
+camera_apply()
+
+if (global.debug_hitbox) {
+    draw_set_color($ff00ff)
+    with (all) draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1)
+    draw_set_color($ffffff)
+}

@@ -4,7 +4,7 @@ if (!global.pause) {
 
     //draw slow motion effect
     with (Player) if (slomo<1) {
-        draw_set_alpha(0.025+0.025*sin(current_time/30))
+        draw_set_alpha(0.025+0.025*sin(global.increment/2))
         draw_rectangle_color(0,0,room_width,room_height,0,0,0,0,0)
         draw_set_alpha(1)
     }

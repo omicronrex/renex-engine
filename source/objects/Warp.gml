@@ -7,6 +7,7 @@ applies_to=self
 warpCoord[0]=noone
 warpCoord[1]=noone
 warpid=""
+warpsound=""
 roomTo=room
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
@@ -20,6 +21,9 @@ if (warpX==noone && warpY==noone && roomTo=room) {
 } else {
     collect_items()
     if (roomTo!=room) {
+        if (warpsound!="") {
+            persistent=1
+        }
         if (warpX==noone && warpY==noone) {
             warp_to(roomTo)
         } else {
@@ -37,6 +41,13 @@ applies_to=self
 //field roomTo: room
 //field warpCoord: xy
 //field warpid: string
+//field warpsound: string
 
-warpX=warpCoord[0]
-warpY=warpCoord[1]
+if (persistent && warpsound!="") {
+    //we are coming from a previous room, and we have to play a sound
+    sound_play(warpsound)
+    instance_destroy()
+} else {
+    warpX=warpCoord[0]
+    warpY=warpCoord[1]
+}

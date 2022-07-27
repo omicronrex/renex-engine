@@ -19,6 +19,8 @@
     global.use_appdata=false
     //user interface text color
     global.text_color=$ffffff
+    //use savefile thumbnails
+    global.savefile_thumbnails=true
 
 
 //template for classic games

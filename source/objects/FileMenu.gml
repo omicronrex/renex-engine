@@ -13,12 +13,14 @@ asksel=0
 
 state=""
 
-i=0 repeat (3) {
-    savedata_select(i)
-    fn=global.savefolder+global.savesig+".png"
-    if (file_exists(fn)) thumb[i]=background_add(fn,0,0)
-    else thumb[i]=noone
-    i+=1
+if (global.savefile_thumbnails) {
+    i=0 repeat (3) {
+        savedata_select(i)
+        fn=global.savefolder+global.savesig+".png"
+        if (file_exists(fn)) thumb[i]=background_add(fn,0,0)
+        else thumb[i]=noone
+        i+=1
+    }
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -32,13 +34,15 @@ if ((keyboard_check_pressed(ord("Z")) && keyboard_check(vk_control)) || keyboard
     state=""
     input_clear()
 
-    i=0 repeat (3) {
-        savedata_select(i)
-        fn=global.savefolder+global.savesig+".png"
-        if (thumb[i]!=noone) background_delete(thumb[i])
-        if (file_exists(fn)) thumb[i]=background_add(fn,0,0)
-        else thumb[i]=noone
-        i+=1
+    if (global.savefile_thumbnails) {
+        i=0 repeat (3) {
+            savedata_select(i)
+            fn=global.savefolder+global.savesig+".png"
+            if (thumb[i]!=noone) background_delete(thumb[i])
+            if (file_exists(fn)) thumb[i]=background_add(fn,0,0)
+            else thumb[i]=noone
+            i+=1
+        }
     }
 
     exit
@@ -143,9 +147,11 @@ settings_write()
 show_message_left()
 show_message_right()
 
-i=0 repeat (3) {
-    if (thumb[i]!=noone) background_delete(thumb[i])
-    i+=1
+if (global.savefile_thumbnails) {
+    i=0 repeat (3) {
+        if (thumb[i]!=noone) background_delete(thumb[i])
+        i+=1
+    }
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION
@@ -168,7 +174,7 @@ for (i=0;i<3;i+=1) {
     draw_text(x+i*240+64,y+96,lang("filegame")+string(i+1))
     draw_set_font(fntFileSmall)
 
-    draw_background_stretched(bgThumbDefault,x+i*240,y,128,96)
+    if (global.savefile_thumbnails) draw_background_stretched(bgThumbDefault,x+i*240,y,128,96)
 
     if (savedata("saved")) {
         draw_set_halign(0)
@@ -180,16 +186,19 @@ for (i=0;i<3;i+=1) {
             else draw_text(x+i*240+64,y+32+96,lang("filecontinue")+"#>"+string_repeat("XX",askcount)+string_copy(lang("fileerase"),1+askcount*2,10-askcount*2)+"<")
         } else draw_text(x+i*240+64,y+48+96,global.name_difficulties[difficulty])
 
-        draw_set_font(fntFileBig)
-        if (savedata("clear")) {
-            draw_background(bgThumbClear,x+i*240,y)
-        } else {
-            if (thumb[i]!=noone) {
-                texture_set_interpolation(1)
-                draw_background_stretched(thumb[i],x+i*240,y,128,96)
-                texture_set_interpolation(0)
-            } else draw_background(bgThumbBroken,x+i*240,y)
+        if (global.savefile_thumbnails) {
+            if (savedata("clear")) {
+                draw_background(bgThumbClear,x+i*240,y)
+            } else {
+                if (thumb[i]!=noone) {
+                    texture_set_interpolation(1)
+                    draw_background_stretched(thumb[i],x+i*240,y,128,96)
+                    texture_set_interpolation(0)
+                } else draw_background(bgThumbBroken,x+i*240,y)
+            }
         }
+
+        draw_set_font(fntFileBig)
         draw_set_halign(0)
 
         if (has_item("Item1")) draw_sprite(sprItem1,0,x+i*240+0,y+256)

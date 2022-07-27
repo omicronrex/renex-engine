@@ -63,5 +63,5 @@ if (difficulty!=3 || argument0) with (Player) if (!dead) {
 
     save_persistent_objects()
 
-    global.gen_thumb=1
+    global.gen_thumb=global.savefile_thumbnails
 }

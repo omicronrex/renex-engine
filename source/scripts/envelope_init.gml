@@ -14,7 +14,7 @@ global.rw=global.width
 global.rh=global.height
 
 global.deq_fac=2
-if (global.dw/800>3 || global.dh/608>3) {
+if (global.dw/global.width>3 || global.dh/global.height>3) {
     //on a 4k monitor, we use a 3x trilinear filter instead of 2x
     //normally, 2x is enough for crisp pixels in fullscreen
     global.deq_fac=3

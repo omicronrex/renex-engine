@@ -759,8 +759,9 @@ if (!dead) {
         if (y-vspeed/2-8*dotkid<=other.bbox_top) {
             if (other.snap || vspeed-other.vspeed>=0) {
                 y=other.bbox_top-9+8*dotkid
+                oldvspeed=vspeed
                 vspeed=max(0,other.vspeed/dt/slomo)
-                player_land(vspeed)
+                player_land(oldvspeed)
                 with (other) event_trigger(tr_platland)
                 onPlatform=true
                 djump=true
@@ -776,8 +777,9 @@ if (!dead) {
         if (y-vspeed/2+7*dotkid>=other.bbox_bottom+1.5) {
             if (other.snap || vspeed-other.vspeed<=0) {
                 y=other.bbox_bottom+1.5+8-7*dotkid
+                oldvspeed=vspeed
                 vspeed=min(0,other.vspeed/dt/slomo)
-                player_land(vspeed)
+                player_land(oldvspeed)
                 with (other) event_trigger(tr_platland)
                 onPlatform=true
                 djump=true

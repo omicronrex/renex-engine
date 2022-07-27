@@ -2,6 +2,8 @@
 
 room_speed=global.game_speed
 
+global.warping=false
+
 if (is_ingame()) {
     update_caption_deathtime()
 

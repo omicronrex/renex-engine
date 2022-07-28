@@ -78,6 +78,7 @@
 		|draw_sign_text
 		|draw_text_outline
 		|draw_sprite_hueshift
+		|draw_before_backgrounds
 	+GUI
 		|display_set_gui_size
 		|display_set_gui_maximise

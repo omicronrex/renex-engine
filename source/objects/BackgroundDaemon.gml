@@ -17,6 +17,8 @@ draw_clear(window_get_color())
 
 rect(0,0,room_width+1,room_height+1,background_color,1)
 
+draw_before_backgrounds()
+
 for (i=0;i<8;i+=1) {
     if (background_visible[i] && background_exists(background_index[i])) {
         draw_background_tiled_extra(

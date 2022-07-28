@@ -14,7 +14,7 @@ applies_to=self
 */
 //field top: color
 //field bottom: color
-#define Draw_0
+#define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

@@ -1,7 +1,7 @@
 sprite=sprBackground
-visible=1
+visible=0
 solid=0
 persistent=0
-depth=10000000
+depth=0
 parent=ActiveIngame
 mask=

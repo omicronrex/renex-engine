@@ -359,6 +359,7 @@
 	|HPMode
 	|Skinner
 	|CameraBlock
+	|Autotiler
 +Example (safe to delete)
 	|ExampleSavingTrap
 	|ExampleRotatingTrap

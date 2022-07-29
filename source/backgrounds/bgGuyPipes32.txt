@@ -1,7 +1,7 @@
 exists=1
-tileset=1
-tile_width=32
-tile_height=32
+tileset=0
+tile_width=16
+tile_height=16
 tile_hoffset=0
 tile_voffset=0
 tile_hsep=0

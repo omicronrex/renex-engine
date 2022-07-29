@@ -34,6 +34,7 @@
 	|sprHitCount
 	|sprHPMode
 	|sprCameraBlock
+	|sprThrow
 +Cherries
 	|sprCherry
 	|sprCherryPink

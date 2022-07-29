@@ -196,4 +196,6 @@ warp_to
 input_leftright
 input_disable
 input_enable
+autotile_type
 draw_before_backgrounds
+autotile

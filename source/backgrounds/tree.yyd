@@ -9,8 +9,14 @@
 |bgTree
 |bgTree2
 |bgTree3
++thumbs
+	|bgThumbDefault
+	|bgThumbClear
+	|bgThumbBroken
++autotiler
+	|bgMarkMazes32
+	|bgMarkMazes16
+	|bgBrownBlock32
+	|bgGuyPipes32
 +Example (safe to delete)
 	|bgFire
-|bgThumbDefault
-|bgThumbClear
-|bgThumbBroken

@@ -109,6 +109,8 @@
 	|profiler_setup
 	|activate_objects
 	|room_find
+	|autotile_type
+	|autotile
 +events
 	|event_game_start
 	|event_room_start

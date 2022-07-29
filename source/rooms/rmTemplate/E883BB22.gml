@@ -1,4 +1,4 @@
 //gm82 fields begin
-roomTo=rmDemo
-warpid="cake"
+type="pipes"
+tileset=bgGuyPipes32
 //gm82 fields end

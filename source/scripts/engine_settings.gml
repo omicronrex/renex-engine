@@ -82,7 +82,7 @@
     global.a_d_trick=false
     global.bow_lag=true
     //prevents shootkid from working if too close to a wall
-    global.accurate_shootkid=false
+    global.accurate_shootkid=true
     //angle the player sprite to match slopes (and the player's bullets)
     global.angle_slopes=true
     //time in frames to allow single jumping after leaving a surface

@@ -60,7 +60,6 @@ applies_to=self
 //field cycle_length: number - in seconds
 //field motion_type: enum("circle","figure8","stutter","chaotic")
 //field radius: radius
-//field shit: angle
 
 var i;
 

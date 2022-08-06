@@ -78,7 +78,7 @@
     global.player_default_skin=skin_default
     global.player_default_weapon=weapon_default
     global.die_outside_room=true
-    global.vine_jumps=false
+    global.maker_vines=false
     global.a_d_trick=false
     global.bow_lag=true
     //prevents shootkid from working if too close to a wall

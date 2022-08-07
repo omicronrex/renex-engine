@@ -38,7 +38,8 @@ if (attach) {
             image_yscale=2
             if (!instance_place(x,y,attach)) {
                 attach=noone
-                gravity=BloodEmitter.grav*(0.1+random(0.2))
+                if (instance_exists(BloodEmitter))
+                    gravity=BloodEmitter.grav*(0.1+random(0.2))
             }
             image_xscale=1
             image_yscale=1

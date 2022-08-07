@@ -395,7 +395,15 @@ if (!vvvvvv) if (place_free(x,y+1*vflip)) {
             hang=false if (key[key_jump]) {vspeed=-10*vflip hspeed=-10 altj=2 walljumpboost=-1 walljumpdir=-1 walljump=2} else {hspeed=-3}
         }
     }
-    if (hang) vspeed=2*vflip
+    if (hang) {
+        vspeed=2*vflip
+        if (key_pressed[key_jump] && !global.maker_vines) {
+            if (djump<maxjumps) {
+                djump+=1
+                walljump=-2
+            }
+        }
+    }
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -720,9 +728,10 @@ action_id=603
 applies_to=self
 */
 ///buggy walljump sound
-if (walljump) {
-    walljump-=1
-    repeat (2) sound_play_slomo("sndJump")
+if (walljump!=0) {
+    if (walljump>0) repeat (2) sound_play_slomo("sndJump")
+    else repeat (2) sound_play_slomo("sndDJump")
+    walljump=inch(walljump,0,1)
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1

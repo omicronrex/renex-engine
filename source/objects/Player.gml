@@ -398,7 +398,10 @@ if (!vvvvvv) if (place_free(x,y+1*vflip)) {
     if (hang) {
         vspeed=2*vflip
         if (key_pressed[key_jump] && !global.maker_vines) {
-            if (djump<maxjumps) {
+            if (on_ground()) {
+                djump=1
+                walljump=2
+            } else if (djump<maxjumps) {
                 djump+=1
                 walljump=-2
             }

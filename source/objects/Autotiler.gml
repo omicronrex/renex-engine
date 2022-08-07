@@ -18,15 +18,48 @@ This object can automatically tile whole rooms using simple tilesets.
 Example tilesets are provided in the autotile folder.
 
 Note however, that this can be pretty slow if you have thousands of tiles.
+
+When using "clone" mode, place the desired tile underneath the object.
 */
 
-//field type: enum("border","grass","pipes") - default grass
+//field type: enum("border","grass","pipes","clone") - default grass
 //field tileset: background
 //field grid - default 32
 //field depth - default 1000
 //field solid_border: bool - default false
 
-model=autotile_type(type,tileset,grid,solid_border)
+if (type=="clone") {
+    var tile,l,t,w,h,xs,ys,tb,ta,td,bg,u,v;
+
+    tile=tile_find_anywhere(x+16,y+16)
+    if (tile!=-1) {
+        l=tile_get_left(tile)
+        t=tile_get_top(tile)
+        w=tile_get_width(tile)
+        h=tile_get_height(tile)
+        xs=tile_get_xscale(tile)
+        ys=tile_get_yscale(tile)
+        tb=tile_get_blend(tile)
+        ta=tile_get_alpha(tile)
+        td=tile_get_depth(tile)
+        bg=tile_get_background(tile)
+        tile_delete(tile)
+
+        with (Block) {
+            if (object_index==Block) {
+                for (v=bbox_top;v<bbox_bottom;v+=32) for (u=bbox_left;u<bbox_right;u+=32) {
+                    tile=tile_add(bg,l,t,w,h,u,v,td)
+                    tile_set_scale(tile,xs,ys)
+                    tile_set_blend(tile,tb)
+                    tile_set_alpha(tile,ta)
+                }
+            }
+        }
+    } else show_error("Error autotiling 'single' tile: No tile was found under the autotiler.",0)
+    instance_destroy()
+} else {
+    model=autotile_type(type,tileset,grid,solid_border)
+}
 #define Other_5
 /*"/*'/**//* YYD ACTION
 lib_id=1

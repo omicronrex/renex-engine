@@ -159,7 +159,7 @@ if (sel==-1) {
         draw_text(xdraw+xsep,ydraw+(ysep*i),script_execute(option,opt_value))
     }
     draw_set_halign(0)
-    if (!dead) draw_sprite_ext(sprite,floor(image_index),xcursor,ycursor,1,1,angle,$ffffff,1)
+    draw_sprite_ext(sprite,floor(image_index),xcursor,ycursor,1,1,angle,$ffffff,1)
 }
 
 draw_set_valign(2)

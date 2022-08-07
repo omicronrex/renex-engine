@@ -31,6 +31,8 @@ with (Player) if (!dead) {
                 World.fading=1
             } else if (global.gameover_music==2) {
                 sound_kind_pause(1)
+            } else if (global.gameover_music==3) {
+                //this is the "do nothing" option
             }
 
             drop_items()

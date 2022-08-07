@@ -31,7 +31,7 @@ When using "clone" mode, place the desired tile underneath the object.
 if (type=="clone") {
     var tile,l,t,w,h,xs,ys,tb,ta,td,bg,u,v;
 
-    tile=tile_find_anywhere(x+16,y+16)
+    tile=tile_find_anywhere(x,y)
     if (tile!=-1) {
         l=tile_get_left(tile)
         t=tile_get_top(tile)
@@ -47,7 +47,7 @@ if (type=="clone") {
 
         with (Block) {
             if (object_index==Block) {
-                for (v=bbox_top;v<bbox_bottom;v+=32) for (u=bbox_left;u<bbox_right;u+=32) {
+                for (v=bbox_top;v<bbox_bottom;v+=w*xs) for (u=bbox_left;u<bbox_right;u+=h*ys) {
                     tile=tile_add(bg,l,t,w,h,u,v,td)
                     tile_set_scale(tile,xs,ys)
                     tile_set_blend(tile,tb)

@@ -111,7 +111,7 @@ autosave_do
 add_difficulty
 flip_player
 
-engine_template_classic
+
 play_bg_music
 lock_controls
 unlock_controls

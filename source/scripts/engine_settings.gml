@@ -23,11 +23,6 @@
     global.savefile_thumbnails=true
 
 
-//template for classic games
-    //if you just want the classic gm8 engine experience, simply uncomment the following line.
-    //engine_template_classic() exit
-
-
 //difficulties
     //set this to a room with difficulty warps in order to use a difficulty selection room
     //a template is provided here -----v

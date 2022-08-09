@@ -87,7 +87,6 @@
 	+vehicle
 		|vehicle_mount
 		|vehicle_dismount
-	|engine_template_classic
 	|add_difficulty
 	|add_gizmo
 	|update_caption_deathtime

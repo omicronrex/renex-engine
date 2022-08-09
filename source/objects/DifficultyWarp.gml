@@ -23,9 +23,7 @@ if (diff=-1) {
     savedata_select(settings("lastfile"))
     savedata_load()
 } else {
-    difficulty=diff
-    savedata_newgame(settings("lastfile"),difficulty)
-    warp_to(global.first_room)
+    savedata_newgame(settings("lastfile"),diff)
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

@@ -27,20 +27,21 @@
     //set this to a room with difficulty warps in order to use a difficulty selection room
     //a template is provided here -----v
     global.difficulty_room=noone//rmDifficulty
-    //if that is unset, use the difficulty list below:
 
+    //difficulty options:
     add_difficulty("Medium")
     add_difficulty("Hard")
     add_difficulty("Very Hard")
     add_difficulty("Impossible")
+
     //you can replace these with bow/no bow for example, or even add more.
     //there is a globalvar called "difficulty" that's automatically set for you.
     //example: if (difficulty==0) {code for Medium difficulty}
     //         if (difficulty>=1) {code for Hard and above}
-    //just remember that difficulty 3 (Impossible) prevents saving!
+    //if the difficulty is called "Impossible" then the savefile will be wiped on restart.
 
     //if only one difficulty is provided, this chooses the difficulty's value:
-    //(can be used to turn off bow or make it always impossible)
+    //(can be used to turn off bow)
     global.single_difficulty=1
 
 
@@ -136,7 +137,7 @@
     //(0-8) reduces lag during gameplay, but causes small hiccup on room start.
     //each pass reduces solid instance count by almost half so with 2 passes we should
     //have around 30% of block instances. increase this value if your game lags on large rooms.
-    //if you're using autotilers that need each individual block object, turn this off.
+    //if you need separate block objects, turn this off.
     global.optimize_solids=2
 
 

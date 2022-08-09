@@ -14,7 +14,7 @@
 
 var hash;
 
-if (difficulty!=3 || argument0) with (Player) if (!dead) {
+with (Player) if (!dead || argument0) {
     if (argument_count==2) hash=string(argument[1])
     else hash=""
 

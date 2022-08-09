@@ -112,7 +112,7 @@ if (state="new file") {
         input_clear()
         savedata_newgame(select,global.single_difficulty)
     } else if (global.difficulty_room!=noone) {
-        difficulty=3
+        difficulty=global.single_difficulty
         instance_destroy_id(TitleParticle)
         instance_destroy_id(TitleMenu)
         input_clear()

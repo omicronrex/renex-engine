@@ -5,9 +5,8 @@ var i;
 
 instance_destroy_id(Player)
 
-if (savedata("diff")==3) {
+if (global.name_difficulties[savedata("diff")]=="Impossible") {
     savedata_default()
-    savedata("diff",3)
 }
 
 if (savedata("saved")) {

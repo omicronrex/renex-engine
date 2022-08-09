@@ -16,6 +16,10 @@ notice=0
 font=fntSignpost
 color=$ffffff
 msg=key_get_name(key_shoot)+lang("presstosave")
+
+if (difficulty>mydifficulty) {
+    instance_destroy()
+}
 #define Step_1
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -14,10 +14,7 @@ savedata("width",1)
 savedata("height",1)
 savedata("obj",Player)
 
-if (global.difficulty_room!=noone)
-    savedata("room",global.difficulty_room)
-else
-    savedata("room",global.first_room)
+savedata("room",global.first_room)
 
 savedata("hash","new file")
 

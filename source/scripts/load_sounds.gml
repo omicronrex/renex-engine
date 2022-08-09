@@ -20,6 +20,7 @@ repeat (c-1) {c-=1
     sound_add_directory(folders[c],".wav",0,1)
     //compressed sfx (decompress on load)
     sound_add_directory(folders[c],".ogg",3,2)
+    sound_add_directory(folders[c],".mp3",3,2)
 }
 
 //search music folder for subfolders

@@ -10,9 +10,11 @@ fadefrom=1
 sound_kind_volume(1,settings("musvol"))
 sound_kind_resume(1)
 
-//stop looping sound effects...
-sound_kind_stop(0)
-sound_kind_stop(3)
+if (global.stop_sounds_on_room_change) {
+    //stop looping sound effects...
+    sound_kind_stop(0)
+    sound_kind_stop(3)
+}
 
 cutscene=false
 frozen=false

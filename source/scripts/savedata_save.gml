@@ -63,5 +63,5 @@ with (Player) if (!dead || argument0) {
 
     save_persistent_objects()
 
-    global.gen_thumb=global.savefile_thumbnails
+    global.gen_thumb=global.savefile_thumbnails*5
 }

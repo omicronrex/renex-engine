@@ -33,6 +33,8 @@ closingk=0
 
 fading=0
 fadefrom=1
+slowing=0
+slowfrom=1
 
 stepcount=0
 pause_delay=0

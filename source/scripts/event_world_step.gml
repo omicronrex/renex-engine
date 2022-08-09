@@ -33,6 +33,16 @@ if (fading) {
         sound_kind_pause(1)
     }
 }
+//music slow
+if (slowing) {
+    slowfrom-=0.01
+    sound_kind_pitch(1,slowfrom)
+    if (slowfrom<=0) {
+        slowing=0
+        //pause when it's done slowing
+        sound_kind_pause(1)
+    }
+}
 
 if (is_ingame() && room!=global.difficulty_room) {
     //advance game time

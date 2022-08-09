@@ -26,15 +26,21 @@ with (Player) if (!dead) {
             }
         } else {
             if (global.gameover_music==0) {
+                //jingle option
                 if (global.restarting_music) play_bg_music("",0)
                 else sound_kind_pause(1)
                 sound_play("m-r-tight")
             } else if (global.gameover_music==1) {
+                //fade option
                 World.fading=1
             } else if (global.gameover_music==2) {
+                //pause option
                 sound_kind_pause(1)
             } else if (global.gameover_music==3) {
                 //this is the "do nothing" option
+            } else if (global.gameover_music==4) {
+                //slowdown
+                World.slowing=1
             }
 
             drop_items()

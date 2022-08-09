@@ -106,6 +106,7 @@
     //1 for fading the level music out over a second
     //2 for pausing the level music immediately
     //3 for doing nothing (music keeps playing)
+    //4 for music slowdown
     global.gameover_music=0
     //block break:
     //0 for remastered sound effect

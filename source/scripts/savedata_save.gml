@@ -32,6 +32,7 @@ with (Player) if (!dead || argument0) {
 
         savedata("backup",true)
         savedata("hash",hash)
+        global.gen_thumb=global.savefile_thumbnails*5
     }
 
     collect_items()
@@ -62,6 +63,4 @@ with (Player) if (!dead || argument0) {
     savedata("beamstate",beamstate)
 
     save_persistent_objects()
-
-    global.gen_thumb=global.savefile_thumbnails*5
 }

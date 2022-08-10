@@ -266,7 +266,6 @@
 	|SlopeBL
 	|SlopeBR
 	|SlopeBlock
-	|SlopeWobbly
 	|SlopeCircle
 	|SlopeCrescent
 	|SlopeBeam
@@ -368,6 +367,7 @@
 	|Bolt
 	|MusicSpeedSlider
 	|MegaCherry
+	|SlopeWobbly
 |PlayerStart
 |Block
 |Platform

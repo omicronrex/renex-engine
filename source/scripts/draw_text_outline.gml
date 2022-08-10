@@ -1,3 +1,4 @@
+///draw_text_outline(x,y,string,color)
 var dx,dy,msg,col;
 
 dx=argument0

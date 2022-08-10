@@ -25,4 +25,10 @@ if (savedata("exists")) {
         file_text_writeln(f)
     }
     file_text_close(f)
+
+    if (global.gen_thumb_cachebg) {
+        background_save(global.gen_thumb_cachebg,global.savefolder+global.savesig+".png")
+        background_delete(global.gen_thumb_cachebg)
+        global.gen_thumb_cachebg=noone
+    }
 }

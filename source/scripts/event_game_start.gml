@@ -66,6 +66,7 @@ global.music_instance=noone
 global.perform_autosave=false
 global.room_started=false
 global.gen_thumb=false
+global.gen_thumb_cachebg=noone
 
 global.warp_id=""
 

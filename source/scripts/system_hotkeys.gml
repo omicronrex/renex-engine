@@ -64,6 +64,16 @@ if (keyboard_check_pressed(vk_f2)) {
     } else room_goto(rmTitle)
 }
 
+//toggle mute
+if (keyboard_check_pressed(ord("M"))) {
+    var storevol;storevol=settings("stored mus vol")
+    settings("stored mus vol",settings("musvol"))
+    settings("musvol",storevol)
+    sound_kind_volume(1,settings("musvol"))
+    if (storevol>0) show_message_right("Unmuted music")
+    else show_message_right("Muted music")
+}
+
 //toggle fullscreen
 if ((keyboard_check(vk_alt) && keyboard_check_pressed(vk_return)) || keyboard_check_pressed(vk_f11) || (keyboard_check_pressed(vk_f4) && !keyboard_check(vk_alt))) {
     settings("fullscreen",!settings("fullscreen"))

@@ -120,7 +120,7 @@
     global.esc_always_quits=false
     //automatically updates the window caption with deathtime
     global.show_deathtime=true
-    //white rectangle clowing animation
+    //white rectangle closing animation
     global.closing_animation=true
     //the ability to fight engine-bosses more than once per savefile
     global.refight_bosses=true

@@ -16,7 +16,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//field depth: real
+//field depth: number
 //field blend_mode: enum(bm_normal,bm_add,bm_subtract,bm_max)
 //field blend_mode_ext_source: enum(bm_zero,bm_one,bm_src_color,bm_inv_src_color,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_color,bm_inv_dest_color,bm_src_alpha_sat)
 //field blend_mode_ext_dest: enum(bm_zero,bm_one,bm_src_color,bm_inv_src_color,bm_src_alpha,bm_inv_src_alpha,bm_dest_alpha,bm_inv_dest_alpha,bm_dest_color,bm_inv_dest_color,bm_src_alpha_sat)

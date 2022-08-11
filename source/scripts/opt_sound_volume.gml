@@ -14,8 +14,7 @@ switch (argument0) {
                 settings("sfxvol",median(0,settings("sfxvol")+global.input_h*0.01,1))
             }
             volumetimer+=1
-            sound_kind_volume(0,settings("sfxvol"))
-            sound_kind_volume(3,settings("sfxvol"))
+            sound_set_sfx_volume(1)
         } else volumetimer=0
         if (object_index!=PauseMenu) shoottimer-=1
         if (shoottimer<0) {

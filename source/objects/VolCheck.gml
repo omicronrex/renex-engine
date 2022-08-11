@@ -47,8 +47,7 @@ if (h!=0) {
     volumetimer+=1
 } else volumetimer=0
 
-
-sound_kind_volume(0,settings("sfxvol"))
+sound_set_sfx_volume(1)
 
 if (global.key_pressed[key_jump] && !fade) {
     settings("volcheck",true)

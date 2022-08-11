@@ -22,6 +22,8 @@ global.shotfolder=savefolder+"screenshots\"
 
 global.savefolder=savefolder
 
+global.onload_trigger=false
+
 global.setmap=ds_map_create()
 global.savemap=ds_map_create()
 global.statgridh=1

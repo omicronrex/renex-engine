@@ -1,4 +1,4 @@
-//set up teh room
+//set up the room
 
 room_speed=global.game_speed
 
@@ -65,4 +65,9 @@ with (DifficultyWarp) {
     } else {
         instance_destroy()
     }
+}
+
+if (global.onload_trigger) {
+    global.onload_trigger=false
+    with (all) event_perform(ev_trigger,tr_onload)
 }

@@ -29,6 +29,8 @@ if (savedata("saved")) {
     i.beamstate=savedata("beamstate")
 
     difficulty=savedata("diff")
+
+    global.onload_trigger=true
 }
 
 global.warp_id=""

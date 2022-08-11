@@ -62,5 +62,7 @@ with (Player) if (!dead || argument0) {
     savedata("vvvvvv",vvvvvv)
     savedata("beamstate",beamstate)
 
+    with (all) event_perform(ev_trigger,tr_onsave)
+
     save_persistent_objects()
 }

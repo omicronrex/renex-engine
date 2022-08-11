@@ -9,7 +9,6 @@ if (room!=global.difficulty_room) {
     //restart
     if (global.key_pressed[key_restart]) {
         if (is_ingame() && !global.pause) {
-            sound_kind_stop(0)
             savedata_load()
         }
     }

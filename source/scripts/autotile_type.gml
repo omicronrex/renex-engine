@@ -32,27 +32,9 @@ autotile_v=1/(background_get_height(bg)*texture_get_height(texture))
 //initialize 2d tilemap
 w=room_width div grid+2
 h=room_height div grid+2
-
-u=w
-repeat (u) {
+u=w repeat (u) {
     u-=1
     tilemap[u,h-1]=0
-}
-
-if (bord) {
-    //solid border
-    u=0 v=h-1
-    repeat (w) {
-        tilemap[u,0]=1
-        tilemap[u,v]=1
-        u+=1
-    }
-    u=w-1 v=1
-    repeat (h) {
-        tilemap[0,v]=1
-        tilemap[u,v]=1
-        v+=1
-    }
 }
 
 //fill tilemap
@@ -62,6 +44,22 @@ with (Block) if (object_index==Block && solid && image_angle==0 && bbox_right>0 
     u=max(0,bbox_left div grid); repeat (uu) {v=max(0,bbox_top div grid); repeat (vv) {
         tilemap[u+1,v+1]=1
     v+=1}u+=1}
+}
+
+if (bord) {
+    //solid border
+    u=0 v=h-1
+    repeat (w) {
+        tilemap[u,0]=tilemap[u,1]
+        tilemap[u,v]=tilemap[u,v-1]
+        u+=1
+    }
+    u=w-1 v=0
+    repeat (h) {
+        tilemap[0,v]=tilemap[1,v]
+        tilemap[u,v]=tilemap[u-1,v]
+        v+=1
+    }
 }
 
 if (type="grass") {

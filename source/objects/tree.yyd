@@ -359,6 +359,7 @@
 	|Skinner
 	|CameraBlock
 	|Autotiler
+	|PersistentBackgrounds
 +Example (safe to delete)
 	|ExampleSavingTrap
 	|ExampleRotatingTrap

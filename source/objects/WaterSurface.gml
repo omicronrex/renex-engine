@@ -148,14 +148,14 @@ draw_set_alpha(0.5)
 draw_set_color($ff8000)
 if (global.debug_hitbox && sleeping) draw_set_color($ffff00)
 if (sleeping) {
-    draw_rectangle(x,y,x+w-1,y+h-1,0)
+    draw_rectangle(x-0.5,y-0.5,x+w-0.5,y+h-0.5,0)
 } else {
     draw_primitive_begin(pr_trianglestrip)
-    draw_vertex(x,y+s[0])
-    draw_vertex(x,y+h)
+    draw_vertex(x-0.5,y+s[0]-0.5)
+    draw_vertex(x-0.5,y+h-0.5)
    for (i=8;i<=w;i+=8) {
-        draw_vertex(x+i,y+s[i-4])
-        draw_vertex(x+i,y+h)
+        draw_vertex(x+i-0.5,y+s[i-4]-0.5)
+        draw_vertex(x+i-0.5,y+h-0.5)
     }
     draw_primitive_end()
 }

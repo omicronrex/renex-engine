@@ -103,13 +103,6 @@ input_h=0 input_v=0
 
 input_clear()
 input_consume()
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-///check autosave
-autosave_do()
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -625,13 +618,6 @@ speed+=friction
 lib_id=1
 action_id=424
 */
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-///check autosave
-autosave_do()
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1

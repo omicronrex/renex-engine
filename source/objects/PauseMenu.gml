@@ -74,7 +74,7 @@ room_speed=memspd
 World.pause_delay=room_speed
 
 if (global.instance_deactivation) update_activation()
-else instance_activate_all()
+else instance_activate_all_safe()
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

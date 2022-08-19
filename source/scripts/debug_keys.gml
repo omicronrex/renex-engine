@@ -68,13 +68,13 @@ if (is_ingame()) {
     }
 
     if (keyboard_check_pressed(vk_pageup) && room!=room_last) {
-        instance_activate_all()
+        instance_activate_all_safe()
         show_message_right("next room")
         warp_to(room_next(room))
     }
 
     if (keyboard_check_pressed(vk_pagedown) && room!=global.first_room) {
-        instance_activate_all()
+        instance_activate_all_safe()
         show_message_right("previous room")
         warp_to(room_previous(room))
     }
@@ -92,7 +92,7 @@ if (is_ingame()) {
             if (goto) {
                 r=global.first_room
                 repeat (goto-1) r=room_next(r)
-                instance_activate_all()
+                instance_activate_all_safe()
                 warp_to(r)
             }
         }

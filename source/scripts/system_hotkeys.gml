@@ -37,7 +37,7 @@ if (keyboard_check_pressed(vk_escape)) {
         if (global.pause){
             instance_destroy_id(PauseMenu)
         } else {
-            instance_activate_all()
+            instance_activate_all_safe()
             if (global.gen_thumb) generate_save_thumbnail(1)
             savedata_write()
             room_goto(rmTitle)
@@ -55,7 +55,7 @@ if (keyboard_check_pressed(vk_f4) && keyboard_check(vk_alt)) {
 
 //go to title
 if (keyboard_check_pressed(vk_f2)) {
-    instance_activate_all()
+    instance_activate_all_safe()
     if (is_ingame()) {
         instance_destroy_id(PauseMenu)
         savedata_write()

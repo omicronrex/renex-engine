@@ -110,6 +110,7 @@
 	|room_find
 	|autotile_type
 	|autotile
+	|instance_activate_all_safe
 +events
 	|event_game_start
 	|event_room_start

@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 /*desc
-Makes the background layers persistent across restarts.
+    Makes the background layers persistent across restarts.
 */
 
 if (persistent) {

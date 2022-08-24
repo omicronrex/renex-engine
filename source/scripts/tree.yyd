@@ -111,6 +111,7 @@
 	|autotile_type
 	|autotile
 	|instance_activate_all_safe
+	|construct
 +events
 	|event_game_start
 	|event_room_start

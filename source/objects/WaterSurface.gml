@@ -1,40 +1,3 @@
-#define Create_0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=605
-invert=0
-arg0=use only one per water body
-*/
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=605
-invert=0
-arg0=place it at the top left
-*/
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=605
-invert=0
-arg0=look at rmDemo3 for an example
-*/
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-do {x+=32} until (!instance_place(x,y,Water1) && !instance_place(x,y,Water2)) w=x-xstart x=xstart
-do {y+=32} until (!instance_place(x,y,Water1) && !instance_place(x,y,Water2)) h=y-ystart y=ystart
-
-image_xscale=w/32
-image_yscale=h/32
-
-with (Water1) if (instance_place(x,y,other.id)) visible=0
-with (Water2) if (instance_place(x,y,other.id)) visible=0
-
-image_yscale=0.25
-
-for (i=0;i<=w+1;i+=1) {s[i]=0 m[i]=0}
-sleeping=1
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -144,20 +107,45 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_set_alpha(0.5)
-draw_set_color($ff8000)
-if (global.debug_hitbox && sleeping) draw_set_color($ffff00)
 if (sleeping) {
-    draw_rectangle(x-0.5,y-0.5,x+w-0.5,y+h-0.5,0)
+    draw_sprite_stretched(sprite,0,x,y,w,h)
+    if (global.debug_hitbox) {
+        draw_line(x,y,x+w,y+h)
+        draw_line(x,y+h,x+w,y)
+    }
 } else {
-    draw_primitive_begin(pr_trianglestrip)
+    draw_primitive_begin_texture(pr_trianglestrip,tex)
     draw_vertex(x-0.5,y+s[0]-0.5)
     draw_vertex(x-0.5,y+h-0.5)
-   for (i=8;i<=w;i+=8) {
+    for (i=8;i<=w;i+=8) {
         draw_vertex(x+i-0.5,y+s[i-4]-0.5)
         draw_vertex(x+i-0.5,y+h-0.5)
     }
     draw_primitive_end()
 }
-draw_set_alpha(1)
-draw_set_color($ffffff)
+#define Trigger_Constructor
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///constructor: find (id)
+sprite=sprWater1
+
+//with (Water1) if (instance_place(x,y,other.id)) find=id
+//with (Water2) if (instance_place(x,y,other.id)) find=id
+//with (NekoronWater) if (instance_place(x,y,other.id)) find=id
+
+sprite=find.sprite_index
+find.visible=0
+
+image_xscale=find.image_xscale
+image_yscale=0.25
+
+w=image_xscale*32
+h=find.image_yscale*32
+
+tex=sprite_get_texture(sprite,0)
+
+for (i=0;i<=w+1;i+=1) {s[i]=0 m[i]=0}
+sleeping=1

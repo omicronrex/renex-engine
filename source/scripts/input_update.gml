@@ -95,7 +95,6 @@ if (global.infocus) for (j=0;j<joystick_count();j+=1) if (joy_set[j]) {
             global.key_pressed[i]=global.key_pressed[i] || reading_pressed
             global.key_released[i]=global.key_released[i] || reading_released
         }
-
     }
 }
 

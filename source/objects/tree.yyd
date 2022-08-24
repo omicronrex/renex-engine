@@ -49,6 +49,7 @@
 	|FirePart
 	|Cementer
 	|BackgroundDaemon
+	|WaterSurface
 +Saves
 	|SavePointMedium
 	|SavePointHard
@@ -351,7 +352,6 @@
 	|MusicPlayer
 	|MusicPlayerSection
 	|MusicSync
-	|WaterSurface
 	|TextDraw
 	|WarpToHub
 	|HitCount

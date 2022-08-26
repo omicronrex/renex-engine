@@ -65,6 +65,9 @@
 //player settings
     //enable simulated studio 1.4.9999 vdiet (shorter hitbox when y ends in .50)
     global.valign05_vdiet=true
+    //save the player's fractionary valign
+    //if disabled, the y coordinate is floored on save
+    global.save_valign=true
     //platform crush behavior
     //0: leave the player stuck in the wall
     //1: kill the player when pushed into a wall

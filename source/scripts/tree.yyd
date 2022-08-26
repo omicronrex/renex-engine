@@ -45,7 +45,6 @@
 		|filename_valid
 		|current_date_filename
 		|ds_map_add_copy
-		|random_cherry_color
 	+input
 		+joysticks
 			|joy_deadzone
@@ -149,10 +148,6 @@
 	|BigCherry_boss
 	|Utah_boss
 	|template_boss
-+avoidances
-	+YoYoYo tools
-		|scrMakeCircle
-		|scrMakeShapes
 +camera
 	|camera_default
 	|camera_follow
@@ -196,3 +191,6 @@
 	|opt_rebind_joystick
 +bonus
 	|draw_cherry
+	|random_cherry_color
+	|scrMakeCircle
+	|scrMakeShapes

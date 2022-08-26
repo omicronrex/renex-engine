@@ -1,4 +1,4 @@
-//snap-in for animation toggle
+//snap-in for valign save toggle
 
 switch (argument0) {
     case opt_inpause: {
@@ -8,20 +8,15 @@ switch (argument0) {
         if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {
             //option ticked/changed
             sound_play_option("sndDJump")
-            settings("anim",!settings("anim"))
+            settings("valign",!settings("valign"))
         }
-        if (settings("anim")) sprite=sprPlayerRunning
-        else sprite=sprPlayerRunningOld
-        image_speed=0.5*50/room_speed
     }break
     case opt_text: {
-        return "Animations"
+        return "Save Valign"
     }break
     case opt_value: {
-        return pick(settings("anim"),"Fangames","Original")
+        return pick(settings("valign"),"Don't save","Save")
     }break
     case opt_end:{
-        sprite=sprPlayerIdle
-        image_speed=0.2
     }break
 }

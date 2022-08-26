@@ -40,7 +40,7 @@ with (Player) if (!dead || argument0) {
     savedata("diff",difficulty)
 
     savedata("x",x)
-    if (global.save_valign) savedata("y",y) else savedata("y",floor(y))
+    if (global.save_valign && settings("valign")) savedata("y",y) else savedata("y",floor(y))
     savedata("width",image_xscale)
     savedata("height",image_yscale)
     savedata("facing",facing)

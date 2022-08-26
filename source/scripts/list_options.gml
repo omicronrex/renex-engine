@@ -9,5 +9,8 @@ add_option(opt_animation)
 add_option(opt_blood_amount)
 add_option(opt_left_right)
 
+//option for saving valign
+//add_option(opt_savevalign)
+
 add_option(opt_rebind_keyboard)
 add_option(opt_rebind_joystick)

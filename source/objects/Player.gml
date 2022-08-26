@@ -284,6 +284,9 @@ if (!frozen) {
             if (abs(hspeed)<4) walljumpboost=0
         } else if (coyoteTime <= 0) vspeed-=gravity
     } else {
+        ///YoYoYo vine bug
+        vinebug=(distance_to_object(WallJumpL)<2 || distance_to_object(WallJumpR)<2)
+
         if (input_h!=0) {
             if (walljumpboost!=0) {
                 hspeed=(maxSpeed+1)*input_h
@@ -295,7 +298,7 @@ if (!frozen) {
                         if (onPlatform) hspeed+=input_h*mm_ground_accel
                         else hspeed+=input_h*mm_air_accel
                     } else {
-                        hspeed=maxSpeed*input_h
+                        if (!vinebug) hspeed=maxSpeed*input_h
                     }
                 }
             }
@@ -311,7 +314,7 @@ if (!frozen) {
                 }
             }
         }
-        hspeed=median(-maxSpeed,hspeed,maxSpeed)
+        if (!vinebug) hspeed=median(-maxSpeed,hspeed,maxSpeed)
         if (hspeed=0) x=round(x)
     }
 

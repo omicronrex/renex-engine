@@ -34,7 +34,7 @@ alarm[0]=10*blood
 if (instance_exists(Player)) {
     hspeed=Player.hspeed/2
     vspeed=Player.vspeed/3
-    gravity=Player.gravity*dt*dt
+    gravity=Player.baseGrav*Player.vflip*dt*dt
     if (Player.bow) {
         i=instance_create(x,y,GibParticle) i.sprite_index=sprBow i.image_xscale=Player.facing
     }

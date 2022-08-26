@@ -11,8 +11,8 @@ jump2=7
 
 maxjumps=2
 
-maxSpeed=3
-baseGrav=0.4
+maxSpeedDefault=3
+baseGravDefault=0.4
 maxVspeed=9
 
 slomo=1
@@ -60,6 +60,9 @@ vflip=1
 facing=1
 
 h=0
+
+maxSpeed=maxSpeedDefault
+baseGrav=baseGravDefault
 
 slope_angle=0
 sprite_angle=0
@@ -198,8 +201,8 @@ applies_to=self
 */
 ///speed fields or beams
 
-maxSpeed = 3
-baseGrav = 0.4
+maxSpeed = maxSpeedDefault
+baseGrav = baseGravDefault
 
 if (instance_place(x,y,LowSpeedField)) {
     maxSpeed = 1

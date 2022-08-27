@@ -61,7 +61,10 @@ if (global.key_pressed[key_jump] && !fade) {
 
 if (fade) {
     alpha=min(1.5,alpha+1/room_speed)
-    if (alpha=1.5) room_goto_next()
+    if (alpha==1.5) {
+        settings("musvol",settings("sfxvol"))
+        room_goto_next()
+    }
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION

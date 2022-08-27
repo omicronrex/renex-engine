@@ -33,6 +33,7 @@
 	|sprThrow
 +Cherries
 	|sprCherry
+	|sprPhg
 	|sprCherryPink
 	|sprCherryOrange
 	|sprCherryMagenta

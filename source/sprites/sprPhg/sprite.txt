@@ -1,0 +1,11 @@
+frames=2
+origin_x=10
+origin_y=1
+collision_shape=0
+alpha_tolerance=0
+per_frame_colliders=1
+bbox_type=0
+bbox_left=0
+bbox_top=0
+bbox_right=19
+bbox_bottom=23

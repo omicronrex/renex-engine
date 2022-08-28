@@ -2,7 +2,7 @@
 
 if (room!=global.difficulty_room) {
     //die key
-    if (global.key_pressed[key_die]) {
+    if (global.key_pressed[key_die] && !cutscene) {
         kill_player()
     }
 

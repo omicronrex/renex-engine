@@ -1,11 +1,6 @@
 //most engine hotkeys are handled here
 
 if (room!=global.difficulty_room) {
-    //die key
-    if (global.key_pressed[key_die] && !cutscene) {
-        kill_player()
-    }
-
     //restart
     if (global.key_pressed[key_restart]) {
         if (is_ingame() && !global.pause) {

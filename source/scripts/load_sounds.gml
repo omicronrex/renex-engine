@@ -38,4 +38,4 @@ repeat (c-1) {c-=1
     sound_add_directory(folders[c],".s3m",1,1)
 }
 
-list_music_properties()
+custom_sound_properties()

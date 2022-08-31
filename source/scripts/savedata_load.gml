@@ -19,16 +19,9 @@ if (savedata("saved")) {
     i.facing=savedata("facing")
     i.vflip=savedata("vflip")
 
-    //gimmicks
-    i.slomo=savedata("slomo")
-    i.dot_hitbox=savedata("whitedot")
-    i.dotkid=savedata("dotkid")
-    i.shootkid=savedata("shootkid")
-    i.maxjumps=savedata("numjumps")
-    i.vvvvvv=savedata("vvvvvv")
-    i.beamstate=savedata("beamstate")
-
     difficulty=savedata("diff")
+
+    custom_load()
 
     global.onload_trigger=true
 }

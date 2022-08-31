@@ -1,12 +1,12 @@
 |engine_settings
-|custom_init
-+engine lists
-	|list_strings
-	|list_options
-	|list_music_properties
-	|list_nonstick
-	|list_gizmos
-	|list_obstructions
++CUSTOM
+	|custom_init
+	|custom_save
+	|custom_load
+	|custom_sound_properties
+	|custom_options
+	|custom_traps
+	|custom_language
 +saving
 	|savedata_init
 	|settings_default
@@ -86,6 +86,9 @@
 	+vehicle
 		|vehicle_mount
 		|vehicle_dismount
+	+misc lists
+		|list_nonstick
+		|list_obstructions
 	|add_difficulty
 	|add_gizmo
 	|update_caption_deathtime
@@ -175,6 +178,7 @@
 	|play_bg_music
 	|sound_play_slomo
 	|set_loop_point
+	|set_default_volume
 	|sound_play_option
 	|sound_set_music_volume
 	|sound_set_sfx_volume

@@ -344,6 +344,9 @@ if (!frozen) {
         if (key_released[key_jump]) {
             if (vspeed*vflip<0) vspeed*=0.45
         }
+        if (key_pressed[key_die]) {
+            kill_player()
+        }
     }
 }
 /*"/*'/**//* YYD ACTION

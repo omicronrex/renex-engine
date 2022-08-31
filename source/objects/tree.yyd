@@ -49,6 +49,7 @@
 	|Cementer
 	|BackgroundDaemon
 	|WaterSurface
+	|AnyWater
 +Saves
 	|SavePointMedium
 	|SavePointHard
@@ -369,6 +370,7 @@
 	|MegaCherry
 	|SlopeWobbly
 	|Fig
+	|Wasp
 |PlayerStart
 |Block
 |Platform

@@ -4,7 +4,39 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-event_endstep()
+on=0
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+event_user(0)
+#define Other_7
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (on) {
+    on=0
+    for (i=0;i<8;i+=1) {
+        background_visible[i]=bg_visible[i]
+    }
+}
+#define Other_10
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (!on) {
+    on=1
+    for (i=0;i<8;i+=1) {
+        bg_visible[i]=background_visible[i]
+        background_visible[i]=0
+    }
+}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -15,12 +47,12 @@ var i;
 
 draw_clear(window_get_color())
 
-rect(0,0,room_width+1,room_height+1,background_color,1)
+rect(0,0,room_width,room_height,background_color,1)
 
 draw_before_backgrounds()
 
 for (i=0;i<8;i+=1) {
-    if (background_visible[i] && background_exists(background_index[i])) {
+    if (bg_visible[i] && background_exists(background_index[i])) {
         draw_background_tiled_extra(
             background_index[i],
             background_x[i],

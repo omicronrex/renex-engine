@@ -170,7 +170,7 @@ take_screenshot
 event_draw_gui
 window_set_resolution
 sound_play_option
-fix_background_offset
+fix_backgrounds
 draw_cherry
 camera_reinit
 opt_animation

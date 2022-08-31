@@ -5,7 +5,7 @@ var i;
 
 instance_destroy_id(Player)
 
-if (global.name_difficulties[savedata("diff")]=="Impossible") {
+if (global.is_impossible[savedata("diff")]) {
     savedata_default()
 }
 

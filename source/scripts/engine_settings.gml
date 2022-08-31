@@ -27,12 +27,14 @@
     //set this to a room with difficulty warps in order to use a difficulty selection room
     //a template is provided here -----v
     global.difficulty_room=noone//rmDifficulty
+    //instant restart upon death in the difficulty room
+    global.diffroom_instantrestart=true
 
     //difficulty options:
     add_difficulty("Medium")
     add_difficulty("Hard")
     add_difficulty("Very Hard")
-    add_difficulty("Impossible")
+    add_difficulty("Impossible",true)
 
     //you can replace these with bow/no bow for example, or even add more.
     //there is a globalvar called "difficulty" that's automatically set for you.

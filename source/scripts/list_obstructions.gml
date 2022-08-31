@@ -5,5 +5,10 @@
 //don't screenshot menus
 if (!is_ingame()) return true
 
+//don't screenshot the difficulty room
+if (room==global.difficulty_room) {
+    return true
+}
+
 //all right
 return false

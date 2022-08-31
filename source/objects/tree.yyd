@@ -37,7 +37,6 @@
 	|DefaultMenuBorderMaker
 	|RenexStarParticles
 	|TitleParticle
-	|DifficultyRoomSpike
 +System
 	|BloodEmitter
 	|GibParticle

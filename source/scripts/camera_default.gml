@@ -9,7 +9,7 @@ with (World) {
     camera_s=global.camera_smoothing
     camera_raw=false
 
-    with (Camera) {
+    with (CameraOverride) {
         other.camera_w=camera_w
         other.camera_h=camera_h
         other.camera_f=camera_f

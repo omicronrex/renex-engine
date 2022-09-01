@@ -29,7 +29,7 @@ GameOver
 Ortho
 DestroyedBlock
 FirePart
-Camera
+CameraOverride
 SavePointMedium
 SavePointHard
 SavePointVeryHard

@@ -1,3 +1,23 @@
+/*
+
+    RENEX ENGINE
+    ============
+    version 1.5.0
+    23 July 2022
+
+  A modern fork of various Game Maker 8 I Wanna Be The Guy fangame
+  engines with hundreds of improvements and new features.
+
+  Made by renex with vast contributions from
+  the following people at the time of release:
+
+  ---------------------------------
+  \  Floogle  Starz0r  roaming97  \
+  \  Verve    Duncan    Plasma    \
+  ---------------------------------
+
+*/
+
 //game properties
     global.game_title="renex engine"
     //intended room speed
@@ -5,11 +25,9 @@
     global.game_speed=50
     global.width=800
     global.height=608
-    global.scale=1.0
-    global.fullscreen_cursor_visible=false
-    global.fullscreen_caption_visible=true
+    global.scale=1
     //first room that's actually part of the game
-    global.first_room=rmHub
+    global.first_room=rmTemplate
     //room to return to when using WarpToHub object
     global.hub_room=rmHub
     //password for encrypting saves.
@@ -17,19 +35,13 @@
     global.encrypt_save_password="renex"
     //save game to appdata instead of a /save folder
     global.use_appdata=false
-    //user interface text color
-    global.text_color=$ffffff
     //use savefile thumbnails
     global.savefile_thumbnails=true
+    //user interface text color
+    global.text_color=$ffffff
 
 
 //difficulties
-    //set this to a room with difficulty warps in order to use a difficulty selection room
-    //a template is provided here -----v
-    global.difficulty_room=noone//rmDifficulty
-    //instant restart upon death in the difficulty room
-    global.diffroom_instantrestart=true
-
     //difficulty options:
     add_difficulty("Medium")
     add_difficulty("Hard")
@@ -40,25 +52,31 @@
     //there is a globalvar called "difficulty" that's automatically set for you.
     //example: if (difficulty==0) {code for Medium difficulty}
     //         if (difficulty>=1) {code for Hard and above}
-    //if the difficulty is called "Impossible" then the savefile will be wiped on restart.
-
+    //if the difficulty is set to be impossible then the savefile will be wiped on restart.
     //if only one difficulty is provided, this chooses the difficulty's value:
-    //(can be used to turn off bow)
+    //(can be used to turn on bow by setting to 0)
     global.single_difficulty=1
+
+    //set this to a room with difficulty warps in order to use a difficulty room
+    //a template is provided here -----v
+    global.difficulty_room=noone//rmDifficulty
+    //instant restart upon death in the difficulty room
+    global.diffroom_instantrestart=true
 
 
 //default camera values
+    //these values are applied to all rooms by default - putting a CameraOverride
+    //in a room allows you to change the values for that room only.
     global.default_camera_w=800
     global.default_camera_h=608
     global.default_camera_follow=Player
-    //camera will follow target smoothly when zoomed in
-    global.camera_smoothing=true
-    //camera will switch screens smoothly
-    global.camera_easing=true
+    //camera will follow target smoothly when free
+    global.default_camera_smoothing=true
+    //maker screen switching
+    global.default_maker_easing=true
     //deactivate instances outside of the view
     global.instance_deactivation=true
-    //default dimensions are single screens, with 20 pixels of margin.
-    //you can, for example, set this to 3 and 3 for a 3x3 active game area.
+    //how many screens to keep active, with 20 pixels of margin.
     global.instance_activate_screens_w=1
     global.instance_activate_screens_h=1
     global.instance_activate_margin_px=20
@@ -69,6 +87,7 @@
     global.valign05_vdiet=true
     //save the player's fractionary valign
     //if disabled, the y coordinate is floored on save
+    //there is an optional player choice for this - check custom_options().
     global.save_valign=true
     //platform crush behavior
     //0: leave the player stuck in the wall
@@ -78,24 +97,21 @@
     //default skin and weapon for a new file
     global.player_default_skin=skin_default
     global.player_default_weapon=weapon_default
-    global.die_outside_room=true
+    //jump from vines with the jump button
     global.maker_vines=false
+    global.die_outside_room=true
     global.a_d_trick=false
     global.bow_lag=true
     //prevents shootkid from working if too close to a wall
     global.accurate_shootkid=true
-    //angle the player sprite to match slopes (and the player's bullets)
+    //angle the player (and the player's bullets) to match slopes
     global.angle_slopes=true
     //time in frames to allow single jumping after leaving a surface
     //turn this off for a precision needle game
     global.coyote_time=0
     //time in frames to allow jumping when the button is pressed too early in the air
-    //makes 4.5s easier (but does not remove bhop requirement)
+    //makes 4.5s easier
     global.jump_buffering=0
-    //traditional platforming momentum system
-    //player behaves more like i.e. mario
-    //you can find more settings in player's create
-    global.use_momentum_values=false
 
 
 //sound options
@@ -104,7 +120,7 @@
     global.gain=0.7
     //game over music behavior:
     //0 for playing the game over jingle
-    //1 for fading the level music out over a second
+    //1 for fading the level music over a second
     //2 for pausing the level music immediately
     //3 for doing nothing (music keeps playing)
     //4 for music slowdown
@@ -121,14 +137,14 @@
 
 
 //game behavior
+    global.fullscreen_cursor_visible=false
+    global.fullscreen_caption_visible=true
     //don't go back to the menu - quit the game immediately when pressing esc
     global.esc_always_quits=false
     //automatically updates the window caption with deathtime
     global.show_deathtime=true
-    //white rectangle closing animation
+    //CRT closing animation
     global.closing_animation=true
-    //the ability to fight engine-bosses more than once per savefile
-    global.refight_bosses=true
     //jump refreshers respawn time - if set to zero, it respawns when you land
     global.jump_refresher_timer=0
     //if false, items are only collected upon saving normally
@@ -141,12 +157,12 @@
     global.flip_saves=true
     //(0-8) reduces lag during gameplay, but causes small hiccup on room start.
     //each pass reduces solid instance count by almost half so with 2 passes we should
-    //have around 30% of block instances. increase this value if your game lags on large rooms.
+    //have around 30% of block instances.
     //if you need separate block objects, turn this off.
     global.optimize_solids=2
 
 
-//bonus / funny stuff
+//bonus and funny stuff
     //original iwbtg player mask
     global.use_original_mask=false
     //original iwbtg cherry aligns
@@ -157,3 +173,5 @@
     global.platform_9slice=true
     //oh yuo know
     global.restarting_music=false
+    //mario
+    global.use_momentum_values=false

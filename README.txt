@@ -4,8 +4,8 @@
     version 1.5.0
     23 July 2022
   
-  A modern fork of various GM8 I Wanna Be The Guy fangame engines with hundreds
-  of improvements and new features.
+  A modern fork of various Game Maker 8 I Wanna Be The Guy fangame
+  engines with hundreds of improvements and new features.
   
   Made by renex with vast contributions from
   the following people at the time of release:

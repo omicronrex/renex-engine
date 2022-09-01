@@ -19,6 +19,6 @@ switch (argument0) {
         return "Keyboard Setup"
     }break
     case opt_value: {
-        return ""
+        return ">>"
     }break
 }

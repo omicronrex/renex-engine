@@ -6,7 +6,7 @@ applies_to=self
 */
 sound_kind_stop(1)
 
-if (savedata("boss"+object_get_name(object_index)) && !global.refight_bosses) {
+if (savedata("boss"+object_get_name(object_index))) {
     script=noone
     instance_destroy()
 } else {

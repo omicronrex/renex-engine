@@ -345,7 +345,7 @@
 	|AutoSaver
 	|SkyGradient2Colors
 	|DepthBlender
-	|Camera
+	|CameraOverride
 	|CameraFull
 	|OutsideWarp
 	|TimerFreeze

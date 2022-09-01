@@ -190,6 +190,7 @@
 	|opt_fullscreen_filter
 	|opt_blood_amount
 	|opt_animation
+	|opt_screenshake
 	|opt_savevalign
 	|opt_left_right
 	|opt_rebind_keyboard

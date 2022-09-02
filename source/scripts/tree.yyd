@@ -153,12 +153,23 @@
 	|template_boss
 +camera
 	|camera_default
-	|camera_follow
-	|camera_focus
-	|camera_zoom
-	|camera_set
-	|camera_set_size
-	|camera_set_raw
+	+setters
+		|camera_follow
+		|camera_focus
+		|camera_zoom
+		|camera_angle
+		|camera_smooth
+		|camera_set
+		|camera_borders
+		|camera_set_gridsize
+	+getters
+		|camera_get_follow
+		|camera_get_angle
+		|camera_get_x
+		|camera_get_y
+		|camera_get_zoom
+		|camera_get_smooth
+		|camera_get_borders
 	|camera_shake
 	|camera_apply
 	|camera_reinit

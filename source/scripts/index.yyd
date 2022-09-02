@@ -135,7 +135,7 @@ camera_follow
 camera_focus
 camera_zoom
 camera_set
-camera_set_raw
+
 camera_shake
 camera_apply
 savedata_newgame
@@ -174,7 +174,7 @@ fix_backgrounds
 draw_cherry
 camera_reinit
 opt_animation
-camera_set_size
+camera_set_gridsize
 ds_map_add_copy
 vehicle_mount
 vehicle_dismount
@@ -208,3 +208,14 @@ custom_save
 custom_load
 set_default_volume
 opt_screenshake
+camera_angle
+camera_smooth
+camera_borders
+camera_get_follow
+camera_get_x
+camera_get_y
+camera_get_zoom
+camera_get_angle
+
+camera_get_smooth
+camera_get_borders

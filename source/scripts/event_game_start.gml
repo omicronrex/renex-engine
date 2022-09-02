@@ -43,6 +43,8 @@ pause_delay=0
 
 fpsa=0
 
+debug_execute_code=""
+
 message=0 messagetext=""
 message2=0 message2text=""
 

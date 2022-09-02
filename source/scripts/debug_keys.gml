@@ -10,6 +10,11 @@ if (keyboard_check_pressed(vk_backspace)) {
     global.debug_overlay=!global.debug_overlay
 }
 
+if (!debug_mode && keyboard_check_pressed(ord("E")) && keyboard_check(vk_control)) {
+    debug_execute_code=get_string("Enter code to execute:",debug_execute_code)
+    execute_string(debug_execute_code)
+}
+
 target_speed=global.game_speed
 dx8_set_vsync(true)
 

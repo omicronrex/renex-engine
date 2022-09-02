@@ -1,5 +1,7 @@
 ///camera_zoom(value)
 //change zoom value
 
-World.camera_z=argument0
-World.camera_raw=false
+if (argument0==0) show_error("Can't set camera zoom to zero.",0)
+else {
+    World.camera_z=argument0
+}

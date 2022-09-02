@@ -25,7 +25,6 @@
     global.game_speed=50
     global.width=800
     global.height=608
-    global.scale=1
     //first room that's actually part of the game
     global.first_room=rmTemplate
     //room to return to when using WarpToHub object
@@ -69,11 +68,11 @@
     //in a room allows you to change the values for that room only.
     global.default_camera_w=800
     global.default_camera_h=608
+    global.default_camera_zoom=1
+    //object to follow
     global.default_camera_follow=Player
-    //camera will follow target smoothly when free
+    //camera will follow target smoothly when free of boundaries
     global.default_camera_smoothing=true
-    //maker screen switching
-    global.default_maker_easing=true
     //deactivate instances outside of the view
     global.instance_deactivation=true
     //how many screens to keep active, with 20 pixels of margin.

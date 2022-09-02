@@ -23,6 +23,7 @@ if (on) {
     for (i=0;i<8;i+=1) {
         background_visible[i]=bg_visible[i]
     }
+    background_showcolor=bg_showcolor
 }
 #define Other_10
 /*"/*'/**//* YYD ACTION
@@ -36,6 +37,8 @@ if (!on) {
         bg_visible[i]=background_visible[i]
         background_visible[i]=0
     }
+    bg_showcolor=background_showcolor
+    background_showcolor=0
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION
@@ -45,9 +48,10 @@ applies_to=self
 */
 var i;
 
-draw_clear(window_get_color())
-
-rect(0,0,room_width,room_height,background_color,1)
+if (bg_showcolor) {
+    draw_clear(window_get_color())
+    rect(0,0,room_width,room_height,background_color,1)
+}
 
 draw_before_backgrounds()
 

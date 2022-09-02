@@ -20,4 +20,4 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_rectangle_color(-0.5,-0.5,room_width+0.5,room_height+0.5,top,top,bottom,bottom,0)
+draw_rectangle_color(-0.5,-0.5,room_width-0.5,room_height-0.5,top,top,bottom,bottom,0)

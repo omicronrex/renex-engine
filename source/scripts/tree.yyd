@@ -55,6 +55,7 @@
 		|input_init
 		|input_default
 		|input_anykey
+		|input_anykey_pressed
 		|input_update
 		|input_consume
 		|input_clear

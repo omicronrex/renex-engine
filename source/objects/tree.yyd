@@ -138,10 +138,10 @@
 		|VCoinGive
 		|VCoinTake
 	+KTG
-		|SingleJumpSwitchBlock
-		|SingleJumpSwitchBlockOff
 		|JumpSwitchBlock
 		|JumpSwitchBlockOff
+		|SingleJumpSwitchBlock
+		|SingleJumpSwitchBlockOff
 	+WTW
 		|Yoshi
 		|SmwSaw

@@ -138,6 +138,8 @@
 		|VCoinGive
 		|VCoinTake
 	+KTG
+		|JumpSwitchBlock
+		|JumpSwitchBlockOff
 		|SingleJumpSwitchBlock
 		|SingleJumpSwitchBlockOff
 		|DoubleJumpSwitchBlock

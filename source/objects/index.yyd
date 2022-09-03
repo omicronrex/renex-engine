@@ -275,9 +275,9 @@ CherryRainbow
 
 WaterSurface
 SingleJumpSwitchBlock
-DoubleJumpSwitchBlockOff
+JumpSwitchBlockOff
 SingleJumpSwitchBlockOff
-DoubleJumpSwitchBlock
+JumpSwitchBlock
 JoystickMenu
 MusicPlayerSection
 AutoSaver
@@ -367,5 +367,7 @@ Autotiler
 
 PersistentBackgrounds
 Fig
+DoubleJumpSwitchBlock
+DoubleJumpSwitchBlockOff
 Wasp
 AnyWater

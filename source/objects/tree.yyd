@@ -140,8 +140,8 @@
 	+KTG
 		|SingleJumpSwitchBlock
 		|SingleJumpSwitchBlockOff
-		|DoubleJumpSwitchBlock
-		|DoubleJumpSwitchBlockOff
+		|JumpSwitchBlock
+		|JumpSwitchBlockOff
 	+WTW
 		|Yoshi
 		|SmwSaw

@@ -1,4 +1,4 @@
-sprite=sprSJumpSwitchBlock
+sprite=sprJumpSwitchBlock
 visible=1
 solid=1
 persistent=0

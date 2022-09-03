@@ -1,8 +1,7 @@
 ///camera_zoom(value)
-///camera_zoom():value
-//get or change zoom value
+//change zoom value
 
-if (argument_count) World.camera_z=argument[0]
-else return World.vcz
-
-World.camera_raw=false
+if (argument0==0) show_error("Can't set camera zoom to zero.",0)
+else {
+    World.camera_z=argument0
+}

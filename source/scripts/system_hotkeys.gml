@@ -1,11 +1,14 @@
 //most engine hotkeys are handled here
 
-if (room!=global.difficulty_room) {
-    //restart
-    if (global.key_pressed[key_restart]) {
-        if (is_ingame() && !global.pause) {
-            savedata_load()
+//restart
+if (global.key_pressed[key_restart]) {
+    if (is_ingame() && !global.pause) {
+        if (room==global.difficulty_room) {
+            Player.dead=1
+            room_restart()
+            exit
         }
+        savedata_load()
     }
 }
 

@@ -10,5 +10,6 @@ settings("filter",1)
 settings("anim",1)
 
 settings("valign",1)
+settings("shakeamount",1)
 
 input_default()

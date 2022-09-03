@@ -14,6 +14,7 @@ ysep=32
 ycursor=0
 
 setting=false
+waiting=false
 
 for (i=0;i<key_sizeof;i+=1) {
     keyname[i]=lang("keyname"+string(i))
@@ -36,7 +37,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!setting) {
+if (waiting) {
+    if (!input_anykey()) waiting=false
+} else if (!setting) {
     if (global.key_pressed[key_up] || global.key_pressed[key_down]) {
         sound_play("sndJump")
         sel=modwrap(sel+global.input_v,0,key_sizeof+1)
@@ -78,6 +81,7 @@ if (!setting) {
 
         global.keycode[sel]=key
         setting=false
+        waiting=true
     }
 }
 

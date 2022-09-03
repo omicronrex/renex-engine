@@ -1,4 +1,4 @@
-//you can replace all the text in the engine through this list
+//you can replace all the default engine text here
 
 //globals
 add_string("deaths","Deaths")

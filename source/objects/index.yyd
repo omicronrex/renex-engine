@@ -29,7 +29,7 @@ GameOver
 Ortho
 DestroyedBlock
 FirePart
-Camera
+CameraOverride
 SavePointMedium
 SavePointHard
 SavePointVeryHard
@@ -347,7 +347,7 @@ LeekRight
 LeekDown
 Skinner
 DifficultyWarp
-DifficultyRoomSpike
+
 CameraBlock
 TriggerGroup
 SuperVehicle
@@ -369,3 +369,5 @@ PersistentBackgrounds
 Fig
 DoubleJumpSwitchBlock
 DoubleJumpSwitchBlockOff
+Wasp
+AnyWater

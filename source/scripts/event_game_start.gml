@@ -43,6 +43,8 @@ pause_delay=0
 
 fpsa=0
 
+debug_execute_code=""
+
 message=0 messagetext=""
 message2=0 message2text=""
 
@@ -137,10 +139,10 @@ input_init()
 load_sounds()
 
 global.langmap=ds_map_create()
-list_strings()
+custom_language()
 
 global.optlist=ds_list_create()
-list_options()
+custom_options()
 
 savedata_init()
 
@@ -209,7 +211,7 @@ globalvar gizmos,gizmolist;
 gizmos=0
 gizmolist=0
 add_gizmo(Trap)
-list_gizmos()
+custom_traps()
 
 //let's go away
 if (settings("volcheck")) {

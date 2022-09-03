@@ -62,14 +62,7 @@ if (instance_place(x, y, Block) || instance_place(x, y, NiseBlock))
         x += hspeed
     }
 }
-#define Collision_Water1
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-vspeed-=2*gravity
-#define Collision_Water2
+#define Collision_AnyWater
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

@@ -1,4 +1,12 @@
 with (Player) if (!dead) {
+    if (room==global.difficulty_room) {
+        if (global.diffroom_instantrestart) {
+            Player.dead=1
+            room_restart()
+            exit
+        }
+    }
+
     if (global.debug_god) {
         if (!flashing) {
             flashing=room_speed

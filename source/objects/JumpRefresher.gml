@@ -4,14 +4,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-refreshTime=global.jump_refresher_timer
+refreshTime=0
+active=1
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-visible=true
+active=1
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -25,9 +26,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (visible) {
+if (active) {
     other.djump=max(1,other.djump-1)
-    visible=false
+    active=0
     alarm[0]=refreshTime
 }
 #define Other_4
@@ -37,3 +38,10 @@ action_id=603
 applies_to=self
 */
 //field refreshTime: number
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (active) draw_self()

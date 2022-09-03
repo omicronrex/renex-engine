@@ -78,28 +78,35 @@ if (state="") {
 
 //continue or erase
 if (state="continue") {
-    if (global.key_pressed[key_up] || global.key_pressed[key_down]) {
-        sound_play("sndJump")
-        asksel=!asksel
-        askcount=0
-    }
-    if (global.key_pressed[key_jump]) {
-        if (asksel) {
-            askcount+=1
-            if (askcount=5) {
-                sound_play("sndDeath")
-                savedata_default(select)
-                state=""
-                if (thumb[select]!=noone) {
-                    background_delete(thumb[select])
-                    thumb[select]=noone
-                }
-                show_message_left(lang("fileundo"))
-            } else sound_play("sndShoot")
-        } else {
-            input_clear()
-            savedata_select(select)
-            savedata_load()
+    if (global.difficulty_room!=noone) {
+        instance_destroy_id(TitleParticle)
+        instance_destroy_id(TitleMenu)
+        input_clear()
+        room_goto(global.difficulty_room)
+    } else {
+        if (global.key_pressed[key_up] || global.key_pressed[key_down]) {
+            sound_play("sndJump")
+            asksel=!asksel
+            askcount=0
+        }
+        if (global.key_pressed[key_jump]) {
+            if (asksel) {
+                askcount+=1
+                if (askcount=5) {
+                    sound_play("sndDeath")
+                    savedata_default(select)
+                    state=""
+                    if (thumb[select]!=noone) {
+                        background_delete(thumb[select])
+                        thumb[select]=noone
+                    }
+                    show_message_left(lang("fileundo"))
+                } else sound_play("sndShoot")
+            } else {
+                input_clear()
+                savedata_select(select)
+                savedata_load()
+            }
         }
     }
 }
@@ -187,7 +194,9 @@ for (i=0;i<3;i+=1) {
         } else draw_text(x+i*240+64,y+48+96,global.name_difficulties[difficulty])
 
         if (global.savefile_thumbnails) {
-            if (savedata("clear")) {
+            if (savedata("room")==global.difficulty_room) {
+                draw_background(bgThumbDefault,x+i*240,y)
+            } else if (savedata("clear")) {
                 draw_background(bgThumbClear,x+i*240,y)
             } else {
                 if (thumb[i]!=noone) {

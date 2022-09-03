@@ -25,6 +25,18 @@ if (diff=-1) {
 } else {
     savedata_newgame(settings("lastfile"),diff)
 }
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field diff: number - use -1 for the "load game" warp
+
+if (diff<global.num_difficulties) {
+    if (diff=-1) name=lang("filecontinue")
+    else name=global.name_difficulties[diff]
+} else instance_destroy()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

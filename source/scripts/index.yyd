@@ -1,5 +1,5 @@
 engine_settings
-list_music_properties
+custom_sound_properties
 
 list_nonstick
 settings_default
@@ -115,9 +115,9 @@ flip_player
 play_bg_music
 lock_controls
 unlock_controls
-list_gizmos
+custom_traps
 add_gizmo
-list_strings
+custom_language
 add_string
 lang
 collect_items
@@ -135,7 +135,7 @@ camera_follow
 camera_focus
 camera_zoom
 camera_set
-camera_set_raw
+
 camera_shake
 camera_apply
 savedata_newgame
@@ -152,7 +152,7 @@ change_weapon
 change_skin
 opt_music_volume
 opt_template
-list_options
+custom_options
 add_option
 opt_sound_volume
 opt_screen_mode
@@ -170,11 +170,11 @@ take_screenshot
 event_draw_gui
 window_set_resolution
 sound_play_option
-fix_background_offset
+fix_backgrounds
 draw_cherry
 camera_reinit
 opt_animation
-camera_set_size
+camera_set_gridsize
 ds_map_add_copy
 vehicle_mount
 vehicle_dismount
@@ -204,3 +204,19 @@ sound_set_sfx_volume
 instance_activate_all_safe
 construct
 opt_savevalign
+custom_save
+custom_load
+set_default_volume
+opt_screenshake
+camera_angle
+camera_smooth
+camera_borders
+camera_get_follow
+camera_get_x
+camera_get_y
+camera_get_zoom
+camera_get_angle
+
+camera_get_smooth
+camera_get_borders
+input_anykey_pressed

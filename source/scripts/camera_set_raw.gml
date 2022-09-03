@@ -1,10 +1,6 @@
 ///camera_set_raw(left,top,zoom,angle)
-var f;
 
-f=argument2/global.scale*2
+camera_set(argument0+global.width*argument2*0.5,argument1+global.height*argument2*0.5,argument2,argument3)
 
-camera_focus(argument0+global.width/f,argument1+global.height/f)
-camera_zoom(argument2)
-view_angle=argument3
 World.camera_s=false
 World.camera_raw=true

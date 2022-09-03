@@ -1,12 +1,12 @@
 |engine_settings
-|custom_init
-+engine lists
-	|list_strings
-	|list_options
-	|list_music_properties
-	|list_nonstick
-	|list_gizmos
-	|list_obstructions
++CUSTOM
+	|custom_init
+	|custom_save
+	|custom_load
+	|custom_sound_properties
+	|custom_options
+	|custom_traps
+	|custom_language
 +saving
 	|savedata_init
 	|settings_default
@@ -55,6 +55,7 @@
 		|input_init
 		|input_default
 		|input_anykey
+		|input_anykey_pressed
 		|input_update
 		|input_consume
 		|input_clear
@@ -71,7 +72,7 @@
 		|update_fullscreen
 		|take_screenshot
 		|window_set_resolution
-		|fix_background_offset
+		|fix_backgrounds
 	+drawing
 		|rect
 		|draw_sign_text
@@ -86,6 +87,9 @@
 	+vehicle
 		|vehicle_mount
 		|vehicle_dismount
+	+misc lists
+		|list_nonstick
+		|list_obstructions
 	|add_difficulty
 	|add_gizmo
 	|update_caption_deathtime
@@ -150,12 +154,23 @@
 	|template_boss
 +camera
 	|camera_default
-	|camera_follow
-	|camera_focus
-	|camera_zoom
-	|camera_set
-	|camera_set_size
-	|camera_set_raw
+	+setters
+		|camera_follow
+		|camera_focus
+		|camera_zoom
+		|camera_angle
+		|camera_smooth
+		|camera_set
+		|camera_borders
+		|camera_set_gridsize
+	+getters
+		|camera_get_follow
+		|camera_get_angle
+		|camera_get_x
+		|camera_get_y
+		|camera_get_zoom
+		|camera_get_smooth
+		|camera_get_borders
 	|camera_shake
 	|camera_apply
 	|camera_reinit
@@ -175,6 +190,7 @@
 	|play_bg_music
 	|sound_play_slomo
 	|set_loop_point
+	|set_default_volume
 	|sound_play_option
 	|sound_set_music_volume
 	|sound_set_sfx_volume
@@ -186,6 +202,7 @@
 	|opt_fullscreen_filter
 	|opt_blood_amount
 	|opt_animation
+	|opt_screenshake
 	|opt_savevalign
 	|opt_left_right
 	|opt_rebind_keyboard

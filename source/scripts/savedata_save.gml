@@ -53,14 +53,7 @@ with (Player) if (!dead || argument0) {
     savedata("skin",global.player_skin)
     savedata("weapon",global.player_weapon)
 
-    //gimmicks
-    savedata("slomo",slomo)
-    savedata("whitedot",dot_hitbox)
-    savedata("dotkid",dotkid)
-    savedata("shootkid",shootkid)
-    savedata("numjumps",maxjumps)
-    savedata("vvvvvv",vvvvvv)
-    savedata("beamstate",beamstate)
+    custom_save()
 
     with (all) event_perform(ev_trigger,tr_onsave)
 

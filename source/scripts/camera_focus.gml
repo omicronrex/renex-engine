@@ -3,6 +3,5 @@
 
 camera_follow(noone)
 
-World.newcamx=argument0
-World.newcamy=argument1
-World.camera_raw=false
+World.camera_x=argument0
+World.camera_y=argument1

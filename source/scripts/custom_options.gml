@@ -7,6 +7,7 @@ add_option(opt_screen_mode)
 add_option(opt_fullscreen_filter)
 add_option(opt_animation)
 add_option(opt_blood_amount)
+add_option(opt_screenshake)
 add_option(opt_left_right)
 
 //option for saving valign

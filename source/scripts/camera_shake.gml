@@ -7,4 +7,5 @@ with (World) {
     else camera_shaketime=camera_shakelength
     camera_shakelen=camera_shaketime
     camera_shakedir=random(360)
+    camera_shakelength*=settings("shakeamount")
 }

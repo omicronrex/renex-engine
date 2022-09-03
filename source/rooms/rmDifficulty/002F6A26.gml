@@ -1,3 +1,3 @@
 //gm82 fields begin
-smooth=false
+diff=0
 //gm82 fields end

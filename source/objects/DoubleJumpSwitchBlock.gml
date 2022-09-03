@@ -4,23 +4,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-ready=0
-alarm[0]=5
-check_crush()
-#define Alarm_0
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-ready=1
-#define Other_10
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-if (ready) {
-    instance_create(x,y,DoubleJumpSwitchBlockOff)
-    instance_destroy()
-}
+event_inherited()
+
+singlejump=false
+doublejump=true
+switchto=DoubleJumpSwitchBlockOff

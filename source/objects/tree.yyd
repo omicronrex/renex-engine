@@ -142,6 +142,8 @@
 		|JumpSwitchBlockOff
 		|SingleJumpSwitchBlock
 		|SingleJumpSwitchBlockOff
+		|DoubleJumpSwitchBlock
+		|DoubleJumpSwitchBlockOff
 	+WTW
 		|Yoshi
 		|SmwSaw

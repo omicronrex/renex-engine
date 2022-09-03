@@ -262,10 +262,12 @@
 	|sprBeamGreen
 	|sprToggleBlockOn
 	|sprToggleBlockOff
-	|sprSJumpSwitchBlock
-	|sprSJumpSwitchBlockOff
 	|sprJumpSwitchBlock
 	|sprJumpSwitchBlockOff
+	|sprSJumpSwitchBlock
+	|sprSJumpSwitchBlockOff
+	|sprDJumpSwitchBlock
+	|sprDJumpSwitchBlockOff
 	|sprPatBall
 	|sprNangTJumpParticle
 	|sprAligner

@@ -220,3 +220,4 @@ camera_get_angle
 camera_get_smooth
 camera_get_borders
 input_anykey_pressed
+trigger_broadcast

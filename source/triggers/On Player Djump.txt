@@ -1,0 +1,2 @@
+constant=tr_playerdjump
+kind=0

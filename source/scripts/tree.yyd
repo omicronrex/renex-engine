@@ -115,6 +115,7 @@
 	|autotile
 	|instance_activate_all_safe
 	|construct
+	|trigger_broadcast
 +events
 	|event_game_start
 	|event_room_start

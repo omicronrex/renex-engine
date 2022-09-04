@@ -6,8 +6,7 @@ if (vvvvvv) {
         y+=4*vflip
         if (vflip==-1) {sound_play_slomo("sndVFlip1")}
         else { sound_play_slomo("sndVFlip2")}
-        with (JumpSwitchBlock) event_user(0)
-        with (JumpSwitchBlockOff) event_user(0)
+        trigger_broadcast(tr_playerjump)
         coyoteTime=0
         jump_timer=0
     }
@@ -21,8 +20,7 @@ if (vvvvvv) {
         sound_play_slomo("sndJump")
         djump=1
         image_index=0
-        with (JumpSwitchBlock) event_user(0)
-        with (JumpSwitchBlockOff) event_user(0)
+        trigger_broadcast(tr_playerjump)
         coyoteTime=0
         jump_timer=0
         if (instance_place(x,y+1,GuyWater)) onfire=false
@@ -35,8 +33,7 @@ if (vvvvvv) {
             repeat (5) instance_create(random_range(x-5,x+5),random_range(y+4,y+4),TripleJumpStar)
         }
         image_index=0
-        with (JumpSwitchBlock) event_user(1)
-        with (JumpSwitchBlockOff) event_user(1)
+        trigger_broadcast(tr_playerdjump)
         coyoteTime=0
         jump_timer=0
     } else jump_timer=global.jump_buffering

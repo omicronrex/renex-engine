@@ -17,7 +17,7 @@ action_id=603
 applies_to=self
 */
 ready=1
-#define Other_10
+#define Trigger_On Player Jump
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -27,7 +27,7 @@ if (ready && singlejump) {
     instance_create(x,y,switchto)
     instance_destroy()
 }
-#define Other_11
+#define Trigger_On Player Djump
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

@@ -257,10 +257,10 @@ sprToggleBlockOff
 sprCherryRainbowNew
 sprCherryRainbow
 
-sprDJumpBlock
-sprSJumpBlock
-sprSJumpBlockOff
-sprDJumpBlockOff
+sprJumpSwitchBlock
+sprSJumpSwitchBlock
+sprSJumpSwitchBlockOff
+sprJumpSwitchBlockOff
 sprMusicSection
 sprAutoSaver
 sprPatBall
@@ -322,4 +322,6 @@ sprPlatform9slice
 sprAligner
 sprThrow
 sprPhg
+sprDJumpSwitchBlock
+sprDJumpSwitchBlockOff
 sprWasp

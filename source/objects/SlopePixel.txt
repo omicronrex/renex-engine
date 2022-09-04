@@ -1,0 +1,7 @@
+sprite=spr1x1
+visible=0
+solid=1
+persistent=0
+depth=0
+parent=SlopeParent
+mask=

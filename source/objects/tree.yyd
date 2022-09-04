@@ -270,6 +270,7 @@
 	|SlopeCircle
 	|SlopeCrescent
 	|SlopeBeam
+	|SlopePixel
 +Traps
 	|SpikeTrapD
 	|SpikeTrapL
@@ -371,6 +372,7 @@
 	|SlopeWobbly
 	|Fig
 	|Wasp
+	|FunnySlope
 |PlayerStart
 |Block
 |Platform

@@ -556,6 +556,7 @@ if (!place_free(rxnext,y+vspeed)) {
         }
         x-=hspeed
         walljumpboost=0
+        rx=x
     }
 
     if (!place_free(rx,y+vspeed)) {

@@ -49,6 +49,14 @@ d3d_model_draw(m2,0,0,0,-1)
 
 tex1=background_get_texture(texture_fill)
 tex2=background_get_texture(texture_top)
+#define Other_5
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+d3d_model_destroy(m1)
+d3d_model_destroy(m2)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

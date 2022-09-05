@@ -271,6 +271,10 @@
 	|sprPatBall
 	|sprNangTJumpParticle
 	|sprAligner
+	|sprWasp
+	|sprBolt
+	|sprPiston
+	|sprSlopeWobbly
 +Triggers
 	|sprTriggerGroup
 	|sprTrigger1
@@ -325,8 +329,3 @@
 	|sprGlobalItem3
 	|sprGlobalItem4
 	|sprGameClear
-+Example (safe to delete)
-	|sprBolt
-	|sprPiston
-	|sprSlopeWobbly
-|sprWasp

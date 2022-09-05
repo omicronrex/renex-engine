@@ -59,6 +59,7 @@
 	|CherryBounce
 	|CherryCircle
 	|CherryRainbow
+	|MegaCherry
 	|MiniSpikeDown
 	|MiniSpikeLeft
 	|MiniSpikeRight
@@ -67,6 +68,9 @@
 	|LeekLeft
 	|LeekRight
 	|LeekDown
+	|Fig
+	|Wasp
+	|Bolt
 +Gimmicks
 	+White Dot
 		|WhiteDotEnable
@@ -272,7 +276,9 @@
 	|SlopeCircle
 	|SlopeCrescent
 	|SlopeBeam
+	|FunnySlope
 	|SlopePixel
+	|SlopeWobbly
 +Traps
 	|SpikeTrapD
 	|SpikeTrapL
@@ -368,13 +374,7 @@
 	|ExampleRotatingTrap
 	|CloudSetOnFire
 	|CloudBolt
-	|Bolt
 	|MusicSpeedSlider
-	|MegaCherry
-	|SlopeWobbly
-	|Fig
-	|Wasp
-	|FunnySlope
 |PlayerStart
 |Block
 |Platform

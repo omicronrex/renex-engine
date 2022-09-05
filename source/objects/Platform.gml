@@ -35,10 +35,12 @@ if (path_index!=-1 && path_speed!=0) {
 if (moveplayer) {
     //due to player's rounding, it's impossible to move the player only part of a pixel
     //so we store and make use of deficit counters
-    hspeed+=hdeficit
-    hdeficit=hspeed-round(hspeed)
+    var hmove;
+    hdeficit+=hspeed
+    hmove=round(hdeficit)
+    hdeficit-=hmove
     with (Player) if (instance_place(x,y+2*vflip,other.id)) {
-        move_player(x+round(other.hspeed),y+other.vspeed,1)
+        move_player(x+hmove,y+other.vspeed,1)
     }
 }
 #define Collision_NiseBlock

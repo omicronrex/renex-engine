@@ -11,7 +11,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-event_user(0)
+fix_backgrounds()
 #define Other_7
 /*"/*'/**//* YYD ACTION
 lib_id=1

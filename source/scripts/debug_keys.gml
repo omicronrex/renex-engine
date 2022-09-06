@@ -88,9 +88,9 @@ if (is_ingame()) {
         func=show_menu("Debug Menu|-|Go to...|Infinite Jump|Godmode|Hitboxes|Autofire|Save Here",0)
         if (func=1) {
             s="Select room:|-"
-            r=global.first_room
+            r=room_next(room_first)
             do {
-                s+="|"+room_get_name(r)
+                if (is_ingame(r)) s+="|"+room_get_name(r)
                 r=room_next(r)
             } until (r=-1)
             goto=show_menu(s,0)

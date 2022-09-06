@@ -1,3 +1,75 @@
+renex engine v1.?.? build ?? ??? 2022
+
+New features:
+
+- added a player option for screenshake intensity
+- added an engine option to disable savefile thumbnail generation
+- added a warp sound option to the warp object
+- added new gimmick wasp
+- added two new triggers for player jump and double jump
+- added a tool for persistent backgrounds
+- added a new free-form slope object
+- added a new set of scripts for setting and getting camera options
+- added new camera options and toggles
+- added a new engine hook for drawing things before room backgrounds
+- added a simple autotiler tool with some templates
+- added an engine setting and optional player choice for saving the valign
+- added an option for not doing anything to the music on game over
+- added an option to slow down the music on game over
+- added a new death fruit
+- added stock support for mp3 sound effects (why though?)
+- added an engine toggle for stopping sound effects between rooms
+- added the Ctrl-M shortcut for muting the music
+- added two shortcut scripts for changing the sound volume
+
+Bugs fixed:
+
+- fixed issues with platforms that move at float hspeed
+- fixed the player getting stuck on the bottom of angled solids
+- fixed multiple issues with the camera system
+- fixed several issues with the difficulty room implementation
+- fixed some weird autosave issues
+- fixed an input bug in the keyboard remap menu
+- fixed the background color toggle variable not working
+- fixed lag when using repeating small backgrounds in rooms
+- fixed keyboard keys getting cleared between rooms
+- fixed an instance activation bug when pausing near moving objects
+- fixed inconsistent vine bug behavior compared to YoYoYo engine
+- fixed lag spike caused by save icon generation when saving
+- fixed several bugs in the difficulty system
+- fixed the first game save taking a screenshot of the file menu
+- fixed a crash when yoshi blood hits a moving killer and then drips off of it
+- fixed a mistake that bugged trilinear filtering when using other resolutions
+- fixed player_land receiving incorrect vspeed when landing on platforms
+- fixed crash by preventing the user from warping more than once out of a room
+- fixed fullscreen caption always being visible
+- fixed sky gradient tool drawing on top of room backgrounds
+- fixed the pause menu cursor dying when you changed the blood option
+- fixed some inconsistencies with vines when the maker vines option is disabled
+- fixed the engine rooms having incorrectly set up music players
+- fixed issues with the autotiler on grids other than 32
+- fixed typo in fields for DepthBlender
+- fixed a very minor issue with the volume check screen
+- fixed a bug with blood gravity
+
+Minor changes:
+
+- improved engine lists to make it easier to add custom stuff
+- q key handling has been moved to the player input handler
+- beam speed changes now respect changes made elsewhere in the player object
+- wavy water surface tool is easier to use
+- the bouncing cherry object was redone to be more versatile
+- pipe autotiler looks better when using solid edge mode
+- moved the wobbly slope to the example folder so you don't get errors
+- massively optimized savefile thumbnail generation
+- signpost text is now constrained to the visible area
+- accurate shootkid is now a default
+- made all different water objects child of a new AnyWater parent
+- removed the upside down saves and their sprites as they're not needed
+- removed the "classic" engine options preset
+- removed some pointless engine settings
+
+--------------------------------------------------------------------------------
 renex engine v1.5.0 build 23 jul 2022
 
 This is a massive update that brings in all of the fixes and improvements that

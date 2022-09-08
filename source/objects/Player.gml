@@ -235,7 +235,7 @@ if (input_v!=0 && !ladder) if (instance_place(x,y,Ladder)) {
 }
 
 if (ladder) {
-    if (!instance_place(x,y,Ladder) || (on_ground() && key[key_down])) {
+    if (!instance_place(x,y,Ladder) || (on_ground() && key[pick(!vflip,key_down,key_up)])) {
         ladder=false
     } else {
         if (input_v!=0) {if (place_free(x,y+maxSpeed*input_v)) {
@@ -247,7 +247,8 @@ if (ladder) {
             ladder=false
         }
     }
-} else {
+}
+if (!ladder) {
     gravity=baseGrav*vflip
 }
 /*"/*'/**//* YYD ACTION

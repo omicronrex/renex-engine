@@ -64,7 +64,7 @@
   developed and tested in 8.2 and is designed to make use of its new features.
   You can find 8.2 and related resources in the gm82 server:
 
-  - https://discord.gg/p7GpvPNUmc
+  - https://discord.gg/CMZKMS4NHM
 
 
 --------------------------------------------------------------------------------

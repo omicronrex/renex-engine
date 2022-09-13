@@ -1,4 +1,4 @@
-renex engine v1.?.? build ?? ??? 2022
+renex engine v1.x.x build ?? ??? 2022
 
 New features:
 
@@ -9,6 +9,7 @@ New features:
 - added two new triggers for player jump and double jump
 - added a tool for persistent backgrounds
 - added a new free-form slope object
+- added a double-jump only KTG block
 - added a new set of scripts for setting and getting camera options
 - added new camera options and toggles
 - added a new engine hook for drawing things before room backgrounds

@@ -1,4 +1,4 @@
-var i,h,keyboard;
+var i,h,keyboard,joysfound;
 
 keyboard=false
 
@@ -42,11 +42,12 @@ for (i=0;i<key_sizeof;i+=1) {
 }
 
 //process joysticks added or removed
-if (joystick_found() || global.joysupdated) {
+joysfound=joystick_found()
+if (joysfound || global.joysupdated) {
     //joysticks added or removed, let's set up some memory variables
     //they're used to tell where the stick is going
 
-    if (joystick_count()>0) {
+    if (joystick_count()>0 && joysfound) {
         //check for unknown joysticks
 
         var count;count=0

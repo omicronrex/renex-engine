@@ -65,7 +65,7 @@ if (global.key_pressed[key_shoot]) {
             instance_destroy()
         }
     } else {
-        show_message_right(lang("joyusekey"),300)
+        if (!setting) show_message_right(lang("joyusekey"),300)
     }
 } else if (!setting) {
     lit=0
@@ -91,7 +91,7 @@ if (global.key_pressed[key_shoot]) {
                 show_message_right(lang("joypushtosel"),300)
             }
         } else {
-            show_message_right(lang("joyusekey"),300)
+            if (!setting) show_message_right(lang("joyusekey"),300)
         }
     }
 } else {

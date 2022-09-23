@@ -10,8 +10,7 @@ if (string_pos("axis",map)) {
     if (reading==expected) {
         if (!reading_old) reading_pressed=1
         return 1
-    }
-    if (reading_old) reading_released=1
+    } else if (reading_old) reading_released=1
     return 0
 }
 if (string_pos("button",map)) {
@@ -34,8 +33,7 @@ if (string_pos("hat",map)) {
     if (abs(angle_difference(reading,expected))<50 && reading!=-1) {
         if (!reading_old) reading_pressed=1
         return 1
-    }
-    if (reading_old) reading_released=1
+    } else if (reading_old) reading_released=1
     return 0
 }
 

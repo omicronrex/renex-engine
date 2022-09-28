@@ -541,14 +541,13 @@ var land,a,s,rx,yes,oldvsp;
 if (hspeed>=0) {rx=floor(x) rxnext=floor(x+hspeed)}
 else {rx=ceil(x) rxnext=ceil(x+hspeed)}
 
-oldvsp=vspeed
-
 //we add gravity because this is supposed to happen after movement update
 vspeed+=gravity
 
-if (!place_free(rxnext,y+vspeed)) {
-    if (!place_free(rxnext,y)) {
-        x=rx
+if (!place_free(x+hspeed,y+vspeed)) {
+    if (!place_free(x+hspeed,y)) {
+        if (hspeed>=0) x=floor(x)
+        else x=ceil(x)
         a=ceil(abs(hspeed))
         s=sign(hspeed)
         repeat (a+1) {
@@ -557,18 +556,18 @@ if (!place_free(rxnext,y+vspeed)) {
         }
         x-=hspeed
         walljumpboost=0
-        rx=x
     }
 
-    if (!place_free(rx,y+vspeed)) {
+    if (!place_free(x,y+vspeed)) {
         a=ceil(abs(vspeed))
         s=sign(vspeed)
+        oldvsp=vspeed
+        vspeed=0
 
         repeat (a+1) {
             y+=s
             if (!place_free(rx,y)) {
                 y-=s
-                vspeed=0
                 if (s==vflip) {
                     player_land(oldvsp)
                 } else {
@@ -577,12 +576,10 @@ if (!place_free(rxnext,y+vspeed)) {
                 break
             }
         }
+        y-=vspeed
     }
 
-    if (hspeed>=0) {rxnext=floor(x+hspeed)}
-    else {rxnext=ceil(x+hspeed)}
-
-    if (!place_free(rxnext,y+vspeed)) {
+    if (!place_free(x+hspeed,y+vspeed)) {
         hspeed=0
     }
 }

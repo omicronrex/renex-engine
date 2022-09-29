@@ -26,7 +26,7 @@ if (persistent) {
             background_vspeed[i]=bg_[i, 9]
             background_x[i]=bg_[i,10]
             background_y[i]=bg_[i,11]
-        }
+        i+=1}
     }
 }
 #define Other_5
@@ -53,6 +53,6 @@ i=0 repeat (8) {
     bg_[i, 9]=background_vspeed[i]
     bg_[i,10]=background_x[i]
     bg_[i,11]=background_y[i]
-}
+i+=1}
 
 persistent=true

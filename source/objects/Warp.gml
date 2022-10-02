@@ -8,6 +8,7 @@ warpCoord[0]=noone
 warpCoord[1]=noone
 warpid=""
 warpsound=""
+autosave=false
 roomTo=room
 #define Collision_Player
 /*"/*'/**//* YYD ACTION

@@ -11,8 +11,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//field roomTo: room
-//field warpCoord: xy
-//field warpid: string
+//field autosave: bool
 
 event_inherited()

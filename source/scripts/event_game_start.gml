@@ -147,7 +147,7 @@ custom_options()
 savedata_init()
 
 //detect that this is being ran from game maker and set the test run variable
-global.test_run=false
+global.test_run=global.always_test_mode
 if (program_directory!=working_directory && string_pos("\AppData\Local\Temp\gm_ttt_",program_directory)) {
     var key;key="SOFTWARE\Game Maker\Version 8.2\Preferences\"
     var name;name=filename_change_ext(filename_name(parameter_string(0)),"")

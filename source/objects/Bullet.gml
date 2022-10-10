@@ -6,7 +6,7 @@ applies_to=self
 */
 if (instance_exists(Player)) alarm[0]=40/(Player.slomo*dt)
 else alarm[0]=40/dt
-dead=0
+dead=instance_place(x,y,NiseBlock)
 
 storex=1
 storey=1

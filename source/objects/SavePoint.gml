@@ -48,7 +48,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!global.contact_saves && !global.press_s_saves) event_user(0)
+if (!global.contact_saves && !global.press_s_saves && !other.dead) event_user(0)
 #define Other_7
 /*"/*'/**//* YYD ACTION
 lib_id=1

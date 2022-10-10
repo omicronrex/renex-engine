@@ -9,7 +9,5 @@ with (Player) spd=slomo
 if (argument_count==2) spd*=argument[1]
 
 if (spd<1) {
-    snd=sound_play_paused(argument0)
-    sound_pitch(snd,spd)
-    sound_resume(snd)
+    sound_play_ex(argument0,1,spd)
 } else sound_play(argument0)

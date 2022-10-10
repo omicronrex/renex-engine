@@ -303,7 +303,7 @@ LockedTrigger9
 LockedTrigger10
 LockedTrigger11
 LockedTrigger12
-ExampleGizmo
+
 TimerFreeze
 DisplayItem
 DisplayGlobalItem
@@ -373,4 +373,7 @@ Wasp
 AnyWater
 FunnySlope
 SlopePixel
+
+AddTrigger
+Gizmo
 

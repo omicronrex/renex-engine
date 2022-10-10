@@ -221,3 +221,4 @@ camera_get_smooth
 camera_get_borders
 input_anykey_pressed
 trigger_broadcast
+update_triggers

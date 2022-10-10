@@ -12,6 +12,7 @@
 	|Button
 	|ButtonShoot
 	|Boss
+	|Gizmo
 	|Trap
 	|TrapSave
 	|Item
@@ -172,7 +173,6 @@
 	|ShootRefresherR
 	|Teleporter
 	|PatBall
-	|ExampleGizmo
 	|ActualYokuBlock
 	|YokuGroup
 	|AlignIndicator
@@ -180,6 +180,7 @@
 	|TriggerGroup
 	|TrapStop
 	|TrapRedirect
+	|AddTrigger
 	|TriggerFree
 	|TriggeredFree
 	|Trigger1

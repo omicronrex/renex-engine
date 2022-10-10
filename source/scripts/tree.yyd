@@ -116,6 +116,7 @@
 	|instance_activate_all_safe
 	|construct
 	|trigger_broadcast
+	|update_triggers
 +events
 	|event_game_start
 	|event_room_start

@@ -277,6 +277,7 @@
 	|sprSlopeWobbly
 +Triggers
 	|sprTriggerGroup
+	|sprAddTrigger
 	|sprTrigger1
 	|sprTrigger2
 	|sprTrigger3

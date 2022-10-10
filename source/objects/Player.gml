@@ -762,9 +762,19 @@ if (!dead) {
     }
 
     if (vflip==1) {
-        if (y-vspeed/2-8*dotkid<=other.bbox_top) {
+        oy=y
+        search=16
+        repeat (5) {
+            if (instance_place(x,y,other.id)) y-=search
+            else y+=search
+            search/=2
+            ytop=bbox_bottom+1
+        }
+        y=oy
+
+        if (y-vspeed/2-8*dotkid<=ytop) {
             if (other.snap || vspeed-other.vspeed>=0) {
-                y=other.bbox_top-9+8*dotkid
+                y=ytop-9+8*dotkid
                 oldvspeed=vspeed
                 vspeed=max(0,other.vspeed/dt/slomo)
                 player_land(oldvspeed)
@@ -780,9 +790,19 @@ if (!dead) {
             walljumpboost=0
         }
     } else {
-        if (y-vspeed/2+7*dotkid>=other.bbox_bottom+1.5) {
+        oy=y
+        search=-16
+        repeat (5) {
+            if (instance_place(x,y,other.id)) y-=search
+            else y+=search
+            search/=2
+            ytop=bbox_top
+        }
+        y=oy
+
+        if (y-vspeed/2+7*dotkid>=ytop+0.5) {
             if (other.snap || vspeed-other.vspeed<=0) {
-                y=other.bbox_bottom+1.5+8-7*dotkid
+                y=ytop+0.5+8-7*dotkid
                 oldvspeed=vspeed
                 vspeed=min(0,other.vspeed/dt/slomo)
                 player_land(oldvspeed)

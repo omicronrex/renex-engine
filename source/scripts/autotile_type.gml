@@ -30,8 +30,8 @@ autotile_u=1/(background_get_width(bg)*texture_get_width(texture))
 autotile_v=1/(background_get_height(bg)*texture_get_height(texture))
 
 //initialize 2d tilemap
-w=room_width div grid+2
-h=room_height div grid+2
+w=room_width div grid+3
+h=room_height div grid+3
 u=w repeat (u) {
     u-=1
     tilemap[u,h-1]=0

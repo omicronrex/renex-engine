@@ -89,16 +89,18 @@ if (is_ingame()) {
         if (func=1) {
             s="Select room:|-"
             r=room_next(room_first)
+            c=0
             do {
-                if (is_ingame(r)) s+="|"+room_get_name(r)
+                if (is_ingame(r)) {
+                    s+="|"+room_get_name(r)
+                    list[c]=r c+=1
+                }
                 r=room_next(r)
             } until (r=-1)
             goto=show_menu(s,0)
             if (goto) {
-                r=global.first_room
-                repeat (goto-1) r=room_next(r)
                 instance_activate_all_safe()
-                warp_to(r)
+                warp_to(list[goto-1])
             }
         }
         if (func=2) {global.debug_jump=!global.debug_jump}

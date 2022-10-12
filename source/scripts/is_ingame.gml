@@ -7,5 +7,8 @@ if (argument_count) r=argument[0]
 
 switch (r) {
     case rmInit: case rmTitle: case rmOptions: case rmMenu: return 0
-    default: return 1
+    default: {
+        if (r==room) return instance_exists(PlayerStart)
+        return 1
+    }
 }

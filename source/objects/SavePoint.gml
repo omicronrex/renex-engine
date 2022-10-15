@@ -11,7 +11,7 @@ angle=0
 
 name=room_get_name(room)+"@"+string(round(x))+"x"+string(round(y))
 
-//used when global.press_s_saves
+//used when global.press_shoot_saves
 notice=0
 font=fntSignpost
 color=$ffffff
@@ -39,7 +39,7 @@ applies_to=self
 */
 if (global.contact_saves) {
     event_user(0)
-} else if (global.press_s_saves) {
+} else if (global.press_shoot_saves) {
     notice=1
 }
 #define Collision_Bullet
@@ -48,7 +48,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!global.contact_saves && !global.press_s_saves && !other.dead) event_user(0)
+if (!global.contact_saves && !global.press_shoot_saves && !other.dead) event_user(0)
 #define Other_7
 /*"/*'/**//* YYD ACTION
 lib_id=1

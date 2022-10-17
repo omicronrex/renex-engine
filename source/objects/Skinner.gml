@@ -33,9 +33,24 @@ An example is provided in rmExtra.
 //field blend: color
 //field alpha: number(0,1)
 
-if (spike_down!=noone) with (SpikeD) {sprite_index=other.spike_down image_blend=other.blend image_alpha=other.alpha}
-if (spike_left!=noone) with (SpikeL) {sprite_index=other.spike_left image_blend=other.blend image_alpha=other.alpha}
-if (spike_right!=noone) with (SpikeR) {sprite_index=other.spike_right image_blend=other.blend image_alpha=other.alpha}
-if (spike_up!=noone) with (SpikeU) {sprite_index=other.spike_up image_blend=other.blend image_alpha=other.alpha}
+if (spike_down!=noone) {
+    with (SpikeD) {sprite_index=other.spike_down image_blend=other.blend image_alpha=other.alpha}
+    with (SpikeTrapD) {sprite_index=other.spike_down image_blend=other.blend image_alpha=other.alpha}
+}
+if (spike_left!=noone) {
+    with (SpikeL) {sprite_index=other.spike_left image_blend=other.blend image_alpha=other.alpha}
+    with (SpikeTrapL) {sprite_index=other.spike_left image_blend=other.blend image_alpha=other.alpha}
+}
+if (spike_right!=noone) {
+    with (SpikeR) {sprite_index=other.spike_right image_blend=other.blend image_alpha=other.alpha}
+    with (SpikeTrapR) {sprite_index=other.spike_right image_blend=other.blend image_alpha=other.alpha}
+}
+if (spike_up!=noone) {
+    with (SpikeU) {sprite_index=other.spike_up image_blend=other.blend image_alpha=other.alpha}
+    with (SpikeTrapU) {sprite_index=other.spike_up image_blend=other.blend image_alpha=other.alpha}
+}
 
-if (fruit!=noone) with (Cherry) {sprite_index=other.fruit image_blend=other.blend image_alpha=other.alpha}
+if (fruit!=noone) {
+    with (Cherry) {sprite_index=other.fruit image_blend=other.blend image_alpha=other.alpha}
+    with (FruitTrap) {sprite_index=other.fruit image_blend=other.blend image_alpha=other.alpha}
+}

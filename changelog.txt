@@ -1,15 +1,23 @@
-renex engine v1.x.x build ?? ??? 2022
+renex engine v1.6.0 build ?? ??? 2022
+
+In addition to more WannaFest-related fixes, this release also brings in new
+tools and improved baseline systems for an easier time making games.
 
 New features:
 
+- added m9 blocks
+- added the Yuuutu engine rooms as examples
+- added an AddTrigger tool that can make any object triggerable
+- added the ability to rotate platforms
+- added the option to build games with test mode enabled
 - added a player option for screenshake intensity
 - added an engine option to disable savefile thumbnail generation
 - added a warp sound option to the warp object
-- added new gimmick wasp
 - added two new triggers for player jump and double jump
 - added a tool for persistent backgrounds
 - added a new free-form slope object
 - added a double-jump only KTG block
+- added direction+speed option for moving traps
 - added a new set of scripts for setting and getting camera options
 - added new camera options and toggles
 - added a new engine hook for drawing things before room backgrounds
@@ -17,7 +25,8 @@ New features:
 - added an engine setting and optional player choice for saving the valign
 - added an option for not doing anything to the music on game over
 - added an option to slow down the music on game over
-- added a new death fruit
+- added a new death fruit fig
+- added new enemy wasp to go with the fig
 - added stock support for mp3 sound effects (why though?)
 - added an engine toggle for stopping sound effects between rooms
 - added the Ctrl-M shortcut for muting the music
@@ -25,11 +34,21 @@ New features:
 
 Bugs fixed:
 
+- fixed a crash when a game room doesn't contain a PlayerStart
+- fixed a crash when using AutoTiler in a room with blocks outside of the region
+- fixed joystick support
+- fixed a bug with the persistent backgrounds tool
+- fixed crashes involving field declarations in OutsideWarp and BossWarp
+- fixed a huge number of issues with solid collision
+- fixed black bars in the menus when making the game larger than default size
+- fixed an issue getting down from ladders while upside down
 - fixed issues with platforms that move at float hspeed
 - fixed the player getting stuck on the bottom of angled solids
 - fixed multiple issues with the camera system
 - fixed several issues with the difficulty room implementation
 - fixed some weird autosave issues
+- fixed collision of bullet blockers
+- fixed the GameOver object drawing twice at different scales
 - fixed an input bug in the keyboard remap menu
 - fixed the background color toggle variable not working
 - fixed lag when using repeating small backgrounds in rooms
@@ -52,9 +71,13 @@ Bugs fixed:
 - fixed typo in fields for DepthBlender
 - fixed a very minor issue with the volume check screen
 - fixed a bug with blood gravity
+- fixed a leftover blend mode call
 
 Minor changes:
 
+- improved joystick setup system messages
+- save masks are now the full tile
+- debug menu now displays all rooms (not just the ones after the starting room)
 - improved engine lists to make it easier to add custom stuff
 - q key handling has been moved to the player input handler
 - beam speed changes now respect changes made elsewhere in the player object

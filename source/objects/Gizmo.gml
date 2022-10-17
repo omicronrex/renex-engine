@@ -18,6 +18,8 @@ action_id=603
 applies_to=self
 */
 ///init
+dir=0
+spd=0
 hsp=0
 vsp=0
 path=noone
@@ -119,6 +121,8 @@ applies_to=self
 //field path_scaling
 //field path_speed
 //field sound: string
+//field dir
+//field spd
 //field hsp
 //field vsp
 //field scaleh
@@ -148,8 +152,10 @@ if (path!=noone) {
     path_start(path,path_speed,path_endaction,path_absolute)
     path_scale=path_scaling
 } else {
-    hspeed=hsp
-    vspeed=vsp
+    speed=spd
+    direction=dir
+    hspeed+=hsp
+    vspeed+=vsp
 }
 
 if (scaleh!=0 || scalev!=0) {

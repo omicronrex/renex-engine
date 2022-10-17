@@ -5,7 +5,7 @@
 	|DotKiller
 	|ActiveParent
 	|ActiveIngame
-	|SavePoint
+	|SavePointParent
 	|Trigger
 	|Triggered
 	|TriggerLock

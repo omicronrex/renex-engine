@@ -2,7 +2,7 @@ World
 Player
 PlayerKiller
 DotKiller
-SavePoint
+SavePointParent
 Trigger
 Triggered
 Boss

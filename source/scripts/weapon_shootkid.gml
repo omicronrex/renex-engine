@@ -1,5 +1,5 @@
 if (!global.contact_saves) {
-    with (SavePoint) {
+    with (SavePointParent) {
         if (instance_place(x,y,other.id)) {
             exit
         }

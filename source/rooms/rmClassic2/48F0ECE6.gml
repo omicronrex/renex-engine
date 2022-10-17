@@ -1,4 +1,3 @@
 //gm82 fields begin
-text="Engine Room"
-valign=fa_middle
+roomTo=rmExBoss
 //gm82 fields end

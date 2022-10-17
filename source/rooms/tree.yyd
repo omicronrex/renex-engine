@@ -6,6 +6,8 @@
 	|rmDifficulty
 	|rmHub
 	+Example (safe to delete)
+		|rmClassic
+		|rmClassic2
 		|rmDemo
 		|rmDemo2
 		|rmBoss1

@@ -1,4 +1,3 @@
 //gm82 fields begin
-text="Engine Room"
-valign=fa_middle
+vspeed=2
 //gm82 fields end

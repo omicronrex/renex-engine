@@ -1,1 +1,1 @@
-roomTo=rmExBoss
+roomTo=room_find("rmExBoss")

@@ -285,6 +285,8 @@
 	|SpikeTrapR
 	|SpikeTrapU
 	|FruitTrap
+	|M9Block
+	|M9Trigger
 +Items
 	+Display (trophies)
 		|DisplayItem1

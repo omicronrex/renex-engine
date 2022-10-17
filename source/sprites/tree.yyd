@@ -275,6 +275,8 @@
 	|sprBolt
 	|sprPiston
 	|sprSlopeWobbly
+	|sprM9
+	|sprM9Trigger
 +Triggers
 	|sprTriggerGroup
 	|sprAddTrigger

@@ -113,6 +113,7 @@ engine_settings()
 if (global.num_difficulties==1) {
     //only one difficulty, copy it to the single difficulty used
     global.name_difficulties[global.single_difficulty]=global.name_difficulties[0]
+    global.is_impossible[global.single_difficulty]=global.is_impossible[0]
 }
 
 global.optimize_solids=median(0,global.optimize_solids,8)

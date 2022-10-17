@@ -54,7 +54,8 @@
     //example: if (difficulty==0) {code for Medium difficulty}
     //         if (difficulty>=1) {code for Hard and above}
     //if the difficulty is set to be impossible then the savefile will be wiped on restart.
-    //if only one difficulty is provided, this chooses the difficulty's value:
+    
+    //additionally, if only one difficulty is provided, this chooses the difficulty's value:
     //(can be used to turn on bow by setting to 0)
     global.single_difficulty=1
 

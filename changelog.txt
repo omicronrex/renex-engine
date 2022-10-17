@@ -36,6 +36,7 @@ Bugs fixed:
 
 - fixed a crash when a game room doesn't contain a PlayerStart
 - fixed a crash when using AutoTiler in a room with blocks outside of the region
+- fixed a crash when using a single difficulty that is not impossible
 - fixed joystick support
 - fixed a bug with the persistent backgrounds tool
 - fixed crashes involving field declarations in OutsideWarp and BossWarp
@@ -67,6 +68,7 @@ Bugs fixed:
 - fixed the pause menu cursor dying when you changed the blood option
 - fixed some inconsistencies with vines when the maker vines option is disabled
 - fixed the engine rooms having incorrectly set up music players
+- fixed the skinner object not affecting the trap variants of spikes and cherry
 - fixed issues with the autotiler on grids other than 32
 - fixed typo in fields for DepthBlender
 - fixed a very minor issue with the volume check screen

@@ -341,7 +341,6 @@
 +Bosses
 	+Big Cherry
 		|BigCherry
-		|BigCherryHealthbar
 		|BigCherryBlue2
 		|BigCherrySmall2
 	+Utah
@@ -350,6 +349,7 @@
 		|GlassShard
 		|TouhouDeath
 	|BossIntroduction
+	|BossHealthbar
 	|BossWarp
 +Tools
 	|DifficultyWarp

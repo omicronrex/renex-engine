@@ -2,8 +2,7 @@ if (event="create") {
     name="Big Cherry"
     sur="Celebrate100"
 
-    hp=100
-    instance_create(0,0,BigCherryHealthbar)
+    maxhp=150
 
     cutscene=true
 
@@ -19,7 +18,6 @@ if (event="draw") {
 }
 
 if (event="destroy") {
-    instance_destroy_id(BigCherryHealthbar)
     exit
 }
 

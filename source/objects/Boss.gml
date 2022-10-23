@@ -22,6 +22,8 @@ if (savedata("boss"+object_get_name(object_index))) {
     event="create"
     script_execute(script)
 
+    hp=maxhp
+
     o=instance_create(x,y,BossIntroduction)
     o.owner=id
     o.str=name

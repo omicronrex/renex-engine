@@ -1,1 +1,1 @@
-roomTo=room_find("rmMusicSync")
+roomTo=room_find("rmMiku")

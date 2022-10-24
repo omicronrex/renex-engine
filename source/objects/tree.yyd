@@ -341,13 +341,17 @@
 +Bosses
 	+Big Cherry
 		|BigCherry
-		|BigCherryBlue2
-		|BigCherrySmall2
+		|BigCherryBlue
 	+Utah
 		|Utah
 		|FireDemo
 		|GlassShard
 		|TouhouDeath
+	+Miku
+		|Miku
+		|MikuLeek
+		|MikuBigCherryBlue
+		|MikuBounceCherry
 	|BossIntroduction
 	|BossHealthbar
 	|BossWarp

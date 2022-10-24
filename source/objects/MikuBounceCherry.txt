@@ -1,7 +1,7 @@
-sprite=sprCherryBlue
+sprite=sprCherryMagenta
 visible=1
 solid=0
 persistent=0
 depth=0
-parent=Cherry
+parent=CherryBounce
 mask=

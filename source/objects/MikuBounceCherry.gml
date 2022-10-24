@@ -4,4 +4,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-image_speed=1/15
+event_inherited()
+image_index=1

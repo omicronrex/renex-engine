@@ -37,8 +37,9 @@ action_id=603
 applies_to=self
 */
 /*desc
-    this will play when the room is entered, and will try to keep it synced to the game speed
-    so if the game slows down, it will also slow down the music
+    this will play when the room is entered, and will try to
+    keep it synced to the game speed so if the game slows down,
+    it will also slow down the music
 */
 
 //field BGM: string

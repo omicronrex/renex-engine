@@ -12,15 +12,4 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-var a,i,dir;
-
-dir=point_direction(x,y,Player.x,Player.y)
-
-for (i=1;i<=8;i+=1;) {
-    a=instance_create(x,y,BigCherrySmall2)
-    a.speed=3*dt
-    a.direction=dir
-    dir+=360/8
-}
-
-instance_destroy()
+split_object(8,3*dt,CherryBlue,1,1)

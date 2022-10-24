@@ -77,20 +77,14 @@ if (flash) {
 //attack!
 if (state="active") {
     if (once_every(90)) {
-        o=instance_create(x,y,Cherry)
-        o.speed=5*dt
-        o.direction=point_direction(x,y,Player.x,Player.y)
+        instance_create_moving(x,y,Cherry,5*dt,point_direction(x,y,Player.x,Player.y))
     }
 }
 
 //pinch mode
 if (state="pinch") {
     if (once_every(90)) {
-        o=instance_create(x,y,Cherry)
-        o.speed=5*dt
-        o.direction=point_direction(x,y,Player.x,Player.y)
-        o=instance_create(x,y,BigCherryBlue2)
-        o.speed=1*dt
-        o.direction=random(360)
+        instance_create_moving(x,y,Cherry,5*dt,point_direction(x,y,Player.x,Player.y))
+        instance_create_moving(x,y,BigCherryBlue,1*dt,random(360))
     }
 }

@@ -229,8 +229,8 @@ SolidItemBlockGlobalItem3
 SolidItemBlockGlobalItem4
 BigCherry
 BossHealthbar
-BigCherryBlue2
-BigCherrySmall2
+BigCherryBlue
+
 Utah
 FireDemo
 GlassShard
@@ -379,6 +379,7 @@ Gizmo
 
 M9Block
 M9Trigger
+Miku
 CherryOrange
 CherryYellow
 CherryChartreuse
@@ -394,3 +395,6 @@ CherryWhite
 CherryGray
 CherryBlack
 Moon
+MikuLeek
+MikuBigCherryBlue
+MikuBounceCherry

@@ -1,0 +1,7 @@
+sprite=sprMiku
+visible=1
+solid=0
+persistent=0
+depth=1010
+parent=PlayerKiller
+mask=

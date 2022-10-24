@@ -121,7 +121,7 @@ applies_to=self
 //field path_scaling
 //field path_speed
 //field sound: string
-//field dir
+//field dir: angle
 //field spd
 //field hsp
 //field vsp

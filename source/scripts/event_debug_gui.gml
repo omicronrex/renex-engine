@@ -29,8 +29,8 @@ if (global.debug_overlay) {
 
     str=""
     if (instance_exists(Player)) {
-        str="X: "+string(Player.x)+" (align "+string(Player.x mod 3)+")#"
-           +"Y: "+string(Player.y)+"#"
+        str="X: "+string_better(Player.x)+" (align "+string(Player.x mod 3)+")#"
+           +"Y: "+string_better(Player.y)+"#"
     }
 
 

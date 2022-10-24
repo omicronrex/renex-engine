@@ -67,7 +67,6 @@
 	|LeekDown
 	|Fig
 	|Wasp
-	|Bolt
 +Gimmicks
 	+White Dot
 		|WhiteDotEnable
@@ -149,12 +148,24 @@
 		|Yoshi
 		|SmwSaw
 		|Muncher
-	|CautionStripL
-	|CautionStripR
-	|CautionFastL
-	|CautionFastR
-	|ShootBlock
-	|ShootBlockBig
+	+IWBTG
+		|MegamanPiston
+		|GuyFireTrigger
+		|Moon
+		|Cloud
+		|DecoStar
+		|CloudBolt
+		|Bolt
+		|GuyCouch
+		|ActualYokuBlock
+		|YokuGroup
+		|CautionStripL
+		|CautionStripR
+		|CautionFastL
+		|CautionFastR
+	+Genki
+		|ShootBlock
+		|ShootBlockBig
 	|JumpRefresher
 	|GravFlip
 	|GravNormal
@@ -164,13 +175,10 @@
 	|ClockOff
 	|ToggleBlockOn
 	|ToggleBlockOff
-	|GuyCouch
 	|ShootRefresherL
 	|ShootRefresherR
 	|Teleporter
 	|PatBall
-	|ActualYokuBlock
-	|YokuGroup
 	|AlignIndicator
 +Triggers
 	|TriggerGroup
@@ -260,8 +268,6 @@
 	|GuyWater
 	|Signpost
 	|AutoSign
-	|Cloud
-	|DecoStar
 +Slopes
 	|SlopeTL
 	|SlopeTR
@@ -365,12 +371,6 @@
 	|CameraBlock
 	|Autotiler
 	|PersistentBackgrounds
-+Example (safe to delete)
-	|ExampleSavingTrap
-	|ExampleRotatingTrap
-	|CloudSetOnFire
-	|CloudBolt
-	|MusicSpeedSlider
 +Cherries
 	|Cherry
 	+more cherry colors

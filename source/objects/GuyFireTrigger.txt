@@ -1,5 +1,5 @@
-sprite=sprEngineBlock
-visible=1
+sprite=sprVuur
+visible=0
 solid=0
 persistent=0
 depth=0

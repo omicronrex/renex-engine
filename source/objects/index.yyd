@@ -186,11 +186,11 @@ FruitTrap
 FakeBlock
 BreakBlock
 YokuBlock
-CloudSetOnFire
+GuyFireTrigger
 CloudBolt
 Bolt
-ExampleSavingTrap
-ExampleRotatingTrap
+MegamanPiston
+
 Item1
 Item2
 Item3
@@ -393,3 +393,4 @@ CherryPink
 CherryWhite
 CherryGray
 CherryBlack
+Moon

@@ -33,22 +33,22 @@
 	|sprThrow
 +Cherries
 	|sprCherry
-	|sprPhg
-	|sprCherryPink
 	|sprCherryOrange
-	|sprCherryMagenta
-	|sprCherryViolet
-	|sprCherryBlue
-	|sprCherryAzure
-	|sprCherryCyan
-	|sprCherryEmerald
-	|sprCherryGreen
-	|sprCherryChartreuse
 	|sprCherryYellow
-	|sprCherryGray
+	|sprCherryChartreuse
+	|sprCherryGreen
+	|sprCherryEmerald
+	|sprCherryCyan
+	|sprCherryAzure
+	|sprCherryBlue
+	|sprCherryViolet
+	|sprCherryMagenta
+	|sprCherryPink
 	|sprCherryWhite
+	|sprCherryGray
 	|sprCherryBlack
 	|sprCherryRainbow
+	|sprPhg
 	+Guy Cherries
 		|sprCherryNew
 		|sprCherryOrangeNew
@@ -277,6 +277,7 @@
 	|sprSlopeWobbly
 	|sprM9
 	|sprM9Trigger
+	|sprGuyMoon
 +Triggers
 	|sprTriggerGroup
 	|sprAddTrigger
@@ -318,6 +319,7 @@
 	|sprLock10
 	|sprLock11
 	|sprLock12
+	|sprVuur
 +Items
 	|sprItem1
 	|sprItem2

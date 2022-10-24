@@ -36,3 +36,10 @@ applies_to=self
 //field msg: string
 //field font: font
 //field color: color
+#define Trigger_Draw End
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (active) {active-=dt draw_sign_text(x+16,y-10,font,color,msg,true)}

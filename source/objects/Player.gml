@@ -941,3 +941,15 @@ if (!dead) {
         draw_sprite_ext(mask_index,0,round(x),round(y),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
     }
 }
+#define Trigger_Draw End
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///draw slow motion effect
+if (slomo<1) {
+    draw_set_alpha(0.025+0.025*sin(global.increment/2))
+    draw_rectangle_color(0,0,room_width,room_height,0,0,0,0,0)
+    draw_set_alpha(1)
+}

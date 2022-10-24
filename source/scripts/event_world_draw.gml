@@ -1,13 +1,5 @@
 if (!global.pause) {
-    with (WarpToHub) if (active) draw_sign_text(x+16,y-10,font,color,msg,true)
-    with (Signpost) if (active) {active-=dt draw_sign_text(x+16,y-10,font,color,msg,true)}
-
-    //draw slow motion effect
-    with (Player) if (slomo<1) {
-        draw_set_alpha(0.025+0.025*sin(global.increment/2))
-        draw_rectangle_color(0,0,room_width,room_height,0,0,0,0,0)
-        draw_set_alpha(1)
-    }
+    trigger_broadcast(ev_draw_end)
 
     //draw shadow around rotating view
     if (view_angle mod 180) {

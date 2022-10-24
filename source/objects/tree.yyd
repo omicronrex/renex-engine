@@ -57,10 +57,6 @@
 	|SavePointVeryHard
 	|AntiSoftlockBlock
 +Threats
-	|CherryBounce
-	|CherryCircle
-	|CherryRainbow
-	|MegaCherry
 	|MiniSpikeDown
 	|MiniSpikeLeft
 	|MiniSpikeRight
@@ -232,7 +228,6 @@
 	|ConveyorLeft
 	|ConveyorRight
 	|JumpBlock
-	|JumpCherry
 	|PushBlock
 	|PushBlockSave
 	|LiftBlock
@@ -284,7 +279,6 @@
 	|SpikeTrapL
 	|SpikeTrapR
 	|SpikeTrapU
-	|FruitTrap
 	|M9Block
 	|M9Trigger
 +Items
@@ -377,12 +371,34 @@
 	|CloudSetOnFire
 	|CloudBolt
 	|MusicSpeedSlider
++Cherries
+	|Cherry
+	+more cherry colors
+		|CherryOrange
+		|CherryYellow
+		|CherryChartreuse
+		|CherryGreen
+		|CherryEmerald
+		|CherryCyan
+		|CherryAzure
+		|CherryBlue
+		|CherryViolet
+		|CherryMagenta
+		|CherryPink
+		|CherryWhite
+		|CherryGray
+		|CherryBlack
+	|CherryRainbow
+	|MegaCherry
+	|CherryBounce
+	|CherryCircle
+	|JumpCherry
+	|FruitTrap
 |PlayerStart
 |Block
 |Platform
 |WallJumpL
 |WallJumpR
-|Cherry
 |SpikeD
 |SpikeL
 |SpikeR

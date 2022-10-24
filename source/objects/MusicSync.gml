@@ -8,6 +8,16 @@ BGM=""
 loop=1
 
 realtime=current_time
+
+effect=noone
+#define Destroy_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+sound_effect_destroy(effect)
+sound_stop(song)
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -45,21 +55,23 @@ applies_to=self
 //field BGM: string
 //field loop: bool
 
-song=play_bg_music(BGM,loop)
+if (effect==noone) {
+    song=play_bg_music(BGM,loop)
 
-if (BGM="") {
-    instance_destroy()
-    exit
+    if (BGM=="") {
+        instance_destroy()
+        exit
+    }
+
+    length=sound_get_length(BGM)
+
+    effect=sound_kind_effect(1,se_pitchshift)
+    sound_effect_options(effect,1,512)
 }
-
-length=sound_get_length(BGM)
-
-effect=sound_kind_effect(1,se_pitchshift)
-sound_effect_options(effect,1,512)
 #define Other_5
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=603
+action_id=203
 applies_to=self
+invert=0
 */
-sound_effect_destroy(effect)

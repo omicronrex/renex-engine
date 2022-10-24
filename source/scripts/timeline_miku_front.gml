@@ -1,11 +1,13 @@
 //Miku avoidance from Yuuutu engine
 
 if (argument0=="create") {
-    bpm=210
+
+    bpm=220
     beat=4
 
-    mouthx=x+76
-    mouthy=y-168
+    mouthx=x+57
+    mouthy=y-200
+    sound_play_synced("thetacapsule_remake")
 
     hand1x=x
     hand1y=y
@@ -17,7 +19,7 @@ if (argument0=="create") {
 if (argument0=="step") {
 
     //part 1
-    if (wait_timer(24)) sound_play_synced("thetacapsule")
+    wait_timer(14)
 
     repeat (32) if (wait_timer(4)) {
         split_object(1,6*dt,CherryYellow,1,0)
@@ -41,8 +43,7 @@ if (argument0=="step") {
             instance_destroy()
         }
     }
-
-    wait_timer(28)
+    wait_timer(20)
 
     //part 3
     repeat (30) if (wait_timer(4)) {
@@ -51,7 +52,7 @@ if (argument0=="step") {
         instance_create_moving(hand1x,hand1y,CherryYellow,4*dt,point_direction(x,y,xx,yy))
     }
 
-    wait_timer(8)
+    wait_timer(4)
 
     repeat (32) if (wait_timer(4)) {
         xx=Player.x+random_range(-128,128)
@@ -68,7 +69,7 @@ if (argument0=="step") {
     }
     if (wait_timer(32)) {
         with (MikuBounceCherry) {
-            instance_create_moving(x,y,CherryGray,10,180)
+            instance_create_moving(x,y,CherryGray,10,270)
             instance_destroy()
         }
     }
@@ -94,14 +95,13 @@ if (argument0=="step") {
     }
     if (wait_timer(32)) {
         with (MikuBounceCherry) {
-            instance_create_moving(x,y,CherryGray,10,180)
+            instance_create_moving(x,y,CherryGray,10,270)
             instance_destroy()
         }
     }
     if (wait_timer(50)) {
         play_bg_music("",0)
-        sound_play("sndStoneSlide2")
-        gravity=0.1
-        gravity_direction=0
+        sound_play("sndBlockChange")
+        instance_destroy()
     }
 }

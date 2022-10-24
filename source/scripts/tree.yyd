@@ -218,4 +218,5 @@
 	|wait_timer
 +miku
 	|timeline_miku
+	|timeline_miku_front
 	|split_object

@@ -12,6 +12,7 @@
 	|Button
 	|ButtonShoot
 	|Boss
+	|Avoidance
 	|Gizmo
 	|Trap
 	|TrapSave
@@ -349,6 +350,7 @@
 		|TouhouDeath
 	+Miku
 		|Miku
+		|MikuFront
 		|MikuLeek
 		|MikuBigCherryBlue
 		|MikuBounceCherry

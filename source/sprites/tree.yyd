@@ -31,6 +31,7 @@
 	|sprHPMode
 	|sprCameraBlock
 	|sprThrow
+	|sprAvdCtrl
 +Cherries
 	|sprCherry
 	|sprCherryOrange
@@ -336,4 +337,5 @@
 	|sprGameClear
 +Miku
 	|sprMiku
+	|sprMikuFront
 	|sprMikuLeek

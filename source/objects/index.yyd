@@ -380,6 +380,7 @@ Gizmo
 M9Block
 M9Trigger
 Miku
+MikuFront
 CherryOrange
 CherryYellow
 CherryChartreuse
@@ -398,3 +399,4 @@ Moon
 MikuLeek
 MikuBigCherryBlue
 MikuBounceCherry
+Avoidance

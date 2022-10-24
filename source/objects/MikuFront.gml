@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-script=timeline_miku
+script=timeline_miku_front
 
 event_inherit_object(Avoidance)
 #define Step_0

@@ -5,8 +5,12 @@ tools and improved baseline systems for an easier time making games.
 
 New features:
 
+- added Draw Begin and Draw End trigger events
+- added the classic Miku avoidance room + new simple avoidance engine
+- added Front Miku
 - added m9 blocks
 - added the Yuuutu engine rooms as examples
+- added two new music tracks including guyrock and Esmeralda by Sidewinder
 - added an AddTrigger tool that can make any object triggerable
 - added the ability to rotate platforms
 - added the option to build games with test mode enabled
@@ -26,6 +30,9 @@ New features:
 - added an option for not doing anything to the music on game over
 - added an option to slow down the music on game over
 - added a new death fruit fig
+- added moon trap
+- added a couple of backgrounds from iwbtg
+- added objects for each cherry color
 - added new enemy wasp to go with the fig
 - added stock support for mp3 sound effects (why though?)
 - added an engine toggle for stopping sound effects between rooms
@@ -84,8 +91,11 @@ Minor changes:
 - q key handling has been moved to the player input handler
 - beam speed changes now respect changes made elsewhere in the player object
 - wavy water surface tool is easier to use
+- guy fire trap is now an invisible object
 - the bouncing cherry object was redone to be more versatile
+- simplified the music sync tool
 - pipe autotiler looks better when using solid edge mode
+- boss healthbar tool is now generic and accepts any max health value
 - moved the wobbly slope to the example folder so you don't get errors
 - massively optimized savefile thumbnail generation
 - signpost text is now constrained to the visible area

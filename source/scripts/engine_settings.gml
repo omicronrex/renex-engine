@@ -150,7 +150,7 @@
     //jump refreshers respawn time - if set to zero, it respawns when you land
     global.jump_refresher_timer=0
     //if false, items are only collected upon saving normally
-    global.autosave_items=true
+    global.autosave_items=false
     //save automatically when touching saves
     global.contact_saves=false
     //press shoot to save when touching a save

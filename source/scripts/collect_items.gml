@@ -1,7 +1,7 @@
 //save collected items
 with (Item) {
-    if (collected && !gottem) {
-        savedata(itemid,1)
-        gottem=1
-    }
+    if (collected) gottem=1
 }
+
+instance_activate_object(ItemBlock)
+with (ItemBlock) event_user(0)

@@ -23,6 +23,7 @@
     //intended room speed
     //note: player always runs at 50hz! look in player step for an explanation.
     global.game_speed=50
+    //game screen+window size
     global.width=800
     global.height=608
     //first room that's actually part of the game
@@ -101,8 +102,11 @@
     global.player_default_weapon=weapon_default
     //jump from vines with the jump button
     global.maker_vines=true
+    //kill player when leaving the room region
     global.die_outside_room=true
+    //allow pressing A and D to move 1 pixel left and right to change your align
     global.a_d_trick=false
+    //make the Medium difficilty bow lag behind like in the original game
     global.bow_lag=true
     //prevents shootkid from working if too close to a wall
     global.accurate_shootkid=true
@@ -139,6 +143,7 @@
 
 
 //game behavior
+    //fullscreen options
     global.fullscreen_cursor_visible=false
     global.fullscreen_caption_visible=true
     //don't go back to the menu - quit the game immediately when pressing esc
@@ -162,6 +167,8 @@
     //have around 30% of block instances.
     //if you need separate block objects, turn this off.
     global.optimize_solids=2
+    //make the NANG fields animate by scrolling the sprite
+    global.animated_nang_fields=true
 
 
 //bonus and funny stuff

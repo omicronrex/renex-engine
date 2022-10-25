@@ -1,5 +1,5 @@
 if (!global.pause) {
-    trigger_broadcast(ev_draw_end)
+    with (all) if (visible) event_perform(ev_trigger,ev_draw_end)
 
     //draw shadow around rotating view
     if (view_angle mod 180) {

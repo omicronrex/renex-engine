@@ -73,4 +73,4 @@ for (i=0;i<8;i+=1) {
     }
 }
 
-trigger_broadcast(ev_draw_begin)
+with (all) if (visible) event_perform(ev_trigger,ev_draw_begin)

@@ -1,5 +1,5 @@
 //called when the player eats the memorized keys
-var tmp,l,r;
+var tmp,l,r,c_a;
 
 //consume stored key state
 for (i=0;i<key_sizeof;i+=1) {
@@ -10,7 +10,8 @@ for (i=0;i<key_sizeof;i+=1) {
 }
 
 //if the view is upside down, rotate inputs 180
-if (view_angle>90 && view_angle<270) {
+c_a=camera_angle()
+if (c_a>90 && c_a<=270) {
     tmp=key         [key_left] key         [key_left]=key         [key_right] key         [key_right]=tmp
     tmp=key_pressed [key_left] key_pressed [key_left]=key_pressed [key_right] key_pressed [key_right]=tmp
     tmp=key_released[key_left] key_released[key_left]=key_released[key_right] key_released[key_right]=tmp

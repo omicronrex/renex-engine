@@ -19,7 +19,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-image_angle=-view_angle
+image_angle=-camera_angle()
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1

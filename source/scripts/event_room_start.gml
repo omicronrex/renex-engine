@@ -12,7 +12,7 @@ if (is_ingame()) {
         show_message_left()
         show_message_right()
     }
-    view_angle=savedata("viewangle")
+    camera_angle(savedata("viewangle"))
 
     if (global.gameover_music==2) sound_kind_resume(1)
 

@@ -47,7 +47,7 @@ with (Player) if (!dead || argument0) {
     savedata("vflip",vflip)
     savedata("obj",object_index)
     savedata("room",room)
-    savedata("viewangle",view_angle)
+    savedata("viewangle",camera_angle())
     savedata("saved",1)
 
     savedata("skin",global.player_skin)

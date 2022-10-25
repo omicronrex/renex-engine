@@ -14,8 +14,9 @@ applies_to=self
 */
 if (go) {
     f=min(1,f+0.02*dt)
-    view_angle=cosine(0,180,f)
-    if (view_angle>90) flip_player(-1)
+    a=cosine(0,180,f)
+    camera_angle(a)
+    if (a>90) flip_player(-1)
 
     if (f==1) {
         go=0
@@ -30,11 +31,11 @@ action_id=603
 applies_to=self
 */
 with (other) if (!frozen) {
-    if (vflip==1 || view_angle==0) {
+    if (vflip==1 || camera_angle()==0) {
         speed=0
         djump=1
         sound_play_slomo("sndBlockChange")
-        if (view_angle!=180) {
+        if (camera_angle()!=180) {
             frozen=true
             other.go=1
         } else flip_player(-1)

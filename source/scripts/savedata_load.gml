@@ -5,6 +5,8 @@ var i;
 
 instance_destroy_id(Player)
 
+ds_map_copy(global.savemap,global.savemap_persistent)
+
 if (global.is_impossible[savedata("diff")]) {
     savedata_default()
 }

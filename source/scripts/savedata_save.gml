@@ -58,4 +58,7 @@ with (Player) if (!dead || argument0) {
     with (all) event_perform(ev_trigger,tr_onsave)
 
     save_persistent_objects()
+
+    //move everything to the persistent save
+    ds_map_copy(global.savemap_persistent,global.savemap)
 }

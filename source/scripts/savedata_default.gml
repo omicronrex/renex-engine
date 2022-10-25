@@ -1,28 +1,28 @@
 if (argument_count) savedata_select(argument[0])
 
 //clear save from dsmap
-key=ds_map_find_first(global.savemap)
+key=ds_map_find_first(global.savemap_persistent)
 while (is_string(key)) {
-    newkey=ds_map_find_next(global.savemap,key)
-    if (string_pos(global.savesig,key)==1) ds_map_delete(global.savemap,key)
+    newkey=ds_map_find_next(global.savemap_persistent,key)
+    if (string_pos(global.savesig,key)==1) ds_map_delete(global.savemap_persistent,key)
     key=newkey
 }
 
 //set defaults
-savedata("exists",true)
-savedata("width",1)
-savedata("height",1)
-savedata("obj",Player)
+savedatap("exists",true)
+savedatap("width",1)
+savedatap("height",1)
+savedatap("obj",Player)
 
-savedata("room",global.first_room)
+savedatap("room",global.first_room)
 
-savedata("hash","new file")
+savedatap("hash","new file")
 
 global.player_skin=global.player_default_skin
 global.player_weapon=global.player_default_weapon
 
-savedata("skin",global.player_skin)
-savedata("weapon",global.player_weapon)
+savedatap("skin",global.player_skin)
+savedatap("weapon",global.player_weapon)
 
 ds_grid_resize(global.statgrid,3,1)
 global.statgridh=1

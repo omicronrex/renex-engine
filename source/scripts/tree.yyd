@@ -18,6 +18,7 @@
 	|autosave_asap
 	|settings
 	|savedata
+	|savedatap
 	|save_persistent_objects
 	|load_persistent_objects
 	+savefile

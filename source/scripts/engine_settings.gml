@@ -100,7 +100,7 @@
     global.player_default_skin=skin_default
     global.player_default_weapon=weapon_default
     //jump from vines with the jump button
-    global.maker_vines=false
+    global.maker_vines=true
     global.die_outside_room=true
     global.a_d_trick=false
     global.bow_lag=true

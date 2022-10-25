@@ -15,4 +15,5 @@ if (file_exists(global.savefile)) {
     ds_map_read(newmap,buffer_read_hex(b,buffer_get_size(b)))
     buffer_destroy(b)
     ds_map_add_copy(newmap,global.savemap)
+    ds_map_destroy(newmap)
 }

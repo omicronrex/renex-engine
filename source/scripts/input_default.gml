@@ -9,7 +9,6 @@ settings("key_"+string(key_menu),ord("P"))
 settings("key_"+string(key_restart),ord("R"))
 settings("key_"+string(key_skip),ord("S"))
 settings("key_"+string(key_die),ord("Q"))
-settings("key_"+string(key_cancel),vk_control)
 
 for (i=0;i<key_sizeof;i+=1)
     global.keycode[i]=settings("key_"+string(i))

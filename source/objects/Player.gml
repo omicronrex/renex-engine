@@ -339,10 +339,10 @@ if (!frozen) {
         if (key_released_early[key_jump]) {
             if (vspeed*vflip<0) vspeed*=0.45
         }
-        if (key_pressed[key_jump] || (key_pressed[key_cancel] && !key[key_jump])) {
+        if (key_pressed[key_jump]) {
             player_jump()
         }
-        if (key_released[key_jump] || key_pressed[key_cancel] || key_released[key_cancel]) {
+        if (key_released[key_jump]) {
             if (vspeed*vflip<0) vspeed*=0.45
         }
         if (key_pressed[key_die]) {

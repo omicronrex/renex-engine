@@ -6,6 +6,7 @@ applies_to=self
 */
 warpCoord[0]=noone
 warpCoord[1]=noone
+warpToPlayerstart=noone
 warpid=""
 warpsound=""
 autosave=false
@@ -16,7 +17,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (warpX==noone && warpY==noone && roomTo=room) {
+if (warpToPlayerstart) {
+    if (warpsound!="") sound_play(warpsound)
+    move_player(warpToPlayerstart.x+17,warpToPlayerstart.y+23,0)
+} else if (warpX==noone && warpY==noone && roomTo=room) {
     sound_play("sndBlockChange")
     instance_destroy()
 } else {
@@ -42,6 +46,7 @@ applies_to=self
 //field roomTo: room
 //field warpCoord: xy
 //field warpid: string
+//field warpToPlayerstart: instance - (pick a PlayerStart)
 //field warpsound: string
 
 if (persistent && warpsound!="") {
@@ -51,4 +56,7 @@ if (persistent && warpsound!="") {
 } else {
     warpX=warpCoord[0]
     warpY=warpCoord[1]
+    if (warpToPlayerstart)
+        if (warpToPlayerstart.object_index!=PlayerStart)
+            warpToPlayerstart=noone
 }

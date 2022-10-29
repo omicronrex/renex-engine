@@ -60,7 +60,7 @@ with (Player) if (!dead) {
 
             Player.dead=true
 
-            savedata("deaths",savedata("deaths")+1)
+            savedatap("deaths",savedatap("deaths")+1)
         }
     }
 }

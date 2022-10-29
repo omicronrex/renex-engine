@@ -47,8 +47,8 @@ if (slowing) {
 if (is_ingame() && room!=global.difficulty_room) {
     //advance game time
     if (!Player.dead && !global.pause && !instance_exists(TimerFreeze)) {
-        time=savedata("time")+50/room_speed
-        savedata("time",time)
+        time=savedatap("time")+50/room_speed
+        savedatap("time",time)
     }
 
     update_caption_deathtime()

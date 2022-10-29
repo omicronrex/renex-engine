@@ -2,9 +2,9 @@ if (global.show_deathtime && room!=global.difficulty_room) {
     room_caption=strong(
         global.game_title,
         " - "+global.name_difficulties[difficulty],
-        " - "+lang("deaths")+": ",savedata("deaths"),
-        " - "+lang("time")+": ",format_time(savedata("time")),
+        " - "+lang("deaths")+": ",savedatap("deaths"),
+        " - "+lang("time")+": ",format_time(savedatap("time")),
         pick(global.lastjoyname!="",""," - "+global.lastjoyname),
-        pick(savedata("clear"),""," - "+lang("fileclear"))
+        pick(savedatap("clear"),""," - "+lang("fileclear"))
     )
 } else room_caption=global.game_title

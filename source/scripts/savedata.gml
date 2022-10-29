@@ -1,3 +1,5 @@
+///savedata(key,[value])
+//temporary savedata storage, will reset if not saved
 var map,key;
 
 map=global.savemap

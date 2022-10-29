@@ -10,7 +10,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!savedata("clear")) {
-    savedata("clear",true)
+if (!savedatap("clear")) {
+    savedatap("clear",true)
+    autosave_asap()
     savedata_write()
 }

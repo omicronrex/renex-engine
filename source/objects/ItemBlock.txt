@@ -1,4 +1,4 @@
-sprite=sprUnsolid
+sprite=sprEngineBlock
 visible=1
 solid=1
 persistent=0

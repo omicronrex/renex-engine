@@ -19,7 +19,12 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sprite=execute_string("return spr"+itemid)
+/*desc
+Becomes solid when collecting the item.
+*/
+obj=execute_string("return "+itemid)
+
+sprite=object_get_sprite(obj)
 
 event_user(0)
 #define Other_10

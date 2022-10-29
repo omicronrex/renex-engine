@@ -21,7 +21,6 @@
 	|DisplayItem
 	|DisplayGlobalItem
 	|ItemBlock
-	|UnsolidItemBlock
 	|SolidItemBlock
 	|KeyParent
 	|KeyBlockParent
@@ -52,6 +51,7 @@
 	|BackgroundDaemon
 	|WaterSurface
 	|AnyWater
+	|UnsolidItemBlock
 +Saves
 	|SavePointMedium
 	|SavePointHard

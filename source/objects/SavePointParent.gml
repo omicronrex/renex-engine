@@ -26,10 +26,18 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///save
+
 //we save on begin step to make sure the player isn't stuck somewhere
 if (save) {
     save=0
     savedata_save(false,name)
+    
+    if (global.centered_saving) {
+        savedatap("x",x+17)
+        if (global.save_valign && settings("valign")) savedatap("y",y+16+7*Player.vflip)
+        else savedatap("y",floor(y+16+7*Player.vflip))    
+    }
 }
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
@@ -63,6 +71,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///schedule save
 if (image_index==0) {
     with (Player) if (instance_place(x,y,AntiSoftlockBlock)) exit
     if ((Player.vflip==1 && (image_angle<45 || image_angle>315)) || (Player.vflip==-1 && abs(image_angle-180)<45) || global.flip_saves) {

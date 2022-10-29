@@ -92,6 +92,8 @@
     //if disabled, the y coordinate is floored on save
     //there is an optional player choice for this - check custom_options().
     global.save_valign=true
+    //save the player exactly in the middle of save points
+    global.centered_saving=false
     //platform crush behavior
     //0: leave the player stuck in the wall
     //1: kill the player when pushed into a wall

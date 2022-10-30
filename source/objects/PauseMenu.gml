@@ -134,6 +134,7 @@ var t,timeText;
 
 d3d_set_projection_ortho(0,0,storew,storeh,0)
 draw_clear_alpha(0,1)
+draw_set_color(global.text_color)
 
 //fix weird alpha on nvidia
 dx8_set_alphablend(false)

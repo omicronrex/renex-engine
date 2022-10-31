@@ -55,10 +55,10 @@ event_room_end()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=603
-applies_to=self
+action_id=605
+invert=0
+arg0=no
 */
-event_world_draw()
 #define Trigger_Early Step
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -66,3 +66,10 @@ action_id=603
 applies_to=self
 */
 event_world_earlystep()
+#define Trigger_Draw End
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+event_world_drawend()

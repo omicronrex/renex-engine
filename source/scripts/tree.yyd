@@ -124,7 +124,7 @@
 	|event_world_earlystep
 	|event_world_step
 	|event_world_endstep
-	|event_world_draw
+	|event_world_drawend
 	|event_debug_gui
 	|event_draw_gui
 	|event_room_end

@@ -1,5 +1,8 @@
 //build the game window.
 
+//call draw end events
+with (all) if (visible) event_perform(ev_trigger,ev_draw_end)
+
 dx8_make_opaque()
 d3d_set_depth(0)
 

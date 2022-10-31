@@ -1,6 +1,4 @@
 if (!global.pause) {
-    with (all) if (visible) event_perform(ev_trigger,ev_draw_end)
-
     //draw shadow around rotating view
     if (view_angle mod 180) {
         len=point_distance(0,0,view_wview,view_hview)/2

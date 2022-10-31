@@ -62,7 +62,7 @@ event_room_start
 event_world_earlystep
 event_world_step
 event_world_endstep
-event_world_draw
+event_world_drawend
 event_room_end
 event_game_end
 player_jump

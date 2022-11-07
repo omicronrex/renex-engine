@@ -1,11 +1,11 @@
 frames=1
-origin_x=68
-origin_y=263
+origin_x=60
+origin_y=250
 collision_shape=0
 alpha_tolerance=0
 per_frame_colliders=0
 bbox_type=0
-bbox_left=0
+bbox_left=1
 bbox_top=0
-bbox_right=246
-bbox_bottom=487
+bbox_right=231
+bbox_bottom=468

@@ -6,7 +6,7 @@ if (argument0=="create") {
     beat=4
 
     mouthx=x+57
-    mouthy=y-200
+    mouthy=y-185
     sound_play_synced("thetacapsule_remake")
 
     hand1x=x

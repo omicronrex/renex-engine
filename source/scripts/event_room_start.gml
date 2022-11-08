@@ -25,6 +25,8 @@ if (is_ingame()) {
         }
     }
 
+    with (Player) if (!place_free(x,y)) with (PlayerStart) move_player(x,y,0)
+
     event_world_endstep()
 } else {
     room_caption=global.game_title

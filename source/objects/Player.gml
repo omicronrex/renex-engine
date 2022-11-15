@@ -163,7 +163,7 @@ if (!frozen) {
 }
 
 //don't smooth if the room speed is 50
-if (room_speed==50 && slomo==1) framefac=1
+if (global.game_speed==50 && slomo==1) framefac=2
 
 //don't update while dead
 if (dead || !activated) updating=0
@@ -248,6 +248,7 @@ if (ladder) {
         }
     }
 }
+
 if (!ladder) {
     gravity=baseGrav*vflip
 }
@@ -273,9 +274,9 @@ if (!frozen) {
 
     //move horizontally
     if (walljumpboost<0) {
+        //caution strip boosting
         facing=walljumpdir
         if (!walljump) {
-            //fortress & cart walljumps have different physics from yutu!
             altj+=1
             if (altj>=10) {
                 hspeed-=sign(hspeed)
@@ -285,10 +286,21 @@ if (!frozen) {
             if (abs(hspeed)<4) walljumpboost=0
         } else if (coyoteTime <= 0) vspeed-=gravity
     } else {
-        ///YoYoYo vine bug
-        vinebug=(distance_to_object(WallJumpL)<2 || distance_to_object(WallJumpR)<2)
+        ///vine checks
+        onVineL=false
+        onVineR=false
+        onPlatform=instance_place(x,y+vflip,Block)
+        if (!onPlatform) {
+            onVineType="normal"
+            if (instance_place(x-1,y,WallJumpL)) onVineL=true
+            if (instance_place(x+1,y,WallJumpR)) onVineR=true
+            if (instance_place(x-1,y,CautionStripL)) {onVineL=true onVineType="caution"}
+            if (instance_place(x+1,y,CautionStripR)) {onVineR=true onVineType="caution"}
+            if (instance_place(x-1,y,CautionFastL)) {onVineL=true onVineType="cautionfast"}
+            if (instance_place(x+1,y,CautionFastR)) {onVineR=true onVineType="cautionfast"}
+        }
 
-        if (input_h!=0) {
+        if (input_h!=0 && input_h!=onVineL-onVineR) {
             if (walljumpboost!=0) {
                 hspeed=(maxSpeed+1)*input_h
             } else {
@@ -299,7 +311,7 @@ if (!frozen) {
                         if (onPlatform) hspeed+=input_h*mm_ground_accel
                         else hspeed+=input_h*mm_air_accel
                     } else {
-                        if (!vinebug) hspeed=maxSpeed*input_h
+                        hspeed=maxSpeed*input_h
                     }
                 }
             }
@@ -315,7 +327,7 @@ if (!frozen) {
                 }
             }
         }
-        if (!vinebug) hspeed=median(-maxSpeed,hspeed,maxSpeed)
+        if (!onVineR && !onVineL) hspeed=median(-maxSpeed,hspeed,maxSpeed)
         if (hspeed=0) x=round(x)
     }
 
@@ -357,51 +369,56 @@ applies_to=self
 */
 ///walljumps
 
+//onVineL and onVineR are set in the movement block for consistency with Studio engines
+
 hang=false
-if (!vvvvvv) if (place_free(x,y+1*vflip)) {
-    //vines
-    if (distance_to_object(WallJumpL)<2) {
-        hang=true facing=1
-        if (key_pressed[key_right] || (key_pressed[key_jump] && global.maker_vines)) {
-            hang=false if (key[key_jump]) {vspeed=-9*vflip hspeed=15 walljump=2} else {hspeed=3}
+if (!vvvvvv) if (!onPlatform) {
+    if (onVineL || onVineR) {
+        hang=true
+        facing=esign(onVineL-onVineR,1)
+
+        vspeed = 2 * vflip;
+
+        //pressed away from the vine
+        if (
+            (onVineL && key_pressed[key_right])
+        ||  (onVineR && key_pressed[key_left ])
+        ||  (key_pressed[key_jump] && global.maker_vines)
+        ) {
+            hang=false
+            onVineL=false
+            onVineR=false
+            if (key[key_jump]) {
+                //jumping off vine
+                walljump=2
+                if (onVineType=="normal") {
+                    hspeed=15*facing
+                    vspeed=-9*vflip
+                }
+                if (onVineType=="caution") {
+                    hspeed=15*facing
+                    vspeed=-9*vflip
+                    walljumpboost=24
+                    walljumpdir=facing
+                }
+                if (onVineType=="cautionfast") {
+                    hspeed=10*facing
+                    vspeed=-10*vflip
+                    altj=2
+                    walljumpboost=-1
+                    walljumpdir=facing
+                }
+            } else {
+                //moving off vine
+                hspeed=3*facing
+            }
         }
     }
-    if (distance_to_object(WallJumpR)<2) {
-        hang=true facing=-1
-        if (key_pressed[key_left] || (key_pressed[key_jump] && global.maker_vines)) {
-            hang=false if (key[key_jump]) {vspeed=-9*vflip hspeed=-15 walljump=2} else {hspeed=-3}
-        }
-    }
-    //caution strips
-    if (distance_to_object(CautionStripL)<2) {
-        hang=true facing=1
-        if (key_pressed[key_right] || (key_pressed[key_jump] && global.maker_vines)) {
-            hang=false if (key[key_jump]) {vspeed=-9*vflip hspeed=15 walljumpboost=24 walljumpdir=1 walljump=2} else {hspeed=3}
-        }
-    }
-    if (distance_to_object(CautionStripR)<2) {
-        hang=true facing=-1
-        if (key_pressed[key_left] || (key_pressed[key_jump] && global.maker_vines)) {
-            hang=false if (key[key_jump]) {vspeed=-9*vflip hspeed=-15 walljumpboost=24 walljumpdir=-1 walljump=2} else {hspeed=-3}
-        }
-    }
-    //fast caution strips
-    if (distance_to_object(CautionFastL)<2) {
-        hang=true facing=1
-        if (key_pressed[key_right] || (key_pressed[key_jump] && global.maker_vines)) {
-            hang=false if (key[key_jump]) {vspeed=-10*vflip hspeed=10 altj=2 walljumpboost=-1 walljumpdir=1 walljump=2} else {hspeed=3}
-        }
-    }
-    if (distance_to_object(CautionFastR)<2) {
-        hang=true facing=-1
-        if (key_pressed[key_left] || (key_pressed[key_jump] && global.maker_vines)) {
-            hang=false if (key[key_jump]) {vspeed=-10*vflip hspeed=-10 altj=2 walljumpboost=-1 walljumpdir=-1 walljump=2} else {hspeed=-3}
-        }
-    }
+
     if (hang) {
-        vspeed=2*vflip
+        //eat djump when not maker vines
         if (key_pressed[key_jump] && !global.maker_vines) {
-            if (on_ground()) {
+            if (onPlatform) {
                 djump=1
                 walljump=2
             } else if (djump<maxjumps) {
@@ -897,14 +914,18 @@ applies_to=self
 */
 ///update sprite coordinates
 
-if (framefac==1) {
+if (framefac==2) {
     //immediate mode for 50hz
-    drawx=floor(x)
-    drawy=floor(y)
+    drawx=x
+    drawy=y
+    drawspr=sprite_index
+    drawframe=image_index
     drawangle=image_angle+sprite_angle
 } else {
     drawx=lerp(oldx,newx,framefac)
     drawy=lerp(oldy,newy,framefac)
+    drawspr=oldspr
+    drawframe=oldfr
     drawangle=lerp(oldangle,newangle,framefac)
 }
 
@@ -938,7 +959,7 @@ if (!dead) {
     if (global.debug_jump) draw_sprite_ext(sprBow,2,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
 
     if (global.debug_hitbox) {
-        draw_sprite_ext(mask_index,0,round(x),round(y),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+        draw_sprite_ext(mask_index,0,floor(x),floor(y),image_xscale,image_yscale,image_angle,image_blend,image_alpha*0.5)
     }
 }
 #define Trigger_Draw End

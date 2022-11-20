@@ -132,12 +132,18 @@
 	|sprDotKidFlip
 	|sprBullet
 	|sprBow
-	|sprPlayerFall
-	|sprPlayerIdle
-	|sprPlayerJump
-	|sprPlayerRunning
-	|sprPlayerRunningOld
-	|sprPlayerSliding
+	+Needle
+		|sprPlayerIdleOld
+		|sprPlayerRunningOld
+		|sprPlayerJumpOld
+		|sprPlayerFallOld
+		|sprPlayerSlidingOld
+	+Fixed
+		|sprPlayerIdle
+		|sprPlayerRunning
+		|sprPlayerJump
+		|sprPlayerFall
+		|sprPlayerSliding
 	|sprPlayerBack
 	|sprPlayerLadderUD
 	|sprPlayerLadderLR

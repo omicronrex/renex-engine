@@ -1,3 +1,7 @@
+var fixspr,dy,xs,ys;
+
+fixspr=settings("anim")
+
 if (argument0=="mask") {
     if (vflip==-1) {
         if (global.use_original_mask || (global.valign05_vdiet && frac(y)==0.5)) mask_index=sprMaskPlayerFlip
@@ -21,22 +25,28 @@ if (argument0=="step") {
             image_speed=0.1
         }
     } else if (hang) {
-        sprite_index=sprPlayerSliding
+        if (fixspr) sprite_index=sprPlayerSliding
+        else sprite_index=sprPlayerSlidingOld
         image_speed=0.5
     } else if (!onPlatform) {
         if (vspeed*vflip<-0.05) {
-            sprite_index=sprPlayerJump
-            image_speed=0
-            image_index+=0.5
-            if (!settings("anim")) image_index=max(2,image_index)
-            if (image_index>=4) image_index-=2
+            if (fixspr) {
+                sprite_index=sprPlayerJump
+                image_speed=0
+                image_index+=0.5
+                if (image_index>=4) image_index-=2
+            } else {
+                sprite_index=sprPlayerJumpOld
+                image_speed=0.5
+            }
         }
         if (vspeed*vflip>0.05) {
-            sprite_index=sprPlayerFall
+            if (fixspr) sprite_index=sprPlayerFall
+            else sprite_index=sprPlayerFallOld
             image_speed=0.5
         }
     } else if (input_h!=0) {
-        if (settings("anim")) {
+        if (fixspr) {
             sprite_index=sprPlayerRunning
             image_speed=mmf_animspeed(70,80)
         } else {
@@ -44,7 +54,8 @@ if (argument0=="step") {
             image_speed=0.5
         }
     } else {
-        sprite_index=sprPlayerIdle
+        if (fixspr) sprite_index=sprPlayerIdle
+        else sprite_index=sprPlayerIdleOld
         image_speed=0.2
     }
 
@@ -55,15 +66,17 @@ if (argument0=="step") {
 }
 
 if (argument0=="draw") {
-    if (dotkid) {
-        draw_sprite_ext(oldspr,0,floor(drawx),floor(drawy),1,vflip,0,image_blend,image_alpha)
-        draw_circle_color(floor(x),floor(y),48,0,$ff,1)
-    } else {
-        draw_sprite_ext(oldspr,floor(oldfr),floor(drawx),floor(drawy+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1)),image_xscale,vflip,drawangle,image_blend,image_alpha)
-    }
+    dy=floor(drawy+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1)) //slope offset
+    xs=abs(image_xscale)*facing
+    ys=abs(image_yscale)*vflip
+
+    if (fixspr) draw_sprite_ext(drawspr,floor(drawframe),floor(drawx+(image_xscale<0)),dy,xs,ys,drawangle,image_blend,image_alpha)
+    else draw_sprite_ext(drawspr,floor(drawframe),floor(drawx),dy,xs,ys,drawangle,image_blend,image_alpha)
 
     if (bow) {
-        draw_sprite_ext(sprBow,0,floor(bowx),floor(bowy+(sprite_index=sprPlayerIdle && floor(oldfr)==3)+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
+        dy=floor(bowy+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1))
+        if ((drawspr=sprPlayerIdle || drawspr=sprPlayerIdleOld) && floor(drawframe)==3) dy+=vflip //bobbing
+        draw_sprite_ext(sprBow,0,floor(bowx),dy,xs,ys,drawangle,image_blend,image_alpha)
     }
 
     if (dot_hitbox) {

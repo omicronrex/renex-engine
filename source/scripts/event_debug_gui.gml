@@ -109,6 +109,13 @@ camera_apply()
 
 if (global.debug_hitbox) {
     draw_set_color($ff00ff)
-    with (all) draw_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,1)
+    var left,top;
+    with (all) {
+        left=bbox_left
+        top=bbox_top
+        if (image_xscale<0) left+=2
+        if (image_yscale<0) top+=2
+        draw_rectangle(left,top,bbox_right,bbox_bottom,1)
+    }
     draw_set_color($ffffff)
 }

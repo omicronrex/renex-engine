@@ -335,3 +335,7 @@ sprVuur
 sprGuyMoon
 sprMikuLeek
 sprAvdCtrl
+sprPlayerIdleOld
+sprPlayerJumpOld
+sprPlayerFallOld
+sprPlayerSlidingOld

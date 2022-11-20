@@ -921,16 +921,17 @@ if (framefac==2) {
     drawspr=sprite_index
     drawframe=image_index
     drawangle=image_angle+sprite_angle
+    bowx=newbowx
+    bowy=newbowy
 } else {
     drawx=lerp(oldx,newx,framefac)
     drawy=lerp(oldy,newy,framefac)
     drawspr=oldspr
     drawframe=oldfr
     drawangle=lerp(oldangle,newangle,framefac)
+    bowx=lerp(oldbowx,newbowx,framefac)
+    bowy=lerp(oldbowy,newbowy,framefac)
 }
-
-bowx=lerp(oldbowx,newbowx,framefac)
-bowy=lerp(oldbowy,newbowy,framefac)
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -958,8 +959,8 @@ if (!dead) {
     if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
     if (global.debug_jump) draw_sprite_ext(sprBow,2,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
 
-    if (global.debug_hitbox) {
-        draw_sprite_ext(mask_index,0,floor(x),floor(y),image_xscale,image_yscale,image_angle,image_blend,image_alpha*0.5)
+    if (global.debug_overlay) {
+        draw_sprite_ext_fixed(mask_index,0,floor(x),floor(y)+(vflip==-1),image_xscale,image_yscale,image_angle,image_blend,image_alpha*0.5)
     }
 }
 #define Trigger_Draw End

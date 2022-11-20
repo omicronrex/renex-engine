@@ -5,8 +5,8 @@ if (global.bow_lag) {
     newbowx=newx
     newbowy=newy
 } else {
-    newbowx=x
-    newbowy=y
+    newbowx=floor(x)
+    newbowy=floor(y)
 }
 
 oldx=newx

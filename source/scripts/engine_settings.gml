@@ -2,8 +2,8 @@
 
     RENEX ENGINE
     ============
-    version 1.5.0
-    23 July 2022
+    version 1.6.0
+    31 Oct 2022
 
   A modern fork of various Game Maker 8 I Wanna Be The Guy fangame
   engines with hundreds of improvements and new features.
@@ -12,8 +12,9 @@
   the following people at the time of release:
 
   ---------------------------------
-  \  Floogle  Starz0r  roaming97  \
-  \  Verve    Duncan    Plasma    \
+  \   Floogle  Starz0r   Jopagu   \
+  \   Verve    Duncan    Plasma   \
+  \           roaming97           \
   ---------------------------------
 
 */

@@ -15,10 +15,13 @@ var yes;yes=0
 
 vflip=Player.vflip
 
+//check for other ladders above myself
 yes=!instance_place(x,y-vflip,object_index)
 
+//allow the player to come down from the top
 if (yes) with (Player) if (key[pick(!vflip,key_down,key_up)] || ladder || instance_place(x,y-vflip,other.object_index)) yes=0
 
+//add or remove collision accordingly
 if (yes) plat.sprite_index=sprite_index
 else plat.sprite_index=-1
 #define Other_4

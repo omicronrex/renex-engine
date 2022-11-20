@@ -5,41 +5,47 @@ action_id=603
 applies_to=self
 */
 BGM=""
-loop=1
-
-realtime=current_time
-
-effect=noone
+frames=0
+length=0
+lenframe=0
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-sound_effect_destroy(effect)
-sound_stop(song)
+sound_stop(song[0])
+sound_stop(song[1])
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-//if 1% off of regular speed, pitch shift and warn
-if (fps_fast) {
-    if (abs(1-fps_fast/global.game_speed)>0.01) {
-        sound_pitch(song,fps_fast/global.game_speed)
-        sound_effect_options(effect,0,global.game_speed/fps_fast)
-    } else {
-        sound_pitch(song,1)
-        sound_effect_options(effect,0,1)
-    }
+if (!sound_isplaying(song[0]) || !sound_isplaying(song[1])) {
+    instance_destroy()
+    exit
 }
 
-if (current_time>realtime+100) {
-    //did we just have a massive lag spike? let's rewind our track
-    sound_set_pos(song,(sound_get_pos(song)*length-(current_time-realtime)/1000)/length)
+frames+=1
+musframes=sound_get_pos(song[cursong])*lenframe
+
+if (abs(musframes-frames)>5) {
+    cursong=!cursong
+    sound_set_pos(song[cursong],frames/lenframe)
 }
-realtime=current_time
+
+curvol=inch(curvol,cursong,0.2)
+
+sound_volume(song[0],1-curvol)
+sound_volume(song[1],curvol)
+#define Keyboard_32
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+sleep(17)
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -48,26 +54,29 @@ applies_to=self
 */
 /*desc
     this will play when the room is entered, and will try to
-    keep it synced to the game speed so if the game slows down,
-    it will also slow down the music
+    keep it synced to the game speed.
 */
 
 //field BGM: string
-//field loop: bool
 
-if (effect==noone) {
-    song=play_bg_music(BGM,loop)
+sound_kind_stop(1)
+global.music_instance=noone
+global.music=""
 
-    if (BGM=="") {
-        instance_destroy()
-        exit
-    }
-
-    length=sound_get_length(BGM)
-
-    effect=sound_kind_effect(1,se_pitchshift)
-    sound_effect_options(effect,1,512)
+if (BGM=="") {
+    instance_destroy()
+    exit
 }
+
+song[0]=sound_play("layer1_"+BGM)
+song[1]=sound_play_ex("layer2_"+BGM,0)
+
+cursong=0
+curvol=0
+
+length=sound_get_length(song)
+
+lenframe=length*50
 #define Other_5
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -75,3 +84,15 @@ action_id=203
 applies_to=self
 invert=0
 */
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+draw_text_outline(100,100,
+    "frames: "+string(frames)+"#"+
+    "frametime: "+string_format(frames/50,2,2)+"#"+
+    "songtime:  "+string_format(sound_get_pos(song)*length,2,2)+"#"+
+    "curvol: "+string_format(curvol,1,1)
+,$ff00)

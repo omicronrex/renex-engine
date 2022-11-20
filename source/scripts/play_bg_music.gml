@@ -1,5 +1,7 @@
 ///play_bg_music(track,loop)
 
+instance_destroy_id(MusicSync)
+
 if (argument0="") {
     sound_kind_stop(1)
     global.music_instance=noone

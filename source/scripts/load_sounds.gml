@@ -26,8 +26,10 @@ repeat (c-1) {c-=1
 //search music folder for subfolders
 c=1 folders[0]="data\music\"
 for (file=file_find_first(folders[0]+"*",fa_directory);file!="";file=file_find_next()) {
-    folders[c]=folders[0]+file
-    c+=1
+    if (file!="avoidance") {
+        folders[c]=folders[0]+file
+        c+=1
+    }
 } file_find_close()
 
 repeat (c-1) {c-=1
@@ -36,6 +38,18 @@ repeat (c-1) {c-=1
     sound_add_directory(folders[c],".mp3",1,1)
     sound_add_directory(folders[c],".mod",1,1)
     sound_add_directory(folders[c],".s3m",1,1)
+    sound_add_directory(folders[c],".mid",1,1)
+    sound_add_directory(folders[c],".midi",1,1)
 }
+
+//load avoidance folder as double streams
+sound_add_directory_ext("\data\music\avoidance\",".ogg",3,1,"layer1_")
+sound_add_directory_ext("\data\music\avoidance\",".ogg",3,1,"layer2_")
+sound_add_directory_ext("\data\music\avoidance\",".mp3",3,1,"layer1_")
+sound_add_directory_ext("\data\music\avoidance\",".mp3",3,1,"layer2_")
+sound_add_directory_ext("\data\music\avoidance\",".mod",3,1,"layer1_")
+sound_add_directory_ext("\data\music\avoidance\",".mod",3,1,"layer2_")
+sound_add_directory_ext("\data\music\avoidance\",".s3m",3,1,"layer1_")
+sound_add_directory_ext("\data\music\avoidance\",".s3m",3,1,"layer2_")
 
 custom_sound_properties()

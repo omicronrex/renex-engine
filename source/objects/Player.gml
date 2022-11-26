@@ -284,7 +284,7 @@ if (!frozen) {
             }
             vspeed+=0.5-gravity
             if (abs(hspeed)<4) walljumpboost=0
-        } else if (coyoteTime <= 0) vspeed-=gravity
+        }
     } else {
         ///vine checks
         onVineL=false
@@ -331,14 +331,17 @@ if (!frozen) {
         if (hspeed=0) x=round(x)
     }
 
-    if (onPlatform || coyoteTime>0) {
+    if (onPlatform || coyoteTime!=0) {
+        onPlatform=true
         if (!instance_place(x,y+4*vflip,Platform) && !instance_place(x,y+vflip,Block)) {
-            if (coyoteTime<=0) {
+            if (coyoteTime==0) {
                 onPlatform=false
             }
             coyoteTime-=1
         }
     }
+
+    if (coyoteTime!=0) vspeed-=gravity
 
     if (vflip==-1) vspeed=max(-maxVspeed,vspeed)
     else if (vflip==1) vspeed=min(vspeed,maxVspeed)

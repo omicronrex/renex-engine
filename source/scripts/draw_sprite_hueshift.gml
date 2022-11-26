@@ -1,4 +1,15 @@
 ///draw_sprite_hueshift(spr,x,y,xscale,yscale,rotation,hueshift)
+
+//put your sprite in an image editor -
+//take the red channel, and put it as grayscale in the first frame;
+//put the green channel in grayscale on the second frame;
+//and then put the blue channel in the third frame.
+
+//the hue value is in degrees of change; 0-360.
+
+//if you're just trying to draw a white image with a hue,
+//use regular draw_sprite_ext with make_color_hsv as blend.
+
 var spr,dx,dy,xs,ys,rot,hue,r,g,b;
 
 spr=argument0

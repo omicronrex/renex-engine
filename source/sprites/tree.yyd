@@ -144,6 +144,9 @@
 		|sprPlayerJump
 		|sprPlayerFall
 		|sprPlayerSliding
+	+Bonus
+		|sprPlayerLookDown
+		|sprPlayerAimUp
 	|sprPlayerBack
 	|sprPlayerLadderUD
 	|sprPlayerLadderLR

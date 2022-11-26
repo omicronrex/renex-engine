@@ -339,3 +339,5 @@ sprPlayerIdleOld
 sprPlayerJumpOld
 sprPlayerFallOld
 sprPlayerSlidingOld
+sprPlayerLookDown
+sprPlayerAimUp

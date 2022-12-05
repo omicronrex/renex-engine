@@ -26,3 +26,6 @@ savedatap("weapon",global.player_weapon)
 
 ds_grid_resize(global.statgrid,3,1)
 global.statgridh=1
+
+//copy from persistent to ephemeral
+ds_map_copy(global.savemap,global.savemap_persistent)

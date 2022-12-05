@@ -10,11 +10,11 @@
   Made by renex with vast contributions from
   the following people at the time of release:
 
-  -------------------------------------
-  |  Floogle  Starz0r  Verve  Duncan  |
-  |  Jopagu      Plasma    roaming97  |
-  |    Various fangame developers     |
-  -------------------------------------
+  ---------------------------------------
+  |   Floogle  Starz0r  Verve  Duncan   |
+  |  Jopagu  Plasma  Square  roaming97  |
+  |     Various fangame developers      |
+  ---------------------------------------
 
 
 --------------------------------------------------------------------------------

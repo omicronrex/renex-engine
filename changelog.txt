@@ -7,7 +7,8 @@ New features:
 
 - added Draw Begin and Draw End trigger events
 - added the classic Miku avoidance room + new simple avoidance engine
-- added Front Miku
+- added Front Miku and a clean sprite of normal Miku
+- added softlock prevention when loading a file inside of a solid
 - added m9 blocks
 - added the Yuuutu engine rooms as examples
 - added two new music tracks including guyrock and Esmeralda by Sidewinder
@@ -40,9 +41,17 @@ New features:
 - added an engine toggle for stopping sound effects between rooms
 - added the Ctrl-M shortcut for muting the music
 - added two shortcut scripts for changing the sound volume
+- added a couple of bonus sprites
 
 Bugs fixed:
 
+- fixed a visual menu bug when deleting a file
+- fixed a crash related to disabling savefile icons
+- fixed coyote time and added an option for infinite coyote time
+- fixed several sprite alignment issues when using old sprites
+- fixed pause menu not using the menu text color option
+- fixed minute counter going above 59
+- fixed Steam causing the joystick menu object to crash
 - fixed a crash when a game room doesn't contain a PlayerStart
 - fixed a crash when using AutoTiler in a room with blocks outside of the region
 - fixed a crash when using a single difficulty that is not impossible
@@ -86,6 +95,9 @@ Bugs fixed:
 
 Minor changes:
 
+- various scripts have been documented
+- the player option for sprite style now also changes sprite origins to match
+- refactored all of the vine code to be easier to modify
 - there's a new system for temporary savedata that's handled automatically
 - improved joystick setup system messages
 - save masks are now the full tile

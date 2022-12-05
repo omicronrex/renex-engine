@@ -13,12 +13,15 @@ asksel=0
 
 state=""
 
+thumb[0]=noone
+thumb[1]=noone
+thumb[2]=noone
+
 if (global.savefile_thumbnails) {
     i=0 repeat (3) {
         savedata_select(i)
         fn=global.savefolder+global.savesig+".png"
         if (file_exists(fn)) thumb[i]=background_add(fn,0,0)
-        else thumb[i]=noone
         i+=1
     }
 }

@@ -11,22 +11,28 @@ if (global.is_impossible[savedata("diff")]) {
     savedata_default()
 }
 
-if (savedata("saved")) {
-    global.player_skin=savedata("skin")
-    global.player_weapon=savedata("weapon")
-
-    i=instance_create(savedata("x"),savedata("y"),savedata("obj"))
-    i.image_xscale=savedata("width")
-    i.image_yscale=savedata("height")
-    i.facing=savedata("facing")
-    i.vflip=savedata("vflip")
-
-    difficulty=savedata("diff")
-
-    custom_load()
-
-    global.onload_trigger=true
-}
-
 global.warp_id=""
-room_goto(savedata("room"))
+
+
+if (global.difficulty_room!=noone && room==rmMenu) {
+    room_goto(global.difficulty_room)
+} else {
+    if (savedata("saved")) {
+        global.player_skin=savedata("skin")
+        global.player_weapon=savedata("weapon")
+
+        i=instance_create(savedata("x"),savedata("y"),savedata("obj"))
+        i.image_xscale=savedata("width")
+        i.image_yscale=savedata("height")
+        i.facing=savedata("facing")
+        i.vflip=savedata("vflip")
+
+        difficulty=savedata("diff")
+
+        custom_load()
+
+        global.onload_trigger=true
+    }
+
+    room_goto(savedata("room"))
+}

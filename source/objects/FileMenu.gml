@@ -70,46 +70,45 @@ if (state="") {
         sound_play("sndDJump")
         savedata_select(select)
         asksel=0
-        if (savedata("saved")) {
-            state="continue"
+
+        if (global.difficulty_room!=noone) {
+            input_clear()
+            savedata_load()
         } else {
-            state="new file"
+            if (savedata("saved")) {
+                state="continue"
+            } else {
+                state="new file"
+            }
+            input_clear()
         }
-        input_clear()
     }
 }
 
 //continue or erase
 if (state="continue") {
-    if (global.difficulty_room!=noone) {
-        instance_destroy_id(TitleParticle)
-        instance_destroy_id(TitleMenu)
-        input_clear()
-        room_goto(global.difficulty_room)
-    } else {
-        if (global.key_pressed[key_up] || global.key_pressed[key_down]) {
-            sound_play("sndJump")
-            asksel=!asksel
-            askcount=0
-        }
-        if (global.key_pressed[key_jump]) {
-            if (asksel) {
-                askcount+=1
-                if (askcount=5) {
-                    sound_play("sndDeath")
-                    savedata_default(select)
-                    state=""
-                    if (thumb[select]!=noone) {
-                        background_delete(thumb[select])
-                        thumb[select]=noone
-                    }
-                    show_message_left(lang("fileundo"))
-                } else sound_play("sndShoot")
-            } else {
-                input_clear()
-                savedata_select(select)
-                savedata_load()
-            }
+    if (global.key_pressed[key_up] || global.key_pressed[key_down]) {
+        sound_play("sndJump")
+        asksel=!asksel
+        askcount=0
+    }
+    if (global.key_pressed[key_jump]) {
+        if (asksel) {
+            askcount+=1
+            if (askcount=5) {
+                sound_play("sndDeath")
+                savedata_default(select)
+                state=""
+                if (thumb[select]!=noone) {
+                    background_delete(thumb[select])
+                    thumb[select]=noone
+                }
+                show_message_left(lang("fileundo"))
+            } else sound_play("sndShoot")
+        } else {
+            input_clear()
+            savedata_select(select)
+            savedata_load()
         }
     }
 }
@@ -121,12 +120,6 @@ if (state="new file") {
         instance_destroy_id(TitleMenu)
         input_clear()
         savedata_newgame(select,global.single_difficulty)
-    } else if (global.difficulty_room!=noone) {
-        difficulty=global.single_difficulty
-        instance_destroy_id(TitleParticle)
-        instance_destroy_id(TitleMenu)
-        input_clear()
-        room_goto(global.difficulty_room)
     } else {
         if (global.key_pressed[key_left] || global.key_pressed[key_right]) {
             sound_play("sndJump")
@@ -150,6 +143,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+//remember the last file
 settings("lastfile",select)
 settings_write()
 
@@ -157,6 +151,7 @@ settings_write()
 show_message_left()
 show_message_right()
 
+//clear thumbnail memory
 if (global.savefile_thumbnails) {
     i=0 repeat (3) {
         if (thumb[i]!=noone) background_delete(thumb[i])

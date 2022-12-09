@@ -795,15 +795,18 @@ if (!dead) {
         if (y-vspeed/2-8*dotkid<=ytop) {
             if (other.snap || vspeed-other.vspeed>=0) {
                 y=ytop-9+8*dotkid
-                oldvspeed=vspeed
-                vspeed=max(0,other.vspeed/dt/slomo)
-                player_land(oldvspeed)
-                with (other) event_trigger(tr_platland)
-                onPlatform=true
-                djump=true
                 if (!place_free(x,y)) {
-                    if (global.platform_crush_behavior==1) check_crush()
-                    if (global.platform_crush_behavior==2) move_outside_solid(270,20)
+                    if (other.vspeed<0) {
+                        if (global.platform_crush_behavior==1) check_crush()
+                        if (global.platform_crush_behavior==2) move_outside_solid(270,20)
+                    } else y=oy
+                } else {
+                    oldvspeed=vspeed
+                    vspeed=max(0,other.vspeed/dt/slomo)
+                    player_land(oldvspeed)
+                    with (other) event_trigger(tr_platland)
+                    onPlatform=true
+                    djump=true
                 }
             }
             vsplatform=max(0,other.vspeed)
@@ -823,15 +826,18 @@ if (!dead) {
         if (y-vspeed/2+7*dotkid>=ytop+0.5) {
             if (other.snap || vspeed-other.vspeed<=0) {
                 y=ytop+0.5+8-7*dotkid
-                oldvspeed=vspeed
-                vspeed=min(0,other.vspeed/dt/slomo)
-                player_land(oldvspeed)
-                with (other) event_trigger(tr_platland)
-                onPlatform=true
-                djump=true
                 if (!place_free(x,y)) {
-                    if (global.platform_crush_behavior==1) check_crush()
-                    if (global.platform_crush_behavior==2) move_outside_solid(90,20)
+                    if (other.vspeed>0) {
+                        if (global.platform_crush_behavior==1) check_crush()
+                        if (global.platform_crush_behavior==2) move_outside_solid(270,20)
+                    } else y=oy
+                } else {
+                    oldvspeed=vspeed
+                    vspeed=min(0,other.vspeed/dt/slomo)
+                    player_land(oldvspeed)
+                    with (other) event_trigger(tr_platland)
+                    onPlatform=true
+                    djump=true
                 }
             }
             vsplatform=min(0,other.vspeed)

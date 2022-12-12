@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-refreshTime=0
+refreshTime=global.jump_refresher_timer
 active=1
 #define Alarm_0
 /*"/*'/**//* YYD ACTION

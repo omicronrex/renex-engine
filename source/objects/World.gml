@@ -52,6 +52,13 @@ action_id=603
 applies_to=self
 */
 event_room_end()
+#define Other_30
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+event_game_end()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

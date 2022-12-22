@@ -48,18 +48,18 @@ debug_execute_code=""
 message=0 messagetext=""
 message2=0 message2text=""
 
-minalpha=0
-minclick=0
+maxalpha=0
+maxclick=0
 
 if (get_windows_version()==5) {
     //windows xp colors
-    mincolor1=$e55500
-    mincolor2=$ffffff
+    maxcolor1=$e55500
+    maxcolor2=$ffffff
 } else {
     //get win10 window colors
-    mincolor1=window_get_caption_color()
-    if (color_get_luminance(mincolor1)>128) mincolor2=0
-    else mincolor2=$ffffff
+    maxcolor1=window_get_caption_color()
+    if (color_get_luminance(maxcolor1)>128) maxcolor2=0
+    else maxcolor2=$ffffff
 }
 
 global.viewangle=0

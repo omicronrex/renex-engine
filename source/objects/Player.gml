@@ -788,8 +788,9 @@ if (!dead) {
             if (instance_place(x,y,other.id)) y-=search
             else y+=search
             search/=2
-            ytop=bbox_bottom+1
         }
+        if (instance_place(x,y,other.id)) y-=1
+        ytop=bbox_bottom+1
         y=oy
 
         if (y-vspeed/2-8*dotkid<=ytop) {
@@ -819,8 +820,9 @@ if (!dead) {
             if (instance_place(x,y,other.id)) y-=search
             else y+=search
             search/=2
-            ytop=bbox_top
         }
+        if (instance_place(x,y,other.id)) y+=1
+        ytop=bbox_top
         y=oy
 
         if (y-vspeed/2+7*dotkid>=ytop+0.5) {

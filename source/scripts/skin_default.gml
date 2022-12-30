@@ -66,7 +66,8 @@ if (argument0=="step") {
 }
 
 if (argument0=="draw") {
-    dy=floor(drawy+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1)) //slope offset
+    //slope angle offset
+    dy=floor(drawy+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1))
     xs=abs(image_xscale)*facing
     ys=abs(image_yscale)*vflip
 

@@ -46,6 +46,8 @@ New features:
 
 Bugs fixed:
 
+- fixed collision with upside down platforms
+- fixed dotkid sprite offset when upside down
 - fixed jump refreshers not respecting the default refresher respawn option
 - fixed platform crush behaviors for stationary platforms close to ceilings
 - fixed a y coordinate instability in the new platform code
@@ -99,6 +101,7 @@ Bugs fixed:
 
 Minor changes:
 
+- triggergroups will activate instances to fix issues
 - the default left+right option was changed to Right for consistency
 - various scripts have been documented
 - the player option for sprite style now also changes sprite origins to match

@@ -825,9 +825,9 @@ if (!dead) {
         ytop=bbox_top
         y=oy
 
-        if (y-vspeed/2+7*dotkid>=ytop+0.5) {
+        if (y-vspeed/2+7*dotkid>=ytop) {
             if (other.snap || vspeed-other.vspeed<=0) {
-                y=ytop+0.5+8-7*dotkid
+                y=ytop+9-7*dotkid
                 if (!place_free(x,y)) {
                     if (other.vspeed>0) {
                         if (global.platform_crush_behavior==1) check_crush()
@@ -943,6 +943,9 @@ if (framefac==2) {
     bowx=lerp(oldbowx,newbowx,framefac)
     bowy=lerp(oldbowy,newbowy,framefac)
 }
+
+if (vflip==1) drawy=floor(drawy)
+else drawy=ceil(drawy)-1
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

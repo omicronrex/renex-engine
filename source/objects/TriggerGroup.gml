@@ -14,4 +14,5 @@ applies_to=self
 
     note: this does not apply to TriggerFree, as that object
     always works across the entire room with no boundary checks.
+    also note that this object will keep instances active inside.
 */

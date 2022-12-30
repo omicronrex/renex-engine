@@ -15,6 +15,9 @@ if (global.instance_deactivation) {
             bound_height*global.instance_activate_screens_h+global.instance_activate_margin_px*2,
             true
         )
+
+        with (TriggerGroup) instance_activate_region(bbox_left,bbox_top,bbox_right,bbox_bottom,1)
+
         instance_activate_around_player()
     }
 }

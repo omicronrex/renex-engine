@@ -6,6 +6,7 @@ tools and improved baseline systems for an easier time making games.
 New features:
 
 - added Draw Begin and Draw End trigger events
+- added the window icon and buttons back
 - added the classic Miku avoidance room + new simple avoidance engine
 - added Front Miku and a clean sprite of normal Miku
 - added softlock prevention when loading a file inside of a solid
@@ -30,7 +31,7 @@ New features:
 - added an engine setting and optional player choice for saving the valign
 - added an option for not doing anything to the music on game over
 - added an option to slow down the music on game over
-- added a new death fruit fig
+- added a new death fruit (fig)
 - added moon trap
 - added an engine setting to save the player in the center of save points
 - added a couple of backgrounds from iwbtg
@@ -45,6 +46,9 @@ New features:
 
 Bugs fixed:
 
+- fixed jump refreshers not respecting the default refresher respawn option
+- fixed platform crush behaviors for stationary platforms close to ceilings
+- fixed a y coordinate instability in the new platform code
 - fixed a visual menu bug when deleting a file
 - fixed a crash related to disabling savefile icons
 - fixed coyote time and added an option for infinite coyote time
@@ -95,6 +99,7 @@ Bugs fixed:
 
 Minor changes:
 
+- the default left+right option was changed to Right for consistency
 - various scripts have been documented
 - the player option for sprite style now also changes sprite origins to match
 - refactored all of the vine code to be easier to modify

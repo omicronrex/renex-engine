@@ -32,7 +32,7 @@ if (!instance) {
     if (!instance) {
         instance=instance_place(x,ystart,all)
         if (!instance) {
-            show_error(strong("AddTrigger at (",x,",",y,") did not find an instance to add a trigger to."),0)
+            show_error(str_cat("AddTrigger at (",x,",",y,") did not find an instance to add a trigger to."),0)
             instance_destroy()
             exit
         }

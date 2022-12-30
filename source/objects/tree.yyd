@@ -27,18 +27,18 @@
 	|SlopeParent
 	|MovingSolid
 	|SuperVehicle
-+User Interface
-	|VolCheck
-	|TitleMenu
-	|FileMenu
-	|OptionsMenu
-	|KeyboardMenu
-	|JoystickMenu
-	|PauseMenu
-	|DefaultMenuBorderMaker
-	|RenexStarParticles
-	|TitleParticle
 +System
+	+User Interface
+		|VolCheck
+		|TitleMenu
+		|FileMenu
+		|OptionsMenu
+		|KeyboardMenu
+		|JoystickMenu
+		|PauseMenu
+		|DefaultMenuBorderMaker
+		|RenexStarParticles
+		|TitleParticle
 	|BloodEmitter
 	|GibParticle
 	|Blood
@@ -70,6 +70,64 @@
 	|LeekDown
 	|Fig
 	|Wasp
+	|SpikeTrapD
+	|SpikeTrapL
+	|SpikeTrapR
+	|SpikeTrapU
+	|M9Block
+	|M9Trigger
++Triggers
+	|TriggerGroup
+	|TrapStop
+	|TrapRedirect
+	|AddTrigger
+	|TriggerFree
+	|TriggeredFree
+	|Trigger1
+	|SwitchRed
+	|SwitchRedWL
+	|SwitchRedWR
+	|Trigger2
+	|Trigger3
+	|SwitchYellow
+	|SwitchYellowWL
+	|SwitchYellowWR
+	|Trigger4
+	|SwitchGreen
+	|SwitchGreenWL
+	|SwitchGreenWR
+	|Trigger5
+	|Trigger6
+	|Trigger7
+	|Trigger8
+	|Trigger9
+	|Trigger10
+	|Trigger11
+	|Trigger12
+	|Triggered1
+	|Triggered2
+	|Triggered3
+	|Triggered4
+	|Triggered5
+	|Triggered6
+	|Triggered7
+	|Triggered8
+	|Triggered9
+	|Triggered10
+	|Triggered11
+	|Triggered12
+	|LockedTrigger1
+	|LockedTrigger2
+	|LockedTrigger3
+	|LockedTrigger4
+	|LockedTrigger5
+	|LockedTrigger6
+	|LockedTrigger7
+	|LockedTrigger8
+	|LockedTrigger9
+	|LockedTrigger10
+	|LockedTrigger11
+	|LockedTrigger12
 +Gimmicks
 	+White Dot
 		|WhiteDotEnable
@@ -183,59 +241,7 @@
 	|Teleporter
 	|PatBall
 	|AlignIndicator
-+Triggers
-	|TriggerGroup
-	|TrapStop
-	|TrapRedirect
-	|AddTrigger
-	|TriggerFree
-	|TriggeredFree
-	|Trigger1
-	|SwitchRed
-	|SwitchRedWL
-	|SwitchRedWR
-	|Trigger2
-	|Trigger3
-	|SwitchYellow
-	|SwitchYellowWL
-	|SwitchYellowWR
-	|Trigger4
-	|SwitchGreen
-	|SwitchGreenWL
-	|SwitchGreenWR
-	|Trigger5
-	|Trigger6
-	|Trigger7
-	|Trigger8
-	|Trigger9
-	|Trigger10
-	|Trigger11
-	|Trigger12
-	|Triggered1
-	|Triggered2
-	|Triggered3
-	|Triggered4
-	|Triggered5
-	|Triggered6
-	|Triggered7
-	|Triggered8
-	|Triggered9
-	|Triggered10
-	|Triggered11
-	|Triggered12
-	|LockedTrigger1
-	|LockedTrigger2
-	|LockedTrigger3
-	|LockedTrigger4
-	|LockedTrigger5
-	|LockedTrigger6
-	|LockedTrigger7
-	|LockedTrigger8
-	|LockedTrigger9
-	|LockedTrigger10
-	|LockedTrigger11
-	|LockedTrigger12
-+Level
++Level Objects
 	|ConveyorLeft
 	|ConveyorRight
 	|JumpBlock
@@ -283,13 +289,6 @@
 	|FunnySlope
 	|SlopePixel
 	|SlopeWobbly
-+Traps
-	|SpikeTrapD
-	|SpikeTrapL
-	|SpikeTrapR
-	|SpikeTrapU
-	|M9Block
-	|M9Trigger
 +Items
 	+Display (trophies)
 		|DisplayItem1
@@ -304,6 +303,32 @@
 		|DisplayGlobalItem2
 		|DisplayGlobalItem3
 		|DisplayGlobalItem4
+	+blocks that become solid
+		|SolidItemBlockItem1
+		|SolidItemBlockItem2
+		|SolidItemBlockItem3
+		|SolidItemBlockItem4
+		|SolidItemBlockItem5
+		|SolidItemBlockItem6
+		|SolidItemBlockItem7
+		|SolidItemBlockItem8
+		|SolidItemBlockGlobalItem1
+		|SolidItemBlockGlobalItem2
+		|SolidItemBlockGlobalItem3
+		|SolidItemBlockGlobalItem4
+	+blocks that go away
+		|ItemBlockItem1
+		|ItemBlockItem2
+		|ItemBlockItem3
+		|ItemBlockItem4
+		|ItemBlockItem5
+		|ItemBlockItem6
+		|ItemBlockItem7
+		|ItemBlockItem8
+		|ItemBlockGlobalItem1
+		|ItemBlockGlobalItem2
+		|ItemBlockGlobalItem3
+		|ItemBlockGlobalItem4
 	|Item1
 	|Item2
 	|Item3
@@ -312,34 +337,10 @@
 	|Item6
 	|Item7
 	|Item8
-	|ItemBlockItem1
-	|ItemBlockItem2
-	|ItemBlockItem3
-	|ItemBlockItem4
-	|ItemBlockItem5
-	|ItemBlockItem6
-	|ItemBlockItem7
-	|ItemBlockItem8
-	|SolidItemBlockItem1
-	|SolidItemBlockItem2
-	|SolidItemBlockItem3
-	|SolidItemBlockItem4
-	|SolidItemBlockItem5
-	|SolidItemBlockItem6
-	|SolidItemBlockItem7
-	|SolidItemBlockItem8
 	|GlobalItem1
 	|GlobalItem2
 	|GlobalItem3
 	|GlobalItem4
-	|ItemBlockGlobalItem1
-	|ItemBlockGlobalItem2
-	|ItemBlockGlobalItem3
-	|ItemBlockGlobalItem4
-	|SolidItemBlockGlobalItem1
-	|SolidItemBlockGlobalItem2
-	|SolidItemBlockGlobalItem3
-	|SolidItemBlockGlobalItem4
 +Bosses
 	+Big Cherry
 		|BigCherry

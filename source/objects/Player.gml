@@ -547,19 +547,13 @@ action_id=603
 applies_to=self
 */
 ///solid collision
-var land,a,s,rx,oldvsp;
+var land,a,s,oldvsp;
 
 if (dotkid) {
     image_xscale=1
 } else if (walljumpboost<=0) {
     image_xscale=abs(image_xscale)*facing
 }
-
-///solid collision
-var land,a,s,rx,yes,oldvsp;
-
-if (hspeed>=0) {rx=floor(x) rxnext=floor(x+hspeed)}
-else {rx=ceil(x) rxnext=ceil(x+hspeed)}
 
 //we add gravity because this is supposed to happen after movement update
 vspeed+=gravity
@@ -586,7 +580,7 @@ if (!place_free(x+hspeed,y+vspeed)) {
 
         repeat (a+1) {
             y+=s
-            if (!place_free(rx,y)) {
+            if (!place_free(x,y)) {
                 y-=s
                 if (s==vflip) {
                     player_land(oldvsp)

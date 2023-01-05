@@ -341,7 +341,7 @@ if (!frozen) {
         }
     }
 
-    if (coyoteTime!=0) vspeed-=gravity
+    if (coyoteTime!=0&&global.true_coyote_time==true) vspeed-=gravity
 
     if (vflip==-1) vspeed=max(-maxVspeed,vspeed)
     else if (vflip==1) vspeed=min(vspeed,maxVspeed)

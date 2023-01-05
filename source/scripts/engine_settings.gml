@@ -118,6 +118,9 @@
     //time in frames to allow single jumping after leaving a surface
     //turn this off for a precision needle game
     global.coyote_time=0
+    //changes whether the player is still affected by gravity in coyote time
+    //dependent on the value above
+    global.true_coyote_time=false
     //time in frames to allow jumping when the button is pressed too early in the air
     //makes 4.5s easier
     global.jump_buffering=0

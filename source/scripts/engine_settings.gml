@@ -117,7 +117,7 @@
     global.angle_slopes=true
     //time in frames to allow single jumping after leaving a surface
     //turn this off for a precision needle game
-    global.coyote_time=20
+    global.coyote_time=0
     //changes whether the player is still affected by gravity in coyote time if it's enabled
     global.coyote_time_floating=false
     //time in frames to allow jumping when the button is pressed too early in the air

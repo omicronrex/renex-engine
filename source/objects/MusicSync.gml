@@ -90,9 +90,11 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_text_outline(100,100,
-    "frames: "+string(frames)+"#"+
-    "frametime: "+string_format(frames/50,2,2)+"#"+
-    "songtime:  "+string_format(sound_get_pos(song)*length,2,2)+"#"+
-    "curvol: "+string_format(curvol,1,1)
-,$ff00)
+if (global.test_run) {
+    draw_text_outline(100,100,
+        "frames: "+string(frames)+"#"+
+        "frametime: "+string_format(frames/50,2,2)+"#"+
+        "songtime:  "+string_format(sound_get_pos(song)*length,2,2)+"#"+
+        "curvol: "+string_format(curvol,1,1)
+    ,$ff00)
+}

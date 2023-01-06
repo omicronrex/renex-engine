@@ -2,7 +2,7 @@ if (event="create") {
     name="Utah"
     sur=""
 
-    hp=40
+    maxhp=40
 
     play_bg_music("ddpboss",1)
 

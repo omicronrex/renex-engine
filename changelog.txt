@@ -1,7 +1,7 @@
 renex engine v1.6.0 build ?? ??? 2022
 
 In addition to more WannaFest-related fixes, this release also brings in new
-tools and improved baseline systems for an easier time making games.
+tools, gimmicks and improved baseline systems for an easier time making games.
 
 New features:
 
@@ -11,15 +11,16 @@ New features:
 - added Front Miku and a clean sprite of normal Miku
 - added softlock prevention when loading a file inside of a solid
 - added m9 blocks
+- added a sample enemy (Dumb Bugz)
 - added the Yuuutu engine rooms as examples
 - added two new music tracks including guyrock and Esmeralda by Sidewinder
 - added an AddTrigger tool that can make any object triggerable
 - added the ability to rotate platforms
-- added the option to build games with test mode enabled
+- added the option to build exes with test mode always enabled
 - added a player option for screenshake intensity
 - added an engine option to disable savefile thumbnail generation
 - added a warp sound option to the warp object
-- added two new triggers for player jump and double jump
+- added two new trigger events for player jump and double jump
 - added a tool for persistent backgrounds
 - added a new free-form slope object
 - added a double-jump only KTG block
@@ -31,14 +32,17 @@ New features:
 - added an engine setting and optional player choice for saving the valign
 - added an option for not doing anything to the music on game over
 - added an option to slow down the music on game over
-- added a new death fruit (fig)
+- added an engine option for donkey-kong style coyote time (no floating)
+- added an engine option for infinite coyote time
+- added a new death fruit (Fig)
 - added moon trap
+- added yoku block speed change trigger
 - added object hashing tool from WannaFest (plus example coin item)
 - added an engine setting to save the player in the center of save points
 - added a couple of backgrounds from iwbtg
 - added objects for each cherry color
-- added a warp option to warp to a PlayerStart instance in the room
-- added new enemy wasp to go with the fig
+- added a warp option to warp to a PlayerStart in the room
+- added new enemy (Wasp) to go with the Fig
 - added stock support for mp3 sound effects (why though?)
 - added an engine toggle for stopping sound effects between rooms
 - added the Ctrl-M shortcut for muting the music
@@ -54,7 +58,7 @@ Bugs fixed:
 - fixed a y coordinate instability in the new platform code
 - fixed a visual menu bug when deleting a file
 - fixed a crash related to disabling savefile icons
-- fixed coyote time and added an option for infinite coyote time
+- fixed coyote time bugs when coyote time is very long
 - fixed several sprite alignment issues when using old sprites
 - fixed pause menu not using the menu text color option
 - fixed minute counter going above 59

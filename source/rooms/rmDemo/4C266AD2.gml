@@ -1,3 +1,3 @@
 //gm82 fields begin
-warpCoord[0]=7568 warpCoord[1]=208
+vsp=4
 //gm82 fields end

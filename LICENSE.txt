@@ -1,4 +1,4 @@
-renex engine is copyright (c) 2022 renex
+renex engine is copyright (c) 2023 renex
 
 with "it" being renex engine, "you" being, well, you, and "me" being renex
 
@@ -14,4 +14,4 @@ what you CANNOT do:
 - do not claim you made this or any part of it
 - do not sell an unmodified engine or pieces of it
 - do not blame me for issues arising from your use of it
-- do not use the engine to create or promote any NFT or crypto related items
+- do not use the engine to create or promote any cryptocurrency related items

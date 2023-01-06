@@ -1,4 +1,4 @@
-renex engine v1.6.0 build ?? ??? 2022
+renex engine v1.6.0 build 06 Jan 2023
 
 In addition to more WannaFest-related fixes, this release also brings in new
 tools, gimmicks and improved baseline systems for an easier time making games.

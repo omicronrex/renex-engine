@@ -28,7 +28,7 @@ if (argument0=="step") {
         if (fixspr) sprite_index=sprPlayerSliding
         else sprite_index=sprPlayerSlidingOld
         image_speed=0.5
-    } else if (!onPlatform) {
+    } else if (!onGround) {
         if (vspeed*vflip<-0.05) {
             if (fixspr) {
                 sprite_index=sprPlayerJump

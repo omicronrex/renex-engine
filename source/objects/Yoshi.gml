@@ -76,7 +76,7 @@ if (lost) {
     } else sprite_index=sprYoshiStand
 
     if (global.key_pressed[key_jump]) {
-        if (on_ground()) vspeed=-11*vflip
+        if (instance_place(x,y+1,Block)) vspeed=-11*vflip
     }
     if (global.key_released[key_jump]) {
         if (vspeed*vflip<0) vspeed*=0.45

@@ -57,6 +57,7 @@ Bugs fixed:
 - fixed several sprite alignment issues when using old sprites
 - fixed pause menu not using the menu text color option
 - fixed minute counter going above 59
+- fixed platform swimming using the standing/walk sprites
 - fixed Steam causing the joystick menu object to crash
 - fixed a crash when a game room doesn't contain a PlayerStart
 - fixed a crash when using AutoTiler in a room with blocks outside of the region
@@ -106,11 +107,12 @@ Minor changes:
 - various scripts have been documented
 - the player option for sprite style now also changes sprite origins to match
 - refactored all of the vine code to be easier to modify
-- there's a new system for temporary savedata that's handled automatically
+- there's a new automatic system for temporary savedata
 - improved joystick setup system messages
 - save masks are now the full tile
 - cleaned up item-related code and added comments
 - the gravity nang fields are animated
+- coyote time can have optional gravity
 - debug menu now displays all rooms (not just the ones after the starting room)
 - improved engine lists to make it easier to add custom stuff
 - q key handling has been moved to the player input handler
@@ -312,9 +314,11 @@ Minor changes:
 --------------------------------------------------------------------------------
 renex engine v1.3.0 build 15 nov 2021
 
-This update fixes a lot of problems found by the community and adds a bunch of requested features.
+This update fixes a lot of problems found by the community and adds a bunch of
+requested features.
 
-Just like last time, the Lite edition contains less builtin objects and examples.
+Just like last time, the Lite edition contains less builtin objects and
+examples.
 
 New features
 
@@ -331,7 +335,7 @@ New features
 - added emulation of studio 9999 vdiet
 - gizmo system to allow using the trigger system with non-killers
 - added new SkyGradient2Colors tool
-- improved screenshake effect & new script camera_set_raw() for view-like options
+- improved screenshake effect & new script camera_set_raw() for view-like option
 - added screenshot functionality
 - added item display trophies
 - added new tools HitCount and HPMode
@@ -352,7 +356,8 @@ Bugfixes
 - fixed glitchy bullet sprite on specific aligns
 - fixed incorrect player sprites on first frame after a restart
 - fullscreen scaling now properly applies to foreground layers
-- fixed a very specific sequence of menu inputs which could cause the engine to erase a save file
+- fixed a very specific sequence of menu inputs which could cause the engine to
+  erase a save file
 
 Minor changes
 

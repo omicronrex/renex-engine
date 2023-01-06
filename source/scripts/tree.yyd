@@ -136,13 +136,13 @@
 	|player_land
 	|player_hitwall
 	|player_hitceiling
+	|player_can_jump
+	|player_update_sprite
 	|check_crush
 	|kill_player
 	|move_player
 	|flip_player
 	|emit_blood
-	|on_ground
-	|player_update_sprite
 	|warp_to
 	|input_leftright
 +keypick

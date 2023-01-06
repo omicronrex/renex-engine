@@ -38,6 +38,7 @@ applies_to=self
 djump=1
 ladder=false
 onPlatform=false
+onGround=false
 ladderjump=false
 hang=false
 dot_hitbox=false
@@ -235,7 +236,7 @@ if (input_v!=0 && !ladder) if (instance_place(x,y,Ladder)) {
 }
 
 if (ladder) {
-    if (!instance_place(x,y,Ladder) || (on_ground() && key[pick(!vflip,key_down,key_up)])) {
+    if (!instance_place(x,y,Ladder) || (onGround && key[pick(!vflip,key_down,key_up)])) {
         ladder=false
     } else {
         if (input_v!=0) {if (place_free(x,y+maxSpeed*input_v)) {
@@ -289,7 +290,6 @@ if (!frozen) {
         ///vine checks
         onVineL=false
         onVineR=false
-        onPlatform=instance_place(x,y+vflip,Block)
         if (!onPlatform) {
             onVineType="normal"
             if (instance_place(x-1,y,WallJumpL)) onVineL=true
@@ -331,18 +331,6 @@ if (!frozen) {
         if (hspeed=0) x=round(x)
     }
 
-    if (onPlatform || coyoteTime!=0) {
-        onPlatform=true
-        if (!instance_place(x,y+4*vflip,Platform) && !instance_place(x,y+vflip,Block)) {
-            if (coyoteTime==0) {
-                onPlatform=false
-            }
-            coyoteTime-=1
-        }
-    }
-
-    if (coyoteTime!=0&&global.true_coyote_time==true) vspeed-=gravity
-
     if (vflip==-1) vspeed=max(-maxVspeed,vspeed)
     else if (vflip==1) vspeed=min(vspeed,maxVspeed)
 
@@ -363,6 +351,22 @@ if (!frozen) {
         if (key_pressed[key_die]) {
             kill_player()
         }
+    }
+
+    if (onPlatform) {
+        if (!instance_place(x,y+4*vflip,Platform) && !coyoteTime) {
+            onPlatform=false
+        }
+    }
+    if (onGround) {
+        if (place_free(x,y+vflip) && !coyoteTime) {
+            onGround=false
+        }
+    }
+
+    if (coyoteTime!=0) {
+        if (global.coyote_time_floating) vspeed-=gravity
+        coyoteTime-=1
     }
 }
 /*"/*'/**//* YYD ACTION
@@ -526,6 +530,7 @@ if (esign(vspeed+gravity,vflip)==vflip) {
 }
 
 if (land) {
+    onGround=true
     player_land(vspeed)
     vspeed=0
     //discover surface angle using two binary search seekers
@@ -584,6 +589,7 @@ if (!place_free(x+hspeed,y+vspeed)) {
                 y-=s
                 if (s==vflip) {
                     player_land(oldvsp)
+                    onGround=true
                 } else {
                     player_hitceiling(oldvsp)
                 }
@@ -602,13 +608,6 @@ vsplatform=0
 //we subtract gravity because we added it before
 //collision shenanigans, just trust me on this one
 vspeed-=gravity
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-///skin step
-script_execute(global.player_skin,"step")
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=424
@@ -704,6 +703,7 @@ action_id=603
 applies_to=self
 */
 ///sprite smoothing
+script_execute(global.player_skin,"step")
 
 player_update_sprite()
 /*"/*'/**//* YYD ACTION
@@ -775,6 +775,8 @@ if (!dead) {
         } else y+=vspeed} else y+=vspeed
     }
 
+    onPlatform=true
+
     if (vflip==1) {
         oy=y
         search=16
@@ -800,7 +802,7 @@ if (!dead) {
                     vspeed=max(0,other.vspeed/dt/slomo)
                     player_land(oldvspeed)
                     with (other) event_trigger(tr_platland)
-                    onPlatform=true
+                    onGround=true
                     djump=true
                 }
             }
@@ -832,7 +834,7 @@ if (!dead) {
                     vspeed=min(0,other.vspeed/dt/slomo)
                     player_land(oldvspeed)
                     with (other) event_trigger(tr_platland)
-                    onPlatform=true
+                    onGround=true
                     djump=true
                 }
             }

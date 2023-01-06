@@ -1,7 +1,6 @@
 ///player_land(vspeed)
 landvspeed=argument0
 
-onPlatform=true
 walljumpboost=0
 djump=1
 coyoteTime=global.coyote_time

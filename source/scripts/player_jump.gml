@@ -1,5 +1,5 @@
 if (vvvvvv) {
-    if (on_ground()) {
+    if (player_can_jump()) {
         //vvvvvv flipping
         vflip*=-1
         vspeed=0
@@ -11,7 +11,7 @@ if (vvvvvv) {
         jump_timer=0
     }
 } else if (!hang) {
-    if (on_ground() || instance_place(x,y+vflip,Water1) || instance_place(x,y+vflip,PlatformWater) || instance_place(x,y+vflip,GuyWater) || ladderjump || (global.true_coyote_time==false&&coyoteTime!=0) ) {
+    if (player_can_jump() || instance_place(x,y+vflip,Water1) || instance_place(x,y+vflip,PlatformWater) || instance_place(x,y+vflip,GuyWater) || ladderjump) {
         //floor jump
         vspeed=-jump*vflip
         if (global.use_momentum_values) {

@@ -15,7 +15,7 @@ switch (argument0) {
         }
     }break
     case opt_text: {
-        return "Fullscreen Filter"
+        return "Scaling Filter"
     }break
     case opt_value: {
         return pick(settings("filter"),"Nearest","Trilinear")

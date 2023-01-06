@@ -13,6 +13,11 @@ global.dz=display_get_frequency()
 global.rw=global.width
 global.rh=global.height
 
+//calculate max scaling according to screen size
+global.dmaxscale=min(floorto((global.dw-100)/global.width,0.5),floorto((global.dh-100)/global.height,0.5))
+settings("screenscale",min(settings("screenscale"),global.dmaxscale))
+World.alarm[2]=1
+
 global.deq_fac=2
 if (global.dw/global.width>3 || global.dh/global.height>3) {
     //on a 4k monitor, we use a 3x trilinear filter instead of 2x

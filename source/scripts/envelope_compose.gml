@@ -19,7 +19,9 @@ with (PauseMenu) event_user(0)
 
 event_draw_gui()
 
-if ((global.rw!=global.APPwidth || global.rh!=global.APPheight) && settings("filter")) {
+hastofilter=(settings("fullscreen") || frac(settings("screenscale"))!=0)
+
+if ((global.rw!=global.APPwidth || global.rh!=global.APPheight) && settings("filter") && hastofilter) {
     //trilinear filtering
     dequanto_surface=dx8_surface_engage(dequanto_surface,global.APPwidth*global.deq_fac,global.APPheight*global.deq_fac)
     texture_set_interpolation(global.APPfilter)
@@ -33,7 +35,7 @@ if ((global.rw!=global.APPwidth || global.rh!=global.APPheight) && settings("fil
     //nearest neighbor filtering
     surface_reset_target()
     d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
-    texture_set_interpolation(settings("filter") && global.APPfilter)
+    texture_set_interpolation(settings("filter") && global.APPfilter && hastofilter)
     draw_surface_stretched(application_surface,0,0,global.rw,global.rh)
     texture_set_interpolation(0)
 }

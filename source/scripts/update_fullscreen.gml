@@ -9,9 +9,9 @@ if (full) {
     global.rh=round(global.height*s)
 } else {
     window_set_cursor(cr_default)
-    window_set_region_scale(settings("winscale"),1)
-    global.rw=global.width
-    global.rh=global.height
+    window_set_region_scale(settings("screenscale"),1)
+    global.rw=global.width*settings("screenscale")
+    global.rh=global.height*settings("screenscale")
 }
 
 window_set_fullscreen(full)

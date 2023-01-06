@@ -6,6 +6,14 @@ applies_to=self
 */
 //test event order to make sure the gm82 option is checked
 order_test=2
+#define Alarm_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///delayed window center
+window_center()
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -15,6 +23,15 @@ applies_to=self
 ///this is delayed to prevent a bug with istance list reordering
 global.room_started=true
 update_activation()
+#define Alarm_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///delayed buffer resize
+dx8_resize_buffer(global.rw,global.rh)
+window_center()
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

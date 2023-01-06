@@ -5,12 +5,13 @@ tools, gimmicks and improved baseline systems for an easier time making games.
 
 New features:
 
+- added window scaling options (150%, 200% etc) with trilinear filtering
 - added Draw Begin and Draw End trigger events
 - added the window icon and buttons back
 - added the classic Miku avoidance room + new simple avoidance engine
 - added Front Miku and a clean sprite of normal Miku
 - added softlock prevention when loading a file inside of a solid
-- added m9 blocks
+- added m9 blocks with trigger
 - added a sample enemy (Dumb Bugz)
 - added the Yuuutu engine rooms as examples
 - added two new music tracks including guyrock and Esmeralda by Sidewinder
@@ -28,7 +29,7 @@ New features:
 - added a new set of scripts for setting and getting camera options
 - added new camera options and toggles
 - added a new engine hook for drawing things before room backgrounds
-- added a simple autotiler tool with some templates
+- added a simple AutoTiler tool with some templates
 - added an engine setting and optional player choice for saving the valign
 - added an option for not doing anything to the music on game over
 - added an option to slow down the music on game over
@@ -65,7 +66,6 @@ Bugs fixed:
 - fixed platform swimming using the standing/walk sprites
 - fixed Steam causing the joystick menu object to crash
 - fixed a crash when a game room doesn't contain a PlayerStart
-- fixed a crash when using AutoTiler in a room with blocks outside of the region
 - fixed a crash when using a single difficulty that is not impossible
 - fixed joystick support
 - fixed a bug with the persistent backgrounds tool
@@ -99,9 +99,8 @@ Bugs fixed:
 - fixed some inconsistencies with vines when the maker vines option is disabled
 - fixed the engine rooms having incorrectly set up music players
 - fixed the skinner object not affecting the trap variants of spikes and cherry
-- fixed issues with the autotiler on grids other than 32
 - fixed typo in fields for DepthBlender
-- fixed a very minor issue with the volume check screen
+- fixed a minor issue with the volume check screen
 - fixed a bug with blood gravity
 - fixed a leftover blend mode call
 
@@ -117,7 +116,6 @@ Minor changes:
 - save masks are now the full tile
 - cleaned up item-related code and added comments
 - the gravity nang fields are animated
-- coyote time can have optional gravity
 - debug menu now displays all rooms (not just the ones after the starting room)
 - improved engine lists to make it easier to add custom stuff
 - q key handling has been moved to the player input handler
@@ -131,7 +129,7 @@ Minor changes:
 - boss healthbar tool is now generic and accepts any max health value
 - moved the wobbly slope to the example folder so you don't get errors
 - massively optimized savefile thumbnail generation
-- signpost text is now constrained to the visible area
+- signpost textbox is now constrained to the visible area
 - accurate shootkid is now a default
 - made all different water objects child of a new AnyWater parent
 - removed the upside down saves and their sprites as they're not needed

@@ -359,7 +359,7 @@ if (!frozen) {
         }
     }
     if (onGround) {
-        if (place_free(x,y+vflip) && !coyoteTime) {
+        if (place_free(x,y+vflip) && !instance_place(x,y+4*vflip,Platform) && !coyoteTime) {
             onGround=false
         }
     }

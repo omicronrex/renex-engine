@@ -33,6 +33,7 @@ New features:
 - added an option to slow down the music on game over
 - added a new death fruit (fig)
 - added moon trap
+- added object hashing tool from WannaFest (plus example coin item)
 - added an engine setting to save the player in the center of save points
 - added a couple of backgrounds from iwbtg
 - added objects for each cherry color

@@ -143,6 +143,7 @@
 	|move_player
 	|flip_player
 	|emit_blood
+	|emit_prop_blood
 	|warp_to
 	|input_leftright
 +keypick

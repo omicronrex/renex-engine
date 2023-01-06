@@ -44,7 +44,7 @@ if (lost) {
         bleeding-=1
         y-=40
         x+=10*image_xscale
-        emit_blood(10*settings("blood"))
+        emit_prop_blood(10*settings("blood"))
         y+=40
         x-=10*image_xscale
     }

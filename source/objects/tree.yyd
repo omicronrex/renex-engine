@@ -52,6 +52,7 @@
 	|WaterSurface
 	|AnyWater
 	|UnsolidItemBlock
+	|PropBlood
 +Saves
 	|SavePointMedium
 	|SavePointHard
@@ -225,6 +226,8 @@
 		|CautionStripR
 		|CautionFastL
 		|CautionFastR
+		|DumbBugz
+		|DeadBugz
 	+Genki
 		|ShootBlock
 		|ShootBlockBig

@@ -288,6 +288,8 @@
 	|sprM9
 	|sprM9Trigger
 	|sprGuyMoon
+	|sprDumbBugz
+	|sprDeadBugz
 +Triggers
 	|sprTriggerGroup
 	|sprAddTrigger

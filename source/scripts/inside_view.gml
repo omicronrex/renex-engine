@@ -1,5 +1,7 @@
 ///inside_view()
 
+if (!global.room_started) return false
+
 //workaround for instances without a sprite
 if (bbox_right-bbox_left+bbox_bottom-bbox_top == 0)
 return x >= view_xview[0]

@@ -175,7 +175,7 @@ draw_cherry
 camera_reinit
 opt_animation
 camera_set_gridsize
-ds_map_add_copy
+
 vehicle_mount
 vehicle_dismount
 move_player_object
@@ -229,3 +229,4 @@ split_object
 
 timeline_miku_front
 savedatap
+persist_hash

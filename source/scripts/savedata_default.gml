@@ -24,6 +24,8 @@ global.player_weapon=global.player_default_weapon
 savedatap("skin",global.player_skin)
 savedatap("weapon",global.player_weapon)
 
+ds_map_clear(global.persistmap)
+
 ds_grid_resize(global.statgrid,3,1)
 global.statgridh=1
 

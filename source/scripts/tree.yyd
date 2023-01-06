@@ -35,6 +35,7 @@
 		|write_objsave
 		|read_objsave
 	|generate_save_thumbnail
+	|persist_hash
 +system
 	+util
 		|format_time
@@ -45,7 +46,6 @@
 		|inside_view
 		|filename_valid
 		|current_date_filename
-		|ds_map_add_copy
 	+input
 		+joysticks
 			|joy_deadzone

@@ -53,6 +53,8 @@ with (Player) if (!dead || argument0) {
     savedata("skin",global.player_skin)
     savedata("weapon",global.player_weapon)
 
+    savedata("persistent hashmap",ds_map_write(global.persistmap))
+
     custom_save()
 
     with (all) event_perform(ev_trigger,tr_onsave)

@@ -29,6 +29,8 @@ if (global.difficulty_room!=noone && room==rmMenu) {
 
         difficulty=savedata("diff")
 
+        ds_map_read(global.persistmap,savedata("persistent hashmap"))
+
         custom_load()
 
         global.onload_trigger=true

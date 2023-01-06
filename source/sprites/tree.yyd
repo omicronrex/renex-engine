@@ -330,6 +330,7 @@
 	|sprLock11
 	|sprLock12
 	|sprVuur
+	|sprGenericTrigger
 +Items
 	|sprItem1
 	|sprItem2

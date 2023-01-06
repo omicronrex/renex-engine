@@ -1,3 +1,10 @@
+#define Create_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+delay=2*room_speed
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -32,12 +39,14 @@ This object is used to group a selection of Yoku Blocks.
 Placing it in a room will activate any blocks inside of it,
 when the Player object of the engine enters it.
 */
+//field delay: number - frames, default is 2x room speed
 
 var count,last;
 
 first=noone
 
 with (ActualYokuBlock) if (instance_place(x,y,other.id)) {
+    mygroup=other.id
     if (first) other.first=id
     if (next==noone) next=other.first
     image_index=6.5

@@ -220,6 +220,7 @@
 		|GuyCouch
 		|ActualYokuBlock
 		|YokuGroup
+		|YokuSpeedChanger
 		|CautionStripL
 		|CautionStripR
 		|CautionFastL

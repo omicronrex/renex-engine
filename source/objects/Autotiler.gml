@@ -28,6 +28,15 @@ When using "clone" mode, place the desired tile underneath the object.
 //field depth - default 1000
 //field solid_border: bool - default false
 
+if (persistent) {
+    //we are coming from another room
+    if (oldroom!=room) {
+        d3d_model_destroy(model)
+        instance_destroy()
+    }
+    exit
+}
+
 if (type=="clone scale") {
     var tile,l,t,w,h,xs,ys,tb,ta,td,bg,u,v;
 
@@ -91,7 +100,10 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (model!=noone) d3d_model_destroy(model)
+if (model!=noone) {
+    persistent=1
+    oldroom=room
+}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

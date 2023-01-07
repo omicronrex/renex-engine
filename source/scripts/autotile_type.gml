@@ -30,8 +30,8 @@ autotile_u=1/(background_get_width(bg)*texture_get_width(texture))
 autotile_v=1/(background_get_height(bg)*texture_get_height(texture))
 
 //initialize 2d tilemap
-w=room_width div grid+3
-h=room_height div grid+3
+w=room_width div grid+4
+h=room_height div grid+4
 u=w repeat (u) {
     u-=1
     tilemap[u,h-1]=0
@@ -48,13 +48,13 @@ with (Block) if (object_index==Block && solid && image_angle==0 && bbox_right>0 
 
 if (bord) {
     //solid border
-    u=0 v=h-1
+    u=0 v=h-3
     repeat (w) {
         tilemap[u,0]=tilemap[u,1]
         tilemap[u,v]=tilemap[u,v-1]
         u+=1
     }
-    u=w-1 v=0
+    u=w-3 v=0
     repeat (h) {
         tilemap[0,v]=tilemap[1,v]
         tilemap[u,v]=tilemap[u-1,v]

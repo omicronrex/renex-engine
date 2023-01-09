@@ -24,7 +24,7 @@ if (!cutscene) {
     //solve horizontal input and left+right depending on player choice
     input_h=input_leftright(key[key_left],key[key_right],key_pressed[key_left],key_pressed[key_right],key_released[key_left],key_released[key_right],input_h)
 
-    facing=esign(input_h,facing)
+    if (!frozen) facing=esign(input_h,facing)
 
     //solve vertical input (always resolved as type lr_last)
     l=key[key_up   ] || key_pressed[key_up   ]

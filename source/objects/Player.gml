@@ -325,6 +325,7 @@ if (!frozen) {
             if (walljumpboost!=0) {
                 //vine boost
                 hspeed=(maxSpeed+1)*input_h
+                facing=walljumpdir
             } else {
                 if (slipper) {
                     //ice physics

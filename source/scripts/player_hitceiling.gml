@@ -1,2 +1,4 @@
-///player_hitceiling(vspeed)
-ceilvspeed=argument0
+///player_hitceiling()
+//called when the player bonks
+
+vspeed=0

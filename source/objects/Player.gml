@@ -6,23 +6,30 @@ applies_to=self
 */
 ///player properties
 
+
+//jump vspeed values, and number of jumps
 jump=8.5
 jump2=7
-
 maxjumps=2
 
+
+//player simulation speed multiplier
+//you can change this to make the player run slower
+slomo=1
+
+
+//these values are used to reset the player when disabling gimmicks such as beams and fields
 maxSpeedDefault=3
 baseGravDefault=0.4
 maxVspeed=9
 
-slomo=1
 
+//turn on bow when difficulty is 0
 bow=(difficulty==0)
 
 
 //variables for optional player momentum system
 //check engine_settings() for more information
-
 mm_ground_fric=0.2
 mm_air_fric=0
 mm_ground_accel=0.3
@@ -33,7 +40,7 @@ action_id=603
 applies_to=self
 */
 ///initialize variables
-//you usually don't need to touch any of these
+//you usually don't need to change any of these, they're mostly used for gimmicks
 
 djump=1
 ladder=false
@@ -140,6 +147,8 @@ applies_to=self
     animation speeds or object speeds by dt to keep them consistent
     across different room speeds. an example is provided on Cherry.
 
+    if the room speed is set to 50, all delta time systems are disabled.
+
 */
 
 //slow down music
@@ -151,11 +160,10 @@ updating=0
 if (!frozen) {
     //add how much time has passed since last frame
     stepcount+=50/room_speed*slomo
-    stepcount=floor(stepcount*100000)/100000
     //is another frame in order?
-    if (stepcount>=1) {
-        stepcount=stepcount mod 1
-        updating=1
+    if (roundto(stepcount,0.00001)>=1) {
+        updating=true
+        stepcount=frac(stepcount)
     }
     //calculate sprite smoothing factor
     framefac=stepcount+0.5
@@ -189,7 +197,7 @@ applies_to=self
 input_consume()
 
 //align adjust keys
-if (global.a_d_trick) {
+if (global.a_d_trick && onGround) {
     if (keyboard_check_pressed(ord("A"))) move_player(x-1,y,1)
     if (keyboard_check_pressed(ord("D"))) move_player(x+1,y,1)
 }
@@ -198,58 +206,84 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///speed fields or beams
+///update collision mask
 
-maxSpeed = maxSpeedDefault
-baseGrav = baseGravDefault
-
-if (instance_place(x,y,LowSpeedField)) {
-    maxSpeed = 1
-} else if (instance_place(x,y,HighSpeedField) || beamstate&beam_highspeed) {
-    maxSpeed = 6
-}
-
-if (instance_place(x,y,HighGravField) || beamstate&beam_highgrav) {
-    baseGrav = 0.7
-} else if (instance_place(x,y,LowGravField) || beamstate&beam_lowgrav) {
-    baseGrav = 0.2
-}
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-///skin mask
+//execute the mask part of the current skin script
 script_execute(global.player_skin,"mask")
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-///ladders
+///gimmicks
 
-if (input_v!=0 && !ladder) if (instance_place(x,y,Ladder)) {
-    ladder=true
-    djump=1
-}
+if (!frozen) {
+    //get on a ladder
+    if (input_v!=0 && !ladder) if (instance_place(x,y,Ladder)) {
+        ladder=true
+        djump=1
+    }
 
-if (ladder) {
-    if (!instance_place(x,y,Ladder) || (onGround && key[pick(!vflip,key_down,key_up)])) {
-        ladder=false
-    } else {
-        if (input_v!=0) {if (place_free(x,y+maxSpeed*input_v)) {
-            vspeed=maxSpeed*input_v
-            gravity=0
-        }} else vspeed=0
-        if (key_pressed[key_jump]) {
-            ladderjump=true
+    if (ladder) {
+        if (!instance_place(x,y,Ladder) || (onGround && key[pick(!vflip,key_down,key_up)])) {
+            //fall off
             ladder=false
+        } else {
+            //ride ladder
+            if (input_v!=0) {if (place_free(x,y+maxSpeed*input_v)) {
+                vspeed=maxSpeed*input_v
+                gravity=0
+            }} else vspeed=0
+
+            //jump out of ladder
+            if (key_pressed[key_jump]) {
+                ladderjump=true
+                ladder=false
+            }
         }
     }
-}
 
-if (!ladder) {
-    gravity=baseGrav*vflip
+    if (!ladder) {
+        //normal gravity when not in a ladder
+        gravity=baseGrav*vflip
+    }
+
+    //reset to default
+    maxSpeed = maxSpeedDefault
+    baseGrav = baseGravDefault
+
+    //the beamstate variable contains a bitmask of what beams are currently active
+    //check constants for the available beams, and the beam objects in gimmicks/see the moon
+    if (instance_place(x,y,LowSpeedField)) {
+        maxSpeed = 1
+    } else if (instance_place(x,y,HighSpeedField) || beamstate&beam_highspeed) {
+        maxSpeed = 6
+    }
+
+    if (instance_place(x,y,HighGravField) || beamstate&beam_highgrav) {
+        baseGrav = 0.7
+    } else if (instance_place(x,y,LowGravField) || beamstate&beam_lowgrav) {
+        baseGrav = 0.2
+    }
+
+    //look for ice objects
+    slipper=instance_place(x,y+4*vflip,SlipBlock)
+
+    if (walljumpboost>=0) {
+        ///look for vine objects
+        onVineL=false
+        onVineR=false
+        if (!onPlatform && !onGround) {
+            onVineType="normal"
+            if (instance_place(x-1,y,WallJumpL)) onVineL=true
+            if (instance_place(x+1,y,WallJumpR)) onVineR=true
+            if (instance_place(x-1,y,CautionStripL)) {onVineL=true onVineType="caution"}
+            if (instance_place(x+1,y,CautionStripR)) {onVineR=true onVineType="caution"}
+            if (instance_place(x-1,y,CautionFastL)) {onVineL=true onVineType="cautionfast"}
+            if (instance_place(x+1,y,CautionFastR)) {onVineR=true onVineType="cautionfast"}
+            //add custom vines here
+        }
+    }
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -261,95 +295,100 @@ applies_to=self
 if (!frozen) {
     if (!inside_view()) instance_activate_around_player()
 
+    //count down jump buffering
     if (jump_timer) jump_timer-=1
 
     if (walljumpboost) {
+        //if you're boosting from a caution strip, lock controls
         input_h=walljumpdir
         walljumpboost-=1
     }
-
-    //ice
-    slipper=instance_place(x,y+4*vflip,SlipBlock)
 
     //move horizontally
     if (walljumpboost<0) {
         //caution strip boosting
         facing=walljumpdir
         if (!walljump) {
+            //high speed green caution strip (converted iwbtg code)
             altj+=1
             if (altj>=10) {
                 hspeed-=sign(hspeed)
                 altj=0
             }
+            //guy gimmicks use custom gravity
             vspeed+=0.5-gravity
             if (abs(hspeed)<4) walljumpboost=0
         }
     } else {
-        ///vine checks
-        onVineL=false
-        onVineR=false
-        if (!onPlatform && !onGround) {
-            onVineType="normal"
-            if (instance_place(x-1,y,WallJumpL)) onVineL=true
-            if (instance_place(x+1,y,WallJumpR)) onVineR=true
-            if (instance_place(x-1,y,CautionStripL)) {onVineL=true onVineType="caution"}
-            if (instance_place(x+1,y,CautionStripR)) {onVineR=true onVineType="caution"}
-            if (instance_place(x-1,y,CautionFastL)) {onVineL=true onVineType="cautionfast"}
-            if (instance_place(x+1,y,CautionFastR)) {onVineR=true onVineType="cautionfast"}
-        }
-
         if (input_h!=0 && input_h!=onVineL-onVineR) {
+            //if moving and not touching vines
             if (walljumpboost!=0) {
+                //vine boost
                 hspeed=(maxSpeed+1)*input_h
             } else {
                 if (slipper) {
+                    //ice physics
                     hspeed=inch(hspeed,maxSpeed*input_h,slipper.slip)
                 } else {
                     if (global.use_momentum_values && !ladder) {
+                        //mario mode
                         if (onPlatform) hspeed+=input_h*mm_ground_accel
                         else hspeed+=input_h*mm_air_accel
                     } else {
+                        //move normally
                         hspeed=maxSpeed*input_h
                     }
                 }
             }
         } else {
+            //the input is neutral
             if (slipper) {
+                //slide to a stop
                 hspeed=inch(hspeed,0,slipper.slip)
             } else {
                 if (global.use_momentum_values && !ladder) {
+                    //mario mode friction
                     if (onPlatform) hspeed=inch(hspeed,0,mm_ground_fric)
                     else hspeed=inch(hspeed,0,mm_air_fric)
                 } else {
+                    //stop moving
                     hspeed=0
                 }
             }
         }
+        //horizontal speed limit
         if (!onVineR && !onVineL) hspeed=median(-maxSpeed,hspeed,maxSpeed)
+        
+        //discard fractionary component of halign if not moving
         if (hspeed=0) x=round(x)
     }
 
+    //vertical speed limit
     if (vflip==-1) vspeed=max(-maxVspeed,vspeed)
     else if (vflip==1) vspeed=min(vspeed,maxVspeed)
 
     if (!cutscene) {
+        //player actions
+        
         if (key_pressed[key_shoot] || (key[key_shoot] && global.debug_autofire_counter==1)) {
             player_shoot()
         }
         if (key_released_early[key_jump]) {
-            if (vspeed*vflip<0) vspeed*=0.45
+            //this is used to cactus
+            player_capjump()
         }
         if (key_pressed[key_jump]) {
             player_jump()
         }
         if (key_released[key_jump]) {
-            if (vspeed*vflip<0) vspeed*=0.45
+            player_capjump()
         }
         if (key_pressed[key_die]) {
             kill_player()
         }
     }
 
+    //update ground and platform detection
     if (onPlatform) {
         if (!instance_place(x,y+4*vflip,Platform) && !coyoteTime) {
             onPlatform=false
@@ -361,6 +400,7 @@ if (!frozen) {
         }
     }
 
+    //update coyote time
     if (coyoteTime!=0) {
         if (global.coyote_time_floating) vspeed-=gravity
         coyoteTime-=1
@@ -371,7 +411,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///walljumps
+///handle vines
 
 //onVineL and onVineR are set in the movement block for consistency with Studio engines
 
@@ -381,9 +421,9 @@ if (!vvvvvv) if (!onPlatform) {
         hang=true
         facing=esign(onVineL-onVineR,1)
 
-        vspeed = 2 * vflip;
+        vspeed=2*vflip
 
-        //pressed away from the vine
+        //input away from the vine
         if (
             (onVineL && key_pressed[key_right])
         ||  (onVineR && key_pressed[key_left ])
@@ -412,15 +452,16 @@ if (!vvvvvv) if (!onPlatform) {
                     walljumpboost=-1
                     walljumpdir=facing
                 }
+                //add custom vines here
             } else {
-                //moving off vine
+                //just moving off vine
                 hspeed=3*facing
             }
         }
     }
 
     if (hang) {
-        //eat djump when not maker vines
+        //eat djump when maker vines is disabled
         if (key_pressed[key_jump] && !global.maker_vines) {
             if (onPlatform) {
                 djump=1
@@ -437,7 +478,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///gimmicks
+///other gimmicks
 
 //conveyor blocks
 conveyor=instance_place(x,y+4*vflip,ConveyorLeft) if (conveyor) hspeed+=conveyor.spd
@@ -497,13 +538,12 @@ if (gravity==0) grav_step=0.5*vflip
 
 if (esign(vspeed+gravity,vflip)==vflip) {
     was_on_slope=instance_place(x,y+2*vflip,SlopeParent)
-    //optimization: short circuit
     if (!was_on_slope) is_going_into_slope=instance_place(x+hspeed,y+2*vflip*!dotkid,SlopeParent)
     if (was_on_slope || is_going_into_slope) {
         x+=hspeed
         if (place_free(x,y)) {
             if (was_on_slope) if (instance_place(x,y+8*vflip,Block)) {
-                //land on slope or blocks moving down
+                //land on solids moving down
                 //optimization: only check collision once it crosses pixel boundary
                 while (!instance_place(x,y+grav_step,Block)) {store_y=round(y) do y+=grav_step until round(y)!=store_y} y-=grav_step
                 land=1
@@ -527,9 +567,8 @@ if (esign(vspeed+gravity,vflip)==vflip) {
 }
 
 if (land) {
-    onGround=true
-    player_land(vspeed)
-    vspeed=0
+    //successfully landed on/walked along a slope
+    player_land(0)
     //discover surface angle using two binary search seekers
     var ly,ry,len,fl,fr;
     fl=0 fr=0
@@ -549,7 +588,7 @@ action_id=603
 applies_to=self
 */
 ///solid collision
-var land,a,s,oldvsp;
+var land,a,s;
 
 if (dotkid) {
     image_xscale=1
@@ -557,38 +596,42 @@ if (dotkid) {
     image_xscale=abs(image_xscale)*facing
 }
 
-//we add gravity because this is supposed to happen after movement update
+//technically, solid collision is supposed to happen after the step event -
+//so we add gravity before checking for collisions
 vspeed+=gravity
 
 if (!place_free(x+hspeed,y+vspeed)) {
+    //there is a collision
     if (!place_free(x+hspeed,y)) {
+        //check for collision horizontally first
         if (hspeed>=0) x=floor(x)
         else x=ceil(x)
         a=ceil(abs(hspeed))
         s=sign(hspeed)
         repeat (a+1) {
             x+=s
-            if (!place_free(x,y)) {x-=s player_hitwall(hspeed) hspeed=0 break}
+            if (!place_free(x,y)) {
+                x-=s
+                player_hitwall()
+            break}
         }
         x-=hspeed
         walljumpboost=0
     }
 
     if (!place_free(x,y+vspeed)) {
+        //check for collision vertically
         a=ceil(abs(vspeed))
         s=sign(vspeed)
-        oldvsp=vspeed
-        vspeed=0
 
         repeat (a+1) {
             y+=s
             if (!place_free(x,y)) {
                 y-=s
                 if (s==vflip) {
-                    player_land(oldvsp)
-                    onGround=true
+                    player_land(0)
                 } else {
-                    player_hitceiling(oldvsp)
+                    player_hitceiling()
                 }
                 break
             }
@@ -597,13 +640,13 @@ if (!place_free(x+hspeed,y+vspeed)) {
     }
 
     if (!place_free(x+hspeed,y+vspeed)) {
+        //if there's still a collision anyway, stop moving horizontally
         hspeed=0
     }
 }
 
 vsplatform=0
-//we subtract gravity because we added it before
-//collision shenanigans, just trust me on this one
+//we subtract gravity because we added it before  
 vspeed-=gravity
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -623,6 +666,7 @@ action_id=603
 applies_to=self
 */
 ///chill
+//makes the player stop moving when delta timing
 
 //consume inputs while frozen so that you don't cancel when it's over
 if (frozen) input_consume()
@@ -657,7 +701,7 @@ applies_to=self
 */
 ///nekoron water bug
 
-if (key_pressed[key_jump]) if (instance_place(x,y+1*vflip,NekoronAir) && !onPlatform) {
+if (key_pressed[key_jump]) if (instance_place(x,y+1*vflip,NekoronAir) && !onGround) {
     vspeed=-jump2*vflip
     repeat (choose(1,2,3)) sound_play_slomo("sndDJump")
     image_index=0
@@ -671,6 +715,7 @@ applies_to=self
 //must be done after collision to ensure fairness
 
 if (iframes) {
+    //invincible
     flashing=iframes
     iframes-=1
 } else {
@@ -692,14 +737,14 @@ if (iframes) {
         } else kill_player()
     }
 
-    if (onfire && onPlatform) kill_player()
+    if (onfire && onGround) kill_player()
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-///sprite smoothing
+///update sprite
 script_execute(global.player_skin,"step")
 
 player_update_sprite()
@@ -736,9 +781,12 @@ action_id=603
 applies_to=self
 */
 ///buggy walljump sound
+
 if (walljump!=0) {
-    if (walljump>0) repeat (2) sound_play_slomo("sndJump")
-    else repeat (2) sound_play_slomo("sndDJump")
+    repeat (2) {
+        if (walljump>0) sound_play_slomo("sndJump")
+        else sound_play_slomo("sndDJump")
+    }
     walljump=inch(walljump,0,1)
 }
 /*"/*'/**//* YYD ACTION
@@ -747,6 +795,7 @@ action_id=603
 applies_to=self
 */
 ///check autosave
+
 autosave_do()
 #define Collision_Platform
 /*"/*'/**//* YYD ACTION
@@ -756,6 +805,7 @@ applies_to=self
 */
 if (!dead) {
     if (object_other_is_child_of(LiftBlock)) {
+        //it's a solid lift block
         x-=hspeed
         y-=vspeed
 
@@ -775,6 +825,9 @@ if (!dead) {
     onPlatform=true
 
     if (vflip==1) {
+        //platforms, normal gravity
+        
+        //find top of the platform using a binary search
         oy=y
         search=16
         repeat (5) {
@@ -787,26 +840,29 @@ if (!dead) {
         y=oy
 
         if (y-vspeed/2-8*dotkid<=ytop) {
+            //check for platform snap
             if (other.snap || vspeed-other.vspeed>=0) {
                 y=ytop-9+8*dotkid
                 if (!place_free(x,y)) {
+                    //crushed!
                     if (other.vspeed<0) {
                         if (global.platform_crush_behavior==1) check_crush()
                         if (global.platform_crush_behavior==2) move_outside_solid(270,20)
                     } else y=oy
                 } else {
-                    oldvspeed=vspeed
+                    //land on it
                     vspeed=max(0,other.vspeed/dt/slomo)
-                    player_land(oldvspeed)
-                    with (other) event_trigger(tr_platland)
-                    onGround=true
-                    djump=true
+                    player_land(1)
+                    with (other) event_trigger(tr_platland)   
                 }
             }
             vsplatform=max(0,other.vspeed)
             walljumpboost=0
         }
     } else {
+        //upside down platforms
+        
+        //find bottom of the platform using a binary search
         oy=y
         search=-16
         repeat (5) {
@@ -820,19 +876,19 @@ if (!dead) {
 
         if (y-vspeed/2+7*dotkid>=ytop) {
             if (other.snap || vspeed-other.vspeed<=0) {
+                //check for platform snap
                 y=ytop+9-7*dotkid
                 if (!place_free(x,y)) {
+                    //crushed!
                     if (other.vspeed>0) {
                         if (global.platform_crush_behavior==1) check_crush()
                         if (global.platform_crush_behavior==2) move_outside_solid(270,20)
                     } else y=oy
                 } else {
-                    oldvspeed=vspeed
+                    //land on it
                     vspeed=min(0,other.vspeed/dt/slomo)
-                    player_land(oldvspeed)
-                    with (other) event_trigger(tr_platland)
-                    onGround=true
-                    djump=true
+                    player_land(1)
+                    with (other) event_trigger(tr_platland)   
                 }
             }
             vsplatform=min(0,other.vspeed)
@@ -861,8 +917,10 @@ if (instance_place(x,y,ScreenWrap)) {
     if (coll) {
         with (coll) {
             if (warpX==noone && warpY==noone && roomTo=room) {
+                //warp isn't set up correctly
                 instance_destroy()
             } else if (roomTo!=room) {
+                //warp!
                 input_clear()
                 if (autosave) autosave_asap()
                 if (warpX==noone && warpY==noone) {
@@ -874,6 +932,7 @@ if (instance_place(x,y,ScreenWrap)) {
             }
         }
     } else {
+        //death.
         if (global.die_outside_room || instance_place(x,y,DieOutside)) kill_player()
     }
 }
@@ -883,8 +942,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//room start
 if (!is_ingame()) {
+    //not in a game room!
     sound_kind_pitch(1,1)
     instance_destroy()
 }
@@ -900,7 +959,7 @@ script_execute(global.player_skin,"step")
 oldspr=sprite_index
 newspr=oldspr
 
-//debug stuff
+//some debug stuff
 deathlist=0
 flashing=0
 #define Other_5

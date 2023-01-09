@@ -132,6 +132,7 @@
 	|event_camera_update
 +player
 	|player_jump
+	|player_capjump
 	|player_shoot
 	|player_land
 	|player_hitwall

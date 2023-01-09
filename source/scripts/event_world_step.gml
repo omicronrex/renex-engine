@@ -54,14 +54,14 @@ if (is_ingame() && room!=global.difficulty_room) {
     update_caption_deathtime()
 }
 
-system_hotkeys()
-
-if (fps_real) cpu_usage=ceil(min(1,room_speed/fps_real)*100)
-
 //debug keys
 if (global.test_run) {
     debug_keys()
 }
+
+system_hotkeys()
+
+if (fps_real) cpu_usage=ceil(min(1,room_speed/fps_real)*100)
 
 if (global.debug_overlay) {
     if (!instance_exists(global.profiler_manager)) {

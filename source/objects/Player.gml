@@ -95,8 +95,6 @@ updating=0
 stepcount=1
 framefac=0
 
-afkk=0
-
 memplat=noone
 
 deathlist=0
@@ -335,8 +333,7 @@ if (!frozen) {
     else if (vflip==1) vspeed=min(vspeed,maxVspeed)
 
     if (!cutscene) {
-        afkk=(afkk+1) mod 4
-        if (key_pressed[key_shoot] || (key[key_shoot] && global.debug_autofire && !afkk)) {
+        if (key_pressed[key_shoot] || (key[key_shoot] && global.debug_autofire_counter==1)) {
             player_shoot()
         }
         if (key_released_early[key_jump]) {

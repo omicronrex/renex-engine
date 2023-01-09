@@ -115,5 +115,9 @@ if (is_ingame()) {
         if (func=6) {savedata_save(true,"debug")}
     }
 
+    if (global.debug_autofire) {
+        global.debug_autofire_counter=(global.debug_autofire_counter+1) mod 4
+    } else global.debug_autofire_counter=0
+
     if (global.debug_hitbox) all.visible=1
 }

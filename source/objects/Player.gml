@@ -290,7 +290,7 @@ if (!frozen) {
         ///vine checks
         onVineL=false
         onVineR=false
-        if (!onPlatform) {
+        if (!onPlatform && !onGround) {
             onVineType="normal"
             if (instance_place(x-1,y,WallJumpL)) onVineL=true
             if (instance_place(x+1,y,WallJumpR)) onVineR=true

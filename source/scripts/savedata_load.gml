@@ -31,10 +31,10 @@ if (global.difficulty_room!=noone && room==rmMenu) {
 
         ds_map_read(global.persistmap,savedata("persistent hashmap"))
 
-        custom_load()
-
         global.onload_trigger=true
     }
+
+    custom_load()
 
     room_goto(savedata("room"))
 }

@@ -4,9 +4,9 @@
 |tile_Crimson
 |tile_corner
 |bgGameMakerBlock
-|bgMegaman
-|bgFortress
 +IWBTG
+	|bgMegaman
+	|bgFortress
 	|bgTree
 	|bgTree2
 	|bgTree3

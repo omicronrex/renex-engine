@@ -59,6 +59,7 @@ Bugs fixed:
 - fixed a y coordinate instability in the new platform code
 - fixed a visual menu bug when deleting a file
 - fixed a crash related to disabling savefile icons
+- fixed a crash when pressing f2 and f3 on the same frame
 - fixed coyote time bugs when coyote time is very long
 - fixed several sprite alignment issues when using old sprites
 - fixed pause menu not using the menu text color option
@@ -103,9 +104,11 @@ Bugs fixed:
 - fixed a minor issue with the volume check screen
 - fixed a bug with blood gravity
 - fixed a leftover blend mode call
+- fixed two minor player sprite facing issues
 
 Minor changes:
 
+- the player object has been massively cleaned up and commented
 - triggergroups will activate instances to fix issues
 - the default left+right option was changed to Right for consistency
 - various scripts have been documented
@@ -124,8 +127,6 @@ Minor changes:
 - guy fire trap is now an invisible object
 - the bouncing cherry object was redone to be more versatile
 - simplified the music sync tool
-- draw begin and draw end no longer ignore the visible flag
-- pipe autotiler looks better when using solid edge mode
 - boss healthbar tool is now generic and accepts any max health value
 - moved the wobbly slope to the example folder so you don't get errors
 - massively optimized savefile thumbnail generation

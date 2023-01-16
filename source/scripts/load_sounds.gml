@@ -8,6 +8,14 @@ if (global.iwbtg_sound_mode) {
 
 sound_global_volume(global.gain)
 
+//search for sound packs
+for (file=file_find_first("data\*.wasd",0);file!="";file=file_find_next()) {
+    sound_add_pack("data\"+file)
+} file_find_close()
+for (file=file_find_first("data\sounds\*.wasd",0);file!="";file=file_find_next()) {
+    sound_add_pack("data\sounds\"+file)
+} file_find_close()
+
 //search sounds folder for subfolders
 c=1 folders[0]="data\sounds\"
 for (file=file_find_first(folders[0]+"*",fa_directory);file!="";file=file_find_next()) {

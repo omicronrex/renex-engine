@@ -17,3 +17,5 @@
 		|rmExBoss
 		|rmClear
 	|rmTemplate
++Tools
+	|rmCreateSoundPackTool

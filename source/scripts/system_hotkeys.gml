@@ -28,8 +28,8 @@ if (is_ingame()) {
 }
 
 //escape key
-if (keyboard_check_pressed(vk_escape)) {
-    if (global.esc_always_quits) {
+if (keyboard_check_pressed(vk_escape) || scheduled_close_button) {
+    if (global.esc_always_quits || scheduled_close_button) {
         event_game_end()
     } else if (is_ingame()) {
         if (global.pause){

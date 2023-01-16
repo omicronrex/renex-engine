@@ -75,7 +75,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-event_game_end()
+scheduled_close_button=1
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

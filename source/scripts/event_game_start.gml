@@ -30,6 +30,7 @@ if (!directory_exists("data")) {
 io_set_roomend_clear(0)
 
 gameclosing=0
+scheduled_close_button=0
 closingvol=1
 closingk=0
 

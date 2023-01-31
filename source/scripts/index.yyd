@@ -235,3 +235,4 @@ opt_screen_scale
 player_capjump
 freeze_player
 unfreeze_player
+try_unstuck

@@ -26,6 +26,7 @@ if (global.difficulty_room!=noone && room==rmMenu) {
         i.image_yscale=savedata("height")
         i.facing=savedata("facing")
         i.vflip=savedata("vflip")
+        with (i) script_execute(global.player_skin,"mask")
 
         difficulty=savedata("diff")
 

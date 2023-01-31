@@ -149,6 +149,7 @@
 	|input_leftright
 	|freeze_player
 	|unfreeze_player
+	|try_unstuck
 +keypick
 	|key_clear
 	|key_add

@@ -35,16 +35,16 @@ var ww,wh,sf;
 ww=window_get_width()
 wh=window_get_height()
 sf=min(ww/global.width,wh/global.height)
-mousex=(window_mouse_get_x()-(ww-global.width*sf)/2)/sf
-mousey=(window_mouse_get_y()-(wh-global.height*sf)/2)/sf
+mousex=window_mouse_get_x()-(ww-global.width*sf)/2
+mousey=window_mouse_get_y()-(wh-global.height*sf)/2
 
-if (mousex>global.width-150 && mousey<50 && mousex<global.width+50 && mousey>-50) {
+if (mousex>global.rw-150 && mousey<50 && mousex<global.rw+50 && mousey>-50) {
     maxalpha=min(1,maxalpha+0.075*50/room_speed)
 } else {
     maxalpha=max(0,maxalpha-0.075*50/room_speed)
 }
 if (mouse_check_button_pressed(mb_left)) {
-    if (mousex>=global.width-45 && mousey<25 && mousex<global.width && mousey>=0) maxclick=1
+    if (mousex>=global.rw-45 && mousey<25 && mousex<global.rw && mousey>=0) maxclick=1
 }
 if (settings("fullscreen")) {
     if (mousex!=ox || mousey!=oy || global.fullscreen_cursor_visible) curalpha=3
@@ -53,7 +53,7 @@ if (settings("fullscreen")) {
     else window_set_cursor(cr_none)
 } else curalpha=1
 
-if (mousex>=global.width-135 && mousey<25 && mousex<global.width && mousey>=0) maxhover=ceil((global.width-mousex)/45)
+if (mousex>=global.rw-45 && mousey<25 && mousex<global.rw && mousey>=0) maxhover+=1
 else maxhover=0
 
 if (maxclick!=0) {

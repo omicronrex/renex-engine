@@ -1,0 +1,8 @@
+name=Segoe UI Semilight
+size=9
+bold=0
+italic=0
+charset=1
+aa_level=3
+range_start=32
+range_end=127

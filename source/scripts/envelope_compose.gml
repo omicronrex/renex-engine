@@ -43,12 +43,24 @@ if ((global.rw!=global.APPwidth || global.rh!=global.APPheight) && settings("fil
 if (maxalpha>0) {
     //draw engine fullscreen button
     texture_set_interpolation(1)
-    d3d_set_projection_ortho(0,0,global.width,global.height,0)
+    d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
 
-    if (maxclick=1) draw_sprite_ext(sprCapButtons,0,global.width,0,1,1,0,merge_color(maxcolor1,$2311e8,0.5),maxalpha)
-    else draw_sprite_ext(sprCapButtons,0,global.width,0,1,1,0,pick(maxhover=1,maxcolor1,$2311e8),maxalpha)
+    if (maxclick=1) draw_sprite_ext(sprCapButtons,0,global.rw,0,1,1,0,merge_color(maxcolor1,$2311e8,0.5),maxalpha)
+    else draw_sprite_ext(sprCapButtons,0,global.rw,0,1,1,0,pick(!!maxhover,maxcolor1,$2311e8),maxalpha)
 
-    draw_sprite_ext(sprCapButtons,1+settings("fullscreen"),global.width,0,1,1,0,maxcolor2,maxalpha)
+    draw_sprite_ext(sprCapButtons,1+settings("fullscreen"),global.rw,0,1,1,0,maxcolor2,maxalpha)
 
     texture_set_interpolation(0)
+
+    if (maxhover>room_speed*0.5) {
+        draw_set_font(fntFullscreen)
+        str=lang(pick(settings("fullscreen"),"fulltip1","fulltip2"))
+        draw_set_alpha((maxhover-room_speed*0.5)/(room_speed/6))
+        w=string_width(str)+4
+        h=string_height(str)+4
+        draw_rectangle_color(mousex-w,mousey+20,mousex,mousey+20+h,$e1ffff,$e1ffff,$e1ffff,$e1ffff,0)
+        draw_rectangle_color(mousex-w,mousey+20,mousex,mousey+20+h,maxcolor1,maxcolor1,maxcolor1,maxcolor1,1)
+        draw_text_1color(mousex-w+2,mousey+20+2,str,0,1)
+        draw_set_alpha(1)
+    }
 }

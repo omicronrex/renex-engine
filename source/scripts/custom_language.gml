@@ -49,6 +49,11 @@ add_string("joyskipkey"," to skip a button")
 //options menu
 add_string("optionsmenu","- Options -")
 
+//ui
+add_string("fulltip1","Fullscreen")
+add_string("fulltip2","Windowed")
+
+
 //in renex engine v1.3.1 the options strings have been moved to their own scripts for better readability
 //check list_options()
 

@@ -1,4 +1,4 @@
-renex engine v1.6.0 build 06 Jan 2023
+renex engine v1.6.0 build 31 Jan 2023
 
 In addition to more WannaFest-related fixes, this release also brings in new
 tools, gimmicks and improved baseline systems for an easier time making games.
@@ -53,6 +53,7 @@ New features:
 Bugs fixed:
 
 - fixed collision with upside down platforms
+- fixed load bug when saving upside down standing on the ceiling
 - fixed dotkid sprite offset when upside down
 - fixed jump refreshers not respecting the default refresher respawn option
 - fixed platform crush behaviors for stationary platforms close to ceilings
@@ -117,6 +118,7 @@ Minor changes:
 - there's a new automatic system for temporary savedata
 - improved joystick setup system messages
 - save masks are now the full tile
+- the default sounds are in a sound pack now
 - cleaned up item-related code and added comments
 - the gravity nang fields are animated
 - debug menu now displays all rooms (not just the ones after the starting room)

@@ -233,3 +233,5 @@ persist_hash
 emit_prop_blood
 opt_screen_scale
 player_capjump
+freeze_player
+unfreeze_player

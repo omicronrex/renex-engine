@@ -147,6 +147,8 @@
 	|emit_prop_blood
 	|warp_to
 	|input_leftright
+	|freeze_player
+	|unfreeze_player
 +keypick
 	|key_clear
 	|key_add

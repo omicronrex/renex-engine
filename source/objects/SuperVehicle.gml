@@ -50,7 +50,7 @@ applies_to=self
 active=1
 
 lock_controls()
-frozen=1
+freeze_player()
 passenger.visible=0
 #define Trigger_Vehicle Dismount
 /*"/*'/**//* YYD ACTION
@@ -67,6 +67,6 @@ if (instance_exists(passenger)) {
 }
 
 unlock_controls()
-frozen=0
+unfreeze_player()
 
 active=0

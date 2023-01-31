@@ -51,13 +51,13 @@ repeat (c-1) {c-=1
 }
 
 //load avoidance folder as double streams
-sound_add_directory_ext("\data\music\avoidance\",".ogg",3,1,"layer1_")
-sound_add_directory_ext("\data\music\avoidance\",".ogg",3,1,"layer2_")
-sound_add_directory_ext("\data\music\avoidance\",".mp3",3,1,"layer1_")
-sound_add_directory_ext("\data\music\avoidance\",".mp3",3,1,"layer2_")
-sound_add_directory_ext("\data\music\avoidance\",".mod",3,1,"layer1_")
-sound_add_directory_ext("\data\music\avoidance\",".mod",3,1,"layer2_")
-sound_add_directory_ext("\data\music\avoidance\",".s3m",3,1,"layer1_")
-sound_add_directory_ext("\data\music\avoidance\",".s3m",3,1,"layer2_")
+sound_add_directory_ext("\data\music\avoidance\",".ogg",1,1,"layer1_")
+sound_add_directory_ext("\data\music\avoidance\",".ogg",1,1,"layer2_")
+sound_add_directory_ext("\data\music\avoidance\",".mp3",1,1,"layer1_")
+sound_add_directory_ext("\data\music\avoidance\",".mp3",1,1,"layer2_")
+sound_add_directory_ext("\data\music\avoidance\",".mod",1,1,"layer1_")
+sound_add_directory_ext("\data\music\avoidance\",".mod",1,1,"layer2_")
+sound_add_directory_ext("\data\music\avoidance\",".s3m",1,1,"layer1_")
+sound_add_directory_ext("\data\music\avoidance\",".s3m",1,1,"layer2_")
 
 custom_sound_properties()

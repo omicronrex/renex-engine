@@ -39,13 +39,6 @@ curvol=inch(curvol,cursong,0.2)
 
 sound_volume(song[0],1-curvol)
 sound_volume(song[1],curvol)
-#define Keyboard_32
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-sleep(17)
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -68,13 +61,13 @@ if (BGM=="") {
     exit
 }
 
-song[0]=sound_play("layer1_"+BGM)
-song[1]=sound_play_ex("layer2_"+BGM,0)
+song[0]=sound_play_ex_layer("layer1_"+BGM,0)
+song[1]=sound_play_ex_layer("layer2_"+BGM,0)
 
 cursong=0
 curvol=0
 
-length=sound_get_length(song)
+length=sound_get_length("layer1_"+BGM)
 
 lenframe=length*50
 #define Other_5

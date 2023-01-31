@@ -25,7 +25,7 @@ if (is_ingame()) {
         }
     }
 
-    with (Player) if (!place_free(x,y)) if (!try_unstuck()) with (PlayerStart) move_player(x,y,0)
+    with (Player) if (!place_free(x,y)) if (!try_unstuck()) with (instance_nearest(x,y,PlayerStart)) move_player(x,y,0)
 
     event_world_endstep()
 } else {

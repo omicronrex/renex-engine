@@ -20,3 +20,5 @@ if (application_surface!=noone) surface_free(application_surface) application_su
 if (dequanto_surface!=noone) surface_free(dequanto_surface) dequanto_surface=noone
 
 dx8_resize_buffer(global.rw,global.rh)
+
+global.deq_fac=median(2,round(max(global.rw/global.width,global.rh/global.height)),8)

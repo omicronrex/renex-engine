@@ -19,15 +19,9 @@ settings("screenscale",min(settings("screenscale"),global.dmaxscale))
 World.alarm[2]=1
 
 global.deq_fac=2
-if (global.dw/global.width>3 || global.dh/global.height>3) {
-    //on a 4k monitor, we use a 3x trilinear filter instead of 2x
-    //normally, 2x is enough for crisp pixels in fullscreen
-    global.deq_fac=3
-}
-
 global.APPwidth=global.width
 global.APPheight=global.height
-global.APPfilter=true
+global.APPfilter=false
 
 //we create this at runtime to make sure that its events will
 //always execute last, which prevents "mystery issues".

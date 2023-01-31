@@ -19,12 +19,12 @@ with (PauseMenu) event_user(0)
 
 event_draw_gui()
 
-hastofilter=(settings("fullscreen") || frac(settings("screenscale"))!=0)
+hastofilter=(settings("fullscreen") || frac(settings("screenscale"))!=0 || settings("filter")==2)
 
 if ((global.rw!=global.APPwidth || global.rh!=global.APPheight) && settings("filter") && hastofilter) {
     //trilinear filtering
     dequanto_surface=dx8_surface_engage(dequanto_surface,global.APPwidth*global.deq_fac,global.APPheight*global.deq_fac)
-    texture_set_interpolation(global.APPfilter)
+    texture_set_interpolation(global.APPfilter || settings("filter")==2)
     draw_surface_stretched(application_surface,0,0,global.APPwidth*global.deq_fac,global.APPheight*global.deq_fac)
     surface_reset_target()
     d3d_set_projection_ortho(0,0,global.rw,global.rh,0)

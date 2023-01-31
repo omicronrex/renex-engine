@@ -10,7 +10,7 @@ switch (argument0) {
             sound_play_option("sndDJump")
             var h; if (global.key_pressed[key_jump]) h=1
             else h=global.key_pressed[key_right]-global.key_pressed[key_left]
-            settings("filter",!settings("filter"))
+            settings("filter",modwrap(settings("filter")+h,0,3))
             update_fullscreen()
         }
     }break
@@ -18,7 +18,7 @@ switch (argument0) {
         return "Scaling Filter"
     }break
     case opt_value: {
-        return pick(settings("filter"),"Nearest","Trilinear")
+        return pick(settings("filter"),"None","Sharp","Smooth")
     }break
     case opt_end:{
     }break

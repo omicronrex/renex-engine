@@ -391,12 +391,12 @@ if (!frozen) {
 
     //update ground and platform detection
     if (onPlatform) {
-        if (!instance_place(x,y+4*vflip,Platform) && !coyoteTime) {
+        if (!instance_place(x,y+4*vflip+vspeed,Platform) && !coyoteTime) {
             onPlatform=false
         }
     }
     if (onGround) {
-        if (place_free(x,y+vflip) && !instance_place(x,y+4*vflip,Platform) && !coyoteTime) {
+        if (place_free(x,y+vflip+vspeed) && !instance_place(x,y+4*vflip+vspeed,Platform) && !coyoteTime) {
             onGround=false
         }
     }

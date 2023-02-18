@@ -78,57 +78,61 @@
 	|M9Block
 	|M9Trigger
 +Triggers
-	|TriggerGroup
+	+Triggers
+		|Trigger1
+		|Trigger2
+		|Trigger3
+		|Trigger4
+		|Trigger5
+		|Trigger6
+		|Trigger7
+		|Trigger8
+		|Trigger9
+		|Trigger10
+		|Trigger11
+		|Trigger12
+	+Triggered
+		|Triggered1
+		|Triggered2
+		|Triggered3
+		|Triggered4
+		|Triggered5
+		|Triggered6
+		|Triggered7
+		|Triggered8
+		|Triggered9
+		|Triggered10
+		|Triggered11
+		|Triggered12
+	+Trigger Locks
+		|LockedTrigger1
+		|LockedTrigger2
+		|LockedTrigger3
+		|LockedTrigger4
+		|LockedTrigger5
+		|LockedTrigger6
+		|LockedTrigger7
+		|LockedTrigger8
+		|LockedTrigger9
+		|LockedTrigger10
+		|LockedTrigger11
+		|LockedTrigger12
+	+Switches
+		|SwitchRed
+		|SwitchRedWL
+		|SwitchRedWR
+		|SwitchYellow
+		|SwitchYellowWL
+		|SwitchYellowWR
+		|SwitchGreen
+		|SwitchGreenWL
+		|SwitchGreenWR
 	|TrapStop
+	|TriggerGroup
 	|TrapRedirect
 	|AddTrigger
 	|TriggerFree
 	|TriggeredFree
-	|Trigger1
-	|SwitchRed
-	|SwitchRedWL
-	|SwitchRedWR
-	|Trigger2
-	|Trigger3
-	|SwitchYellow
-	|SwitchYellowWL
-	|SwitchYellowWR
-	|Trigger4
-	|SwitchGreen
-	|SwitchGreenWL
-	|SwitchGreenWR
-	|Trigger5
-	|Trigger6
-	|Trigger7
-	|Trigger8
-	|Trigger9
-	|Trigger10
-	|Trigger11
-	|Trigger12
-	|Triggered1
-	|Triggered2
-	|Triggered3
-	|Triggered4
-	|Triggered5
-	|Triggered6
-	|Triggered7
-	|Triggered8
-	|Triggered9
-	|Triggered10
-	|Triggered11
-	|Triggered12
-	|LockedTrigger1
-	|LockedTrigger2
-	|LockedTrigger3
-	|LockedTrigger4
-	|LockedTrigger5
-	|LockedTrigger6
-	|LockedTrigger7
-	|LockedTrigger8
-	|LockedTrigger9
-	|LockedTrigger10
-	|LockedTrigger11
-	|LockedTrigger12
 +Gimmicks
 	+White Dot
 		|WhiteDotEnable

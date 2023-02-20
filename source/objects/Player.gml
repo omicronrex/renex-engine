@@ -803,6 +803,11 @@ action_id=603
 applies_to=self
 */
 if (!dead) {
+    if (vflip==-1) platformOffset=sprite_get_yoffset(mask_index)
+    else platformOffset=sprite_get_height(mask_index)-sprite_get_yoffset(mask_index)
+    if (dotkid) checkOffset=-vspeed/2
+    else checkOffset=0
+
     if (object_other_is_child_of(LiftBlock)) {
         //it's a solid lift block
         x-=hspeed
@@ -838,10 +843,10 @@ if (!dead) {
         ytop=bbox_bottom+1
         y=oy
 
-        if (y-vspeed/2-8*dotkid<=ytop) {
+        if (y-vspeed/2+checkOffset<=ytop) {
             //check for platform snap
             if (other.snap || vspeed-other.vspeed>=0) {
-                y=ytop-9+8*dotkid
+                y=ytop-platformOffset
                 if (!place_free(x,y)) {
                     //crushed!
                     if (other.vspeed<0) {
@@ -873,10 +878,10 @@ if (!dead) {
         ytop=bbox_top
         y=oy
 
-        if (y-vspeed/2+7*dotkid>=ytop) {
+        if (y-vspeed/2+checkOffset>=ytop) {
             if (other.snap || vspeed-other.vspeed<=0) {
                 //check for platform snap
-                y=ytop+9-7*dotkid
+                y=ytop+platformOffset
                 if (!place_free(x,y)) {
                     //crushed!
                     if (other.vspeed>0) {

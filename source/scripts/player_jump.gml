@@ -9,6 +9,7 @@ if (vvvvvv) {
         trigger_broadcast(tr_playerjump)
         coyoteTime=0
         jump_timer=0
+        onGround=false
     }
 } else if (!hang) {
     if (player_can_jump() || instance_place(x,y+vflip,Water1) || instance_place(x,y+vflip,PlatformWater) || instance_place(x,y+vflip,GuyWater) || ladderjump) {
@@ -23,6 +24,7 @@ if (vvvvvv) {
         trigger_broadcast(tr_playerjump)
         coyoteTime=0
         jump_timer=0
+        onGround=false
         if (instance_place(x,y+1,GuyWater)) onfire=false
     } else if (global.debug_jump || (djump<maxjumps || instance_place(x,y+1*vflip,Water2)) && !(beamstate&beam_onejump)) {
         //double jump

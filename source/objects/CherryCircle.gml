@@ -21,6 +21,8 @@ applies_to=self
 
 var i,ct,r,a;
 
+if (cycle_length==0) exit
+
 for (i=0;i<num_cherries;i+=1) {
     ct=time+i/num_cherries
     r=radius
@@ -35,11 +37,11 @@ for (i=0;i<num_cherries;i+=1) {
             r=radius*sin(time*pi*4)
             a=ct*360
         }break
-        case "stutter": {
+        case "chaotic": {
             r=radius
             a=360*dsin(a)
         }break
-        case "chaotic": {
+        case "stutter": {
             r=radius
             a=ct*360+30*dsin(a*num_cherries)
         }break

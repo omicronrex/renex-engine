@@ -29,6 +29,7 @@ applies_to=self
 Draws text at a fixed position in the room.
 Rotation, scale and blend are applied to the text.
 */
+
 //field text: string
 //field font: font
 //field halign: enum(fa_left,fa_center,fa_right)

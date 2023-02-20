@@ -102,8 +102,6 @@ updating=0
 stepcount=1
 framefac=0
 
-memplat=noone
-
 deathlist=0
 flashing=0
 iframes=0

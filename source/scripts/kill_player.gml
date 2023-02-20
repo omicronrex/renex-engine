@@ -1,4 +1,5 @@
-with (Player) if (!dead) {
+if (!object_is_child_of(Player)) with (Player) kill_player()
+else if (!dead) {
     if (room==global.difficulty_room) {
         if (global.diffroom_instantrestart) {
             Player.dead=1

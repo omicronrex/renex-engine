@@ -3,12 +3,12 @@
 //call draw end events
 with (all) if (visible) event_perform(ev_trigger,ev_draw_end)
 
-dx8_make_opaque()
+draw_make_opaque()
 d3d_set_depth(0)
 
 generate_save_thumbnail(0)
 
-application_surface=dx8_surface_engage(application_surface,global.APPwidth,global.APPheight)
+application_surface=surface_set("application_surface",global.APPwidth,global.APPheight)
 
 //this place is where you can add any post-processing effects using the application surface,
 //before the gui events are written to it.
@@ -23,7 +23,7 @@ hastofilter=(settings("fullscreen") || frac(settings("screenscale"))!=0 || setti
 
 if ((global.rw!=global.APPwidth || global.rh!=global.APPheight) && settings("filter") && hastofilter) {
     //trilinear filtering
-    dequanto_surface=dx8_surface_engage(dequanto_surface,global.APPwidth*global.deq_fac,global.APPheight*global.deq_fac)
+    dequanto_surface=surface_set("dequanto_surface",global.APPwidth*global.deq_fac,global.APPheight*global.deq_fac)
     texture_set_interpolation(global.APPfilter || settings("filter")==2)
     draw_surface_stretched(application_surface,0,0,global.APPwidth*global.deq_fac,global.APPheight*global.deq_fac)
     surface_reset_target()

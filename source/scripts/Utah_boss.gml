@@ -51,7 +51,7 @@ if (event="draw") {
 
     d3d_end()
     d3d_set_lighting(0)
-    dx8_reset_projection()
+    d3d_set_projection_default()
 
     draw_set_color($ffffff)
     exit

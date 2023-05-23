@@ -30,7 +30,7 @@ action_id=603
 applies_to=self
 */
 ///delayed buffer resize
-dx8_resize_buffer(global.rw,global.rh)
+window_resize_buffer(global.rw,global.rh)
 window_center()
 #define Step_0
 /*"/*'/**//* YYD ACTION

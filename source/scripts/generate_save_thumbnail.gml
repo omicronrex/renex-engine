@@ -7,7 +7,8 @@ if (global.gen_thumb) {
     global.gen_thumb-=1
     if (global.gen_thumb==0) {
         if (surface_exists(application_surface)) {
-            s=surface_engage(-1,128,96)
+            s=surface_create(128,96)
+            surface_set_target(s)
             texture_set_interpolation(1)
             draw_surface_stretched(application_surface,0,0,128,96)
             texture_set_interpolation(0)

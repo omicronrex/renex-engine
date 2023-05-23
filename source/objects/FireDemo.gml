@@ -34,12 +34,12 @@ time+=2*dt
 
 texture_set_interpolation(1)
 
-s=dx8_surface_engage(s,w,h)
+s=surface_set("utah1",w,h)
 
 for (u=0;u<w;u+=2)
     draw_background_part(bg,u,0,2,h,u,sin((time+u*vamp)*vfac)*voff)
 
-s2=dx8_surface_engage(s2,w,h)
+s2=surface_set("utah2",w,h)
 
 draw_background(bg,0,0)
 draw_surface(s,0,0)
@@ -47,7 +47,7 @@ draw_surface(s,0,0)
 for (v=0;v<h;v+=1)
     draw_surface_part(s,0,v,w,1,sin((time+v*hamp)*hfac)*hoff,v)
 
-s3=dx8_surface_engage(s3,800,608)
+s3=surface_set("utah3",800,608)
 
 draw_surface_stretched_ext(s2,0,0,800,608-128,$ffffff,0.1)
 
@@ -60,7 +60,7 @@ draw_set_blend_mode(bm_add)
 draw_rectangle_color(0,0,800,608,0,0,0,0,0)
 draw_set_blend_mode(0)
 
-dx8_surface_disengage()
+surface_reset()
 
 texture_set_interpolation(0)
 

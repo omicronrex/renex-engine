@@ -16,14 +16,11 @@ if (!debug_mode && keyboard_check_pressed(ord("E")) && keyboard_check(vk_control
 }
 
 target_speed=global.game_speed
-dx8_set_vsync(true)
 
 if (keyboard_check(ord("G"))) {
     target_speed=global.game_speed/5
-    dx8_set_vsync(false)
 } else if (keyboard_check(ord("F"))) {
     target_speed=global.game_speed*5
-    dx8_set_vsync(false)
 }
 
 if (current_speed!=target_speed) {

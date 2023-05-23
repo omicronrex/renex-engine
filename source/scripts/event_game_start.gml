@@ -81,6 +81,8 @@ global.keylist=ds_map_create()
 
 globalvar difficulty;difficulty=0
 
+global.shadermap=ds_map_create()
+
 //one screen frame, in microseconds, with a 5% margin for error
 oneframe=(1000000/display_get_frequency())*0.95
 oldtime=get_timer()
@@ -167,6 +169,8 @@ if (global.test_run) {
 }
 
 custom_init()
+
+shaders_init()
 
 savedata_init()
 

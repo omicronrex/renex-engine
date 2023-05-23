@@ -405,3 +405,11 @@ YokuSpeedChanger
 DumbBugz
 DeadBugz
 PropBlood
+
+DepthHueShift
+DepthShaderReset
+DepthRainbow
+LightingCtrl
+Light
+ShadowVolume
+DepthTint

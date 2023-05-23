@@ -227,3 +227,19 @@
 	|timeline_miku
 	|timeline_miku_front
 	|split_object
++shaders
+	+system
+		|shaders_init
+		|unpack_shader
+	+packed shaders
+		+simple effects
+			|ps2_hueshift
+			|ps2_tint
+			|ps3_rainbow
+		+lighting engine
+			|vs2_shadow
+			|ps3_light
+			|ps2_blur
+	|shader_hueshift
+	|shader_tint
+	|shader_rainbow

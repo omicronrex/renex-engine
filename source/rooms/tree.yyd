@@ -5,7 +5,7 @@
 +Game
 	|rmDifficulty
 	|rmHub
-	+Example (safe to delete)
+	+Example Rooms
 		|rmDemo
 		|rmDemo2
 		|rmBoss1
@@ -15,6 +15,7 @@
 		|rmMikuNew
 		|rmExtra
 		|rmExBoss
+		|rmShaders
 		|rmClear
 	|rmTemplate
 +Tools

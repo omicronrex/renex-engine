@@ -1,5 +1,6 @@
 re_version="renex engine v1.6.0 build 31 Jan 2023"
 lf=chr(13)+chr(10)
+qt=chr(34)
 key_left=0
 key_right=1
 key_up=2

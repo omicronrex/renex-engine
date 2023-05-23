@@ -236,3 +236,16 @@ player_capjump
 freeze_player
 unfreeze_player
 try_unstuck
+
+
+shader_tint
+unpack_shader
+shader_hueshift
+shaders_init
+ps2_hueshift
+ps2_tint
+ps3_rainbow
+shader_rainbow
+vs2_shadow
+ps3_light
+ps2_blur

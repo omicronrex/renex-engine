@@ -410,6 +410,15 @@
 	|CherryCircle
 	|JumpCherry
 	|FruitTrap
++Shaders
+	|DepthHueShift
+	|DepthTint
+	|DepthRainbow
+	|DepthShaderReset
+	+Lighting Engine
+		|LightingCtrl
+		|Light
+		|ShadowVolume
 |PlayerStart
 |Block
 |Platform

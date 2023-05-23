@@ -290,6 +290,7 @@
 	|sprGuyMoon
 	|sprDumbBugz
 	|sprDeadBugz
+	|sprLamp
 +Triggers
 	|sprTriggerGroup
 	|sprAddTrigger

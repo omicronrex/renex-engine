@@ -32,3 +32,6 @@ applies_to=self
 */
 plat=instance_create(x,y,JumpThrough)
 plat.sprite_index=-1
+plat.image_xscale=image_xscale
+plat.image_yscale=image_yscale
+plat.image_angle=image_angle

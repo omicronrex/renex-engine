@@ -35,6 +35,20 @@ Rotation, scale and blend are applied to the text.
 //field halign: enum(fa_left,fa_center,fa_right)
 //field valign: enum(fa_top,fa_middle,fa_bottom)
 
+/*preview
+    if (!FieldDefined("text")) exit
+
+    draw_set_font(font)
+    draw_set_color(image_blend)
+    draw_set_alpha(image_alpha)
+    draw_set_halign(halign)
+    draw_set_valign(valign)
+    draw_text_transformed(x,y,text,image_xscale,image_yscale,image_angle)
+    draw_set_color($ffffff)
+    draw_set_alpha(1)
+    draw_set_halign(0)
+    draw_set_valign(0)
+*/
 angle=image_angle
 xscale=image_xscale
 yscale=image_yscale

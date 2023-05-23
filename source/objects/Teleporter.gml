@@ -26,6 +26,11 @@ applies_to=self
 */
 //field warpCoord: xy
 
+/*preview
+    if (FieldDefined("warpCoord"))
+        draw_sprite(Sprite("sprTeleporter",1),0,warpCoord[0]-16,warpCoord[1]-16)
+*/
+
 warpX=warpCoord[0]
 warpY=warpCoord[1]
 #define Draw_0

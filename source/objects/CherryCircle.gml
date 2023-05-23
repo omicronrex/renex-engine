@@ -63,6 +63,40 @@ applies_to=self
 //field motion_type: enum("circle","figure8","stutter","chaotic")
 //field radius: radius
 
+/*preview
+    if (!FieldDefined("motion_type")) exit
+
+    if (cycle_length==0) time=0
+    else time=(current_time/16)/(cycle_length*50)
+
+    for (i=0;i<num_cherries;i+=1) {
+        ct=time+i/num_cherries
+        r=radius
+        a=ct*360
+
+        switch (motion_type) {
+            case "circle": {
+                r=radius
+                a=ct*360
+            }break
+            case "figure8": {
+                r=radius*sin(time*pi*4)
+                a=ct*360
+            }break
+            case "chaotic": {
+                r=radius
+                a=360*dsin(a)
+            }break
+            case "stutter": {
+                r=radius
+                a=ct*360+30*dsin(a*num_cherries)
+            }break
+        }
+
+        draw_sprite(sprite_index,0,x+lengthdir_x(r,a),y+lengthdir_y(r,a))
+    }
+*/
+
 var i;
 
 for (i=0;i<num_cherries;i+=1) {

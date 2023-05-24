@@ -1,3 +1,26 @@
+renex engine v1.6.1 build 24 May 2023
+
+A minor update with some important maintenance.
+
+- updated the project format to gm82 v5
+- updated the engine to use the new DirectX9 extension
+- added a few example shaders
+- added a freeform floor object based on paths
+- added room editor preview fields for some builtin gimmicks
+
+- fixed a problem with the music in the Miku rooms
+- fixed a minor player jump animation bug
+- fixed top collision for scaled ladders
+- fixed player-platform collision for any platform collision mask
+
+- improved scaling of fullscreen button
+- improved behavior of scaling filters for bigger screens
+- improved organization of trigger objects
+- cleaned up some of the older player code
+- cleaned up the template room
+- if the player is stuck on game load, it's moved to the nearest PlayerStart
+
+--------------------------------------------------------------------------------
 renex engine v1.6.0 build 31 Jan 2023
 
 In addition to more WannaFest-related fixes, this release also brings in new

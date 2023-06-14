@@ -19,11 +19,13 @@ for (file=file_find_first("data\sounds\*.wasd",0);file!="";file=file_find_next()
 //search sounds folder for subfolders
 c=1 folders[0]="data\sounds\"
 for (file=file_find_first(folders[0]+"*",fa_directory);file!="";file=file_find_next()) {
-    folders[c]=folders[0]+file
-    c+=1
+    if (directory_exists(folders[0]+file) && file!="." && file!="..") {
+        folders[c]=folders[0]+file
+        c+=1
+    }
 } file_find_close()
 
-repeat (c-1) {c-=1
+repeat (c) {c-=1
     //sfx (uncompressed, multi instance)
     sound_add_directory(folders[c],".wav",0,1)
     //compressed sfx (decompress on load)
@@ -34,13 +36,13 @@ repeat (c-1) {c-=1
 //search music folder for subfolders
 c=1 folders[0]="data\music\"
 for (file=file_find_first(folders[0]+"*",fa_directory);file!="";file=file_find_next()) {
-    if (file!="avoidance") {
+    if (directory_exists(folders[0]+file) && file!="." && file!=".." && file!="avoidance") {
         folders[c]=folders[0]+file
         c+=1
     }
 } file_find_close()
 
-repeat (c-1) {c-=1
+repeat (c) {c-=1
     //music (compressed, streamed, single instance)
     sound_add_directory(folders[c],".ogg",1,1)
     sound_add_directory(folders[c],".mp3",1,1)

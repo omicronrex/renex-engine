@@ -7,6 +7,6 @@ with (BackgroundDaemon) event_user(0)
 
 //we also make sure all system objects responsible for screen composition are in the right place
 with (BackgroundDaemon) depth=10000001
-with (Ortho) depth=10000000
+with (Ortho) depth=10000002
 with (World) depth=-10000000
 with (global.screen_manager) depth=-10000001

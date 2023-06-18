@@ -10,6 +10,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+event_inherited()
+
 tile=tile_find_anywhere(x,y)
 if (!tile) {
     sprite_index=sprEngineBlock

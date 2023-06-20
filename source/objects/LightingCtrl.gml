@@ -76,14 +76,14 @@ shader_vertex_reset()
 shader_pixel_set(global.lighting_blur_pshader)
 texture_set_interpolation(1)
 d3d_set_alphablend(0)
-repeat (3) {
+i=1 repeat (2) {
     surface_set_target(surf1)
-    shader_pixel_uniform_f("resolution",0,1/h)
+    shader_pixel_uniform_f("resolution",0,i/h)
     draw_surface(surf2,0,0)
     surface_set_target(surf2)
-    shader_pixel_uniform_f("resolution",1/w,0)
+    shader_pixel_uniform_f("resolution",i/w,0)
     draw_surface(surf1,0,0)
-}
+i*=2}
 texture_set_interpolation(0)
 d3d_set_alphablend(1)
 surface_reset_target()

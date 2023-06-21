@@ -18,6 +18,7 @@ application_surface=surface_set("application_surface",global.APPwidth,global.APP
 with (PauseMenu) event_user(0)
 
 event_draw_gui()
+draw_make_opaque()
 
 hastofilter=(settings("fullscreen") || frac(settings("screenscale"))!=0 || settings("filter")==2)
 

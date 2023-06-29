@@ -1,0 +1,45 @@
+The 'default.wasd' sound pack contains the following sounds:
+
+DING: ding block
+m-r-tight: Might is Right but Tight (OG game over)
+sndBlockBreak: mario block sound
+sndBlockBreakYosniper: mario block (low definition)
+sndBlockBreakYuuutu: mario block (low quality)
+sndBlockChange: yoku block from megaman 2
+sndBoing: OG couch
+sndBolt: OG lightning bolt
+sndBossDeath: touhou boss death
+sndBossHit: OG boss hit
+sndButton: genki trigger
+sndCoin: game maker coin
+sndDeath: OG blood splatter
+sndDelfruit: OG delfruit
+sndDJump: OG double jump
+sndGainStar: NANG star get
+sndGrow: mario mushroom
+sndItem: OG item
+sndJump: OG jump
+sndKey: game maker key
+sndLoseStar: NANG star lose
+sndMegaDelfruit: OG delfruit (extended cut)
+sndMetal2: OG metal 2 recording from windows xp
+sndMetal2Short: OG metal 2 (source audio)
+sndSave: genki save
+sndShatter: OG glass shatter
+sndShoot: OG shoot
+sndShootkid: NANG shootkid
+sndShootRefresher: CN3 shoot refresher
+sndShrink: mario pipe
+sndSpikeSwitch: walk the ceiling trigger
+sndStoneSlide2: stock stone slide sound effect
+sndTeleport: game maker zapper
+sndVCoin: V mode coin
+sndVFlip1: V mode flip up
+sndVFlip2: V mode flip down
+sndYoshi: mario yoshi mount
+sndYoshi2: mario yoshi lose
+sndYoshiJump: mario yoshi stomp
+
+in order to extract these sounds, execute this line of code in the debugger:
+
+sound_unpack_pack("data\sounds\default.wasd","data\sounds\")

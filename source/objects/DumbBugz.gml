@@ -7,7 +7,7 @@ applies_to=self
 if (inside_view()) {
     hspeed=choose(-2,2)
     vspeed=choose(-2,2)
-}
+} else speed=0
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
 lib_id=1

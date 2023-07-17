@@ -7,6 +7,7 @@
 	|custom_options
 	|custom_traps
 	|custom_language
+	|gm82room_jtool_table
 +saving
 	|savedata_init
 	|settings_default

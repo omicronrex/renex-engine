@@ -195,7 +195,7 @@ applies_to=self
 input_consume()
 
 //align adjust keys
-if (global.a_d_trick && onGround) {
+if ((global.a_d_trick && onGround) || global.test_run) {
     if (keyboard_check_pressed(ord("A"))) move_player(x-1,y,1)
     if (keyboard_check_pressed(ord("D"))) move_player(x+1,y,1)
 }

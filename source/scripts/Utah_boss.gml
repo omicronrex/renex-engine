@@ -64,6 +64,8 @@ if (event="destroy") {
 
 t+=dt
 
+if (Player.dead) state="won"
+
 if (state="won") {
     gravity=-0.03*dt*dt
     exit
@@ -79,7 +81,7 @@ if (hp<=0) {
         vspeed=-3*dt
         gravity=0.05
         t=0
-    } else if (once_every(50)) {
+    } else if (wait_frames(50)) {
         sound_play("sndBossDeath")
         instance_create(x,y,TouhouDeath)
         repeat (80) instance_create(x+random_range(-20,20),y+random_range(-10,10),GlassShard)
@@ -134,8 +136,8 @@ if (state="menacing") {
     angle2=-lengthdir_x(40,angle)
     x=xstart+irandom_range(-4,4)
     y=ystart+irandom_range(-4,4)
-    if (once_every(4)) effect_create_above(ef_smokeup,tx+random_range(-8,8),ty+random_range(-8,0),choose(0,1),choose($b0b0b0,$c0c0c0,$d0d0d0))
-    if (once_every(170)) {
+    if (wait_frames(4)) effect_create_above(ef_smokeup,tx+random_range(-8,8),ty+random_range(-8,0),choose(0,1),choose($b0b0b0,$c0c0c0,$d0d0d0))
+    if (wait_frames(170)) {
         angle=0
         if (hp<=20) state="spray2"
         else state="spray"
@@ -146,7 +148,7 @@ if (state="menacing") {
 //attack 1
 if (state="spray") {
     angle+=2*dt
-    if (once_every(5)) {
+    if (wait_frames(5)) {
         if (angle>90 && angle<270) effect_create_below(ef_smokeup,tx+random_range(-8,8),ty+random_range(-8,0),choose(0,1),choose($b0b0b0,$c0c0c0,$d0d0d0))
         else effect_create_above(ef_smokeup,tx+random_range(-8,8),ty+random_range(-8,0),choose(0,1),choose($b0b0b0,$c0c0c0,$d0d0d0))
         o=instance_create(tx,ty,Cherry)
@@ -165,7 +167,7 @@ if (state="spray") {
 //attack 1 pinch mode
 if (state="spray2") {
     angle+=4*dt
-    if (once_every(5)) {
+    if (wait_frames(5)) {
         if (angle>90 && angle<270) effect_create_below(ef_smokeup,tx+random_range(-8,8),ty+random_range(-8,0),choose(0,1),choose($b0b0b0,$c0c0c0,$d0d0d0))
         else effect_create_above(ef_smokeup,tx+random_range(-8,8),ty+random_range(-8,0),choose(0,1),choose($b0b0b0,$c0c0c0,$d0d0d0))
         o=instance_create(tx,ty,Cherry)
@@ -177,7 +179,7 @@ if (state="spray2") {
         o.image_yscale=1-tz/400
     }
     //circle
-    if (once_every(30)) {
+    if (wait_frames(30)) {
         for (i=0;i<360;i+=20) {
             //if (angle>90 && angle<270) effect_create_below(ef_explosion,tx+random_range(-8,8),ty+random_range(-8,8),0,choose($b0b0b0,$c0c0c0,$d0d0d0))
             //else effect_create_above(ef_explosion,tx+random_range(-8,8),ty+random_range(-8,8),0,choose($b0b0b0,$c0c0c0,$d0d0d0))

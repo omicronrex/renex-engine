@@ -1,13 +1,17 @@
+//an example of how to recreate a classic fangame boss,
+//using the engine's builtin boss system.
+
 if (event_type==ev_create) {
     name="Big Cherry"
-    subtitle="Celebrate100"
-
+    subtitle="Celebrate100" 
     hp=150
 
     lock_controls()
     sound_stop_music()
-
+    
     state="starting"
+    vulnerable=false
+    flash=0
 
     image_speed=0
     image_xscale=4
@@ -28,33 +32,33 @@ if (event_type==ev_destroy) {
 if (event_type==ev_step) {
     //do damage
     with (instance_place(x,y,Player)) kill_player()
-
-    //check victory condition
-    if (Player.dead) state="won"
+    
+    //check victory condition      
+    if (Player.dead) state="won"       
     if (state=="won") {
         path_speed=0
         exit
     }
-
+    
     //take damage
-    with (instance_place(x,y,Bullet)) with (other) {
-        if (!flash) {
-            flash=10
-            flashtime=6
+    if (vulnerable) with (instance_place(x,y,Bullet)) with (other) {
+        hp-=10
+        if (hp<=0) {
+            //defeated
+            sound_play("sndDeath")
+            instance_destroy()
+        } else {
             sound_play("sndBossHit")
-            hp-=10
+            vulnerable=false
+            flash=10
+            flashtime=6            
             if (hp<=50) {
                 state="pinch"
             }
-            if (hp<=0) {
-                //defeated
-                sound_play("sndDeath")
-                instance_destroy()
-            }
-        }
+        }                                                       
         instance_destroy_other()
-    }
-
+    } 
+    
     //flash
     if (flash) {
         flashtime-=dt
@@ -68,7 +72,7 @@ if (event_type==ev_step) {
             }
         }
     }
-
+    
     //main boss state machine
     {
         //introduction
@@ -76,18 +80,20 @@ if (event_type==ev_step) {
             if (wait_frames(60)) {
                 unlock_controls()
                 play_bg_music("ddplastboss",1)
+                vulnerable=true
                 path_start(pBoss10F,2*dt,path_action_restart,true)
                 state="active"
+                reset_frame_wait()
             }
         }
-
+        
         //attack!
         if (state=="active") {
             if (wait_frames(90)) {
                 instance_create_moving(x,y,Cherry,5*dt,point_direction(x,y,Player.x,Player.y))
             }
         }
-
+        
         //pinch mode
         if (state=="pinch") {
             if (wait_frames(90)) {

@@ -353,7 +353,7 @@
 +Bosses
 	+Big Cherry
 		|BigCherry
-		|BigCherryBlue
+		|BigCherryBlueProjectile
 	+Utah
 		|Utah
 		|FireDemo
@@ -366,7 +366,8 @@
 		|MikuBigCherryBlue
 		|MikuBounceCherry
 	|BossIntroduction
-	|BossHealthbar
+	|BossHealthbarClassic
+	|BossHealthbarNew
 	|BossWarp
 +Tools
 	|DifficultyWarp

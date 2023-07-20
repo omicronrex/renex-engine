@@ -228,8 +228,8 @@ SolidItemBlockGlobalItem2
 SolidItemBlockGlobalItem3
 SolidItemBlockGlobalItem4
 BigCherry
-BossHealthbar
-BigCherryBlue
+BossHealthbarClassic
+BigCherryBlueProjectile
 
 Utah
 FireDemo
@@ -413,3 +413,4 @@ LightingCtrl
 Light
 ShadowVolume
 DepthTint
+BossHealthbarNew

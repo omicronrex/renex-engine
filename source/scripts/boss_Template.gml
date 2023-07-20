@@ -1,15 +1,19 @@
+//a boss template using the engine's builtin boss system.
+//when making your own boss, duplicate and edit this script.
+
 if (event_type==ev_create) {
     //initialize the boss and create any resources needed by it
     name="Template Boss"
-    subtitle="renex engine"
+    subtitle="renex engine" 
     hp=10
 
     lock_controls()
     sound_stop_music()
-
+    
     state="starting"
     vulnerable=false
-
+    flash=0
+    
     image_speed=dt/10
     exit
 }
@@ -28,9 +32,9 @@ if (event_type==ev_destroy) {
 if (event_type==ev_step) {
     //do damage
     with (instance_place(x,y,Player)) kill_player()
-
-    //check victory condition
-    if (Player.dead) state="won"
+    
+    //check victory condition      
+    if (Player.dead) state="won"       
     if (state=="won") {
         speed=0
         exit
@@ -47,8 +51,8 @@ if (event_type==ev_step) {
             sound_play("sndBossHit")
             vulnerable=false
             flash=50
-            image_alpha=0.5
-        }
+            image_alpha=0.5                         
+        } 
         instance_destroy_other()
     }
 
@@ -59,7 +63,7 @@ if (event_type==ev_step) {
             vulnerable=true
             image_alpha=1
         }
-    }
+    }     
 
     //main boss state machine
     {
@@ -72,7 +76,7 @@ if (event_type==ev_step) {
                 state="active"
             }
         }
-
+        
         //attack!
         if (state=="active") {
             if (wait_frames(90)) {

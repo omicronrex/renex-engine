@@ -4,30 +4,35 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound_kind_stop(1)
+if (!variable_local_exists("boss_script")) {
+    show_error("Error initializing engine boss child: "+object_get_name(object_index)+chr_crlf+chr_crlf+"variable boss_script not set to a script index.",0)
+    instance_destroy()
+    exit
+}
+
+if (!script_exists(boss_script)) {
+    show_error("Error initializing engine boss child: "+object_get_name(object_index)+chr_crlf+chr_crlf+"variable boss_script set to a nonexisting script index.",0)
+    instance_destroy()
+    exit
+}
 
 if (savedata("boss"+object_get_name(object_index))) {
-    script=noone
+    cleanup=true
     instance_destroy()
 } else {
-    script=execute_string("return "+object_get_name(object_index)+"_boss")
-    hp=50
-    t=0
-    flash=0
+    cleanup=false
+
+    boss_time=0
     vulnerable=false
-    hitcount=0
 
-    state="begin"
+    script_execute(boss_script)
 
-    event="create"
-    script_execute(script)
-
-    hp=maxhp
+    maxhp=hp
 
     o=instance_create(x,y,BossIntroduction)
     o.owner=id
     o.str=name
-    o.str2=sur
+    o.str2=subtitle
 }
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
@@ -35,11 +40,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (script!=noone) {
-    savedata("boss"+object_get_name(object_index),true)
-    sound_kind_stop(1)
-    event="destroy"
-    script_execute(script)
+if (boss_script!=noone) {
+    if (!cleanup) savedata("boss"+object_get_name(object_index),true)
+    script_execute(boss_script)
 }
 #define Step_0
 /*"/*'/**//* YYD ACTION
@@ -47,30 +50,29 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (Player.dead) state="won"
-event="step"
-script_execute(script)
+boss_time+=1
+script_execute(boss_script)
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-event="step"
-script_execute(script)
+event_step()
 #define Other_5
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-event="destroy"
-script_execute(script)
+if (boss_script!=noone) {
+    cleanup=true
+    instance_destroy()
+}
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-event="draw"
-script_execute(script)
+script_execute(boss_script)

@@ -55,7 +55,8 @@ rect
 
 
 set_loop_point
-once_every
+
+wait_frames
 
 event_game_start
 event_room_start
@@ -75,9 +76,9 @@ key_clear
 key_add
 key_use
 key_draw
-BigCherry_boss
-Utah_boss
-template_boss
+boss_BigCherry
+boss_Utah
+boss_Template
 
 
 
@@ -250,3 +251,6 @@ vs2_shadow
 ps3_light
 ps2_blur
 gm82room_jtool_table
+sound_stop_music
+boss_initialize
+reset_frame_wait

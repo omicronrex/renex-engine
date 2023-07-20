@@ -1,5 +1,5 @@
 ///shader_unpack(shader)
-var shader,file;
+var shader;
 
 if (!ds_map_exists(global.shadermap,argument0)) {
     shader=script_execute(argument0)

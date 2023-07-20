@@ -254,6 +254,7 @@
 	|ConveyorRight
 	|JumpBlock
 	|PushBlock
+	|LongPushBlock
 	|PushBlockSave
 	|LiftBlock
 	|MoveBlock

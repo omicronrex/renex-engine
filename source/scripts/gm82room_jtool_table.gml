@@ -22,7 +22,7 @@
     16=WallJumpL
     17=WallJumpR
     18=KillBlock
-    19=NiseBlock
+    19=BulletBlock
     20=PlayerStart
     21=Warp
     22=JumpRefresher

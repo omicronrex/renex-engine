@@ -57,7 +57,7 @@ sprDynamicPlatform
 sprJumpThrough
 sprBlock
 sprSlipBlock
-sprNiseBlock
+sprBulletBlock
 sprMiniBlock
 sprKillBlock
 sprSlopeTL

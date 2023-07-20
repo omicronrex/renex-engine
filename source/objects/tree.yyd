@@ -261,7 +261,7 @@
 	|DingBlock
 	|MiniBlock
 	|SlipBlock
-	|NiseBlock
+	|BulletBlock
 	|FakeBlock
 	|BreakBlock
 	|DemoBlock

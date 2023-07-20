@@ -36,23 +36,23 @@ action_id=603
 applies_to=self
 */
 speed *= 0.995
-if (instance_place(x, y, Block) || instance_place(x, y, NiseBlock))
+if (instance_place(x, y, Block) || instance_place(x, y, BulletBlock))
 {
     x -= hspeed
     y -= vspeed
-    if (instance_place(x, (y + abs(vspeed)), Block) || instance_place(x, (y + abs(vspeed)), NiseBlock))
+    if (instance_place(x, (y + abs(vspeed)), Block) || instance_place(x, (y + abs(vspeed)), BulletBlock))
     {
         move_contact_solid(270, abs(vspeed))
         vspeed = ((-vspeed) * 0.8)
         y += vspeed
     }
-    else if (instance_place(x, (y - abs(vspeed)), Block) || instance_place(x, (y - abs(speed)), NiseBlock))
+    else if (instance_place(x, (y - abs(vspeed)), Block) || instance_place(x, (y - abs(speed)), BulletBlock))
     {
         move_contact_solid(90, abs(vspeed))
         vspeed = ((-vspeed) * 0.8)
         y += vspeed
     }
-    if (instance_place((x + hspeed), y, Block) || instance_place((x + hspeed), y, NiseBlock))
+    if (instance_place((x + hspeed), y, Block) || instance_place((x + hspeed), y, BulletBlock))
     {
         if (hspeed > 0)
             move_contact_solid(0, hspeed)

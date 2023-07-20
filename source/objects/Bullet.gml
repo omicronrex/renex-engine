@@ -6,7 +6,7 @@ applies_to=self
 */
 if (instance_exists(Player)) alarm[0]=40/(Player.slomo*dt)
 else alarm[0]=40/dt
-dead=instance_place(x,y,NiseBlock)
+dead=instance_place(x,y,BulletBlock)
 
 storex=1
 storey=1
@@ -44,7 +44,7 @@ image_angle=storea
 
 //we schedule bullet destroy to make sure it hits things on the frame it hits a wall
 if (dead) instance_destroy()
-#define Collision_NiseBlock
+#define Collision_BulletBlock
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=203

@@ -43,7 +43,7 @@ if (moveplayer) {
         move_player(x+hmove,y+other.vspeed,1)
     }
 }
-#define Collision_NiseBlock
+#define Collision_BulletBlock
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=113

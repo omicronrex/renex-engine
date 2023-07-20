@@ -79,7 +79,7 @@
 	|sprPlatform9slice
 	|sprBlock
 	|sprSlipBlock
-	|sprNiseBlock
+	|sprBulletBlock
 	|sprMiniBlock
 	|sprKillBlock
 	|sprDieOutside

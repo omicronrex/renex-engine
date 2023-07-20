@@ -10,5 +10,5 @@ if (other.dotkid) {
     change_skin(skin_default)
     other.x=x+16
     other.y=y+16
-    DotkidKiller.sprite_index=sprNiseBlock
+    DotkidKiller.sprite_index=sprBulletBlock
 }

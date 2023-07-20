@@ -152,7 +152,7 @@ LiftBlock
 MoveBlock
 MiniBlock
 SlipBlock
-NiseBlock
+BulletBlock
 KillBlock
 SlopeTL
 SlopeTR

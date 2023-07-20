@@ -254,3 +254,4 @@ sound_stop_music
 sound_set_loop_points
 boss_initialize
 reset_frame_wait
+position_free

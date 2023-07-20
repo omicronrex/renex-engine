@@ -87,6 +87,8 @@
 
 
 //player settings
+    //disable weird keyboard quirks like cactusing or cancels
+    global.disable_cancels=false
     //enable simulated studio 1.4.9999 vdiet (shorter hitbox when y ends in .50)
     global.valign05_vdiet=true
     //save the player's fractionary valign

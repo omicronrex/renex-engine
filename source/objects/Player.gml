@@ -372,14 +372,14 @@ if (!frozen) {
         if (key_pressed[key_shoot] || (key[key_shoot] && global.debug_autofire_counter==1)) {
             player_shoot()
         }
-        if (key_released_early[key_jump]) {
+        if (key_released_early[key_jump] && !global.disable_cancels) {
             //this is used to cactus
             player_capjump()
         }
         if (key_pressed[key_jump]) {
             player_jump()
-        }
-        if (key_released[key_jump]) {
+        } 
+        if (key_released[key_jump] && (!key_pressed[key_jump] || !global.disable_cancels)) {
             player_capjump()
         }
         if (key_pressed[key_die]) {

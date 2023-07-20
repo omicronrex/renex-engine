@@ -50,7 +50,7 @@ var i;
 
 if (bg_showcolor) {
     draw_clear(window_get_color())
-    if (is_ingame()) rect(0,0,room_width,room_height,background_color,1)
+    if (is_ingame()) draw_rect(0,0,room_width,room_height,background_color)
     else draw_clear(background_color)
 }
 

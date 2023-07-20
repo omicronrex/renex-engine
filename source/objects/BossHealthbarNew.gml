@@ -14,6 +14,6 @@ applies_to=self
 alpha=min(1,alpha+dt/30)
 
 with (Boss) {
-    rect(x-50,bbox_top-17,100,6,0,other.alpha)
-    rect(x-49,bbox_top-16,98*hp/maxhp,4,$ff,other.alpha)
+    draw_rect(x-50,bbox_top-17,100,6,0,other.alpha)
+    draw_rect(x-49,bbox_top-16,98*hp/maxhp,4,$ff,other.alpha)
 }

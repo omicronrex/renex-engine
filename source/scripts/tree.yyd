@@ -47,7 +47,6 @@
 		|inside_view
 		|filename_valid
 		|current_date_filename
-		|position_free
 	+input
 		+joysticks
 			|joy_deadzone
@@ -77,7 +76,6 @@
 		|window_set_resolution
 		|fix_backgrounds
 	+drawing
-		|rect
 		|draw_sign_text
 		|draw_text_outline
 		|draw_sprite_hueshift

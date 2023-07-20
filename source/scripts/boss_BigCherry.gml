@@ -69,6 +69,7 @@ if (event_type==ev_step) {
             } else {
                 visible=true
                 flash-=1
+                if (!flash) vulnerable=true
             }
         }
     }

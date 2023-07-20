@@ -33,7 +33,7 @@ switch (argument0) {
             //slider option
             cur_value=settings("example")
             h=global.input_h/100
-            settings("example",median(0,cur_value+h,1))
+            settings("example",saturate(cur_value+h))
         }
     }break
     case opt_text: {

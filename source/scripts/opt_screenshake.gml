@@ -10,7 +10,7 @@ switch (argument0) {
     case opt_step:{
         if (global.input_h!=0) {
             if (volumetimer>25 || !(volumetimer mod 5)) {
-                settings("shakeamount",median(0,settings("shakeamount")+global.input_h*0.01,1))
+                settings("shakeamount",saturate(settings("shakeamount")+global.input_h*0.01))
             }
             volumetimer+=1
         } else volumetimer=0

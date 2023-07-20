@@ -42,7 +42,7 @@ h=global.key[key_up]-global.key[key_down]
 
 if (h!=0) {
     if (volumetimer>volumedelay || !(volumetimer mod volumefpi)) {
-        settings("sfxvol",median(0,settings("sfxvol")+h*0.01,1))
+        settings("sfxvol",saturate(settings("sfxvol")+h*0.01))
     }
     volumetimer+=1
 } else volumetimer=0

@@ -22,7 +22,7 @@ applies_to=self
     depth=Field("depth")
     shader_pixel_set(ShaderFromPack("ps2_tint"))
     shader_pixel_uniform_color("colorto",Field("color"))
-    shader_pixel_uniform_f("amount",median(0,Field("amount"),100)/100)
+    shader_pixel_uniform_f("amount",saturate(Field("amount")/100))
 */
 #define Draw_0
 /*"/*'/**//* YYD ACTION

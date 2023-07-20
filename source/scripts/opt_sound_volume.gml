@@ -11,7 +11,7 @@ switch (argument0) {
     case opt_step:{
         if (global.input_h!=0) {
             if (volumetimer>25 || !(volumetimer mod 5)) {
-                settings("sfxvol",median(0,settings("sfxvol")+global.input_h*0.01,1))
+                settings("sfxvol",saturate(settings("sfxvol")+global.input_h*0.01))
             }
             volumetimer+=1
             sound_set_sfx_volume(1)

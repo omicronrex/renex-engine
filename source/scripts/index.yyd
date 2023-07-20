@@ -54,7 +54,6 @@ update_fullscreen
 rect
 
 
-set_loop_point
 
 wait_frames
 
@@ -207,7 +206,7 @@ construct
 opt_savevalign
 custom_save
 custom_load
-set_default_volume
+sound_set_starting_volume
 opt_screenshake
 camera_angle
 camera_smooth
@@ -252,5 +251,6 @@ ps3_light
 ps2_blur
 gm82room_jtool_table
 sound_stop_music
+sound_set_loop_points
 boss_initialize
 reset_frame_wait

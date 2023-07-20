@@ -201,8 +201,8 @@
 	|load_sounds
 	|play_bg_music
 	|sound_play_slomo
-	|set_loop_point
-	|set_default_volume
+	|sound_set_starting_volume
+	|sound_set_loop_points
 	|sound_play_option
 	|sound_stop_music
 	|sound_set_music_volume

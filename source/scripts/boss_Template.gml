@@ -1,6 +1,11 @@
 //a boss template using the engine's builtin boss system.
 //when making your own boss, duplicate and edit this script.
 
+if (event_type==ev_other && event_number==ev_room_start) {
+    //read values from any object fields defined for the boss
+    exit
+}
+
 if (event_type==ev_create) {
     //initialize the boss and create any resources needed by it
     name="Template Boss"

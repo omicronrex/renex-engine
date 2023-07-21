@@ -1,6 +1,10 @@
 //an example of a more complex boss with states and phase changes,
 //using the builtin boss system in the engine.
 
+if (event_type==ev_other && event_number==ev_room_start) {
+    exit
+}
+
 if (event_type==ev_create) {
     name="Utah"
     subtitle="renex engine"

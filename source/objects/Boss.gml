@@ -58,6 +58,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+script_execute(boss_script)
 event_step()
 #define Other_5
 /*"/*'/**//* YYD ACTION

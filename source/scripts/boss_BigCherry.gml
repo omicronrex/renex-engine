@@ -1,6 +1,10 @@
 //an example of how to recreate a classic fangame boss,
 //using the engine's builtin boss system.
 
+if (event_type==ev_other && event_number==ev_room_start) {
+    exit
+}
+
 if (event_type==ev_create) {
     name="Big Cherry"
     subtitle="Celebrate100" 

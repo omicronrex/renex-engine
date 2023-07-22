@@ -1,5 +1,5 @@
 //build the game window.
-var hastofilter,filter,surface,w,h,str,dx;
+var hastofilter,filter,surface,w,h,str,dx,dy;
 
 //call draw end events
 with (all) if (visible) event_perform(ev_trigger,ev_draw_end)
@@ -58,13 +58,15 @@ if (settings("fullscreen")) {
 
 if (maxalpha>0) {
     //draw engine fullscreen button
+    d3d_set_projection_ortho(0,0,global.ww,global.wh,0)
     texture_set_interpolation(1)
 
-    dx=global.woffset+global.rw
+    dx=floor(global.woffset+global.rw)
+    dy=0
 
-    if (maxclick=1) draw_sprite_ext(sprCapButtons,0,dx,0,1,1,0,merge_color(maxcolor1,$2311e8,0.5),maxalpha)
-    else draw_sprite_ext(sprCapButtons,0,dx,0,1,1,0,pick(!!maxhover,maxcolor1,$2311e8),maxalpha)
-    draw_sprite_ext(sprCapButtons,1+settings("fullscreen"),dx,0,1,1,0,maxcolor2,maxalpha)
+    if (maxclick=1) draw_sprite_ext(sprCapButtons,0,dx,dy,1,1,0,merge_color(maxcolor1,$2311e8,0.5),maxalpha)
+    else draw_sprite_ext(sprCapButtons,0,dx,dy,1,1,0,pick(!!maxhover,maxcolor1,$2311e8),maxalpha)
+    draw_sprite_ext(sprCapButtons,1+settings("fullscreen"),dx,dy,1,1,0,maxcolor2,maxalpha)
 
     texture_set_interpolation(0)
 
@@ -74,11 +76,12 @@ if (maxalpha>0) {
         draw_set_alpha((maxhover-room_speed*0.5)/(room_speed/6))
         w=string_width(str)+4
         h=string_height(str)+4
-        dx=mousex+global.woffset
+        dx=floor(mousex+global.woffset)
+        dy=floor(mousey)
 
-        draw_rectangle_color(dx-w,mousey+20,dx,mousey+20+h,$e1ffff,$e1ffff,$e1ffff,$e1ffff,0)
-        draw_rectangle_color(dx-w,mousey+20,dx,mousey+20+h,maxcolor1,maxcolor1,maxcolor1,maxcolor1,1)
-        draw_text_1color(dx-w+2,mousey+20+2,str,0,1)
+        draw_rectangle_color(dx-w,dy+20,dx,dy+20+h,$e1ffff,$e1ffff,$e1ffff,$e1ffff,0)
+        draw_rectangle_color(dx-w,dy+20,dx,dy+20+h,maxcolor1,maxcolor1,maxcolor1,maxcolor1,1)
+        draw_text_1color(dx-w+2,dy+20+2,str,0,1)
         draw_set_alpha(1)
     }
 }

@@ -42,6 +42,7 @@ if (event_type==ev_step) {
     if (Player.dead) state="won"       
     if (state=="won") {
         speed=0
+        image_alpha=1
         exit
     }
 

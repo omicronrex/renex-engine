@@ -4,8 +4,8 @@
 
 var dx,dy,xs,ys,ang,col,c1,c2;
 
-dx=argument0
-dy=argument1
+dx=round(argument0)-0.5
+dy=round(argument1)-0.5
 xs=argument2
 ys=argument3
 ang=argument4

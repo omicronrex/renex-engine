@@ -41,6 +41,7 @@ if (event_type==ev_step) {
     if (Player.dead) state="won"       
     if (state=="won") {
         path_speed=0
+        visible=true
         exit
     }
     

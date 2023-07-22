@@ -10,7 +10,7 @@ if (event_type==ev_create) {
     subtitle="renex engine"
     hp=40
 
-    play_bg_music("ddpboss",1)
+    sound_play_music("ddpboss",1)
 
     //teapot stuff
     model=d3d_model_create_and_load("data\teapot.g3z")

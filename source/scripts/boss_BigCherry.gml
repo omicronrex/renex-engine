@@ -84,7 +84,7 @@ if (event_type==ev_step) {
         if (state=="starting") {
             if (wait_frames(60)) {
                 unlock_controls()
-                play_bg_music("ddplastboss",1)
+                sound_play_music("ddplastboss",1)
                 vulnerable=true
                 path_start(pBoss10F,2*dt,path_action_restart,true)
                 state="active"

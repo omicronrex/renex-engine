@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-play_bg_music("",0)
+sound_stop_music()
 
 script_execute(script,"create")
 

@@ -112,7 +112,7 @@ add_difficulty
 flip_player
 
 
-play_bg_music
+sound_play_music
 lock_controls
 unlock_controls
 custom_traps

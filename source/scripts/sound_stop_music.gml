@@ -1,1 +1,1 @@
-play_bg_music("",0)
+sound_play_music("",0)

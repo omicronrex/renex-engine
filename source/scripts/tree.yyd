@@ -201,7 +201,7 @@
 	|weapon_shootkid
 +sound
 	|load_sounds
-	|play_bg_music
+	|sound_play_music
 	|sound_play_slomo
 	|sound_set_starting_volume
 	|sound_set_loop_points

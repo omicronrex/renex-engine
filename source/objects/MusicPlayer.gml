@@ -16,7 +16,7 @@ with (MusicPlayerSection) if (inside_view()) {
     exit
 }
 
-play_bg_music(BGM,loop)
+sound_play_music(BGM,loop)
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

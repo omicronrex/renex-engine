@@ -76,7 +76,7 @@ if (event_type==ev_step) {
         if (state=="starting") {
             if (wait_frames(60)) {
                 unlock_controls()
-                play_bg_music("ddpboss",1)
+                sound_play_music("ddpboss",1)
                 vulnerable=true
                 state="active"
             }

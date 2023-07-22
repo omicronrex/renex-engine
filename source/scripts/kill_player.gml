@@ -36,7 +36,7 @@ else if (!dead) {
         } else {
             if (global.gameover_music==0) {
                 //jingle option
-                if (global.restarting_music) play_bg_music("",0)
+                if (global.restarting_music) sound_stop_music()
                 else sound_kind_pause(1)
                 sound_play("m-r-tight")
             } else if (global.gameover_music==1) {

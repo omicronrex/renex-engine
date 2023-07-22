@@ -63,6 +63,7 @@ if (maxclick!=0) {
         if (maxclick) {
             settings("fullscreen",!settings("fullscreen"))
             update_fullscreen()
+            window_delayed_center()
         }
         maxclick=0
     }

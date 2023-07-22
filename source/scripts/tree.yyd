@@ -7,7 +7,7 @@
 	|custom_options
 	|custom_traps
 	|custom_language
-	|gm82room_jtool_table
+	|custom_window_border
 +saving
 	|savedata_init
 	|settings_default
@@ -75,6 +75,7 @@
 		|take_screenshot
 		|window_set_resolution
 		|fix_backgrounds
+		|window_delayed_center
 	+drawing
 		|draw_sign_text
 		|draw_text_outline
@@ -92,6 +93,7 @@
 	+misc lists
 		|list_nonstick
 		|list_obstructions
+		|gm82room_jtool_table
 	|add_difficulty
 	|add_gizmo
 	|update_caption_deathtime

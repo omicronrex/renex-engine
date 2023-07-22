@@ -6,6 +6,10 @@ applies_to=self
 */
 //test event order to make sure the gm82 option is checked
 order_test=2
+
+//we also hide the window here since game start takes a hot minute
+window_delayed_center()
+window_set_showborder(1)
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -14,6 +18,7 @@ applies_to=self
 */
 ///delayed window center
 window_center()
+window_set_visible(1)
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -30,7 +35,7 @@ action_id=603
 applies_to=self
 */
 ///delayed buffer resize
-window_resize_buffer(global.rw,global.rh)
+window_resize_buffer(global.ww,global.wh)
 window_center()
 #define Step_0
 /*"/*'/**//* YYD ACTION

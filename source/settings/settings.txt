@@ -1,6 +1,6 @@
 fullscreen=0
 interpolate_pixels=0
-dont_draw_border=0
+dont_draw_border=1
 display_cursor=1
 scaling=-1
 allow_resize=0

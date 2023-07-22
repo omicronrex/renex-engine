@@ -256,3 +256,5 @@ sound_set_loop_points
 boss_initialize
 reset_frame_wait
 
+custom_window_border
+window_delayed_center

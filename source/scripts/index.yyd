@@ -258,3 +258,4 @@ reset_frame_wait
 
 custom_window_border
 window_delayed_center
+setmap_read

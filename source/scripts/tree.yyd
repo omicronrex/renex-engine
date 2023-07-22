@@ -26,6 +26,7 @@
 		|savedata_read
 		|savedata_write
 		|settings_read
+		|setmap_read
 		|settings_write
 		|autosave_do
 	+objsave

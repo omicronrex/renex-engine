@@ -7,18 +7,23 @@ if (!global.use_appdata) {
     if (!directory_exists(savefolder) || disk_free()<1000000) global.use_appdata=true
 }
 
-if (global.use_appdata) {
-    savefolder=directory_previous(directory_previous(directory_previous(temp_directory)))+"Roaming\"+filename_valid(global.game_title)+"\"
-    directory_create(savefolder)
-}
+saveappdata=directory_previous(directory_previous(directory_previous(temp_directory)))+"Roaming\"
 
 var exe_name;exe_name=filename_valid(global.game_title)
+
+if (global.use_appdata) {
+    savefolder=saveappdata+exe_name+"\"
+    directory_create(savefolder)
+}
 
 global.setfile=savefolder+exe_name+".cfg"
 global.savefile=savefolder+exe_name+".sav"
 global.backfile=savefolder+exe_name+".sav.bak"
 global.statfile=savefolder+exe_name+"_stats_"
 global.shotfolder=savefolder+"screenshots\"
+
+global.setrepo=saveappdata+"renex engine global\settings.cfg"
+directory_create(saveappdata+"renex engine global")
 
 global.savefolder=savefolder
 

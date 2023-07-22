@@ -1,20 +1,20 @@
 //load settings from file and apply them
-var b,newmap;
 
 ds_map_clear(global.setmap)
 
 settings_default()
 
 if (file_exists(global.setfile)) {
-    b=buffer_create()
-    buffer_load(b,global.setfile)
-    buffer_rc4(b,"bugger")
-    newmap=ds_map_create()
-    ds_map_read(newmap,buffer_read_hex(b,buffer_get_size(b)))
-    buffer_destroy(b)
-    ds_map_add_copy(newmap,global.setmap)
-    ds_map_destroy(newmap)
+    //settings exist
+    setmap_read(global.setfile)
+} else if (file_exists(global.setrepo)) {
+    //settings don't exist, but we have a global repo
+    setmap_read(global.setrepo)
+    
+    //we still want some defaults set
+    settings("volcheck",false)
 } else {
+    //initialize a new settings file
     settings_write()
 }
 

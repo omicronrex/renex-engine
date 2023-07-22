@@ -29,6 +29,8 @@
 	|SuperVehicle
 +System
 	+User Interface
+		+tools
+			|Soundpack
 		|VolCheck
 		|TitleMenu
 		|FileMenu

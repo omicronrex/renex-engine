@@ -1,16 +1,10 @@
 |sprController
 +System
-	+User Interface
-		|sprFileBorder
-		|sprGameOver
-	+Saves
-		|sprSaveMedium
-		|sprSaveHard
-		|sprSaveVeryHard
-		|sprSaveVeryHardEditor
 	|spr1x1
 	|spr2x2
 	|spr1x2
+	|sprFileBorder
+	|sprGameOver
 	|sprCamera
 	|sprCameraFull
 	|sprMusic
@@ -32,6 +26,11 @@
 	|sprCameraBlock
 	|sprThrow
 	|sprAvdCtrl
++Saves
+	|sprSaveMedium
+	|sprSaveHard
+	|sprSaveVeryHard
+	|sprSaveVeryHardEditor
 +Cherries
 	|sprCherry
 	|sprCherryOrange

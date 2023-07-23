@@ -82,7 +82,6 @@
 		|draw_text_outline
 		|draw_sprite_hueshift
 		|draw_before_backgrounds
-		|draw_button_windows
 	+GUI
 		|display_set_gui_size
 		|display_set_gui_maximise
@@ -95,6 +94,8 @@
 		|list_nonstick
 		|list_obstructions
 		|gm82room_jtool_table
+	+tools
+		|tool_button
 	|add_difficulty
 	|add_gizmo
 	|update_caption_deathtime

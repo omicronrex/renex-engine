@@ -1,5 +1,6 @@
 Game Maker 8.2 Core
 Game Maker 8.2 DirectX9
+Game Maker 8.2 DragFile
 Game Maker 8.2 Joystick
 Game Maker 8.2 Live
 Game Maker 8.2 Network

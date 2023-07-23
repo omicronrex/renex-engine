@@ -249,7 +249,7 @@ shader_rainbow
 vs2_shadow
 ps3_light
 ps2_blur
-draw_button_windows
+tool_button
 gm82room_jtool_table
 sound_stop_music
 sound_set_loop_points
@@ -259,3 +259,4 @@ reset_frame_wait
 custom_window_border
 window_delayed_center
 setmap_read
+

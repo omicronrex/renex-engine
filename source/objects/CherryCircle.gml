@@ -10,6 +10,15 @@ motion_type=1
 radius=80
 
 time=0
+#define Destroy_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+for (i=0;i<num_cherries;i+=1) {
+    instance_destroy_id(o[i])
+}
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

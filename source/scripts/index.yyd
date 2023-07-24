@@ -249,7 +249,7 @@ shader_rainbow
 vs2_shadow
 ps3_light
 ps2_blur
-tool_button
+
 gm82room_jtool_table
 sound_stop_music
 sound_set_loop_points

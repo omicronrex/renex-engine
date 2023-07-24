@@ -94,8 +94,6 @@
 		|list_nonstick
 		|list_obstructions
 		|gm82room_jtool_table
-	+tools
-		|tool_button
 	|add_difficulty
 	|add_gizmo
 	|update_caption_deathtime

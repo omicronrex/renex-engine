@@ -18,5 +18,3 @@
 		|rmShaders
 		|rmClear
 	|rmTemplate
-+Tools
-	|rmCreateSoundPackTool

@@ -1,3 +1,37 @@
+renex engine v1.7.0 build 23 July 2023
+
+The builtin Boss system has received a much needed facelift, and some very old
+bugs have been resolved for a much more stable experience using the engine.
+
+Additionally, the engine now has support for a global options repository - so
+any new renex engine games that you launch can extrapolate your default volume,
+keybinds and other settings from the last renex engine game you played.
+
+- added the ability to draw a custom fullscreen game border
+- added a jtool table for gm82room compatibility for edited engines
+- added a long push block with a returning sprite from IWBTG
+- added the ability to use a/d keys in debug mode
+- added a new setting to disable keyboard tricks like cancels and cactuses
+- added global options repository
+
+- fixed several issues with window scaling and positioning
+- fixed a bug that caused sound loading to fail when the directory had emoji
+- fixed backgrounds being in front of a few things
+- fixed a crash when adding events to the builtin bullet blocker object
+- fixed an issue when lowering the alpha value of the application urface
+- fixed dumb bugz zipping away when offscreen
+- fixed the ingame timer displaying wrong values when the game isn't 50 fps
+- fixed boss children not supporting object fields
+- fixed pixel shimmering when a draw_cherry cherry moves around
+- fixed cherry circle littering when using the live extension
+
+- updated the music engine with some new convenience functions and stability
+- renamed NiseBlock to BulletBlock
+- updated engine internals to use new gm82 extension functions
+- vastly improved the performance of the included shader lighting engine
+- removed the incomplete sound pack creation tool in favor of a gm82-based one
+
+--------------------------------------------------------------------------------
 renex engine v1.6.1 build 24 May 2023
 
 A minor update with some important maintenance.
@@ -83,7 +117,6 @@ Bugs fixed:
 - fixed a y coordinate instability in the new platform code
 - fixed a visual menu bug when deleting a file
 - fixed a crash related to disabling savefile icons
-- fixed a crash when pressing f2 and f3 on the same frame
 - fixed coyote time bugs when coyote time is very long
 - fixed several sprite alignment issues when using old sprites
 - fixed pause menu not using the menu text color option
@@ -128,11 +161,9 @@ Bugs fixed:
 - fixed a minor issue with the volume check screen
 - fixed a bug with blood gravity
 - fixed a leftover blend mode call
-- fixed two minor player sprite facing issues
 
 Minor changes:
 
-- the player object has been massively cleaned up and commented
 - triggergroups will activate instances to fix issues
 - the default left+right option was changed to Right for consistency
 - various scripts have been documented

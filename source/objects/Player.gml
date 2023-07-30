@@ -359,7 +359,7 @@ if (!frozen) {
         if (!onVineR && !onVineL) hspeed=median(-maxSpeed,hspeed,maxSpeed)
         
         //discard fractionary component of halign if not moving
-        if (hspeed=0) x=round(x)
+        if (hspeed=0 && !global.allow_frac_x_coordinate) x=round(x)
     }
 
     //vertical speed limit

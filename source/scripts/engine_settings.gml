@@ -91,6 +91,8 @@
     global.disable_cancels=false
     //enable simulated studio 1.4.9999 vdiet (shorter hitbox when y ends in .50)
     global.valign05_vdiet=true
+    //allow fractionary x coordinates while not moving
+    global.allow_frac_x_coordinate=false
     //save the player's fractionary valign
     //if disabled, the y coordinate is floored on save
     //there is an optional player choice for this - check custom_options().

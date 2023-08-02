@@ -1,5 +1,4 @@
-///savedata_save(force)
-///savedata_save(force,hash)
+///savedata_save(force,[hash])
 //saves the game to memory
 
 /*

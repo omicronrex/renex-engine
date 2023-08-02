@@ -28,9 +28,19 @@ applies_to=self
 */
 ///save
 
-//we save on begin step to make sure the player isn't stuck somewhere
+//we save on begin step to make sure the player isn't stuck somewhere or dead
 if (save) {
     save=0
+    
+    if (global.press_shoot_saves) {
+        //disallow saving outside of contact saves
+        if (!instance_place(x,y,Player)) exit
+    }
+    
+    image_index=1
+    image_speed=1/room_speed
+    sound_play("sndSave")    
+    
     savedata_save(false,name)
     
     if (global.centered_saving) {
@@ -75,9 +85,6 @@ applies_to=self
 if (image_index==0) {
     with (Player) if (instance_place(x,y,AntiSoftlockBlock)) exit
     if ((Player.vflip==1 && (image_angle<45 || image_angle>315)) || (Player.vflip==-1 && abs(image_angle-180)<45) || global.flip_saves) {
-        image_index=1
-        image_speed=1/room_speed
-        sound_play("sndSave")
         save=1
     }
 }

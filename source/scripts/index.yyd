@@ -260,3 +260,4 @@ custom_window_border
 window_delayed_center
 setmap_read
 
+make_persistent

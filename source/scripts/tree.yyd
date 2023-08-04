@@ -250,3 +250,4 @@
 	|shader_hueshift
 	|shader_tint
 	|shader_rainbow
+|make_persistent

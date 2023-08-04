@@ -18,7 +18,7 @@ keybinds and other settings from the last renex engine game you played.
 - fixed a bug that caused sound loading to fail when the directory had emoji
 - fixed backgrounds being in front of a few things
 - fixed a crash when adding events to the builtin bullet blocker object
-- fixed an issue when lowering the alpha value of the application urface
+- fixed an issue when lowering the alpha value of the application surface
 - fixed dumb bugz zipping away when offscreen
 - fixed the ingame timer displaying wrong values when the game isn't 50 fps
 - fixed boss children not supporting object fields

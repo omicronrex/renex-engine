@@ -261,3 +261,5 @@ window_delayed_center
 setmap_read
 
 make_persistent
+opt_caption
+draw_window_caption

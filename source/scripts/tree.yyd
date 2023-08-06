@@ -122,6 +122,7 @@
 	|construct
 	|trigger_broadcast
 	|update_triggers
+	|draw_window_caption
 +events
 	|event_game_start
 	|event_room_start
@@ -222,6 +223,7 @@
 	|opt_animation
 	|opt_screenshake
 	|opt_savevalign
+	|opt_caption
 	|opt_left_right
 	|opt_rebind_keyboard
 	|opt_rebind_joystick

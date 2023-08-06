@@ -14,4 +14,6 @@ settings("shakeamount",1)
 
 settings("screenscale",1)
 
+settings("caption visible",1)
+
 input_default()

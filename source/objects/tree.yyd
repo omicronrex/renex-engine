@@ -133,6 +133,7 @@
 	|AddTrigger
 	|TriggerFree
 	|TriggeredFree
+	|TriggerInstance
 +Gimmicks
 	+White Dot
 		|WhiteDotEnable

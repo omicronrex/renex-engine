@@ -306,7 +306,6 @@
 	|sprTrigger10
 	|sprTrigger11
 	|sprTrigger12
-	|sprTriggerFree
 	|sprTriggered1
 	|sprTriggered2
 	|sprTriggered3
@@ -319,7 +318,6 @@
 	|sprTriggered10
 	|sprTriggered11
 	|sprTriggered12
-	|sprTriggeredFree
 	|sprLock1
 	|sprLock2
 	|sprLock3
@@ -332,8 +330,11 @@
 	|sprLock10
 	|sprLock11
 	|sprLock12
-	|sprVuur
+	|sprTriggerFree
+	|sprTriggeredFree
+	|sprTriggerInst
 	|sprGenericTrigger
+	|sprVuur
 +Items
 	|sprItem1
 	|sprItem2

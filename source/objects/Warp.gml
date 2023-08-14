@@ -20,22 +20,21 @@ applies_to=self
 if (warpToPlayerstart) {
     if (warpsound!="") sound_play(warpsound)
     move_player(warpToPlayerstart.x+17,warpToPlayerstart.y+23,0)
-} else if (warpX==noone && warpY==noone && roomTo=room) {
+    if (global.clear_inputs_on_warp) input_clear()
+} else if ((warpX==noone && warpY==noone) || roomTo=room) {
     sound_play("sndBlockChange")
     instance_destroy()
 } else {
     collect_items()
-    if (roomTo!=room) {
-        if (warpsound!="") {
-            persistent=1
-        }
-        if (warpX==noone && warpY==noone) {
-            warp_to(roomTo)
-        } else {
-            warp_to(roomTo,warpX,warpY)
-        }
-        global.warp_id=warpid
+    if (warpsound!="") {
+        persistent=1
     }
+    if (warpX==noone && warpY==noone) {
+        warp_to(roomTo)
+    } else {
+        warp_to(roomTo,warpX,warpY)
+    }
+    global.warp_id=warpid
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION

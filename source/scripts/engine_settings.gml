@@ -87,6 +87,8 @@
 
 
 //player settings
+    //clear inputs on touching a warp
+    global.clear_inputs_on_warp=false
     //disable weird keyboard quirks like cactusing or cancels
     global.disable_cancels=false
     //enable simulated studio 1.4.9999 vdiet (shorter hitbox when y ends in .50)

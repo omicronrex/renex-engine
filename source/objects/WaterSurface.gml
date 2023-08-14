@@ -132,12 +132,10 @@ applies_to=self
 ///constructor: find (id)
 sprite=sprWater1
 
-//with (Water1) if (instance_place(x,y,other.id)) find=id
-//with (Water2) if (instance_place(x,y,other.id)) find=id
-//with (NekoronWater) if (instance_place(x,y,other.id)) find=id
-
 sprite=find.sprite_index
 find.visible=0
+
+depth=find.depth
 
 image_xscale=find.image_xscale
 image_yscale=0.25

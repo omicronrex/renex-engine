@@ -9,9 +9,9 @@ if (order_test==2) {
     exit
 }
 
-if (__gm82core_version<151) {
+if (gm82core_version<160) {
     show_error(
-        "Please update your Game Maker 8.2 Core extension to 1.5.1 or newer.",
+        "Please update your Game Maker 8.2 Core extension to 1.6 or newer.",
         true
     )
     exit

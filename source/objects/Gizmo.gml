@@ -35,6 +35,8 @@ scaling=0
 
 rotate=0
 rotating=0
+
+no_destroy_outside=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -106,7 +108,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-instance_destroy()
+if (!no_destroy_outside) instance_destroy()
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -128,6 +130,7 @@ applies_to=self
 //field scaleh
 //field scalev
 //field rotate
+//field no_destroy_outside: bool
 #define Other_8
 /*"/*'/**//* YYD ACTION
 lib_id=1

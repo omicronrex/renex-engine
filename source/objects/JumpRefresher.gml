@@ -26,7 +26,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (active) {
+if (active and !other.dead) {
     other.djump=max(1,other.djump-1)
     active=0
     alarm[0]=refreshTime

@@ -12,7 +12,7 @@ view_visible=1
 view_enabled=1
 window_set_size(global.width,global.height)
 window_set_region_size(global.width,global.height,1)
-window_resize_buffer(global.width,global.height)
+window_resize_buffer(global.width,global.height,0,0)
 window_center()
 room_speed=global.game_speed
 alarm[0]=room_speed

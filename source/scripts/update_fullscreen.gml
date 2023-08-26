@@ -25,7 +25,7 @@ window_set_fullscreen(full)
 if (application_surface!=noone) surface_forget("application_surface") application_surface=noone
 if (dequanto_surface!=noone) surface_forget("dequanto_surface") dequanto_surface=noone
 
-window_resize_buffer(global.ww,global.wh)
+window_resize_buffer(global.ww,global.wh,1,0)
 
 //figure out area filter scaling factor for best results
 global.deq_fac=median(2,round(max(global.rw/global.width,global.rh/global.height)),8)

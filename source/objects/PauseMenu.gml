@@ -166,3 +166,5 @@ if (sel==-1) {
 draw_set_valign(2)
     draw_text(40,global.height-36,lang("deaths")+": "+string(savedata("deaths"))+"#"+lang("time")+": "+format_time(savedata("time")))
 draw_set_valign(0)
+
+draw_set_color($ffffff)

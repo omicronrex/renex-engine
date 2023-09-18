@@ -140,7 +140,7 @@ if (!setting) {
     }
 }
 
-ycursor=inch(ycursor,ydraw+sel*ysep+52,16*dt)
+ycursor=approach(ycursor,ydraw+sel*ysep+52,16*dt)
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1

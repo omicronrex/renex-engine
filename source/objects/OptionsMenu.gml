@@ -32,7 +32,7 @@ action_id=603
 applies_to=self
 */
 xcursor=xdraw-18
-ycursor=inch(ycursor,ydraw+(ysep*sel)+18,16*dt)
+ycursor=approach(ycursor,ydraw+(ysep*sel)+18,16*dt)
 
 if (global.key_pressed[key_shoot]) {
     sound_kind_stop(0)

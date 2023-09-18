@@ -35,7 +35,7 @@ if (abs(musframes-frames)>5) {
     sound_set_pos(song[cursong],frames/lenframe)
 }
 
-curvol=inch(curvol,cursong,0.2)
+curvol=approach(curvol,cursong,0.2)
 
 sound_volume(song[0],1-curvol)
 sound_volume(song[1],curvol)

@@ -88,7 +88,7 @@ if (waiting) {
 if (!setting) for (i=0;i<key_sizeof;i+=1)
     keytext[i]=key_get_name(i)
 
-ycursor=inch(ycursor,ydraw+sel*ysep+52,16*dt)
+ycursor=approach(ycursor,ydraw+sel*ysep+52,16*dt)
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

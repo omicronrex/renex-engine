@@ -102,7 +102,7 @@ if (sel==-1) {
     if (global.key_pressed[key_jump]) sel=0
 } else {
     xcursor=xdraw-18
-    ycursor=inch(ycursor,ydraw+(ysep*sel)+9,16*dt)
+    ycursor=approach(ycursor,ydraw+(ysep*sel)+9,16*dt)
     option=ds_list_find_value(optlist,sel)
     if (global.key_pressed[key_up] || global.key_pressed[key_down]) {
         script_execute(option,opt_end)

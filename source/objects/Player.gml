@@ -327,7 +327,7 @@ if (!frozen) {
             } else {
                 if (slipper) {
                     //ice physics
-                    hspeed=inch(hspeed,maxSpeed*input_h,slipper.slip)
+                    hspeed=approach(hspeed,maxSpeed*input_h,slipper.slip)
                 } else {
                     if (global.use_momentum_values && !ladder) {
                         //mario mode
@@ -343,12 +343,12 @@ if (!frozen) {
             //the input is neutral
             if (slipper) {
                 //slide to a stop
-                hspeed=inch(hspeed,0,slipper.slip)
+                hspeed=approach(hspeed,0,slipper.slip)
             } else {
                 if (global.use_momentum_values && !ladder) {
                     //mario mode friction
-                    if (onPlatform) hspeed=inch(hspeed,0,mm_ground_fric)
-                    else hspeed=inch(hspeed,0,mm_air_fric)
+                    if (onPlatform) hspeed=approach(hspeed,0,mm_ground_fric)
+                    else hspeed=approach(hspeed,0,mm_air_fric)
                 } else {
                     //stop moving
                     hspeed=0
@@ -786,7 +786,7 @@ if (walljump!=0) {
         if (walljump>0) sound_play_slomo("sndJump")
         else sound_play_slomo("sndDJump")
     }
-    walljump=inch(walljump,0,1)
+    walljump=approach(walljump,0,1)
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1

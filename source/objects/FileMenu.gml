@@ -136,7 +136,7 @@ if (state="new file") {
     }
 }
 
-dx=inch(dx,x+select*239+65,16*dt)
+dx=approach(dx,x+select*239+65,16*dt)
 #define Other_5
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -186,7 +186,6 @@ profiler_setup()
 //graphics setup
 envelope_init()
 display_set_gui_maximise(-1,-1)
-update_fullscreen()
 instance_create(0,0,Ortho)
 
 for (i=room_first;i!=-1;i=room_next(i)) {

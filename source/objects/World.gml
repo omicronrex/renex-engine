@@ -35,6 +35,7 @@ action_id=603
 applies_to=self
 */
 ///delayed buffer resize
+update_fullscreen()
 window_resize_buffer(global.ww,global.wh,0,0)
 window_center()
 #define Step_0

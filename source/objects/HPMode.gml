@@ -17,6 +17,15 @@ hp=100             //number of hits the player can take
 iframes=0          //time granted invincible after a hit (none by default)
 sound="sndDeath"   //sound to play when player is damaged
 mode=2             //mode 1 has the bar at the top, mode 2 puts it on the player
+maxcol=$ff00       //what color the bar starts at
+mincol=$ff00       //what color to approach as hp approaches 0
+#define Destroy_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+with (Player) drawhp=0
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -40,4 +49,4 @@ action_id=603
 applies_to=self
 */
 if (mode==1) draw_healthbar(8,8,global.GUIwidth-8,24,(hp/maxhp)*100,0,$ff00,$ff00,0,1,1)
-if (mode==2) with (Player) draw_healthbar(drawx-24,drawy-24,drawx+24,drawy-20,(other.hp/other.maxhp)*100,0,$ff00,$ff00,0,1,1)
+if (mode==2) with (Player) drawhp=1

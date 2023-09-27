@@ -108,6 +108,8 @@ iframes=0
 
 input_h=0 input_v=0
 
+drawhp=0
+
 input_clear()
 input_consume()
 #define Step_0
@@ -1025,6 +1027,8 @@ if (!dead) {
     }
 
     script_execute(global.player_skin,"draw")
+
+    if (drawhp && instance_exists(HPMode)) draw_healthbar(drawx-24,drawy-24,drawx+24,drawy-20,(HPMode.hp/HPMode.maxhp)*100,0,HPMode.mincol,HPMode.maxcol,0,1,1)
 
     if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
     if (global.debug_jump) draw_sprite_ext(sprBow,2,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)

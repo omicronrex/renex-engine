@@ -390,6 +390,7 @@
 	|CameraBlock
 	|Autotiler
 	|PersistentBackgrounds
+	|ParallaxBackgroundLayer
 +Cherries
 	|Cherry
 	+more cherry colors

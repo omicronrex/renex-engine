@@ -8,6 +8,10 @@ spike_down = noone
 spike_right = noone
 spike_left = noone
 spike_up = noone
+mini_spike_down = noone
+mini_spike_right = noone
+mini_spike_left = noone
+mini_spike_up = noone
 
 fruit = noone
 
@@ -29,10 +33,15 @@ An example is provided in rmExtra.
 //field spike_right: sprite
 //field spike_left: sprite
 //field spike_up: sprite
+//field mini_spike_down: sprite
+//field mini_spike_right: sprite
+//field mini_spike_left: sprite
+//field mini_spike_up: sprite
 //field fruit: sprite
 //field blend: color
 //field alpha: number(0,1)
 
+//spikes
 if (spike_down!=noone) {
     with (SpikeD) {sprite_index=other.spike_down image_blend=other.blend image_alpha=other.alpha}
     with (SpikeTrapD) {sprite_index=other.spike_down image_blend=other.blend image_alpha=other.alpha}
@@ -50,6 +59,21 @@ if (spike_up!=noone) {
     with (SpikeTrapU) {sprite_index=other.spike_up image_blend=other.blend image_alpha=other.alpha}
 }
 
+// minispikes
+if (mini_spike_down!=noone) {
+    with (MiniSpikeDown) {sprite_index=other.mini_spike_down image_blend=other.blend image_alpha=other.alpha}
+}
+if (mini_spike_left!=noone) {
+    with (MiniSpikeLeft) {sprite_index=other.mini_spike_left image_blend=other.blend image_alpha=other.alpha}
+}
+if (mini_spike_right!=noone) {
+    with (MiniSpikeRight) {sprite_index=other.mini_spike_right image_blend=other.blend image_alpha=other.alpha}
+}
+if (mini_spike_up!=noone) {
+    with (MiniSpikeUp) {sprite_index=other.mini_spike_up image_blend=other.blend image_alpha=other.alpha}
+}
+
+// fruit
 if (fruit!=noone) {
     with (Cherry) {sprite_index=other.fruit image_blend=other.blend image_alpha=other.alpha}
     with (FruitTrap) {sprite_index=other.fruit image_blend=other.blend image_alpha=other.alpha}

@@ -71,6 +71,7 @@ applies_to=self
 //field cycle_length: number - in seconds
 //field motion_type: enum("circle","figure8","stutter","chaotic")
 //field radius: radius
+//field sprite_index: sprite
 
 /*preview
     if (!FieldDefined("motion_type")) exit

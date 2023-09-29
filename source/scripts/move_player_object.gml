@@ -10,7 +10,7 @@ with (argument3) {
         x+=dx
         y+=dy
         instance_activate_around_player()
-        a=place_free(x+hspeed,y+vspeed)
+        a=place_free(x+hspeed,y+vspeed+gravity)
         x-=dx
         y-=dy
     }

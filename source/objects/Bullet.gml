@@ -25,7 +25,7 @@ action_id=603
 applies_to=self
 */
 ///stretch bullet mask
-image_angle=direction+180
+//image_angle=direction+180
 storex=image_xscale
 storey=image_yscale
 storea=image_angle

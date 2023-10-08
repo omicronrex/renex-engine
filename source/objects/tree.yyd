@@ -387,6 +387,7 @@
 	|HitCount
 	|HPMode
 	|Skinner
+	|SkinnerString
 	|CameraBlock
 	|Autotiler
 	|PersistentBackgrounds

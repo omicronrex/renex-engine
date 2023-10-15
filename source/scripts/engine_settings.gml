@@ -175,6 +175,8 @@
     global.press_shoot_saves=false
     //let all saves work even while flipped the wrong way
     global.flip_saves=true
+    //save death & time stats in a .csv file in the save location
+    global.save_csv_stats=true
     //(0-8) reduces lag during gameplay, but causes small hiccup on room start.
     //each pass reduces solid instance count by almost half so with 2 passes we should
     //have around 30% of block instances.

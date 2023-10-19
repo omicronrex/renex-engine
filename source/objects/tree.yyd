@@ -1,83 +1,39 @@
 |World
 |Player
-+Parents
-	|PlayerKiller
-	|DotKiller
-	|ActiveParent
-	|ActiveIngame
-	|SavePointParent
-	|Trigger
-	|Triggered
-	|TriggerLock
-	|Button
-	|ButtonShoot
-	|Boss
-	|Avoidance
-	|Gizmo
-	|Trap
-	|TrapSave
-	|Item
-	|GlobalItem
-	|DisplayItem
-	|DisplayGlobalItem
-	|ItemBlock
-	|SolidItemBlock
-	|KeyParent
-	|KeyBlockParent
-	|SlopeParent
-	|MovingSolid
-	|SuperVehicle
-+System
-	+User Interface
-		|VolCheck
-		|TitleMenu
-		|FileMenu
-		|OptionsMenu
-		|KeyboardMenu
-		|JoystickMenu
-		|PauseMenu
-		|DefaultMenuBorderMaker
-		|RenexStarParticles
-		|TitleParticle
-	|BloodEmitter
-	|GibParticle
-	|Blood
-	|Bullet
-	|GameOver
-	|Ortho
-	|DestroyedBlock
-	|FirePart
-	|Cementer
-	|BackgroundDaemon
-	|WaterSurface
-	|AnyWater
-	|UnsolidItemBlock
-	|PropBlood
-+Saves
-	|SavePointMedium
-	|SavePointHard
-	|SavePointVeryHard
-	|AntiSoftlockBlock
-	|AutoSaver
-	|GameClear
-+Threats
++Common Objects
+	+Jtool Gimmicks
+		|WallJumpL
+		|WallJumpR
+		|JumpRefresher
+		|GravFlip
+		|GravNormal
+	+Saves
+		|SavePointMedium
+		|SavePointHard
+		|SavePointVeryHard
+		|AntiSoftlockBlock
+		|AutoSaver
+		|GameClear
+		|BulletBlock
+	|PlayerStart
+	|Block
+	|MiniBlock
+	|Platform
+	|JumpThrough
+	|SpikeD
+	|SpikeL
+	|SpikeR
+	|SpikeU
 	|MiniSpikeDown
 	|MiniSpikeLeft
 	|MiniSpikeRight
 	|MiniSpikeUp
-	|LeekUp
-	|LeekLeft
-	|LeekRight
-	|LeekDown
-	|Fig
-	|Wasp
-	|SpikeTrapD
-	|SpikeTrapL
-	|SpikeTrapR
-	|SpikeTrapU
-	|M9Block
-	|M9Trigger
-+Triggers
+	|MusicPlayer
+	|MusicPlayerSection
+	|MusicSync
+	|Warp
+	|OutsideWarp
++Triggers/Traps
 	+Triggers
 		|Trigger1
 		|Trigger2
@@ -134,6 +90,11 @@
 	|TriggerFree
 	|TriggeredFree
 	|TriggerInstance
+	|SpikeTrapD
+	|SpikeTrapL
+	|SpikeTrapR
+	|SpikeTrapU
+	|FruitTrap
 +Gimmicks
 	+White Dot
 		|WhiteDotEnable
@@ -215,7 +176,7 @@
 		|Yoshi
 		|SmwSaw
 		|Muncher
-	+IWBTG
+	+Guy/IWBTG
 		|MegamanPiston
 		|GuyFireTrigger
 		|Moon
@@ -224,9 +185,6 @@
 		|CloudBolt
 		|Bolt
 		|GuyCouch
-		|ActualYokuBlock
-		|YokuGroup
-		|YokuSpeedChanger
 		|CautionStripL
 		|CautionStripR
 		|CautionFastL
@@ -236,9 +194,9 @@
 	+Genki
 		|ShootBlock
 		|ShootBlockBig
-	|JumpRefresher
-	|GravFlip
-	|GravNormal
+	+Vandal
+		|JumpCherry
+		|JumpBlock
 	|CoinFlip
 	|CoinNormal
 	|ClockOn
@@ -249,56 +207,125 @@
 	|ShootRefresherR
 	|Teleporter
 	|PatBall
-	|AlignIndicator
-+Level Objects
-	|ConveyorLeft
-	|ConveyorRight
-	|JumpBlock
-	|PushBlock
-	|LongPushBlock
-	|PushBlockSave
-	|LiftBlock
-	|MoveBlock
-	|YokuBlock
+	|M9Trigger
 	|DingBlock
-	|MiniBlock
-	|SlipBlock
-	|BulletBlock
-	|FakeBlock
-	|BreakBlock
-	|DemoBlock
++Level Objects
+	+Special Blocks
+		|ConveyorLeft
+		|ConveyorRight
+		|PushBlock
+		|LongPushBlock
+		|PushBlockSave
+		|LiftBlock
+		|MoveBlock
+		|YokuBlock
+		|SlipBlock
+		|M9Block
+		|FakeBlock
+		|BreakBlock
+		|ActualYokuBlock
+		|YokuGroup
+		|YokuSpeedChanger
+		|DemoBlock
+	+Slopes
+		|SlopeTL
+		|SlopeTR
+		|SlopeBL
+		|SlopeBR
+		|SlopeBlock
+		|SlopeCircle
+		|SlopeCrescent
+		|SlopeBeam
+		|FunnySlope
+		|SlopePixel
+		|SlopeWobbly
+	+Waters
+		|Water1
+		|Water2
+		|Water3
+		|CatharsisWater
+		|NekoronWater
+		|NekoronAir
+		|PlatformWater
+		|GuyWater
 	|KillBlock
 	|DieOutside
 	|Ladder
 	|LadderSide
-	|JumpThrough
 	|GateUp
 	|GateRight
 	|GateLeft
 	|GateDown
 	|ScreenWrap
-	|Water1
-	|Water2
-	|Water3
-	|CatharsisWater
-	|NekoronWater
-	|NekoronAir
-	|PlatformWater
-	|GuyWater
 	|Signpost
 	|AutoSign
-+Slopes
-	|SlopeTL
-	|SlopeTR
-	|SlopeBL
-	|SlopeBR
-	|SlopeBlock
-	|SlopeCircle
-	|SlopeCrescent
-	|SlopeBeam
-	|FunnySlope
-	|SlopePixel
-	|SlopeWobbly
+	|AlignIndicator
++Tools
+	+Shaders
+		|DepthHueShift
+		|DepthTint
+		|DepthRainbow
+		|DepthShaderReset
+		+Lighting Engine
+			|LightingCtrl
+			|Light
+			|ShadowVolume
+	|CameraFull
+	|CameraOverride
+	|CameraBlock
+	|WarpToHub
+	|DifficultyWarp
+	|TimerFreeze
+	|HitCount
+	|HPMode
+	|DepthBlender
+	|TextDraw
+	|SkyGradient2Colors
+	|Skinner
+	|SkinnerString
+	|Autotiler
+	|PersistentBackgrounds
+	|ParallaxBackgroundLayer
++Bosses
+	+Big Cherry
+		|BigCherry
+		|BigCherryBlueProjectile
+	+Utah
+		|Utah
+		|FireDemo
+		|GlassShard
+		|TouhouDeath
+	+Miku
+		|Miku
+		|MikuFront
+		|MikuLeek
+		|MikuBigCherryBlue
+		|MikuBounceCherry
+	|BossIntroduction
+	|BossHealthbarClassic
+	|BossHealthbarNew
+	|BossWarp
++Cherries
+	|Cherry
+	+more cherry colors
+		|CherryOrange
+		|CherryYellow
+		|CherryChartreuse
+		|CherryGreen
+		|CherryEmerald
+		|CherryCyan
+		|CherryAzure
+		|CherryBlue
+		|CherryViolet
+		|CherryMagenta
+		|CherryPink
+		|CherryWhite
+		|CherryGray
+		|CherryBlack
+		|CherryRainbow
+	|MegaCherry
+	|CherryBounce
+	|CherryCircle
 +Items
 	+Display (trophies)
 		|DisplayItem1
@@ -352,85 +379,64 @@
 	|GlobalItem3
 	|GlobalItem4
 	|Coin
-+Bosses
-	+Big Cherry
-		|BigCherry
-		|BigCherryBlueProjectile
-	+Utah
-		|Utah
-		|FireDemo
-		|GlassShard
-		|TouhouDeath
-	+Miku
-		|Miku
-		|MikuFront
-		|MikuLeek
-		|MikuBigCherryBlue
-		|MikuBounceCherry
-	|BossIntroduction
-	|BossHealthbarClassic
-	|BossHealthbarNew
-	|BossWarp
-+Tools
-	|DifficultyWarp
-	|SkyGradient2Colors
-	|DepthBlender
-	|CameraOverride
-	|CameraFull
-	|OutsideWarp
-	|TimerFreeze
-	|MusicPlayer
-	|MusicPlayerSection
-	|MusicSync
-	|TextDraw
-	|WarpToHub
-	|HitCount
-	|HPMode
-	|Skinner
-	|SkinnerString
-	|CameraBlock
-	|Autotiler
-	|PersistentBackgrounds
-	|ParallaxBackgroundLayer
-+Cherries
-	|Cherry
-	+more cherry colors
-		|CherryOrange
-		|CherryYellow
-		|CherryChartreuse
-		|CherryGreen
-		|CherryEmerald
-		|CherryCyan
-		|CherryAzure
-		|CherryBlue
-		|CherryViolet
-		|CherryMagenta
-		|CherryPink
-		|CherryWhite
-		|CherryGray
-		|CherryBlack
-	|CherryRainbow
-	|MegaCherry
-	|CherryBounce
-	|CherryCircle
-	|JumpCherry
-	|FruitTrap
-+Shaders
-	|DepthHueShift
-	|DepthTint
-	|DepthRainbow
-	|DepthShaderReset
-	+Lighting Engine
-		|LightingCtrl
-		|Light
-		|ShadowVolume
-|PlayerStart
-|Block
-|Platform
-|WallJumpL
-|WallJumpR
-|SpikeD
-|SpikeL
-|SpikeR
-|SpikeU
-|Warp
++Misc. Killers
+	|LeekUp
+	|LeekLeft
+	|LeekRight
+	|LeekDown
+	|Fig
+	|Wasp
++System
+	+User Interface
+		|VolCheck
+		|TitleMenu
+		|FileMenu
+		|OptionsMenu
+		|KeyboardMenu
+		|JoystickMenu
+		|PauseMenu
+		|DefaultMenuBorderMaker
+		|RenexStarParticles
+		|TitleParticle
+	+Player
+		|BloodEmitter
+		|GibParticle
+		|Blood
+		|Bullet
+		|GameOver
+	+Parents
+		|PlayerKiller
+		|DotKiller
+		|ActiveParent
+		|ActiveIngame
+		|SavePointParent
+		|Trigger
+		|Triggered
+		|TriggerLock
+		|Button
+		|ButtonShoot
+		|Boss
+		|Avoidance
+		|Gizmo
+		|Trap
+		|TrapSave
+		|Item
+		|GlobalItem
+		|DisplayItem
+		|DisplayGlobalItem
+		|ItemBlock
+		|SolidItemBlock
+		|KeyParent
+		|KeyBlockParent
+		|SlopeParent
+		|MovingSolid
+		|SuperVehicle
+	|Ortho
+	|DestroyedBlock
+	|FirePart
+	|Cementer
+	|BackgroundDaemon
+	|WaterSurface
+	|AnyWater
+	|UnsolidItemBlock
+	|PropBlood

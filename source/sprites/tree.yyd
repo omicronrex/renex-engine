@@ -26,6 +26,8 @@
 	|sprCameraBlock
 	|sprThrow
 	|sprAvdCtrl
+	|sprLamp
+	|sprWrap
 +Saves
 	|sprSaveMedium
 	|sprSaveHard
@@ -66,7 +68,7 @@
 		|sprCherryGrayNew
 		|sprCherryBlackNew
 		|sprCherryRainbowNew
-+Level
++Level Objects
 	|sprEngineBlock
 	|sprYoku
 	|sprLongBlock
@@ -83,6 +85,8 @@
 	|sprMiniBlock
 	|sprKillBlock
 	|sprDieOutside
+	|sprConveyorLeft
+	|sprConveyorRight
 	|sprSlopeTL
 	|sprSlopeTR
 	|sprSlopeBL
@@ -104,24 +108,13 @@
 	|sprPlatformWater
 	|sprIWBTGWater
 	|sprPastelWater2
-	|sprKumo
 	|sprWallJUmpLEditor
 	|sprWallJumpL
 	|sprWallJumpREditor
 	|sprWallJumpR
-	|sprCautionLEditor
-	|sprCautionL
-	|sprCautionREditor
-	|sprCautionR
-	|sprCautionFastLEditor
-	|sprCautionFastL
-	|sprCautionFastREditor
-	|sprCautionFastR
-	|sprDecoStar
-	|sprTrapStop
-	|sprTrapRedirect
 	|sprFakeBlock
 	|sprDingBlock
+	|sprPushBlockSave
 +Player
 	|sprMaskPlayer
 	|sprMaskPlayerFlip
@@ -199,8 +192,9 @@
 	|sprSpikeLeftCrimson
 	|sprSpikeRightCrimson
 	|sprSpikeUpCrimson
+	|sprWasp
 +Gimmicks
-	+Yoshi
+	+WTW
 		|sprYoshiMask
 		|sprYoshiWait
 		|sprYoshiDead
@@ -210,131 +204,152 @@
 		|sprYoshiJump
 		|sprMuncher
 		|sprSmwSaw
+	+White Dot
+		|sprWhiteDotter
+		|sprWhiteUndotter
+	+Dotkid
+		|sprDotter
+		|sprUndotter
+	+Shootkid
+		|sprShootkidEnabler
+		|sprShootkidDisabler
+	+Keypick
+		|sprKeyWhite
+		|sprKeyRed
+		|sprKeyBlockWhite
+		|sprKeyBlockRed
+	+Walk the Ceiling
+		|sprKidBlockUp
+		|sprKidBlockDown
+		|sprSpikeSwitch
+		|sprGravSpin
+		|sprGravSpinBack
+	+NANG
+		|sprHighSpeedField
+		|sprJetRight
+		|sprHighGravField
+		|sprLowGravField
+		|sprStarSingleJump
+		|sprStarDoubleJump
+		|sprStarTripleJump
+		|sprNangTJumpParticle
+	+See the Moon
+		|sprBeamPurple
+		|sprBeamYellow
+		|sprBeamBlue
+		|sprBeamRed
+		|sprBeamGreen
+	+Vcoin
+		|sprVCoinA
+		|sprVCoinB
+	+KTG
+		|sprJumpSwitchBlock
+		|sprJumpSwitchBlockOff
+		|sprSJumpSwitchBlock
+		|sprSJumpSwitchBlockOff
+		|sprDJumpSwitchBlock
+		|sprDJumpSwitchBlockOff
+	+Genki
+		|sprShootBlock
+		|sprShootBlockBig
+	+Guy/IWBTG
+		|sprGuyCouch
+		|sprGuyMoon
+		|sprDumbBugz
+		|sprDeadBugz
+		|sprBolt
+		|sprPiston
+		|sprKumo
+		|sprCautionLEditor
+		|sprCautionL
+		|sprCautionREditor
+		|sprCautionR
+		|sprCautionFastLEditor
+		|sprCautionFastL
+		|sprCautionFastREditor
+		|sprCautionFastR
+		|sprDecoStar
+		|sprVuur
 	|sprGravFlip
 	|sprGravNormal
 	|sprGravityCoinFlip
 	|sprGravityCoinNormal
-	|sprGravSpin
-	|sprGravSpinBack
-	|sprConveyorLeft
-	|sprConveyorRight
 	|sprJumpBlock
 	|sprJumpCherry
-	|sprShootBlock
-	|sprShootBlockBig
 	|sprHashigo_tate
 	|sprHashigo_yoko
 	|sprKanban
-	|sprSwitchYellow
-	|sprSwitchYellowWL
-	|sprSwitchYellowWR
-	|sprSwitchGreen
-	|sprSwitchGreenWL
-	|sprSwitchGreenWR
-	|sprSwitchRed
-	|sprSwitchRedWL
-	|sprSwitchRedWR
-	|sprHighSpeedField
-	|sprJetRight
-	|sprHighGravField
-	|sprLowGravField
 	|sprClock
 	|sprClockOff
-	|sprDotter
-	|sprShootkidEnabler
-	|sprShootkidDisabler
-	|sprUndotter
-	|sprWhiteDotter
-	|sprWhiteUndotter
 	|sprTeleporter
-	|sprGuyCouch
 	|sprJumpRefresher
 	|sprJumpRefresherL
 	|sprShootRefresherR
-	|sprKeyWhite
-	|sprKeyRed
-	|sprKeyBlockWhite
-	|sprKeyBlockRed
-	|sprKidBlockUp
-	|sprKidBlockDown
-	|sprStarSingleJump
-	|sprStarDoubleJump
-	|sprStarTripleJump
-	|sprSpikeSwitch
-	|sprPushBlockSave
-	|sprWrap
-	|sprVCoinA
-	|sprVCoinB
-	|sprBeamPurple
-	|sprBeamYellow
-	|sprBeamBlue
-	|sprBeamRed
-	|sprBeamGreen
 	|sprToggleBlockOn
 	|sprToggleBlockOff
-	|sprJumpSwitchBlock
-	|sprJumpSwitchBlockOff
-	|sprSJumpSwitchBlock
-	|sprSJumpSwitchBlockOff
-	|sprDJumpSwitchBlock
-	|sprDJumpSwitchBlockOff
 	|sprPatBall
-	|sprNangTJumpParticle
 	|sprAligner
-	|sprWasp
-	|sprBolt
-	|sprPiston
 	|sprSlopeWobbly
 	|sprM9
 	|sprM9Trigger
-	|sprGuyMoon
-	|sprDumbBugz
-	|sprDeadBugz
-	|sprLamp
 +Triggers
+	+Triggers
+		|sprTrigger1
+		|sprTrigger2
+		|sprTrigger3
+		|sprTrigger4
+		|sprTrigger5
+		|sprTrigger6
+		|sprTrigger7
+		|sprTrigger8
+		|sprTrigger9
+		|sprTrigger10
+		|sprTrigger11
+		|sprTrigger12
+	+Triggereds
+		|sprTriggered1
+		|sprTriggered2
+		|sprTriggered3
+		|sprTriggered4
+		|sprTriggered5
+		|sprTriggered6
+		|sprTriggered7
+		|sprTriggered8
+		|sprTriggered9
+		|sprTriggered10
+		|sprTriggered11
+		|sprTriggered12
+	+Switches
+		|sprSwitchYellow
+		|sprSwitchYellowWL
+		|sprSwitchYellowWR
+		|sprSwitchGreen
+		|sprSwitchGreenWL
+		|sprSwitchGreenWR
+		|sprSwitchRed
+		|sprSwitchRedWL
+		|sprSwitchRedWR
+	+Locks
+		|sprLock1
+		|sprLock2
+		|sprLock3
+		|sprLock4
+		|sprLock5
+		|sprLock6
+		|sprLock7
+		|sprLock8
+		|sprLock9
+		|sprLock10
+		|sprLock11
+		|sprLock12
 	|sprTriggerGroup
 	|sprAddTrigger
-	|sprTrigger1
-	|sprTrigger2
-	|sprTrigger3
-	|sprTrigger4
-	|sprTrigger5
-	|sprTrigger6
-	|sprTrigger7
-	|sprTrigger8
-	|sprTrigger9
-	|sprTrigger10
-	|sprTrigger11
-	|sprTrigger12
-	|sprTriggered1
-	|sprTriggered2
-	|sprTriggered3
-	|sprTriggered4
-	|sprTriggered5
-	|sprTriggered6
-	|sprTriggered7
-	|sprTriggered8
-	|sprTriggered9
-	|sprTriggered10
-	|sprTriggered11
-	|sprTriggered12
-	|sprLock1
-	|sprLock2
-	|sprLock3
-	|sprLock4
-	|sprLock5
-	|sprLock6
-	|sprLock7
-	|sprLock8
-	|sprLock9
-	|sprLock10
-	|sprLock11
-	|sprLock12
 	|sprTriggerFree
 	|sprTriggeredFree
 	|sprTriggerInst
 	|sprGenericTrigger
-	|sprVuur
+	|sprTrapStop
+	|sprTrapRedirect
 +Items
 	|sprItem1
 	|sprItem2

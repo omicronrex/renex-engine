@@ -9,7 +9,7 @@ with (argument3) {
     if (argument2) {
         x+=dx
         y+=dy
-        instance_activate_around_player()
+        instance_activate_around(Player,64)
         a=place_free(x+hspeed,y+vspeed)
         x-=dx
         y-=dy

@@ -129,6 +129,9 @@
     //time in frames to allow jumping when the button is pressed too early in the air
     //makes 4.5s easier
     global.jump_buffering=0
+    //time in frames to disable pausing after exiting the pause menu
+    //set it to 25 or above to prevent pause buffering strats
+    global.pause_delay_time=25
 
 
 //sound options

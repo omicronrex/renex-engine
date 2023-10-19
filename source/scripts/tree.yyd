@@ -7,6 +7,7 @@
 	|custom_options
 	|custom_traps
 	|custom_language
+	|custom_region_activation
 	|custom_window_border
 +saving
 	|savedata_init
@@ -104,7 +105,7 @@
 	|has_item
 	|instance_deactivate_all_safe
 	|update_activation
-	|instance_activate_around_player
+	|instance_activate_around
 	|add_string
 	|lang
 	|collect_items

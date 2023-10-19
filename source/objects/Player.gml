@@ -293,7 +293,7 @@ applies_to=self
 ///movement
 
 if (!frozen) {
-    if (!inside_view()) instance_activate_around_player()
+    if (!inside_view()) instance_activate_around(Player,64)
 
     //count down jump buffering
     if (jump_timer) jump_timer-=1

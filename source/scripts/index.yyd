@@ -104,7 +104,7 @@ update_activation
 joystick_default
 input_anykey
 player_land
-instance_activate_around_player
+instance_activate_around
 autosave_asap
 autosave_do
 
@@ -263,3 +263,4 @@ setmap_read
 make_persistent
 opt_caption
 draw_window_caption
+custom_region_activation

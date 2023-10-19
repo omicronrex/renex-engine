@@ -18,6 +18,6 @@ if (global.instance_deactivation) {
 
         with (TriggerGroup) instance_activate_region(bbox_left,bbox_top,bbox_right,bbox_bottom,1)
 
-        instance_activate_around_player()
+        custom_region_activation()
     }
 }

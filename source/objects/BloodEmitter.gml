@@ -86,7 +86,7 @@ action_id=603
 applies_to=self
 */
 if (bleeding) {
-    emit_blood(10*blood)
+    emit_blood(7*blood)
 }
 
 if (!place_free(x,y)) {

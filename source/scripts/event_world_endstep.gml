@@ -15,7 +15,7 @@ memcamt=camera_t
 stepcount+=50/room_speed
 if (stepcount>=1) {
     stepcount=stepcount mod 1
-    with (Blood) event_user(0)
+    with (Blood) if (speed!=0) event_user(0)
 }
 
 if (!gameclosing) {

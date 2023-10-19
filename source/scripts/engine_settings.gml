@@ -36,6 +36,8 @@
     global.encrypt_save_password="renex"
     //save game to appdata instead of a /save folder
     global.use_appdata=false
+    //data folder location (make sure to include the data folder with your exe!)
+    global.datadir="data\"
     //use savefile thumbnails
     global.savefile_thumbnails=true
     //user interface text color

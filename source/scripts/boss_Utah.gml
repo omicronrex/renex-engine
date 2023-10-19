@@ -13,7 +13,7 @@ if (event_type==ev_create) {
     sound_play_music("ddpboss",1)
 
     //teapot stuff
-    model=d3d_model_create_and_load("data\teapot.g3z")
+    model=d3d_model_create_and_load(global.datadir+"teapot.g3z")
     tex=background_get_texture(bgTeapot)
 
     state="begin"

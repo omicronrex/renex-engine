@@ -1,5 +1,5 @@
 ///draw_text_outline(x,y,string,color,[outline_color])
-var dx,dy,msg,col;
+var dx,dy,msg,col,col2;
 
 dx=argument[0]
 dy=argument[1]

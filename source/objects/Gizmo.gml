@@ -131,6 +131,7 @@ applies_to=self
 //field scalev
 //field rotate
 //field no_destroy_outside: bool
+//field depth: number
 #define Other_8
 /*"/*'/**//* YYD ACTION
 lib_id=1

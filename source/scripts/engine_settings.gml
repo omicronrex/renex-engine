@@ -134,6 +134,12 @@
     //time in frames to disable pausing after exiting the pause menu
     //set it to 25 or above to prevent pause buffering strats
     global.pause_delay_time=25
+    //enable blood clusters for a slight performance boost
+    //may look weird
+    global.blood_clusters=false
+    //enable blood culling for a slight performance boost
+    //may look even weirder
+    global.blood_culling=false
 
 
 //sound options

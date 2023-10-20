@@ -144,6 +144,7 @@
 	|sprPlayerLadderUD
 	|sprPlayerLadderLR
 	+death
+		|sprBloodCluster
 		|sprBlood
 		|sprGibsBody
 		|sprGibsHead

@@ -8,6 +8,7 @@ image_index=irandom(image_number-1)
 image_speed=0
 t=0
 attach=noone
+anglechange=0
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -24,6 +25,7 @@ applies_to=self
 ///blood step
 t+=1
 if (t mod 3!=0) exit
+if (anglechange && speed) image_angle=random(360)
 
 attach=instance_place(x+hspeed,y+vspeed,Block)
 if (!attach) attach=instance_place(x+hspeed,y+vspeed,PlayerKiller)
@@ -31,6 +33,21 @@ if (!attach) attach=instance_place(x+hspeed,y+vspeed,PlayerKiller)
 if (attach) {
     if (list_nonstick(attach.object_index)) {attach=noone exit}
     else if (!attach.visible && !attach.solid) {attach=noone exit}
+    if (speed<=0.2 && global.blood_culling) {
+        var inst;
+        inst=instance_place(x,y,Blood)
+        if (inst) {
+            instance_destroy_id(inst)
+            sprite_index=sprBloodCluster
+            image_angle=random(360)
+            x+=hspeed*20
+            y+=vspeed*20
+            hspeed=0
+            vspeed=0
+            gravity=0
+            exit
+        }
+    }
     hspeed*=0.1
     vspeed*=0.1
     gravity=0
@@ -38,6 +55,8 @@ if (attach) {
     gravity=0.2+random(0.2)
 }
 
+
+// original blood event
 
 /*
 if (attach) {

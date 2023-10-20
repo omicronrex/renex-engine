@@ -458,6 +458,9 @@ if (!vvvvvv) if (!onPlatform) {
                 //just moving off vine
                 hspeed=3*facing
             }
+        } else if ((onVineL && key[key_right]) || (onVineR && key[key_left])) {
+            //slide off of vine if holding the right direction, but not pressing it
+            hspeed=3*facing
         }
     }
 

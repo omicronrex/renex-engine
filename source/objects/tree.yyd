@@ -207,8 +207,6 @@
 	|ShootRefresherR
 	|Teleporter
 	|PatBall
-	|M9Trigger
-	|DingBlock
 +Level Objects
 	+Special Blocks
 		|ConveyorLeft
@@ -221,6 +219,8 @@
 		|YokuBlock
 		|SlipBlock
 		|M9Block
+		|M9Trigger
+		|DingBlock
 		|FakeBlock
 		|BreakBlock
 		|ActualYokuBlock

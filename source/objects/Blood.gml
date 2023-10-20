@@ -6,8 +6,7 @@ applies_to=self
 */
 image_index=irandom(image_number-1)
 image_speed=0
-image_angle=random(360)
-
+t=0
 attach=noone
 #define Other_0
 /*"/*'/**//* YYD ACTION
@@ -23,7 +22,24 @@ action_id=603
 applies_to=self
 */
 ///blood step
+t+=1
+if (t mod 3!=0) exit
 
+attach=instance_place(x+hspeed,y+vspeed,Block)
+if (!attach) attach=instance_place(x+hspeed,y+vspeed,PlayerKiller)
+
+if (attach) {
+    if (list_nonstick(attach.object_index)) {attach=noone exit}
+    else if (!attach.visible && !attach.solid) {attach=noone exit}
+    hspeed*=0.1
+    vspeed*=0.1
+    gravity=0
+} else {
+    gravity=0.2+random(0.2)
+}
+
+
+/*
 if (attach) {
     if (!instance_exists(attach)) {
         attach=noone
@@ -71,3 +87,4 @@ if (attach) {
         }
     }
 }
+*/

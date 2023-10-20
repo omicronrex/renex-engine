@@ -31,16 +31,19 @@ if (fading) {
         fading=0
         //pause when it's done fading
         sound_kind_pause(1)
+        sound_kind_volume(1,0)
     }
 }
 //music slow
 if (slowing) {
     slowfrom-=0.01
-    sound_kind_pitch(1,slowfrom)
+    if (!instance_exists(MusicSync)) sound_kind_pitch(1,slowfrom)
+    else MusicSync.slowing=1
     if (slowfrom<=0) {
         slowing=0
         //pause when it's done slowing
         sound_kind_pause(1)
+        sound_kind_volume(1,0)
     }
 }
 

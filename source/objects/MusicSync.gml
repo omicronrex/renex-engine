@@ -8,6 +8,8 @@ BGM=""
 frames=0
 length=0
 lenframe=0
+slowing=0
+slowfrom=World.slowfrom
 #define Destroy_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -22,23 +24,32 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!sound_isplaying(song[0]) || !sound_isplaying(song[1])) {
-    instance_destroy()
-    exit
+if (!sound_isplaying(song[0])
+    || !sound_isplaying(song[1])
+    || sound_kind_get_volume(1)<=0
+    || slowfrom<=0) {
+        instance_destroy()
+        exit
 }
 
-frames+=1
-musframes=sound_get_pos(song[cursong])*lenframe
+if (!slowing) {
+    frames+=1
+    musframes=sound_get_pos(song[cursong])*lenframe
 
-if (abs(musframes-frames)>5) {
-    cursong=!cursong
-    sound_set_pos(song[cursong],frames/lenframe)
+    if (abs(musframes-frames)>5) {
+        cursong=!cursong
+        sound_set_pos(song[cursong],frames/lenframe)
+    }
+
+    curvol=approach(curvol,cursong,0.2)
+
+    sound_volume(song[0],1-curvol)
+    sound_volume(song[1],curvol)
+} else {
+    slowfrom=World.slowfrom
+    sound_pitch(song[0],slowfrom)
+    sound_pitch(song[1],slowfrom)
 }
-
-curvol=approach(curvol,cursong,0.2)
-
-sound_volume(song[0],1-curvol)
-sound_volume(song[1],curvol)
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

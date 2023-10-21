@@ -19,30 +19,18 @@ event_inherited()
 
 if (active) {
     t-=1
-    x+=8*Player.facing
+    x+=8*image_xscale
     Player.x=x
     Player.y=y
-    if (t<=0) {
-        with (Player) {visible=1 vspeed=0}
-        frozen=0
-        instance_destroy()
-        with (VandalCherryBase) uncollectable=0
-    }
 
-    if (instance_place(x+hspeed,y,Block)) {
-        with (Player) {visible=1 vspeed=0}
-        frozen=0
-        instance_destroy()
-        with (VandalCherryBase) uncollectable=0
-    }
+    if (t<=0)
+        player_uncherry("fireball")
 
-    if (instance_place(x+hspeed,y,PlayerKiller)) {
-        with (Player) {visible=1 vspeed=0}
-        kill_player()
-        frozen=0
-        instance_destroy()
-        with (VandalCherryBase) uncollectable=0
-    }
+    if (instance_place(x+hspeed,y,Block))
+        player_uncherry("fireball")
+
+    if (instance_place(x+hspeed,y,PlayerKiller))
+       {player_uncherry("fireball") kill_player()}
 }
 #define Other_10
 /*"/*'/**//* YYD ACTION
@@ -51,12 +39,15 @@ action_id=603
 applies_to=self
 */
 if (!active) {
+    with (Player) {
+        cherried_fireball=1
+        cherried=0
+    }
     active=1
     frozen=1
     sprite_index=sprVandalFireball
     image_speed=1
     image_xscale=Player.facing
-    with (Player) visible=0
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

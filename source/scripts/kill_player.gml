@@ -63,7 +63,7 @@ else if (!dead) {
             instance_create(x,y,BloodEmitter)
             instance_create(view_xcenter,view_ycenter,GameOver)
 
-            with (FireballCherry) if active instance_destroy()
+            with (FireballCherry) if (active) instance_destroy()
 
             Player.dead=true
 

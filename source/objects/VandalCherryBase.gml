@@ -6,7 +6,6 @@ applies_to=self
 */
 color=$ff00ff
 collected=0
-uncollectable=0
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -14,10 +13,9 @@ action_id=603
 applies_to=self
 */
 if (!collected) {
-    if (instance_place(x,y,Player) && !uncollectable) {
+    if (instance_place(x,y,Player) && !Player.cherried) {
         collected=1
         with (Player) cherried=1
-        with (VandalCherryBase) uncollectable=1
         x=Player.x
         y=Player.y
     }
@@ -25,8 +23,8 @@ if (!collected) {
     x=Player.x
     y=Player.y
     if (global.key_pressed[key_shoot]) {
-        instance_destroy_id(Bullet)
         event_user(0)
+        instance_destroy_id(Bullet)
     }
 }
 #define Other_10
@@ -35,10 +33,13 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///special cherry functionality goes here
-//if you want to make your own vandal cherry
-//don't forget to do 'with (VandalCherryBase) uncollectable=0'
-//and use the cherried variable if you need to
+// if you want to make your own vandal-type cherry:
+
+// - on your custom cherry, in a user event 0:
+//   include an instance_destroy() at the end, and a 'with (Player) cherried=0' somewhere
+
+// - add whatever you need to the player_uncherry() script to reset to normal
+//   then call player_uncherry() when you actually reset back
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -53,7 +53,10 @@ dotkid=false
 shootkid=false
 onfire=false
 vvvvvv=false
+
 cherried=false
+cherried_antigrav=false
+cherried_fireball=false
 
 dead=false
 activated=true
@@ -249,11 +252,10 @@ if (!frozen) {
         gravity=baseGrav*vflip
     }
 
-    if (!cherried) {
-        //reset to default
-        maxSpeed = maxSpeedDefault
-        baseGrav = baseGravDefault
-    }
+    //reset to default
+    maxSpeed = maxSpeedDefault
+    baseGrav = baseGravDefault
+
     //the beamstate variable contains a bitmask of what beams are currently active
     //check constants for the available beams, and the beam objects in gimmicks/see the moon
     if (instance_place(x,y,LowSpeedField)) {
@@ -266,6 +268,11 @@ if (!frozen) {
         baseGrav = 0.7
     } else if (instance_place(x,y,LowGravField) || beamstate&beam_lowgrav) {
         baseGrav = 0.2
+    }
+
+    //set vandal antigrav cherry gravity
+    if (cherried_antigrav) {
+        baseGrav = -0.1
     }
 
     //look for ice objects
@@ -1026,15 +1033,21 @@ if (!dead) {
         }
     }
 
+    //don't draw player if flashing from iframes
     if (flashing) {
         flashing-=1
         if (flashing mod 5 > 2) exit
     }
+    
+    //don't draw player if a fireball is active
+    if (cherried_fireball) exit
 
     script_execute(global.player_skin,"draw")
 
+    //draw hp bar if the setting to draw it on the player is on
     if (drawhp && instance_exists(HPMode)) draw_healthbar(drawx-24,drawy-24,drawx+24,drawy-20,(HPMode.hp/HPMode.maxhp)*100,0,HPMode.mincol,HPMode.maxcol,0,1,1)
 
+    //draw godmode & infjump special bows
     if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
     if (global.debug_jump) draw_sprite_ext(sprBow,2,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
 

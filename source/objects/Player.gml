@@ -278,25 +278,58 @@ if (!frozen) {
     //look for ice objects
     slipper=instance_place(x,y+4*vflip,SlipBlock)
 
+    //refresh jump when touching a platform cherry
+    if (instance_place(x,y,PlatformCherry)) {
+        djump=1
+    }
+
     if (walljumpboost>=0) {
         ///look for vine objects
         onVineL=false
         onVineR=false
-        if (!onPlatform && !onGround) {
-            onVineType="normal"
-            if (instance_place(x-1,y,WallJumpL)) onVineL=true
-            if (instance_place(x+1,y,WallJumpR)) onVineR=true
-            if (instance_place(x-1,y,CautionStripL)) {onVineL=true onVineType="caution"}
-            if (instance_place(x+1,y,CautionStripR)) {onVineR=true onVineType="caution"}
-            if (instance_place(x-1,y,CautionFastL)) {onVineL=true onVineType="cautionfast"}
-            if (instance_place(x+1,y,CautionFastR)) {onVineR=true onVineType="cautionfast"}
-            //add custom vines here
-        }
-    }
+        if (!global.clean_vines) {
+            if (!onPlatform && !onGround) {
+                onVineType="normal"
+                if (instance_place(x-1,y,WallJumpL)) onVineL=true
+                if (instance_place(x+1,y,WallJumpR)) onVineR=true
+                if (instance_place(x-1,y,CautionStripL)) {onVineL=true onVineType="caution"}
+                if (instance_place(x+1,y,CautionStripR)) {onVineR=true onVineType="caution"}
+                if (instance_place(x-1,y,CautionFastL)) {onVineL=true onVineType="cautionfast"}
+                if (instance_place(x+1,y,CautionFastR)) {onVineR=true onVineType="cautionfast"}
+                //add custom vines here
+            }
+        } else {
+            //logic to prevent air vines on clean vines
+            if (!onPlatform && !onGround) {
+                //initialize temp vars
+                var onVineInst,onVineName;
+                onVineInst=0
 
-    //refresh jump when touching a platform cherry
-    if (instance_place(x,y,PlatformCherry)) {
-        djump=1
+                //set default type
+                onVineType="normal"
+
+                //check for regular vines
+                onVineInst=instance_place(x-1,y,WallJumpL)
+                if (onVineInst) if (onVineInst.active) onVineL=true
+
+                onVineInst=instance_place(x+1,y,WallJumpR)
+                if (onVineInst) if (onVineInst.active) onVineR=true
+
+                //check for caution strips
+                onVineInst=instance_place(x-1,y,CautionStripL)
+                if (onVineInst) if (onVineInst.active) {onVineType="caution" onVineL=true}
+
+                onVineInst=instance_place(x+1,y,CautionStripR)
+                if (onVineInst) if (onVineInst.active) {onVineType="caution" onVineR=true}
+
+                //check for fast caution strips
+                onVineInst=instance_place(x-1,y,CautionFastL)
+                if (onVineInst) if (onVineInst.active) {onVineType="cautionfast" onVineL=true}
+
+                onVineInst=instance_place(x+1,y,CautionFastR)
+                if (onVineInst) if (onVineInst.active) {onVineType="cautionfast" onVineR=true}
+            }
+        }
     }
 }
 /*"/*'/**//* YYD ACTION

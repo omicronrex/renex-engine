@@ -5,3 +5,6 @@ action_id=603
 applies_to=self
 */
 sprite_index=sprCautionFastR
+active=1
+
+if (global.clean_vines) if (!instance_place(x,y,Block)) active=0

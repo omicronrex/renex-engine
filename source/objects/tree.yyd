@@ -197,6 +197,10 @@
 	+Vandal
 		|JumpCherry
 		|JumpBlock
+		|VandalAcidBlob
+		|FireballCherry
+		|AcidBlobCherry
+		|AntiGravCherry
 	|CoinFlip
 	|CoinNormal
 	|ClockOn
@@ -431,6 +435,7 @@
 		|SlopeParent
 		|MovingSolid
 		|SuperVehicle
+		|VandalCherryBase
 	|Ortho
 	|DestroyedBlock
 	|FirePart

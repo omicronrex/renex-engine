@@ -53,6 +53,7 @@ dotkid=false
 shootkid=false
 onfire=false
 vvvvvv=false
+cherried=false
 
 dead=false
 activated=true
@@ -248,10 +249,11 @@ if (!frozen) {
         gravity=baseGrav*vflip
     }
 
-    //reset to default
-    maxSpeed = maxSpeedDefault
-    baseGrav = baseGravDefault
-
+    if (!cherried) {
+        //reset to default
+        maxSpeed = maxSpeedDefault
+        baseGrav = baseGravDefault
+    }
     //the beamstate variable contains a bitmask of what beams are currently active
     //check constants for the available beams, and the beam objects in gimmicks/see the moon
     if (instance_place(x,y,LowSpeedField)) {

@@ -11,7 +11,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!other.shootkid && !other.dotkid && !other.vvvvvv) {
+if (!other.shootkid && !other.dotkid && !other.vvvvvv && !other.cherried) {
     sound_play_slomo("sndVCoin")
     other.vvvvvv=true
     change_skin(skin_vvvvvv)

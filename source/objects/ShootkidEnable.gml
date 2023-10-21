@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!other.shootkid && !other.dotkid && !other.vvvvvv) {
+if (!other.shootkid && !other.dotkid && !other.vvvvvv && !other.cherried) {
     sound_play_slomo("sndGrow")
     other.shootkid=true
     change_skin(skin_shootkid)

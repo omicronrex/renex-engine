@@ -271,12 +271,16 @@
 		|sprCautionFastR
 		|sprDecoStar
 		|sprVuur
+	+Vandal
+		|sprJumpBlock
+		|sprJumpCherry
+		|sprVandalCherry
+		|sprVandalFireball
+		|sprVandalAcidBlob
 	|sprGravFlip
 	|sprGravNormal
 	|sprGravityCoinFlip
 	|sprGravityCoinNormal
-	|sprJumpBlock
-	|sprJumpCherry
 	|sprHashigo_tate
 	|sprHashigo_yoko
 	|sprKanban

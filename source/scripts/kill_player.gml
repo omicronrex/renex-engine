@@ -63,6 +63,8 @@ else if (!dead) {
             instance_create(x,y,BloodEmitter)
             instance_create(view_xcenter,view_ycenter,GameOver)
 
+            if (instance_exists(FireballCherry)) instance_destroy_id(FireballCherry)
+
             Player.dead=true
 
             savedatap("deaths",savedatap("deaths")+1)

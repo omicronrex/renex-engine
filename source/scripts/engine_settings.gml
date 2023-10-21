@@ -111,8 +111,6 @@
     //default skin and weapon for a new file
     global.player_default_skin=skin_default
     global.player_default_weapon=weapon_default
-    //jump from vines with the jump button
-    global.maker_vines=true
     //kill player when leaving the room region
     global.die_outside_room=true
     //allow pressing A and D to move 1 pixel left and right to change your align
@@ -124,7 +122,6 @@
     //angle the player (and the player's bullets) to match slopes
     global.angle_slopes=true
     //time in frames to allow single jumping after leaving a surface
-    //turn this off for a precision needle game
     global.coyote_time=0
     //changes whether the player is still affected by gravity in coyote time if it's enabled
     global.coyote_time_floating=false
@@ -140,6 +137,14 @@
     //enable blood culling for a slight performance boost
     //may look even weirder
     global.blood_culling=false
+
+
+//cleaner physics - not recommended for traditional needle
+    //jump from vines with the jump button
+    global.maker_vines=true
+    //clean up vine physics, modelling them after Hollow Knight's walljump
+    //functions like maker vines by default
+    global.clean_vines=false
 
 
 //sound options

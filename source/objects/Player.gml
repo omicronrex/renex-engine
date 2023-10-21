@@ -430,9 +430,13 @@ applies_to=self
 
 //onVineL and onVineR are set in the movement block for consistency with Studio engines
 
+//handled in the next code block
+if (global.clean_vines) exit
+
 hang=false
 if (!vvvvvv) if (!onPlatform) {
     if (onVineL || onVineR) {
+        //touching vine
         hang=true
         facing=esign(onVineL-onVineR,1)
 
@@ -488,6 +492,71 @@ if (!vvvvvv) if (!onPlatform) {
                 djump+=1
                 walljump=-2
             }
+        }
+    }
+}
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///handle clean vines
+
+//skedaddle out if the setting's off
+if (!global.clean_vines) exit
+
+hang=false
+if (!vvvvvv) if (!onPlatform) {
+    if (onVineL || onVineR) {
+        //touching vine
+        hang=true
+        facing=esign(onVineL-onVineR,1)
+        
+        //set vspeed based on gravity
+        //doesn't change if your vspeed is above the threshhold, like ice vines
+        if (vflip==-1) vspeed=max(-2,vspeed)
+        else if (vflip==1) vspeed=min(vspeed,2)
+
+        if (key_pressed[key_jump]) {
+            //vine jump
+            hang=false
+            onVineL=false
+            onVineR=false
+
+            //play vine jump sound
+            sound_play_slomo("sndJump")
+            sound_play_slomo("sndDJump")
+
+            //handle different vine types
+            switch (onVineType) {
+                case "normal": {
+                    walljumpboost=5
+                    walljumpdir=facing
+                    hspeed=3*facing
+                    vspeed=-jump*vflip
+                }break
+                case "caution": {
+                    walljumpboost=24
+                    walljumpdir=facing
+                    hspeed=3*facing
+                    vspeed=-jump*vflip
+                }break
+                case "cautionfast": {
+                    walljumpboost=-1
+                    walljumpdir=facing
+                    altj=2
+                    hspeed=10*facing
+                    vspeed=-jump*vflip
+                }break
+            }
+            //prevent 1fs from fulljumping
+            if (key_released[key_jump]) player_capjump()
+        } else if ((key[key_left] && onVineR) || (key[key_right] && onVineL)) {
+            //moving away from vine
+            hang=false
+            onVineL=false
+            onVineR=false
+            hspeed=3*facing
         }
     }
 }

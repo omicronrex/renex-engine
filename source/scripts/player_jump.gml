@@ -11,7 +11,7 @@ if (vvvvvv) {
         jump_timer=0
         onGround=false
     }
-} else if (!hang) {
+} else if (!hang && !onVineL && !onVineR) {
     if (player_can_jump() || instance_place(x,y+vflip,Water1) || instance_place(x,y+vflip,PlatformWater) || instance_place(x,y+vflip,GuyWater) || ladderjump) {
         //floor jump
         vspeed=-jump*vflip

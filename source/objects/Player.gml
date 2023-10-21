@@ -293,6 +293,11 @@ if (!frozen) {
             //add custom vines here
         }
     }
+
+    //refresh jump when touching a platform cherry
+    if (instance_place(x,y,PlatformCherry)) {
+        djump=1
+    }
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1

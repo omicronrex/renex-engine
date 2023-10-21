@@ -274,6 +274,7 @@
 	+Vandal
 		|sprJumpBlock
 		|sprJumpCherry
+		|sprPlatformCherry
 		|sprVandalCherry
 		|sprVandalFireball
 		|sprVandalAcidBlob

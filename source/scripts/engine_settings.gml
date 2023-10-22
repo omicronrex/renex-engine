@@ -130,23 +130,25 @@
     global.blood_culling=false
 
 
-//cleaner physics - not recommended to change when making traditional needle
+//cleaner physics - not recommended to change when making traditional needle games
     //jump from vines with the jump button
     global.maker_vines=false
     //clean up vine physics, modelling them after Hollow Knight's walljump
-    //functions like maker vines by default
+    //jumps with the jump button regardless of the maker vines setting
+    //vines do not work if not placed on top of a block
     global.clean_vines=false
     //platform snap behavior
     //0 - yuuutu - inconsistent snap, how it works in most engines
-    //1 - hard - always snap regardless of vertical movement, and when near the top
-    //2 - light - snaps when close to the top
-    //3 - none - don't snap at all, act as purely one-way blocks
+    //1 - hard - always snap regardless of vertical movement, also snaps when near the top
+    //2 - light - snaps only when near the top
+    //3 - none - don't snap at all, act like one-way blocks
     global.platform_snap_type=0
     //allows jumping while inside of platforms
     global.platform_swimming=true
     //disable weird keyboard quirks like cactusing or cancels
+    //makes the minimum jump height be a 2-frame
     global.disable_cancels=false
-    //time in frames to allow single jumping after leaving a surface
+    //time in frames to allow floor jumping after leaving a surface
     global.coyote_time=0
     //changes whether the player is still affected by gravity in coyote time if it's enabled
     global.coyote_time_floating=false

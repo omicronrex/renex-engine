@@ -65,6 +65,7 @@ oldslomo=-1
 
 coyoteTime=0
 jump_timer=0
+oneframe_buffer=0
 
 beamstate=beam_normal
 
@@ -427,9 +428,16 @@ if (!frozen) {
         }
         if (key_pressed[key_jump]) {
             player_jump()
-        } 
-        if (key_released[key_jump] && (!key_pressed[key_jump] || !global.disable_cancels)) {
+        }
+        if (oneframe_buffer) {
+            //minimum jump is a 2f with cancels disabled
+            key_released[key_jump]=0
             player_capjump()
+            oneframe_buffer=0
+        }
+        if (key_released[key_jump]) {
+            if (global.disable_cancels && key_pressed[key_jump]) oneframe_buffer=1
+            else player_capjump()
         }
         if (key_pressed[key_die]) {
             kill_player()

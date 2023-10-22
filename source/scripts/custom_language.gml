@@ -55,7 +55,7 @@ add_string("fulltip2","Windowed")
 
 
 //in renex engine v1.3.1 the options strings have been moved to their own scripts for better readability
-//check list_options()
+//check custom_options()
 
 
 //keyboard setup

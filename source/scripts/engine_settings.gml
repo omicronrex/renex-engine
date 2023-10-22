@@ -91,8 +91,6 @@
 //player settings
     //clear inputs on touching a warp
     global.clear_inputs_on_warp=false
-    //disable weird keyboard quirks like cactusing or cancels
-    global.disable_cancels=false
     //enable simulated studio 1.4.9999 vdiet (shorter hitbox when y ends in .50)
     global.valign05_vdiet=true
     //allow fractionary x coordinates while not moving
@@ -121,13 +119,6 @@
     global.accurate_shootkid=true
     //angle the player (and the player's bullets) to match slopes
     global.angle_slopes=true
-    //time in frames to allow single jumping after leaving a surface
-    global.coyote_time=0
-    //changes whether the player is still affected by gravity in coyote time if it's enabled
-    global.coyote_time_floating=false
-    //time in frames to allow jumping when the button is pressed too early in the air
-    //makes 4.5s easier
-    global.jump_buffering=0
     //time in frames to disable pausing after exiting the pause menu
     //set it to 25 or above to prevent pause buffering strats
     global.pause_delay_time=25
@@ -139,12 +130,29 @@
     global.blood_culling=false
 
 
-//cleaner physics - not recommended for traditional needle
+//cleaner physics - not recommended to change when making traditional needle
     //jump from vines with the jump button
-    global.maker_vines=true
+    global.maker_vines=false
     //clean up vine physics, modelling them after Hollow Knight's walljump
     //functions like maker vines by default
     global.clean_vines=false
+    //platform snap behavior
+    //0 - yuuutu - inconsistent snap, how it works in most engines
+    //1 - hard - always snap regardless of vertical movement, and when near the top
+    //2 - light - snaps when close to the top
+    //3 - none - don't snap at all, act as purely one-way blocks
+    global.platform_snap_type=0
+    //allows jumping while inside of platforms
+    global.platform_swimming=true
+    //disable weird keyboard quirks like cactusing or cancels
+    global.disable_cancels=false
+    //time in frames to allow single jumping after leaving a surface
+    global.coyote_time=0
+    //changes whether the player is still affected by gravity in coyote time if it's enabled
+    global.coyote_time_floating=false
+    //time in frames to allow jumping when the button is pressed too early in the air
+    //makes 4.5s easier
+    global.jump_buffering=0
 
 
 //sound options

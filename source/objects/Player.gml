@@ -955,7 +955,7 @@ if (!dead) {
         } else y+=vspeed} else y+=vspeed
     }
 
-    onPlatform=true
+    if (global.platform_swimming) onPlatform=true
 
     if (vflip==1) {
         //platforms, normal gravity
@@ -972,9 +972,9 @@ if (!dead) {
         ytop=bbox_bottom+1
         y=oy
 
-        if (y-vspeed/2+checkOffset<=ytop) {
-            //check for platform snap
-            if (other.snap || vspeed-other.vspeed>=0) {
+        //check platform snap type
+        if (check_plat_snap(1)) {
+            if ((global.platform_snap_type!=2 && global.platform_snap_type!=3 && other.image_angle mod 90!=0) || vspeed-other.vspeed>=0) {
                 y=ytop-platformOffset
                 if (!place_free(x,y)) {
                     //crushed!
@@ -1006,10 +1006,10 @@ if (!dead) {
         if (instance_place(x,y,other.id)) y+=1
         ytop=bbox_top
         y=oy
-
-        if (y-vspeed/2+checkOffset>=ytop) {
-            if (other.snap || vspeed-other.vspeed<=0) {
-                //check for platform snap
+        
+        //check platform snap type
+        if (check_plat_snap(-1)) {
+            if ((global.platform_snap_type!=2 && global.platform_snap_type!=3 && other.image_angle mod 90!=0) || vspeed-other.vspeed<=0) {
                 y=ytop+platformOffset
                 if (!place_free(x,y)) {
                     //crushed!

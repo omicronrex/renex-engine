@@ -146,6 +146,7 @@
 	|player_can_jump
 	|player_update_sprite
 	|player_uncherry
+	|check_plat_snap
 	|check_crush
 	|kill_player
 	|move_player

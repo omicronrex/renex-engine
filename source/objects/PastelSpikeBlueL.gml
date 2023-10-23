@@ -1,3 +1,11 @@
+#define Create_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+event_inherited()
+my_spike=SpikeL
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -10,3 +18,4 @@ a=instance_create(x,y,PastelWater)
 a.hspeed=-waterSpeed
 
 if (destroy) instance_destroy()
+if (spike_return) {instance_create(x,y,my_spike) instance_destroy()}

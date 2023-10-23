@@ -1,3 +1,3 @@
 //gm82 fields begin
-destroy=true
+spike_return=true
 //gm82 fields end

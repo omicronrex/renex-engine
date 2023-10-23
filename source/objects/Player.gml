@@ -531,7 +531,7 @@ if (!vvvvvv) if (!onPlatform) {
                 walljump=2
             } else if (djump<maxjumps) {
                 djump+=1
-                walljump=-2
+                sound_play_slomo("sndDJump")
             }
         }
     }
@@ -912,8 +912,7 @@ applies_to=self
 
 if (walljump!=0) {
     repeat (2) {
-        if (walljump>0) sound_play_slomo("sndJump")
-        else sound_play_slomo("sndDJump")
+        sound_play_slomo("sndJump")
     }
     walljump=approach(walljump,0,1)
 }

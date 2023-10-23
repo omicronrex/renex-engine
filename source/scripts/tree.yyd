@@ -232,14 +232,14 @@
 	|opt_rebind_joystick
 +bonus
 	|draw_cherry
-	|random_cherry_color
-	|scrMakeCircle
-	|scrMakeShapes
-	|wait_timer
-+miku
++avoidance/miku
 	|timeline_miku
 	|timeline_miku_front
+	|wait_timer
+	|random_cherry_color
 	|split_object
+	|scrMakeCircle
+	|scrMakeShapes
 +shaders
 	+system
 		|shaders_init

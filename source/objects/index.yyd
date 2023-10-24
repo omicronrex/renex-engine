@@ -158,7 +158,7 @@ SlopeTL
 SlopeTR
 SlopeBL
 SlopeBR
-JumpThrough
+CustomSnap
 GateUp
 GateRight
 GateLeft

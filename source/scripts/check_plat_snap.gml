@@ -1,6 +1,6 @@
-///check_plat_snap(vflip)
+///check_plat_snap(vflip,snap_type)
 
-switch (global.platform_snap_type) {
+switch (argument1) {
     //default & light, since their logic is the same for this script
     case 0: case 2: {
         if (argument0) {

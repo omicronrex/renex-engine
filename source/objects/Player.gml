@@ -970,10 +970,15 @@ if (!dead) {
         if (instance_place(x,y,other.id)) y-=1
         ytop=bbox_bottom+1
         y=oy
-
+        
+        //change snap type for CustomSnap platforms
+        var snap_var;
+        if (other.object_index==CustomSnap) snap_var=other.snap_type
+        else snap_var=global.platform_snap_type
+        
         //check platform snap type
-        if (check_plat_snap(1)) {
-            if ((global.platform_snap_type!=2 && global.platform_snap_type!=3 && other.image_angle mod 90!=0) || vspeed-other.vspeed>=0) {
+        if (check_plat_snap(1,snap_var)) {
+            if (snap_var!=2 || (snap_var!=3 && other.image_angle mod 90!=0) || vspeed-other.vspeed>=0) {
                 y=ytop-platformOffset
                 if (!place_free(x,y)) {
                     //crushed!
@@ -1006,9 +1011,14 @@ if (!dead) {
         ytop=bbox_top
         y=oy
         
+        //change snap type for CustomSnap platforms
+        var snap_var;
+        if (other.object_index==CustomSnap) snap_var=other.snap_type
+        else snap_var=global.platform_snap_type
+        
         //check platform snap type
-        if (check_plat_snap(-1)) {
-            if ((global.platform_snap_type!=2 && global.platform_snap_type!=3 && other.image_angle mod 90!=0) || vspeed-other.vspeed<=0) {
+        if (check_plat_snap(-1,snap_var)) {
+            if (snap_var!=2 || (snap_var!=3 && other.image_angle mod 90!=0) || vspeed-other.vspeed<=0) {
                 y=ytop+platformOffset
                 if (!place_free(x,y)) {
                     //crushed!

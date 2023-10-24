@@ -9,7 +9,6 @@ path=noone
 path_action=path_action_reverse
 path_absolute=false
 
-snap=true
 phase=false
 
 hdeficit=0
@@ -66,8 +65,7 @@ applies_to=self
 //field speed
 //field path_action: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
 //field path_absolute: bool
-//field snap: bool
-//field phase: bool
+//field phase: bool - lets the platform go through blocks
 //field hspeed
 //field vspeed
 

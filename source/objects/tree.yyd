@@ -19,7 +19,7 @@
 	|Block
 	|MiniBlock
 	|Platform
-	|JumpThrough
+	|CustomSnap
 	|SpikeD
 	|SpikeL
 	|SpikeR

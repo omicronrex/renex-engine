@@ -22,7 +22,7 @@
 //game properties
     global.game_title="renex engine"
     //intended room speed
-    //note: player always runs at 50hz! look in player step for an explanation.
+    //note: player always runs at 50hz! look in player step for an explanation
     global.game_speed=50
     //game screen+window size
     global.width=800
@@ -31,8 +31,8 @@
     global.first_room=rmHub
     //room to return to when using WarpToHub object
     global.hub_room=rmHub
-    //password for encrypting saves.
-    //if you don't want a password, use "" and the save files will be unencrypted dsmaps.
+    //password for encrypting saves
+    //if you don't want a password, use "" for the save files to be unencrypted dsmaps
     global.encrypt_save_password="renex"
     //save game to appdata instead of a /save folder
     global.use_appdata=false
@@ -53,11 +53,11 @@
     add_difficulty("Very Hard")
     add_difficulty("Impossible",true)
 
-    //you can replace these with bow/no bow for example, or even add more.
-    //there is a globalvar called "difficulty" that's automatically set for you.
+    //you can replace these with bow/no bow for example, or even add more
+    //there is a globalvar called "difficulty" that's automatically set for you
     //example: if (difficulty==0) {code for Medium difficulty}
     //         if (difficulty>=1) {code for Hard and above}
-    //if the difficulty is set to be impossible then the savefile will be wiped on restart.
+    //if the difficulty is set to be impossible then the savefile will be wiped on restart
     
     //additionally, if only one difficulty is provided, this chooses the difficulty's value:
     //(can be used to turn on bow by setting to 0)
@@ -72,7 +72,7 @@
 
 //default camera values
     //these values are applied to all rooms by default - putting a CameraOverride
-    //in a room allows you to change the values for that room only.
+    //in a room allows you to change the values for that room only
     global.default_camera_w=800
     global.default_camera_h=608
     global.default_camera_zoom=1
@@ -82,7 +82,7 @@
     global.default_camera_smoothing=true
     //deactivate instances outside of the view
     global.instance_deactivation=true
-    //how many screens to keep active, with 20 pixels of margin.
+    //how many screens to keep active, with 20 pixels of margin
     global.instance_activate_screens_w=1
     global.instance_activate_screens_h=1
     global.instance_activate_margin_px=20
@@ -97,14 +97,14 @@
     global.allow_frac_x_coordinate=false
     //save the player's fractionary valign
     //if disabled, the y coordinate is floored on save
-    //there is an optional player choice for this - check custom_options().
+    //there is also an optional player choice for this - check custom_options()
     global.save_valign=true
     //save the player exactly in the middle of save points
     global.centered_saving=false
-    //platform crush behavior
-    //0: leave the player stuck in the wall
-    //1: kill the player when pushed into a wall
-    //2: drop the player through the platform
+    //platform crush behavior:
+    //0 - leave the player stuck in the wall
+    //1 - kill the player when pushed into a wall
+    //2 - drop the player through the platform
     global.platform_crush_behavior=2
     //default skin and weapon for a new file
     global.player_default_skin=skin_default
@@ -112,6 +112,7 @@
     //kill player when leaving the room region
     global.die_outside_room=true
     //allow pressing A and D to move 1 pixel left and right to change your align
+    //regardless of debug mode
     global.a_d_trick=false
     //make the Medium difficilty bow lag behind like in the original game
     global.bow_lag=true
@@ -120,7 +121,7 @@
     //angle the player (and the player's bullets) to match slopes
     global.angle_slopes=true
     //time in frames to disable pausing after exiting the pause menu
-    //set it to 25 or above to prevent pause buffering strats
+    //set it to 25 or above to prevent pause buffering
     global.pause_delay_time=25
     //enable blood clusters for a slight performance boost
     //may look weird
@@ -137,7 +138,7 @@
     //jumps with the jump button regardless of the maker vines setting
     //vines do not work if not placed on top of a block
     global.clean_vines=false
-    //platform snap behavior
+    //platform snap behavior:
     //0 - yuuutu - inconsistent snap, how it works in most engines
     //1 - hard - always snap regardless of vertical movement, also snaps when near the top
     //2 - light - snaps only when near the top
@@ -148,7 +149,7 @@
     //disable weird keyboard quirks like cactusing or cancels
     //makes the minimum jump height be a 2-frame
     global.disable_cancels=false
-    //time in frames to allow floor jumping after leaving a surface
+    //time in frames to allow 'floor' jumping after leaving a surface
     global.coyote_time=0
     //changes whether the player is still affected by gravity in coyote time if it's enabled
     global.coyote_time_floating=false
@@ -162,16 +163,16 @@
     //we do not recommend gain above 0.7 as it can cause clipping
     global.gain=0.7
     //game over music behavior:
-    //0 for playing the game over jingle
-    //1 for fading the level music over a second
-    //2 for pausing the level music immediately
-    //3 for doing nothing (music keeps playing)
-    //4 for music slowdown
+    //0 - play the game over jingle
+    //1 - fade the level music over a second
+    //2 - pause the level music immediately
+    //3 - do nothing (music keeps playing)
+    //4 - music slowdown
     global.gameover_music=0
-    //block break:
-    //0 for remastered sound effect
-    //1 for yuuutu engine
-    //2 for yosniper
+    //block break sound:
+    //0 - remastered sound effect
+    //1 - yuuutu engine sound effect
+    //2 - yosniper engine sound effect
     global.break_sound_effect=0
     //pause all audio on pause
     global.pause_sound_on_game_pause=true
@@ -189,11 +190,12 @@
     global.esc_always_quits=false
     //automatically updates the window caption with deathtime
     global.show_deathtime=true
-    //tube closing animation
+    //CRT closing animation
     global.closing_animation=true
-    //jump refreshers respawn time - if set to zero, it respawns when you land
+    //jump refreshers respawn time - if set to zero, it only respawns when you land
     global.jump_refresher_timer=0
     //if false, items are only collected upon saving normally
+    //otherwise, items are collected immediately
     global.autosave_items=false
     //save automatically when touching saves
     global.contact_saves=false
@@ -203,10 +205,10 @@
     global.flip_saves=true
     //save death & time stats in a .csv file in the save location
     global.save_csv_stats=true
-    //(0-8) reduces lag during gameplay, but causes small hiccup on room start.
-    //each pass reduces solid instance count by almost half so with 2 passes we should
-    //have around 30% of block instances.
-    //if you need separate block objects, turn this off.
+    //(1-8) reduces lag during gameplay, but causes a small hiccup on room start
+    //each pass reduces solid instance count by almost half by gluing blocks together
+    //so with 2 passes we should only have around 30% of block instances
+    //if you need separate block objects, set this to 0
     global.optimize_solids=2
     //make the NANG fields animate by scrolling the sprite
     global.animated_nang_fields=true

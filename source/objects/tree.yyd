@@ -202,6 +202,16 @@
 		|FireballCherry
 		|AcidBlobCherry
 		|AntiGravCherry
+	+CN3/Ctool
+		|BoosterBlock
+		|MiniBoosterBlock
+		|OneTimeBooster
+		|OneTimeCherryBooster
+		|OneTimeWater
+		|GravUpBlock
+		|GravDownBlock
+		|DownWater
+		|UpWater
 	|CoinFlip
 	|CoinNormal
 	|ClockOn

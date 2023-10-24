@@ -425,3 +425,13 @@ AcidBlobCherry
 FireballCherry
 VandalAcidBlob
 PlatformCherry
+
+UpWater
+DownWater
+BoosterBlock
+OneTimeBooster
+OneTimeCherryBooster
+MiniBoosterBlock
+OneTimeWater
+GravUpBlock
+GravDownBlock

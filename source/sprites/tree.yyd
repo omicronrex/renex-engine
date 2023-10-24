@@ -278,6 +278,15 @@
 		|sprVandalCherry
 		|sprVandalFireball
 		|sprVandalAcidBlob
+	+CN3/Ctool
+		|sprBoosterBlock
+		|sprOneTimeBooster
+		|sprOneTimeCherry
+		|sprMiniBooster
+		|sprGravUpBlock
+		|sprGravDownBlock
+		|sprDownWater
+		|sprUpWater
 	|sprGravFlip
 	|sprGravNormal
 	|sprGravityCoinFlip

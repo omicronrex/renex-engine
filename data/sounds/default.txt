@@ -8,6 +8,7 @@ sndBlockBreakYuuutu: mario block (low quality)
 sndBlockChange: yoku block from megaman 2
 sndBoing: OG couch
 sndBolt: OG lightning bolt
+sndBooster: CN3 booster blocks
 sndBossDeath: touhou boss death
 sndBossHit: OG boss hit
 sndButton: genki trigger
@@ -15,6 +16,7 @@ sndCoin: game maker coin
 sndDeath: OG blood splatter
 sndDelfruit: OG delfruit
 sndDJump: OG double jump
+sndFlip: CN3 grav block flip
 sndGainStar: NANG star get
 sndGrow: mario mushroom
 sndItem: OG item
@@ -43,3 +45,7 @@ sndYoshiJump: mario yoshi stomp
 in order to extract these sounds, execute this line of code in the debugger:
 
 sound_unpack_pack("data\sounds\default.wasd","data\sounds\")
+
+and to re-pack them, execute this line:
+
+sound_create_pack("data\sounds\","data\sounds\default.wasd")

@@ -355,3 +355,11 @@ sprVandalCherry
 sprVandalFireball
 sprVandalAcidBlob
 sprPlatformCherry
+sprUpWater
+sprDownWater
+sprBoosterBlock
+sprOneTimeBooster
+sprOneTimeCherry
+sprMiniBooster
+sprGravUpBlock
+sprGravDownBlock

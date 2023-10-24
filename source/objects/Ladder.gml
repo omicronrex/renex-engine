@@ -35,4 +35,3 @@ plat.sprite_index=-1
 plat.image_xscale=image_xscale
 plat.image_yscale=image_yscale
 plat.image_angle=image_angle
-plat.snap_type=global.platform_snap_type

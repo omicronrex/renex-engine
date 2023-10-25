@@ -20,6 +20,7 @@ applies_to=self
 */
 //field sprite_index: sprite
 //field image_speed: number
+//field depth: number
 //field water_type: enum("Water1","Water2","Water3","CatharsisWater")
 
 switch (water_type) {

@@ -24,6 +24,7 @@ action_id=603
 applies_to=self
 */
 //field surface: bool - wavy water surface
+//field depth: number
 
 if (surface) {
     with (instance_create(x,y,WaterSurface)) {

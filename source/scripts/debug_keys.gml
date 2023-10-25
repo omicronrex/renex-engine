@@ -1,3 +1,4 @@
+//profiler
 if (keyboard_check_pressed(vk_f3)) {
     if (instance_exists(global.profiler_manager)) {
         instance_destroy_id(global.profiler_manager)
@@ -6,10 +7,12 @@ if (keyboard_check_pressed(vk_f3)) {
     }
 }
 
+//debug overlay
 if (keyboard_check_pressed(vk_backspace)) {
     global.debug_overlay=!global.debug_overlay
 }
 
+//execute code
 if (!debug_mode && keyboard_check_pressed(ord("E")) && keyboard_check(vk_control)) {
     debug_execute_code=get_string("Enter code to execute:",debug_execute_code)
     execute_string(debug_execute_code)
@@ -17,6 +20,7 @@ if (!debug_mode && keyboard_check_pressed(ord("E")) && keyboard_check(vk_control
 
 target_speed=global.game_speed
 
+//slowdown/speedup
 if (keyboard_check(ord("G"))) {
     target_speed=global.game_speed/5
 } else if (keyboard_check(ord("F"))) {
@@ -67,6 +71,12 @@ if (is_ingame()) {
         global.debug_jump=!global.debug_jump
         if (global.debug_jump) show_message_right("infinite jump on")
         else show_message_right("infinite jump off")
+    }
+
+    if (keyboard_check_pressed(vk_control)) {
+        with (Player) flip_player()
+        sound_play_slomo("sndFlip")
+        show_message_right("flip player")
     }
 
     if (keyboard_check_pressed(vk_pageup) && room!=room_last) {

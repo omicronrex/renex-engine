@@ -52,7 +52,7 @@ if (attach) {
     vspeed*=0.1
     gravity=0
 } else {
-    gravity=0.2+random(0.2)
+    gravity=(0.2+random(0.2))*Player.vflip
 }
 
 

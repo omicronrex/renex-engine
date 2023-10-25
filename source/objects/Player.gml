@@ -621,17 +621,24 @@ with (PushBlock) if (vspeed=0) if (instance_place(x-sign(other.hspeed)*2,y,other
     solid=1
 }
 
+//get shape water type
+var sw,swt;
+sw=instance_place(x,y,ShapeWater)
+if (sw) {
+    swt=sw.water_type
+} else swt=""
+
 //various water types
 if (instance_place(x,y,GuyWater)) {
     if (vspeed*vflip>gravity) vspeed=gravity*vflip
     djump=maxjumps
     onfire=false
 }
-if (instance_place(x,y,Water1) || instance_place(x,y,Water3)) {
+if (instance_place(x,y,Water1) || instance_place(x,y,Water3) || swt=="Water1" || swt=="Water3") {
     if (vspeed*vflip>2) vspeed=2*vflip
     djump=1
 }
-if (instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_place(x,y,CatharsisWater)) {
+if (instance_place(x,y,Water2) || instance_place(x,y,NekoronWater) || instance_place(x,y,CatharsisWater) || swt=="Water2" || swt=="CatharsisWater") {
     if (vspeed*vflip>2) vspeed=2*vflip
 }
 

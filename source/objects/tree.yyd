@@ -255,6 +255,7 @@
 		|SlopePixel
 		|SlopeWobbly
 	+Waters
+		|ShapeWater
 		|Water1
 		|Water2
 		|Water3

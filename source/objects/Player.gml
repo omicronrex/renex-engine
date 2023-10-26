@@ -310,13 +310,13 @@ if (!frozen) {
             if (!onPlatform && !onGround) {
                 //check ds map when in the air
                 for (i=0; i<vineMapSize; i+=1) {
-                   if ds_map_find_value(vineMap,i) {
+                   if (ds_map_find_value(vineMap,i)) {
                         //set L or R
-                        if i mod 2==0 onVineL=true
+                        if (i mod 2==0) onVineL=true
                         else onVineR=true
                         
                         //set vine type
-                        switch i {
+                        switch (i) {
                             case 0: onVineType="normal" break
                             case 1: onVineType="normal" break
                             case 2: onVineType="caution" break
@@ -335,13 +335,13 @@ if (!frozen) {
                 //check ds map when in the air
                 for (i=0; i<vineMapSize; i+=1) {
                     //prevent air vines from working ------v
-                    if ds_map_find_value(vineMap,i) if ds_map_find_value(vineMap,i).active {
+                    if (ds_map_find_value(vineMap,i)) if (ds_map_find_value(vineMap,i).active) {
                         //set L or R
-                        if i mod 2==0 onVineL=true
+                        if (i mod 2==0) onVineL=true
                         else onVineR=true
                         
                         //set vine type
-                        switch i {
+                        switch (i) {
                             case 0: onVineType="normal" break
                             case 1: onVineType="normal" break
                             case 2: onVineType="caution" break

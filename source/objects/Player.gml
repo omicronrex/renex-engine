@@ -114,6 +114,7 @@ iframes=0
 input_h=0 input_v=0
 
 drawhp=0
+vineMap=ds_map_create()
 
 input_clear()
 input_consume()
@@ -285,50 +286,73 @@ if (!frozen) {
     }
 
     if (walljumpboost>=0) {
-        ///look for vine objects
+        //set vars
+        var i,vineMapSize;
         onVineL=false
         onVineR=false
+        onVineType="normal"
+
+        //update ds map
+        ds_map_set(vineMap,0,instance_place(x-1,y,WallJumpL))
+        ds_map_set(vineMap,1,instance_place(x+1,y,WallJumpR))
+        ds_map_set(vineMap,2,instance_place(x-1,y,CautionStripL))
+        ds_map_set(vineMap,3,instance_place(x+1,y,CautionStripR))
+        ds_map_set(vineMap,4,instance_place(x-1,y,CautionFastL))
+        ds_map_set(vineMap,5,instance_place(x+1,y,CautionFastR))
+        //add your own vines here
+        //don't forget to have L before R
+        
+        //update map size
+        vineMapSize=ds_map_size(vineMap)+1
+        
         if (!global.clean_vines) {
+            //regular vines
             if (!onPlatform && !onGround) {
-                onVineType="normal"
-                if (instance_place(x-1,y,WallJumpL)) onVineL=true
-                if (instance_place(x+1,y,WallJumpR)) onVineR=true
-                if (instance_place(x-1,y,CautionStripL)) {onVineL=true onVineType="caution"}
-                if (instance_place(x+1,y,CautionStripR)) {onVineR=true onVineType="caution"}
-                if (instance_place(x-1,y,CautionFastL)) {onVineL=true onVineType="cautionfast"}
-                if (instance_place(x+1,y,CautionFastR)) {onVineR=true onVineType="cautionfast"}
-                //add custom vines here
+                //check ds map when in the air
+                for (i=0; i<vineMapSize; i+=1) {
+                   if ds_map_find_value(vineMap,i) {
+                        //set L or R
+                        if i mod 2==0 onVineL=true
+                        else onVineR=true
+                        
+                        //set vine type
+                        switch i {
+                            case 0: onVineType="normal" break
+                            case 1: onVineType="normal" break
+                            case 2: onVineType="caution" break
+                            case 3: onVineType="caution" break
+                            case 4: onVineType="cautionfast" break
+                            case 5: onVineType="cautionfast" break
+                            //add your vine types here
+                        }
+                   }
+                }
+                //end of for loop 
             }
         } else {
-            //logic to prevent air vines on clean vines
+            //clean vines
             if (!onPlatform && !onGround) {
-                //initialize temp vars
-                var onVineInst,onVineName;
-                onVineInst=0
-
-                //set default type
-                onVineType="normal"
-
-                //check for regular vines
-                onVineInst=instance_place(x-1,y,WallJumpL)
-                if (onVineInst) if (onVineInst.active) onVineL=true
-
-                onVineInst=instance_place(x+1,y,WallJumpR)
-                if (onVineInst) if (onVineInst.active) onVineR=true
-
-                //check for caution strips
-                onVineInst=instance_place(x-1,y,CautionStripL)
-                if (onVineInst) if (onVineInst.active) {onVineType="caution" onVineL=true}
-
-                onVineInst=instance_place(x+1,y,CautionStripR)
-                if (onVineInst) if (onVineInst.active) {onVineType="caution" onVineR=true}
-
-                //check for fast caution strips
-                onVineInst=instance_place(x-1,y,CautionFastL)
-                if (onVineInst) if (onVineInst.active) {onVineType="cautionfast" onVineL=true}
-
-                onVineInst=instance_place(x+1,y,CautionFastR)
-                if (onVineInst) if (onVineInst.active) {onVineType="cautionfast" onVineR=true}
+                //check ds map when in the air
+                for (i=0; i<vineMapSize; i+=1) {
+                    //prevent air vines from working ------v
+                    if ds_map_find_value(vineMap,i) if ds_map_find_value(vineMap,i).active {
+                        //set L or R
+                        if i mod 2==0 onVineL=true
+                        else onVineR=true
+                        
+                        //set vine type
+                        switch i {
+                            case 0: onVineType="normal" break
+                            case 1: onVineType="normal" break
+                            case 2: onVineType="caution" break
+                            case 3: onVineType="caution" break
+                            case 4: onVineType="cautionfast" break
+                            case 5: onVineType="cautionfast" break
+                            //add your vine types here
+                        }
+                    }
+                }
+                //end of for loop
             }
         }
     }

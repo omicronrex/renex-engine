@@ -5,6 +5,7 @@
 switch (argument0) {
     case "fireball": {
         with (Player) {cherried_fireball=0 vspeed=0}
+        unlock_controls()
         frozen=0
     }break;
     

@@ -33,6 +33,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///instructions
+
 // if you want to make your own vandal-type cherry:
 
 // - on your custom cherry, in a user event 0:

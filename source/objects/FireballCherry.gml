@@ -8,7 +8,7 @@ event_inherited()
 color = 255
 active=0
 image_speed=0
-t=25
+t=0
 #define Step_2
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -18,12 +18,11 @@ applies_to=self
 event_inherited()
 
 if (active) {
-    t-=1
+    t+=1
     x+=8*image_xscale
-    Player.x=x
-    Player.y=y
+    move_player_object(x,y,0,Player)
 
-    if (t<=0)
+    if (t>=25)
         player_uncherry("fireball")
 
     if (instance_place(x+hspeed,y,Block))
@@ -45,6 +44,7 @@ if (!active) {
     }
     active=1
     frozen=1
+    lock_controls()
     sprite_index=sprVandalFireball
     image_speed=1
     image_xscale=Player.facing

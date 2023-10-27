@@ -26,15 +26,15 @@ if (argument0=="step") {
     }
     repeat (32) if (wait_timer(4)) {
         split_object(1,6*dt,CherryYellow,1,0)
-        instance_create_moving(mouthx,mouthy,MikuBounceCherry,2*dt,random(360))
+        instance_create_moving(mouthx,mouthy,MikuBounceCherry,2*dt,random_range_bias(0,360,point_direction(x,y,Player.x,Player.y),1))
     }
 
     //part 2
     repeat (50) if (wait_timer(4)) {
         if (choose(0,1)) {
-            instance_create_moving(-16,random(608),MikuLeek,2*dt,0)
+            instance_create_moving(-16,random_range_bias(0,608,Player.y,1,1),MikuLeek,2*dt,0)
         } else {
-            instance_create_moving(800+16,random(608),MikuLeek,2*dt,180)
+            instance_create_moving(800+16,random_range_bias(0,608,Player.y,1,1),MikuLeek,2*dt,180)
         }
     }
     if (wait_timer(28)) {
@@ -65,7 +65,7 @@ if (argument0=="step") {
         yy=Player.y+random_range(-128,128)
         instance_create_moving(hand1x,hand1y,CherryYellow,6*dt,point_direction(x,y,xx,yy))
         instance_create_moving(hand2x,hand2y,CherryYellow,6*dt,point_direction(x,y,xx,yy))
-        instance_create_moving(mouthx,mouthy,MikuBounceCherry,2*dt,random(360))
+        instance_create_moving(mouthx,mouthy,MikuBounceCherry,2*dt,random_range_bias(0,360,point_direction(x,y,Player.x,Player.y),1))
     }
     if (wait_timer(32)) {
         with (MikuBounceCherry) {
@@ -82,7 +82,7 @@ if (argument0=="step") {
     }
     repeat (31) if (wait_timer(4)) {
         instance_create_moving(hand1x,hand1y,MikuBigCherryBlue,6*dt,random_range(135,225))
-        instance_create_moving(mouthx,mouthy,MikuBounceCherry,2,random(360))
+        instance_create_moving(mouthx,mouthy,MikuBounceCherry,2,random_range_bias(0,360,point_direction(x,y,Player.x,Player.y),1))
     }
     repeat (23) if (wait_timer(4)) {
         instance_create_moving(hand1x,hand1y,MikuBigCherryBlue,6*dt,random_range(135,225))

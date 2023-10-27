@@ -238,6 +238,7 @@
 	|wait_timer
 	|random_cherry_color
 	|split_object
+	|random_range_bias
 	|scrMakeCircle
 	|scrMakeShapes
 +shaders

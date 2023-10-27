@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 alpha=0
-#define Trigger_Draw GUI
+#define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

@@ -1,4 +1,5 @@
 //gm82 fields begin
-text="YoYoYo Engine Room"
+text="Miku?"
+halign=fa_right
 valign=fa_middle
 //gm82 fields end

@@ -1,3 +1,3 @@
 //gm82 fields begin
-roomTo=rmMiku
+visible=false
 //gm82 fields end

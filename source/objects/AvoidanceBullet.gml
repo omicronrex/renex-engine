@@ -81,8 +81,9 @@ if (addhue || addsat || addval) {
     hue+=addhue
     sat+=addsat
     val+=addval
-    color=make_color_hsv(hue,sat,val)
 }
+color=make_color_hsv(hue,sat,val)
+
 if (angle_direction) {
     image_angle=direction
 }

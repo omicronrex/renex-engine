@@ -70,22 +70,40 @@
     global.diffroom_instantrestart=true
 
 
-//default camera values
-    //these values are applied to all rooms by default - putting a CameraOverride
-    //in a room allows you to change the values for that room only
-    global.default_camera_w=800
-    global.default_camera_h=608
-    global.default_camera_zoom=1
-    //object to follow
-    global.default_camera_follow=Player
-    //camera will follow target smoothly when free of boundaries
-    global.default_camera_smoothing=true
-    //deactivate instances outside of the view
-    global.instance_deactivation=true
-    //how many screens to keep active, with 20 pixels of margin
-    global.instance_activate_screens_w=1
-    global.instance_activate_screens_h=1
-    global.instance_activate_margin_px=20
+//game behavior
+    global.fullscreen_cursor_visible=false
+    //fullscreen caption options
+    global.fullscreen_caption_visible=true
+    global.fullscreen_caption_color=$ffff
+    global.fullscreen_caption_font=fntSignpost
+    //don't go back to the menu - quit the game immediately when pressing esc
+    global.esc_always_quits=false
+    //automatically updates the window caption with deathtime
+    global.show_deathtime=true
+    //CRT closing animation
+    global.closing_animation=true
+    //jump refreshers respawn time - if set to zero, it only respawns when you land
+    global.jump_refresher_timer=0
+    //if false, items are only collected upon saving normally
+    //otherwise, items are collected immediately
+    global.autosave_items=false
+    //save automatically when touching saves
+    global.contact_saves=false
+    //press shoot to save when touching a save
+    global.press_shoot_saves=false
+    //let all saves work even while flipped the wrong way
+    global.flip_saves=true
+    //save death & time stats in a .csv file in the save location
+    global.save_csv_stats=true
+    //(1-8) reduces lag during gameplay, but causes a small hiccup on room start
+    //each pass reduces solid instance count by almost half by gluing blocks together
+    //so with 2 passes we should only have around 30% of block instances
+    //if you need separate block objects, set this to 0
+    global.optimize_solids=2
+    //make the NANG fields animate by scrolling the sprite
+    global.animated_nang_fields=true
+    //pause the game when unfocused
+    global.unfocus_pause=false
 
 
 //player settings
@@ -158,6 +176,24 @@
     global.jump_buffering=0
 
 
+//default camera values
+    //these values are applied to all rooms by default - putting a CameraOverride
+    //in a room allows you to change the values for that room only
+    global.default_camera_w=800
+    global.default_camera_h=608
+    global.default_camera_zoom=1
+    //object to follow
+    global.default_camera_follow=Player
+    //camera will follow target smoothly when free of boundaries
+    global.default_camera_smoothing=true
+    //deactivate instances outside of the view
+    global.instance_deactivation=true
+    //how many screens to keep active, with 20 pixels of margin
+    global.instance_activate_screens_w=1
+    global.instance_activate_screens_h=1
+    global.instance_activate_margin_px=20
+
+
 //sound options
     //master volume multiplier
     //we do not recommend gain above 0.7 as it can cause clipping
@@ -178,40 +214,6 @@
     global.pause_sound_on_game_pause=true
     //stop sound effects when changing rooms
     global.stop_sounds_on_room_change=true
-
-
-//game behavior
-    global.fullscreen_cursor_visible=false
-    //fullscreen caption options
-    global.fullscreen_caption_visible=true
-    global.fullscreen_caption_color=$ffff
-    global.fullscreen_caption_font=fntSignpost
-    //don't go back to the menu - quit the game immediately when pressing esc
-    global.esc_always_quits=false
-    //automatically updates the window caption with deathtime
-    global.show_deathtime=true
-    //CRT closing animation
-    global.closing_animation=true
-    //jump refreshers respawn time - if set to zero, it only respawns when you land
-    global.jump_refresher_timer=0
-    //if false, items are only collected upon saving normally
-    //otherwise, items are collected immediately
-    global.autosave_items=false
-    //save automatically when touching saves
-    global.contact_saves=false
-    //press shoot to save when touching a save
-    global.press_shoot_saves=false
-    //let all saves work even while flipped the wrong way
-    global.flip_saves=true
-    //save death & time stats in a .csv file in the save location
-    global.save_csv_stats=true
-    //(1-8) reduces lag during gameplay, but causes a small hiccup on room start
-    //each pass reduces solid instance count by almost half by gluing blocks together
-    //so with 2 passes we should only have around 30% of block instances
-    //if you need separate block objects, set this to 0
-    global.optimize_solids=2
-    //make the NANG fields animate by scrolling the sprite
-    global.animated_nang_fields=true
 
 
 //bonus and funny stuff

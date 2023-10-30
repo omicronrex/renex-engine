@@ -41,6 +41,7 @@ slowfrom=1
 
 stepcount=0
 pause_delay=0
+unfocus_paused=0
 
 fpsa=0
 

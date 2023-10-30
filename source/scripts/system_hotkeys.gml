@@ -25,6 +25,16 @@ if (is_ingame()) {
     } else {
         pause_delay-=1
     }
+    //unfocus pause doesn't care about pause delay
+    if (global.unfocus_pause) {
+        if (!global.pause && !window_has_focus() && !unfocus_paused) {
+            instance_create(0,0,PauseMenu)
+            unfocus_paused=1
+        } else if (global.pause && window_has_focus() && unfocus_paused) {
+            instance_destroy_id(PauseMenu)
+            unfocus_paused=0
+        }
+    }
 }
 
 //escape key

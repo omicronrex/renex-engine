@@ -380,7 +380,11 @@
 	|sprGlobalItem4
 	|sprGameClear
 	|sprCoin
-+Miku
++Avoidance/Miku
 	|sprMiku
 	|sprMikuFront
+	|sprAvoidanceBulletSmall
+	|sprAvoidanceBulletBig
+	|sprAvoidanceBulletMedium
+	|sprMoonBullet
 	|sprMikuLeek

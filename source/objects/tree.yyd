@@ -320,6 +320,7 @@
 	|BossIntroduction
 	|BossHealthbarClassic
 	|BossHealthbarNew
+	|AvoidanceBullet
 	|BossWarp
 +Cherries
 	|Cherry
@@ -422,6 +423,7 @@
 		|GameOver
 	+Parents
 		|PlayerKiller
+		|PlayerKillerActive
 		|DotKiller
 		|ActiveParent
 		|ActiveIngame

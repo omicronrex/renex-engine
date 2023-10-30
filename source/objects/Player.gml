@@ -881,6 +881,9 @@ if (iframes) {
     with (instance_place(x,y,PlayerKiller)) {
         kill_player()
     }
+    with (instance_place(x,y,PlayerKillerActive)) {
+        if (active) kill_player()
+    }
     if (dot_hitbox) if (instance_place(x,y,WhiteDotKiller)) {
         kill_player()
     }

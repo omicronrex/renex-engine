@@ -214,6 +214,8 @@
 	|sound_stop_music
 	|sound_set_music_volume
 	|sound_set_sfx_volume
+	|sound_music_over_pos
+	|sound_music_under_pos
 	|sound_play_synced
 +game options
 	|opt_template

@@ -268,3 +268,5 @@ player_uncherry
 check_plat_snap
 random_range_bias
 
+sound_music_over_pos
+sound_music_under_pos

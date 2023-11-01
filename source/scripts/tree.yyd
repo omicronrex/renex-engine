@@ -203,6 +203,7 @@
 +weapons
 	|change_weapon
 	|weapon_default
+	|weapon_8dir
 	|weapon_shootkid
 +sound
 	|load_sounds

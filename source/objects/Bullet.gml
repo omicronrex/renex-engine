@@ -65,4 +65,5 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-draw_sprite_ext(sprite_index,image_index,floor(x),floor(y),image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+//set this to image_angle if you want the bullets to follow the player's angle ------v
+draw_sprite_ext(sprite_index,image_index,floor(x),floor(y),image_xscale,image_yscale,0,image_blend,image_alpha)

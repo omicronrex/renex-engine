@@ -12,4 +12,9 @@
 //the 'thing' being whatever piece of code you run after it
 
 current_timer+=argument0
-return (timer>=current_timer && (oldtimer<current_timer || (timer<oldtimer && (current_timer>oldtimer || current_timer<=timer))))
+return (
+    timer>=current_timer && 
+    (oldtimer<current_timer || 
+        (timer<oldtimer && (current_timer>oldtimer || current_timer<=timer))
+    )
+)

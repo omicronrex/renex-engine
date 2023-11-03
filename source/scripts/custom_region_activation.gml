@@ -4,3 +4,4 @@
 instance_activate_around(Player,64)
 instance_activate_around(Platform,64)
 instance_activate_around(CherryBounce,64)
+instance_activate_around(Bullet,64)

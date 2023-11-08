@@ -273,3 +273,6 @@ sound_music_under_pos
 random_range_controlled
 
 weapon_8dir
+
+
+player_update_sprite_coords

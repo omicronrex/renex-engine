@@ -27,6 +27,7 @@
 	|sprThrow
 	|sprAvdCtrl
 	|sprLamp
+	|sprDropShadow
 	|sprWrap
 +Saves
 	|sprSaveMedium

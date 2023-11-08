@@ -1,0 +1,7 @@
+sprite=sprDropShadow
+visible=1
+solid=0
+persistent=0
+depth=1001
+parent=ActiveIngame
+mask=

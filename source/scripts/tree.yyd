@@ -145,6 +145,7 @@
 	|player_hitceiling
 	|player_can_jump
 	|player_update_sprite
+	|player_update_sprite_coords
 	|player_uncherry
 	|check_plat_snap
 	|check_crush

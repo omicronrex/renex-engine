@@ -286,6 +286,16 @@
 			|LightingCtrl
 			|Light
 			|ShadowVolume
+	+Drawing
+		|DepthBlender
+		|Skinner
+		|SkinnerString
+		|TextDraw
+		|Autotiler
+		|DropShadow
+		|SkyGradient2Colors
+		|PersistentBackgrounds
+		|ParallaxBackgroundLayer
 	|CameraFull
 	|CameraOverride
 	|CameraBlock
@@ -294,14 +304,6 @@
 	|TimerFreeze
 	|HitCount
 	|HPMode
-	|DepthBlender
-	|TextDraw
-	|SkyGradient2Colors
-	|Skinner
-	|SkinnerString
-	|Autotiler
-	|PersistentBackgrounds
-	|ParallaxBackgroundLayer
 +Bosses
 	+Big Cherry
 		|BigCherry

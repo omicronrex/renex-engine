@@ -36,8 +36,8 @@ if (current_speed!=target_speed) {
 }
 
 if (is_ingame()) {
-    if (keyboard_check(vk_tab)) {
-        move_player(mouse_x,mouse_y,0)
+    if (keyboard_check_pressed(vk_tab)) {
+        move_player(mouse_xfixed,mouse_y,0)
         show_message_right("player to cursor")
         Player.speed=0
     }

@@ -51,6 +51,10 @@ if (settings("fullscreen")) {
     else curalpha=max(maxalpha,curalpha-0.05*dt)
     if (curalpha>0) window_set_cursor(cr_default)
     else window_set_cursor(cr_none)
+
+    //fix mouse_x
+    var s;s=min(global.dw/global.width,global.dh/global.height)
+    mouse_xfixed=view_xview+((display_mouse_get_x()-global.woffset)/s)
 } else curalpha=1
 
 if (mousex>=global.rw-45 && mousey<25 && mousex<global.rw && mousey>=0) maxhover+=1

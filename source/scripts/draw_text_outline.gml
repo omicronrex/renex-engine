@@ -5,7 +5,7 @@ dx=argument[0]
 dy=argument[1]
 msg=argument[2]
 col=argument[3]
-if argument_count>4 col2=argument[4]
+if (argument_count>4) col2=argument[4]
 else col2=0
 
 draw_set_color(col2)

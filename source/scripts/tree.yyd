@@ -47,6 +47,7 @@
 		|key_get_name
 		|get_path_speed
 		|inside_view
+		|is_ingame
 		|filename_valid
 		|current_date_filename
 		|make_persistent
@@ -96,13 +97,22 @@
 		|list_nonstick
 		|list_obstructions
 		|gm82room_jtool_table
+	+world events
+		|event_game_start
+		|event_room_start
+		|event_world_earlystep
+		|event_world_step
+		|event_world_endstep
+		|event_world_drawend
+		|event_debug_gui
+		|event_draw_gui
+		|event_room_end
+		|event_game_end
+		|event_camera_update
 	|add_difficulty
 	|add_gizmo
 	|update_caption_deathtime
 	|cement
-	|good_bounce
-	|is_ingame
-	|has_item
 	|instance_deactivate_all_safe
 	|update_activation
 	|instance_activate_around
@@ -124,18 +134,6 @@
 	|trigger_broadcast
 	|update_triggers
 	|draw_window_caption
-+events
-	|event_game_start
-	|event_room_start
-	|event_world_earlystep
-	|event_world_step
-	|event_world_endstep
-	|event_world_drawend
-	|event_debug_gui
-	|event_draw_gui
-	|event_room_end
-	|event_game_end
-	|event_camera_update
 +player
 	|player_jump
 	|player_capjump
@@ -147,6 +145,7 @@
 	|player_update_sprite
 	|player_update_sprite_coords
 	|player_uncherry
+	|has_item
 	|check_plat_snap
 	|check_crush
 	|kill_player
@@ -234,8 +233,10 @@
 	|opt_left_right
 	|opt_rebind_keyboard
 	|opt_rebind_joystick
-+bonus
++bonus/utility
 	|draw_cherry
+	|simple_collision
+	|good_bounce
 +avoidance/miku
 	|timeline_miku
 	|timeline_miku_front

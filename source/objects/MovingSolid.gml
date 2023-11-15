@@ -34,6 +34,7 @@ if _moved {
     _x_new = x;
     _y_new = y;
     _sprite_new = sprite_index;
+    _image_new  = image_index;
     _xscale_new = image_xscale;
     _yscale_new = image_yscale;
 
@@ -130,6 +131,7 @@ if _moved {
     x = _x_new;
     y = _y_new;
     sprite_index = _sprite_new;
+    image_index  = _image_new;
     image_xscale = _xscale_new;
     image_yscale = _yscale_new;
 }

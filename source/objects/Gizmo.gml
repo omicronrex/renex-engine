@@ -23,9 +23,9 @@ spd=0
 hsp=0
 vsp=0
 path=noone
-path_speed=0
 path_endaction=path_action_stop
-path_absolute=true
+path_speed=0
+path_absolute=false
 path_scaling=1
 sound=""
 
@@ -118,7 +118,7 @@ applies_to=self
 ///fields definition
 
 //field path: path
-//field path_action: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
+//field path_endaction: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
 //field path_absolute: bool
 //field path_scaling
 //field path_speed
@@ -138,7 +138,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (path_endaction=path_action_reverse) {
+if (path_endaction==path_action_reverse) {
     path_start(path,-path_speed,path_endaction,path_absolute)
     path_scale=path_scaling
 }

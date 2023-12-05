@@ -132,16 +132,6 @@ applies_to=self
 //field rotate
 //field no_destroy_outside: bool
 //field depth: number
-#define Other_8
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-if (path_endaction==path_action_reverse) {
-    path_start(path,-path_speed,path_endaction,path_absolute)
-    path_scale=path_scaling
-}
 #define Trigger_Trap is Triggered
 /*"/*'/**//* YYD ACTION
 lib_id=1

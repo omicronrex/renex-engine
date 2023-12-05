@@ -25,7 +25,7 @@ vsp=0
 path=noone
 path_endaction=path_action_stop
 path_speed=0
-path_absolute=false
+path_absolute=true
 path_scaling=1
 sound=""
 
@@ -132,6 +132,17 @@ applies_to=self
 //field rotate
 //field no_destroy_outside: bool
 //field depth: number
+#define Other_8
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+if (path_endaction==path_action_reverse && path_position<=0.5) {
+    path_start(path,path_speed,path_endaction,path_absolute)
+    path_position=0
+    path_scale=path_scaling
+}
 #define Trigger_Trap is Triggered
 /*"/*'/**//* YYD ACTION
 lib_id=1

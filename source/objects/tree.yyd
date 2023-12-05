@@ -15,6 +15,27 @@
 		|AutoSaver
 		|GameClear
 		|BulletBlock
+	+Cherries
+		|Cherry
+		+more cherry colors
+			|CherryOrange
+			|CherryYellow
+			|CherryChartreuse
+			|CherryGreen
+			|CherryEmerald
+			|CherryCyan
+			|CherryAzure
+			|CherryBlue
+			|CherryViolet
+			|CherryMagenta
+			|CherryPink
+			|CherryWhite
+			|CherryGray
+			|CherryBlack
+			|CherryRainbow
+		|MegaCherry
+		|CherryBounce
+		|CherryCircle
 	|PlayerStart
 	|Block
 	|MiniBlock
@@ -29,8 +50,6 @@
 	|MiniSpikeRight
 	|MiniSpikeUp
 	|MusicPlayer
-	|MusicPlayerSection
-	|MusicSync
 	|Warp
 	|OutsideWarp
 +Triggers/Traps
@@ -264,6 +283,13 @@
 		|NekoronAir
 		|PlatformWater
 		|GuyWater
+	+Misc. Killers
+		|LeekUp
+		|LeekLeft
+		|LeekRight
+		|LeekDown
+		|Fig
+		|Wasp
 	|KillBlock
 	|DieOutside
 	|Ladder
@@ -299,6 +325,8 @@
 	|CameraFull
 	|CameraOverride
 	|CameraBlock
+	|MusicPlayerSection
+	|MusicSync
 	|WarpToHub
 	|DifficultyWarp
 	|TimerFreeze
@@ -324,27 +352,6 @@
 	|BossHealthbarNew
 	|AvoidanceBullet
 	|BossWarp
-+Cherries
-	|Cherry
-	+more cherry colors
-		|CherryOrange
-		|CherryYellow
-		|CherryChartreuse
-		|CherryGreen
-		|CherryEmerald
-		|CherryCyan
-		|CherryAzure
-		|CherryBlue
-		|CherryViolet
-		|CherryMagenta
-		|CherryPink
-		|CherryWhite
-		|CherryGray
-		|CherryBlack
-		|CherryRainbow
-	|MegaCherry
-	|CherryBounce
-	|CherryCircle
 +Items
 	+Display (trophies)
 		|DisplayItem1
@@ -398,13 +405,6 @@
 	|GlobalItem3
 	|GlobalItem4
 	|Coin
-+Misc. Killers
-	|LeekUp
-	|LeekLeft
-	|LeekRight
-	|LeekDown
-	|Fig
-	|Wasp
 +System
 	+User Interface
 		|VolCheck
@@ -423,35 +423,6 @@
 		|Blood
 		|Bullet
 		|GameOver
-	+Parents
-		|PlayerKiller
-		|PlayerKillerActive
-		|DotKiller
-		|ActiveParent
-		|ActiveIngame
-		|SavePointParent
-		|Trigger
-		|Triggered
-		|TriggerLock
-		|Button
-		|ButtonShoot
-		|Boss
-		|Avoidance
-		|Gizmo
-		|Trap
-		|TrapSave
-		|Item
-		|GlobalItem
-		|DisplayItem
-		|DisplayGlobalItem
-		|ItemBlock
-		|SolidItemBlock
-		|KeyParent
-		|KeyBlockParent
-		|SlopeParent
-		|MovingSolid
-		|SuperVehicle
-		|VandalCherryBase
 	|Ortho
 	|DestroyedBlock
 	|FirePart
@@ -461,3 +432,32 @@
 	|AnyWater
 	|UnsolidItemBlock
 	|PropBlood
++Parents (don't use directly)
+	|PlayerKiller
+	|PlayerKillerActive
+	|DotKiller
+	|ActiveParent
+	|ActiveIngame
+	|SavePointParent
+	|Trigger
+	|Triggered
+	|TriggerLock
+	|Button
+	|ButtonShoot
+	|Boss
+	|Avoidance
+	|Gizmo
+	|Trap
+	|TrapSave
+	|Item
+	|GlobalItem
+	|DisplayItem
+	|DisplayGlobalItem
+	|ItemBlock
+	|SolidItemBlock
+	|KeyParent
+	|KeyBlockParent
+	|SlopeParent
+	|MovingSolid
+	|SuperVehicle
+	|VandalCherryBase

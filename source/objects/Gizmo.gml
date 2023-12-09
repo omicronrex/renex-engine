@@ -37,6 +37,8 @@ rotate=0
 rotating=0
 
 no_destroy_outside=0
+
+trigger_on_create=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -131,7 +133,10 @@ applies_to=self
 //field scalev
 //field rotate
 //field no_destroy_outside: bool
+//field trigger_on_create: bool
 //field depth: number
+
+if (trigger_on_create) event_trigger(ev_traptriggered)
 #define Other_8
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -11,4 +11,6 @@ if (!instance_exists(ShootKid)) {
     sound_play_slomo("sndShootkid")
     i=instance_create(x,y,ShootKid)
     i.direction+=sprite_angle
+
+    trigger_broadcast(tr_playershoot)
 }

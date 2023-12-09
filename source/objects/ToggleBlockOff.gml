@@ -14,13 +14,13 @@ action_id=603
 applies_to=self
 */
 ready=true
-#define Step_0
+#define Trigger_On Player Shoot
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
 applies_to=self
 */
-if (global.key_pressed[key_shoot] && ready) {
+if (ready) {
     i=instance_create(x,y,ToggleBlockOn)
     i.sprite_index=sprite_index
     i.image_index=(sprite_index==sprToggleBlockOff)

@@ -10,4 +10,6 @@ if (instance_number(Bullet)<4) {
         i.direction+=sprite_angle
     }
     sound_play_slomo("sndShoot")
+
+    trigger_broadcast(tr_playershoot)
 }

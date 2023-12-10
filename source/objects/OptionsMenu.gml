@@ -34,14 +34,16 @@ applies_to=self
 xcursor=xdraw-18
 ycursor=approach(ycursor,ydraw+(ysep*sel)+18,16*dt)
 
-if (global.key_pressed[key_shoot]) {
+v=macro_updown(vi_pressed)
+
+if (key_shoot(vi_pressed)) {
     sound_kind_stop(0)
     room_goto(rmMenu)
     exit
-} else if (global.key_pressed[key_up] || global.key_pressed[key_down]) {
+} else if (v!=0) {
     sound_play("sndJump")
     script_execute(ds_list_find_value(global.optlist,sel),opt_end)
-    sel=modwrap(sel+global.input_v,0,numoptions)
+    sel=modwrap(sel+v,0,numoptions)
 } else {
     script_execute(ds_list_find_value(global.optlist,sel),opt_step)
 }
@@ -77,11 +79,11 @@ if (!dead) draw_sprite_ext(sprite,floor(image_index),xcursor,ycursor,1,1,angle,$
 //button info
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
-draw_text(34,global.height-52,"["+key_get_name(key_shoot)+"] "+lang("menuback"))
+draw_text(34,global.height-52,"["+key_shoot(vi_name)+"] "+lang("menuback"))
 draw_set_halign(1)
 draw_text(global.width/2,global.height-52,re_version)
 draw_set_halign(2)
-draw_text(global.width-34,global.height-52,"["+key_get_name(key_jump)+"] "+lang("menuaccept"))
+draw_text(global.width-34,global.height-52,"["+key_jump(vi_name)+"] "+lang("menuaccept"))
 draw_set_halign(0)
 
 draw_set_color($ffffff)

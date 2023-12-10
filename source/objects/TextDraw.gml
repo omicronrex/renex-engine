@@ -56,8 +56,8 @@ yscale=image_yscale
 draw_set_font(font)
 draw_set_halign(halign)
 draw_set_valign(valign)
-w=string_width(text)
-h=string_height(text)
+w=string_width(text)*xscale
+h=string_height(text)*yscale
 
 if (halign=0 && valign=0) {
     sprite_index=spr1x1

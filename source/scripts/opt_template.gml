@@ -15,7 +15,9 @@ switch (argument0) {
         //here are some common types of options to get you started (use only one of them lol)
 
         //option ticked/changed once
-        if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {
+        //(use only one of those)
+        h=key_jump(vi_pressed)+macro_leftright(vi_pressed)
+        if (h!=0) {
             sound_play_option("sndDJump")
 
             cur_value=settings("example")
@@ -24,16 +26,16 @@ switch (argument0) {
             settings("example",!cur_value)
 
             //list of 3 options
-            h=global.key_pressed[key_jump]+global.key_pressed[key_right]-global.key_pressed[key_left]
             settings("example",modwrap(cur_value+h,0,3))
         }
 
         //constant left/right input
-        if (global.input_h!=0) {
+        //(use only one of those)
+        h=macro_leftright()
+        if (h!=0) {
             //slider option
-            cur_value=settings("example")
-            h=global.input_h/100
-            settings("example",saturate(cur_value+h))
+            cur_value=settings("example") 
+            settings("example",saturate(cur_value+h/100))
         }
     }break
     case opt_text: {

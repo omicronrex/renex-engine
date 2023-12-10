@@ -1,14 +1,17 @@
+var vi;
+
 with (World) {
-    global.input_cleared=true
-    for (i=0;i<key_sizeof;i+=1) {
-        global.oldkey[i]=0
-        global.prevkey[i]=0
-        global.key_pressed[i]=0
-        global.key_released[i]=0
-        global.key[i]=0
-        storekey_pressed[i]=0
-        storekey_released[i]=0
-        storekey_released_early[i]=0
-        storekey[i]=0
+    for (vi=0;vi<vii_sizeof;vi+=1) {
+        vii_key[vi]=0
+        vii_press[vi]=0
+        vii_release[vi]=0
+        vii_disable[vi]=0
+        vii_prev[vi]=0
+        vii_store[vi]=0
+        vii_store_press[vi]=0
+        vii_store_release[vi]=0
+        vii_store_release_early[vi]=0
     }
+
+    global.input_cleared=true
 }

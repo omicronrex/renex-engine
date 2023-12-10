@@ -15,7 +15,7 @@ name=room_get_name(room)+"@"+string(round(x))+"x"+string(round(y))
 notice=0
 font=fntSignpost
 color=$ffffff
-msg=key_get_name(key_shoot)+lang("presstosave")
+msg=key_shoot(vi_name)+lang("presstosave")
 
 if (difficulty>mydifficulty) {
     instance_destroy()

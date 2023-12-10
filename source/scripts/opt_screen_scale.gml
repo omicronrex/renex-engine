@@ -5,9 +5,8 @@ switch (argument0) {
         return true
     }break
     case opt_step:{
-        if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {
-            var h; if (global.key_pressed[key_jump]) h=1
-            else h=global.key_pressed[key_right]-global.key_pressed[key_left]
+        h=key_jump(vi_pressed)+macro_leftright(vi_pressed)
+        if (h!=0) {
             if (global.dmaxscale==1) {
                 sound_play_option("sndBlockBreak")
                 show_message_right("Sorry, your screen is too small for zoom")

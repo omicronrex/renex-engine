@@ -1,7 +1,7 @@
 //most engine hotkeys are handled here
 
 //restart
-if (global.key_pressed[key_restart]) {
+if (key_restart(vi_pressed)) {
     if (is_ingame() && !global.pause) {
         if (room==global.difficulty_room) {
             Player.dead=1
@@ -15,7 +15,7 @@ if (global.key_pressed[key_restart]) {
 //pause
 if (is_ingame()) {
     if (pause_delay<=0) {
-        if (global.key_pressed[key_menu]) {
+        if (key_pause(vi_pressed)) {
             if (!global.pause) {
                 instance_create(0,0,PauseMenu)
             } else {

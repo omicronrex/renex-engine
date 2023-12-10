@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 joy=-1
-sel=key_sizeof
+sel=vii_sizeof
 
 xdraw=120
 ydraw=80
@@ -16,11 +16,11 @@ ycursor=0
 
 setting=false
 
-for (i=0;i<key_sizeof;i+=1) {
-    keyname[i]=lang("keyname"+string(i))
+for (i=0;i<vii_sizeof;i+=1) {
+    keyname[i]=script_execute(vii_i2s[i],vi_name)
 }
-keyname[key_sizeof ]="Set Controls"
-keytext[key_sizeof]=""
+keyname[vii_sizeof ]="Set Controls"
+keytext[vii_sizeof]=""
 
 show_message_left(lang("joytokey"),300)
 
@@ -37,7 +37,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-keytext[key_sizeof]=""
+keytext[vii_sizeof]=""
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -51,11 +51,11 @@ if (joystick_count()!=joycount) {
 }
 
 //you need to be able to back out if your joystick isn't working
-if (global.key_pressed[key_shoot]) {
+if (key_shoot(vi_pressed)) {
     if (global.lastjoystick==noone) {
         if (setting) {
             setting=false
-            keytext[key_sizeof]=""
+            keytext[vii_sizeof]=""
             event_user(0)
         } else {
             input_clear()
@@ -78,14 +78,14 @@ if (global.key_pressed[key_shoot]) {
         }
     }
 
-    sel=key_sizeof
-    if (global.key_pressed[key_jump]) {
+    sel=vii_sizeof
+    if (key_jump(vi_pressed)) {
         if (global.lastjoystick==noone) {
             if (joy!=-1) {
                 setting=true
-                keytext[key_sizeof]="["+key_get_name(key_shoot)+"] to cancel"
+                keytext[vii_sizeof]="["+key_shoot(vi_keyname)+"] to cancel"
                 sel=0
-                show_message_right("["+key_get_name(key_jump)+"]"+lang("joyskipkey"),300)
+                show_message_right("["+key_jump(vi_keyname)+"]"+lang("joyskipkey"),300)
                 joy_snap(joy)
             } else {
                 show_message_right(lang("joypushtosel"),300)
@@ -108,32 +108,32 @@ if (global.key_pressed[key_shoot]) {
         }
     } else {
         locked=0    
-        if (global.key_pressed[key_jump] && global.lastjoystick==noone) {
+        if (key_jump(vi_pressed) && global.lastjoystick==noone) {
             keytext[sel]=joy_button[joy,sel]
             if (string(keytext[sel])="0") keytext[sel]="Unset"
             sel+=1
         }
     }
 
-    if (sel=key_sizeof) {
-        for (i=0;i<key_sizeof;i+=1) {
+    if (sel=vii_sizeof) {
+        for (i=0;i<vii_sizeof;i+=1) {
             settings("joymap_"+name+"_"+string(i),joy_button[joy,i])
         }
         settings("joymap_"+name+"_set",1)
         setting=false
         global.joysupdated=true
-        keytext[key_sizeof]="All set!"
+        keytext[vii_sizeof]="All set!"
         alarm[0]=room_speed*2
     }
 }
 
 if (!setting) {
     if (joy==-1) {
-        for (b=0;b<key_sizeof;b+=1) {
+        for (b=0;b<vii_sizeof;b+=1) {
             keytext[b]="-"
         }
     } else {
-        for (b=0;b<key_sizeof;b+=1) {
+        for (b=0;b<vii_sizeof;b+=1) {
             keytext[b]=joy_button[joy,b]
             if (string(keytext[b])="0") keytext[b]="Unset"
         }
@@ -151,7 +151,7 @@ joycount=joystick_count()
 
 for (j=0;j<joycount;j+=1) {
     name=joystick_name(j)
-    for (b=0;b<key_sizeof;b+=1) {
+    for (b=0;b<vii_sizeof;b+=1) {
         joy_button[j,b]=settings("joymap_"+name+"_"+string(b))
     }
 }
@@ -180,7 +180,7 @@ if (joy==-1) {
     else draw_text(400,64,"- ("+string(joy+1)+") "+joystick_name(joy)+" -")
 }
 
-for (i=0;i<=key_sizeof;i+=1) {
+for (i=0;i<=vii_sizeof;i+=1) {
     draw_set_halign(0)
     draw_text(xdraw,ydraw+(i)*ysep+32,keyname[i])
     draw_set_halign(2)
@@ -192,9 +192,9 @@ draw_sprite(sprPlayerIdle,floor(image_index),xdraw-20,ycursor)
 //button info
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
-draw_text(34,556,"["+key_get_name(key_shoot)+"] Back")
+draw_text(34,556,"["+key_shoot(vi_keyname)+"] Back")
 draw_set_halign(2)
-draw_text(766,556,"["+key_get_name(key_jump)+"] Accept")
+draw_text(766,556,"["+key_jump(vi_keyname)+"] Accept")
 draw_set_halign(0)
 
 draw_set_color($ffffff)

@@ -31,6 +31,9 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+h=macro_leftright(vi_pressed)
+v=macro_updown(vi_pressed)
+
 if ((keyboard_check_pressed(ord("Z")) && keyboard_check(vk_control)) || keyboard_check_pressed(vk_f5)) {
     sound_play("sndItem")
     savedata_read()
@@ -51,22 +54,22 @@ if ((keyboard_check_pressed(ord("Z")) && keyboard_check(vk_control)) || keyboard
     exit
 }
 
-if (global.key_pressed[key_menu]) {
+if (key_pause(vi_pressed)) {
     room_goto(rmOptions)
 }
 
-if (global.key_pressed[key_shoot]) {
+if (key_shoot(vi_pressed)) {
     if (state!="") {
         state=""
     } else room_goto(rmTitle)
 }
 
 if (state="") {
-    if (global.key_pressed[key_left] || global.key_pressed[key_right]) {
+    if (h) {
         sound_play("sndJump")
-        select=modwrap(select+global.input_h,0,3)
+        select=modwrap(select+h,0,3)
     }
-    if (global.key_pressed[key_jump]) {
+    if (key_jump(vi_pressed)) {
         sound_play("sndDJump")
         savedata_select(select)
         asksel=0
@@ -87,12 +90,12 @@ if (state="") {
 
 //continue or erase
 if (state="continue") {
-    if (global.key_pressed[key_up] || global.key_pressed[key_down]) {
+    if (v!=0) {
         sound_play("sndJump")
         asksel=!asksel
         askcount=0
     }
-    if (global.key_pressed[key_jump]) {
+    if (key_jump(vi_pressed)) {
         if (asksel) {
             askcount+=1
             if (askcount=5) {
@@ -121,13 +124,13 @@ if (state="new file") {
         input_clear()
         savedata_newgame(select,global.single_difficulty)
     } else {
-        if (global.key_pressed[key_left] || global.key_pressed[key_right]) {
+        if (h!=0) {
             sound_play("sndJump")
             savedata_select(select)
-            savedata("diff",modwrap(savedata("diff")+global.input_h,0,global.num_difficulties))
+            savedata("diff",modwrap(savedata("diff")+h,0,global.num_difficulties))
             difficulty=savedata("diff")
         }
-        if (global.key_pressed[key_jump]) {
+        if (key_jump(vi_pressed)) {
             instance_destroy_id(TitleParticle)
             instance_destroy_id(TitleMenu)
             input_clear()
@@ -232,10 +235,10 @@ draw_sprite(sprDynamicPlatform,0,dx-17,y+319+64)
 draw_set_color(global.text_color)
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
-draw_text(34,global.height-52,"["+key_get_name(key_shoot)+"] "+lang("menuback"))
+draw_text(34,global.height-52,"["+key_shoot(vi_name)+"] "+lang("menuback"))
 draw_set_halign(1)
-draw_text(global.width/2,global.height-52,"["+key_get_name(key_menu)+"] "+lang("menuoptions"))
+draw_text(global.width/2,global.height-52,"["+key_pause(vi_name)+"] "+lang("menuoptions"))
 draw_set_halign(2)
-draw_text(global.width-34,global.height-52,"["+key_get_name(key_jump)+"] "+lang("menuaccept"))
+draw_text(global.width-34,global.height-52,"["+key_jump(vi_name)+"] "+lang("menuaccept"))
 draw_set_halign(0)
 draw_set_color($ffffff)

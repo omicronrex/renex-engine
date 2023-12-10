@@ -19,7 +19,7 @@ if (file_exists(global.setfile)) {
 }
 
 //unpack settings
-for (i=0;i<key_sizeof;i+=1) global.keycode[i]=settings("key_"+string(i))
+for (i=0;i<vii_sizeof;i+=1) vii_code[i]=settings("key_"+string(i))
 sound_kind_volume(0,settings("sfxvol"))
 sound_kind_volume(3,settings("sfxvol"))
 sound_kind_volume(1,settings("musvol"))

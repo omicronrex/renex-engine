@@ -231,7 +231,7 @@ if (!frozen) {
     }
 
     if (ladder) {
-        if (!instance_place(x,y,Ladder) || (onGround && key[pick(!vflip,key_down,key_up)])) {
+        if (!instance_place(x,y,Ladder) || (onGround && macro_down_flip())) {
             //fall off
             ladder=false
         } else {
@@ -242,7 +242,7 @@ if (!frozen) {
             }} else vspeed=0
 
             //jump out of ladder
-            if (key_pressed[key_jump]) {
+            if (key_jump(vi_pressed)) {
                 ladderjump=true
                 ladder=false
             }
@@ -443,27 +443,25 @@ if (!frozen) {
     if (!cutscene) {
         //player actions
         
-        if (key_pressed[key_shoot] || (key[key_shoot] && global.debug_autofire_counter==1)) {
+        if (key_shoot(vi_pressed) || (key_shoot() && global.debug_autofire_counter==1)) {
             player_shoot()
         }
-        if (key_released_early[key_jump] && !global.disable_cancels) {
+        if (key_jump(vi_released_early) && !global.disable_cancels) {
             //this is used to cactus
             player_capjump()
         }
-        if (key_pressed[key_jump]) {
+        if (key_jump(vi_pressed)) {
             player_jump()
         }
         if (oneframe_buffer) {
             //minimum jump is a 2f with cancels disabled
-            key_released[key_jump]=0
             player_capjump()
             oneframe_buffer=0
-        }
-        if (key_released[key_jump]) {
-            if (global.disable_cancels && key_pressed[key_jump]) oneframe_buffer=1
+        } else if (key_jump(vi_released)) {
+            if (global.disable_cancels && key_jump(vi_pressed)) oneframe_buffer=1
             else player_capjump()
         }
-        if (key_pressed[key_die]) {
+        if (key_die()) {
             kill_player()
         }
     }
@@ -509,14 +507,14 @@ if (!vvvvvv) if (!onPlatform) {
 
         //input away from the vine
         if (
-            (onVineL && key_pressed[key_right])
-        ||  (onVineR && key_pressed[key_left ])
-        ||  (key_pressed[key_jump] && global.maker_vines)
+            (onVineL && key_right(vi_pressed))
+        ||  (onVineR && key_left(vi_pressed))
+        ||  (key_jump(vi_pressed) && global.maker_vines)
         ) {
             hang=false
             onVineL=false
             onVineR=false
-            if (key[key_jump]) {
+            if (key_jump()) {
                 //jumping off vine
                 walljump=2
                 if (onVineType=="normal") {
@@ -541,7 +539,7 @@ if (!vvvvvv) if (!onPlatform) {
                 //just moving off vine
                 hspeed=3*facing
             }
-        } else if ((onVineL && key[key_right]) || (onVineR && key[key_left])) {
+        } else if ((onVineL && key_right()) || (onVineR && key_left())) {
             //slide off of vine if holding the right direction, but not pressing it
             hspeed=3*facing
         }
@@ -549,7 +547,7 @@ if (!vvvvvv) if (!onPlatform) {
 
     if (hang) {
         //eat djump when maker vines is disabled
-        if (key_pressed[key_jump] && !global.maker_vines) {
+        if (key_jump(vi_pressed) && !global.maker_vines) {
             if (onPlatform) {
                 djump=1
                 walljump=2
@@ -582,7 +580,7 @@ if (!vvvvvv) if (!onPlatform) {
         if (vflip==-1) vspeed=max(-2,vspeed)
         else if (vflip==1) vspeed=min(vspeed,2)
 
-        if (key_pressed[key_jump]) {
+        if (key_jump(vi_pressed)) {
             //vine jump
             hang=false
             onVineL=false
@@ -615,8 +613,8 @@ if (!vvvvvv) if (!onPlatform) {
                 }break
             }
             //prevent 1fs from fulljumping
-            if (key_released[key_jump]) player_capjump()
-        } else if ((key[key_left] && onVineR) || (key[key_right] && onVineL)) {
+            if (key_jump(vi_released)) player_capjump()
+        } else if ((key_left() && onVineR) || (key_right() && onVineL)) {
             //moving away from vine
             hang=false
             onVineL=false
@@ -860,7 +858,7 @@ applies_to=self
 */
 ///nekoron water bug
 
-if (key_pressed[key_jump]) if (instance_place(x,y+1*vflip,NekoronAir) && !onGround) {
+if (key_jump(vi_pressed)) if (instance_place(x,y+1*vflip,NekoronAir) && !onGround) {
     vspeed=-jump2*vflip
     repeat (choose(1,2,3)) sound_play_slomo("sndDJump")
     image_index=0

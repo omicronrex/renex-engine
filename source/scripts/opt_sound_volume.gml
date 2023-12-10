@@ -9,9 +9,10 @@ switch (argument0) {
         shoottimer=0
     }break
     case opt_step:{
-        if (global.input_h!=0) {
+        h=macro_leftright()
+        if (h!=0) {
             if (volumetimer>25 || !(volumetimer mod 5)) {
-                settings("sfxvol",saturate(settings("sfxvol")+global.input_h*0.01))
+                settings("sfxvol",saturate(settings("sfxvol")+h*0.01))
             }
             volumetimer+=1
             sound_set_sfx_volume(1)

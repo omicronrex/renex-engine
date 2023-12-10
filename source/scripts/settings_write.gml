@@ -2,7 +2,7 @@
 
 var b;
 
-for (i=0;i<key_sizeof;i+=1) settings("key_"+string(i),global.keycode[i])
+for (i=0;i<vii_sizeof;i+=1) settings("key_"+string(i),vii_code[i])
 
 b=buffer_create()
 buffer_write_hex(b,ds_map_write(global.setmap))

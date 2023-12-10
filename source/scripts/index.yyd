@@ -45,7 +45,7 @@ mmf_animspeed
 mmf_speed
 is_ingame
 good_bounce
-key_get_name
+keyboard_get_name
 has_item
 draw_sign_text
 cement
@@ -277,3 +277,22 @@ weapon_8dir
 
 player_update_sprite_coords
 simple_collision
+custom_keys
+input_add
+key_left
+key_right
+key_up
+key_down
+key_jump
+key_shoot
+key_restart
+key_pause
+key_skip
+key_die
+input_get
+
+macro_leftright
+macro_updown
+player_swap_keys
+macro_up_flip
+macro_down_flip

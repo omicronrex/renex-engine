@@ -61,10 +61,10 @@ if (lost) {
 } else if (active) {
     //yoshi is being ridden
 
-    hspeed=global.input_h*4
+    hspeed=macro_leftright()*4
     vspeed=min(vspeed,11)
 
-    image_xscale=esign(global.input_h,image_xscale)
+    image_xscale=esign(hspeed,image_xscale)
 
     image_speed=1/25
     if (abs(vspeed)>abs(gravity)) {
@@ -75,14 +75,14 @@ if (lost) {
         image_speed=0.5
     } else sprite_index=sprYoshiStand
 
-    if (global.key_pressed[key_jump]) {
+    if (key_jump(vi_pressed)) {
         if (instance_place(x,y+1,Block)) vspeed=-11*vflip
     }
-    if (global.key_released[key_jump]) {
+    if (key_jump(vi_released)) {
         if (vspeed*vflip<0) vspeed*=0.45
     }
 
-    if (global.key_pressed[key_shoot]) {
+    if (key_shoot(vi_pressed)) {
         //kill yoshi
         sound_play("sndShoot")
         sound_play("sndDeath")
@@ -206,7 +206,7 @@ if (active) {
     if (other.object_index=SmwSaw) {
         if (y<=other.y-2) {
             sound_play("sndYoshiJump")
-            if (global.key[key_jump])
+            if (key_jump())
                 vspeed=-15
             else
                 vspeed=-5

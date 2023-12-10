@@ -8,9 +8,10 @@ switch (argument0) {
         volumetimer=0
     }break
     case opt_step:{
-        if (global.input_h!=0) {
+        h=macro_leftright()
+        if (h!=0) {
             if (volumetimer>25 || !(volumetimer mod 5)) {
-                settings("musvol",saturate(settings("musvol")+global.input_h*0.01))
+                settings("musvol",saturate(settings("musvol")+h*0.01))
             }
             volumetimer+=1
             sound_kind_volume(1,settings("musvol"))

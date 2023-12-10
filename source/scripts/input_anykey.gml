@@ -1,6 +1,7 @@
-var i;
+var vi;
 
-for (i=0;i<key_sizeof;i+=1) {
-    if (global.key[i]) return 1
+for (vi=0;vi<vii_sizeof;vi+=1) {
+    if (vii_key[vi]) return 1
 }
+
 return 0

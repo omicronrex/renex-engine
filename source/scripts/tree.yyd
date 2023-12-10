@@ -1,12 +1,43 @@
 |engine_settings
 +CUSTOM
+	+game options
+		|custom_options
+		|opt_template
+		|opt_music_volume
+		|opt_sound_volume
+		|opt_screen_mode
+		|opt_screen_scale
+		|opt_fullscreen_filter
+		|opt_blood_amount
+		|opt_animation
+		|opt_screenshake
+		|opt_savevalign
+		|opt_caption
+		|opt_left_right
+		|opt_rebind_keyboard
+		|opt_rebind_joystick
+	+game keys
+		|custom_keys
+		|macro_leftright
+		|macro_up_flip
+		|macro_down_flip
+		|macro_updown
+		|key_left
+		|key_right
+		|key_up
+		|key_down
+		|key_jump
+		|key_shoot
+		|key_restart
+		|key_pause
+		|key_skip
+		|key_die
 	|custom_init
 	|custom_save
 	|custom_load
-	|custom_sound_properties
-	|custom_options
 	|custom_traps
 	|custom_language
+	|custom_sound_properties
 	|custom_region_activation
 	|custom_window_border
 +saving
@@ -44,7 +75,7 @@
 		|format_time
 		|mmf_animspeed
 		|mmf_speed
-		|key_get_name
+		|keyboard_get_name
 		|get_path_speed
 		|inside_view
 		|is_ingame
@@ -59,6 +90,8 @@
 			|joy_compare
 			|joystick_default
 		|input_init
+		|input_add
+		|input_get
 		|input_default
 		|input_anykey
 		|input_anykey_pressed
@@ -158,6 +191,7 @@
 	|freeze_player
 	|unfreeze_player
 	|try_unstuck
+	|player_swap_keys
 +keypick
 	|key_clear
 	|key_add
@@ -218,21 +252,6 @@
 	|sound_music_over_pos
 	|sound_music_under_pos
 	|sound_play_synced
-+game options
-	|opt_template
-	|opt_music_volume
-	|opt_sound_volume
-	|opt_screen_mode
-	|opt_screen_scale
-	|opt_fullscreen_filter
-	|opt_blood_amount
-	|opt_animation
-	|opt_screenshake
-	|opt_savevalign
-	|opt_caption
-	|opt_left_right
-	|opt_rebind_keyboard
-	|opt_rebind_joystick
 +bonus/utility
 	|draw_cherry
 	|simple_collision

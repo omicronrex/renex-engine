@@ -15,7 +15,10 @@ if (global.blood_clusters) {
         i.direction=irandom(35)*10
         i.speed=random(8)*dt
         i.gravity=(0.2+random(0.2))*dt*dt
-        if (yes) i.gravity*=sign(Player.baseGrav*Player.vflip)
+        if (yes) {
+            i.vflip=Player.vflip
+            i.gravity*=sign(Player.baseGrav*Player.vflip)
+        }
         if (irandom(1)) {
             i.hspeed+=hspeed
             i.vspeed+=vspeed
@@ -28,7 +31,10 @@ if (global.blood_clusters) {
         i.direction=irandom(35)*10
         i.speed=random(8)*dt
         i.gravity=(0.2+random(0.2))*dt*dt
-        if (yes) i.gravity*=sign(Player.baseGrav*Player.vflip)
+        if (yes) {
+            i.vflip=Player.vflip
+            i.gravity*=sign(Player.baseGrav*Player.vflip)
+        }
         if (irandom(1)) {
             i.hspeed+=hspeed
             i.vspeed+=vspeed

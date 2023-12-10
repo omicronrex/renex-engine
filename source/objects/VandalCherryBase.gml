@@ -22,7 +22,7 @@ if (!collected) {
 } else {
     x=Player.x
     y=Player.y
-    if (global.key_pressed[key_shoot]) {
+    if (key_shoot(vi_pressed)) {
         event_user(0)
         instance_destroy_id(Bullet)
     }

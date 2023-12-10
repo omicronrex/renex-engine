@@ -89,28 +89,28 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-for (i=0;i<key_sizeof;i+=1) {
-    if (global.key[i]) {
-        room_speed=memspd
-        image_speed=0.2*50/room_speed
-        alarm[0]=room_speed*3
-        break
-    }
+if (input_anykey()) {
+    room_speed=memspd
+    alarm[0]=room_speed*3
+    break
 }
 
+image_speed=0.2*50/room_speed
+
 if (sel==-1) {
-    if (global.key_pressed[key_jump]) sel=0
+    if (key_jump(vi_pressed)) sel=0
 } else {
     xcursor=xdraw-18
     ycursor=approach(ycursor,ydraw+(ysep*sel)+9,16*dt)
     option=ds_list_find_value(optlist,sel)
-    if (global.key_pressed[key_up] || global.key_pressed[key_down]) {
+    v=macro_updown(vi_pressed)
+    if (v!=0) {
         script_execute(option,opt_end)
-        sel=modwrap(sel+global.input_v,0,numoptions)
+        sel=modwrap(sel+v,0,numoptions)
     } else {
         script_execute(option,opt_step)
     }
-    if (global.key_pressed[key_shoot]) {
+    if (key_shoot(vi_pressed)) {
         script_execute(option,opt_end)
         sel=-1
     }
@@ -150,7 +150,7 @@ draw_text(40,36,lang("pausemenu"));
 
 draw_set_font(fntFileSmall)
 if (sel==-1) {
-    draw_text(40,ydraw,string_replace(lang("pauseoptions"),"%",key_get_name(key_jump)))
+    draw_text(40,ydraw,string_replace(lang("pauseoptions"),"%",key_jump(vi_name)))
 } else {
     for (i=0;i<numoptions;i+=1) {
         option=ds_list_find_value(optlist,i)

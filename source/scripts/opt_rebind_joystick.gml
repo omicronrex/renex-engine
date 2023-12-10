@@ -5,7 +5,7 @@ switch (argument0) {
         return false
     }break
     case opt_step:{
-        if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {
+        if (key_jump(vi_pressed)) {
             //option ticked/changed
             if (joystick_count()) {
                 sound_play_option("sndDJump")

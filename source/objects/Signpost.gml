@@ -23,7 +23,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (global.key_pressed[key_up]) {
+if (key_up(vi_pressed)) {
     active=5*room_speed
 }
 alarm[0]=2

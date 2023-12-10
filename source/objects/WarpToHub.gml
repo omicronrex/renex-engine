@@ -35,7 +35,7 @@ applies_to=self
 */
 active=1
 
-if (global.key_pressed[key_up]) {
+if (key_up(vi_pressed)) {
     warp_to(global.hub_room)
 }
 #define Other_4

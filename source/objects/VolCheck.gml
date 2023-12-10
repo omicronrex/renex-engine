@@ -38,18 +38,18 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-h=global.key[key_up]-global.key[key_down]
+v=macro_updown()
 
-if (h!=0) {
+if (v!=0) {
     if (volumetimer>volumedelay || !(volumetimer mod volumefpi)) {
-        settings("sfxvol",saturate(settings("sfxvol")+h*0.01))
+        settings("sfxvol",saturate(settings("sfxvol")+v*0.01))
     }
     volumetimer+=1
 } else volumetimer=0
 
 sound_set_sfx_volume(1)
 
-if (global.key_pressed[key_jump] && !fade) {
+if (key_jump(vi_pressed) && !fade) {
     settings("volcheck",true)
     sound_play("sndDJump")
     settings("musvol",settings("sfxvol"))
@@ -83,9 +83,9 @@ draw_clear(0)
 draw_set_font(fntFileBig)
 draw_set_valign(2)
 draw_set_halign(2)
-draw_text(global.width-16,global.height-16,lang("volcheck")+"["+key_get_name(key_jump)+"]"+lang("volcheck2"))
+draw_text(global.width-16,global.height-16,lang("volcheck")+"["+key_jump(vi_name)+"]"+lang("volcheck2"))
 draw_set_halign(0)
-draw_text(16,global.height-16,lang("volcheckvol")+": "+string(round(settings("sfxvol")*100))+"%#"+lang("volcheck3")+"["+key_get_name(key_up)+"]"+lang("volcheck4")+"["+key_get_name(key_down)+"]")
+draw_text(16,global.height-16,lang("volcheckvol")+": "+string(round(settings("sfxvol")*100))+"%#"+lang("volcheck3")+"["+key_up(vi_name)+"]"+lang("volcheck4")+"["+key_down(vi_name)+"]")
 draw_set_valign(0)
 
 if (fade) draw_rect(0,0,global.width,global.height,background_color,alpha)

@@ -5,10 +5,9 @@ switch (argument0) {
         return true
     }break
     case opt_step:{
-        if (global.key_pressed[key_jump] || global.key_pressed[key_left] || global.key_pressed[key_right]) {
+        h=key_jump(vi_pressed)+macro_leftright(vi_pressed)
+        if (h!=0) {
             //option ticked/changed
-            var h; if (global.key_pressed[key_jump]) h=1
-            else h=global.key_pressed[key_right]-global.key_pressed[key_left]
             sound_stop("sndDeath")
             sound_play_option("sndDeath")
             settings("blood",modwrap(settings("blood")+h,0,4))
@@ -18,7 +17,7 @@ switch (argument0) {
             instance_destroy_id(GibParticle)
             instance_create(xcursor,ycursor,BloodEmitter)
         }
-        if (global.key_pressed[key_restart]) {
+        if (key_restart(vi_pressed)) {
             dead=0
             instance_destroy_id(BloodEmitter)
             instance_destroy_id(Blood)

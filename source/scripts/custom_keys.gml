@@ -11,3 +11,6 @@ input_add(key_restart ,"Restart" ,"r"      )
 input_add(key_pause   ,"Pause"   ,"p"      )
 input_add(key_skip    ,"Skip"    ,"s"      )
 input_add(key_die     ,"Die"     ,"q"      )
+
+//in order to remove an input from the game,
+//comment the add above and make it return 0

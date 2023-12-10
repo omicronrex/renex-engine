@@ -65,7 +65,7 @@ if (key_shoot(vi_pressed)) {
 }
 
 if (state="") {
-    if (h) {
+    if (h!=0) {
         sound_play("sndJump")
         select=modwrap(select+h,0,3)
     }

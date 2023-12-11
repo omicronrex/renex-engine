@@ -20,22 +20,6 @@ applies_to=self
 invert=0
 arg0=Gizmo
 */
-#define Collision_TrapStop
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=902
-applies_to=self
-invert=0
-arg0=Gizmo
-*/
-#define Collision_TrapRedirect
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=902
-applies_to=self
-invert=0
-arg0=Gizmo
-*/
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

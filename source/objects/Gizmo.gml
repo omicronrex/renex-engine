@@ -39,6 +39,9 @@ rotating=0
 no_destroy_outside=0
 
 trigger_on_create=0
+
+trap_redir_index=0
+trap_stop_index=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -63,7 +66,7 @@ if (rotating) {
 var coll;coll=0
 coll=instance_place(x,y,TrapStop)
 
-if (coll) {
+if (coll) if (trap_stop_index==coll.index) {
     if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,coll)) break}
     if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,coll)) break}
     if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,coll)) break}
@@ -91,16 +94,18 @@ if (coll) {
 
 coll=instance_place(x,y,TrapRedirect)
 
-if (coll) {
+if (coll) if (trap_redir_index==coll.index) {
     x-=hspeed
     y-=vspeed
 
-    if (coll.hsp==0 && coll.vsp==0) {
+    if (coll.hsp==0 && coll.vsp==0 && coll.spd==0 && coll.dir==0) {
         hspeed*=-1
         vspeed*=-1
     } else {
         hspeed=coll.hsp
         vspeed=coll.vsp
+        speed=coll.spd
+        direction=coll.dir
     }
 }
 #define Other_0
@@ -121,19 +126,21 @@ applies_to=self
 //field path: path
 //field path_endaction: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
 //field path_absolute: bool
-//field path_scaling
-//field path_speed
+//field path_scaling: number
+//field path_speed: number
 //field sound: string
 //field dir: angle
-//field spd
-//field hsp
-//field vsp
-//field scaleh
-//field scalev
-//field rotate
+//field spd: number
+//field hsp: number
+//field vsp: number
+//field scaleh: number
+//field scalev: number
+//field rotate: number
 //field no_destroy_outside: bool
 //field trigger_on_create: bool
 //field depth: number
+//field trap_redir_index: number
+//field trap_stop_index: number
 
 if (trigger_on_create) event_trigger(ev_traptriggered)
 #define Other_8

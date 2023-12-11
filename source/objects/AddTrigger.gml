@@ -16,24 +16,6 @@ applies_to=self
 if (trigger_type=="soft") {
     with (instance) event_perform_object(Gizmo,ev_step,ev_step_normal)
 } else event_inherited()
-#define Collision_TrapStop
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-if (trigger_type=="soft") {
-    with (instance) event_perform_object(Gizmo,ev_collision,TrapStop)
-} else event_inherited()
-#define Collision_TrapRedirect
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-if (trigger_type=="soft") {
-    with (instance) event_perform_object(Gizmo,ev_collision,TrapRedirect)
-} else event_inherited()
 #define Other_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -171,24 +153,6 @@ if (trigger_type=="hard") {
     instance.image_xscale=image_xscale
     instance.image_yscale=image_yscale
     instance.image_alpha=image_alpha
-} else {
-    image_angle=instance.image_angle
-    x=instance.x
-    y=instance.y
-    xprevious=instance.xprevious
-    yprevious=instance.yprevious
-    xstart=instance.xstart
-    ystart=instance.ystart
-    hspeed=instance.hspeed
-    vspeed=instance.vspeed
-    direction=instance.direction
-    speed=instance.speed
-    friction=instance.friction
-    gravity=instance.gravity
-    gravity_direction=instance.gravity_direction
-    image_xscale=instance.image_xscale
-    image_yscale=instance.image_yscale
-    image_alpha=instance.image_alpha
 }
 #define Trigger_Trap is Triggered
 /*"/*'/**//* YYD ACTION

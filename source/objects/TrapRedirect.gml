@@ -26,6 +26,7 @@ applies_to=self
 */
 /*desc
 Redirects traps by setting their h/vspeed.
+Bounces off by default.
 */
 //field hsp: number
 //field vsp: number

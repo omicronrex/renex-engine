@@ -59,50 +59,49 @@ if (scaling) {
 if (rotating) {
     image_angle+=rotate
 }
-#define Collision_TrapStop
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,other.id)) break}
-if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,other.id)) break}
-if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,other.id)) break}
-if (vspeed<0) repeat (ceil(-vspeed)) {y+=1 if (!instance_place(x,y,other.id)) break}
 
-speed=0
+var coll;coll=0
+coll=instance_place(x,y,TrapStop)
 
-if (scaling) {
-    sw=sprite_get_width(sprite_index)
-    sh=sprite_get_height(sprite_index)
+if (coll) {
+    if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,coll)) break}
+    if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,coll)) break}
+    if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,coll)) break}
+    if (vspeed<0) repeat (ceil(-vspeed)) {y+=1 if (!instance_place(x,y,coll)) break}
 
-    if (scaleh>0) repeat (ceil( scaleh)) {x-=1*(  sprite_xoffset/sw/image_xscale) image_xscale-=1/sw if (!instance_place(x,y,other.id)) break}
-    if (scalev>0) repeat (ceil( scalev)) {y-=1*(  sprite_yoffset/sh/image_yscale) image_yscale-=1/sh if (!instance_place(x,y,other.id)) break}
-    if (scaleh<0) repeat (ceil(-scaleh)) {x-=-1*(1-sprite_xoffset/sw/image_xscale) image_xscale-=1/sw if (!instance_place(x,y,other.id)) break}
-    if (scalev<0) repeat (ceil(-scalev)) {y-=-1*(1-sprite_yoffset/sh/image_yscale) image_yscale-=1/sh if (!instance_place(x,y,other.id)) break}
+    speed=0
 
-    scaling=false
+    if (scaling) {
+        sw=sprite_get_width(sprite_index)
+        sh=sprite_get_height(sprite_index)
+
+        if (scaleh>0) repeat (ceil( scaleh)) {x-=1*(  sprite_xoffset/sw/image_xscale) image_xscale-=1/sw if (!instance_place(x,y,coll)) break}
+        if (scalev>0) repeat (ceil( scalev)) {y-=1*(  sprite_yoffset/sh/image_yscale) image_yscale-=1/sh if (!instance_place(x,y,coll)) break}
+        if (scaleh<0) repeat (ceil(-scaleh)) {x-=-1*(1-sprite_xoffset/sw/image_xscale) image_xscale-=1/sw if (!instance_place(x,y,coll)) break}
+        if (scalev<0) repeat (ceil(-scalev)) {y-=-1*(1-sprite_yoffset/sh/image_yscale) image_yscale-=1/sh if (!instance_place(x,y,coll)) break}
+
+        scaling=false
+    }
+
+    if (rotating) {
+        image_angle-=rotate
+        rotating=false
+    }
 }
 
-if (rotating) {
-    image_angle-=rotate
-    rotating=false
-}
-#define Collision_TrapRedirect
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-x-=hspeed
-y-=vspeed
+coll=instance_place(x,y,TrapRedirect)
 
-if (other.hsp==0 && other.vsp==0) {
-    hspeed*=-1
-    vspeed*=-1
-} else {
-    hspeed=other.hsp
-    vspeed=other.vsp
+if (coll) {
+    x-=hspeed
+    y-=vspeed
+
+    if (coll.hsp==0 && coll.vsp==0) {
+        hspeed*=-1
+        vspeed*=-1
+    } else {
+        hspeed=coll.hsp
+        vspeed=coll.vsp
+    }
 }
 #define Other_0
 /*"/*'/**//* YYD ACTION

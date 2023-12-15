@@ -4,7 +4,7 @@
 //add your own code here if you're making your own vandal cherries
 switch (argument0) {
     case "fireball": {
-        with (Player) {cherried_fireball=0 vspeed=0}
+        with (Player) {cherried_fireball=0 vspeed=0 if (instance_place(x,y,Block)) try_unstuck()}
         unlock_controls()
         frozen=0
     }break;

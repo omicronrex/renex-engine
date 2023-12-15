@@ -14,7 +14,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (warpX!=noone && warpY!=noone) {
+if (warpX!=noone && warpY!=noone && !other.dead) {
     move_player(warpX,warpY,0)
     sound_play_slomo("sndTeleport")
 }

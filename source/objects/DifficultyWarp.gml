@@ -33,7 +33,7 @@ applies_to=self
 */
 //field diff: number - use -1 for the "load game" warp
 
-if (diff<global.num_difficulties) {
+if (diff<global.num_difficulties || (global.num_difficulties==1 && diff==0)) {
     if (diff=-1) name=lang("filecontinue")
     else name=global.name_difficulties[diff]
 } else instance_destroy()

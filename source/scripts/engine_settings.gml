@@ -149,6 +149,28 @@
     global.blood_culling=false
 
 
+//sound options
+    //master volume multiplier
+    //we do not recommend gain above 0.7 as it can cause clipping
+    global.gain=0.7
+    //game over music behavior:
+    //0 - play the game over jingle
+    //1 - fade the level music over a second
+    //2 - pause the level music immediately
+    //3 - do nothing (music keeps playing)
+    //4 - music slowdown
+    global.gameover_music=0
+    //block break sound:
+    //0 - remastered sound effect
+    //1 - yuuutu engine sound effect
+    //2 - yosniper engine sound effect
+    global.break_sound_effect=0
+    //pause all audio on pause
+    global.pause_sound_on_game_pause=true
+    //stop sound effects when changing rooms
+    global.stop_sounds_on_room_change=true
+
+
 //cleaner physics - not recommended to change when making traditional needle games
     //jump from vines with the jump button
     global.maker_vines=false
@@ -192,28 +214,6 @@
     global.instance_activate_screens_w=1
     global.instance_activate_screens_h=1
     global.instance_activate_margin_px=20
-
-
-//sound options
-    //master volume multiplier
-    //we do not recommend gain above 0.7 as it can cause clipping
-    global.gain=0.7
-    //game over music behavior:
-    //0 - play the game over jingle
-    //1 - fade the level music over a second
-    //2 - pause the level music immediately
-    //3 - do nothing (music keeps playing)
-    //4 - music slowdown
-    global.gameover_music=0
-    //block break sound:
-    //0 - remastered sound effect
-    //1 - yuuutu engine sound effect
-    //2 - yosniper engine sound effect
-    global.break_sound_effect=0
-    //pause all audio on pause
-    global.pause_sound_on_game_pause=true
-    //stop sound effects when changing rooms
-    global.stop_sounds_on_room_change=true
 
 
 //bonus and funny stuff

@@ -47,6 +47,10 @@ with (SavePointParent) if (visible) {
     draw_sprite_ext(sprite_index,image_index,x+other.x_spacing,y+other.y_spacing,image_xscale,image_yscale,image_angle,c_white,1)
 }
 
+with (Bullet) if (visible) {
+    draw_sprite_ext(sprite_index,image_index,x+other.x_spacing,y+other.y_spacing,image_xscale,image_yscale,image_angle,c_white,1)
+}
+
 //blocks are drawn a little differently to account for laddertop platformss
 with (Block) if (sprite_index!=-1 && sprite_index!=sprHashigo_tate) {
     draw_sprite_ext(sprite_index,image_index,x+other.x_spacing,y+other.y_spacing,image_xscale,image_yscale,image_angle,c_white,1)

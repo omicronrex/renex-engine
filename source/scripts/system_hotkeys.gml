@@ -1,7 +1,7 @@
 //most engine hotkeys are handled here
 
 //restart
-if (key_restart(vi_pressed)) {
+if (key_restart(vi_pressed) && !global.no_restart) {
     if (is_ingame() && !global.pause) {
         if (room==global.difficulty_room) {
             Player.dead=1
@@ -13,7 +13,7 @@ if (key_restart(vi_pressed)) {
 }
 
 //pause
-if (is_ingame()) {
+if (is_ingame() && !global.no_pause) {
     if (pause_delay<=0) {
         if (key_pause(vi_pressed)) {
             if (!global.pause) {
@@ -37,38 +37,40 @@ if (is_ingame()) {
     }
 }
 
-//escape key
-if (keyboard_check_pressed(vk_escape) || scheduled_close_button) {
-    if (global.esc_always_quits || scheduled_close_button) {
-        event_game_end()
-    } else if (is_ingame()) {
-        if (global.pause){
-            instance_destroy_id(PauseMenu)
+if (!global.no_quit) {
+    //escape key
+    if (keyboard_check_pressed(vk_escape) || scheduled_close_button) {
+        if (global.esc_always_quits || scheduled_close_button) {
+            event_game_end()
+        } else if (is_ingame()) {
+            if (global.pause){
+                instance_destroy_id(PauseMenu)
+            } else {
+                instance_activate_all_safe()
+                if (global.gen_thumb) generate_save_thumbnail(1)
+                savedata_write()
+                room_goto(rmTitle)
+            }
         } else {
-            instance_activate_all_safe()
-            if (global.gen_thumb) generate_save_thumbnail(1)
+            if (room=rmMenu) room_goto(rmTitle)
+            else event_game_end()
+        }
+    }
+    
+    //close game
+    if (keyboard_check_pressed(vk_f4) && keyboard_check(vk_alt)) {
+        event_game_end()
+    }
+    
+    //go to title
+    if (keyboard_check_pressed(vk_f2)) {
+        instance_activate_all_safe()
+        if (is_ingame()) {
+            instance_destroy_id(PauseMenu)
             savedata_write()
             room_goto(rmTitle)
-        }
-    } else {
-        if (room=rmMenu) room_goto(rmTitle)
-        else event_game_end()
+        } else room_goto(rmTitle)
     }
-}
-
-//close game
-if (keyboard_check_pressed(vk_f4) && keyboard_check(vk_alt)) {
-    event_game_end()
-}
-
-//go to title
-if (keyboard_check_pressed(vk_f2)) {
-    instance_activate_all_safe()
-    if (is_ingame()) {
-        instance_destroy_id(PauseMenu)
-        savedata_write()
-        room_goto(rmTitle)
-    } else room_goto(rmTitle)
 }
 
 //toggle mute

@@ -208,6 +208,9 @@
     global.default_camera_follow=Player
     //camera will follow target smoothly when free of boundaries
     global.default_camera_smoothing=true
+    //frames to reach target destination if camera smoothing is enabled
+    //higher number = camera moves slower
+    global.smoothing_rate=5
     //deactivate instances outside of the view
     global.instance_deactivation=true
     //how many screens to keep active, with 20 pixels of margin

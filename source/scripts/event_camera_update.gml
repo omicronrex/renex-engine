@@ -1,4 +1,4 @@
-var k,f,l,nx,ny,w,h;
+var k,f,l,nx,ny,w,h,s_rate;
 
 if (is_ingame() && !global.pause) {
     //update camera system
@@ -12,9 +12,11 @@ if (is_ingame() && !global.pause) {
         }
     }
 
+    s_rate=global.smoothing_rate
+
     //calculate and collide camera boundaries
     if (camera_s && camera_initialised) {
-        proj_z=(proj_z*4+camera_z)/5
+        proj_z=(proj_z*(s_rate-1)+camera_z)/s_rate
     } else {
         proj_z=camera_z
     }
@@ -55,9 +57,9 @@ if (is_ingame() && !global.pause) {
     }
 
     if (camera_s && camera_initialised) {
-        view_xcenter=(view_xcenter*4+nx+w/2)/5
-        view_ycenter=(view_ycenter*4+ny+h/2)/5
-        view_angle+=angle_difference(view_angle,-camera_a)/5
+        view_xcenter=(view_xcenter*(s_rate-1)+nx+w/2)/s_rate
+        view_ycenter=(view_ycenter*(s_rate-1)+ny+h/2)/s_rate
+        view_angle+=angle_difference(view_angle,-camera_a)/s_rate
     } else {
         view_xcenter=nx+w/2
         view_ycenter=ny+h/2

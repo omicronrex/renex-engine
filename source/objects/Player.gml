@@ -1090,17 +1090,17 @@ if (instance_place(x,y,ScreenWrap)) {
     coll=instance_place(x,y,OutsideWarp)
     if (coll) {
         with (coll) {
-            if (warpX==noone && warpY==noone && roomTo=room) {
+            if (warpCoord[0]==noone && warpCoord[1]==noone && roomTo=room) {
                 //warp isn't set up correctly
                 instance_destroy()
             } else if (roomTo!=room) {
                 //warp!
                 input_clear()
                 if (autosave) autosave_asap()
-                if (warpX==noone && warpY==noone) {
+                if (warpCoord[0]==noone && warpCoord[1]==noone) {
                     warp_to(roomTo)
                 } else {
-                    warp_to(roomTo,warpX,warpY)
+                    warp_to(roomTo,warpCoord[0],warpCoord[1])
                 }
                 global.warp_id=warpid
             }

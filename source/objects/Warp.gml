@@ -29,10 +29,10 @@ if (warpToPlayerstart) {
     if (warpsound!="") {
         persistent=1
     }
-    if (warpX==noone && warpY==noone) {
+    if (warpCoord[0]==noone && warpCoord[1]==noone) {
         warp_to(roomTo)
     } else {
-        warp_to(roomTo,warpX,warpY)
+        warp_to(roomTo,warpCoord[0],warpCoord[1])
     }
     global.warp_id=warpid
 }
@@ -53,8 +53,6 @@ if (persistent && warpsound!="") {
     sound_play(warpsound)
     instance_destroy()
 } else {
-    warpX=warpCoord[0]
-    warpY=warpCoord[1]
     if (warpToPlayerstart)
         if (warpToPlayerstart.object_index!=PlayerStart)
             warpToPlayerstart=noone

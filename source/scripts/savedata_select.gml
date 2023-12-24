@@ -1,12 +1,13 @@
 //change currently selected savefile
 //you can have as many as you want
+//call with 2 arguments to not read statistics
 var fn,f,p;
 
-global.savesig="save"+string(argument0)
+global.savesig="save"+string(argument[0])
 
 difficulty=savedata("diff")
 
-if (savedata("saved")) {
+if (savedata("saved") && argument_count==1) {
     //load statistics
     ds_grid_resize(global.statgrid,3,1)
     global.statgridh=1

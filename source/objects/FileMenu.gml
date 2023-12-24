@@ -176,7 +176,7 @@ draw_text(global.width/2,64,lang("filemenu"))
 draw_set_color($ffffff)
 
 for (i=0;i<3;i+=1) {
-    savedata_select(i)
+    savedata_select(i,0)
     draw_set_halign(1)
     draw_set_font(fntFileBig)
     draw_text(x+i*240+64,y+96,lang("filegame")+string(i+1))

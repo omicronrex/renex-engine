@@ -108,6 +108,14 @@ if (halign=2 && valign=1) {
     image_angle=180
 }
 
+if (halign=2 && valign=0) {
+    sprite_index=spr1x1
+    image_xscale=-w
+    image_yscale=h
+    image_angle=0
+}
+
+
 draw_set_halign(0)
 draw_set_valign(0)
 #define Other_40

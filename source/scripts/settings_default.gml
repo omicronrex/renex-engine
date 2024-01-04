@@ -7,7 +7,7 @@ settings("l+r behavior",lr_right)
 
 settings("blood",3)
 settings("filter",1)
-settings("anim",0)
+settings("anim",1)
 
 settings("valign",1)
 settings("shakeamount",1)

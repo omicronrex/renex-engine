@@ -307,7 +307,7 @@ if (!frozen) {
         
         if (!global.clean_vines) {
             //regular vines
-            if (!onPlatform && !onGround) {
+            if (!onGround) {
                 //check ds map when in the air
                 for (i=0; i<vineMapSize; i+=1) {
                    if (ds_map_find_value(vineMap,i)) {
@@ -497,7 +497,7 @@ applies_to=self
 if (global.clean_vines) exit
 
 hang=false
-if (!vvvvvv) if (!onPlatform) {
+if (!vvvvvv) if (!onGround) {
     if (onVineL || onVineR) {
         //touching vine
         hang=true

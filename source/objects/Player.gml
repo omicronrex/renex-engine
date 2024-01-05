@@ -505,6 +505,17 @@ if (!vvvvvv) if (!onPlatform) {
 
         vspeed=2*vflip
 
+        //eat djump when maker vines is disabled
+        if (key_jump(vi_pressed) && !global.maker_vines) {
+            if (onPlatform) {
+                djump=1
+                walljump=2
+            } else if (djump<maxjumps) {
+                djump+=1
+                sound_play_slomo("sndDJump")
+            }
+        }
+
         //input away from the vine
         if (
             (onVineL && key_right(vi_pressed))
@@ -542,19 +553,6 @@ if (!vvvvvv) if (!onPlatform) {
         } else if ((onVineL && key_right()) || (onVineR && key_left())) {
             //slide off of vine if holding the right direction, but not pressing it
             hspeed=3*facing
-        }
-    }
-
-    if (hang) {
-        //eat djump when maker vines is disabled
-        if (key_jump(vi_pressed) && !global.maker_vines) {
-            if (onPlatform) {
-                djump=1
-                walljump=2
-            } else if (djump<maxjumps) {
-                djump+=1
-                sound_play_slomo("sndDJump")
-            }
         }
     }
 }

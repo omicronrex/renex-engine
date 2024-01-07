@@ -104,6 +104,8 @@ if (trigger_type=="hard") {
         rotating=other.rotating
         
         no_destroy_outside=other.no_destroy_outside
+        trap_redir_index=other.trap_redir_index
+        trap_stop_index=other.trap_stop_index
         
         trigger_on_create=other.trigger_on_create
     }

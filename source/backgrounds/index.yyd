@@ -1,7 +1,7 @@
 tile_IWBTG
 tile_Colors
 tile_Rainbow
-bgGameMakerBlock
+tile_GameMakerBlock
 bgMegaman
 bgFortress
 bgTree
@@ -29,3 +29,4 @@ bgBackdrop3
 bgFreeformRedblock
 bgFreeformGrasstop
 bgTeapot
+tile_IanExtendedSlope

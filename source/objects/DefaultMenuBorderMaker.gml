@@ -20,15 +20,15 @@ with (all) {x+=ox y+=oy}
 with (FileMenu) dx+=ox
 
 for (u=0;u<global.width;u+=32) {
-    tile_add(bgGameMakerBlock,0,0,32,32,u,0,1000)
+    tile_add(tile_GameMakerBlock,0,0,32,32,u,0,1000)
     if (room=rmOptions) {
         instance_create(u,global.height-32,Block)
     }
 }
 
 for (v=32;v<global.height-32;v+=32) {
-    tile_add(bgGameMakerBlock,0,0,32,32,0,v,1000)
-    tile_add(bgGameMakerBlock,0,0,32,32,global.width-32,v,1000)
+    tile_add(tile_GameMakerBlock,0,0,32,32,0,v,1000)
+    tile_add(tile_GameMakerBlock,0,0,32,32,global.width-32,v,1000)
     if (room=rmOptions) {
         instance_create(0,v,Block)
     }
@@ -36,7 +36,7 @@ for (v=32;v<global.height-32;v+=32) {
 
 //split for layering reasons for when the dimensions aren't a multiple of 32
 for (u=0;u<global.width;u+=32) {
-    tile_add(bgGameMakerBlock,0,0,32,32,u,global.height-32,1000)
+    tile_add(tile_GameMakerBlock,0,0,32,32,u,global.height-32,1000)
 }
 
 instance_destroy()

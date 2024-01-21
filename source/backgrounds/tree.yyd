@@ -3,7 +3,8 @@
 |tile_Rainbow
 |tile_Crimson
 |tile_corner
-|bgGameMakerBlock
+|tile_IanExtendedSlope
+|tile_GameMakerBlock
 +IWBTG
 	|bgMegaman
 	|bgFortress

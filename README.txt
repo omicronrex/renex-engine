@@ -10,11 +10,42 @@
   Made by renex with vast contributions from
   the following people at the time of release:
 
-  ---------------------------------------
-  |  Floogle  Starz0r  Verve  Duncan  V |
-  |  Jopagu  Plasma  Square  roaming97  |
-  |  Various other fangame developers   |
-  ---------------------------------------
+
+    Duncan
+    Floogle
+    Jopagu
+    Plasma
+    roaming97
+    Square
+    Starz0r
+    V
+    Verve
+
+
+  Additional thanks to the following people for inspiration and
+  providing various assets and ideas used in the engine:
+
+  
+    AquaWaddledee
+    あお/Blue
+    Carnival
+    Dung Truong
+    IanBoy141
+    Kayin
+    Mark Overmars
+    Natsu
+    Nikaple
+    Phooey
+    Pieceofcheese87
+    The Dookster
+    YoYoYoDude
+    Zorgo
+    cLOUDDEAD
+    cube
+    patrickgh3
+    tijit
+    very cool
+    ゆううつ/Yuuutu
 
 
 --------------------------------------------------------------------------------

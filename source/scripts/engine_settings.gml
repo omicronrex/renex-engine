@@ -93,6 +93,8 @@
     global.press_shoot_saves=false
     //let all saves work even while flipped the wrong way
     global.flip_saves=true
+    //display the save time above each save
+    global.idolmaster_saves=true
     //save death & time stats in a .csv file in the save location
     global.save_csv_stats=true
     //(1-8) reduces lag during gameplay, but causes a small hiccup on room start

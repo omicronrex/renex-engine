@@ -13,6 +13,7 @@ name=room_get_name(room)+"@"+string(round(x))+"x"+string(round(y))
 
 //used when global.press_shoot_saves
 notice=0
+idolmaster=0
 font=fntSignpost
 color=$ffffff
 msg=key_shoot(vi_name)+lang("presstosave")
@@ -20,6 +21,10 @@ msg=key_shoot(vi_name)+lang("presstosave")
 if (difficulty>mydifficulty) {
     instance_destroy()
 }
+
+time_display=""
+showtime=savedata("showtime "+name)
+if (showtime) time_display=format_time(showtime)
 #define Step_1
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -39,7 +44,19 @@ if (save) {
     
     image_index=1
     image_speed=1/room_speed
-    sound_play("sndSave")    
+    sound_play("sndSave")
+    
+    showtime=savedata("showtime "+name)
+    if (showtime) time_display=format_time(showtime)
+    else {
+        showtime=World.time
+        savedata("showtime "+name,showtime)
+        time_display=format_time(showtime)
+    }
+    
+    if (global.idolmaster_saves) {
+        idolmaster=50
+    }
     
     savedata_save(false,name)
     
@@ -59,6 +76,10 @@ if (global.contact_saves) {
     event_user(0)
 } else if (global.press_shoot_saves) {
     notice=1
+}
+
+if (global.idolmaster_saves) {
+    idolmaster=50
 }
 #define Collision_Bullet
 /*"/*'/**//* YYD ACTION
@@ -95,8 +116,22 @@ action_id=603
 applies_to=self
 */
 draw_self()
+#define Trigger_Draw End
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+var textdraw; textdraw=""
+
+if (idolmaster) {
+    textdraw+=time_display
+    idolmaster-=1
+}
 
 if (notice) {
-    draw_sign_text(x+16,y-10,font,color,msg,false)
+    textdraw+="#"+msg
     notice=0
 }
+
+if (textdraw!="") draw_sign_text(mean(bbox_left,bbox_right),bbox_top-10,font,color,textdraw,false)

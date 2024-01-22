@@ -1,5 +1,3 @@
-var i;
-
 //we can't intercept the projection before backgrounds are drawn,
 //so instead we disable them and use the BackgroundDaemon to draw them correctly
 

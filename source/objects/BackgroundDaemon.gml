@@ -12,6 +12,13 @@ action_id=603
 applies_to=self
 */
 fix_backgrounds()
+#define Other_5
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+event_perform(ev_other,ev_animation_end)
 #define Other_7
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -31,6 +38,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///fix backgrounds
+
 if (!on) {
     on=1
     for (i=0;i<8;i+=1) {

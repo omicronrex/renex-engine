@@ -201,6 +201,9 @@
 
 
 //default camera values
+    //disable camera system entirely
+    //use this when porting your own camera system to the engine
+    global.disable_camera=false
     //these values are applied to all rooms by default - putting a CameraOverride
     //in a room allows you to change the values for that room only
     global.default_camera_w=800

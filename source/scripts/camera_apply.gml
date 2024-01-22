@@ -1,21 +1,36 @@
-var s,l;
-
-s=mean(view_wview/global.width,view_hview/global.height)
-
 //fix funny game maker 0.5 pixel offset
-l=0.5*s
+var lx,ly,w,h,a;
+
+d3d_set_viewport(0,0,global.APPwidth,global.APPheight)
 
 if (view_enabled) with (World) {
-    d3d_set_viewport(0,0,global.APPwidth,global.APPheight)
-    if (camera_initialised) d3d_set_projection_ortho(
-        proj_x-0.5+lengthdir_x(l,-view_angle)+lengthdir_x(l,-view_angle-90),
-        proj_y-0.5+lengthdir_y(l,-view_angle)+lengthdir_y(l,-view_angle-90),
-        global.width*(1/(proj_z)),global.height*(1/(proj_z)),view_angle
-    ) else d3d_set_projection_ortho(
-        view_xview-0.5+lengthdir_x(l,-view_angle)+lengthdir_x(l,-view_angle-90),
-        view_yview-0.5+lengthdir_y(l,-view_angle)+lengthdir_y(l,-view_angle-90),
-        view_wview,view_hview,view_angle
-    )
+    if (camera_initialised && !global.disable_camera) {
+        w=global.width*(1/(proj_z))
+        h=global.height*(1/(proj_z))
+        a=view_angle
+
+        lx=0.5*(w/global.width)
+        ly=0.5*(h/global.height)
+
+        d3d_set_projection_ortho(
+            proj_x-0.5+pivot_pos_x(lx,ly,-a),
+            proj_y-0.5+pivot_pos_y(lx,ly,-a),
+            w,h,a
+        )
+    } else {
+        w=view_wview
+        h=view_hview
+        a=view_angle
+
+        lx=0.5*(w/global.width)
+        ly=0.5*(h/global.height)
+
+        d3d_set_projection_ortho(
+            view_xview-0.5+pivot_pos_x(lx,ly,-a),
+            view_yview-0.5+pivot_pos_y(lx,ly,-a),
+            w,h,a
+        )
+    }
 } else d3d_set_projection_default()
 
 //debug see whole room mode

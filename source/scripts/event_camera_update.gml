@@ -1,6 +1,6 @@
 var k,f,l,nx,ny,w,h,s_rate;
 
-if (is_ingame() && !global.pause) {
+if (is_ingame() && !global.pause && !global.disable_camera) {
     //update camera system
     if (instance_exists(camera_f)) {
         if (camera_f.object_index==Player) {

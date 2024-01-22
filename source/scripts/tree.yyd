@@ -49,6 +49,8 @@
 	|savedata_load
 	|savedata_save
 	|autosave_asap
+	|load_keymap
+	|save_keymap
 	|settings
 	|savedata
 	|savedatap
@@ -57,9 +59,10 @@
 	+savefile
 		|savedata_read
 		|savedata_write
+		|convert_settings
 		|settings_read
-		|setmap_read
 		|settings_write
+		|setmap_read
 		|autosave_do
 	+objsave
 		|get_objsave_hash

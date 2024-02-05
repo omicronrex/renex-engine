@@ -299,3 +299,7 @@ macro_down_flip
 convert_settings
 load_keymap
 save_keymap
+
+shader_snow
+vs3_snow
+ps3_snow

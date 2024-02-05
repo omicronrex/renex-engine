@@ -282,6 +282,9 @@
 			|vs2_shadow
 			|ps3_light
 			|ps2_blur
+		|vs3_snow
+		|ps3_snow
 	|shader_hueshift
 	|shader_tint
 	|shader_rainbow
+	|shader_snow

@@ -309,6 +309,7 @@
 		|DepthRainbow
 		|DepthShaderReset
 		|HeatEffect
+		|SnowEffect
 		+Lighting Engine
 			|LightingCtrl
 			|Light

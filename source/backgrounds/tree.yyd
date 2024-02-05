@@ -27,6 +27,7 @@
 	|bgFunnySlopeTop
 	|bgFreeformRedblock
 	|bgFreeformGrasstop
-+teapot room
++shader stuff
 	|bgFire
 	|bgTeapot
+	|bgPerlin

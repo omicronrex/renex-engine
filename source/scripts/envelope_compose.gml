@@ -1,6 +1,8 @@
 //build the game window.
 var hastofilter,filter,surface,w,h,str,dx,dy;
 
+application_surface=surface_set("application_surface",global.APPwidth,global.APPheight)
+
 //call draw end events
 camera_apply()
 with (all) if (visible) event_perform(ev_trigger,ev_draw_end)
@@ -9,8 +11,6 @@ draw_make_opaque()
 d3d_set_depth(0)
 
 generate_save_thumbnail(0)
-
-application_surface=surface_set("application_surface",global.APPwidth,global.APPheight)
 
 //this place is where you can add any post-processing effects using the application surface,
 //before the gui events are written to it.

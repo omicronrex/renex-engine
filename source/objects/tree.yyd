@@ -308,6 +308,7 @@
 		|DepthTint
 		|DepthRainbow
 		|DepthShaderReset
+		|HeatEffect
 		+Lighting Engine
 			|LightingCtrl
 			|Light

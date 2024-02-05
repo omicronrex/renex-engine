@@ -1054,7 +1054,7 @@ if (!dead) {
                     //crushed!
                     if (other.vspeed>0) {
                         if (global.platform_crush_behavior==1) check_crush()
-                        if (global.platform_crush_behavior==2) move_outside_solid(270,20)
+                        if (global.platform_crush_behavior==2) move_outside_solid(90,20)
                     } else y=oy
                 } else {
                     //land on it

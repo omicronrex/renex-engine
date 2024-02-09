@@ -24,16 +24,15 @@ if (message) message-=1
 if (message2) message2-=1
 
 //music fade
-if (fading) {
-    fadefrom-=0.01
-    sound_kind_volume(1,settings("musvol")*fadefrom)
-    if (fadefrom<=0) {
-        fading=0
-        //pause when it's done fading
+if (music_fade<1) {
+    music_fade+=1/music_fade_time
+    sound_kind_volume(1,settings("musvol")*lerp(music_fade_from,music_fade_to,music_fade))
+    if (music_fade==1 && music_pause) {
         sound_kind_pause(1)
         sound_kind_volume(1,0)
     }
 }
+
 //music slow
 if (slowing) {
     slowfrom-=0.01

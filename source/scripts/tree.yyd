@@ -245,6 +245,7 @@
 +sound
 	|load_sounds
 	|sound_play_music
+	|sound_fade_music
 	|sound_play_slomo
 	|sound_set_starting_volume
 	|sound_set_loop_points

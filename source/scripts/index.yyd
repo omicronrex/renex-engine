@@ -112,7 +112,7 @@ add_difficulty
 flip_player
 
 
-sound_play_music
+sound_fade_music
 lock_controls
 unlock_controls
 custom_traps
@@ -303,3 +303,4 @@ save_keymap
 shader_snow
 vs3_snow
 ps3_snow
+sound_play_music

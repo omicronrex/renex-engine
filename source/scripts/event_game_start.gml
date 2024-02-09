@@ -39,6 +39,11 @@ fadefrom=1
 slowing=0
 slowfrom=1
 
+music_fade_from=1
+music_fade_to=1
+music_fade_time=1
+music_fade=1
+
 stepcount=0
 pause_delay=0
 unfocus_paused=0

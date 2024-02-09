@@ -37,18 +37,14 @@ else if (!dead) {
             if (global.gameover_music==0) {
                 //jingle option
                 if (global.restarting_music) sound_stop_music()
-                else {
-                    sound_kind_volume(1,0)
-                    sound_kind_pause(1)
-                }
+                else sound_fade_music(0,0,1)
                 sound_play("m-r-tight")
             } else if (global.gameover_music==1) {
                 //fade option
-                World.fading=1
+                sound_fade_music(0,100,1)
             } else if (global.gameover_music==2) {
                 //pause option
-                sound_kind_volume(1,0)
-                sound_kind_pause(1)
+                sound_fade_music(0,0,1)
             } else if (global.gameover_music==3) {
                 //this is the "do nothing" option
             } else if (global.gameover_music==4) {

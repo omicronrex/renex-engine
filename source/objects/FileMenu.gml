@@ -82,6 +82,8 @@ if (state="") {
                 state="continue"
             } else {
                 state="new file"
+                savedata("diff",global.difficulty_default)
+                difficulty=global.difficulty_default
             }
             input_clear()
         }

@@ -115,6 +115,7 @@ ram_timer=0
 current_speed=room_speed
 
 global.num_difficulties=0
+global.difficulty_default=0
 
 engine_settings()
 

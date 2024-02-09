@@ -48,10 +48,10 @@
 
 //difficulties
     //difficulty options:
-    add_difficulty("Medium")
-    add_difficulty("Hard")
-    add_difficulty("Very Hard")
-    add_difficulty("Impossible",true)
+    add_difficulty("Medium",false,false)
+    add_difficulty("Hard",true,false)
+    add_difficulty("Very Hard",false,false)
+    add_difficulty("Impossible",false,true)
 
     //you can replace these with bow/no bow for example, or even add more
     //there is a globalvar called "difficulty" that's automatically set for you

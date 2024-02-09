@@ -1,8 +1,7 @@
-///add_difficulty(name,[impossible])
+///add_difficulty(name,default,impossible)
 
-if (argument_count>1) {
-    global.is_impossible[global.num_difficulties]=argument[1]
-} else global.is_impossible[global.num_difficulties]=0
+if (argument1) global.difficulty_default=global.num_difficulties
+global.is_impossible[global.num_difficulties]=argument2
 
 if (current_month==4 && current_day==1) {
     if (argument0=="Medium") argument0="Midium"

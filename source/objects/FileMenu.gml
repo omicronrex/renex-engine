@@ -213,14 +213,29 @@ for (i=0;i<3;i+=1) {
         draw_set_font(fntFileBig)
         draw_set_halign(0)
 
-        if (has_item("Item1")) draw_sprite(sprItem1,0,x+i*240+0,y+256)
-        if (has_item("Item2")) draw_sprite(sprItem2,0,x+i*240+32,y+256)
-        if (has_item("Item3")) draw_sprite(sprItem3,0,x+i*240+64,y+256)
-        if (has_item("Item4")) draw_sprite(sprItem4,0,x+i*240+96,y+256)
-        if (has_item("Item5")) draw_sprite(sprItem5,0,x+i*240+0,y+288)
-        if (has_item("Item6")) draw_sprite(sprItem6,0,x+i*240+32,y+288)
-        if (has_item("Item7")) draw_sprite(sprItem7,0,x+i*240+64,y+288)
-        if (has_item("Item8")) draw_sprite(sprItem8,0,x+i*240+96,y+288)
+        if (!global.item_number_display && !global.item_percentage_display) {
+            if (has_item("Item1")) draw_sprite(sprItem1,0,x+i*240+0,y+256)
+            if (has_item("Item2")) draw_sprite(sprItem2,0,x+i*240+32,y+256)
+            if (has_item("Item3")) draw_sprite(sprItem3,0,x+i*240+64,y+256)
+            if (has_item("Item4")) draw_sprite(sprItem4,0,x+i*240+96,y+256)
+            if (has_item("Item5")) draw_sprite(sprItem5,0,x+i*240+0,y+288)
+            if (has_item("Item6")) draw_sprite(sprItem6,0,x+i*240+32,y+288)
+            if (has_item("Item7")) draw_sprite(sprItem7,0,x+i*240+64,y+288)
+            if (has_item("Item8")) draw_sprite(sprItem8,0,x+i*240+96,y+288)
+        } else if (global.item_number_display) {
+            draw_set2(1,1)
+            draw_set_font(fntFileSmall)
+            draw_text(x+i*240+64,y+256,"Items:"+string(savedata("itemcount"))+"/"+string(global.item_total_count))
+            draw_set_font(fntFileBig)
+            draw_set2(0,0)
+        } else if (global.item_percentage_display) {
+            draw_set2(1,1)
+            draw_set_font(fntFileSmall)
+            draw_text(x+i*240+64,y+256,"Completion:")
+            draw_text(x+i*240+64,y+256+24,string((savedata("itemcount")/global.item_total_count)*100)+"%")
+            draw_set_font(fntFileBig)
+            draw_set2(0,0)
+        }
     } else {
         draw_set_halign(1)
         if (state="new file" && select=i) draw_text(x+i*240+64,y+32+96,lang("filediff")+"#<"+global.name_difficulties[difficulty]+">")

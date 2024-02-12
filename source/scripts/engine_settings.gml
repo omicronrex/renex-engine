@@ -43,6 +43,7 @@
     //user interface text color
     global.text_color=$ffffff
     //enable test mode in exe builds
+    //do not forget to disable this when publishing your game
     global.always_test_mode=false
 
 
@@ -59,6 +60,10 @@
     //         if (difficulty>=1) {code for Hard and above}
     //if the difficulty is set to be impossible then the savefile will be wiped on restart
     
+    //if you set the "default" argument to true
+    //that difficulty will be chosen by default on a new file
+    //this is useful if, for example, you want to include an "assist mode" in your game
+
     //additionally, if only one difficulty is provided, this chooses the difficulty's value:
     //(can be used to turn on bow by setting to 0)
     global.single_difficulty=1
@@ -93,9 +98,10 @@
     global.press_shoot_saves=false
     //let all saves work even while flipped the wrong way
     global.flip_saves=true
-    //display the save time above each save
+    //saves display above them the time they were first saved
     global.idolmaster_saves=true
     //save death & time stats in a .csv file in the save location
+    //recommended to turn this off when publishing your game
     global.save_csv_stats=true
     //(1-8) reduces lag during gameplay, but causes a small hiccup on room start
     //each pass reduces solid instance count by almost half by gluing blocks together
@@ -104,7 +110,8 @@
     global.optimize_solids=2
     //make the NANG fields animate by scrolling the sprite
     global.animated_nang_fields=true
-    //pause the game when unfocused
+    //pause the game when unfocused (automatically unpauses when re-focused)
+    //also doesn't open/close the pause menu if you paused manually
     global.unfocus_pause=false
 
 
@@ -173,7 +180,7 @@
     global.stop_sounds_on_room_change=true
 
 
-//cleaner physics - not recommended to change when making traditional needle games
+//cleaner physics --- not recommended to change when making traditional needle games
     //jump from vines with the jump button
     global.maker_vines=false
     //clean up vine physics, modelling them after Hollow Knight's walljump
@@ -185,6 +192,7 @@
     //1 - hard - always snap regardless of vertical movement, also snaps when near the top
     //2 - light - snaps only when near the top
     //3 - none - don't snap at all, act like one-way blocks
+    //you can also use the CustomSnap object if you want to use multiple snap types
     global.platform_snap_type=0
     //allows jumping while inside of platforms
     global.platform_swimming=true

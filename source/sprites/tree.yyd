@@ -24,6 +24,7 @@
 	|sprHitCount
 	|sprHPMode
 	|sprCameraBlock
+	|sprCameraFocus
 	|sprThrow
 	|sprAvdCtrl
 	|sprLamp

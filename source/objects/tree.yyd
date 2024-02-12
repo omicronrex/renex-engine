@@ -359,6 +359,7 @@
 	|CameraFull
 	|CameraOverride
 	|CameraBlock
+	|CameraFocus
 	|MusicPlayerSection
 	|MusicSync
 	|WarpToHub

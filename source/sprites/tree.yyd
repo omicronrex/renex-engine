@@ -123,6 +123,9 @@
 	|sprDingBlock
 	|sprM9
 	|sprM9Trigger
+	|sprMediumBlock
+	|sprHardBlock
+	|sprVHardBlock
 	|sprAligner
 +Player
 	|sprMaskPlayer
@@ -190,10 +193,10 @@
 	|sprPastelSpikeGreenL
 	|sprPastelSpikeGreenR
 	|sprPastelSpikeGreenU
-	|sprMiniSpikeUp
+	|sprMiniSpikeDown
 	|sprMiniSpikeLeft
 	|sprMiniSpikeRight
-	|sprMiniSpikeDown
+	|sprMiniSpikeUp
 	|sprLeekUp
 	|sprLeekLeft
 	|sprLeekRight
@@ -202,6 +205,30 @@
 	|sprSpikeLeftCrimson
 	|sprSpikeRightCrimson
 	|sprSpikeUpCrimson
+	|sprSpikeDownMedium
+	|sprSpikeLeftMedium
+	|sprSpikeRightMedium
+	|sprSpikeUpMedium
+	|sprSpikeDownHard
+	|sprSpikeLeftHard
+	|sprSpikeRightHard
+	|sprSpikeUpHard
+	|sprSpikeDownVHard
+	|sprSpikeLeftVHard
+	|sprSpikeRightVHard
+	|sprSpikeUpVHard
+	|sprMiniSpikeDownMedium
+	|sprMiniSpikeLeftMedium
+	|sprMiniSpikeRightMedium
+	|sprMiniSpikeUpMedium
+	|sprMiniSpikeDownHard
+	|sprMiniSpikeLeftHard
+	|sprMiniSpikeRightHard
+	|sprMiniSpikeUpHard
+	|sprMiniSpikeDownVHard
+	|sprMiniSpikeLeftVHard
+	|sprMiniSpikeRightVHard
+	|sprMiniSpikeUpVHard
 	|sprWasp
 +Gimmicks
 	+WTW

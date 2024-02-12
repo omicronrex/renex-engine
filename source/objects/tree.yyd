@@ -290,9 +290,39 @@
 		|LeekDown
 		|Fig
 		|Wasp
+	+Difficulty Objects
+		+Medium (destroys on higher)
+			|MediumBlock
+			|SpikeMediumD
+			|SpikeMediumL
+			|SpikeMediumR
+			|SpikeMediumU
+			|MiniSpikeMediumD
+			|MiniSpikeMediumL
+			|MiniSpikeMediumR
+			|MiniSpikeMediumU
+		+Hard (destroys on lower)
+			|HardBlock
+			|SpikeHardD
+			|SpikeHardL
+			|SpikeHardR
+			|SpikeHardU
+			|MiniSpikeHardD
+			|MiniSpikeHardL
+			|MiniSpikeHardR
+			|MiniSpikeHardU
+		+VHard (destroys on lower)
+			|VHardBlock
+			|SpikeVHardD
+			|SpikeVHardL
+			|SpikeVHardR
+			|SpikeVHardU
+			|MiniSpikeVHardD
+			|MiniSpikeVHardL
+			|MiniSpikeVHardR
+			|MiniSpikeVHardU
 	|KillBlock
 	|DieOutside
-	|ItemCountBlock
 	|Ladder
 	|LadderSide
 	|GateUp
@@ -407,6 +437,7 @@
 	|GlobalItem2
 	|GlobalItem3
 	|GlobalItem4
+	|ItemCountBlock
 	|Coin
 +System
 	+User Interface

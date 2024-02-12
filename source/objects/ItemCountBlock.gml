@@ -16,7 +16,7 @@ This block is destroyed when the number of collected items exceeds or equals 'co
 */
 //field count: number
 
-if savedata("itemcount")>=count instance_destroy()
+if (savedata("itemcount")>=count) instance_destroy()
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

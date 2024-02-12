@@ -83,6 +83,7 @@ global.warp_id=""
 global.no_pause=0
 global.no_restart=0
 global.no_quit=0
+global.itemcount=0
 
 global.increment=0
 

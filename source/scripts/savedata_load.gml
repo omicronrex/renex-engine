@@ -36,6 +36,7 @@ if (global.difficulty_room!=noone && room==rmMenu) {
     }
 
     custom_load()
+    global.itemcount=savedata("itemcount")
 
     room_goto(savedata("room"))
 }

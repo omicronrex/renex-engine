@@ -13,6 +13,7 @@ savedatap("exists",true)
 savedatap("width",1)
 savedatap("height",1)
 savedatap("obj",Player)
+savedatap("itemcount",0)
 
 savedatap("room",global.first_room)
 

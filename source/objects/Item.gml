@@ -36,6 +36,7 @@ if (!collected) {
         sound_play("sndItem")
         collected=1
         collect_items()
+        savedatap("itemcount",global.itemcount)
     } else {
         savedata(itemid,1)
         sound_play("sndItem")

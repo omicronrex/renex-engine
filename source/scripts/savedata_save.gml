@@ -37,6 +37,7 @@ with (Player) if (!dead || argument0) {
     collect_items()
 
     savedata("diff",difficulty)
+    savedata("itemcount",global.itemcount)
 
     savedata("x",x)
     if (global.save_valign && settings("valign")) savedata("y",y) else savedata("y",floor(y))

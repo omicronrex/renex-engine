@@ -28,6 +28,7 @@
 	|sprAvdCtrl
 	|sprLamp
 	|sprDropShadow
+	|sprGameMakerBlock
 +Saves
 	|sprSaveMedium
 	|sprSaveHard

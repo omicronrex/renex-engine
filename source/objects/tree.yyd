@@ -292,6 +292,7 @@
 		|Wasp
 	|KillBlock
 	|DieOutside
+	|ItemCountBlock
 	|Ladder
 	|LadderSide
 	|GateUp

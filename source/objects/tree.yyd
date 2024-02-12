@@ -51,6 +51,7 @@
 	|MiniSpikeUp
 	|MusicPlayer
 	|Warp
+	|FadeWarp
 	|OutsideWarp
 +Triggers/Traps
 	+Triggers
@@ -465,6 +466,7 @@
 	|WaterSurface
 	|AnyWater
 	|UnsolidItemBlock
+	|Fader
 	|PropBlood
 +Parents (don't use directly)
 	|PlayerKiller

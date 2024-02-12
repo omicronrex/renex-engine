@@ -29,6 +29,8 @@
 	|sprLamp
 	|sprDropShadow
 	|sprGameMakerBlock
+	|sprFader
+	|sprFadeWarp
 +Saves
 	|sprSaveMedium
 	|sprSaveHard

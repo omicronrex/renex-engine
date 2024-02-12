@@ -396,4 +396,7 @@ sprMiniSpikeDownVHard
 sprMiniSpikeLeftVHard
 sprMiniSpikeRightVHard
 sprMiniSpikeUpVHard
+sprFader
 sprWarpTransparent
+
+sprFadeWarp

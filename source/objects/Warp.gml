@@ -11,6 +11,7 @@ warpid=""
 warpsound=""
 autosave=false
 roomTo=room
+transparent=0
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -47,6 +48,7 @@ applies_to=self
 //field warpid: string
 //field warpToPlayerstart: instance - (pick a PlayerStart)
 //field warpsound: string
+//field transparent: bool
 
 if (persistent && warpsound!="") {
     //we are coming from a previous room, and we have to play a sound
@@ -57,3 +59,5 @@ if (persistent && warpsound!="") {
         if (warpToPlayerstart.object_index!=PlayerStart)
             warpToPlayerstart=noone
 }
+
+if (transparent) sprite_index=sprWarpTransparent

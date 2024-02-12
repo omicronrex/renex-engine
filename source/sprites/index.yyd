@@ -401,3 +401,13 @@ sprWarpTransparent
 
 sprFadeWarp
 sprCameraFocus
+sprPlayerIdleOldC
+sprPlayerJumpC
+sprPlayerJumpOldC
+sprPlayerRunningC
+sprPlayerRunningOldC
+sprPlayerSlidingC
+sprPlayerSlidingOldC
+sprPlayerFallC
+sprPlayerFallOldC
+sprPlayerIdleC

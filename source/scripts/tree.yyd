@@ -181,6 +181,7 @@
 	|player_update_sprite
 	|player_update_sprite_coords
 	|player_uncherry
+	|cape_check
 	|has_item
 	|check_plat_snap
 	|check_crush
@@ -234,6 +235,7 @@
 +skins
 	|change_skin
 	|skin_default
+	|skin_celeste_cape
 	|skin_dotkid
 	|skin_shootkid
 	|skin_vvvvvv

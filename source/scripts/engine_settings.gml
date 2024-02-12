@@ -149,6 +149,10 @@
     global.a_d_trick=false
     //make the Medium difficilty bow lag behind like in the original game
     global.bow_lag=true
+    //turns the kid's cape blue if the player can't double jump
+    global.celeste_cape=false
+    //turns the kid's bow blue if the player can't double jump (only appears on Medium)
+    global.celeste_bow=false
     //prevents shootkid from working if too close to a wall
     global.accurate_shootkid=true
     //angle the player (and the player's bullets) to match slopes

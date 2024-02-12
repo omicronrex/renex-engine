@@ -1126,6 +1126,9 @@ if (dotkid) {
     mask_index=-1
 }
 
+//activate celeste cape
+if (global.celeste_cape && global.player_skin==skin_default) change_skin(skin_celeste_cape)
+
 //fix sprite for first frame
 script_execute(global.player_skin,"step")
 oldspr=sprite_index
@@ -1183,6 +1186,9 @@ if (!dead) {
     //draw godmode & infjump special bows
     if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
     if (global.debug_jump) draw_sprite_ext(sprBow,2,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
+
+    //draw celeste bow
+    if (bow && global.celeste_bow && djump>=maxjumps) draw_sprite_ext(sprBow,3,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
 
     if (global.debug_overlay) {
         draw_sprite_ext_fixed(mask_index,0,floor(x),floor(y)+(vflip==-1),image_xscale,image_yscale,image_angle,image_blend,image_alpha*0.5)

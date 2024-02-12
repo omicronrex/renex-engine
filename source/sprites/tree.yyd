@@ -159,13 +159,24 @@
 	|sprPlayerBack
 	|sprPlayerLadderUD
 	|sprPlayerLadderLR
-	+death
+	+Death
 		|sprBloodCluster
 		|sprBlood
 		|sprGibsBody
 		|sprGibsHead
 		|sprGibsArm
 		|sprGibsFoot
+	+Celeste Cape
+		|sprPlayerIdleOldC
+		|sprPlayerJumpC
+		|sprPlayerJumpOldC
+		|sprPlayerRunningC
+		|sprPlayerRunningOldC
+		|sprPlayerSlidingC
+		|sprPlayerSlidingOldC
+		|sprPlayerFallC
+		|sprPlayerFallOldC
+		|sprPlayerIdleC
 +Threats
 	|sprSpike
 	|sprSpikeLeft

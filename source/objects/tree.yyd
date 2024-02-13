@@ -292,7 +292,7 @@
 		|Fig
 		|Wasp
 	+Difficulty Objects
-		+Medium (destroys on higher)
+		+Medium (destroys on Hard/VH)
 			|MediumBlock
 			|SpikeMediumD
 			|SpikeMediumL
@@ -302,7 +302,7 @@
 			|MiniSpikeMediumL
 			|MiniSpikeMediumR
 			|MiniSpikeMediumU
-		+Hard (destroys on lower)
+		+Hard (destroys on Med)
 			|HardBlock
 			|SpikeHardD
 			|SpikeHardL
@@ -312,7 +312,7 @@
 			|MiniSpikeHardL
 			|MiniSpikeHardR
 			|MiniSpikeHardU
-		+VHard (destroys on lower)
+		+VHard (destroys on Med/Hard)
 			|VHardBlock
 			|SpikeVHardD
 			|SpikeVHardL

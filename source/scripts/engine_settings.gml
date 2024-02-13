@@ -45,6 +45,8 @@
     //enable test mode in exe builds
     //do not forget to disable this when publishing your game
     global.always_test_mode=false
+    //disable the player delta time system (see Player step event action 1)
+    global.disable_delta_time=false
 
 
 //difficulties

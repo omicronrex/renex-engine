@@ -153,7 +153,9 @@ applies_to=self
     animation speeds or object speeds by dt to keep them consistent
     across different room speeds. an example is provided on Cherry.
 
-    if the room speed is set to 50, all delta time systems are disabled.
+    if the room/game speed is set to 50, sprite smoothing is disabled
+    and if global.disable_delta_time is set to true,
+    the delta time system is sidestepped entirely.
 
 */
 
@@ -177,6 +179,9 @@ if (!frozen) {
 
 //don't smooth if the room speed is 50
 if (global.game_speed==50 && slomo==1) framefac=2
+
+//disable delta time (but before dead check)
+if (global.disable_delta_time) updating=1
 
 //don't update while dead
 if (dead || !activated) updating=0
@@ -1126,8 +1131,9 @@ if (dotkid) {
     mask_index=-1
 }
 
-//activate celeste cape
-if (global.celeste_cape && global.player_skin==skin_default) change_skin(skin_celeste_cape)
+//activate celeste cape & reset it if you change the variable state
+if (global.celeste_cape && global.player_skin==global.player_default_skin) change_skin(skin_celeste_cape)
+else if (!global.celeste_cape && global.player_skin==skin_celeste_cape) change_skin(global.player_default_skin)
 
 //fix sprite for first frame
 script_execute(global.player_skin,"step")

@@ -6,4 +6,5 @@ applies_to=self
 */
 mydifficulty=2
 event_inherited()
-sprite_index=sprSaveVeryHard
+if (global.vhard_save_sprite) sprite_index=sprSaveVeryHard
+else sprite_index=sprSaveHard

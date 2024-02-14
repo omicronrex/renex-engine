@@ -87,7 +87,7 @@
     global.esc_always_quits=false
     //automatically updates the window caption with deathtime
     global.show_deathtime=true
-    //CRT closing animation
+    //CRT closing animation (only on windowed)
     global.closing_animation=true
     //jump refreshers respawn time - if set to zero, it only respawns when you land
     global.jump_refresher_timer=0
@@ -111,6 +111,8 @@
     //save death & time stats in a .csv file in the save location
     //recommended to turn this off when publishing your game
     global.save_csv_stats=true
+    //use the brighter vhard save sprite instead of the regular one
+    global.vhard_save_sprite=true
     //(1-8) reduces lag during gameplay, but causes a small hiccup on room start
     //each pass reduces solid instance count by almost half by gluing blocks together
     //so with 2 passes we should only have around 30% of block instances

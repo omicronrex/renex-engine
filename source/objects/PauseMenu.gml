@@ -92,7 +92,7 @@ applies_to=self
 if (input_anykey()) {
     room_speed=memspd
     alarm[0]=room_speed*3
-    break
+    //break
 }
 
 image_speed=0.2*50/room_speed

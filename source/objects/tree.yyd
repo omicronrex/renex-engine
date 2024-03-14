@@ -236,6 +236,8 @@
 	|CoinNormal
 	|ClockOn
 	|ClockOff
+	|ReverserOn
+	|ReverserOff
 	|ToggleBlockOn
 	|ToggleBlockOff
 	|ShootRefresherL

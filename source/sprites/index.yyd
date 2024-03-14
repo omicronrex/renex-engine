@@ -182,7 +182,7 @@ sprWhiteUndotter
 sprTeleporter
 sprGuyCouch
 sprJumpRefresher
-sprJumpRefresherL
+sprShootRefresherL
 sprShootRefresherR
 sprKeyWhite
 sprKeyRed
@@ -411,3 +411,5 @@ sprPlayerSlidingOldC
 sprPlayerFallC
 sprPlayerFallOldC
 sprPlayerIdleC
+sprReverser
+sprReverserOff

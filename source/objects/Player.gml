@@ -57,6 +57,7 @@ vvvvvv=false
 cherried=false
 cherried_antigrav=false
 cherried_fireball=false
+reversed=false
 
 dead=false
 activated=true

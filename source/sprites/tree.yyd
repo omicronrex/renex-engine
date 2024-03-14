@@ -321,7 +321,6 @@
 		|sprCautionFastREditor
 		|sprCautionFastR
 		|sprDecoStar
-		|sprVuur
 	+Vandal
 		|sprJumpBlock
 		|sprJumpCherry
@@ -338,19 +337,22 @@
 		|sprGravDownBlock
 		|sprDownWater
 		|sprUpWater
+		|sprShootRefresherL
+		|sprShootRefresherR
 	|sprGravFlip
 	|sprGravNormal
 	|sprGravityCoinFlip
 	|sprGravityCoinNormal
 	|sprClock
 	|sprClockOff
+	|sprReverser
+	|sprReverserOff
 	|sprTeleporter
 	|sprJumpRefresher
-	|sprJumpRefresherL
-	|sprShootRefresherR
 	|sprToggleBlockOn
 	|sprToggleBlockOff
 	|sprPatBall
+	|sprVuur
 +Triggers
 	+Triggers
 		|sprTrigger1

@@ -266,6 +266,7 @@
 	|timeline_miku
 	|timeline_miku_front
 	|wait_timer
+	|rtime
 	|random_cherry_color
 	|split_object
 	|random_range_bias

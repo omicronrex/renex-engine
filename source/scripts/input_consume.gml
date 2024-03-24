@@ -19,6 +19,11 @@ if (c_a>90 && c_a<=270) {
     player_swap_keys(key_up,key_down)
 }
 
+//if the reverser gimmick is active, reverse inputs
+if (reversed) {
+    player_swap_keys(key_left,key_right)
+}
+
 if (!cutscene) {
     input_h=macro_leftright()
     input_v=macro_updown()

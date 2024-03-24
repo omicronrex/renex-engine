@@ -1,5 +1,5 @@
 ///random_range_controlled(min,max,[num_bins])
-//utility from Princeoflight avoidance engine
+//utility retooled from Princeoflight avoidance engine
 //mitigates clusters of bullets and variation in RNG density (if used for direction)
 
 //setting the 'num_bins' argument too high will make the pattern lose its randomness

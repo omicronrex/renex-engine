@@ -108,6 +108,13 @@ if (trigger_type=="hard") {
         trap_stop_index=other.trap_stop_index
         
         trigger_on_create=other.trigger_on_create
+        
+        grav=other.grav
+        grav_dir=other.grav_dir
+        
+        move_to_xy[0]=other.move_to_xy[0]
+        move_to_xy[1]=other.move_to_xy[1]
+        move_relative=other.move_relative
     }
 }
 #define Other_8

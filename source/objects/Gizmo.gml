@@ -22,6 +22,8 @@ dir=0
 spd=0
 hsp=0
 vsp=0
+grav=0
+grav_dir=noone
 path=noone
 path_endaction=path_action_stop
 path_speed=0
@@ -42,6 +44,12 @@ trigger_on_create=0
 
 trap_redir_index=0
 trap_stop_index=0
+
+move_to_xy[0]=noone
+move_to_xy[1]=noone
+move_to_xstart=xstart
+move_to_ystart=ystart
+move_relative=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -61,6 +69,28 @@ if (scaling) {
 
 if (rotating) {
     image_angle+=rotate
+}
+
+if (move_to_xy[0]!=noone && move_to_xy[1]!=noone && spd!=0) {
+    if (!move_relative) {
+        direction=point_direction(x,y,move_to_xy[0],move_to_xy[1])
+        if (distance_to_point(move_to_xy[0],move_to_xy[1])<=spd) {
+            spd=0
+            x=move_to_xy[0]
+            y=move_to_xy[1]
+            direction=0
+            speed=0
+        }
+    } else {
+        direction=point_direction(x,y,move_to_xstart+move_to_xy[0],move_to_ystart+move_to_xy[1])
+        if (distance_to_point(move_to_xstart+move_to_xy[0],move_to_ystart+move_to_xy[1])<=spd) {
+            spd=0
+            x=move_to_xstart+move_to_xy[0]
+            y=move_to_ystart+move_to_xy[1]
+            direction=0
+            speed=0
+        }
+    }
 }
 
 var coll;coll=0
@@ -131,8 +161,12 @@ applies_to=self
 //field sound: string
 //field dir: angle
 //field spd: number
+//field move_to_xy: xy - 'spd' must also be set for this
+//field move_relative: bool
 //field hsp: number
 //field vsp: number
+//field grav: number
+//field grav_dir: number
 //field scaleh: number
 //field scalev: number
 //field rotate: number
@@ -180,4 +214,17 @@ if (scaleh!=0 || scalev!=0) {
 
 if (rotate!=0) {
     rotating=1
+}
+
+if (x!=xstart || y!=ystart) {
+    move_to_xstart=x
+    move_to_ystart=y
+}
+
+if (grav!=0) {
+    gravity=grav
+}
+
+if (grav_dir!=noone) {
+    gravity_direction=grav_dir
 }

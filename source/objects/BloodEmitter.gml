@@ -6,6 +6,12 @@ applies_to=self
 */
 image_speed=0
 blood=settings("blood")
+
+// Don't spawn player gibs if dotkid death, keep only blood splatter
+if (instance_exists(Player)) if (Player.dotkid) {
+    blood=min(blood,2)
+}
+
 if (!blood) {
     bleeding=0
     alarm[1]=room_speed/2

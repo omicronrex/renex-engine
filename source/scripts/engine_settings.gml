@@ -255,7 +255,7 @@
     global.iwbtg_sound_mode=false
     //use nicely tiled long platforms instead of stretched sprite
     global.platform_9slice=true
-    //oh yuo know
+    //oh yuo knwo
     global.restarting_music=false
     //mario
     global.use_momentum_values=false

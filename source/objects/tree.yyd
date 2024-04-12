@@ -336,6 +336,8 @@
 	|Signpost
 	|AutoSign
 	|AlignIndicator
+	|WarpToHub
+	|DifficultyWarp
 +Tools
 	+Shaders
 		|DepthHueShift
@@ -364,8 +366,6 @@
 	|CameraFocus
 	|MusicPlayerSection
 	|MusicSync
-	|WarpToHub
-	|DifficultyWarp
 	|TimerFreeze
 	|HitCount
 	|HPMode

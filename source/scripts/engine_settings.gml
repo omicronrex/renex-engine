@@ -19,6 +19,9 @@
 
 */
 
+//Set this to true when making a final build of your game
+global.release_mode=false
+
 //game properties
     global.game_title="renex engine"
     //intended room speed

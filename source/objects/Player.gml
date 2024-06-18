@@ -411,7 +411,7 @@ if (!frozen) {
                 } else {
                     if (global.use_momentum_values && !ladder) {
                         //mario mode
-                        if (onPlatform) hspeed+=input_h*mm_ground_accel
+                        if (onPlatform || onGround) hspeed+=input_h*mm_ground_accel
                         else hspeed+=input_h*mm_air_accel
                     } else {
                         //move normally
@@ -427,7 +427,7 @@ if (!frozen) {
             } else {
                 if (global.use_momentum_values && !ladder) {
                     //mario mode friction
-                    if (onPlatform) hspeed=approach(hspeed,0,mm_ground_fric)
+                    if (onPlatform || onGround) hspeed=approach(hspeed,0,mm_ground_fric)
                     else hspeed=approach(hspeed,0,mm_air_fric)
                 } else {
                     //stop moving

@@ -1,5 +1,6 @@
 |World
 |Player
+|Bullet
 +Common Objects
 	+Jtool Gimmicks
 		|WallJumpL
@@ -7,6 +8,7 @@
 		|JumpRefresher
 		|GravFlip
 		|GravNormal
+		|MiniBlock
 	+Saves
 		|SavePointMedium
 		|SavePointHard
@@ -36,9 +38,91 @@
 		|MegaCherry
 		|CherryBounce
 		|CherryCircle
+	+Special Blocks
+		|ConveyorLeft
+		|ConveyorRight
+		|PushBlock
+		|LongPushBlock
+		|PushBlockSave
+		|LiftBlock
+		|MoveBlock
+		|YokuBlock
+		|SlipBlock
+		|M9Block
+		|M9Trigger
+		|DingBlock
+		|FakeBlock
+		|BreakBlock
+		|ActualYokuBlock
+		|YokuGroup
+		|YokuSpeedChanger
+		|DemoBlock
+	+Slopes/gates
+		|SlopeTL
+		|SlopeTR
+		|SlopeBL
+		|SlopeBR
+		|SlopeBlock
+		|SlopeCircle
+		|SlopeCrescent
+		|SlopeBeam
+		|FunnySlope
+		|SlopePixel
+		|SlopeWobbly
+		|GateUp
+		|GateRight
+		|GateLeft
+		|GateDown
+	+Waters
+		|Water1
+		|Water2
+		|Water3
+		|CatharsisWater
+		|NekoronWater
+		|NekoronAir
+		|PlatformWater
+		|GuyWater
+		|ShapeWater
+	+Misc. Killers
+		|LeekUp
+		|LeekLeft
+		|LeekRight
+		|LeekDown
+		|Fig
+		|Wasp
+	+Difficulty Objects
+		+Medium (destroys on Hard/VH)
+			|MediumBlock
+			|SpikeMediumD
+			|SpikeMediumL
+			|SpikeMediumR
+			|SpikeMediumU
+			|MiniSpikeMediumD
+			|MiniSpikeMediumL
+			|MiniSpikeMediumR
+			|MiniSpikeMediumU
+		+Hard (destroys on Med)
+			|HardBlock
+			|SpikeHardD
+			|SpikeHardL
+			|SpikeHardR
+			|SpikeHardU
+			|MiniSpikeHardD
+			|MiniSpikeHardL
+			|MiniSpikeHardR
+			|MiniSpikeHardU
+		+VHard (destroys on Med/Hard)
+			|VHardBlock
+			|SpikeVHardD
+			|SpikeVHardL
+			|SpikeVHardR
+			|SpikeVHardU
+			|MiniSpikeVHardD
+			|MiniSpikeVHardL
+			|MiniSpikeVHardR
+			|MiniSpikeVHardU
 	|PlayerStart
 	|Block
-	|MiniBlock
 	|Platform
 	|SpikeD
 	|SpikeL
@@ -48,10 +132,17 @@
 	|MiniSpikeLeft
 	|MiniSpikeRight
 	|MiniSpikeUp
+	|Ladder
+	|LadderSide
+	|Signpost
 	|MusicPlayer
 	|Warp
 	|FadeWarp
+	|WarpToHub
+	|DifficultyWarp
 	|OutsideWarp
+	|KillBlock
+	|DieOutside
 +Triggers/Traps
 	+Triggers
 		|Trigger1
@@ -243,100 +334,7 @@
 	|ShootRefresherR
 	|Teleporter
 	|PatBall
-+Level Objects
-	+Special Blocks
-		|ConveyorLeft
-		|ConveyorRight
-		|PushBlock
-		|LongPushBlock
-		|PushBlockSave
-		|LiftBlock
-		|MoveBlock
-		|YokuBlock
-		|SlipBlock
-		|M9Block
-		|M9Trigger
-		|DingBlock
-		|FakeBlock
-		|BreakBlock
-		|ActualYokuBlock
-		|YokuGroup
-		|YokuSpeedChanger
-		|DemoBlock
-	+Slopes
-		|SlopeTL
-		|SlopeTR
-		|SlopeBL
-		|SlopeBR
-		|SlopeBlock
-		|SlopeCircle
-		|SlopeCrescent
-		|SlopeBeam
-		|FunnySlope
-		|SlopePixel
-		|SlopeWobbly
-	+Waters
-		|ShapeWater
-		|Water1
-		|Water2
-		|Water3
-		|CatharsisWater
-		|NekoronWater
-		|NekoronAir
-		|PlatformWater
-		|GuyWater
-	+Misc. Killers
-		|LeekUp
-		|LeekLeft
-		|LeekRight
-		|LeekDown
-		|Fig
-		|Wasp
-	+Difficulty Objects
-		+Medium (destroys on Hard/VH)
-			|MediumBlock
-			|SpikeMediumD
-			|SpikeMediumL
-			|SpikeMediumR
-			|SpikeMediumU
-			|MiniSpikeMediumD
-			|MiniSpikeMediumL
-			|MiniSpikeMediumR
-			|MiniSpikeMediumU
-		+Hard (destroys on Med)
-			|HardBlock
-			|SpikeHardD
-			|SpikeHardL
-			|SpikeHardR
-			|SpikeHardU
-			|MiniSpikeHardD
-			|MiniSpikeHardL
-			|MiniSpikeHardR
-			|MiniSpikeHardU
-		+VHard (destroys on Med/Hard)
-			|VHardBlock
-			|SpikeVHardD
-			|SpikeVHardL
-			|SpikeVHardR
-			|SpikeVHardU
-			|MiniSpikeVHardD
-			|MiniSpikeVHardL
-			|MiniSpikeVHardR
-			|MiniSpikeVHardU
-	|KillBlock
-	|DieOutside
-	|Ladder
-	|LadderSide
-	|GateUp
-	|GateRight
-	|GateLeft
-	|GateDown
-	|ScreenWrap
-	|Signpost
-	|AutoSign
 	|AlignIndicator
-	|WarpToHub
-	|DifficultyWarp
 +Tools
 	+Shaders
 		|DepthHueShift
@@ -363,6 +361,7 @@
 	|CameraOverride
 	|CameraBlock
 	|CameraFocus
+	|ScreenWrap
 	|MusicPlayerSection
 	|MusicSync
 	|TimerFreeze
@@ -458,8 +457,36 @@
 		|BloodEmitter
 		|GibParticle
 		|Blood
-		|Bullet
 		|GameOver
+	+Parents
+		|PlayerKiller
+		|PlayerKillerActive
+		|DotKiller
+		|ActiveParent
+		|ActiveIngame
+		|SavePointParent
+		|Trigger
+		|Triggered
+		|TriggerLock
+		|Button
+		|ButtonShoot
+		|Boss
+		|Avoidance
+		|Gizmo
+		|Trap
+		|TrapSave
+		|Item
+		|GlobalItem
+		|DisplayItem
+		|DisplayGlobalItem
+		|ItemBlock
+		|SolidItemBlock
+		|KeyParent
+		|KeyBlockParent
+		|SlopeParent
+		|MovingSolid
+		|SuperVehicle
+		|VandalCherryBase
 	|Ortho
 	|DestroyedBlock
 	|FirePart
@@ -470,32 +497,3 @@
 	|UnsolidItemBlock
 	|Fader
 	|PropBlood
-+Parents (don't use directly)
-	|PlayerKiller
-	|PlayerKillerActive
-	|DotKiller
-	|ActiveParent
-	|ActiveIngame
-	|SavePointParent
-	|Trigger
-	|Triggered
-	|TriggerLock
-	|Button
-	|ButtonShoot
-	|Boss
-	|Avoidance
-	|Gizmo
-	|Trap
-	|TrapSave
-	|Item
-	|GlobalItem
-	|DisplayItem
-	|DisplayGlobalItem
-	|ItemBlock
-	|SolidItemBlock
-	|KeyParent
-	|KeyBlockParent
-	|SlopeParent
-	|MovingSolid
-	|SuperVehicle
-	|VandalCherryBase

@@ -23,9 +23,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (key_up(vi_pressed)) {
-    active=5*room_speed
-}
+active=1
 alarm[0]=2
 #define Other_4
 /*"/*'/**//* YYD ACTION
@@ -42,4 +40,4 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (active) {active-=dt draw_sign_text(x+16,y-10,font,color,msg,true)}
+if (active) draw_sign_text(x+16,y-10,font,color,msg,true)

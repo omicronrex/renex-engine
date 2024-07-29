@@ -10,8 +10,6 @@ with (all) if (visible) event_perform(ev_trigger,ev_draw_end)
 draw_make_opaque()
 d3d_set_depth(0)
 
-generate_save_thumbnail(0)
-
 //this place is where you can add any post-processing effects using the application surface,
 //before the gui events are written to it.
 
@@ -86,3 +84,5 @@ if (maxalpha>0) {
         draw_set_alpha(1)
     }
 }
+
+generate_save_thumbnail(0)

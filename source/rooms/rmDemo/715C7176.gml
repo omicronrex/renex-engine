@@ -1,3 +1,3 @@
 //gm82 fields begin
-visible=false
+snap="top"
 //gm82 fields end

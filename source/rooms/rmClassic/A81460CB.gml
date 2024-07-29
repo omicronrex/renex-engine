@@ -1,3 +1,3 @@
 //gm82 fields begin
-snap_type=3
+invisible=true
 //gm82 fields end

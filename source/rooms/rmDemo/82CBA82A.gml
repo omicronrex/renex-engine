@@ -1,3 +1,3 @@
 //gm82 fields begin
-snap_type=1
+snap="yuuutu"
 //gm82 fields end

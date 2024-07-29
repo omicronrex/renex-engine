@@ -1007,10 +1007,8 @@ if (!dead) {
         ytop=bbox_bottom+1
         y=oy
         
-        //change snap type for CustomSnap platforms
-        var snap_var;
-        if (other.object_index==CustomSnap) snap_var=other.snap_type
-        else snap_var=global.platform_snap_type
+        var snap_var; snap_var=other.snap_type
+        if (snap_var==noone) snap_var=global.platform_snap_type
         
         //check platform snap type
         if (check_plat_snap(1,snap_var)) {
@@ -1047,10 +1045,8 @@ if (!dead) {
         ytop=bbox_top
         y=oy
         
-        //change snap type for CustomSnap platforms
-        var snap_var;
-        if (other.object_index==CustomSnap) snap_var=other.snap_type
-        else snap_var=global.platform_snap_type
+        var snap_var; snap_var=other.snap_type
+        if (snap_var==noone) snap_var=global.platform_snap_type
         
         //check platform snap type
         if (check_plat_snap(-1,snap_var)) {

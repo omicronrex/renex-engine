@@ -1,3 +1,3 @@
 //gm82 fields begin
-snap_type=0
+snap="never"
 //gm82 fields end

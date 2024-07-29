@@ -4,12 +4,16 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//you can set those in creation code
 path=noone
 path_action=path_action_reverse
 path_absolute=false
 
+snap="none"
+snap_type=noone
+
 phase=false
+
+invisible=false
 
 hdeficit=0
 #define Step_0
@@ -61,6 +65,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+//field snap: enum("yuuutu","always","top","never")
+//field invisible: bool
 //field path: path
 //field speed
 //field path_action: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
@@ -68,6 +74,13 @@ applies_to=self
 //field phase: bool - lets the platform go through blocks
 //field hspeed
 //field vspeed
+
+visible=!invisible
+
+if (snap=="yuuutu") snap_type=0
+if (snap=="always") snap_type=1
+if (snap=="top") snap_type=2
+if (snap=="never") snap_type=3
 
 if (path!=noone) {
     path_start(path,speed,path_action,path_absolute)

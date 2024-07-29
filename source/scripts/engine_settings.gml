@@ -204,12 +204,11 @@ global.release_mode=false
     //jumps with the jump button regardless of the maker vines setting
     //vines do not work if not placed on top of a block
     global.clean_vines=false
-    //platform snap behavior:
+    //default platform snap behavior:
     //0 - yuuutu - inconsistent snap, how it works in most engines
     //1 - hard - always snap regardless of vertical movement, also snaps when near the top
     //2 - light - snaps only when near the top
     //3 - none - don't snap at all, act like one-way blocks
-    //you can also use the CustomSnap object if you want to use multiple snap types
     global.platform_snap_type=0
     //allows jumping while inside of platforms
     global.platform_swimming=true

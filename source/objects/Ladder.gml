@@ -30,7 +30,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-plat=instance_create(x,y,CustomSnap)
+plat=instance_create(x,y,Platform)
+plat.visible=false
 plat.sprite_index=-1
 plat.image_xscale=image_xscale
 plat.image_yscale=image_yscale

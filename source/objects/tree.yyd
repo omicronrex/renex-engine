@@ -132,17 +132,14 @@
 	|MiniSpikeLeft
 	|MiniSpikeRight
 	|MiniSpikeUp
+	|KillBlock
 	|Ladder
 	|LadderSide
 	|Signpost
-	|MusicPlayer
 	|Warp
 	|FadeWarp
 	|WarpToHub
 	|DifficultyWarp
-	|OutsideWarp
-	|KillBlock
-	|DieOutside
 +Triggers/Traps
 	+Triggers
 		|Trigger1
@@ -362,6 +359,9 @@
 	|CameraBlock
 	|CameraFocus
 	|ScreenWrap
+	|OutsideWarp
+	|DieOutside
+	|MusicPlayer
 	|MusicPlayerSection
 	|MusicSync
 	|TimerFreeze

@@ -29,14 +29,56 @@
 	|sprAvdCtrl
 	|sprLamp
 	|sprDropShadow
+	|sprGameClear
 	|sprGameMakerBlock
 	|sprFader
 	|sprFadeWarp
-+Saves
-	|sprSaveMedium
-	|sprSaveHard
-	|sprSaveVeryHard
-	|sprSaveVeryHardEditor
++Player
+	|sprMaskPlayer
+	|sprMaskPlayerFlip
+	|sprMaskNeedle
+	|sprMaskNeedleFlip
+	|sprWhiteDot
+	|sprDotKid
+	|sprDotKidFlip
+	|sprBullet
+	|sprBow
+	+Needle
+		|sprPlayerIdleOld
+		|sprPlayerRunningOld
+		|sprPlayerJumpOld
+		|sprPlayerFallOld
+		|sprPlayerSlidingOld
+	+Fixed
+		|sprPlayerIdle
+		|sprPlayerRunning
+		|sprPlayerJump
+		|sprPlayerFall
+		|sprPlayerSliding
+	+Bonus
+		|sprPlayerLookDown
+		|sprPlayerAimUp
+	|sprPlayerBack
+	|sprPlayerLadderUD
+	|sprPlayerLadderLR
+	+Death
+		|sprBloodCluster
+		|sprBlood
+		|sprGibsBody
+		|sprGibsHead
+		|sprGibsArm
+		|sprGibsFoot
+	+Celeste Cape
+		|sprPlayerIdleOldC
+		|sprPlayerJumpC
+		|sprPlayerJumpOldC
+		|sprPlayerRunningC
+		|sprPlayerRunningOldC
+		|sprPlayerSlidingC
+		|sprPlayerSlidingOldC
+		|sprPlayerFallC
+		|sprPlayerFallOldC
+		|sprPlayerIdleC
 +Cherries
 	|sprCherry
 	|sprCherryOrange
@@ -73,6 +115,11 @@
 		|sprCherryBlackNew
 		|sprCherryRainbowNew
 +Level Objects
+	+Saves
+		|sprSaveMedium
+		|sprSaveHard
+		|sprSaveVeryHard
+		|sprSaveVeryHardEditor
 	|sprEngineBlock
 	|sprYoku
 	|sprLongBlock
@@ -131,53 +178,7 @@
 	|sprHardBlock
 	|sprVHardBlock
 	|sprAligner
-+Player
-	|sprMaskPlayer
-	|sprMaskPlayerFlip
-	|sprMaskNeedle
-	|sprMaskNeedleFlip
-	|sprWhiteDot
-	|sprDotKid
-	|sprDotKidFlip
-	|sprBullet
-	|sprBow
-	+Needle
-		|sprPlayerIdleOld
-		|sprPlayerRunningOld
-		|sprPlayerJumpOld
-		|sprPlayerFallOld
-		|sprPlayerSlidingOld
-	+Fixed
-		|sprPlayerIdle
-		|sprPlayerRunning
-		|sprPlayerJump
-		|sprPlayerFall
-		|sprPlayerSliding
-	+Bonus
-		|sprPlayerLookDown
-		|sprPlayerAimUp
-	|sprPlayerBack
-	|sprPlayerLadderUD
-	|sprPlayerLadderLR
-	+Death
-		|sprBloodCluster
-		|sprBlood
-		|sprGibsBody
-		|sprGibsHead
-		|sprGibsArm
-		|sprGibsFoot
-	+Celeste Cape
-		|sprPlayerIdleOldC
-		|sprPlayerJumpC
-		|sprPlayerJumpOldC
-		|sprPlayerRunningC
-		|sprPlayerRunningOldC
-		|sprPlayerSlidingC
-		|sprPlayerSlidingOldC
-		|sprPlayerFallC
-		|sprPlayerFallOldC
-		|sprPlayerIdleC
-+Threats
++Spikes
 	|sprSpike
 	|sprSpikeLeft
 	|sprSpikeRight
@@ -244,7 +245,6 @@
 	|sprMiniSpikeLeftVHard
 	|sprMiniSpikeRightVHard
 	|sprMiniSpikeUpVHard
-	|sprWasp
 +Gimmicks
 	+WTW
 		|sprYoshiMask
@@ -353,6 +353,7 @@
 	|sprToggleBlockOff
 	|sprPatBall
 	|sprVuur
+	|sprWasp
 +Triggers
 	+Triggers
 		|sprTrigger1
@@ -424,7 +425,6 @@
 	|sprGlobalItem2
 	|sprGlobalItem3
 	|sprGlobalItem4
-	|sprGameClear
 	|sprCoin
 +Avoidance/Miku
 	|sprMiku

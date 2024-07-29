@@ -446,6 +446,18 @@ if (!frozen) {
     if (vflip==-1) vspeed=max(-maxVspeed,vspeed)
     else if (vflip==1) vspeed=min(vspeed,maxVspeed)
 
+    //update ground and platform detection
+    if (onPlatform) {
+        if (!instance_place(x,y+4*vflip+vspeed,Platform) && !coyoteTime) {
+            onPlatform=false
+        }
+    }
+    if (onGround) {
+        if (place_free(x,y+vflip+vspeed) && !instance_place(x,y+4*vflip+vspeed,Platform) && !coyoteTime) {
+            onGround=false
+        }
+    }
+    
     if (!cutscene) {
         //player actions
         
@@ -469,18 +481,6 @@ if (!frozen) {
         }
         if (key_die()) {
             kill_player()
-        }
-    }
-
-    //update ground and platform detection
-    if (onPlatform) {
-        if (!instance_place(x,y+4*vflip+vspeed,Platform) && !coyoteTime) {
-            onPlatform=false
-        }
-    }
-    if (onGround) {
-        if (place_free(x,y+vflip+vspeed) && !instance_place(x,y+4*vflip+vspeed,Platform) && !coyoteTime) {
-            onGround=false
         }
     }
 

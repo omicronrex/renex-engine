@@ -75,12 +75,15 @@ if (!global.no_quit) {
 
 //toggle mute
 if (keyboard_check_pressed(ord("M"))) {
-    var storevol;storevol=settings("stored mus vol")
-    settings("stored mus vol",settings("musvol"))
-    settings("musvol",storevol)
-    sound_kind_volume(1,settings("musvol"))
-    if (storevol>0) show_message_right("Unmuted music")
-    else show_message_right("Muted music")
+    if (settings("musvol")!=0) {
+        settings("stored mus vol",settings("musvol"))
+        settings("musvol",0)
+        show_message_right("Muted music")
+    } else {
+        settings("musvol",settings("stored mus vol"))
+        show_message_right("Unmuted music")
+    } 
+    sound_kind_volume(1,settings("musvol")) 
 }
 
 //toggle fullscreen

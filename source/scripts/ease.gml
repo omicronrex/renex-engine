@@ -2,7 +2,7 @@
 //      0    1          2        3   4   5
 
 //time       - variable that increases by 1 each frame
-//time_start - time value to start easing
+//time_start - time value to start easing (usually 0)
 //time_end   - time value to end easing
 //min        - start value
 //max        - final value

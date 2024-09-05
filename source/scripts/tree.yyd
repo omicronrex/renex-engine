@@ -260,7 +260,7 @@
 	|sound_play_synced
 +bonus/utility
 	|draw_cherry
-	|ease_value
+	|ease
 	|simple_collision
 	|good_bounce
 +avoidance/miku

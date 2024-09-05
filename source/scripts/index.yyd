@@ -307,4 +307,4 @@ sound_play_music
 skin_celeste_cape
 cape_check
 rtime
-ease_value
+ease

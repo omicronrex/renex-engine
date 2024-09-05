@@ -354,6 +354,7 @@
 	|sprPatBall
 	|sprVuur
 	|sprWasp
+	|sprJumpManyTimes
 +Triggers
 	+Triggers
 		|sprTrigger1

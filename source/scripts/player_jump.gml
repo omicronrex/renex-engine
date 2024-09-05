@@ -41,6 +41,7 @@ if (vvvvvv) {
             if (instance_place(x,y+1,GuyWater)) onfire=false
     } else if (global.debug_jump
         || (djump<maxjumps || instance_place(x,y+1*vflip,Water2) || swt=="Water2")
+        || infjump
         && !(beamstate&beam_onejump)) {
             //double jump
             vspeed=-jump2*vflip

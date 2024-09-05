@@ -10,7 +10,7 @@ inst=noone
 
 user_event=noone
 trap_is_triggered=noone
-#define Destroy_0
+#define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -20,6 +20,8 @@ if (user_event!=noone)
     with (inst) event_user(other.user_event)
 else
     with (inst) event_trigger(ev_traptriggered)
+
+instance_destroy()
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -42,7 +42,7 @@ v=macro_updown()
 
 if (v!=0) {
     if (volumetimer>volumedelay || !(volumetimer mod volumefpi)) {
-        settings("sfxvol",saturate(settings("sfxvol")+v*0.01))
+        settings("sfxvol",saturate(settings("sfxvol")-v*0.01))
     }
     volumetimer+=1
 } else volumetimer=0

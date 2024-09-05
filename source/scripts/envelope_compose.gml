@@ -42,7 +42,7 @@ if ((global.rw!=global.APPwidth || global.rh!=global.APPheight) && settings("fil
 surface_reset_target()
 
 if (settings("fullscreen")) {
-    d3d_set_projection_ortho(-0.5,-0.5,global.ww,global.wh,0)
+    d3d_set_projection_ortho(0,0,global.ww,global.wh,0)
     draw_clear(window_get_color())
     custom_window_border(global.ww,global.wh)
     texture_set_interpolation(filter)

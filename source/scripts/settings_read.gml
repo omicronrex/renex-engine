@@ -13,6 +13,8 @@ if (file_exists(global.setfile)) {
     //settings don't exist, but we have a global repo
     setmap_read(global.setrepo)
     convert_settings(settings("settings version"),re_setversion)
+    vii_sizeof=0
+    custom_keys()
 } else {
     //initialize a new settings file
     settings_write()

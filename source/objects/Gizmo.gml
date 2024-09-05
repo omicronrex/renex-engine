@@ -47,9 +47,16 @@ trap_stop_index=0
 
 move_to_xy[0]=noone
 move_to_xy[1]=noone
-move_to_xstart=xstart
-move_to_ystart=ystart
+move_spd=0
+move_time=0
+t=0
 move_relative=0
+
+move_to_xy_grav[0]=noone
+move_to_xy_grav[1]=noone
+move_grav=0
+
+trg=0
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -71,25 +78,24 @@ if (rotating) {
     image_angle+=rotate
 }
 
-if (move_to_xy[0]!=noone && move_to_xy[1]!=noone && spd!=0) {
+if (move_to_xy[0]!=noone && move_to_xy[1]!=noone && move_spd!=0 && trg) {
+    t=approach(t,move_time,1)
     if (!move_relative) {
-        direction=point_direction(x,y,move_to_xy[0],move_to_xy[1])
-        if (distance_to_point(move_to_xy[0],move_to_xy[1])<=spd) {
-            spd=0
-            x=move_to_xy[0]
-            y=move_to_xy[1]
-            direction=0
-            speed=0
-        }
+        x=lerp(x,move_to_xy[0],t/move_time)
+        y=lerp(y,move_to_xy[1],t/move_time)
     } else {
-        direction=point_direction(x,y,move_to_xstart+move_to_xy[0],move_to_ystart+move_to_xy[1])
-        if (distance_to_point(move_to_xstart+move_to_xy[0],move_to_ystart+move_to_xy[1])<=spd) {
-            spd=0
-            x=move_to_xstart+move_to_xy[0]
-            y=move_to_ystart+move_to_xy[1]
-            direction=0
-            speed=0
-        }
+        x=lerp(x,x+move_to_xy[0],t/move_time)
+        y=lerp(y,y+move_to_xy[1],t/move_time)
+    }
+}
+
+if (move_to_xy_grav[0]!=noone && move_to_xy_grav[1]!=noone && move_grav>0) {
+    if (point_distance(x,y,move_to_xy_grav[0],move_to_xy_grav[1])<=speed) {
+        x=move_to_xy_grav[0]
+        y=move_to_xy_grav[1]
+        hspeed=0
+        vspeed=0
+        gravity=0
     }
 }
 
@@ -161,20 +167,27 @@ applies_to=self
 //field sound: string
 //field dir: angle
 //field spd: number
-//field move_to_xy: xy - 'spd' must also be set for this
+//field move_to_xy: xy
+//field move_spd: number
 //field move_relative: bool
 //field hsp: number
 //field vsp: number
 //field grav: number
 //field grav_dir: number
+//field move_to_xy_grav: xy
+//field move_grav: number
 //field scaleh: number
 //field scalev: number
 //field rotate: number
 //field no_destroy_outside: bool
 //field trigger_on_create: bool
-//field depth: number
 //field trap_redir_index: number
 //field trap_stop_index: number
+//field depth: number
+
+if (move_to_xy[0]!=noone && move_to_xy[1]!=noone && move_spd) {
+    move_time=round_unbiased(point_distance(x,y,move_to_xy[0],move_to_xy[1])/move_spd)
+}
 
 if (trigger_on_create) event_trigger(ev_traptriggered)
 #define Other_8
@@ -196,6 +209,8 @@ applies_to=self
 */
 ///get movin'
 
+trg=1
+
 if (sound!="") sound_play(sound)
 
 if (path!=noone) {
@@ -216,15 +231,15 @@ if (rotate!=0) {
     rotating=1
 }
 
-if (x!=xstart || y!=ystart) {
-    move_to_xstart=x
-    move_to_ystart=y
-}
-
 if (grav!=0) {
     gravity=grav
 }
 
 if (grav_dir!=noone) {
     gravity_direction=grav_dir
+}
+
+if (move_to_xy_grav[0]!=noone && move_to_xy_grav[1]!=noone && move_grav>0) {
+    move_towards_gravity(move_to_xy_grav[0],move_to_xy_grav[1],move_grav)
+    vspeed-=gravity/2
 }

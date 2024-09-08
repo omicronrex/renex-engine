@@ -73,7 +73,7 @@ if (is_ingame()) {
         else show_message_right("infinite jump off")
     }
 
-    if (keyboard_check_pressed(vk_control)) {
+    if (keyboard_check_pressed(ord("H"))) {
         with (Player) flip_player()
         sound_play_slomo("sndFlip")
         show_message_right("flip player")

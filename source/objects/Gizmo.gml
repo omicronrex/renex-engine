@@ -49,7 +49,7 @@ move_to_xy[0]=noone
 move_to_xy[1]=noone
 move_spd=0
 move_time=0
-t=0
+move_t=0
 move_relative=0
 
 move_to_xy_grav[0]=noone
@@ -79,13 +79,13 @@ if (rotating) {
 }
 
 if (move_to_xy[0]!=noone && move_to_xy[1]!=noone && move_spd!=0 && trg) {
-    t=approach(t,move_time,1)
+    move_t=approach(move_t,move_time,1)
     if (!move_relative) {
-        x=lerp(x,move_to_xy[0],t/move_time)
-        y=lerp(y,move_to_xy[1],t/move_time)
+        x=lerp(x,move_to_xy[0],move_t/move_time)
+        y=lerp(y,move_to_xy[1],move_t/move_time)
     } else {
-        x=lerp(x,x+move_to_xy[0],t/move_time)
-        y=lerp(y,y+move_to_xy[1],t/move_time)
+        x=lerp(x,x+move_to_xy[0],move_t/move_time)
+        y=lerp(y,y+move_to_xy[1],move_t/move_time)
     }
 }
 
@@ -210,6 +210,7 @@ applies_to=self
 ///get movin'
 
 trg=1
+move_t=0
 
 if (sound!="") sound_play(sound)
 
@@ -238,6 +239,7 @@ if (grav!=0) {
 if (grav_dir!=noone) {
     gravity_direction=grav_dir
 }
+
 
 if (move_to_xy_grav[0]!=noone && move_to_xy_grav[1]!=noone && move_grav>0) {
     move_towards_gravity(move_to_xy_grav[0],move_to_xy_grav[1],move_grav)

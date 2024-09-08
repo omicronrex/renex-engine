@@ -37,7 +37,7 @@ applies_to=self
 ///delayed buffer resize
 update_fullscreen()
 window_resize_buffer(global.ww,global.wh,0,0)
-alarm[3]=1
+alarm[3]=5
 #define Alarm_3
 /*"/*'/**//* YYD ACTION
 lib_id=1

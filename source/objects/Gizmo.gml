@@ -100,9 +100,10 @@ if (move_to_xy_grav[0]!=noone && move_to_xy_grav[1]!=noone && move_grav>0) {
 }
 
 var coll;coll=0
-coll=instance_place(x,y,TrapStop)
+coll=instance_place(x+hspeed,y+vspeed,TrapStop)
 
 if (coll) if (trap_stop_index==coll.index) {
+    x+=hspeed y+=vspeed
     if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,coll)) break}
     if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,coll)) break}
     if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,coll)) break}
@@ -128,20 +129,30 @@ if (coll) if (trap_stop_index==coll.index) {
     }
 }
 
-coll=instance_place(x,y,TrapRedirect)
+coll=instance_place(x+hspeed,y+vspeed,TrapRedirect)
 
 if (coll) if (trap_redir_index==coll.index) {
-    x-=hspeed
-    y-=vspeed
+    x+=hspeed y+=vspeed
+    if (hspeed>0) repeat (ceil( hspeed)) {x-=1 if (!instance_place(x,y,coll)) break}
+    if (hspeed<0) repeat (ceil(-hspeed)) {x+=1 if (!instance_place(x,y,coll)) break}
+    if (vspeed>0) repeat (ceil( vspeed)) {y-=1 if (!instance_place(x,y,coll)) break}
+    if (vspeed<0) repeat (ceil(-vspeed)) {y+=1 if (!instance_place(x,y,coll)) break}
 
+    gravity=coll.grav
     if (coll.hsp==0 && coll.vsp==0 && coll.spd==0 && coll.dir==0) {
         hspeed*=-1
         vspeed*=-1
-    } else {
+    } else if (coll.spd==0 && coll.dir==0) {
         hspeed=coll.hsp
         vspeed=coll.vsp
+    } else if (coll.hsp==0 && coll.vsp==0) {
         speed=coll.spd
         direction=coll.dir
+    } else {
+        speed=coll.spd
+        direction=coll.dir
+        hspeed+=coll.hsp
+        vspeed+=coll.vsp
     }
 }
 #define Other_0

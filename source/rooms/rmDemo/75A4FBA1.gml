@@ -1,4 +1,4 @@
 //gm82 fields begin
-top=$FF8080
-bottom=$C0C0C0
+col1=$800000
+col2=$FF8000
 //gm82 fields end

@@ -321,7 +321,7 @@ DisplayGlobalItem3
 DisplayGlobalItem4
 
 DefaultMenuBorderMaker
-SkyGradient2Colors
+SkyGradient
 
 HitCount
 HPMode
@@ -478,3 +478,4 @@ CameraFocus
 ReverserOn
 ReverserOff
 InfiniteJump
+

@@ -1,6 +1,36 @@
 |World
 |Player
 |Bullet
++Parents
+	|PlayerKiller
+	|PlayerKillerActive
+	|DotKiller
+	|ActiveParent
+	|ActiveIngame
+	|SavePointParent
+	|Trigger
+	|Triggered
+	|TriggerLock
+	|Button
+	|ButtonShoot
+	|Boss
+	|Avoidance
+	|Gizmo
+	|Trap
+	|TrapSave
+	|Item
+	|GlobalItem
+	|DisplayItem
+	|DisplayGlobalItem
+	|ItemBlock
+	|SolidItemBlock
+	|KeyParent
+	|KeyBlockParent
+	|SlopeParent
+	|MovingSolid
+	|SuperVehicle
+	|VandalCherryBase
+	|AnyWater
 +Common Objects
 	+Jtool Gimmicks
 		|WallJumpL
@@ -121,13 +151,6 @@
 			|MiniSpikeVHardL
 			|MiniSpikeVHardR
 			|MiniSpikeVHardU
-	|PlayerStart
-	|Block
-	|Platform
-	|SpikeD
-	|SpikeL
-	|SpikeR
-	|SpikeU
 	|MiniSpikeDown
 	|MiniSpikeLeft
 	|MiniSpikeRight
@@ -352,7 +375,7 @@
 		|TextDraw
 		|Autotiler
 		|DropShadow
-		|SkyGradient2Colors
+		|SkyGradient
 		|PersistentBackgrounds
 		|ParallaxBackgroundLayer
 	|CameraFull
@@ -459,42 +482,19 @@
 		|GibParticle
 		|Blood
 		|GameOver
-	+Parents
-		|PlayerKiller
-		|PlayerKillerActive
-		|DotKiller
-		|ActiveParent
-		|ActiveIngame
-		|SavePointParent
-		|Trigger
-		|Triggered
-		|TriggerLock
-		|Button
-		|ButtonShoot
-		|Boss
-		|Avoidance
-		|Gizmo
-		|Trap
-		|TrapSave
-		|Item
-		|GlobalItem
-		|DisplayItem
-		|DisplayGlobalItem
-		|ItemBlock
-		|SolidItemBlock
-		|KeyParent
-		|KeyBlockParent
-		|SlopeParent
-		|MovingSolid
-		|SuperVehicle
-		|VandalCherryBase
 	|Ortho
 	|DestroyedBlock
 	|FirePart
 	|Cementer
 	|BackgroundDaemon
 	|WaterSurface
-	|AnyWater
 	|UnsolidItemBlock
 	|Fader
 	|PropBlood
+|PlayerStart
+|Block
+|Platform
+|SpikeD
+|SpikeL
+|SpikeR
+|SpikeU

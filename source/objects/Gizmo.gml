@@ -47,7 +47,7 @@ trap_stop_index=0
 
 move_to_xy[0]=noone
 move_to_xy[1]=noone
-move_spd=0
+move_spd=1
 move_time=0
 move_t=0
 move_relative=0
@@ -81,11 +81,11 @@ if (rotating) {
 if (move_to_xy[0]!=noone && move_to_xy[1]!=noone && move_spd!=0 && trg) {
     move_t=approach(move_t,move_time,1)
     if (!move_relative) {
-        x=lerp(x,move_to_xy[0],move_t/move_time)
-        y=lerp(y,move_to_xy[1],move_t/move_time)
+        x=lerp(xstart,move_to_xy[0],move_t/move_time)
+        y=lerp(ystart,move_to_xy[1],move_t/move_time)
     } else {
-        x=lerp(x,x+move_to_xy[0],move_t/move_time)
-        y=lerp(y,y+move_to_xy[1],move_t/move_time)
+        x=lerp(xstart,xstart+move_to_xy[0],move_t/move_time)
+        y=lerp(ystart,ystart+move_to_xy[1],move_t/move_time)
     }
 }
 
@@ -198,6 +198,7 @@ applies_to=self
 
 if (move_to_xy[0]!=noone && move_to_xy[1]!=noone && move_spd) {
     move_time=round_unbiased(point_distance(x,y,move_to_xy[0],move_to_xy[1])/move_spd)
+    move_time=max(move_time,1)
 }
 
 if (trigger_on_create) event_trigger(ev_traptriggered)

@@ -19,8 +19,20 @@ arg0=very slow fall
 */
 /*"/*'/**//* YYD ACTION
 lib_id=1
+action_id=604
+invert=0
+*/
+/*"/*'/**//* YYD ACTION
+lib_id=1
 action_id=603
 applies_to=self
 */
 image_index=!instance_place(x,y-32,object_index)
 image_speed=0
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=605
+invert=0
+arg0=no fields
+*/

@@ -89,12 +89,10 @@ if (keyboard_check_pressed(ord("M"))) {
 //toggle fullscreen
 if ((keyboard_check(vk_alt) && keyboard_check_pressed(vk_return)) || keyboard_check_pressed(vk_f11) || (keyboard_check_pressed(vk_f4) && !keyboard_check(vk_alt))) {
     if (settings("fullscreen")) {
-        if (settings("screenscale")!=1) window_delayed_center()
         settings("screenscale",1)
         settings("fullscreen",0)
     } else if (settings("screenscale")<global.dmaxscale) {
-        settings("screenscale",settings("screenscale")+0.5)
-        window_delayed_center()
+        settings("screenscale",settings("screenscale")+0.5) 
     } else {
         settings("fullscreen",1)
     }

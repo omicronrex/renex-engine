@@ -14,7 +14,6 @@ switch (argument0) {
                 sound_play_option("sndDJump")
                 settings("screenscale",modwrap(settings("screenscale")+h*0.5,1,global.dmaxscale+0.5))
                 update_fullscreen()
-                window_delayed_center()
             }
         }
     }break

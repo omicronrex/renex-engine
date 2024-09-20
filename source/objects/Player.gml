@@ -116,7 +116,6 @@ iframes=0
 input_h=0 input_v=0
 
 drawhp=0
-vineMap=ds_map_create()
 
 input_clear()
 input_consume()
@@ -292,76 +291,22 @@ if (!frozen) {
         djump=1
     }
 
+    //update vine state
     if (walljumpboost>=0) {
-        //set vars
-        var i,vineMapSize;
         onVineL=false
         onVineR=false
-        onVineType="normal"
 
-        //update ds map
-        ds_map_set(vineMap,0,instance_place(x-1,y,WallJumpL))
-        ds_map_set(vineMap,1,instance_place(x+1,y,WallJumpR))
-        ds_map_set(vineMap,2,instance_place(x-1,y,CautionStripL))
-        ds_map_set(vineMap,3,instance_place(x+1,y,CautionStripR))
-        ds_map_set(vineMap,4,instance_place(x-1,y,CautionFastL))
-        ds_map_set(vineMap,5,instance_place(x+1,y,CautionFastR))
-        //add your own vines here
-        //don't forget to have L before R
-        
-        //update map size
-        vineMapSize=ds_map_size(vineMap)+1
-        
-        if (!global.clean_vines) {
-            //regular vines
-            if (!onGround) {
-                //check ds map when in the air
-                for (i=0; i<vineMapSize; i+=1) {
-                   if (ds_map_find_value(vineMap,i)) {
-                        //set L or R
-                        if (i mod 2==0) onVineL=true
-                        else onVineR=true
-                        
-                        //set vine type
-                        switch (i) {
-                            case 0: onVineType="normal" break
-                            case 1: onVineType="normal" break
-                            case 2: onVineType="caution" break
-                            case 3: onVineType="caution" break
-                            case 4: onVineType="cautionfast" break
-                            case 5: onVineType="cautionfast" break
-                            //add your vine types here
-                        }
-                   }
-                }
-                //end of for loop 
-            }
-        } else {
-            //clean vines
-            if (!onPlatform && !onGround) {
-                //check ds map when in the air
-                for (i=0; i<vineMapSize; i+=1) {
-                    //prevent air vines from working ------v
-                    if (ds_map_find_value(vineMap,i)) if (ds_map_find_value(vineMap,i).active) {
-                        //set L or R
-                        if (i mod 2==0) onVineL=true
-                        else onVineR=true
-                        
-                        //set vine type
-                        switch (i) {
-                            case 0: onVineType="normal" break
-                            case 1: onVineType="normal" break
-                            case 2: onVineType="caution" break
-                            case 3: onVineType="caution" break
-                            case 4: onVineType="cautionfast" break
-                            case 5: onVineType="cautionfast" break
-                            //add your vine types here
-                        }
-                    }
-                }
-                //end of for loop
-            }
-        }
+        //you can add custom vines here
+        vine_check_left(
+            WallJumpL,
+            CautionStripL,
+            CautionFastL
+        )
+        vine_check_right(
+            WallJumpR,
+            CautionStripR,
+            CautionFastR
+        )
     }
 }
 /*"/*'/**//* YYD ACTION
@@ -508,7 +453,7 @@ if (!vvvvvv) if (!onGround) {
     if (onVineL || onVineR) {
         //touching vine
         hang=true
-        facing=esign(onVineL-onVineR,1)
+        facing=esign(onVineL-onVineR,facing)
 
         vspeed=2*vflip
 
@@ -524,35 +469,16 @@ if (!vvvvvv) if (!onGround) {
         }
 
         //input away from the vine
-        if (
-            (onVineL && key_right(vi_pressed))
-        ||  (onVineR && key_left(vi_pressed))
-        ||  (key_jump(vi_pressed) && global.maker_vines)
-        ) {
+        if (onVineL && key_right(vi_pressed))
+        or (onVineR && key_left(vi_pressed))
+        or (key_jump(vi_pressed) && global.maker_vines) {
             hang=false
             onVineL=false
             onVineR=false
             if (key_jump()) {
                 //jumping off vine
                 walljump=2
-                if (onVineType=="normal") {
-                    hspeed=15*facing
-                    vspeed=-9*vflip
-                }
-                if (onVineType=="caution") {
-                    hspeed=15*facing
-                    vspeed=-9*vflip
-                    walljumpboost=24
-                    walljumpdir=facing
-                }
-                if (onVineType=="cautionfast") {
-                    hspeed=10*facing
-                    vspeed=-10*vflip
-                    altj=2
-                    walljumpboost=-1
-                    walljumpdir=facing
-                }
-                //add custom vines here
+                event_perform_object(onVineType,ev_trigger,tr_vinejump)
             } else {
                 //just moving off vine
                 hspeed=3*facing

@@ -196,6 +196,8 @@
 	|unfreeze_player
 	|try_unstuck
 	|player_swap_keys
+	|vine_check_left
+	|vine_check_right
 +keypick
 	|key_clear
 	|key_add

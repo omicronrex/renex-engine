@@ -10,7 +10,7 @@ i=0 repeat (argument_count) {
         vine=instance_place(x+1,y,argument[i])
     }
     //when clean vines are off, ignore platforms and active flag
-    if ((!onPlatform || !global.clean_vines) && !onGround) {
+    if ((!onPlatform || !global.clean_vines) && !onGround || global.floor_vines) {
         if (vine) if (vine.active || !global.clean_vines) {
             onVineR=true
             onVineType=vine.object_index

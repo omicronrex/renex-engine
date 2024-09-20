@@ -434,7 +434,7 @@ applies_to=self
 if (global.clean_vines) exit
 
 hang=false
-if (!vvvvvv) if (!onGround) {
+if (!vvvvvv) if (!onGround || global.floor_vines) {
     if (onVineL || onVineR) {
         //touching vine
         hang=true

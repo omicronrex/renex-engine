@@ -8,9 +8,12 @@ if (event_type==ev_other && event_number==ev_room_start) {
 
 if (event_type==ev_create) {
     //initialize the boss and create any resources needed by it
+    hp=10
+    
+    //set this to 0 to remove the popup subtitle
+    make_subtitle=1
     name="Template Boss"
     subtitle="renex engine" 
-    hp=10
 
     lock_controls()
     sound_stop_music()

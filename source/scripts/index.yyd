@@ -311,3 +311,4 @@ ease
 vine_check_left
 vine_check_right
 set_game_speed
+savedata_schedule_write

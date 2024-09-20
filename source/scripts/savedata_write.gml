@@ -1,6 +1,11 @@
 //writes memory savedata to disk
 var b,f;
 
+with (World) {
+    save_scheduled=false
+    alarm[4]=-1
+}
+
 if (savedatap("exists")) {
     if (savedatap("backup")) {
         savedatap("backup",false)

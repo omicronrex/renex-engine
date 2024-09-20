@@ -67,4 +67,6 @@ with (Player) if (!dead || argument0) {
 
     //move everything to the persistent save
     ds_map_copy(global.savemap_persistent,global.savemap)
+
+    savedata_schedule_write()
 }

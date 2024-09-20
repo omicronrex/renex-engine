@@ -73,6 +73,7 @@
 		|read_objsave
 	|generate_save_thumbnail
 	|persist_hash
+	|savedata_schedule_write
 +system
 	+util
 		|format_time

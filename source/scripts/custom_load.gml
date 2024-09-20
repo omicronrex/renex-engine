@@ -1,6 +1,6 @@
 //load gimmicks
+
 with (Player) {
-    slomo=savedata("slomo")
     dot_hitbox=savedata("whitedot")
     dotkid=savedata("dotkid")
     shootkid=savedata("shootkid")

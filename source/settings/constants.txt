@@ -24,3 +24,4 @@ opt_text=3
 opt_value=4
 opt_inpause=5
 re_setversion=1
+ff_immediate=99

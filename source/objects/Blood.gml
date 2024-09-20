@@ -53,7 +53,7 @@ if (attach) {
     vspeed*=0.1
     gravity=0
 } else {
-    gravity=(0.2+random(0.2))*vflip
+    gravity=(0.2+random(0.2))*vflip*dt*dt
 }
 
 

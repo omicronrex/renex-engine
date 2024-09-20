@@ -3,10 +3,10 @@ if (instance_number(Bullet)<4) {
     i.owner=id
 
     if (input_h!=0 || input_v!=0) {
-        i.speed=16*dt*slomo
+        i.speed=16*dt
         i.direction=point_direction(0,0,input_h,input_v)
     } else {
-        i.hspeed=facing*16*dt*slomo
+        i.hspeed=facing*16*dt
         i.direction+=sprite_angle
     }
     sound_play_slomo("sndShoot")

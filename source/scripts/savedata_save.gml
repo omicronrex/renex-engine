@@ -55,6 +55,10 @@ with (Player) if (!dead || argument0) {
 
     savedata("persistent hashmap",ds_map_write(global.persistmap))
 
+    savedata("slomo",global.slomo)
+    savedata("slomoto",global.slomoto)
+    savedata("slomof",global.slomof)
+
     custom_save()
 
     with (all) event_perform(ev_trigger,tr_onsave)

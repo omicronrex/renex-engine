@@ -87,6 +87,10 @@ global.itemcount=0
 
 global.increment=0
 
+global.slomo=1
+global.slomoto=1
+global.slomof=0
+
 global.keylist=ds_map_create()
 
 globalvar difficulty;difficulty=0

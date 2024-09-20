@@ -11,6 +11,18 @@ if (camera_l!=memcaml || camera_t!=memcamt || activation_timer>=room_speed*0.5) 
 memcaml=camera_l
 memcamt=camera_t
 
+//slow motion updates
+global.slomo=approach(global.slomo,global.slomoto,global.slomof)
+sound_kind_pitch(0,global.slomo)
+sound_kind_pitch(1,global.slomo)
+sound_kind_pitch(2,global.slomo)
+sound_kind_pitch(3,global.slomo)
+
+if (is_ingame())
+    dt=(50*global.slomo)/global.game_speed
+else
+    dt=1
+
 //blood updates
 stepcount+=50/room_speed
 if (stepcount>=1) {

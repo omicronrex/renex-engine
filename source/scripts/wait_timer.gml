@@ -11,7 +11,7 @@
 //think of this script like a stack, every time you call it, you add one thing to the stack
 //the 'thing' being whatever piece of code you run after it
 
-current_timer+=argument0
+current_timer+=argument0/global.slomo
 return (
     timer>=current_timer && 
     (oldtimer<current_timer || 

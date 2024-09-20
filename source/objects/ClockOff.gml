@@ -4,4 +4,4 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-other.slomo=1
+set_game_speed(1,500)

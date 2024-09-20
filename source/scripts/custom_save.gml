@@ -1,6 +1,6 @@
 //save gimmicks
+
 with (Player) {
-    savedata("slomo",slomo)
     savedata("whitedot",dot_hitbox)
     savedata("dotkid",dotkid)
     savedata("shootkid",shootkid)

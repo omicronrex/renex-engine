@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (instance_exists(Player)) alarm[0]=40/(Player.slomo*dt)
+if (instance_exists(Player)) alarm[0]=40/(global.slomo*dt)
 else alarm[0]=40/dt
 dead=instance_place(x,y,BulletBlock)
 

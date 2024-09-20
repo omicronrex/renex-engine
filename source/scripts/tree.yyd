@@ -170,6 +170,7 @@
 	|trigger_broadcast
 	|update_triggers
 	|draw_window_caption
+	|set_game_speed
 +player
 	|player_jump
 	|player_capjump

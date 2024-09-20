@@ -38,8 +38,8 @@ bleeding=1
 alarm[0]=10*blood
 
 if (instance_exists(Player)) {
-    hspeed=Player.hspeed/2
-    vspeed=Player.vspeed/3
+    hspeed=Player.hspeed/2*dt
+    vspeed=Player.vspeed/3*dt
     gravity=Player.baseGrav*Player.vflip*dt*dt
     if (Player.bow) {
         i=instance_create(x,y,GibParticle) i.sprite_index=sprBow i.image_xscale=Player.facing
@@ -61,9 +61,9 @@ with (GibParticle) {
     if (sprite_index!=sprBow) {
         image_index=irandom(image_number-1)
     }
-    gravity=(0.1+random(0.2))*other.grav
+    gravity=(0.1+random(0.2))*other.grav*dt*dt
     direction=irandom(35)*10
-    speed=random(2*dt)
+    speed=random(2)*dt
     if (instance_exists(Player)) {
         hspeed+=Player.hspeed*dt
         vspeed+=Player.vspeed*dt/2-1

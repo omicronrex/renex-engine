@@ -13,11 +13,6 @@ jump2=7
 maxjumps=2
 
 
-//player simulation speed multiplier
-//you can change this to make the player run slower
-slomo=1
-
-
 //these values are used to reset the player when disabling gimmicks such as beams and fields
 maxSpeedDefault=3
 baseGravDefault=0.4
@@ -62,8 +57,6 @@ infjump=0
 
 dead=false
 activated=true
-
-oldslomo=-1
 
 coyoteTime=0
 jump_timer=0
@@ -160,15 +153,10 @@ applies_to=self
 
 */
 
-//slow down music
-if (slomo!=oldslomo)
-    sound_kind_pitch(1,slomo)
-oldslomo=slomo
-
 updating=0
 if (!frozen) {
     //add how much time has passed since last frame
-    stepcount+=50/room_speed*slomo
+    stepcount+=dt
     //is another frame in order?
     if (roundto(stepcount,0.00001)>=1) {
         updating=true
@@ -178,11 +166,8 @@ if (!frozen) {
     framefac=stepcount+0.5
 }
 
-//don't smooth if the room speed is 50
-if (global.game_speed==50 && slomo==1) framefac=2
-
-//disable delta time (but before dead check)
-if (global.disable_delta_time) updating=1
+//don't smooth if the room speed is 50 and not doing slow motion
+if (global.game_speed==50 && global.slomo==1) framefac=ff_immediate
 
 //don't update while dead
 if (dead || !activated) updating=0
@@ -949,7 +934,7 @@ if (!dead) {
                     } else y=oy
                 } else {
                     //land on it
-                    vspeed=max(0,other.vspeed/dt/slomo)
+                    vspeed=max(0,other.vspeed/dt/global.slomo)
                     player_land(1)
                     with (other) event_trigger(tr_platland)   
                 }
@@ -987,7 +972,7 @@ if (!dead) {
                     } else y=oy
                 } else {
                     //land on it
-                    vspeed=min(0,other.vspeed/dt/slomo)
+                    vspeed=min(0,other.vspeed/dt/global.slomo)
                     player_land(1)
                     with (other) event_trigger(tr_platland)   
                 }
@@ -1131,7 +1116,7 @@ action_id=603
 applies_to=self
 */
 ///draw slow motion effect
-if (slomo<1) {
+if (global.slomo<1) {
     draw_set_alpha(0.025+0.025*sin(global.increment/2))
     draw_rectangle_color(0,0,room_width,room_height,0,0,0,0,0)
     draw_set_alpha(1)

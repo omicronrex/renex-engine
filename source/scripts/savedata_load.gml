@@ -13,7 +13,6 @@ if (global.is_impossible[savedata("diff")]) {
 
 global.warp_id=""
 
-
 if (global.difficulty_room!=noone && room==rmMenu) {
     room_goto(global.difficulty_room)
 } else {
@@ -34,6 +33,10 @@ if (global.difficulty_room!=noone && room==rmMenu) {
 
         global.onload_trigger=true
     }
+
+    global.slomo=savedata("slomo")
+    global.slomoto=savedata("slomoto")
+    global.slomof=savedata("slomof")
 
     custom_load()
     global.itemcount=savedata("itemcount")

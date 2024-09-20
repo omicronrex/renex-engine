@@ -48,7 +48,9 @@ if (slowing) {
 
 if (is_ingame() && room!=global.difficulty_room) {
     //advance game time
-    if (!Player.dead && !global.pause && !instance_exists(TimerFreeze)) {
+    if not (Player.dead or global.pause)
+    and not (instance_exists(TimerFreeze))
+    and not (global.pause_time_after_clear and savedatap("clear")) {
         time=savedatap("time")+50/room_speed
         savedatap("time",time)
     }

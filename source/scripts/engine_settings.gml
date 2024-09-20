@@ -129,6 +129,8 @@ global.release_mode=false
     //pause the game when unfocused (automatically unpauses when re-focused)
     //also doesn't open/close the pause menu if you paused manually
     global.unfocus_pause=false
+    //pause ingame timer after the save is marked as cleared
+    global.pause_time_after_clear=true
 
 
 //player settings

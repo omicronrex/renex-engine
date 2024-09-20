@@ -50,6 +50,9 @@ global.release_mode=false
     global.always_test_mode=false
     //disable the player delta time system (see Player step event action 1)
     global.disable_delta_time=false
+    //disable the global settings repository
+    //use this when you don't want the engine to remember the last game's options
+    global.disable_settings_repo=false
 
 
 //difficulties

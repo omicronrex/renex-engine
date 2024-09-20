@@ -22,8 +22,10 @@ global.backfile=savefolder+exe_name+".sav.bak"
 global.statfile=savefolder+exe_name+"_stats_"
 global.shotfolder=savefolder+"screenshots\"
 
-global.setrepo=saveappdata+"renex engine global\settings.cfg"
-directory_create(saveappdata+"renex engine global")
+if (!global.disable_settings_repo) {
+    global.setrepo=saveappdata+"renex engine global\settings.cfg"
+    directory_create(saveappdata+"renex engine global")
+}
 
 global.savefolder=savefolder
 

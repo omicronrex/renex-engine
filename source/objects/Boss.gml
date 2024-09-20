@@ -29,7 +29,7 @@ if (savedata("boss"+object_get_name(object_index))) {
 
     maxhp=hp
 
-    if make_subtitle {
+    if (make_subtitle) {
         o=instance_create(x,y,BossIntroduction)
         o.owner=id
         o.str=name

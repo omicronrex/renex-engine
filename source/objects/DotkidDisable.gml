@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 if (other.dotkid) {
-    sound_play_slomo("sndGrow")
+    sound_play_auto("sndGrow")
     other.dotkid=false
     change_skin(skin_default)
     other.x=x+16

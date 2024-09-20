@@ -491,6 +491,7 @@
 	|UnsolidItemBlock
 	|Fader
 	|PropBlood
+	|SoundEvent
 |PlayerStart
 |Block
 |Platform

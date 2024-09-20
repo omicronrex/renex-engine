@@ -25,4 +25,4 @@ applies_to=self
 */
 instance_destroy()
 if (tile) tile_delete(tile)
-sound_play_slomo("sndBlockChange")
+sound_play_auto("sndBlockChange")

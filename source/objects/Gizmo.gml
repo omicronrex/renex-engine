@@ -224,7 +224,7 @@ applies_to=self
 trg=1
 move_t=0
 
-if (sound!="") sound_play(sound)
+if (sound!="") sound_play_auto(sound)
 
 if (path!=noone) {
     path_start(path,path_speed,path_endaction,path_absolute)

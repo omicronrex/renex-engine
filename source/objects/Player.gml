@@ -449,7 +449,7 @@ if (!vvvvvv) if (!onGround) {
                 walljump=2
             } else if (djump<maxjumps) {
                 djump+=1
-                sound_play_slomo("sndDJump")
+                sound_play_auto("sndDJump")
             }
         }
 
@@ -503,8 +503,8 @@ if (!vvvvvv) if (!onPlatform) {
             onVineR=false
 
             //play vine jump sound
-            sound_play_slomo("sndJump")
-            sound_play_slomo("sndDJump")
+            sound_play_auto("sndJump")
+            sound_play_auto("sndDJump")
 
             //handle different vine types
             switch (onVineType) {
@@ -776,7 +776,7 @@ applies_to=self
 
 if (key_jump(vi_pressed)) if (instance_place(x,y+1*vflip,NekoronAir) && !onGround) {
     vspeed=-jump2*vflip
-    repeat (choose(1,2,3)) sound_play_slomo("sndDJump")
+    repeat (choose(1,2,3)) sound_play_auto("sndDJump")
     image_index=0
 }
 /*"/*'/**//* YYD ACTION
@@ -860,7 +860,7 @@ applies_to=self
 
 if (walljump!=0) {
     repeat (2) {
-        sound_play_slomo("sndJump")
+        sound_play_auto("sndJump")
     }
     walljump=approach(walljump,0,1)
 }

@@ -33,6 +33,7 @@
 	|sprGameMakerBlock
 	|sprFader
 	|sprFadeWarp
+	|sprSoundEvent
 +Player
 	|sprMaskPlayer
 	|sprMaskPlayerFlip

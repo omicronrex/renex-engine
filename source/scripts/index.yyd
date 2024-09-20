@@ -70,7 +70,7 @@ player_shoot
 check_crush
 kill_player
 move_player
-sound_play_slomo
+sound_play_auto
 key_clear
 key_add
 key_use

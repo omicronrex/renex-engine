@@ -87,14 +87,14 @@ if (event_type==ev_step) {
                 //die
                 instance_create(x+random_range(-20,20),y+random_range(-10,10),GlassShard)
                 if (state!="dying") {
-                    sound_play("sndBossDeath")
+                    sound_play_auto("sndBossDeath")
                     state="dying"
                     hspeed=sign(400-x)*2*dt
                     vspeed=-3*dt
                     gravity=0.05
                     reset_frame_wait()
                 } else if (wait_frames(50)) {
-                    sound_play("sndBossDeath")
+                    sound_play_auto("sndBossDeath")
                     instance_create(x,y,TouhouDeath)
                     repeat (80) instance_create(x+random_range(-20,20),y+random_range(-10,10),GlassShard)
                     instance_destroy()
@@ -102,7 +102,7 @@ if (event_type==ev_step) {
                 exit
             } else {
                 instance_create(other.x,other.y,GlassShard)
-                sound_play("sndBossHit")
+                sound_play_auto("sndBossHit")
                 hitcount+=1
                 flash=50
             }

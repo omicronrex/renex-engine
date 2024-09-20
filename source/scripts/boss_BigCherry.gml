@@ -50,10 +50,10 @@ if (event_type==ev_step) {
         hp-=10
         if (hp<=0) {
             //defeated
-            sound_play("sndDeath")
+            sound_play_auto("sndDeath")
             instance_destroy()
         } else {
-            sound_play("sndBossHit")
+            sound_play_auto("sndBossHit")
             vulnerable=false
             flash=10
             flashtime=6            

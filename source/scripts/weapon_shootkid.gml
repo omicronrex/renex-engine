@@ -8,7 +8,7 @@ if (!global.contact_saves) {
 
 if (!instance_exists(ShootKid)) {
     if(global.accurate_shootkid && !place_free(x+12*image_xscale,y)) exit
-    sound_play_slomo("sndShootkid")
+    sound_play_auto("sndShootkid")
     i=instance_create(x,y,ShootKid)
     i.direction+=sprite_angle
 

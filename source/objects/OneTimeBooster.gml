@@ -15,7 +15,7 @@ applies_to=self
 if (one_time_use==1) {
     other.vspeed=-other.jump*other.vflip
     one_time_use+=1
-    sound_play_slomo("sndBooster")
+    sound_play_auto("sndBooster")
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION

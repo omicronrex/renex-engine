@@ -4,6 +4,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound_play("sndKey")
+sound_play_auto("sndKey")
 key_add(object_index)
 instance_destroy()

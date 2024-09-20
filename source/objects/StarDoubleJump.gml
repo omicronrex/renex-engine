@@ -15,8 +15,8 @@ action_id=603
 applies_to=self
 */
 if other.maxjumps != 2 {
-    if (other.maxjumps<2) sound_play("sndGainStar")
-    else sound_play("sndLoseStar")
+    if (other.maxjumps<2) sound_play_auto("sndGainStar")
+    else sound_play_auto("sndLoseStar")
     other.maxjumps = 2
     effect = true
     xs = 1

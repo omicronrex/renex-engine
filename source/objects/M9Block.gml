@@ -13,7 +13,7 @@ applies_to=self
 */
 if (active && !visible) {
     if (distance_to_object(Player)<2) {
-        sound_play_slomo("sndBlockChange")
+        sound_play_auto("sndBlockChange")
         visible=1
     }
 }

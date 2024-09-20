@@ -15,7 +15,7 @@ action_id=603
 applies_to=self
 */
 instance_destroy_other()
-sound_play("sndDeath")
+sound_play_auto("sndDeath")
 instance_change(DeadBugz,1)
 #define Collision_Block
 /*"/*'/**//* YYD ACTION

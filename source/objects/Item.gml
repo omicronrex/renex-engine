@@ -33,13 +33,13 @@ applies_to=self
 if (!collected) {
     if (global.autosave_items) {
         savedatap(itemid,1)
-        sound_play("sndItem")
+        sound_play_auto("sndItem")
         collected=1
         collect_items()
         savedatap("itemcount",global.itemcount)
     } else {
         savedata(itemid,1)
-        sound_play("sndItem")
+        sound_play_auto("sndItem")
         collected=1
         alarm[0]=2
         image_blend=$404040

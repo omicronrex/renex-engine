@@ -12,7 +12,7 @@ action_id=603
 applies_to=self
 */
 if (other.vvvvvv) {
-    sound_play_slomo("sndVCoin")
+    sound_play_auto("sndVCoin")
     other.vvvvvv=false
     change_skin(skin_default)
     instance_destroy()

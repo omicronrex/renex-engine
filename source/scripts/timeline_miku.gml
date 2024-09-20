@@ -100,7 +100,7 @@ if (argument0=="step") {
     }
     if (wait_timer(50)) {
         sound_stop_music()
-        sound_play("sndStoneSlide2")
+        sound_play_auto("sndStoneSlide2")
         gravity=0.1
         gravity_direction=0
     }

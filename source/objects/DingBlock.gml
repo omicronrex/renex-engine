@@ -13,7 +13,7 @@ applies_to=self
 */
 if (!visible) {
     if (distance_to_object(Player)<2) {
-        sound_play_slomo("DING")
+        sound_play_auto("DING")
         visible=1
     }
 }

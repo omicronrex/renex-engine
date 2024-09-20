@@ -20,7 +20,7 @@ if other.maxjumps != 1 {
     xs = 1
     ys = 1
     aa = 1
-    sound_play("sndLoseStar")
+    sound_play_auto("sndLoseStar")
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

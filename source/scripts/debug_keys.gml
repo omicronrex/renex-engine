@@ -75,7 +75,7 @@ if (is_ingame()) {
 
     if (keyboard_check_pressed(ord("H"))) {
         with (Player) flip_player()
-        sound_play_slomo("sndFlip")
+        sound_play_auto("sndFlip")
         show_message_right("flip player")
     }
 

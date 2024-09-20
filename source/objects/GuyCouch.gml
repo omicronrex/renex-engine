@@ -12,7 +12,7 @@ action_id=603
 applies_to=self
 */
 if (image_index=0) {
-    sound_play("sndBoing")
+    sound_play_auto("sndBoing")
     other.vspeed=-30*dt
     other.djump=1
     image_speed=mmf_animspeed(60)

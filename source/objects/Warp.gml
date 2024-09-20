@@ -19,11 +19,11 @@ action_id=603
 applies_to=self
 */
 if (warpToPlayerstart) {
-    if (warpsound!="") sound_play(warpsound)
+    if (warpsound!="") sound_play_auto(warpsound)
     move_player(warpToPlayerstart.x+17,warpToPlayerstart.y+23,0)
     if (global.clear_inputs_on_warp) input_clear()
 } else if (roomTo==room) {
-    sound_play("sndBlockChange")
+    sound_play_auto("sndBlockChange")
     instance_destroy()
 } else {
     collect_items()
@@ -52,7 +52,7 @@ applies_to=self
 
 if (persistent && warpsound!="") {
     //we are coming from a previous room, and we have to play a sound
-    sound_play(warpsound)
+    sound_play_auto(warpsound)
     instance_destroy()
 } else {
     if (warpToPlayerstart)

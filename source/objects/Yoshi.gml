@@ -84,8 +84,8 @@ if (lost) {
 
     if (key_shoot(vi_pressed)) {
         //kill yoshi
-        sound_play("sndShoot")
-        sound_play("sndDeath")
+        sound_play_auto("sndShoot")
+        sound_play_auto("sndDeath")
 
         vehicle_dismount()
         passenger.y-=20*vflip
@@ -205,7 +205,7 @@ applies_to=self
 if (active) {
     if (other.object_index=SmwSaw) {
         if (y<=other.y-2) {
-            sound_play("sndYoshiJump")
+            sound_play_auto("sndYoshiJump")
             if (key_jump())
                 vspeed=-15
             else
@@ -214,7 +214,7 @@ if (active) {
         }
     }
 
-    sound_play("sndYoshi2")
+    sound_play_auto("sndYoshi2")
 
     passenger.vspeed=vspeed
 
@@ -252,4 +252,4 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound_play("sndYoshi")
+sound_play_auto("sndYoshi")

@@ -34,7 +34,7 @@ with (other) if (!frozen) {
     if (vflip==-1 || camera_angle()==180) {
         speed=0
         djump=1
-        sound_play_slomo("sndBlockChange")
+        sound_play_auto("sndBlockChange")
         if (camera_angle()!=0) {
             frozen=true
             other.go=1

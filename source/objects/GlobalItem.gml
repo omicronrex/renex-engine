@@ -21,7 +21,7 @@ applies_to=self
 if (!gottem) {
     gottem=1
     settings(itemid,1)
-    sound_play("sndItem")
+    sound_play_auto("sndItem")
     instance_activate_object(ItemBlock)
     with (ItemBlock) event_user(0)
 }

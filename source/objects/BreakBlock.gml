@@ -39,7 +39,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound_play(global.break_sfx)
+sound_play_auto(global.break_sfx)
 hspeed=other.hspeed/2
 vspeed=other.vspeed/2
 instance_destroy()

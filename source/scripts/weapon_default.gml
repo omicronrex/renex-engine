@@ -5,7 +5,7 @@ if (instance_number(Bullet)<4) {
     i.hspeed=facing*16*dt
     i.direction+=sprite_angle
 
-    sound_play_slomo("sndShoot")
+    sound_play_auto("sndShoot")
 
     trigger_broadcast(tr_playershoot)
 }

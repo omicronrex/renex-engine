@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-sound_play_slomo("sndBlockChange")
+sound_play_auto("sndBlockChange")
 instance_destroy()
 #define Draw_0
 /*"/*'/**//* YYD ACTION

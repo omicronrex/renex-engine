@@ -485,7 +485,7 @@ applies_to=self
 if (!global.clean_vines) exit
 
 hang=false
-if (!vvvvvv) if (!onPlatform) {
+if (!vvvvvv) if (!onPlatform || global.floor_vines) {
     if (onVineL || onVineR) {
         //touching vine
         hang=true
@@ -497,44 +497,20 @@ if (!vvvvvv) if (!onPlatform) {
         else if (vflip==1) vspeed=min(vspeed,2)
 
         if (key_jump(vi_pressed)) {
-            //vine jump
             hang=false
             onVineL=false
             onVineR=false
-
-            //play vine jump sound
-            sound_play_auto("sndJump")
-            sound_play_auto("sndDJump")
-
-            //handle different vine types
-            switch (onVineType) {
-                case "normal": {
-                    walljumpboost=5
-                    walljumpdir=facing
-                    hspeed=3*facing
-                    vspeed=-jump*vflip
-                }break
-                case "caution": {
-                    walljumpboost=24
-                    walljumpdir=facing
-                    hspeed=3*facing
-                    vspeed=-jump*vflip
-                }break
-                case "cautionfast": {
-                    walljumpboost=-1
-                    walljumpdir=facing
-                    altj=2
-                    hspeed=10*facing
-                    vspeed=-jump*vflip
-                }break
+            if (key_jump()) {
+                //jumping off vine
+                sound_play_auto("sndDJump")
+                sound_play_auto("sndJump")
+                event_perform_object(onVineType,ev_trigger,tr_vinejump)
+            } else {
+                //just moving off vine
+                hspeed=3*facing
             }
-            //prevent 1fs from fulljumping
-            if (key_jump(vi_released)) player_capjump()
-        } else if ((key_left() && onVineR) || (key_right() && onVineL)) {
-            //moving away from vine
-            hang=false
-            onVineL=false
-            onVineR=false
+        } else if ((onVineL && key_right()) || (onVineR && key_left())) {
+            //slide off of vine if holding the right direction, but not pressing it
             hspeed=3*facing
         }
     }

@@ -170,7 +170,7 @@ global.release_mode=false
     //enable distance vines (classic engine vine check using distance_to_object)
     global.distance_vines=false
     //allow the player to grab vines while on the floor
-    global.floor_vines=true
+    global.floor_vines=false
     //angle the player (and the player's bullets) to match slopes
     global.angle_slopes=true
     //time in frames to disable pausing after exiting the pause menu

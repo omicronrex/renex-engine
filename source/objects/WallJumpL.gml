@@ -14,5 +14,12 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-hspeed=15
-vspeed=-9*vflip
+if (!global.clean_vines) {
+    hspeed=15
+    vspeed=-9*vflip
+} else {
+    hspeed=3
+    vspeed=-9*vflip
+    walljumpboost=5
+    walljumpdir=facing
+}

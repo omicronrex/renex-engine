@@ -200,6 +200,8 @@ global.release_mode=false
     global.pause_sound_on_game_pause=true
     //stop sound effects when changing rooms
     global.stop_sounds_on_room_change=true
+    //disable automatic pan and volume
+    global.disable_autopanvol=false
 
 
 //cleaner physics --- not recommended to change when making traditional needle games

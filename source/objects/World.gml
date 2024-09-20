@@ -46,6 +46,14 @@ applies_to=self
 */
 ///delayed window center
 window_center()
+#define Alarm_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///save scheduling
+if (save_scheduled) savedata_write()
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

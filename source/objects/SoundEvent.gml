@@ -17,4 +17,4 @@ if (instance_exists(owner)) {
 }
 
 sound_pan(sound,median(-1,(x-(view_xview+view_wview/2))/(view_wview/2),1))
-sound_volume(sound,min(1,view_wview/2-point_distance(x,y,view_xview+view_wview/2,view_yview+view_hview/2)))
+sound_volume(sound,min(1,1+((view_wview*2/3)-point_distance(x,y,view_xview+view_wview/2,view_yview+view_hview/2))/(view_wview*2/3)))

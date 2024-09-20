@@ -8,7 +8,7 @@ if (argument_count==0) {show_error("Called sound_play_auto with no arguments.",0
 
 sound=argument[0]
 
-vol=min(1,view_wview/2-point_distance(x,y,view_xview+view_wview/2,view_yview+view_hview/2))
+vol=min(1,1+((view_wview*2/3)-point_distance(x,y,view_xview+view_wview/2,view_yview+view_hview/2))/(view_wview*2/3))
 pitch=1
 pan=median(-1,(x-(view_xview+view_wview/2))/(view_wview*2/3),1)
 

@@ -5,8 +5,7 @@ if (is_ingame()) {
 }
 
 //restore fading/slowing music
-fading=0
-fadefrom=1
+sound_fade_music(1,0,0)
 slowing=0
 slowfrom=1
 sound_kind_pitch(1,1)

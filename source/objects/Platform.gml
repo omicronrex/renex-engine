@@ -16,6 +16,8 @@ phase=false
 invisible=false
 
 hdeficit=0
+
+t=-1
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -45,6 +47,11 @@ if (moveplayer) {
     with (Player) if (instance_place(x,y+2*vflip,other.id)) {
         move_player(x+hmove,y+other.vspeed,1)
     }
+}
+
+if (t>=0) {
+    t-=1
+    if (t==0) instance_destroy()
 }
 #define Collision_BulletBlock
 /*"/*'/**//* YYD ACTION

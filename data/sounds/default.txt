@@ -26,6 +26,7 @@ sndLoseStar: NANG star lose
 sndMegaDelfruit: OG delfruit (extended cut)
 sndMetal2: OG metal 2 recording from windows xp
 sndMetal2Short: OG metal 2 (source audio)
+sndPlatformDestroy: game maker crunchy.wav
 sndSave: genki save
 sndShatter: OG glass shatter
 sndShoot: OG shoot

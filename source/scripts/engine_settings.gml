@@ -171,6 +171,10 @@ global.release_mode=false
     global.distance_vines=false
     //allow the player to grab vines while on the floor
     global.floor_vines=false
+    //time in frames to destroy a platform after it's been jumped on
+    //keep it at -1 for them to never destroy
+    //it also plays a sound when jumped on, see player_jump()
+    global.platform_destroy_time=-1
     //angle the player (and the player's bullets) to match slopes
     global.angle_slopes=true
     //time in frames to disable pausing after exiting the pause menu

@@ -28,6 +28,6 @@ applies_to=self
 */
 
 //field BGM: string
-//field loop: bool
+//field loop: true
 
 alarm[0]=1

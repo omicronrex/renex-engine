@@ -39,7 +39,6 @@ rotate=0
 rotating=0
 
 no_destroy_outside=0
-
 trigger_on_create=0
 
 trap_redir_index=0
@@ -170,31 +169,33 @@ applies_to=self
 */
 ///fields definition
 
-//field path: path
-//field path_endaction: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
-//field path_absolute: bool
-//field path_scaling: number
-//field path_speed: number
+//field depth: number
 //field sound: string
-//field dir: angle
-//field spd: number
+//field movement: false
+    //field dir: angle
+    //field spd: number
+    //field hsp: number
+    //field vsp: number
+    //field grav: number
+        //field grav_dir: angle
+//field scaling_rotation: false
+    //field scaleh: number
+    //field scalev: number
+    //field rotate: number
+//field path: path
+    //field path_endaction: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
+    //field path_absolute: true
+    //field path_scaling: number
+    //field path_speed: number
 //field move_to_xy: xy
-//field move_spd: number
-//field move_relative: bool
-//field hsp: number
-//field vsp: number
-//field grav: number
-//field grav_dir: number
+    //field move_spd: number
+    //field move_relative: false
 //field move_to_xy_grav: xy
-//field move_grav: number
-//field scaleh: number
-//field scalev: number
-//field rotate: number
-//field no_destroy_outside: bool
-//field trigger_on_create: bool
+    //field move_grav: number
+//field no_destroy_outside: false
+//field trigger_on_create: false
 //field trap_redir_index: number
 //field trap_stop_index: number
-//field depth: number
 
 if (move_to_xy[0]!=noone && move_to_xy[1]!=noone && move_spd) {
     move_time=round_unbiased(point_distance(x,y,move_to_xy[0],move_to_xy[1])/move_spd)

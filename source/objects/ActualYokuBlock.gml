@@ -42,4 +42,4 @@ action_id=603
 applies_to=self
 */
 //field next: instance
-//field first: bool
+//field first: false

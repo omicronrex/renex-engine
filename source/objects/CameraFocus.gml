@@ -53,7 +53,7 @@ You can also set a specific x,y coordinate for it to focus on.
 Can also be set to activate on create or when the player touches it (default).
 However, you are responsible for setting the 'following' variable off if it activates on create.
 */
-//field activate_on_create: bool
+//field activate_on_create: false
 //field focuscoord: xy
 
 if (activate_on_create || instance_place(x,y,Player)) {

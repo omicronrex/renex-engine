@@ -48,7 +48,7 @@ applies_to=self
 //field warpid: string
 //field warpToPlayerstart: instance - (pick a PlayerStart)
 //field warpsound: string
-//field transparent: bool
+//field transparent: false
 
 if (persistent && warpsound!="") {
     //we are coming from a previous room, and we have to play a sound

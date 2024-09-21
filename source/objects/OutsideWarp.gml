@@ -11,6 +11,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//field autosave: bool
+//field autosave: false
 
 event_inherited()

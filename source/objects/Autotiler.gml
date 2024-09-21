@@ -26,7 +26,7 @@ When using "clone" mode, place the desired tile underneath the object.
 //field tileset: background
 //field grid - default 32
 //field depth - default 1000
-//field solid_border: bool - default false
+//field solid_border: false
 
 if (persistent) {
     //we are coming from another room

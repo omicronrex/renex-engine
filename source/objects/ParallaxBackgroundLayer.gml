@@ -51,8 +51,8 @@ applies_to=self
 //field bgindex: number - background layer
 //field bgxmult: number - closer to 1 for 'farther' away
 //field bgymult: number - closer to 1 for 'farther' away
-//field bgxfit: bool - fit background to room on x axis (only use for bgs larger than the room)
-//field bgyfit: bool - fit background to room on y axis (only use for bgs larger than the room)
+//field bgxfit: false - fit background to room on x axis (only use for bgs larger than the room)
+//field bgyfit: false - fit background to room on y axis (only use for bgs larger than the room)
 
 if room!=origin instance_destroy()
 

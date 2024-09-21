@@ -11,7 +11,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-//field surface: bool - wavy water surface
+//field surface: false - wavy water surface
 //field depth: number
 
 if (surface) {

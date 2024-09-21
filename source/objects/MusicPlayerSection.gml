@@ -28,4 +28,4 @@ you can put this in a section of the room and it'll play music when it's onscree
 */
 
 //field BGM: string
-//field loop: bool
+//field loop: true

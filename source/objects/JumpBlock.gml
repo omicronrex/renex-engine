@@ -25,7 +25,7 @@ action_id=603
 applies_to=self
 */
 //field spd: number
-//field one_time_use: bool
+//field one_time_use: false
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -23,7 +23,7 @@ applies_to=self
     this object will save the game on contact with the player
     you can also make it destroy itself on room start for a one-time autosave
 */
-//field destroy_on_start: bool
+//field destroy_on_start: false
 
 if (instance_place(x,y,Player)) {
     autosave_asap()

@@ -13,8 +13,6 @@ snap_type=noone
 
 phase=false
 
-invisible=false
-
 hdeficit=0
 
 t=-1
@@ -73,16 +71,14 @@ action_id=603
 applies_to=self
 */
 //field snap: enum("yuuutu","always","top","never")
-//field invisible: bool
+//field visible: true
 //field path: path
 //field speed
 //field path_action: enum(path_action_continue,path_action_restart,path_action_reverse,path_action_stop)
-//field path_absolute: bool
-//field phase: bool - lets the platform go through blocks
+//field path_absolute: false
+//field phase: false - lets the platform go through blocks
 //field hspeed
 //field vspeed
-
-visible=!invisible
 
 if (snap=="yuuutu") snap_type=0
 if (snap=="always") snap_type=1

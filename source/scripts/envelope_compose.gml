@@ -41,19 +41,23 @@ if ((global.rw!=global.APPwidth || global.rh!=global.APPheight) && settings("fil
 
 surface_reset_target()
 
+texture_set_interpolation(filter)
+d3d_set_alphablend(0)
+
 if (settings("fullscreen")) {
     d3d_set_projection_ortho(0,0,global.ww,global.wh,0)
     draw_clear(window_get_color())
     custom_window_border(global.ww,global.wh)
-    texture_set_interpolation(filter)
     draw_surface_stretched(surface,global.woffset,0,global.rw,global.rh)
     texture_set_interpolation(0)
 } else {
     d3d_set_projection_ortho(0,0,global.rw,global.rh,0)
     texture_set_interpolation(filter)
     draw_surface_stretched(surface,0,0,global.rw,global.rh)
-    texture_set_interpolation(0)
 }
+
+d3d_set_alphablend(1)
+texture_set_interpolation(0)
 
 if (maxalpha>0) {
     //draw engine fullscreen button

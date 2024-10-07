@@ -2,8 +2,10 @@
 oldbowx=newbowx
 oldbowy=newbowy
 if (global.bow_lag) {
-    newbowx=newx
-    newbowy=newy
+    if (irandom(8)) {
+        newbowx=newx
+        newbowy=newy
+    }
 } else {
     newbowx=floor(x)
     newbowy=floor(y)

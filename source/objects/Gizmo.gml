@@ -4,20 +4,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///instructions
+///instructions & init
 
 /*
     Gizmos are the general parent for any object that will react to triggers.
     They will receive a Trap is Triggered event whenever a triggerbomb detonates on them.
 
-    look in scripts/lists/list_gizmos for more information.
+    look in custom_traps() for more information.
 */
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
-///init
+
 dir=0
 spd=0
 hsp=0
@@ -62,6 +57,8 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+if (!trg) exit
+
 if (scaling) {
     sw=sprite_get_width(sprite_index)
     sh=sprite_get_height(sprite_index)

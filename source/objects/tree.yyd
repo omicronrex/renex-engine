@@ -220,11 +220,6 @@
 	|TriggerFree
 	|TriggeredFree
 	|TriggerInstance
-	|SpikeTrapD
-	|SpikeTrapL
-	|SpikeTrapR
-	|SpikeTrapU
-	|FruitTrap
 +Gimmicks
 	+White Dot
 		|WhiteDotEnable

@@ -120,10 +120,10 @@ sprSpike
 sprSpikeLeft
 sprSpikeRight
 sprSpikeUp
-sprSpikeTrap
-sprSpikeLeftTrap
-sprSpikeRightTrap
-sprSpikeUpTrap
+
+
+
+
 sprSpikeBlue
 sprSpikeLeftBlue
 sprSpikeRightBlue
@@ -415,3 +415,4 @@ sprReverser
 sprReverserOff
 sprJumpManyTimes
 sprSoundEvent
+sprTrap

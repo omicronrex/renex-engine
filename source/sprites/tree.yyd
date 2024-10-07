@@ -34,6 +34,7 @@
 	|sprFader
 	|sprFadeWarp
 	|sprSoundEvent
+	|sprTrap
 +Player
 	|sprMaskPlayer
 	|sprMaskPlayerFlip
@@ -184,10 +185,6 @@
 	|sprSpikeLeft
 	|sprSpikeRight
 	|sprSpikeUp
-	|sprSpikeTrap
-	|sprSpikeLeftTrap
-	|sprSpikeRightTrap
-	|sprSpikeUpTrap
 	|sprSpikeBlue
 	|sprSpikeLeftBlue
 	|sprSpikeRightBlue

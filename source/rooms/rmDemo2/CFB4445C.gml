@@ -1,4 +1,4 @@
 //gm82 fields begin
-dir=30
-spd=6
+movement=true
+hsp=3
 //gm82 fields end

@@ -1,3 +1,4 @@
 //gm82 fields begin
-vsp=10
+movement=true
+vsp=-5
 //gm82 fields end

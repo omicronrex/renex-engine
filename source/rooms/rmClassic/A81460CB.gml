@@ -1,3 +1,3 @@
 //gm82 fields begin
-invisible=true
+visible=false
 //gm82 fields end

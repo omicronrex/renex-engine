@@ -1,3 +1,5 @@
 //gm82 fields begin
-sound="sndDelfruit"
+depth=1001
+movement=true
+vsp=3
 //gm82 fields end

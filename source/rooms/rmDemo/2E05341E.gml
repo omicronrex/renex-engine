@@ -1,3 +1,5 @@
 //gm82 fields begin
-index=1
+depth=1001
+movement=true
+vsp=4
 //gm82 fields end

@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+event_inherited()
 image_speed=0
 image_index=1
 #define Step_0

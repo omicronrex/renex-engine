@@ -4,6 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+event_inherited()
 destroy=false //set to true in fields for one-time use
 waterSpeed=2  //how fast the water goes when it's created
 image_speed=0

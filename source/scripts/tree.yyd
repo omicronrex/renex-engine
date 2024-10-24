@@ -40,6 +40,7 @@
 	|custom_sound_properties
 	|custom_region_activation
 	|custom_window_border
+	|gm82room_jtool_table
 +saving
 	|savedata_init
 	|settings_default
@@ -133,7 +134,6 @@
 	+misc lists
 		|list_nonstick
 		|list_obstructions
-		|gm82room_jtool_table
 	+world events
 		|event_game_start
 		|event_room_start
